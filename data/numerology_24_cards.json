@@ -1,0 +1,146 @@
+[
+  {
+    "id": "card_01_walksOfLife",
+    "filename": "card_01_walksOfLife.png",
+    "title": "Số Đường Đời (Life Path)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel lavender torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of glowing purple amethyst quartz crystal cluster with delicate golden sparkle stars and fine minimalist black line-art astrology symbols. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_02_mission",
+    "filename": "card_02_mission.png",
+    "title": "Số Sứ Mệnh (Mission / Destiny)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel sage-green torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of vintage brass astrolabe compass and north star with golden guidance rays and fine minimalist black line-art astrology symbols. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_03_soul",
+    "filename": "card_03_soul.png",
+    "title": "Số Linh Hồn (Soul Urge)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel rose-quartz torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of delicate blooming lotus flower resting in a crescent moon with soft watercolor wash and fine minimalist golden sparkle stars. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_04_personality",
+    "filename": "card_04_personality.png",
+    "title": "Số Nhân Cách (Personality)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel amber-sun-gold torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of sacred golden sunburst mask with minimalist line-art radiant rays and fine celestial symbols. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_05_dateOfBirth",
+    "filename": "card_05_dateOfBirth.png",
+    "title": "Số Ngày Sinh (Birthday Number)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel cornflower-blue torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of sprouting seed of life with sacred geometry roots in soft watercolor and golden celestial stardust. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_06_mature",
+    "filename": "card_06_mature.png",
+    "title": "Số Trưởng Thành (Maturity Number)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel deep-olive torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of majestic ancient oak tree with golden leaves and sacred geometry spiral ring with fine celestial sparkles. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_07_balance",
+    "filename": "card_07_balance.png",
+    "title": "Số Cân Bằng (Balance Number)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel muted-turquoise torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of vintage minimalist balance scale with floating celestial water droplet and golden equilibrium beam. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_08_rationalThinking",
+    "filename": "card_08_rationalThinking.png",
+    "title": "Số Tư Duy Lý Trí (Rational Thought)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel slate-blue torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of geometric icosahedron platonic solid with delicate mathematical compass lines and golden constellation nodes. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_09_subconsciousPower",
+    "filename": "card_09_subconsciousPower.png",
+    "title": "Sức Mạnh Tiềm Thức (Subconscious Power)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel deep-indigo torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of sacred all-seeing third eye glowing over calm watercolor midnight waves and celestial crescent moon. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_10_passion",
+    "filename": "card_10_passion.png",
+    "title": "Đam Mê Ẩn Giấu (Hidden Passion)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel warm-terracotta torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of minimalist sacred flame with golden phoenix wings outline and delicate starlight sparks. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_11_attitude",
+    "filename": "card_11_attitude.png",
+    "title": "Thái Độ Tiếp Cận (Attitude)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel peach-blossom torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of translucent crystal shield reflecting morning sunrise pastel rays and gentle botanical laurel leaves. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_12_karmicDebts",
+    "filename": "card_12_karmicDebts.png",
+    "title": "Con Số Nợ Nghiệp (Karmic Debts)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel dusty-rose-mauve torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of Saturn astrological planetary symbol inside a soft dusty-rose watercolor cloud aura with delicate crescent moon and golden stars. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_13_missingNumbers",
+    "filename": "card_13_missingNumbers.png",
+    "title": "Bài Học Số Thiếu (Karmic Lessons)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel sand-beige torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of zen ceramic vase with gold kintsugi cracks and blooming cherry blossom branch with fine line-art stardust. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_14_bridgeLifeMission",
+    "filename": "card_14_bridgeLifeMission.png",
+    "title": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel lilac-gold torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of golden filament arch bridge connecting two radiant celestial stars with glowing stardust stream. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_15_bridgeSoulPersonality",
+    "filename": "card_15_bridgeSoulPersonality.png",
+    "title": "Cầu Nối Linh Hồn & Nhân Cách",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel blush-peach torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of two interlocking crescent moons forming a vesica piscis sacred geometry with golden center star. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_16_bridgeMaturityPassion",
+    "filename": "card_16_bridgeMaturityPassion.png",
+    "title": "Cầu Nối Trưởng Thành & Đam Mê",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel golden-sand torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of vintage minimalist hourglass with flowing starlight gold sand and celestial halo ring. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_17_yearIndividual",
+    "filename": "card_17_yearIndividual.png",
+    "title": "Năm Cá Nhân (Personal Year)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel sunburst-yellow torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of celestial 9-spoke wheel of time and solar calendar ring with glowing sun rays. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_18_monthIndividual",
+    "filename": "card_18_monthIndividual.png",
+    "title": "Tháng Cá Nhân (Personal Month)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel soft-mint torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of four minimal moon phases arranged in an elegant sacred circle with soft watercolor aura. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_19_dayIndividual",
+    "filename": "card_19_dayIndividual.png",
+    "title": "Ngày Cá Nhân (Personal Day)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel coral-amber torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of morning tea sprout with a glowing iridescent dewdrop and delicate golden sunrise aura. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_20_way",
+    "filename": "card_20_way.png",
+    "title": "4 Đỉnh Cao Cuộc Đời (4 Pinnacles)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel sage-forest torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of radiant textured gold sun rising over four layered watercolor mountain pyramids with delicate astrology symbols. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_21_challenges",
+    "filename": "card_21_challenges.png",
+    "title": "4 Thách Thức Cuộc Đời (4 Challenges)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel muted-burgundy torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of minimalist stone monolith pyramid with subtle golden lightning crack and Saturn astrological ring. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_22_arrows",
+    "filename": "card_22_arrows.png",
+    "title": "8 Mũi Tên Cá Tính (Arrows of Individuality)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel starlight-ochre torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of eight radiant celestial arrows expanding outward from a central crescent moon with delicate golden sparkle stardust. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_23_nameChart",
+    "filename": "card_23_nameChart.png",
+    "title": "Biểu Đồ Tên & Tần Suất",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel vintage-parchment torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of golden calligraphy feather quill writing sacred alphabet sound frequency wave and delicate stars. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  },
+  {
+    "id": "card_24_birthChart",
+    "filename": "card_24_birthChart.png",
+    "title": "Biểu Đồ Ngày Sinh 3x3 (Birth Chart Grid)",
+    "prompt": "A single minimalist numerology oracle tarot card on warm textured cream linen parchment paper. Top header has a subtle soft pastel warm-linen torn-paper watercolor wash banner. In the center, a refined hand-drawn illustration of clean minimalist 3x3 numerical birth matrix grid with soft watercolor aura and golden planetary nodes. Clean editorial layout, generous negative space, aesthetic vintage apothecary tarot deck style, muted organic watercolor wash, ultra-detailed, photorealistic paper texture"
+  }
+]

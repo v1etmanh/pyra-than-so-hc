@@ -1,0 +1,189 @@
+@import "./chani-inner.css";
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+:root {
+  --chani-paper: #f8f7f7;
+  --chani-ink: #2a2a2b;
+  --chani-line: rgba(42, 42, 43, 0.24);
+  --chani-yellow: #f2dc43;
+  --chani-pink: #f6c9d5;
+}
+
+.chani-site {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--chani-paper);
+  color: var(--chani-ink);
+  font-family: Arial, sans-serif;
+}
+
+.chani-site a { color: inherit; text-decoration: none; }
+.chani-site button, .chani-site input { font: inherit; }
+.chani-ticker { height: 32px; overflow: hidden; border-bottom: 1px solid var(--chani-line); font: 12px/32px "Courier New", monospace; white-space: nowrap; }
+.chani-ticker-track { display: flex; width: max-content; animation: chani-marquee 46s linear infinite; }
+.chani-ticker span { display: inline-flex; align-items: center; gap: 7px; margin-right: 80px; }
+.chani-ticker a { text-decoration: underline; }
+.ticker-icon { width: 24px; height: 24px; object-fit: contain; }
+@keyframes chani-marquee { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+
+.chani-header { position: relative; z-index: 5; display: flex; align-items: center; gap: 26px; min-height: 72px; padding: 12px 60px; border-bottom: 1px solid var(--chani-line); background: rgba(248,247,247,.94); }
+.chani-logo { width: 126px; height: 40px; object-fit: contain; }
+.chani-nav { display: flex; flex: 1; justify-content: center; gap: clamp(12px, 2vw, 34px); font: 12px/1 "Courier New", monospace; text-transform: uppercase; }
+.chani-nav a:hover, .chani-footer a:hover { text-decoration: underline; }
+.chani-search-button, .chani-menu-button { border: 0; background: transparent; cursor: pointer; }
+.chani-search-button { font-size: 28px; line-height: 1; }
+.chani-menu-button { display: none; font: 12px "Courier New", monospace; }
+.chani-search-panel { position: absolute; z-index: 10; right: 60px; top: 105px; display: flex; gap: 8px; padding: 12px; border: 1px solid var(--chani-ink); background: var(--chani-paper); }
+.chani-search-panel input { min-width: 240px; border: 0; border-bottom: 1px solid var(--chani-ink); outline: 0; background: transparent; }
+.chani-search-panel button { border: 1px solid var(--chani-ink); background: transparent; padding: 5px 10px; font: 10px "Courier New", monospace; }
+
+.chani-hero { position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: 606px; margin: 0 22px; overflow: hidden; border-bottom: 1px solid var(--chani-line); background-color: #f5f4f1; background-image: linear-gradient(rgba(0,0,0,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.07) 1px, transparent 1px); background-size: 38px 38px; }
+.chani-hero-copy { z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; max-width: 410px; padding: 70px 8vw; }
+.chani-hero-kicker, .chani-hero-copy p, .chani-section p, .chani-card h3, .podcast-card h3, .keydate-grid h3, .chani-footer, .chani-small-button, .chani-outline-button { font-family: "Courier New", monospace; }
+.chani-hero-kicker { margin-bottom: 14px; font-size: 16px; }
+.chani-hero h1 { margin: 0 0 18px; font-family: Georgia, serif; font-size: clamp(54px, 6vw, 96px); font-weight: 400; line-height: .9; letter-spacing: -4px; }
+.chani-hero-copy p { max-width: 300px; margin: 0 0 26px; font-size: 13px; line-height: 1.55; }
+.chani-outline-button, .chani-small-button { display: inline-block; border: 1px solid var(--chani-ink); background: transparent; padding: 9px 18px; font-size: 10px; letter-spacing: .04em; }
+.chani-outline-button:hover, .chani-small-button:hover { background: var(--chani-ink); color: var(--chani-paper); }
+.chani-hero-art { display: flex; align-items: center; justify-content: center; padding: 48px 6vw 48px 0; }
+.hero-image { width: min(100%, 440px); height: 490px; object-fit: contain; mix-blend-mode: multiply; }
+.hero-arrow { position: absolute; top: 50%; border: 0; background: transparent; cursor: pointer; font-size: 24px; }
+.hero-arrow-left { left: 18px; }.hero-arrow-right { right: 18px; }
+.hero-dots { position: absolute; left: 50%; bottom: 22px; display: flex; gap: 9px; transform: translateX(-50%); }
+.hero-dots button { width: 9px; height: 9px; border: 1px solid var(--chani-ink); border-radius: 50%; background: transparent; cursor: pointer; }.hero-dots button.active { background: var(--chani-ink); }
+
+.chani-season-callout { position: relative; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; min-height: 412px; padding: 0 60px; }
+.smiley { width: 170px; height: 150px; object-fit: contain; justify-self: center; }.season-doodle { width: 32px; height: 32px; justify-self: end; }.handwritten { margin: 0; font-family: Georgia, serif; font-style: italic; font-size: 42px; line-height: .85; }
+.season-copy { grid-column: 2; text-align: center; font: 12px/1.5 "Courier New", monospace; }.season-copy p { margin-bottom: 10px; font-size: 17px; }.season-copy span { font-size: 11px; }
+
+.chani-section { padding: 75px 60px; border-top: 1px solid var(--chani-line); }.chani-section-title { margin: 0 0 46px; text-align: center; font-family: Georgia, serif; font-size: clamp(38px, 5vw, 74px); font-weight: 400; letter-spacing: -2px; text-transform: uppercase; }
+.chani-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 70px 34px; max-width: 1200px; margin: 0 auto; }.chani-card { text-align: center; }.card-image { width: 100%; height: 250px; object-fit: contain; mix-blend-mode: multiply; }.card-image-1 { filter: saturate(.7) hue-rotate(18deg); }.card-image-2 { filter: grayscale(.15) contrast(1.15); }.chani-card h3 { min-height: 42px; margin: 13px auto 15px; max-width: 270px; font-size: 11px; font-weight: 400; line-height: 1.25; text-transform: uppercase; }
+.chani-card-trigger { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: center; cursor: pointer; }.chani-card-trigger:hover .card-image { transform: scale(1.035) rotate(-1deg); }.chani-card-trigger .card-image { transition: transform .35s ease; }.chani-card-label { margin-top: 14px; font: 10px "Courier New", monospace; letter-spacing: .08em; }.chani-card-excerpt { max-width: 270px; min-height: 34px; margin: 0 auto; font: 11px/1.35 "Courier New", monospace; }.chani-card-trigger .chani-small-button { margin-top: 17px; }
+.insight-modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(42,42,43,.36); backdrop-filter: blur(4px); }.insight-modal { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; width: min(900px, 100%); max-height: min(650px, calc(100vh - 48px)); overflow: auto; background: var(--chani-paper); box-shadow: 18px 18px 0 rgba(42,42,43,.14); }.insight-modal-art { display: flex; min-height: 470px; background: #e8e4de; }.insight-modal-art img { width: 100%; height: 100%; min-height: 470px; object-fit: contain; mix-blend-mode: multiply; }.insight-modal-copy { display: flex; flex-direction: column; justify-content: center; padding: 60px 55px; }.insight-modal-copy h2 { margin: 0 0 24px; font: 48px/.93 Georgia, serif; letter-spacing: -2px; text-transform: uppercase; }.insight-modal-copy > p:not(.chani-hero-kicker):not(.insight-modal-takeaway) { margin: 0 0 22px; font: 13px/1.7 "Courier New", monospace; }.insight-modal-takeaway { margin: 0 0 28px; font: italic 21px/1.1 Georgia, serif; }.insight-modal-close { position: absolute; z-index: 2; top: 16px; right: 20px; width: 32px; height: 32px; border: 1px solid var(--chani-ink); border-radius: 50%; background: rgba(255,255,255,.72); color: var(--chani-ink); cursor: pointer; font: 25px/25px Georgia, serif; }
+.chani-podcast-section { padding-top: 28px; }.chani-podcast-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; max-width: 900px; margin: 0 auto; }.podcast-card { text-align: center; }.podcast-visual { position: relative; display: flex; align-items: center; justify-content: center; height: 260px; overflow: hidden; background: #d5d1cb; font-size: 56px; }.podcast-visual-1 { background: #ddc1a6; }.podcast-visual span { position: absolute; }.podcast-visual span:nth-child(1) { transform: translate(-60px,-45px) rotate(-15deg); }.podcast-visual span:nth-child(2) { transform: translate(74px,25px) rotate(26deg); }.podcast-visual span:nth-child(3) { transform: translate(0,70px) rotate(-12deg); }.podcast-card h3 { max-width: 330px; min-height: 42px; margin: 16px auto; font-size: 12px; font-weight: 400; line-height: 1.35; text-transform: uppercase; }
+.chani-frequency-section { padding-top: 55px; background: #f1efec; }.frequency-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: stretch; max-width: 1000px; margin: 0 auto; }.frequency-visual { position: relative; min-height: 430px; overflow: hidden; background: #d9d5ce; }.frequency-orbit { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(42,42,43,.48); border-radius: 50%; transform: translate(-50%, -50%) rotate(-18deg); }.frequency-orbit-a { width: 350px; height: 175px; }.frequency-orbit-b { width: 245px; height: 390px; transform: translate(-50%, -50%) rotate(34deg); }.frequency-number { position: absolute; left: 50%; top: 50%; color: #2a2a2b; font: 190px/.8 Georgia, serif; transform: translate(-50%, -50%); }.frequency-needle { position: absolute; right: 16%; bottom: 14%; color: #bda476; font-size: 63px; transform: rotate(-24deg); }.frequency-star { position: absolute; color: #2a2a2b; font-size: 30px; }.frequency-star-a { left: 12%; top: 15%; }.frequency-star-b { right: 13%; top: 21%; color: #bda476; font-size: 45px; }.frequency-answer { display: flex; flex-direction: column; justify-content: center; padding: 45px 20px 45px 0; }.frequency-label { margin: 0 0 22px; font: 11px "Courier New", monospace; letter-spacing: .08em; }.frequency-prompt { margin: 0 0 24px; font: italic 21px/1.2 Georgia, serif; }.frequency-answer h3 { margin: 0; font: 72px/.82 Georgia, serif; letter-spacing: -3px; text-transform: uppercase; }.frequency-artist { margin: 16px 0 26px; font: 12px "Courier New", monospace; text-transform: uppercase; }.frequency-copy { max-width: 410px; margin: 0 0 24px; font: 13px/1.65 "Courier New", monospace; }.frequency-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }.frequency-tags span { border: 1px solid var(--chani-line); padding: 6px 9px; font: 9px "Courier New", monospace; }
+.chani-guidance-section { background: #f8f7f7; }.guidance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }.guidance-card { display: flex; flex-direction: column; align-items: center; padding-bottom: 8px; text-align: center; }.guidance-image-wrap { display: flex; align-items: center; justify-content: center; width: 100%; height: 245px; overflow: hidden; background: #eeeae4; }.guidance-image { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; transition: transform .4s ease; }.guidance-card:hover .guidance-image { transform: scale(1.04) rotate(-1deg); }.guidance-image-wrap-1 { background: #e7e1d7; }.guidance-image-wrap-2 { background: #e9e4df; }.guidance-label { margin: 22px 0 10px; font: 10px "Courier New", monospace; letter-spacing: .08em; }.guidance-card h3 { max-width: 310px; min-height: 52px; margin: 0 0 13px; font: 30px/.95 Georgia, serif; text-transform: uppercase; }.guidance-card > p:not(.guidance-label) { max-width: 300px; min-height: 57px; margin: 0 0 20px; font: 11px/1.5 "Courier New", monospace; }
+.keydate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center; }.keydate-grid article { min-height: 130px; }.keydate-grid h3 { max-width: 250px; min-height: 42px; margin: 0 auto 20px; font-size: 12px; font-weight: 400; line-height: 1.4; text-transform: uppercase; }.keydate-note { max-width: 410px; margin: 50px auto 0; text-align: center; font-size: 11px; }
+
+.chani-countdown-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 100px 12vw; border-top: 1px solid var(--chani-line); background: linear-gradient(180deg, #f8f7f7, #f0efed); }.countdown-copy h2 { max-width: 290px; margin-top: 28px; font-family: Georgia, serif; font-size: 40px; font-weight: 400; line-height: 1; text-transform: uppercase; }.countdown-card { padding: 48px 30px; text-align: center; background: rgba(255,255,255,.45); box-shadow: 0 10px 24px rgba(0,0,0,.06); }.countdown-card > p { font: 20px Georgia, serif; }.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin: 30px 0; }.countdown-grid div { padding: 13px 4px; border: 1px solid var(--chani-line); }.countdown-grid strong { display: block; font: 26px Georgia, serif; }.countdown-grid span { display: block; margin-top: 5px; font: 9px "Courier New", monospace; text-transform: uppercase; }
+.chani-impact-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 70px; padding: 110px 12vw; }.impact-paper, .shop-paper { min-height: 310px; padding: 62px 56px; background: #efeeeb; box-shadow: 0 14px 30px rgba(0,0,0,.08); }.impact-paper > p:not(.handwritten), .shop-paper p:not(.handwritten) { max-width: 380px; margin: 28px 0; font: 13px/1.6 "Courier New", monospace; }.impact-paper strong { font-weight: 700; }.shop-paper { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: center; }.shop-image { width: 180px; height: 220px; object-fit: contain; mix-blend-mode: multiply; }
+.chani-start-section { display: flex; align-items: center; justify-content: center; gap: 60px; min-height: 530px; padding: 90px 60px; background: #e9e8e5; }.start-art { width: min(35vw, 420px); height: 360px; object-fit: contain; mix-blend-mode: multiply; }.chani-start-section h2 { max-width: 390px; margin-bottom: 28px; font-family: Georgia, serif; font-size: clamp(42px, 5vw, 72px); font-weight: 400; line-height: .9; text-transform: uppercase; }
+.chani-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 70px 60px 34px; border-top: 1px solid var(--chani-line); font-size: 11px; }.footer-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }.footer-columns strong, .newsletter strong { display: block; margin-bottom: 18px; font-size: 11px; }.footer-columns a { display: block; margin: 8px 0; }.newsletter { border-left: 1px solid var(--chani-line); padding-left: 45px; }.newsletter div { display: flex; gap: 9px; }.newsletter input { width: 100%; border: 0; border-bottom: 1px solid var(--chani-ink); background: transparent; outline: 0; padding: 8px 0; font-size: 11px; }.newsletter button { border: 1px solid var(--chani-ink); background: transparent; padding: 8px 14px; font-size: 10px; cursor: pointer; }.copyright { grid-column: 1 / -1; margin-top: 36px; text-align: center; font-size: 10px; }
+
+@media (max-width: 900px) {
+  .chani-header { padding: 12px 24px; }.chani-menu-button { display: block; margin-left: auto; }.chani-nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; align-items: center; gap: 18px; padding: 28px; border-bottom: 1px solid var(--chani-line); background: var(--chani-paper); }.chani-nav.is-open { display: flex; }.chani-search-button { font-size: 24px; }.chani-search-panel { right: 24px; }
+  .chani-hero { grid-template-columns: 1fr; min-height: 730px; margin: 0; }.chani-hero-copy { order: 2; justify-self: center; align-items: center; padding: 40px 24px 70px; text-align: center; }.chani-hero-art { order: 1; padding: 30px 22px 0; }.hero-image { height: 350px; }.chani-season-callout { min-height: 370px; padding: 0 24px; }.smiley { width: 130px; }.handwritten { font-size: 32px; }
+  .chani-section { padding: 58px 24px; }.chani-section-title { margin-bottom: 30px; font-size: 42px; }.chani-card-grid { grid-template-columns: repeat(2, 1fr); gap: 46px 18px; }.card-image { height: 180px; }.insight-modal { grid-template-columns: 1fr; max-height: calc(100vh - 32px); }.insight-modal-art, .insight-modal-art img { min-height: 210px; height: 210px; }.insight-modal-copy { padding: 30px 24px 35px; }.insight-modal-copy h2 { font-size: 40px; }.frequency-layout { grid-template-columns: 1fr; gap: 25px; }.frequency-visual { min-height: 320px; }.frequency-answer { padding: 20px 0 0; }.frequency-answer h3 { font-size: 58px; }.guidance-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 18px; }.guidance-image-wrap { height: 180px; }.guidance-card h3 { font-size: 24px; }.guidance-card > p:not(.guidance-label) { min-height: 75px; }.chani-countdown-section, .chani-impact-section { grid-template-columns: 1fr; gap: 45px; padding: 70px 24px; }.chani-impact-section { gap: 28px; }.chani-start-section { gap: 24px; padding: 70px 24px; }.chani-start-section h2 { font-size: 46px; }.chani-footer { grid-template-columns: 1fr; gap: 38px; padding: 55px 24px 28px; }.newsletter { border-left: 0; border-top: 1px solid var(--chani-line); padding: 35px 0 0; }
+ }
+
+@media (max-width: 560px) {
+  .chani-ticker { font-size: 10px; }.chani-header { min-height: 58px; }.chani-logo { width: 92px; height: 32px; }.chani-nav { font-size: 11px; }.chani-search-panel { top: 90px; left: 24px; right: 24px; }.chani-search-panel input { min-width: 0; flex: 1; }
+  .chani-hero { min-height: 650px; }.chani-hero h1 { font-size: 62px; }.chani-hero-copy p { font-size: 11px; }.hero-image { height: 280px; }.chani-season-callout { grid-template-columns: 1fr 1fr; min-height: 450px; }.smiley { grid-column: 1 / -1; width: 140px; }.season-doodle { display: none; }.season-copy { grid-column: 1 / -1; }.chani-card-grid, .chani-podcast-grid, .keydate-grid, .guidance-grid { grid-template-columns: 1fr; }.chani-section-title { font-size: 38px; }.podcast-visual { height: 220px; }.guidance-image-wrap { height: 220px; }.countdown-copy h2 { font-size: 36px; }.countdown-card { padding: 35px 16px; }.countdown-grid { gap: 4px; }.countdown-grid strong { font-size: 21px; }.impact-paper, .shop-paper { padding: 38px 24px; }.shop-paper { grid-template-columns: 1fr; }.shop-image { width: 100%; height: 180px; }.chani-start-section { flex-direction: column; text-align: center; }.start-art { width: 80vw; height: 250px; }.footer-columns { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }.footer-columns strong, .newsletter strong { font-size: 9px; }.footer-columns a { font-size: 9px; }
+}
+
+/* CHANI /app route */
+.chani-app-page { background: #f8f7f7; }
+.app-header { min-height: 150px; flex-wrap: wrap; align-content: center; }
+.app-header .chani-nav { order: 3; flex-basis: 100%; padding-top: 14px; }
+.app-hero { position: relative; min-height: 720px; overflow: hidden; padding: 100px 24px 0; text-align: center; background: #f7f6f4 url('/sites/chani-com-6d20749d/app-f53b52ad/assets/torn-grid-paper.webp') center/cover; }
+.app-hero-title { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 42px; }
+.app-hero h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(70px, 9vw, 132px); font-weight: 400; letter-spacing: -6px; line-height: .85; }
+.app-smiley { width: 68px; height: 68px; object-fit: contain; }.app-heart { width: 70px; height: 70px; object-fit: contain; align-self: flex-start; }
+.app-hero > p { position: relative; z-index: 2; margin: 30px auto; font: 15px/1.5 "Courier New", monospace; }.app-store-buttons { position: relative; z-index: 3; display: flex; justify-content: center; gap: 14px; }.app-store-buttons a { display: inline-flex; align-items: center; gap: 12px; border: 1px solid var(--chani-ink); border-radius: 4px; padding: 15px 28px; background: rgba(255,255,255,.72); font: 13px "Courier New", monospace; }.app-store-buttons a:hover { background: var(--chani-ink); color: white; }.app-store-buttons img { width: 18px; height: 18px; object-fit: contain; }
+.hero-app-icon { position: absolute; right: 28%; top: 420px; width: 86px; height: 86px; object-fit: contain; transform: rotate(8deg); }.hero-finger { position: absolute; left: -10px; bottom: -90px; width: 300px; height: 280px; object-fit: contain; transform: rotate(-8deg); }.hero-phone { position: absolute; left: 34%; bottom: -190px; width: 380px; height: 470px; object-fit: contain; transform: rotate(-8deg); }.hero-notif { position: absolute; right: 4%; bottom: -180px; width: 390px; height: 470px; object-fit: contain; transform: rotate(4deg); }.hero-star { position: absolute; right: 33%; bottom: 40px; width: 48px; height: 48px; object-fit: contain; }
+.app-paper-section { background: url('/sites/chani-com-6d20749d/app-f53b52ad/assets/paper.webp') center/cover; }.app-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 90px; min-height: 600px; padding: 100px 14vw; }.app-intro-art { text-align: center; }.app-intro-art img { width: min(100%, 440px); height: 420px; object-fit: contain; }.app-intro-copy p { max-width: 540px; margin: 0 0 36px; font: 14px/1.65 "Courier New", monospace; }
+.app-feature-overview { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; min-height: 720px; padding: 100px 10vw; background: #f6f0eb; }.app-feature-collage { position: relative; min-height: 560px; }.feature-phone { position: absolute; left: 18%; bottom: 0; width: 330px; height: 500px; object-fit: contain; transform: rotate(-8deg); }.feature-notif { position: absolute; width: 190px; height: 220px; object-fit: contain; }.feature-notif-a { left: 4%; top: 60px; transform: rotate(-9deg); }.feature-notif-b { right: 10%; top: 20px; transform: rotate(8deg); }.feature-notif-c { right: 0; bottom: 40px; transform: rotate(11deg); }.feature-stars { position: absolute; right: 37%; top: 10px; width: 90px; height: 90px; object-fit: contain; }.app-feature-list { max-width: 390px; }.app-eyebrow { margin: 0 0 18px; font: 13px "Courier New", monospace; text-transform: uppercase; }.app-feature-list h2, .app-weekly h2, .app-human h2 { margin: 0 0 28px; font-family: Georgia, serif; font-size: clamp(48px, 6vw, 86px); font-weight: 400; line-height: .9; text-transform: uppercase; }.app-feature-list > p:last-child { font: 14px/1.6 "Courier New", monospace; }
+.app-features { padding: 80px 10vw; background: #f8f7f7; }.app-feature-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; align-items: center; gap: 90px; border-bottom: 1px solid var(--chani-line); }.app-feature-row.reverse .app-feature-copy { order: 2; }.app-feature-row.reverse .app-feature-image { order: 1; }.app-feature-copy h3 { max-width: 420px; margin: 0 0 24px; font-family: Georgia, serif; font-size: clamp(42px, 5vw, 70px); font-weight: 400; line-height: .95; text-transform: uppercase; }.app-feature-copy p { max-width: 440px; font: 14px/1.6 "Courier New", monospace; }.app-feature-image { display: flex; align-items: center; justify-content: center; height: 450px; }.app-feature-image img { width: min(100%, 420px); height: 420px; object-fit: contain; mix-blend-mode: multiply; }
+.app-weekly { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 520px; padding: 90px 15vw; background: #e8e5e0; }.app-weekly h2 { max-width: 540px; font-size: clamp(42px, 5vw, 70px); }.weekly-brush { justify-self: center; width: 310px; height: 310px; object-fit: contain; transform: rotate(-13deg); }
+.app-human { position: relative; min-height: 560px; padding: 130px 20vw; text-align: center; background: url('/sites/chani-com-6d20749d/app-f53b52ad/assets/graph-paper-background.webp') center/cover; }.app-human h2 { font-size: clamp(54px, 7vw, 105px); }.app-human h2 em { font-weight: 400; }.app-human p { max-width: 580px; margin: 0 auto; font: 14px/1.6 "Courier New", monospace; }.human-star { position: absolute; top: 70px; left: 16%; width: 80px; height: 80px; object-fit: contain; }.human-stars { position: absolute; right: 16%; bottom: 70px; width: 100px; height: 100px; object-fit: contain; }
+.app-testimonials { padding: 100px 24px; text-align: center; background: #f7dce1; }.app-testimonials blockquote { max-width: 850px; margin: 60px auto 22px; font: 32px/1.25 Georgia, serif; }.app-testimonials cite { font: 12px "Courier New", monospace; }.testimonial-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 35px; font: 12px "Courier New", monospace; }.testimonial-controls button { border: 1px solid var(--chani-ink); border-radius: 50%; width: 34px; height: 34px; background: transparent; cursor: pointer; }.app-footer { background: #f8f7f7; }
+
+@media (max-width: 900px) {
+  .app-header { min-height: 72px; }.app-header .chani-nav { padding-top: 0; }.app-hero { min-height: 700px; padding-top: 70px; }.app-hero-title { gap: 15px; }.app-hero h1 { font-size: 68px; letter-spacing: -3px; }.app-smiley, .app-heart { width: 44px; height: 44px; }.hero-phone { left: 22%; width: 330px; }.hero-notif { right: -8%; width: 300px; }.hero-app-icon { right: 16%; }.app-intro, .app-feature-overview, .app-feature-row, .app-weekly { grid-template-columns: 1fr; gap: 40px; padding: 75px 24px; }.app-intro-copy { text-align: center; }.app-intro-copy p { margin-inline: auto; }.app-feature-overview { padding-top: 70px; }.app-feature-collage { min-height: 520px; }.app-feature-list { max-width: none; text-align: center; }.app-feature-row.reverse .app-feature-copy, .app-feature-row.reverse .app-feature-image { order: initial; }.app-feature-row { min-height: auto; padding: 55px 0; text-align: center; }.app-feature-copy p { margin-inline: auto; }.app-feature-image { height: 310px; }.app-feature-image img { height: 310px; }.app-weekly { text-align: center; }.weekly-brush { width: 230px; height: 230px; }.app-human { padding: 90px 24px; }.human-star { left: 6%; top: 40px; width: 55px; height: 55px; }.human-stars { right: 6%; bottom: 40px; width: 70px; height: 70px; }
+}
+
+@media (max-width: 560px) {
+  .desktop-only { display: none; }.app-hero { min-height: 620px; padding-top: 50px; }.app-hero-title { align-items: flex-start; }.app-hero h1 { font-size: 53px; line-height: .9; }.app-hero > p { font-size: 11px; }.app-store-buttons { gap: 7px; }.app-store-buttons a { padding: 10px 12px; font-size: 9px; }.app-store-buttons img { width: 13px; height: 13px; }.hero-phone { left: 7%; bottom: -95px; width: 250px; height: 330px; }.hero-notif { right: -28%; bottom: -105px; width: 255px; height: 330px; }.hero-finger { width: 180px; bottom: -40px; }.hero-star { right: 33%; bottom: 20px; width: 30px; height: 30px; }.hero-app-icon { top: 380px; right: 16%; width: 55px; height: 55px; }.app-intro-art img { height: 280px; }.app-feature-collage { min-height: 400px; }.feature-phone { left: 18%; width: 250px; height: 380px; }.feature-notif { width: 130px; height: 150px; }.feature-notif-a { top: 40px; }.feature-notif-b { right: 0; }.feature-notif-c { right: -4%; bottom: 20px; }.feature-stars { right: 35%; width: 55px; height: 55px; }.app-feature-list h2, .app-weekly h2 { font-size: 46px; }.app-testimonials blockquote { font-size: 24px; }.app-human h2 { font-size: 52px; }
+}
+.map-entry-video { position: fixed; z-index: 90; inset: 0; display: grid; place-items: center; overflow: hidden; background: #f8f2dc; animation: map-entry-wash .9s ease-out both; }
+.map-entry-video video { width: 100%; height: 100%; object-fit: cover; opacity: .96; filter: saturate(1.12) contrast(1.04) brightness(1.08); }
+.map-entry-flare { position: absolute; z-index: 1; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.98) 0%, rgba(255,236,170,.65) 24%, rgba(255,255,255,0) 70%); mix-blend-mode: screen; pointer-events: none; animation: map-entry-flare 2.2s ease-in-out infinite; }
+.map-entry-video-copy { position: absolute; z-index: 2; bottom: 70px; left: 50%; display: grid; gap: 9px; color: #fff; text-align: center; text-shadow: 0 2px 18px rgba(42,42,43,.4); transform: translateX(-50%); }
+.map-entry-video-copy span { font: 10px "Courier New", monospace; letter-spacing: .18em; }.map-entry-video-copy strong { font: italic 25px Georgia, serif; font-weight: 400; }
+.map-entry-video > button { position: absolute; z-index: 2; right: 28px; bottom: 25px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(255,255,255,.8); background: rgba(42,42,43,.28); color: #fff; cursor: pointer; font: 10px "Courier New", monospace; }
+.map-entry-video > button:hover { background: rgba(42,42,43,.62); }
+@keyframes map-entry-flare { 0%, 100% { opacity: .42; transform: scale(.82); } 50% { opacity: .9; transform: scale(1.18); } }
+@keyframes map-entry-wash { 0% { opacity: 0; background: #fff; } 12% { opacity: 1; background: #fff; } 100% { opacity: 1; background: #f8f2dc; } }
+
+@media (max-width: 560px) {
+  .map-entry-video-copy { bottom: 65px; width: calc(100% - 40px); }
+  .map-entry-video-copy strong { font-size: 21px; }
+  .map-entry-video > button { right: 18px; bottom: 18px; }
+}

@@ -1,0 +1,15 @@
+export { getWalksOfLife } from "./getWalksOfLife";
+export { sumAdjacent } from "./sumAdjacent";
+export { getMission } from "./getMission";
+export { getSoul } from "./getSoul";
+export { getValueInAlphabets } from "./getValueInAlphabets";
+export { getPersonality } from "./getPersonality";
+export { getPassion } from "./getPassion";
+export { getBalance } from "./getBalance";
+export { getMissingNumbers } from "./getMissingNumbers";
+export { getRationalThinking } from "./getRationalThinking";
+export { substractAdjacent } from "./subtractAdjacent";
+export { getKarmicDebts } from "./getKarmicDebts";
+export { getBridges } from "./getBridges";
+export { getAttitude } from "./getAttitude";
+export { getBirthChartArrows } from "./getBirthChartArrows";

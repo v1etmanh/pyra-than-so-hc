@@ -1,0 +1,172 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+@keyframes colors {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: lime;
+  }
+  57% {
+    color: cyan;
+  }
+  71% {
+    color: blue;
+  }
+  85% {
+    color: magenta;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.sparkle-effect {
+  position: relative;
+  color: white;
+  animation: colors 2s infinite;
+}
+
+.sparkle-effect::before,
+.sparkle-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+.sparkle-effect::before {
+  text-shadow:
+    2px 0 10px cyan,
+    -2px 0 10px magenta;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: colors 2s infinite;
+}
+
+.sparkle-effect::after {
+  text-shadow:
+    2px 0 10px red,
+    -2px 0 10px lime;
+  clip: rect(56px, 450px, 68px, 0);
+  animation: colors 2s infinite reverse;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes heroPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+/* Birth Chart Animations */
+@keyframes cellPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(221, 107, 32, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(221, 107, 32, 0.15);
+  }
+}
+
+@keyframes fadeInCell {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes drawArrow {
+  from {
+    stroke-dashoffset: 500;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}

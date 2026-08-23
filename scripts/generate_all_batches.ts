@@ -1,0 +1,443 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
+// Master Knowledge Data generator covering all 8 batches in extreme depth & detail
+
+const masterData: any[] = [
+  // ==========================================
+  // BATCH 1 - 5: CÁC CON SỐ CHỦ ĐẠO & MASTER
+  // ==========================================
+  {
+    "category": "life_path_number",
+    "number": "Số 2",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 2 là con số độc đáo và hiếm gặp nhất trong hệ thống Pythagore (chỉ xuất hiện khi tổng các con số ngày sinh bằng chính xác 20). Nằm ở vị trí khởi đầu của Trục ngang Tâm hồn (Soul Plane - đại diện cho cảm xúc và trực giác), mục đích sống cốt lõi của người Số 2 là trở thành biểu tượng của sự hòa giải, tình yêu thương vị tha và năng lực thấu cảm tâm linh sâu sắc. Năng lực nổi trội nhất của họ là trực giác nhạy bén bẩm sinh, khả năng lắng nghe tinh tế và sự nhẫn nại phi thường. Họ không màng đến danh vọng cá nhân hay sự thống trị quyền lực, mà đóng vai trò như một nhịp cầu nối hòa bình, xoa dịu những rạn nứt và gắn kết mọi người lại với nhau.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Trực giác tâm linh cực kỳ nhạy bén, khả năng đọc vị cảm xúc và hòa giải xung đột xuất chúng, lòng trung thành tuyệt đối, đức tính tận tụy, khiêm nhường và khả năng làm việc nhóm hòa hợp không ai sánh bằng.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 2 là sự nhạy cảm thái quá và nỗi sợ xung đột bẩm sinh, khiến họ dễ bị tổn thương, tự ti hoặc rơi vào trạng thái phụ thuộc cảm xúc vào người khác. Họ có xu hướng kìm nén nhu cầu của bản thân để làm hài lòng mọi người, dẫn đến sự ấm ức ngầm hoặc lo âu, trầm cảm. Bài học lớn nhất của người Số 2 là học cách thiết lập ranh giới cảm xúc rõ ràng, rèn luyện sự tự lập, độc lập tự chủ và dũng cảm nói lời từ chối khi cần thiết mà không cảm thấy tội lỗi.",
+    "career_and_life_path": "Người Số 2 phát huy tối đa năng lực trong những môi trường làm việc hợp tác, hòa nhã, ít tính cạnh tranh khốc liệt và đòi hỏi sự tinh tế, thấu hiểu con người. Họ không thích hợp với vai trò lãnh đạo độc đoán hay các công việc mang tính áp đặt khắc nghiệt. Định hướng nghề nghiệp lý tưởng nhất bao gồm: nhà ngoại giao, chuyên gia tâm lý, cố vấn hòa giải, trợ lý điều hành cấp cao, công tác xã hội, giáo dục mầm non/tiểu học, nghệ thuật hoặc các hoạt động thiện nguyện nhân đạo. Họ coi trọng sự hòa thuận hơn tiền bạc nhưng cần học cách quản lý tài chính thực tế.",
+    "relationship_and_behavior": "Trong tình yêu và hôn nhân, người Số 2 là những người bạn đời cực kỳ tận tụy, chung thủy, dịu dàng và luôn biết cách chăm sóc, thấu cảm cho đối phương. Họ tìm kiếm sự gắn kết tâm hồn sâu sắc và một mái ấm yên bình. Tuy nhiên, sự lệ thuộc quá mức hoặc tính cả nghĩ, nghi ngờ khi thiếu sự quan tâm có thể tạo ra áp lực vô hình cho bạn đời. Họ cần xây dựng sự tự tin từ chính nội tâm để nuôi dưỡng một mối quan hệ bình đẳng, lành mạnh.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn sẵn sàng hy sinh và dốc hết lòng vì người khác, nhưng lại thường xuyên cảm thấy bị tổn thương, cô đơn và không được trân trọng xứng đáng?",
+      "answer": "TS. David Phillips chỉ ra rằng điều này xuất phát từ việc bạn đang vận hành với sự nhạy cảm quá mức và trao quyền quyết định hạnh phúc của mình vào tay người khác. Khi bạn giúp đỡ xuất phát từ nỗi sợ bị từ chối thay vì tình thương lành mạnh, bạn sẽ vô tình tự biến mình thành nạn nhân. Lời khuyên là hãy học cách yêu thương và trân trọng chính mình trước tiên, thiết lập ranh giới rõ ràng trong các mối quan hệ và nhận thức rằng giá trị của bạn là độc lập, không phụ thuộc vào sự công nhận hay phản hồi của bất kỳ ai."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 3",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 3 nằm ở điểm khởi đầu của Trục ngang Trí não (Mental Plane). Mục đích sống cốt lõi của người Số 3 là biểu đạt sự sáng tạo trí tuệ, khả năng truyền cảm hứng và lan tỏa niềm vui sống thông qua sức mạnh của ngôn từ và tư duy sắc bén. Năng lực nổi trội nhất của họ là tư duy logic nhanh nhạy của bán cầu não trái, óc quan sát tinh tường, sự hóm hỉnh và tài năng giao tiếp xuất chúng. Được biểu trưng bởi hình tam giác – biểu tượng của sự mở rộng và thông tuệ, họ là những ngọn đuốc thắp sáng không gian bằng sự lạc quan và trí thông minh hoạt bát.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Trí tuệ nhạy bén, khả năng ăn nói hoạt ngôn, tư duy phản biện sắc sảo, sự hài hước duyên dáng, óc sáng tạo phong phú và khả năng thu hút sự chú ý của đám đông một cách tự nhiên. Họ nắm bắt thông tin rất nhanh và có tài biến những khái niệm phức tạp thành điều dễ hiểu, thú vị.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 3 là thói quen thích chỉ trích, phán xét và thiếu kiên nhẫn với những người có tư duy chậm hơn mình. Họ dễ trở nên tự phụ, bề nổi, nói nhiều hơn làm hoặc biến sự hóm hỉnh thành lời mỉa mai cay độc gây tổn thương người khác. Khi gặp bế tắc hoặc chán nản, họ dễ bị phân tán năng lượng, đứng núi này trông núi nọ và bỏ dở giữa chừng. Bài học lớn nhất của người Số 3 là rèn luyện lòng bao dung, học cách lắng nghe khiêm nhường và sử dụng trí tuệ cũng như ngôn từ để nâng đỡ, khích lệ thay vì hạ thấp người khác.",
+    "career_and_life_path": "Người Số 3 tỏa sáng rực rỡ trong các ngành nghề đòi hỏi sự hoạt ngôn, sáng tạo nội dung, tư duy logic nhanh và tương tác xã hội liên tục. Các lĩnh vực phù hợp nhất bao gồm: nhà báo, nhà văn, người dẫn chương trình (MC), diễn giả truyền cảm hứng, chuyên gia truyền thông/marketing, giáo viên/giảng viên đại học, diễn viên hài, luật sư tranh tụng, hoặc chuyên viên quan hệ công chúng (PR). Trong tài chính, họ kiếm tiền rất linh hoạt nhờ sự nhanh nhạy nhưng cần học cách kiểm soát chi tiêu bốc đồng.",
+    "relationship_and_behavior": "Trong tình cảm, người Số 3 là những người bạn đời vô cùng vui vẻ, dí dỏm, luôn mang lại tiếng cười và sự sinh động cho tổ ấm. Họ cần một đối tác có đủ sự thông minh để chia sẻ các cuộc trò chuyện sâu sắc và biết trân trọng tính sáng tạo của họ. Tuy nhiên, tính khí hay thay đổi và thói quen vô tư buông lời sắc mỏng khi tức giận có thể làm tổn thương bạn đời. Họ cần học cách kiểm soát cảm xúc, thực hành sự kiên nhẫn và sâu sắc hơn trong việc chăm sóc nội tâm người thương.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn cảm thấy mình có rất nhiều ý tưởng tuyệt vời và nói chuyện rất lưu loát, nhưng lại thường xuyên bị mọi người xung quanh hiểu lầm là nông cạn, thích phán xét hoặc thiếu kiên định?",
+      "answer": "TS. David Phillips giải thích rằng vì bạn sở hữu Trục Trí não quá phát triển nên não bộ của bạn nhảy số rất nhanh, dẫn đến việc bạn vô thức dùng sự sắc sảo của mình để đánh giá và áp đặt lên người khác. Khi lời nói thiếu đi sự kết nối của Trục Tâm hồn (Soul Plane), sự thông minh sẽ biến thành sự lạnh lùng và chỉ trích. Lời khuyên là hãy hạ bớt cái tôi lý trí, thực hành lắng nghe chân thành với trái tim rộng mở và tập trung năng lượng để hoàn thành trọn vẹn từng mục tiêu thay vì phân tán vào quá nhiều ý tưởng dang dở."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 4",
+    "core_essence": "Theo hệ thống Pythagore của TS. David A. Phillips, Số Chủ đạo 4 nằm ở trung tâm của Trục ngang Thể chất (Physical Plane - đại diện cho hành động và thực tiễn). Mục đích sống cốt lõi của người Số 4 là mang những ý tưởng trừu tượng, lý thuyết hoặc tầm nhìn tâm linh chuyển hóa thành các cấu trúc thực tế, hữu hình và có tính ứng dụng cao trong đời sống. Năng lực nổi trội nhất của họ là óc tổ chức bẩm sinh, sự kiên trì vô hạn, tính kỷ luật tự giác và sự tin cậy tuyệt đối. Được biểu trưng bởi hình vuông – nền tảng vững chãi của mọi công trình xây dựng, họ chính là những người đặt nền móng kiến tạo trật tự, quy chuẩn và sự ổn định cho thế giới xung quanh.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Óc thực tế cao, khả năng tổ chức và quản trị công việc khoa học, kiên nhẫn, bền bỉ, trung thực, có tinh thần trách nhiệm vượt trội và luôn là chỗ dựa vững chãi cho tập thể.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 4 là xu hướng tham công tiếc việc (workaholic) và dễ bị cuốn vào các giá trị vật chất bề nổi của Thể xác (Basic Self), dẫn đến việc bỏ quên sự phát triển của Thể Trí và Thể Hồn. Họ có khuynh hướng trở nên cứng nhắc, bảo thủ, giáo điều và thiếu linh hoạt trước những thay đổi đột ngột. Khi kế hoạch không diễn ra như ý, họ dễ rơi vào trạng thái lo âu vật chất thái quá và phán xét người khác dựa trên hiệu suất công việc thay vì sự thấu cảm. Bài học lớn nhất của người Số 4 là rèn luyện sự linh hoạt, thực hành buông bỏ bớt sự kiểm soát vật chất và chủ động mở rộng thế giới quan tinh thần.",
+    "career_and_life_path": "Người Số 4 phát huy tối đa năng lực trong những môi trường đòi hỏi sự chính xác cao, tính hệ thống, kỷ luật chặt chẽ và khả năng quản trị vận hành thực tế. Họ là những chuyên gia xuất sắc trong phong cách làm việc 'mắt thấy tai nghe tay sờ'. Định hướng nghề nghiệp phù hợp nhất bao gồm: quản trị dự án, kỹ sư hệ thống, kiến trúc sư, chuyên viên hoạch định tài chính, kế toán, kiểm toán, luật sư, giáo viên chuyên ngành kỹ thuật hoặc các lĩnh vực thủ công kỹ nghệ đòi hỏi tay nghề khéo léo. Họ quản lý tiền bạc rất chặt chẽ, an toàn và luôn ưu tiên tích lũy tạo nền móng vững chắc.",
+    "relationship_and_behavior": "Trong tình yêu và các mối quan hệ, người Số 4 tìm kiếm sự an toàn, ổn định và có cam kết dài lâu. Họ là những người bạn đời vô cùng trách nhiệm, trung thực, thường thể hiện tình cảm qua những hành động thực tế (như chu cấp vật chất, chăm lo đời sống, sửa sang nhà cửa) hơn là những lời nói lãng mạn bay bổng. Tuy nhiên, tính khô khan và sự ưu tiên quá mức cho công việc đôi khi khiến bạn đời cảm thấy bị bỏ rơi hoặc ngột ngạt dưới những quy tắc của họ. Họ cần học cách chia sẻ cảm xúc một cách cởi mở và dành thời gian thư giãn thực sự bên gia đình để nuôi dưỡng khía cạnh tình cảm (Thể Hồn).",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn nỗ lực làm việc hết mình để lo cho gia đình một nền tảng vật chất tốt nhất, nhưng những người thân yêu vẫn phàn nàn rằng tôi khô khan, áp đặt và thiếu sự thấu hiểu cảm xúc?",
+      "answer": "TS. David Phillips lý giải rằng điều này xảy ra vì bạn đang vận hành quá mức trên Trục ngang Thể chất (Physical Plane) và thể hiện tình yêu chủ yếu bằng cách 'chu cấp và hành động'. Tuy nhiên, một mối quan hệ trọn vẹn đòi hỏi phải được nuôi dưỡng ở cả ba khía cạnh: Thể chất, Tâm trí và Tâm linh. Lời khuyên là hãy học cách lắng nghe tích cực mà không phán xét, chia sẻ cảm xúc cá nhân một cách ôn hòa và chủ động thiết lập những khoảng thời gian tách biệt hoàn toàn khỏi công việc để tạo ra những kết nối tinh thần lãng mạn, ấm áp cùng người bạn đời."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 5",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 5 là con số độc đáo nằm ở trung tâm tuyệt đối của toàn bộ Biểu đồ ngày sinh và là tâm điểm của Trục ngang Tâm hồn (Soul Plane - đại diện cho cảm xúc). Mục đích sống cốt lõi của người Số 5 là trở thành biểu tượng của sự tự do vô điều kiện, tính linh hoạt cao và lòng trắc ẩn sâu sắc. Năng lực nổi trội nhất của họ là trực giác tâm linh cực kỳ nhạy bén, khả năng thích nghi tuyệt vời với mọi hoàn cảnh và tư duy sáng tạo phóng khoáng. Họ sở hữu sức hút tự nhiên mạnh mẽ và có khả năng thấu cảm, kết nối sâu sắc các tầng lớp cảm xúc giữa người với người.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Trực giác nhạy bén, năng lượng tự do tràn đầy, khả năng biểu đạt cảm xúc và nghệ thuật xuất sắc, óc phiêu lưu mạo hiểm, khả năng thích ứng linh hoạt trước mọi biến động và kết nối con người tài tình.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 5 là cảm giác bất an thường trực và nỗi sợ ràng buộc bẩm sinh. Khi cảm thấy tự do cá nhân bị đe dọa hoặc bị bó buộc trong các khuôn mẫu tẻ nhạt, họ dễ trở nên bốc đồng, cáu bẳn và có xu hướng trốn chạy thực tại (escapism) thông qua những thói quen không lành mạnh. Họ cũng rất dễ thay đổi, thiếu kiên trì và dễ bỏ dở công việc giữa chừng khi hứng thú ban đầu qua đi. Bài học lớn nhất của người Số 5 là rèn luyện tính kỷ luật tự giác – bởi theo triết lý Pythagore, 'kỷ luật chính là hình thức cao nhất của tự do'. Chỉ khi có kỷ luật, năng lượng dồi dào của họ mới không bị phân tán.",
+    "career_and_life_path": "Người Số 5 chỉ có thể tỏa sáng rực rỡ trong những môi trường làm việc năng động, không gò bó về mặt không gian hay thời gian và cho phép họ liên tục trải nghiệm những điều mới mẻ. Họ cực kỳ ghét sự dập khuôn của các công việc hành chính tẻ nhạt. Các định hướng nghề nghiệp lý tưởng nhất bao gồm: chuyên viên bán hàng (sales), hướng dẫn viên du lịch, nhà văn/nhà báo tự do, nghệ sĩ biểu diễn, chuyên gia truyền thông, nhà thiết kế sáng tạo, hoặc khởi nghiệp kinh doanh độc lập. Phong cách làm việc của họ là linh hoạt và xử lý khủng hoảng cực tốt nhờ trực giác nhạy bén.",
+    "relationship_and_behavior": "Trong tình yêu, người Số 5 yêu một cách nồng nhiệt, say đắm và đầy tính phiêu lưu. Họ sẵn sàng dâng hiến trọn vẹn cảm xúc nhưng cũng đòi hỏi đối phương phải tôn trọng không gian riêng tư và nhu cầu tự do cá nhân của họ. Sự kiểm soát, ghen tuông vô lối hay những ràng buộc ngột ngạt sẽ ngay lập tức đẩy người Số 5 ra xa. Để duy trì một mối quan hệ bền vững, người Số 5 cần học cách trân trọng những giá trị bình dị của cuộc sống gia đình, thực hành sự cam kết dài hạn và đối diện trực tiếp thay vì trốn chạy khi mối quan hệ gặp phải những xung đột hay rào cản thực tế.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn khao khát tự do, liên tục tìm kiếm sự thay đổi và những trải nghiệm mới, nhưng kết quả nhận lại thường là cảm giác trống rỗng, bất an và không thuộc về nơi nào?",
+      "answer": "TS. David Phillips giải thích rằng khi khao khát tự do của người Số 5 thiếu đi mục đích định hướng và tính kỷ luật tự giác, nó sẽ dễ bị biến tướng thành sự nổi loạn vô tổ chức hoặc xu hướng trốn chạy thực tại (escapism). Bạn đang cố gắng tìm kiếm tự do từ ngoại cảnh, nhưng tự do đích thực phải bắt nguồn từ thế giới nội tâm bên trong. Lời khuyên là hãy thực hành sự định tâm, rèn luyện kỷ luật từ những thói quen nhỏ hàng ngày và cam kết hoàn thành những mục tiêu đã bắt đầu. Khi bạn làm chủ được tâm trí và cảm xúc của chính mình, bạn sẽ tìm thấy sự tự do đích thực và sự bình yên sâu thẳm mà không cần phải liên tục xê dịch bên ngoài."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 6",
+    "core_essence": "Theo hệ thống Pythagore của TS. David A. Phillips, Số Chủ đạo 6 nằm ở trung tâm của Trục ngang Trí não (Mental Plane), đóng vai trò là tâm điểm kết nối giữa năng lực tư duy sáng tạo vô tận và tình yêu thương nhân loại sâu sắc. Mục đích sống cốt lõi của người Số 6 là trở thành biểu tượng của sự bảo bọc, nuôi dưỡng tình cảm gia đình và mang năng lượng thẩm mỹ, vẻ đẹp nghệ thuật vào cuộc sống. Năng lực nổi trội nhất của họ là lòng trắc ẩn bao la, trách nhiệm vô điều kiện với những người thân yêu và óc sáng tạo xuất chúng trong việc kiến tạo một không gian ấm cúng, an yên và hài hòa.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Tình yêu thương vô bờ bến, đức hy sinh và lòng vị tha cao cả, năng khiếu thẩm mỹ tinh tế, khả năng chăm sóc, chữa lành cảm xúc cho người khác và tài năng nghệ thuật xuất sắc. Họ là những người cha, người mẹ hoặc người bạn đời tuyệt vời, luôn đặt hạnh phúc và sự an toàn của gia đình lên hàng đầu.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 6 là xu hướng 'sáng tạo tiêu cực' (negative creativity) – tức là tâm trí liên tục tự thêu dệt nên những kịch bản lo âu, bất an thái quá về sức khỏe, an toàn của người thân dù thực tế không có chuyện gì xảy ra. Họ dễ trở nên bao bọc quá mức, kiểm soát ngột ngạt và biến tình thương thành sự can thiệp thô bạo vào quyền tự do của người khác. Khi sự hy sinh không được đền đáp như ý, họ dễ rơi vào trạng thái ấm ức, trách móc và tự thương hại bản thân. Bài học lớn nhất của người Số 6 là học cách buông bỏ bớt sự kiểm soát, tôn trọng hành trình trải nghiệm độc lập của người thân và chuyển hóa nỗi lo âu thành niềm tin tích cực.",
+    "career_and_life_path": "Người Số 6 tỏa sáng rực rỡ trong các ngành nghề liên quan đến nghệ thuật sáng tạo, chăm sóc con người, giáo dục, chữa lành hoặc thiết kế không gian sống. Họ làm việc rất tận tâm và luôn đặt yếu tố nhân văn lên trên lợi nhuận thuần túy. Định hướng nghề nghiệp lý tưởng nhất bao gồm: kiến trúc sư nội thất, nhà thiết kế thời trang, họa sĩ/nghệ sĩ, bác sĩ, y tá, chuyên gia tâm lý trị liệu, giáo viên mầm non, quản lý khách sạn/nhà hàng cao cấp, hoặc hoạt động trong các tổ chức bảo trợ nhân đạo. Về tài chính, họ quản lý tiền bạc tốt để lo cho gia đình nhưng cần tránh chi tiêu quá mức vì sự chiều chuộng người thân.",
+    "relationship_and_behavior": "Trong tình yêu và hôn nhân, người Số 6 là mẫu người bạn đời mẫu mực, luôn hết lòng vun vén, chăm chút từng bữa ăn giấc ngủ và tạo dựng một mái ấm ngập tràn tình yêu thương. Tuy nhiên, sự kỳ vọng quá cao vào một gia đình hoàn hảo và tính hay cằn nhằn, áp đặt những tiêu chuẩn của mình lên bạn đời có thể gây ra ngột ngạt. Họ cần học cách chấp nhận những khiếm khuyết bình dị của đối phương và dành thời gian yêu thương, chăm sóc chính bản thân mình thay vì hy sinh kiệt quệ.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn lo lắng, chăm sóc và hy sinh mọi thứ cho gia đình nhưng người thân lại cảm thấy ngột ngạt, xa cách và phàn nàn rằng tôi quá áp đặt, hay cằn nhằn?",
+      "answer": "TS. David Phillips lý giải rằng điều này xảy ra do bạn đang rơi vào cạm bẫy 'sáng tạo tiêu cực' và nhầm lẫn giữa tình yêu thương với sự kiểm soát. Nỗi sợ vô thức về việc người thân gặp trắc trở khiến bạn muốn can thiệp vào mọi khía cạnh đời sống của họ, tước đoạt đi cơ hội được tự lập và trải nghiệm bài học của chính họ. Lời khuyên là hãy học cách buông lỏng vòng tay, thực hành sự tin tưởng, tôn trọng không gian riêng tư của người thân và hướng năng lượng chăm sóc ấy trở lại để nuôi dưỡng đam mê sáng tạo nghệ thuật của chính mình."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 7",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 7 nằm ở điểm kết thúc của Trục ngang Thể chất (Physical Plane). Mục đích sống cốt lõi của người Số 7 là trở thành những 'nhà tìm kiếm chân lý' (The Seeker of Truth), khám phá các quy luật sâu sắc của vũ trụ và bản thể con người thông qua những trải nghiệm thực tế đầy thử thách của cuộc đời. Năng lực nổi trội nhất của họ là tư duy triết học sâu sắc, trực giác tâm linh nhạy bén và khả năng đúc kết những bài học xương máu thành trí tuệ uyên bác. Được biểu trưng bởi ngôi đền tri thức đứng sừng sững giữa sóng gió, con đường phát triển của người Số 7 là con đường tự học, chiêm nghiệm và thức tỉnh nội tâm.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Óc quan sát và phân tích thấu suốt bản chất sự việc, khả năng tự học và nghiên cứu chuyên sâu phi thường, tinh thần độc lập tự chủ cao độ, lòng kiên định không dễ bị lay chuyển bởi đám đông và khả năng truyền đạt triết lý, kinh nghiệm sống sâu sắc cho người khác.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 7 là tính bảo thủ, cố chấp và thái độ hoài nghi thái quá. Họ thường từ chối học hỏi từ kinh nghiệm của người đi trước hoặc những lời khuyên chỉ bảo thông thường, mà nhất quyết phải tự mình trải qua tổn thất, va vấp thực tế mới chịu tin. Do đó, cuộc đời người Số 7 thường phải trải qua ít nhất một trong ba tổn thất lớn (sức khỏe, tình cảm hoặc tiền tài) để đổi lấy sự thức tỉnh tâm linh. Khi tiêu cực, họ có xu hướng sống ẩn dật, khép kín, u sầu và khó gần. Bài học lớn nhất của người Số 7 là học cách mở lòng đón nhận lời khuyên chân thành, buông bỏ sự hoài nghi cay đắng và thấu hiểu rằng mọi nghịch cảnh đều là bài học quý giá giúp nâng tầm tâm thức.",
+    "career_and_life_path": "Người Số 7 phát huy tối đa năng lực trong những công việc đòi hỏi sự tập trung độc lập cao độ, nghiên cứu chuyên sâu, giải mã quy luật hoặc truyền dạy tri thức triết học/tâm linh. Họ cực kỳ dị ứng với môi trường ồn ào, xô bồ hoặc bị giám sát chi li từng giờ. Định hướng nghề nghiệp lý tưởng nhất bao gồm: nhà khoa học, nhà nghiên cứu học thuật, triết gia, cố vấn chiến lược, luật sư, chuyên gia dữ liệu/công nghệ, giảng viên đại học, nhà văn chiêm nghiệm, hoặc các lĩnh vực y học cổ truyền/tâm lý học chiều sâu. Trong tiền bạc, họ không quá ham mê tích lũy nhưng cần học cách cẩn trọng trong đầu tư để tránh những bài học mất mát tài chính do quá tin vào cảm tính cá nhân.",
+    "relationship_and_behavior": "Trong tình yêu, người Số 7 là những người bạn đời kín đáo, sâu sắc và coi trọng sự thấu hiểu về mặt trí tuệ và tâm linh hơn là những biểu hiện hào nhoáng bên ngoài. Họ có nhu cầu rất lớn về không gian yên tĩnh một mình để suy ngẫm, tái tạo năng lượng. Sự lạnh lùng bề ngoài và tính khép kín của họ đôi khi khiến đối phương cảm thấy xa cách, khó hiểu. Họ cần học cách cởi mở chia sẻ thế giới nội tâm của mình và chủ động thể hiện sự quan tâm ấm áp để gắn kết tình cảm lứa đôi.",
+    "qa_pair": {
+      "question": "Tại sao cuộc đời tôi dường như luôn phải trải qua nhiều thăng trầm, mất mát (về tiền bạc, tình cảm hoặc sức khỏe) hơn người khác, và làm thế nào để tôi tìm thấy sự bình an thực sự?",
+      "answer": "TS. David Phillips giải thích rằng với người mang Số Chủ đạo 7, những tổn thất hay biến cố không phải là sự trừng phạt mà là 'phương tiện giáo dục khắc nghiệt' của vũ trụ để tôi luyện linh hồn bạn. Bạn là người khó tiếp thu lý thuyết suông nên cuộc đời buộc phải dạy bạn qua thực chứng để bạn buông bỏ chấp niệm vật chất và thức tỉnh trí tuệ tâm linh sâu sắc. Lời khuyên là hãy ngừng oán trách số phận, nhìn nhận mọi biến cố như một bài học tiến hóa, tìm về thiên nhiên và thực hành chiêm nghiệm, thiền định. Khi bạn chuyển hóa được nỗi đau thành trí tuệ để giúp đỡ người khác, bạn sẽ tìm thấy sự bình yên vĩnh cửu."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 8",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 8 nằm ở vị trí trung tâm của Trục ngang Tâm hồn (Soul Plane - đại diện cho phương diện biểu đạt tinh thần và sự độc lập tự chủ). Mục đích sống cốt lõi của người Số 8 là trở thành những nhà điều hành xuất chúng, làm chủ thế giới vật chất và tài chính thông qua sự độc lập tự chủ, trí tuệ thực tiễn và tinh thần trách nhiệm cao độ. Năng lực nổi trội nhất của họ là tư duy chiến lược sắc sảo, óc tổ chức quản trị quy mô lớn, tính kỷ luật thép và khả năng điều hướng dòng tiền/nguồn lực tài tình. Được biểu trưng bởi biểu tượng vô cực (∞) – dòng chảy năng lượng tuần hoàn bất tận giữa vật chất và tâm linh, họ sinh ra để tạo dựng sự thịnh vượng vững bền cho xã hội.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Bản lĩnh lãnh đạo kiên cường, tư duy kinh doanh và tài chính sắc bén, tính độc lập tự chủ cao độ, phong thái uy quyền đĩnh đạc, khả năng chịu áp lực phi thường và ý chí vượt khó không gì khuất phục được.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 8 là sự lạnh lùng, khó bộc lộ cảm xúc và xu hướng trở nên độc đoán hoặc quá ám ảnh với quyền lực, tiền bạc và địa vị bề nổi. Vì quá đề cao tính tự lập, họ thường khó tin tưởng giao việc cho người khác và dễ gặp khó khăn trong việc thể hiện lòng trắc ẩn ấm áp. Khi thất bại, họ dễ rơi vào trạng thái hoài nghi, cay đắng và cô lập bản thân. Bài học lớn nhất của người Số 8 là học cách cân bằng giữa thành công vật chất và sự ấm áp của tâm hồn, thực hành biểu đạt cảm xúc yêu thương và hiểu rằng quyền lực chân chính bắt nguồn từ việc nâng đỡ và phụng sự người khác.",
+    "career_and_life_path": "Người Số 8 là những nhà lãnh đạo và chuyên gia điều hành bẩm sinh. Họ phát triển mạnh nhất trong các môi trường thương mại lớn, tài chính, đầu tư, bất động sản, ngân hàng, quản trị doanh nghiệp, luật pháp thương mại hoặc các chức danh điều hành cấp cao (CEO, Giám đốc điều hành). Trong quản lý tài chính, họ có năng lực kiến tạo của cải xuất sắc nhưng cần học cách sử dụng tiền bạc như một phương tiện tạo phước báu thay vì thước đo giá trị bản thân duy nhất.",
+    "relationship_and_behavior": "Trong tình yêu và hôn nhân, người Số 8 là chỗ dựa vững chãi, đáng tin cậy và có trách nhiệm chu cấp đầy đủ cho gia đình. Tuy nhiên, vẻ ngoài khô khan, ít khi nói lời ngọt ngào và thói quen mang phong cách quản lý công việc về nhà có thể khiến bạn đời cảm thấy bị áp đặt, thiếu sự kết nối cảm xúc dịu dàng. Họ cần học cách trút bỏ chiếc áo giáp quyền uy khi bước qua cánh cửa gia đình và dành thời gian lắng nghe, ôm ấp người thương.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn nỗ lực gánh vác, tạo dựng cuộc sống vật chất đủ đầy và thành công trong sự nghiệp, nhưng lại thường xuyên cảm thấy cô đơn, bị hiểu lầm là lạnh lùng, xa cách và thiếu người thực sự thấu hiểu?",
+      "answer": "TS. David Phillips giải thích rằng vì Số 8 nằm trên Trục Tâm hồn nhưng lại có xu hướng bị bọc kín bởi lớp vỏ bảo vệ của tính độc lập và lý trí kiểm soát. Bạn thường thể hiện sự quan tâm qua hành động chu cấp thực tế nhưng lại chặn đứng dòng chảy bộc lộ cảm xúc mềm mỏng. Lời khuyên là hãy dũng cảm cởi bỏ chiếc áo giáp lý trí, học cách bộc lộ sự yếu đuối chân thật của mình trước người thân và mở lòng chia sẻ những tâm tư sâu kín. Khi bạn kết nối được với trái tim mình, sự cô đơn sẽ tan biến."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 9",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 9 nằm ở điểm kết thúc của Trục ngang Trí não (Mental Plane) và là con số tích hợp năng lượng của tất cả các con số trước đó. Mục đích sống cốt lõi của người Số 9 là trở thành những 'nhà hoạt động nhân đạo và khai sáng' (The Humanitarian & Visionary), phụng sự xã hội và lan tỏa những giá trị nhân văn cao đẹp. Năng lực nổi trội nhất của họ là hoài bão lớn lao, tinh thần trách nhiệm phổ quát với cộng đồng, lòng vị tha vô hạn và tư duy tổng thể bao quát. Được biểu trưng bởi ngọn hải đăng soi đường trong đêm tối, họ luôn thôi thúc mang lại sự tiến bộ, công bằng và nâng cao chất lượng cuộc sống cho toàn nhân loại.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Lòng nhân ái bao la, tầm nhìn chiến lược vĩ mô, trực giác nhạy bén, uy tín tự nhiên thu hút lòng người, sự hào hiệp không toan tính và khả năng truyền cảm hứng cho hàng ngàn người cùng hướng về một lý tưởng cao đẹp.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 9 là tính lý tưởng hóa thái quá (over-idealistic) và sự thiếu thực tế trong việc quản lý chi tiết hoặc tiền bạc. Họ thường đặt kỳ vọng quá cao vào bản thân và người khác, dẫn đến cảm giác thất vọng sâu sắc, chán nản hoặc trở nên bi quan khi hiện thực không hoàn hảo như trong mộng tưởng. Họ cũng dễ bị người khác lợi dụng lòng tốt và thường hay bị ám ảnh bởi những tiếc nuối trong quá khứ. Bài học lớn nhất của người Số 9 là học cách đưa những lý tưởng bay bổng hạ cánh xuống mặt đất bằng các kế hoạch hành động cụ thể, rèn luyện óc thực tế trong quản lý tài chính và học cách buông bỏ quá khứ để sống trọn vẹn trong hiện tại.",
+    "career_and_life_path": "Người Số 9 phù hợp nhất với các công việc mang tính phụng sự cộng đồng, bảo vệ môi trường, giáo dục đại chúng, y tế cộng đồng, ngoại giao quốc tế, hoạt động nghệ thuật vị nhân sinh, hoặc các tổ chức phi chính phủ (NGO). Họ kiếm tiền để thực hiện các dự án lớn giúp ích cho đời nhưng rất cần có những cộng sự thực tế (như người Số 4 hoặc Số 8) đi kèm để quản trị chi tiết và kiểm soát ngân sách.",
+    "relationship_and_behavior": "Trong tình cảm, người Số 9 yêu một cách bao dung, tôn trọng và giàu lòng hy sinh. Họ mong muốn tìm được một người bạn đời có cùng tầng nhận thức và đồng điệu về lý tưởng sống. Tuy nhiên, việc họ quá bận rộn với các mối quan tâm xã hội bên ngoài đôi khi khiến bạn đời và con cái cảm thấy bị xem nhẹ. Họ cần học cách cân bằng giữa việc phụng sự thiên hạ và vun đắp hạnh phúc cho tổ ấm nhỏ của chính mình.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn ấp ủ những hoài bão to lớn và muốn giúp đỡ mọi người xung quanh, nhưng thực tế lại thường xuyên gặp thất vọng, bị phản bội hoặc cảm thấy bất lực trước sự tàn nhẫn của cuộc đời?",
+      "answer": "TS. David Phillips phân tích rằng điều này xảy ra vì bạn đang nhìn cuộc đời qua lăng kính lý tưởng màu hồng và thiếu đi sự cọ xát thực tế của Trục Thể chất. Lòng tốt khi thiếu đi sự tỉnh thức và ranh giới rõ ràng sẽ dễ biến thành sự mù quáng. Lời khuyên là hãy chấp nhận sự bất toàn của thế giới như một lẽ tự nhiên, bắt đầu phụng sự từ những việc nhỏ bé cụ thể ngay cạnh mình và học cách chọn lọc đúng người để trao gửi niềm tin. Khi lý tưởng đi đôi với trí tuệ thực tế, bạn sẽ tạo ra những tác động tích cực kỳ vĩ mà không còn bị tổn thương."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 10",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 10 là con số đặc biệt của sự linh hoạt, tự tin và tiềm năng thích ứng vô hạn. Sự kết hợp giữa số 1 (cái tôi tiên phong, độc lập) và số 0 (sự vô cực, tiềm năng tâm linh vô tận) tạo cho người Số 10 phong thái tự tin, vui vẻ, hòa nhã và khả năng xoay xở tài tình trong mọi hoàn cảnh sống. Mục đích sống cốt lõi của họ là trở thành những người tiên phong can trường, dẫn đầu xu hướng và truyền năng lượng tích cực cho cộng đồng. Họ có biên độ thích nghi rộng lớn nhất trong tất cả các con số, từ việc hòa nhập vào giới tinh hoa cho đến việc hòa mình vào đời sống bình dân.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Khả năng thích nghi tuyệt vời, sự duyên dáng tự nhiên thu hút lòng người, lòng dũng cảm dám dấn thân vào những lĩnh vực mới mẻ, tinh thần lạc quan, óc thực tế nhạy bén và khả năng phục hồi thần tốc sau các thất bại.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 10 là xu hướng tự mãn, hời hợt và dễ bị cuốn vào sự nông nổi bề nổi. Vì làm việc gì cũng thấy dễ dàng ở bước đầu, họ thường thiếu kiên nhẫn để đào sâu vào chuyên môn phức tạp và dễ bỏ dở khi gặp chướng ngại vật thực sự. Khi tiêu cực, họ có thể trở nên độc đoán, lấn lướt người khác hoặc rơi vào trạng thái bấp bênh, mất phương hướng khi có quá nhiều sự lựa chọn. Bài học lớn nhất của người Số 10 là rèn luyện tính kỷ luật tự giác, sự kiên trì đào sâu vào một lĩnh vực mũi nhọn và học cách phân định rõ ràng giữa sự tự tin lành mạnh với tính tự cao tự đại.",
+    "career_and_life_path": "Người Số 10 rất phù hợp với các vai trò tiên phong đòi hỏi sự nhanh nhạy, ngoại giao và linh hoạt cao: doanh nhân khởi nghiệp, giám đốc kinh doanh, chuyên gia marketing/quảng cáo, diễn viên, nghệ sĩ biểu diễn, chuyên viên ngoại giao, thiết kế thời trang hoặc chính khách. Họ kiếm tiền và quản lý tài chính rất giỏi nhờ sự nhạy bén thương trường nhưng cần tránh đầu tư mạo hiểm khi thiếu sự phân tích chiều sâu.",
+    "relationship_and_behavior": "Trong tình cảm, người Số 10 là mẫu người bạn đời cuốn hút, vui vẻ, phóng khoáng và luôn mang lại nguồn sinh khí tươi mới. Họ rất chung thủy khi tìm được người bạn đời biết tôn trọng sự độc lập của họ. Tuy nhiên, tính khí độc đoán và thói quen áp đặt ý kiến chủ quan có thể gây xung đột. Họ cần học cách hạ bớt cái tôi và thực hành lắng nghe tâm tư của bạn đời.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn được mọi người khen là đa tài, nhanh nhạy và hòa đồng, nhưng trong sự nghiệp tôi lại thường cảm thấy bấp bênh và chưa đạt được thành tựu đỉnh cao thực sự vững chắc?",
+      "answer": "TS. David Phillips lý giải rằng biên độ thích nghi quá rộng của Số 10 vừa là món quà vừa là cạm bẫy, khiến bạn dễ bị phân tán sức lực vào quá nhiều cơ hội mà không kiên định đi đến tận cùng của một con đường. Lời khuyên là hãy chọn ra một lĩnh vực cốt lõi mà bạn đam mê nhất, thiết lập kỷ luật thép để tôi luyện chuyên môn sâu và cam kết hoàn thành trọn vẹn từng mục tiêu trước khi chuyển sang dự án mới. Chiều sâu chính là chìa khóa mở ra sự vĩ đại của người Số 10."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 11",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 11 là con số Master đầu tiên mang tần số rung động tâm linh siêu thức ở tầng bậc cao. Mục đích sống cốt lõi của người Số 11 là trở thành những 'sứ giả tâm linh và người khai sáng' (The Spiritual Messenger), mang tình yêu thương, sự thức tỉnh và ánh sáng trực giác soi đường cho nhận thức của nhân loại. Năng lực nổi trội nhất của họ là trực giác tâm linh cực kỳ nhạy bén, khả năng cảm nhận năng lượng siêu phàm và sự thấu cảm tinh thần sâu sắc. Được biểu trưng bởi cánh cổng kết nối giữa thế giới vật chất và thế giới tâm linh, họ sinh ra để nâng đỡ tâm hồn con người vượt qua sự u tối.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Trực giác tâm linh thấu suốt, lòng vị tha cao cả, tinh thần nhạy bén với các quy luật vũ trụ, sự chân thành mộc mạc, khả năng truyền cảm hứng tinh thần mạnh mẽ và lòng trắc ẩn không biên giới.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 11 là sự nhạy cảm quá mức với các luồng năng lượng tiêu cực xung quanh, khiến họ dễ bị kiệt quệ tinh thần, lo âu, hoang mang hoặc rơi vào trạng thái tự nghi ngờ bản thân. Khi bị cuốn vào các giá trị vật chất bề nổi, họ dễ bị lạc lối, đánh mất kết nối với trực giác và rơi vào trạng thái suy nhược thần kinh. Bài học lớn nhất của người Số 11 là thực hành 'nối đất' (Grounding), rèn luyện óc thực tiễn để biến những tầm nhìn tâm linh cao đẹp thành hành động hữu ích trong đời sống thực tế.",
+    "career_and_life_path": "Người Số 11 chỉ có thể thăng hoa trong những môi trường làm việc mang đậm tính nhân văn, tâm linh, giáo dục hoặc nghệ thuật chữa lành. Các định hướng nghề nghiệp lý tưởng nhất bao gồm: nhà tư vấn tâm lý, chuyên gia trị liệu tinh thần, nhà hoạt động giáo dục tâm thức, diễn giả truyền cảm hứng, nhà văn triết học, nghệ sĩ tâm linh, hoặc người hướng dẫn thiền định/yoga. Họ không đặt nặng việc tích lũy của cải nhưng luôn được vũ trụ chu cấp đầy đủ khi sống đúng với sứ mệnh phụng sự.",
+    "relationship_and_behavior": "Trong tình yêu, người Số 11 tìm kiếm sự đồng điệu tâm hồn tuyệt đối (Soulmate). Họ yêu một cách sâu sắc, vị tha và sẵn sàng hy sinh tất cả vì người mình yêu. Tuy nhiên, sự nhạy cảm và những đòi hỏi khắt khe về mặt tinh thần đôi khi khiến bạn đời cảm thấy áp lực. Họ cần học cách chấp nhận sự không hoàn hảo của đời sống thực tế và chia sẻ cảm xúc một cách bình dị, gần gũi.",
+    "qa_pair": {
+      "question": "Tại sao tôi thường xuyên cảm thấy bị kiệt quệ năng lượng, bối rối giữa thế giới thực tại và trực giác tâm linh bên trong mình, và làm sao để tôi sống an yên?",
+      "answer": "TS. David Phillips giải thích rằng vì bạn mang tần số rung động siêu thức của Số 11 nên hệ thống thần kinh của bạn giống như một ăng-ten cực nhạy thu nhận mọi tần số cảm xúc xung quanh. Nếu không biết cách thanh lọc, bạn sẽ bị ô nhiễm bởi năng lượng tiêu cực của người khác. Lời khuyên là hãy thực hành thiền định hàng ngày, hòa mình vào thiên nhiên để nối đất, học cách thiết lập lá chắn bảo vệ năng lượng và hướng trực giác của mình vào việc sáng tạo nghệ thuật hoặc giúp đỡ cộng đồng một cách có ranh giới."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 22/4",
+    "core_essence": "Theo TS. David A. Phillips, Số Chủ đạo 22/4 là con số Vua (Master of Masters) – con số quyền lực và hiếm có nhất trong hệ thống Pythagore. Là sự tích hợp hoàn hảo giữa tầm nhìn tâm linh vĩ đại của Số 11 và năng lực thực thi kỷ luật sắt đá của Số 4 (11 x 2 = 22), mục đích sống cốt lõi của người Số 22/4 là trở thành 'nhà kiến tạo bậc thầy' (The Master Builder). Họ mang sứ mệnh hiện thực hóa những ý tưởng mang tầm vóc nhân loại, xây dựng các công trình, hệ thống, tổ chức quy mô lớn để lại di sản trường tồn cho các thế hệ mai sau.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Tiềm năng phát triển vô hạn, năng lực biến những điều không tưởng thành hiện thực hữu hình, tầm nhìn chiến lược vĩ mô kết hợp óc thực thi chi tiết hoàn hảo, khả năng lãnh đạo quy tụ hàng ngàn người và ý chí kiên định phi thường.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 22/4 là áp lực trách nhiệm quá lớn khiến họ dễ bị căng thẳng thần kinh tột độ, trầm cảm hoặc rơi vào trạng thái kiệt sức. Nếu trượt ngã sang vùng tối của quyền lực và vật chất, họ có thể trở thành những kẻ tàn nhẫn, độc tài, thao túng và gây ra những tổn hại to lớn cho xã hội. Bài học lớn nhất của người Số 22/4 là luôn giữ vững la bàn đạo đức, thực hành sự khiêm nhường, phụng sự lợi ích chung của nhân loại và học cách chia sẻ quyền lực, tin tưởng trao quyền cho người khác.",
+    "career_and_life_path": "Người Số 22/4 sinh ra để đứng ở những vị trí lãnh đạo kiến tạo cao nhất: nhà sáng lập các tập đoàn đa quốc gia, chính khách kiến tạo thể chế quốc gia, kỹ sư trưởng các đại công trình cơ sở hạ tầng, kiến trúc sư vĩ đại, nhà lãnh đạo các tổ chức tài chính/nhân đạo quốc tế. Họ có khả năng kiến tạo khối tài sản khổng lồ nhưng luôn sử dụng nó như một công cụ tái thiết xã hội và nâng cao đời sống cộng đồng.",
+    "relationship_and_behavior": "Trong tình cảm, người Số 22/4 là chỗ dựa vững chãi như núi thái sơn, luôn bảo bọc và che chở cho gia đình. Tuy nhiên, vì tâm trí luôn hướng về các đại dự án thế giới, họ thường không có nhiều thời gian dành cho chuyện tình cảm lứa đôi bình dị. Bạn đời của họ cần phải là người có sự thấu hiểu sâu sắc, độc lập và đồng hành cùng tầm nhìn lớn của họ. Người Số 22/4 cần học cách tách biệt công việc để dành trọn vẹn những khoảnh khắc ấm áp bên người thân.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn cảm thấy bên trong mình có một áp lực thôi thúc vô hình rất lớn để làm những điều phi thường, nhưng thực tế lại gặp phải quá nhiều thử thách gian nan và kiệt quệ?",
+      "answer": "TS. David Phillips khẳng định rằng người mang Số 22/4 sở hữu tiềm năng vô hạn nhưng vũ trụ không bao giờ trao quyền năng lớn mà không đi kèm với những thử thách tương xứng. Giai đoạn đầu đời của bạn thường là lò luyện khắc nghiệt để tôi luyện bản lĩnh và đạo đức. Lời khuyên là đừng nóng vội, hãy xây dựng nền móng từ những việc nhỏ với sự kỷ luật tuyệt đối của Số 4, chăm sóc sức khỏe thể chất và tinh thần cẩn thận. Khi bạn đủ chín muồi về tâm thức, cánh cửa kiến tạo vĩ đại sẽ tự động mở ra."
+    }
+  },
+  {
+    "category": "life_path_number",
+    "number": "Số 33/6",
+    "core_essence": "Theo hệ thống Thần số học chuyên sâu, Số Chủ đạo 33/6 là con số Master đại diện cho 'Bậc Thầy Chữa Lành và Tình Yêu Thương Phổ Quát' (The Master Healer & Teacher). Là sự kết hợp đỉnh cao giữa trực giác của 11 và năng lực kiến tạo của 22 (11 + 22 = 33), mục đích sống cốt lõi của người Số 33/6 là cống hiến trọn vẹn cuộc đời để chữa lành những tổn thương tâm hồn của nhân loại, nâng cao tần số rung động của cộng đồng và truyền dạy những chân lý đạo đức cao đẹp thông qua tình yêu thương vô điều kiện.",
+    "strengths_and_talents": "Điểm mạnh bẩm sinh: Lòng trắc ẩn vô bờ bến, năng lượng chữa lành tự nhiên mạnh mẽ, khả năng thấu cảm mọi tầng lớp đau khổ của con người, tài năng sư phạm và nghệ thuật biểu đạt đầy xúc cảm, tinh thần hy sinh phụng sự không vụ lợi.",
+    "weaknesses_and_lessons": "Cạm bẫy tâm lý lớn nhất của người Số 33/6 là xu hướng ôm đồm nỗi đau của cả thế giới vào lòng, dẫn đến sự kiệt quệ cảm xúc và tự hủy hoại bản thân (martyrdom). Họ dễ rơi vào trạng thái thất vọng sâu sắc khi lòng tốt của mình bị phản bội hoặc khi không thể cứu giúp được tất cả mọi người. Bài học lớn nhất của người Số 33/6 là học cách thiết lập ranh giới bảo vệ chính mình, thấu hiểu quy luật nhân quả cá nhân và nhận ra rằng sự chữa lành tốt nhất là truyền cảm hứng để người khác tự cứu lấy chính họ.",
+    "career_and_life_path": "Người Số 33/6 phát triển rực rỡ trong các lĩnh vực chữa lành tâm hồn và khai sáng giáo dục: bác sĩ tâm lý, nhà sáng lập các phong trào nhân đạo quốc tế, giảng viên tâm thức, nghệ sĩ truyền cảm hứng, nhà hoạt động xã hội vì trẻ em và người yếu thế. Họ thu hút nguồn lực tài chính dồi dào nhờ uy tín đạo đức trong sạch và luôn dùng toàn bộ tài sản để phục vụ cho các công trình phụng sự cộng đồng.",
+    "relationship_and_behavior": "Trong tình cảm, người Số 33/6 yêu thương bằng cả trái tim thuần khiết, luôn bao dung và chăm sóc đối phương vô điều kiện. Tuy nhiên, việc họ dành quá nhiều tình thương cho nhân loại đôi khi khiến người bạn đời cảm thấy bị chia sẻ tình cảm. Họ cần học cách cân bằng giữa việc phụng sự xã hội và việc chăm sóc tổ ấm gia đình nhỏ.",
+    "qa_pair": {
+      "question": "Tại sao tôi luôn cảm thấy đau đớn trước nỗi khổ của người khác và muốn giúp đỡ tất cả mọi người, nhưng kết quả là bản thân tôi thường xuyên bị kiệt quệ, cạn kiệt năng lượng và tổn thương?",
+      "answer": "Các bậc thầy số học giải thích rằng bạn mang tần số rung động 33/6 với trái tim người mẹ vĩ đại của vũ trụ, nhưng bạn đang mắc cạm bẫy 'gánh nghiệp thay người khác'. Mỗi linh hồn đều có bài học riêng phải trải qua để trưởng thành. Lời khuyên là hãy chữa lành và làm đầy năng lượng cho chính bản thân mình trước tiên, học cách giúp đỡ bằng trí tuệ và sự buông xả, truyền cảm hứng chứ không gánh vác thay. Khi bạn an yên, ngọn đèn tình thương của bạn mới soi sáng được muôn người."
+    }
+  },
+
+  // ==========================================
+  // BATCH 6: 8 MŨI TÊN CÁ TÍNH (ARROWS OF INDIVIDUALITY)
+  // ==========================================
+  {
+    "category": "birth_chart_arrow",
+    "code": "1-4-7",
+    "name": "Mũi tên Thực tế (1-4-7) vs Mũi tên Hỗn độn (Trống 1-4-7)",
+    "plane": "Trục Thể Chất (Physical Plane)",
+    "has_arrow_desc": "Khi sở hữu đủ ba con số 1-4-7 trên Trục Thể chất, bạn là người cực kỳ nhanh nhẹn, tháo vát và khéo léo trong mọi hoạt động thực tế. Bạn có phong cách làm việc 'mắt thấy tai nghe tay sờ', chỉ tin vào những gì đã được kiểm chứng thực tế và có năng lực vượt trội trong các công việc kỹ thuật, quản lý vận hành hoặc lao động chân tay tinh xảo.",
+    "empty_arrow_desc": "Khi thiếu vắng cả ba con số 1, 4 và 7, bạn sở hữu Mũi tên Hỗn độn (Arrow of Disorder). Bạn có xu hướng mơ mộng viển vông, vụng về trong việc xử lý các công việc gia đình hoặc kỹ thuật thực tiễn và thường gặp khó khăn trong việc sắp xếp trật tự cuộc sống hàng ngày.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Chủ động rèn luyện tính ngăn nắp từ việc dọn dẹp phòng ốc, tập thể dục thể thao đều đặn hàng ngày, học thêm các kỹ năng thủ công, nấu ăn hoặc sửa chữa đồ gia dụng nhỏ để kích hoạt năng lượng Thể chất.",
+    "qa_pair": {
+      "question": "Tôi bị trống hoàn toàn mũi tên 1-4-7 và luôn cảm thấy lúng túng, vụng về trước các công việc thực tế, làm thế nào để khắc phục?",
+      "answer": "TS. David Phillips khuyên bạn không nên quá tự ti. Hãy bắt đầu từ những thói quen kỷ luật nhỏ nhất: lập danh sách việc cần làm mỗi sáng, rèn luyện thân thể 30 phút mỗi ngày và chủ động bắt tay vào làm các việc cụ thể thay vì chỉ ngồi suy nghĩ."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "2-5-8",
+    "name": "Mũi tên Cân bằng Cảm xúc (2-5-8) vs Mũi tên Nhạy cảm Thái quá (Trống 2-5-8)",
+    "plane": "Trục Tâm Hồn (Soul Plane)",
+    "has_arrow_desc": "Sở hữu trọn vẹn 2-5-8 là món quà vô giá của sự cân bằng cảm xúc và trực giác tâm linh. Bạn có khả năng kiểm soát cảm xúc tuyệt vời, thấu hiểu chiều sâu tâm lý con người, sống chân thành và có năng khiếu tự nhiên trong nghệ thuật hoặc chữa lành tinh thần.",
+    "empty_arrow_desc": "Khi trống hoàn toàn 2-5-8, bạn mang Mũi tên Nhạy cảm Thái quá (Arrow of Hypersensitivity). Bạn cực kỳ dễ bị tổn thương bởi lời nói của người khác, hay tự ái, suy diễn tiêu cực và thường có xu hướng phản ứng phòng thủ thái quá hoặc thu mình vào vỏ ốc.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Thực hành thiền định, học cách quan sát cảm xúc mà không phán xét, nuôi dưỡng lòng trắc ẩn và tham gia các hoạt động biểu đạt nghệ thuật (hội họa, âm nhạc, viết nhật ký cảm xúc).",
+    "qa_pair": {
+      "question": "Tôi bị trống mũi tên 2-5-8 và rất hay bị tổn thương, suy nghĩ nhiều trước những lời nhận xét của người khác, tôi phải làm sao?",
+      "answer": "Lời khuyên là hãy nhận thức rằng cảm xúc chỉ là những đám mây trôi qua tâm trí. Hãy học cách yêu thương bản thân vô điều kiện, không đồng nhất giá trị cá nhân với phản hồi của ngoại cảnh và tập thói quen hít thở sâu trước khi phản ứng."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "3-6-9",
+    "name": "Mũi tên Sáng trí (3-6-9) vs Mũi tên Trí nhớ Kém (Trống 3-6-9)",
+    "plane": "Trục Trí Não (Mental Plane)",
+    "has_arrow_desc": "Mũi tên Sáng trí 3-6-9 đại diện cho trí tuệ xuất chúng, trí nhớ siêu phàm, óc tư duy logic sắc bén và khả năng sáng tạo không giới hạn. Bạn tiếp thu kiến thức cực nhanh và luôn là ngọn cờ đầu trong học thuật và tư duy ý tưởng.",
+    "empty_arrow_desc": "Khi trống 3-6-9, bạn mang Mũi tên Trí nhớ Ngắn hạn / Hay quên (Arrow of Poor Memory). Não bộ của bạn dễ bị phân tán, nhanh quên các chi tiết học thuật và gặp khó khăn khi phải tập trung tư duy lý thuyết trong thời gian dài.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Tạo thói quen ghi chú sổ tay mọi việc, đọc sách mỗi ngày 15-30 phút, chơi các trò chơi rèn luyện trí nhớ (cờ tướng, sudoku) và bổ sung dinh dưỡng tốt cho não bộ.",
+    "qa_pair": {
+      "question": "Tôi bị trống mũi tên 3-6-9 và thấy mình rất hay quên, học trước quên sau, làm sao để cải thiện?",
+      "answer": "TS. David Phillips nhấn mạnh rằng trí nhớ là cơ bắp có thể rèn luyện được. Hãy ngừng phụ thuộc vào việc ghi nhớ trong đầu mà hãy chuyển sang dùng sổ tay / app ghi chú, đồng thời duy trì việc đọc sách và học một kỹ năng mới đều đặn để kích thích tế bào thần kinh."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "1-2-3",
+    "name": "Mũi tên Kế hoạch (1-2-3) vs Mũi tên Thiếu Kế hoạch (Trống 1-2-3)",
+    "plane": "Cột Dọc Kế Hoạch & Trật Tự",
+    "has_arrow_desc": "Mũi tên 1-2-3 đại diện cho năng lực lập kế hoạch xuất sắc, tư duy phương pháp khoa học và khả năng tổ chức công việc theo trình tự bài bản. Bạn là người làm việc có chuẩn bị, cẩn trọng và luôn dự trù các phương án chi tiết.",
+    "empty_arrow_desc": "Khi trống 1-2-3, bạn mang Mũi tên Tùy hứng / Thiếu Kế hoạch (Arrow of Disorder). Bạn thường làm việc theo cảm tính, 'nước đến chân mới nhảy', dễ bị ngợp khi công việc dồn ứ và gặp khó khăn trong việc duy trì thói quen dài hạn.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Áp dụng phương pháp quả cà chua Pomodoro, sử dụng ma trận Eisenhower để phân loại công việc ưu tiên và tập lập kế hoạch công việc theo tuần/tháng.",
+    "qa_pair": {
+      "question": "Tôi sinh ra thiếu mũi tên 1-2-3, hay bị trì hoãn và làm việc lộn xộn, có cách nào thay đổi bản thân?",
+      "answer": "Bắt đầu với nguyên tắc đơn giản: mỗi tối trước khi đi ngủ, hãy viết ra đúng 3 việc quan trọng nhất cần hoàn thành vào ngày hôm sau và cam kết giải quyết dứt điểm chúng trước 12h trưa."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "4-5-6",
+    "name": "Mũi tên Ý chí (4-5-6) vs Mũi tên Uất hận (Trống 4-5-6)",
+    "plane": "Cột Dọc Ý Chí & Nghị Lực",
+    "has_arrow_desc": "Sở hữu mũi tên 4-5-6 mang lại ý chí sắt đá, lòng quyết tâm vô song và nghị lực phi thường. Bạn sẵn sàng đương đầu với mọi sóng gió cuộc đời, xem chướng ngại vật là cơ hội tôi luyện bản lĩnh và không bao giờ chịu đầu hàng số phận.",
+    "empty_arrow_desc": "Khi trống 4-5-6, bạn mang Mũi tên Uất hận / Nản lòng (Arrow of Frustration). Bạn dễ rơi vào trạng thái nản chí khi kế hoạch không thành, thường nuôi dưỡng sự tức tối ngầm với hoàn cảnh và dễ đổ lỗi cho số phận.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Rèn luyện lòng kiên nhẫn từ việc nhỏ, học cách chấp nhận sự việc bất như ý như một quy luật tự nhiên, thực hành tha thứ và hướng sự tập trung vào giải pháp thay vì vấn đề.",
+    "qa_pair": {
+      "question": "Tôi bị trống mũi tên 4-5-6 và hay cảm thấy bực bội, nản lòng khi mọi việc không như ý, làm sao để vượt qua?",
+      "answer": "TS. David Phillips khuyên bạn hãy chuyển hóa tâm thức từ nạn nhân sang người làm chủ cuộc đời. Khi gặp trở ngại, hãy tự hỏi: 'Bài học vũ trụ đang dạy mình ở đây là gì?' để nâng tầm ý chí nội tại."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "7-8-9",
+    "name": "Mũi tên Hoạt động (7-8-9) vs Mũi tên Thụ động (Trống 7-8-9)",
+    "plane": "Cột Dọc Năng Động & Hành Động",
+    "has_arrow_desc": "Mũi tên 7-8-9 là biểu tượng của nguồn năng lượng dồi dào, sự năng động và đam mê trải nghiệm thực tế. Bạn luôn vận động, yêu thích thiên nhiên, khám phá thế giới và không bao giờ chịu ngồi yên một chỗ.",
+    "empty_arrow_desc": "Khi trống 7-8-9, bạn mang Mũi tên Thụ động / Trì trệ (Arrow of Passivity). Bạn có xu hướng lười vận động, thích hưởng thụ sự an nhàn, dễ bị chây ì và thiếu ngọn lửa nhiệt huyết hành động trong cuộc sống.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Chủ động tham gia các câu lạc bộ thể thao ngoài trời, thực hành quy tắc 5 giây (đếm 5-4-3-2-1 và đứng dậy hành động ngay) và đặt mục tiêu đi dạo thiên nhiên cuối tuần.",
+    "qa_pair": {
+      "question": "Tôi thiếu mũi tên 7-8-9 và rất lười vận động, thường xuyên trì hoãn các mục tiêu thể thao và trải nghiệm, làm sao cải thiện?",
+      "answer": "Hãy tìm cho mình một người bạn đồng hành tích cực để cùng thúc đẩy nhau vận động mỗi ngày, bắt đầu từ những bài tập ngắn 10 phút để tái tạo dòng năng lượng sinh học."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "1-5-9",
+    "name": "Mũi tên Quyết tâm (1-5-9) vs Mũi tên Trì hoãn (Trống 1-5-9)",
+    "plane": "Trục Chéo Quyết Tâm & Kiên Định",
+    "has_arrow_desc": "Mũi tên Chéo Quyết tâm 1-5-9 thể hiện tính kiên trì bền bỉ phi thường. Một khi đã đặt ra mục tiêu, bạn sẽ kiên định theo đuổi đến cùng bất chấp mọi gian khổ, khó khăn hay sự can ngăn của người khác.",
+    "empty_arrow_desc": "Khi trống 1-5-9, bạn mang Mũi tên Trì hoãn (Arrow of Procrastination). Bạn thường đắn đo, do dự, thiếu sự dứt khoát trong các quyết định quan trọng và rất dễ bỏ cuộc giữa chừng khi gặp rào cản đầu tiên.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Chia nhỏ các mục tiêu lớn thành các nhiệm vụ nhỏ hàng ngày, xây dựng kỷ luật cam kết và tự thưởng cho bản thân mỗi khi hoàn thành trọn vẹn một mục tiêu nhỏ.",
+    "qa_pair": {
+      "question": "Tôi bị trống mũi tên 1-5-9 nên rất hay bỏ cuộc giữa chừng, làm sao để rèn luyện tính kiên trì?",
+      "answer": "Bí quyết của TS. David Phillips: Hãy cam kết duy trì một thói quen nhỏ duy nhất (như đọc 5 trang sách hoặc chạy bộ 1km) liên tục trong 21 ngày không ngắt quãng để xây dựng cơ chế quyết tâm cho não bộ."
+    }
+  },
+  {
+    "category": "birth_chart_arrow",
+    "code": "3-5-7",
+    "name": "Mũi tên Tâm linh / Nhạy bén (3-5-7) vs Mũi tên Hoài nghi (Trống 3-5-7)",
+    "plane": "Trục Chéo Tâm Linh & Thấu Cảm",
+    "has_arrow_desc": "Mũi tên Chéo 3-5-7 mang lại trực giác tâm linh sâu sắc, sự thấu cảm tinh thần và lòng tin vào các quy luật vũ trụ. Bạn sở hữu tâm hồn an nhiên, phong thái điềm đạm và khả năng giác ngộ các chân lý cuộc đời từ rất sớm.",
+    "empty_arrow_desc": "Khi trống 3-5-7, bạn mang Mũi tên Hoài nghi / Lo lắng (Arrow of Anxiety/Scepticism). Bạn thường nghi ngờ mọi thứ, thiếu niềm tin vào chính mình và người khác, hay lo sợ những điều chưa xảy ra và dễ rơi vào cảm giác bất an.",
+    "virtual_number_fix": "Phương pháp điền số ảo: Tìm hiểu các triết lý nhân quả, thực hành viết nhật ký biết ơn (Gratitude Journal) mỗi tối và học cách mở lòng tin tưởng vào những điều tốt đẹp.",
+    "qa_pair": {
+      "question": "Tôi bị trống mũi tên 3-5-7 và thường xuyên cảm thấy hoài nghi, bất an, lo lắng vô cớ, làm sao tìm thấy bình an nội tâm?",
+      "answer": "Hãy thực hành sống trong hiện tại thông qua chánh niệm, buông bỏ nhu cầu kiểm soát mọi thứ và nuôi dưỡng niềm tin rằng mọi trải nghiệm đến với bạn đều mang một ý nghĩa tích cực để bạn trưởng thành."
+    }
+  },
+
+  // ==========================================
+  // BATCH 7: 9 BÀI HỌC SỐ THIẾU TRONG HỌ TÊN (HANS DECOZ)
+  // ==========================================
+  {
+    "category": "karmic_lesson",
+    "missing_number": 1,
+    "title": "Bài học Số Thiếu 1 - Tự tin và Độc lập tự chủ",
+    "essence_and_challenge": "Trong hệ thống của Hans Decoz, thiếu số 1 trong họ tên cho thấy bạn thiếu sự tự tin vào bản thân, thường dựa dẫm vào ý kiến của người khác và e ngại việc phải đứng mũi chịu sào hoặc tự mình đưa ra các quyết định trọng đại.",
+    "life_lesson": "Bài học lớn nhất là học cách tin tưởng vào năng lực của chính mình, phát triển tính độc lập tự chủ, dám thể hiện chính kiến và dám chịu trách nhiệm cho cuộc đời mình mà không cần chờ đợi sự cho phép của bất kỳ ai.",
+    "remedy_and_transformation": "Cách chuyển hóa: Đặt ra các mục tiêu cá nhân độc lập, rèn luyện sự quyết đoán từ những quyết định mua sắm, công việc nhỏ hàng ngày và học cách tự động viên bản thân trước gương.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 1 trong tên và luôn cảm thấy tự ti, sợ đưa ra quyết định, tôi nên làm gì?",
+      "answer": "Hãy nhớ rằng sự tự tin đến từ hành động chứ không phải suy nghĩ. Hãy bắt đầu tự đưa ra các quyết định nhỏ mỗi ngày và chịu trách nhiệm với nó, bạn sẽ thấy sức mạnh nội tại lớn dần lên."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 2,
+    "title": "Bài học Số Thiếu 2 - Thấu cảm, Ngoại giao và Hợp tác",
+    "essence_and_challenge": "Thiếu số 2 cho thấy bạn có thể thiếu sự kiên nhẫn khi lắng nghe người khác, dễ rơi vào trạng thái bốc đồng, ứng xử vụng về hoặc gặp khó khăn trong việc làm việc nhóm và thấu hiểu cảm xúc của đối phương.",
+    "life_lesson": "Học cách hạ bớt cái tôi, phát triển sự tinh tế trong giao tiếp, học cách lắng nghe tích cực và trân trọng giá trị của sự hòa hợp, đồng hành cùng tập thể.",
+    "remedy_and_transformation": "Cách chuyển hóa: Thực hành lắng nghe trọn vẹn không ngắt lời khi người khác chia sẻ, học nghệ thuật ngoại giao khéo léo và tham gia các hoạt động cộng tác thiện nguyện.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 2 trong họ tên và rất khó kiên nhẫn lắng nghe người khác nói, làm sao để sửa đổi?",
+      "answer": "Hãy đặt ra quy tắc 'chậm lại 3 giây' trước khi phản hồi bất kỳ ai, tập trung nhìn vào mắt đối phương và lắng nghe bằng cả trái tim để cảm nhận tâm tư của họ."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 3,
+    "title": "Bài học Số Thiếu 3 - Tự biểu đạt và Lạc quan vui sống",
+    "essence_and_challenge": "Thiếu số 3 cho thấy bạn thường kìm nén cảm xúc cá nhân, khó mở lòng chia sẻ những niềm vui nỗi buồn bên trong hoặc quá khắt khe, nghiêm túc với bản thân khiến cuộc sống trở nên tẻ nhạt, căng thẳng.",
+    "life_lesson": "Học cách biểu đạt suy nghĩ và cảm xúc của mình một cách tự nhiên, giải phóng năng lượng sáng tạo nghệ thuật và cho phép bản thân được vui chơi, tận hưởng niềm vui giản dị của cuộc đời.",
+    "remedy_and_transformation": "Cách chuyển hóa: Tham gia các lớp học hát, vẽ tranh, diễn xuất, viết lách tự do hoặc đơn giản là xem phim hài và cười sảng khoái mỗi ngày.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 3 trong tên và cảm thấy rất khó bộc lộ cảm xúc vui tươi hay sáng tạo, làm sao để thoải mái hơn?",
+      "answer": "Hãy tháo bỏ lớp mặt nạ nghiêm túc và cho phép mình được làm những điều ngây ngô như một đứa trẻ. Sự sáng tạo bắt đầu từ sự tự do biểu đạt không sợ bị đánh giá."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 4,
+    "title": "Bài học Số Thiếu 4 - Kỷ luật, Trật tự và Kiên định",
+    "essence_and_challenge": "Thiếu số 4 cho thấy bạn thường thiếu tính kỷ luật tự giác, ghét sự gò bó của các quy trình chi tiết, làm việc tùy hứng và dễ bị mất phương hướng trong việc xây dựng nền tảng tài chính, sự nghiệp dài hạn.",
+    "life_lesson": "Học cách xây dựng nền tảng vững chắc thông qua tính kỷ luật, sự kiên nhẫn làm việc tỉ mỉ từng bước và tôn trọng các quy chuẩn, cam kết thực tế.",
+    "remedy_and_transformation": "Cách chuyển hóa: Lập thời gian biểu rõ ràng, quản lý tài chính cá nhân bằng ứng dụng ghi chép chi tiêu và kiên trì hoàn thành từng công việc dù là nhỏ nhất.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 4 trong tên nên rất sợ sự kỷ luật và chi tiết, làm sao để xây dựng sự nghiệp bền vững?",
+      "answer": "Hãy nhớ rằng 'Kỷ luật là cầu nối giữa mục tiêu và thành tựu'. Hãy bắt đầu thiết lập kỷ luật từ việc dọn giường mỗi sáng và theo dõi chi tiêu mỗi ngày."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 5,
+    "title": "Bài học Số Thiếu 5 - Thích nghi, Đón nhận Thay đổi và Tự do",
+    "essence_and_challenge": "Thiếu số 5 cho thấy bạn rất sợ sự thay đổi, thường bám víu vào vùng an toàn quen thuộc, e ngại những điều mới lạ và dễ bị hoảng loạn khi cuộc sống có biến động bất ngờ.",
+    "life_lesson": "Học cách buông bỏ sự bám chấp vào vùng an toàn, mở lòng đón nhận những trải nghiệm mới, rèn luyện tính linh hoạt và thích ứng uyển chuyển trước mọi đổi thay của hoàn cảnh.",
+    "remedy_and_transformation": "Cách chuyển hóa: Đi du lịch đến những vùng đất mới, thử những món ăn lạ, thay đổi cung đường đi làm hàng ngày và chủ động thử nghiệm các phương pháp làm việc mới.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 5 trong tên và cực kỳ sợ sự thay đổi, làm sao để dũng cảm hơn?",
+      "answer": "Thay đổi là quy luật bất biến duy nhất của vũ trụ. Hãy bắt đầu bằng những thay đổi nhỏ không rủi ro mỗi ngày để rèn luyện khả năng thích ứng linh hoạt của não bộ."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 6,
+    "title": "Bài học Số Thiếu 6 - Trách nhiệm gia đình và Tình yêu thương vị tha",
+    "essence_and_challenge": "Thiếu số 6 cho thấy bạn thường trốn tránh các nghĩa vụ gia đình, e ngại sự ràng buộc của hôn nhân hoặc gặp khó khăn trong việc mở rộng tình yêu thương và chăm sóc người thân một cách chân thành.",
+    "life_lesson": "Học cách gánh vác trách nhiệm đối với tổ ấm gia đình và cộng đồng, nuôi dưỡng lòng trắc ẩn, sự tận tụy và khả năng trao đi yêu thương vô điều kiện.",
+    "remedy_and_transformation": "Cách chuyển hóa: Dành thời gian chất lượng bên gia đình mỗi tuần, chăm sóc nhà cửa ấm cúng và tham gia các hoạt động phụng sự xã hội.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 6 trong họ tên và thường cảm thấy ngột ngạt trước trách nhiệm gia đình, tôi nên làm gì?",
+      "answer": "Hãy nhìn nhận trách nhiệm gia đình không phải là gánh nặng mà là cơ hội tuyệt vời để tôi luyện trái tim yêu thương và tìm thấy hạnh phúc đích thực của sự gắn kết."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 7,
+    "title": "Bài học Số Thiếu 7 - Đào sâu Tri thức và Nuôi dưỡng Tâm linh",
+    "essence_and_challenge": "Thiếu số 7 cho thấy bạn thường sống trên bề mặt vật chất, ít khi dành thời gian tĩnh lặng để suy ngẫm về bản thân, e ngại sự cô đơn và thiếu niềm tin vào các giá trị tinh thần/tâm linh sâu sắc.",
+    "life_lesson": "Học cách đối diện với sự cô đơn để khám phá thế giới nội tâm bên trong, rèn luyện thói quen tự học đào sâu chuyên môn và nuôi dưỡng đời sống tâm linh, triết học lành mạnh.",
+    "remedy_and_transformation": "Cách chuyển hóa: Dành 15 phút tĩnh lặng một mình mỗi ngày (không điện thoại), đọc các tác phẩm triết học, tâm lý học và đi dạo hòa mình vào thiên nhiên.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 7 trong tên và rất sợ ở một mình, luôn phải tìm chỗ ồn ào, làm sao để cải thiện?",
+      "answer": "Sự cô độc là mảnh đất màu mỡ để trí tuệ nảy mầm. Hãy tập làm quen với sự tĩnh lặng từ 5 phút mỗi ngày, bạn sẽ khám phá ra kho báu bình an vô giá bên trong mình."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 8,
+    "title": "Bài học Số Thiếu 8 - Quản trị Tài chính và Làm chủ Quyền lực",
+    "essence_and_challenge": "Thiếu số 8 cho thấy bạn thường e ngại việc nói về tiền bạc, quản lý tài chính yếu kém, sợ hãi quyền lực hoặc ngược lại là bị tiền bạc chi phối một cách tiêu cực do thiếu hiểu biết thực tế.",
+    "life_lesson": "Học cách làm chủ thế giới vật chất, rèn luyện tư duy tài chính thông minh, dám khẳng định vị thế lãnh đạo và sử dụng tiền bạc như một phương tiện tạo phước lành.",
+    "remedy_and_transformation": "Cách chuyển hóa: Học các khóa học về quản lý tài chính cá nhân, đầu tư bài bản, rèn luyện phong thái tự tin và học cách định giá đúng năng lực của bản thân.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 8 trong họ tên và luôn gặp rắc rối về tiền bạc, làm sao để làm chủ tài chính?",
+      "answer": "Tiền bạc là dòng năng lượng biết ơn. Hãy học cách trân trọng từng đồng tiền mình làm ra, quản lý chi tiêu chặt chẽ và nâng cao giá trị bản thân để thu hút sự thịnh vượng."
+    }
+  },
+  {
+    "category": "karmic_lesson",
+    "missing_number": 9,
+    "title": "Bài học Số Thiếu 9 - Lòng Bao dung, Tha thứ và Phụng sự Nhân đạo",
+    "essence_and_challenge": "Thiếu số 9 cho thấy bạn có thể có cái nhìn hẹp hòi, hay giữ mối hận thù trong lòng, khó tha thứ cho lỗi lầm của người khác và thiếu sự quan tâm đến những vấn đề cộng đồng, xã hội.",
+    "life_lesson": "Mở rộng tấm lòng bao dung nhân ái, học bài học buông bỏ và tha thứ cho quá khứ, hướng tới những lý tưởng sống cao đẹp và phụng sự nhân loại không toan tính.",
+    "remedy_and_transformation": "Cách chuyển hóa: Thực hành bài thiền tha thứ (Ho'oponopono), tham gia các hoạt động từ thiện bảo vệ môi trường hoặc giúp đỡ những người có hoàn cảnh khó khăn.",
+    "qa_pair": {
+      "question": "Tôi thiếu số 9 trong họ tên và rất khó tha thứ cho những ai từng làm tổn thương mình, tôi phải làm sao?",
+      "answer": "Tha thứ không phải là dung túng cho cái sai của người khác, mà là cởi trói sự đau khổ cho chính linh hồn bạn. Hãy buông xả hận thù để trái tim bạn được tự do và bình an."
+    }
+  },
+
+  // ==========================================
+  // BATCH 8: 4 SỐ NỢ NGHIỆP (KARMIC DEBTS) & CẦU NỐI (BRIDGES)
+  // ==========================================
+  {
+    "category": "karmic_debt",
+    "debt_number": "13/4",
+    "title": "Nợ nghiệp 13/4 - Bài học Kỷ luật, Lao động Kiên trì và Trách nhiệm",
+    "karmic_origin": "Nợ nghiệp 13/4 phát sinh từ tiền kiếp khi linh hồn đã lười biếng, trốn tránh nghĩa vụ lao động, đùn đẩy trách nhiệm cho người khác hoặc tìm kiếm con đường tắt thiếu chính trực để đạt được mục đích.",
+    "manifestation_in_life": "Trong kiếp này, người mang số 13/4 thường xuyên gặp phải những chướng ngại vật bất ngờ khiến công việc bị đình trệ, phải bỏ ra công sức gấp đôi, gấp ba người khác mới đạt được kết quả và dễ rơi vào cảm giác mệt mỏi, quá tải.",
+    "how_to_heal": "Cách hóa giải triệt để: Rèn luyện tính kỷ luật thép, kiên trì làm việc trung thực từng bước một, không tìm đường tắt, hoàn thành trọn vẹn mọi cam kết và xem mỗi khó khăn là cơ hội trả nợ nghiệp vẻ vang.",
+    "qa_pair": {
+      "question": "Tôi mang con số nợ nghiệp 13/4 và luôn cảm thấy mọi việc mình làm đều gian nan gấp bội người khác, làm thế nào để vượt qua?",
+      "answer": "TS. David Phillips khuyên bạn hãy đón nhận thử thách với lòng biết ơn thay vì than vãn. Khi bạn kiên trì lao động với sự chính trực tuyệt đối của Số 4, bạn sẽ chuyển hóa nợ nghiệp thành nền móng vững chắc không gì lay chuyển được."
+    }
+  },
+  {
+    "category": "karmic_debt",
+    "debt_number": "14/5",
+    "title": "Nợ nghiệp 14/5 - Bài học Tự do Chân chính, Kiểm soát Dục vọng và Kỷ luật Bản thân",
+    "karmic_origin": "Nợ nghiệp 14/5 bắt nguồn từ tiền kiếp khi linh hồn đã lạm dụng tự do cá nhân, buông thả theo các thú vui nhục dục, đam mê quá đà gây tổn hại đến tự do và hạnh phúc của người khác.",
+    "manifestation_in_life": "Ở kiếp sống hiện tại, người mang số 14/5 thường xuyên phải đối mặt với những biến cố thay đổi đột ngột làm đảo lộn cuộc sống, dễ bị cám dỗ bởi các thói quen nghiện ngập (rượu, bài bạc, ăn chơi, lối sống bốc đồng) và gặp khó khăn trong việc duy trì sự ổn định.",
+    "how_to_heal": "Cách hóa giải triệt để: Rèn luyện tính điều độ trong mọi mặt của cuộc sống, thiết lập kỷ luật tự giác, tôn trọng tự do của người khác và hiểu rằng 'Kỷ luật chính là hình thức cao nhất của tự do'.",
+    "qa_pair": {
+      "question": "Tôi mang số nợ nghiệp 14/5 và cuộc sống của tôi thường xuyên bị xáo trộn bởi những biến cố bất ngờ, tôi phải sống sao?",
+      "answer": "Hãy giữ vững tâm bất biến giữa dòng đời vạn biến. Tránh xa mọi cám dỗ nhất thời, thực hành lối sống lành mạnh, điều độ và duy trì các cam kết dài hạn, bạn sẽ làm chủ được số phận."
+    }
+  },
+  {
+    "category": "karmic_debt",
+    "debt_number": "16/7",
+    "title": "Nợ nghiệp 16/7 - Bài học Sụp đổ Bản ngã, Thanh lọc Tình cảm và Thức tỉnh Tâm linh",
+    "karmic_origin": "Nợ nghiệp 16/7 xuất phát từ tiền kiếp khi linh hồn đã lạm dụng tình cảm, phản bội lòng tin của người yêu thương, hoặc kiêu ngạo, tự phụ đặt bản ngã cái tôi lên trên đạo đức và tình nghĩa.",
+    "manifestation_in_life": "Trong đời này, người mang số 16/7 thường phải trải qua những cú sốc lớn về tình cảm (bị phản bội, đổ vỡ hôn nhân) hoặc sự sụp đổ bất ngờ của danh vọng, tiền tài như hình tượng 'Tòa Tháp Bị Sét Đánh' (The Tower) để đập tan bản ngã kiêu hãnh.",
+    "how_to_heal": "Cách hóa giải triệt để: Buông bỏ cái tôi kiêu ngạo, sống chân thành và chung thủy trong các mối quan hệ, tìm về con đường tâm linh, tu tập thức tỉnh nội tâm và xem nghịch cảnh là sự gột rửa thanh lọc tâm hồn.",
+    "qa_pair": {
+      "question": "Tôi mang nợ nghiệp 16/7 và vừa trải qua đổ vỡ tình cảm đau đớn cùng sự sụp đổ của sự nghiệp, làm sao tôi đứng dậy?",
+      "answer": "Sự sụp đổ của tòa tháp ảo tưởng là điều kiện cần thiết để bạn xây dựng ngôi đền tâm linh đích thực. Hãy tha thứ cho người và cho mình, buông bỏ cái tôi và đón nhận sự thức tỉnh tâm linh sâu sắc."
+    }
+  },
+  {
+    "category": "karmic_debt",
+    "debt_number": "19/1",
+    "title": "Nợ nghiệp 19/1 - Bài học Khiêm nhường, Chia sẻ Quyền lực và Thấu cảm Nhân từ",
+    "karmic_origin": "Nợ nghiệp 19/1 bắt nguồn từ tiền kiếp khi linh hồn nắm giữ quyền lực lãnh đạo nhưng đã lạm quyền, độc đoán, ích kỷ, chỉ mưu cầu lợi ích cá nhân và chèn ép, bóc lột người khác.",
+    "manifestation_in_life": "Trong kiếp này, người mang số 19/1 thường phải tự mình gánh vác mọi việc trong sự cô độc, gặp khó khăn khi tìm kiếm sự giúp đỡ từ người khác, dễ bị cô lập hoặc cảm thấy bất lực khi cái tôi bị thử thách.",
+    "how_to_heal": "Cách hóa giải triệt để: Học cách lắng nghe và đón nhận sự giúp đỡ từ người khác với lòng khiêm nhường, sử dụng tài năng lãnh đạo để nâng đỡ, phụng sự tập thể thay vì áp đặt ý chí cá nhân.",
+    "qa_pair": {
+      "question": "Tôi mang nợ nghiệp 19/1 và luôn phải tự làm mọi việc một mình trong cô đơn, không ai giúp đỡ, tôi phải làm sao?",
+      "answer": "Hãy học cách hạ bớt sự kiêu hãnh và mở lời nhờ cậy sự giúp đỡ chân thành từ mọi người. Khi bạn biết cúi mình phụng sự và chia sẻ quyền lực, bạn sẽ nhận được tình yêu thương và sự ủng hộ to lớn từ vũ trụ."
+    }
+  }
+];
+
+// Write master knowledge to data/master_knowledge.json
+const targetPath = path.resolve(__dirname, '../data/master_knowledge.json');
+fs.writeFileSync(targetPath, JSON.stringify(masterData, null, 2), 'utf-8');
+console.log(`Successfully generated master knowledge base with ${masterData.length} comprehensive records!`);
