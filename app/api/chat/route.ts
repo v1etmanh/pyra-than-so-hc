@@ -10,10 +10,10 @@ import { NextRequest } from 'next/server';
 
 /**
  * Vercel Serverless config:
- * - maxDuration: Hobby = 60s max, Pro = 300s max. Prevents streaming from being killed mid-response.
+ * - maxDuration: Keep enough room for RAG plus a long streamed answer.
  * - dynamic: Forces this route to always run as a serverless function, never statically cached.
  */
-export const maxDuration = 60;
+export const maxDuration = 180;
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 import { retrieveContext } from './lib/retrieval-service';
@@ -180,7 +180,7 @@ export async function POST(req: NextRequest) {
                 providerConfig,
                 { skipExpansion, language }
               ),
-              Number(process.env.RAG_RETRIEVAL_TIMEOUT_MS || 15_000)
+              Number(process.env.RAG_RETRIEVAL_TIMEOUT_MS || 30_000)
             );
             console.timeEnd('[Perf] Total RAG Retrieval');
             console.log('retrievalResult.content length', retrievalResult.context.length);

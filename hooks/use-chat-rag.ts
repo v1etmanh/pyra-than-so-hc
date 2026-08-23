@@ -38,7 +38,10 @@ interface UseChatRAGReturn {
 
 const CHAT_STORE_KEY = 'numerology-chat-history';
 const CHAT_ACTIVE_ID_KEY = 'numerology-active-chat-id';
-const CHAT_REQUEST_TIMEOUT_MS = 55_000;
+// Retrieval, provider fallback, and long streamed answers can legitimately take
+// more than a minute. Keep this above the server budget so the browser does not
+// abort a response that is still producing content.
+const CHAT_REQUEST_TIMEOUT_MS = 180_000;
 
 export function useChatRAG(
   activeProviderConfig?: ProviderRequestConfig | null
@@ -258,6 +261,7 @@ export function useChatRAG(
         timedOut = true;
         abortController.abort();
       }, CHAT_REQUEST_TIMEOUT_MS);
+      let accumulatedContent = '';
 
       try {
         const apiMessages = currentMessages.slice(0, -1).map((m) => ({
@@ -290,7 +294,6 @@ export function useChatRAG(
 
         const decoder = new TextDecoder();
         let buffer = '';
-        let accumulatedContent = '';
         let sources: RetrievalSourceInfo[] = [];
         let hasStartedGenerating = false;
         let streamCompleted = false;
@@ -387,7 +390,13 @@ export function useChatRAG(
 
         currentMessages = currentMessages.map((m) =>
           m.id === assistantId
-            ? { ...m, content: `⚠️ ${errorMessage}`, isStreaming: false }
+            ? {
+                ...m,
+                content: accumulatedContent
+                  ? `${accumulatedContent}\n\n⚠️ ${errorMessage}`
+                  : `⚠️ ${errorMessage}`,
+                isStreaming: false
+              }
             : m
         );
         updateActiveSession(currentMessages);

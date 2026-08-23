@@ -45,12 +45,14 @@ function providerLabel(provider: CascadeProvider, model: string): string {
 
 function readWithTimeout<T>(
   reader: ReadableStreamDefaultReader<T>,
-  timeoutMs: number
+  timeoutMs: number,
+  timeoutMessage = 'LLM stream timed out while waiting for the next chunk'
 ): Promise<ReadableStreamReadResult<T>> {
   return new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => {
-      reject(new Error('LLM stream timed out'));
-    }, timeoutMs);
+    const timeout = setTimeout(
+      () => reject(new Error(timeoutMessage)),
+      timeoutMs
+    );
 
     reader.read().then(
       (result) => {
@@ -80,7 +82,14 @@ export function createStreamingResponse(
     async start(controller) {
       const encoder = new TextEncoder();
       let lastError = 'No LLM provider is configured.';
-      const cascadeDeadline = Date.now() + Number(process.env.LLM_CASCADE_TIMEOUT_MS || 45_000);
+      // This deadline covers provider connection/fallback only. Once a provider
+      // starts streaming, the answer gets its own idle timeout below so a long
+      // but healthy response is not cut off by the fallback budget.
+      const cascadeDeadline = Date.now() + Number(process.env.LLM_CASCADE_TIMEOUT_MS || 120_000);
+      const streamIdleTimeoutMs = Math.max(
+        5_000,
+        Number(process.env.LLM_STREAM_IDLE_TIMEOUT_MS || 30_000)
+      );
       const maxModelsPerProvider = Math.max(
         1,
         Number(process.env.LLM_MAX_MODELS_PER_PROVIDER || 2)
@@ -109,7 +118,7 @@ export function createStreamingResponse(
                   {
                     stream: true,
                     timeoutMs: Math.min(
-                      Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 12_000),
+                      Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 20_000),
                       remainingMs
                     )
                   }
@@ -130,8 +139,10 @@ export function createStreamingResponse(
 
                 try {
                   while (true) {
-                    const readBudget = Math.max(1_000, cascadeDeadline - Date.now());
-                    const { done, value } = await readWithTimeout(reader, readBudget);
+                    const { done, value } = await readWithTimeout(
+                      reader,
+                      streamIdleTimeoutMs
+                    );
                     if (done) break;
 
                     buffer += decoder.decode(value, { stream: true });
