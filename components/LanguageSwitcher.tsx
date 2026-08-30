@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/src/i18n/navigation";
 import {
   Button,
   Menu,
@@ -16,11 +16,6 @@ const SUPPORTED_LOCALES = [
   { code: "en", labelKey: "english", shortLabel: "EN" },
 ] as const;
 
-function removeLocalePrefix(pathname: string, locale: string) {
-  const prefix = new RegExp(`^/${locale}(?=/|$)`);
-  return pathname.replace(prefix, "") || "/";
-}
-
 export const LanguageSwitcher = ({ isHeader = false }: { isHeader?: boolean }) => {
   const t = useTranslations("LanguageSwitcher");
   const locale = useLocale();
@@ -34,11 +29,7 @@ export const LanguageSwitcher = ({ isHeader = false }: { isHeader?: boolean }) =
 
   const selectLocale = (nextLocale: string) => {
     if (nextLocale === locale) return;
-    const pathWithoutLocale = removeLocalePrefix(pathname, locale);
-    const nextPath = nextLocale === "vi" && pathWithoutLocale === "/"
-      ? "/"
-      : `/${nextLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
-    router.replace(nextPath);
+    router.replace(pathname, { locale: nextLocale as "vi" | "en" });
   };
 
   return (

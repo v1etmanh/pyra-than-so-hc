@@ -56,6 +56,6 @@ Ngày rà soát: 2026-08-30
 `components/LanguageSwitcher.tsx` hiện cung cấp menu chọn `Tiếng Việt`/`Tiếng Anh`. Các route chính và phản hồi AI nhận locale tương ứng. Menu:
 
 - dùng chung cho footer và header;
-- giữ nguyên route hiện tại khi đổi locale;
+- giữ nguyên route hiện tại khi đổi locale bằng navigation API của `next-intl` (đặc biệt `/en/indicators` → `/indicators`);
 - dùng `/` cho tiếng Việt và `/en/...` cho tiếng Anh theo cấu hình `localePrefix: "as-needed"`;
 - hiển thị locale đang chọn và đánh dấu bằng dấu kiểm.
