@@ -138,6 +138,14 @@
     "providerUsingCustom": "Using: {name}",
     "providerUsingDefault": "Using system default",
     "providerNoModels": "No models found. Check your key/URL.",
+    "keyAlreadyAdded": "This key has already been added",
+    "apiKeyRequired": "An API key is required",
+    "modelsFound": "{count} models found",
+    "unknownError": "Unknown error",
+    "providerKeyPlaceholder": "My OpenAI Key",
+    "toggleKeyVisibility": "Show or hide key",
+    "cancel": "Cancel",
+    "roundRobin": "Round-robin",
     "reminder": "AI can make mistakes. All information is for entertainment purposes and should be carefully reviewed in each question."
   },
   "Metadata": {
@@ -150,8 +158,34 @@
     "mode": "{mode} mode"
   },
   "LanguageSwitcher": {
+    "selectLanguage": "Select language",
+    "vietnamese": "Vietnamese",
+    "english": "English",
     "switchLocaleVi": "Switch to Vietnamese",
     "switchLocaleEn": "Switch to English"
+  },
+  "ChaniHeader": {
+    "nav": {
+      "map": "MAP",
+      "account": "MY ACCOUNT",
+      "wallpaper": "WALLPAPER STUDIO",
+      "chat": "NUMINA AI",
+      "indicators": "24 INDICATORS"
+    },
+    "myAccount": "MY ACCOUNT",
+    "home": "NUMINA home",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "toggleNavigation": "Toggle navigation",
+    "themePreview": "Theme preview",
+    "userMenu": "User menu",
+    "primaryNavigation": "Primary navigation",
+    "profile": "Personal profile",
+    "aiChat": "NUMINA AI Chat",
+    "wallpaper": "Wallpaper Studio",
+    "indicators": "24 Indicators",
+    "signIn": "SIGN IN",
+    "signOut": "Sign out"
   },
   "NumerologyMetrics": {
     "walksOfLife": "Life Path",

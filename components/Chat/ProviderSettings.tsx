@@ -156,7 +156,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
     const trimmedKey = keyInput.trim();
     if (formState.apiKeys.includes(trimmedKey)) {
       toast({
-        title: 'Key already added',
+        title: t('keyAlreadyAdded'),
         status: 'warning',
         duration: 2000,
         position: 'top'
@@ -209,7 +209,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
     if (preset.requiresApiKey && !firstKey) {
       toast({
         title: t('providerApiKeys'),
-        description: 'API key is required',
+        description: t('apiKeyRequired'),
         status: 'warning',
         duration: 2000,
         position: 'top'
@@ -241,7 +241,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
       });
 
       toast({
-        title: `${models.length} models`,
+        title: t('modelsFound', { count: String(models.length) }),
         status: 'success',
         duration: 2000,
         position: 'top'
@@ -249,7 +249,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
     } catch (error) {
       toast({
         title: t('providerTestFailed'),
-        description: error instanceof Error ? error.message : 'Unknown error',
+        description: error instanceof Error ? error.message : t('unknownError'),
         status: 'error',
         duration: 3000,
         position: 'top'
@@ -440,7 +440,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                           icon={<Icon as={MdEdit} />}
                           size="xs"
                           variant="ghost"
-                          aria-label="Edit"
+                          aria-label={t('providerEdit')}
                           onClick={(e) => {
                             e.stopPropagation();
                             handleStartEdit(provider);
@@ -453,7 +453,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                           size="xs"
                           variant="ghost"
                           colorScheme="red"
-                          aria-label="Delete"
+                          aria-label={t('providerDelete')}
                           onClick={(e) => {
                             e.stopPropagation();
                             handleDelete(provider.id);
@@ -526,7 +526,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                       onChange={(e) =>
                         setFormState({ ...formState, label: e.target.value })
                       }
-                      placeholder="My OpenAI Key"
+                      placeholder={t('providerKeyPlaceholder')}
                     />
                   </FormControl>
 
@@ -560,7 +560,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                           fontSize="2xs"
                           colorScheme="blue"
                         >
-                          Round-robin ×{formState.apiKeys.length}
+                          {t('roundRobin')} ×{formState.apiKeys.length}
                         </Badge>
                       )}
                     </FormLabel>
@@ -620,7 +620,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                             }
                             size="xs"
                             variant="ghost"
-                            aria-label="Toggle key visibility"
+                            aria-label={t('toggleKeyVisibility')}
                             onClick={() => setShowKeyInput(!showKeyInput)}
                           />
                           <IconButton
@@ -628,7 +628,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                             size="xs"
                             variant="ghost"
                             colorScheme="brand"
-                            aria-label="Add key"
+                            aria-label={t('providerAddKey')}
                             onClick={handleAddKey}
                             isDisabled={!keyInput.trim()}
                           />
@@ -707,7 +707,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                               ? 'red'
                               : 'gray'
                         }
-                        aria-label="Test connection"
+                        aria-label={t('providerTestConnection')}
                         onClick={handleTestConnection}
                         isLoading={connectionStatus === 'testing'}
                         isDisabled={isActionDisabled}
@@ -729,7 +729,7 @@ export function ProviderSettings({ providerHook, t }: ProviderSettingsProps) {
                       icon={<Icon as={MdClose} />}
                       size="sm"
                       variant="ghost"
-                      aria-label="Cancel"
+                      aria-label={t('cancel')}
                       onClick={handleCancel}
                     />
                   </HStack>

@@ -194,7 +194,9 @@ export async function retrieveContext(
       userProviderConfig
     );
     searchQuery = expansion.expandedQuery;
-    detectedLanguage = expansion.detectedLanguage;
+    // An explicit UI locale takes precedence over heuristic detection so the
+    // language selector also controls the language of the AI response.
+    detectedLanguage = options?.language || expansion.detectedLanguage;
   }
 
   let queryEmbedding: number[] | undefined;

@@ -72,6 +72,9 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
 
 export async function POST(req: NextRequest) {
   try {
+    const body: ChatRequestBody = await req.json();
+    const { messages, providerConfig, skipExpansion, language, systemPrompt: customSystemPrompt, profile } = body;
+
     // --- Rate Limit Check ---
     // Get IP address for rate limiting
     const ip =
@@ -85,7 +88,7 @@ export async function POST(req: NextRequest) {
     if (!success) {
       console.warn(`[RateLimit] IP ${ip} exceeded limit.`);
       return new Response(
-        JSON.stringify({ error: 'Quá nhiều yêu cầu. Vui lòng thử lại sau một lát.' }),
+        JSON.stringify({ error: language === 'English' ? 'Too many requests. Please try again in a moment.' : 'Quá nhiều yêu cầu. Vui lòng thử lại sau một lát.' }),
         {
           status: 429,
           headers: {
@@ -98,9 +101,6 @@ export async function POST(req: NextRequest) {
       );
     }
     // ------------------------
-
-    const body: ChatRequestBody = await req.json();
-    const { messages, providerConfig, skipExpansion, language, systemPrompt: customSystemPrompt, profile } = body;
 
     if (!messages?.length) {
       return new Response('Messages array is required', { status: 400 });
@@ -159,7 +159,7 @@ export async function POST(req: NextRequest) {
           if (!sendEvent({
             type: 'status',
             phase: 'searching',
-            message: 'Đang tìm kiếm tư liệu phù hợp...'
+            message: language === 'English' ? 'Searching for relevant knowledge...' : 'Đang tìm kiếm tư liệu phù hợp...'
           })) return;
 
           // --- RAG Pipeline ---
@@ -198,7 +198,7 @@ export async function POST(req: NextRequest) {
           if (!sendEvent({
             type: 'status',
             phase: 'generating',
-            message: 'Đang tạo lời giải từ Numina AI...'
+            message: language === 'English' ? 'Numina AI is creating your interpretation...' : 'Đang tạo lời giải từ Numina AI...'
           })) return;
 
           if (sources.length > 0) {

@@ -4,34 +4,44 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { useLocale, useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const nav = [
-  ["MAP", "/"],
-  ["MY ACCOUNT", "/account"],
-  ["WALLPAPER STUDIO", "/lucky-wallpaper"],
-  ["NUMINA AI", "/chat"],
-  ["24 INDICATORS", "/indicators"],
-];
+  ["map", "/"],
+  ["account", "/account"],
+  ["wallpaper", "/lucky-wallpaper"],
+  ["chat", "/chat"],
+  ["indicators", "/indicators"],
+] as const;
 
 function getActivePath(pathname: string) {
-  if (pathname === "/") return "/";
-  if (pathname === "/account") return "/account";
-  if (pathname === "/lucky-wallpaper") return "/lucky-wallpaper";
-  if (pathname === "/chat") return "/chat";
-  if (pathname === "/indicators") return "/indicators";
+  const normalizedPath = pathname.replace(/^\/(vi|en)(?=\/|$)/, "") || "/";
+  if (normalizedPath === "/") return "/";
+  if (normalizedPath === "/account") return "/account";
+  if (normalizedPath === "/lucky-wallpaper") return "/lucky-wallpaper";
+  if (normalizedPath === "/chat") return "/chat";
+  if (normalizedPath === "/indicators") return "/indicators";
   return "";
+}
+
+function withLocale(path: string, locale: string) {
+  return locale === "vi" && path === "/" ? "/" : `/${locale}${path === "/" ? "" : path}`;
 }
 
 export default function PyraHeader() {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("ChaniHeader");
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const activePath = getActivePath(pathname);
   const { user, profile, signOut, openAuthModal, isLoading } = useAuth();
+  const localize = (path: string) => withLocale(path, locale);
 
-  const displayName = profile?.full_name || (user?.email ? user.email.split('@')[0] : 'MY ACCOUNT');
+  const displayName = profile?.full_name || (user?.email ? user.email.split('@')[0] : t("myAccount"));
   const userEmail = user?.email || '';
   const initial = displayName.charAt(0).toUpperCase();
 
@@ -56,13 +66,13 @@ export default function PyraHeader() {
   const handleSignOut = async () => {
     setDropdownOpen(false);
     await signOut();
-    router.push("/");
+    router.push(localize("/"));
   };
 
   return (
     <>
       <header className="pyra-header">
-        <Link className="pyra-wordmark" href="/" aria-label="NUMINA home">
+        <Link className="pyra-wordmark" href={localize("/")} aria-label={t("home")}>
           <img
             src="/logo/436f1399-6171-4441-8654-6711279d206b.png"
             alt="NUMINA Logo"
@@ -75,24 +85,25 @@ export default function PyraHeader() {
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
-          aria-label="Toggle navigation"
+          aria-label={t("toggleNavigation")}
         >
-          {open ? "CLOSE" : "MENU"}
+          {open ? t("close") : t("menu")}
         </button>
-        <nav className={`pyra-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation">
-          {nav.map(([label, href]) => (
+        <nav className={`pyra-nav ${open ? "is-open" : ""}`} aria-label={t("primaryNavigation")}>
+          {nav.map(([labelKey, href]) => (
             <Link
               className={activePath === href ? "is-active" : ""}
-              href={href}
-              key={label}
+              href={localize(href)}
+              key={labelKey}
               onClick={() => setOpen(false)}
             >
-              {label}
+              {t(`nav.${labelKey}`)}
             </Link>
           ))}
         </nav>
         <div className="pyra-header-tools">
-          <button className="pyra-theme-button" type="button" aria-label="Theme preview">
+          <LanguageSwitcher isHeader />
+          <button className="pyra-theme-button" type="button" aria-label={t("themePreview")}>
             ☼
           </button>
           {user ? (
@@ -103,7 +114,7 @@ export default function PyraHeader() {
                 onClick={() => setDropdownOpen((prev) => !prev)}
                 aria-expanded={dropdownOpen}
                 aria-haspopup="true"
-                aria-label="User menu"
+                aria-label={t("userMenu")}
               >
                 <span className="pyra-profile-mark">{initial}</span>
                 <span style={{ maxWidth: '120px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -120,40 +131,40 @@ export default function PyraHeader() {
                   </div>
                   <div className="pyra-dropdown-divider" />
                   <Link
-                    href="/account"
+                    href={localize("/account")}
                     className="pyra-dropdown-item"
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
                     <span className="pyra-dropdown-icon">👤</span>
-                    <span>Hồ sơ cá nhân</span>
+                    <span>{t("profile")}</span>
                   </Link>
                   <Link
-                    href="/chat"
+                    href={localize("/chat")}
                     className="pyra-dropdown-item"
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
                     <span className="pyra-dropdown-icon">✦</span>
-                    <span>NUMINA AI Chat</span>
+                    <span>{t("aiChat")}</span>
                   </Link>
                   <Link
-                    href="/lucky-wallpaper"
+                    href={localize("/lucky-wallpaper")}
                     className="pyra-dropdown-item"
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
                     <span className="pyra-dropdown-icon">🖼️</span>
-                    <span>Wallpaper Studio</span>
+                    <span>{t("wallpaper")}</span>
                   </Link>
                   <Link
-                    href="/indicators"
+                    href={localize("/indicators")}
                     className="pyra-dropdown-item"
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
                     <span className="pyra-dropdown-icon">📊</span>
-                    <span>24 Chỉ số</span>
+                    <span>{t("indicators")}</span>
                   </Link>
                   <div className="pyra-dropdown-divider" />
                   <button
@@ -163,7 +174,7 @@ export default function PyraHeader() {
                     role="menuitem"
                   >
                     <span className="pyra-dropdown-icon">🚪</span>
-                    <span>Đăng xuất</span>
+                    <span>{t("signOut")}</span>
                   </button>
                 </div>
               )}
@@ -173,12 +184,12 @@ export default function PyraHeader() {
               className="pyra-profile-button"
               type="button"
               onClick={() => openAuthModal('signin')}
-              aria-label="Sign in"
+              aria-label={t("signIn")}
               disabled={isLoading}
               style={{ cursor: 'pointer' }}
             >
               <span className="pyra-profile-mark">✦</span>
-              <span>ĐĂNG NHẬP</span>
+              <span>{t("signIn")}</span>
               <span className="pyra-profile-chevron">↗</span>
             </button>
           )}

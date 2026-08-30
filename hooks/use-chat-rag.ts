@@ -4,6 +4,7 @@
  */
 'use client';
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { useLocale } from 'next-intl';
 import { get, set, del } from 'idb-keyval';
 import type {
   ChatMessage,
@@ -46,6 +47,7 @@ const CHAT_REQUEST_TIMEOUT_MS = 180_000;
 export function useChatRAG(
   activeProviderConfig?: ProviderRequestConfig | null
 ): UseChatRAGReturn {
+  const locale = useLocale();
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -271,7 +273,8 @@ export function useChatRAG(
 
         const requestBody: Record<string, unknown> = {
           messages: apiMessages,
-          profile: profileContext || lastProfileContextRef.current
+          profile: profileContext || lastProfileContextRef.current,
+          language: locale === 'vi' ? 'Vietnamese' : 'English'
         };
 
         if (activeProviderConfig) {
@@ -384,7 +387,7 @@ export function useChatRAG(
           ? 'Numina phản hồi quá lâu. Vui lòng thử lại sau khi kiểm tra cấu hình AI.'
           : err instanceof Error
             ? err.message
-            : 'An unexpected error occurred';
+            : locale === 'vi' ? 'Đã xảy ra lỗi không mong muốn.' : 'An unexpected error occurred';
         setError(errorMessage);
         setPhase('error');
 
@@ -404,7 +407,7 @@ export function useChatRAG(
         window.clearTimeout(requestTimeout);
       }
     },
-    [messages, isStreaming, updateActiveSession, activeProviderConfig]
+    [messages, isStreaming, updateActiveSession, activeProviderConfig, locale]
   );
 
   const retryLastMessage = useCallback(

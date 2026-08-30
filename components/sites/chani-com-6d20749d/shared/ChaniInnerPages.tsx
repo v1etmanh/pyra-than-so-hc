@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import { FormEvent, type CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import PyraHeader from "./PyraHeader";
 import { useChatRAG } from "@/hooks/use-chat-rag";
@@ -35,9 +36,12 @@ export function StoreButtons() {
 }
 
 export function InnerFooter() {
+  const locale = useLocale();
+  const isVietnamese = locale === "vi";
+  const localize = (path: string) => isVietnamese ? path : `/en${path}`;
   return <footer className="chani-footer batch-footer">
-    <div className="footer-columns"><div><strong>COMPANY</strong><a href="/about/about-chani">About CHANI</a><a href="/about/careers">Careers</a><a href="/about/press">Press</a></div><div><strong>SUPPORT</strong><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="https://chaninicholas.zendesk.com/hc/en-us">FAQ</a></div><div><strong>CONNECT</strong><a href="https://www.instagram.com/chani.app/">Instagram</a><a href="https://open.spotify.com/show/7hpCJfE2JItPqOj8AgONCp">Spotify</a><a href="https://www.youtube.com/channel/UCwAhuKrSNpdetVX68rPBKww">YouTube</a></div></div>
-    <div className="newsletter"><strong>SUBSCRIBE TO OUR NEWSLETTER</strong><div><input placeholder="yourname@email.com" /><button>SIGN UP</button></div></div>
+    <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về Numina" : "About Numina"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="https://chaninicholas.zendesk.com/hc/en-us">FAQ</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/chani.app/">Instagram</a><a href="https://open.spotify.com/show/7hpCJfE2JItPqOj8AgONCp">Spotify</a><a href="https://www.youtube.com/channel/UCwAhuKrSNpdetVX68rPBKww">YouTube</a></div></div>
+    <div className="newsletter"><strong>{isVietnamese ? "ĐĂNG KÝ NHẬN BẢN TIN" : "SUBSCRIBE TO OUR NEWSLETTER"}</strong><div><input placeholder="yourname@email.com" /><button>{isVietnamese ? "ĐĂNG KÝ" : "SIGN UP"}</button></div></div>
     <p className="copyright">© Chani Nicholas Inc. 2026</p>
   </footer>;
 }
@@ -49,6 +53,7 @@ function Shell({ children }: { children: React.ReactNode }) {
 const astroBase = `${SITE}/astro-101-88fc9eb0/assets`;
 
 export function PodcastWeekAheadPage() {
+  const isVietnamese = useLocale() === "vi";
   const [draft, setDraft] = useState("");
   const chat = useChatRAG();
   const { profiles } = useProfiles();
@@ -78,7 +83,7 @@ export function PodcastWeekAheadPage() {
 
   const indicators = useProcessNumerology(activeProfile?.name || "", activeProfile?.birthDate || "");
   const lifePath = indicators[0]?.value || "7";
-  const displayName = activeProfile?.name || "Your Map";
+  const displayName = activeProfile?.name || (isVietnamese ? "Bản đồ của bạn" : "Your Map");
 
   // Click outside to close dropdown
   useEffect(() => {
@@ -130,19 +135,19 @@ export function PodcastWeekAheadPage() {
       <section className="pyra-ai-workspace">
         <div className="pyra-ai-chat-panel">
           <div className="pyra-ai-chat-header">
-            <p className="batch-kicker">NUMINA AI / PERSONAL NUMEROLOGY GUIDE</p>
-            <h1>Ask Numina anything</h1>
+            <p className="batch-kicker">NUMINA AI / {isVietnamese ? "HƯỚNG DẪN NHÂN SỐ HỌC CÁ NHÂN" : "PERSONAL NUMEROLOGY GUIDE"}</p>
+            <h1>{isVietnamese ? "Hỏi Numina bất cứ điều gì" : "Ask Numina anything"}</h1>
             <div ref={dropdownRef} style={{ position: "relative", display: "inline-block", zIndex: 1000 }}>
               <button
                 className="pyra-ai-profile-pill"
                 type="button"
                 onClick={() => setShowProfileSelect((prev) => !prev)}
                 aria-expanded={showProfileSelect}
-                aria-label="Chọn hồ sơ đang xem"
+                aria-label={isVietnamese ? "Chọn hồ sơ đang xem" : "Choose the profile to view"}
                 style={{ cursor: "pointer" }}
               >
                 <span className="pyra-ai-avatar">{String(lifePath).slice(0, 2)}</span>
-                <span>{displayName} · Life Path {lifePath}</span>
+                <span>{displayName} · {isVietnamese ? "Đường đời" : "Life Path"} {lifePath}</span>
                 <span style={{ transition: "transform 0.2s", transform: showProfileSelect ? "rotate(180deg)" : "none" }}>⌄</span>
               </button>
 
@@ -250,8 +255,8 @@ export function PodcastWeekAheadPage() {
                           <p className="ai-chat-paragraph">
                             {message.isStreaming
                               ? chat.phase === "searching"
-                                ? "ĐANG TRA CỨU TƯ LIỆU…"
-                                : "ĐANG LUẬN GIẢI…"
+                                ? (isVietnamese ? "ĐANG TRA CỨU TƯ LIỆU…" : "SEARCHING KNOWLEDGE…")
+                                : (isVietnamese ? "ĐANG LUẬN GIẢI…" : "CREATING INTERPRETATION…")
                               : "…"}
                           </p>
                         )}
@@ -262,7 +267,7 @@ export function PodcastWeekAheadPage() {
                           minute: "2-digit",
                         })}
                         {message.isStreaming
-                          ? ` · ${chat.phase === "searching" ? "SEARCHING" : "THINKING"}`
+                          ? ` · ${chat.phase === "searching" ? (isVietnamese ? "ĐANG TRA CỨU" : "SEARCHING") : (isVietnamese ? "ĐANG SUY NGHĨ" : "THINKING")}`
                           : ""}
                       </span>
                     </div>
@@ -276,8 +281,8 @@ export function PodcastWeekAheadPage() {
               <span className="pyra-ai-live-dot">✧</span>
               <span>
                 {chat.phase === "searching"
-                  ? "ĐANG TRA CỨU TƯ LIỆU…"
-                  : "ĐANG TẠO LỜI GIẢI…"}
+                  ? (isVietnamese ? "ĐANG TRA CỨU TƯ LIỆU…" : "SEARCHING KNOWLEDGE…")
+                  : (isVietnamese ? "ĐANG TẠO LỜI GIẢI…" : "CREATING INTERPRETATION…")}
               </span>
               <span className="pyra-ai-live-pulse" aria-hidden="true" />
             </div>
@@ -291,11 +296,11 @@ export function PodcastWeekAheadPage() {
             <input
               value={draft}
               onChange={(event) => setDraft(event.target.value)}
-              placeholder="Ask Numina anything..."
-              aria-label="Ask Numina anything"
+            placeholder={isVietnamese ? "Hỏi Numina bất cứ điều gì..." : "Ask Numina anything..."}
+            aria-label={isVietnamese ? "Đặt câu hỏi cho Numina" : "Ask Numina anything"}
               disabled={chat.isStreaming}
             />
-            <button type="submit" aria-label="Send message" disabled={chat.isStreaming}>
+            <button type="submit" aria-label={isVietnamese ? "Gửi tin nhắn" : "Send message"} disabled={chat.isStreaming}>
               ➤
             </button>
           </form>
@@ -307,11 +312,11 @@ export function PodcastWeekAheadPage() {
             <span className="pyra-human-star star-two">✧</span>
             <span className="pyra-human-hand">☽</span>
           </div>
-          <p className="batch-kicker">NUMINA / QUICK GUIDANCE</p>
-          <h2>Ask me today</h2>
+          <p className="batch-kicker">NUMINA / {isVietnamese ? "GỢI Ý NHANH" : "QUICK GUIDANCE"}</p>
+          <h2>{isVietnamese ? "Hỏi tôi hôm nay" : "Ask me today"}</h2>
           <div className="pyra-human-rule">✦</div>
           <p className="pyra-human-intro">
-            Tap a familiar question and let Numina read the energy around your day.
+            {isVietnamese ? "Chọn một câu hỏi quen thuộc và để Numina đọc nguồn năng lượng quanh ngày hôm nay của bạn." : "Tap a familiar question and let Numina read the energy around your day."}
           </p>
           <div className="pyra-human-services pyra-quick-questions">
             {quickQuestions.map(([icon, question]) => (
@@ -422,6 +427,7 @@ const personalDayInsights: Record<number, { title: string; theme: string; color:
 
 function AccountDetailsForm() {
   const { user } = useAuth();
+  const isVietnamese = useLocale() === "vi";
   const { profiles, saveProfile, isSyncing } = useProfiles();
   const [saved, setSaved] = useState(false);
   const profile = profiles[0];
@@ -443,8 +449,8 @@ function AccountDetailsForm() {
   return (
     <form className="account-details-form" onSubmit={save}>
       <div className="account-form-heading">
-        <p className="batch-kicker">PERSONAL DETAILS {isSyncing && "· ĐANG ĐỒNG BỘ…"}</p>
-        <h2>Cập nhật thông tin bản đồ</h2>
+        <p className="batch-kicker">{isVietnamese ? "THÔNG TIN CÁ NHÂN" : "PERSONAL DETAILS"} {isSyncing && (isVietnamese ? "· ĐANG ĐỒNG BỘ…" : "· SYNCING…")}</p>
+        <h2>{isVietnamese ? "Cập nhật thông tin bản đồ" : "Update your map details"}</h2>
       </div>
       <label>
         Họ và tên
@@ -487,6 +493,9 @@ function AccountDetailsForm() {
 }
 
 export function ChartPage() {
+  const locale = useLocale();
+  const isVietnamese = locale === "vi";
+  const localize = (path: string) => isVietnamese ? path : `/en${path}`;
   const { user, profile: authProfile, signOut, openAuthModal } = useAuth();
   const { profiles, saveProfile, deleteProfile, isSyncing } = useProfiles();
   const { profile: personality } = usePersonalityProfile();
@@ -547,15 +556,15 @@ export function ChartPage() {
       {/* 1. HERO SECTION */}
       <section className="account-hero">
         <div className="account-hero-copy">
-          <p className="batch-kicker">NUMINA / SACRED NUMEROLOGY DASHBOARD</p>
+          <p className="batch-kicker">NUMINA / {isVietnamese ? "BẢN ĐỒ NHÂN SỐ HỌC" : "SACRED NUMEROLOGY DASHBOARD"}</p>
           <h1>
-            Your map,<br />
-            <em>held close.</em>
+            {isVietnamese ? "Bản đồ của bạn," : "Your map,"}<br />
+            <em>{isVietnamese ? "được nâng niu." : "held close."}</em>
           </h1>
           <p>
             {user
               ? `Chào mừng ${displayName}. Toàn bộ bản đồ năng lượng, hồ sơ ngày sinh và dữ liệu của bạn đã được kết nối với tài khoản ${user.email}.`
-              : "Không gian cá nhân lưu giữ các con số, phản chiếu năng lượng và nghi thức giúp bạn bước qua mỗi ngày với sự rõ ràng hơn."}
+              : (isVietnamese ? "Không gian cá nhân lưu giữ các con số, phản chiếu năng lượng và nghi thức giúp bạn bước qua mỗi ngày với sự rõ ràng hơn." : "Your personal space holds the numbers, energy, and rituals that help you move through each day with more clarity.")}
           </p>
 
           <div className="account-profile-card">
@@ -564,14 +573,14 @@ export function ChartPage() {
               <strong>{displayName}</strong>
               <span>
                 {user
-                  ? `${user.email} · ✦ CLOUD SYNCED`
+                  ? `${user.email} · ✦ ${isVietnamese ? "ĐÃ ĐỒNG BỘ ĐÁM MÂY" : "CLOUD SYNCED"}`
                   : activeProfile?.birthDate
-                  ? `${activeProfile.birthDate} · LOCAL MAP`
-                  : "Chưa đăng nhập · Dữ liệu tạm thời"}
+                  ? `${activeProfile.birthDate} · ${isVietnamese ? "BẢN ĐỒ TRÊN THIẾT BỊ" : "LOCAL MAP"}`
+                  : (isVietnamese ? "Chưa đăng nhập · Dữ liệu tạm thời" : "Not signed in · Temporary data")}
               </span>
             </div>
             {user ? (
-              <a href="#settings">CÀI ĐẶT</a>
+              <a href="#settings">{isVietnamese ? "CÀI ĐẶT" : "SETTINGS"}</a>
             ) : (
               <button
                 type="button"
@@ -586,7 +595,7 @@ export function ChartPage() {
                   textDecoration: "underline",
                 }}
               >
-                ĐĂNG NHẬP
+                {isVietnamese ? "ĐĂNG NHẬP" : "SIGN IN"}
               </button>
             )}
           </div>
@@ -595,7 +604,7 @@ export function ChartPage() {
           {uniqueProfiles.length > 1 && (
             <div style={{ marginTop: "24px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "11px", fontFamily: '"Courier New", monospace', color: "#777", width: "100%", marginBottom: "4px" }}>
-                ĐANG XEM BẢN ĐỒ CỦA:
+                {isVietnamese ? "ĐANG XEM BẢN ĐỒ CỦA:" : "VIEWING MAP FOR:"}
               </span>
               {uniqueProfiles.map((p) => {
                 const isActive = p.id === activeProfile?.id;
@@ -631,7 +640,7 @@ export function ChartPage() {
           <span className="account-orbit account-orbit-two" />
           <strong>{String(lifePath).slice(0, 2)}</strong>
           <p>
-            LIFE PATH NUMBER<br />
+            {isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH NUMBER"}<br />
             {activeProfile.name.toUpperCase()}
           </p>
         </div>
@@ -652,10 +661,10 @@ export function ChartPage() {
         >
           <div>
             <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "18px", color: "#2a2a2b" }}>
-              ✦ Đồng bộ hành trình của bạn lên Đám mây
+              ✦ {isVietnamese ? "Đồng bộ hành trình của bạn lên Đám mây" : "Sync your journey to the cloud"}
             </strong>
             <p style={{ margin: "4px 0 0", fontSize: "12px", fontFamily: 'var(--chani-mono)', color: "#444" }}>
-              Đăng nhập hoặc tạo tài khoản miễn phí để không bao giờ mất hồ sơ và kết quả tra cứu.
+              {isVietnamese ? "Đăng nhập hoặc tạo tài khoản miễn phí để không bao giờ mất hồ sơ và kết quả tra cứu." : "Sign in or create a free account so you never lose your profiles and readings."}
             </p>
           </div>
           <button
@@ -672,7 +681,7 @@ export function ChartPage() {
               letterSpacing: "0.06em",
             }}
           >
-            ĐĂNG NHẬP NGAY ↗
+            {isVietnamese ? "ĐĂNG NHẬP NGAY ↗" : "SIGN IN NOW ↗"}
           </button>
         </section>
       )}
@@ -681,13 +690,13 @@ export function ChartPage() {
       <section style={{ padding: "80px 13vw", background: "#f5f0e6", borderTop: "1px solid rgba(42,42,43,.12)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "20px", marginBottom: "36px" }}>
           <div>
-            <p className="batch-kicker">DAILY COSMIC TRANSIT · {dateFormatted.toUpperCase()}</p>
+            <p className="batch-kicker">{isVietnamese ? "NHỊP NĂNG LƯỢNG HÔM NAY" : "DAILY COSMIC TRANSIT"} · {dateFormatted.toUpperCase()}</p>
             <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(36px, 4vw, 54px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
-              Năng lượng hôm nay của bạn
+               {isVietnamese ? "Năng lượng hôm nay của bạn" : "Your energy today"}
             </h2>
           </div>
           <Link
-            href="/chat"
+             href={localize("/chat")}
             style={{
               padding: "12px 24px",
               background: "#2a2a2b",
@@ -701,7 +710,7 @@ export function ChartPage() {
               gap: "8px",
             }}
           >
-            HỎI NUMINA AI VỀ HÔM NAY ↗
+             {isVietnamese ? "HỎI NUMINA AI VỀ HÔM NAY ↗" : "ASK NUMINA AI ABOUT TODAY ↗"}
           </Link>
         </div>
 
@@ -733,7 +742,7 @@ export function ChartPage() {
               </span>
               <div>
                 <span style={{ fontSize: "10px", fontFamily: 'var(--chani-mono)', color: "#888", display: "block" }}>
-                  NGÀY CÁ NHÂN {personalDayNum}
+                   {isVietnamese ? "NGÀY CÁ NHÂN" : "PERSONAL DAY"} {personalDayNum}
                 </span>
                 <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "18px", color: "#2a2a2b" }}>
                   {todayInsight.title}
@@ -747,7 +756,7 @@ export function ChartPage() {
 
             <div style={{ padding: "16px", background: "#fcfaf7", borderLeft: "3px solid #bda476", marginBottom: "20px" }}>
               <span style={{ fontSize: "10px", fontFamily: 'var(--chani-mono)', color: "#999", display: "block", marginBottom: "4px" }}>
-                ✦ KHẲNG ĐỊNH TÍCH CỰC (AFFIRMATION)
+                 ✦ {isVietnamese ? "KHẲNG ĐỊNH TÍCH CỰC" : "POSITIVE AFFIRMATION"}
               </span>
               <p style={{ fontFamily: "var(--chani-serif)", fontStyle: "italic", fontSize: "14px", color: "#2a2a2b", margin: 0 }}>
                 "{todayInsight.affirmation}"
@@ -755,7 +764,7 @@ export function ChartPage() {
             </div>
 
             <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666", margin: 0 }}>
-              <strong>Lời khuyên:</strong> {todayInsight.advice}
+               <strong>{isVietnamese ? "Lời khuyên:" : "Advice:"}</strong> {todayInsight.advice}
             </p>
           </div>
 
@@ -771,33 +780,33 @@ export function ChartPage() {
             }}
           >
             <div>
-              <p className="batch-kicker">COSMIC HARMONY</p>
+              <p className="batch-kicker">{isVietnamese ? "HÀI HÒA VŨ TRỤ" : "COSMIC HARMONY"}</p>
               <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "24px", color: "#2a2a2b", margin: "0 0 20px" }}>
-                Chỉ dẫn rung động hôm nay
+                 {isVietnamese ? "Chỉ dẫn rung động hôm nay" : "Today's vibrational guidance"}
               </h3>
 
               <div style={{ display: "grid", gap: "16px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Màu sắc thu hút năng lượng:</span>
+                   <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>{isVietnamese ? "Màu sắc thu hút năng lượng:" : "Magnetic color:"}</span>
                   <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.color}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Khung giờ vàng hội tụ:</span>
+                   <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>{isVietnamese ? "Khung giờ vàng hội tụ:" : "Golden hours:"}</span>
                   <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.hours}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Tháng cá nhân hiện tại:</span>
-                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>Tháng {personalMonth}</strong>
+                   <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>{isVietnamese ? "Tháng cá nhân hiện tại:" : "Current personal month:"}</span>
+                   <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>{isVietnamese ? "Tháng" : "Month"} {personalMonth}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Năm cá nhân 2026:</span>
-                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#8a6d3b" }}>Năm {personalYear} (Chu kỳ 9 năm)</strong>
+                   <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>{isVietnamese ? "Năm cá nhân 2026:" : "Personal year 2026:"}</span>
+                   <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#8a6d3b" }}>{isVietnamese ? `Năm ${personalYear} (Chu kỳ 9 năm)` : `Year ${personalYear} (9-year cycle)`}</strong>
                 </div>
               </div>
             </div>
 
             <Link
-              href="/wallpaper"
+              href={localize("/lucky-wallpaper")}
               style={{
                 marginTop: "20px",
                 display: "inline-block",
@@ -807,7 +816,7 @@ export function ChartPage() {
                 textDecoration: "underline",
               }}
             >
-              TẠO HÌNH NỀN THẦN SỐ HỌC MAY MẮN CHO ĐIỆN THOẠI ↗
+               {isVietnamese ? "TẠO HÌNH NỀN THẦN SỐ HỌC MAY MẮN CHO ĐIỆN THOẠI ↗" : "CREATE A LUCKY NUMEROLOGY WALLPAPER ↗"}
             </Link>
           </div>
         </div>
@@ -816,7 +825,7 @@ export function ChartPage() {
       {/* 3. CORE 4 PILLARS BLUEPRINT */}
       <section style={{ padding: "90px 13vw", background: "#fcfbf9" }}>
         <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 60px" }}>
-          <p className="batch-kicker">YOUR SACRED BLUEPRINT</p>
+          <p className="batch-kicker">{isVietnamese ? "BẢN THIẾT KẾ NĂNG LƯỢNG" : "YOUR SACRED BLUEPRINT"}</p>
           <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(42px, 5vw, 68px)", color: "#2a2a2b", margin: "0 0 16px", textTransform: "uppercase" }}>
             4 Trụ Cột Thần Số Học Cốt Lõi
           </h2>
@@ -970,7 +979,7 @@ export function ChartPage() {
       <section style={{ padding: "80px 13vw", background: "#f4f2ee", borderTop: "1px solid rgba(42,42,43,.15)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "20px", marginBottom: "36px" }}>
           <div>
-            <p className="batch-kicker">FAMILY & FRIENDS MAPS ({uniqueProfiles.length}/10)</p>
+            <p className="batch-kicker">{isVietnamese ? "BẢN ĐỒ GIA ĐÌNH & BẠN BÈ" : "FAMILY & FRIENDS MAPS"} ({uniqueProfiles.length}/10)</p>
             <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(32px, 4vw, 48px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
               Quản lý danh sách bản đồ đã lưu
             </h2>
@@ -1134,7 +1143,7 @@ export function ChartPage() {
       {/* 5. 5-DIMENSIONS PSYCHOLOGY SECTION */}
       {personality?.scores && (
         <section style={{ padding: "80px 13vw", background: "#eee8df", borderTop: "1px solid rgba(42,42,43,.15)" }}>
-          <p className="batch-kicker">INNER DIMENSIONS MAP</p>
+          <p className="batch-kicker">{isVietnamese ? "BẢN ĐỒ CHIỀU SÂU NỘI TÂM" : "INNER DIMENSIONS MAP"}</p>
           <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "36px", color: "#2a2a2b", margin: "0 0 24px", textTransform: "uppercase" }}>
             5 Chiều Kích Tâm Lý Nội Tâm
           </h2>
@@ -1160,10 +1169,10 @@ export function ChartPage() {
       <section className="account-settings" id="settings">
         <AccountDetailsForm />
         <aside className="account-settings-side">
-          <p className="batch-kicker">ACCOUNT & SECURITY</p>
+          <p className="batch-kicker">{isVietnamese ? "TÀI KHOẢN & BẢO MẬT" : "ACCOUNT & SECURITY"}</p>
           <h2>
-            Your space,<br />
-            <em>your rhythm.</em>
+            {isVietnamese ? "Không gian của bạn," : "Your space,"}<br />
+            <em>{isVietnamese ? "nhịp điệu của bạn." : "your rhythm."}</em>
           </h2>
           <div className="account-setting-row">
             <span>◌</span>
@@ -1171,8 +1180,8 @@ export function ChartPage() {
               <strong>Đồng bộ đám mây (Cloud Sync)</strong>
               <p>{user ? "Hồ sơ của bạn đang được tự động đồng bộ thời gian thực lên Supabase." : "Đăng nhập để tự động sao lưu dữ liệu vĩnh viễn trên đám mây."}</p>
             </div>
-            <button type="button" aria-label="Toggle cloud sync status">
-              {user ? "ON" : "OFF"}
+            <button type="button" aria-label={isVietnamese ? "Bật tắt đồng bộ đám mây" : "Toggle cloud sync status"}>
+              {user ? (isVietnamese ? "BẬT" : "ON") : (isVietnamese ? "TẮT" : "OFF")}
             </button>
           </div>
           <div className="account-setting-row">
@@ -1181,8 +1190,8 @@ export function ChartPage() {
               <strong>Bảo mật bản đồ cá nhân</strong>
               <p>Mọi chỉ số và thông tin cá nhân đều được mã hóa an toàn.</p>
             </div>
-            <button type="button" aria-label="Private map enabled">
-              ON
+            <button type="button" aria-label={isVietnamese ? "Bản đồ cá nhân đang được bảo mật" : "Private map enabled"}>
+              {isVietnamese ? "BẬT" : "ON"}
             </button>
           </div>
 
@@ -1240,6 +1249,7 @@ const wallpaperLibrary = [
 ];
 
 export function EditorsPicksPage() {
+  const isVietnamese = useLocale() === "vi";
   const { profiles } = useProfiles();
 
   // Deduplicate profiles
@@ -1276,6 +1286,13 @@ export function EditorsPicksPage() {
   const [customWish, setCustomWish] = useState("");
   const [challengeTitle, setChallengeTitle] = useState<string | null>(null);
   const [showPromptDetails, setShowPromptDetails] = useState(false);
+
+  const localizedWallpaperStyles = isVietnamese
+    ? [["geometry", "Hình học thiêng liêng", "✧"], ["gold", "3D ánh vàng", "◇"], ["zen", "Thiền tĩnh", "◉"], ["botanical", "Thực vật", "❧"], ["cosmic", "Vũ trụ", "◌"], ["minimal", "Tối giản", "◯"]]
+    : wallpaperStyles;
+  const localizedWallpaperIntentions = isVietnamese
+    ? [["wealth", "Thịnh vượng", "☼"], ["love", "Tình yêu", "♡"], ["peace", "Bình an", "❀"], ["focus", "Tập trung", "◉"], ["healing", "Chữa lành", "♢"], ["courage", "Can đảm", "⌁"]]
+    : wallpaperIntentions;
 
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationPhase, setGenerationPhase] = useState<"idle" | "directing" | "rendering" | "done">("idle");
@@ -1368,8 +1385,8 @@ export function EditorsPicksPage() {
     <Shell>
       <section className="wallpaper-studio-section">
         <div className="wallpaper-studio-copy">
-          <p className="batch-kicker">NUMINA / AI SACRED WALLPAPER STUDIO</p>
-          <h2>Lucky wallpaper studio</h2>
+          <p className="batch-kicker">NUMINA / {isVietnamese ? "XƯỞNG HÌNH NỀN NHÂN SỐ HỌC AI" : "AI SACRED WALLPAPER STUDIO"}</p>
+          <h2>{isVietnamese ? "Xưởng hình nền may mắn" : "Lucky wallpaper studio"}</h2>
           <p className="wallpaper-studio-lead">
             Kiến tạo bức tranh năng lượng hộ mệnh độc bản. AI Art Director sẽ giải mã bản đồ Thần số học của bạn và kết hợp hình học thiêng liêng để tạo nên hình nền may mắn 8K.
           </p>
@@ -1423,9 +1440,9 @@ export function EditorsPicksPage() {
           <div className="wallpaper-controls">
             {/* Style Selection */}
             <div className="wallpaper-control-group">
-              <p className="wallpaper-control-label">PHONG CÁCH NGHỆ THUẬT (STYLE)</p>
+              <p className="wallpaper-control-label">{isVietnamese ? "PHONG CÁCH NGHỆ THUẬT" : "ART STYLE"}</p>
               <div className="wallpaper-option-grid">
-                {wallpaperStyles.map(([value, label, symbol]) => (
+                {localizedWallpaperStyles.map(([value, label, symbol]) => (
                   <button
                     className={style === value ? "wallpaper-option is-selected" : "wallpaper-option"}
                     type="button"
@@ -1441,9 +1458,9 @@ export function EditorsPicksPage() {
 
             {/* Intention Selection */}
             <div className="wallpaper-control-group">
-              <p className="wallpaper-control-label">Ý NIỆM THU HÚT (INTENTION)</p>
+              <p className="wallpaper-control-label">{isVietnamese ? "Ý NIỆM THU HÚT" : "INTENTION"}</p>
               <div className="wallpaper-option-grid">
-                {wallpaperIntentions.map(([value, label, symbol]) => (
+                {localizedWallpaperIntentions.map(([value, label, symbol]) => (
                   <button
                     className={intention === value ? "wallpaper-option is-selected" : "wallpaper-option"}
                     type="button"
@@ -1481,7 +1498,7 @@ export function EditorsPicksPage() {
               {[
                 ["phone", "▯", "ĐIỆN THOẠI (9:16)"],
                 ["laptop", "▱", "MÁY TÍNH (16:9)"],
-                ["avatar", "♙", "AVATAR (1:1)"],
+                ["avatar", "♙", isVietnamese ? "ẢNH ĐẠI DIỆN (1:1)" : "AVATAR (1:1)"],
               ].map(([value, symbol, label]) => (
                 <button
                   className={device === value ? "wallpaper-device is-selected" : "wallpaper-device"}
@@ -1530,21 +1547,21 @@ export function EditorsPicksPage() {
                   <span className="wallpaper-preview-orbit orbit-two" />
                   <strong>{String(lifePath).slice(0, 2)}</strong>
                   <span className="wallpaper-preview-glyph">✧</span>
-                  <span className="wallpaper-preview-caption">LIFE PATH {String(lifePath)}</span>
+                  <span className="wallpaper-preview-caption">{isVietnamese ? "ĐƯỜNG ĐỜI" : "LIFE PATH"} {String(lifePath)}</span>
                   <span className="wallpaper-preview-moon">☾</span>
                 </>
               )}
             </div>
           </div>
 
-          <p className="wallpaper-preview-note">
+           <p className="wallpaper-preview-note">
             {isGenerating
               ? generationPhase === "directing"
-                ? "✦ AI ART DIRECTOR ĐANG THIẾT KẾ SIÊU PROMPT PHONG THỦY…"
-                : "✦ AI GENERATOR ĐANG VẼ TÁC PHẨM 8K ĐỘC BẢN…"
+                ? (isVietnamese ? "✦ AI ĐANG THIẾT KẾ SIÊU PROMPT PHONG THỦY…" : "✦ AI ART DIRECTOR IS DESIGNING YOUR FENG SHUI PROMPT…")
+                : (isVietnamese ? "✦ AI ĐANG VẼ TÁC PHẨM 8K ĐỘC BẢN…" : "✦ AI GENERATOR IS RENDERING YOUR ONE-OF-A-KIND 8K ART…")
               : generatedData
-              ? `Tác phẩm phong thủy độc bản của ${activeProfile.name}`
-              : `Bản xem trước phong cách ${style} · Ý niệm ${intention}`}
+               ? (isVietnamese ? `Tác phẩm phong thủy độc bản của ${activeProfile.name}` : `One-of-a-kind feng shui artwork for ${activeProfile.name}`)
+               : (isVietnamese ? `Bản xem trước phong cách ${style} · Ý niệm ${intention}` : `Preview: ${style} style · ${intention} intention`)}
           </p>
 
           {/* Sacred Reading Card below image */}
@@ -1567,7 +1584,7 @@ export function EditorsPicksPage() {
                 </span>
                 {generatedData.isAIGenerated && (
                   <span style={{ fontSize: "9px", fontFamily: '"Courier New", monospace', padding: "2px 6px", background: "#ebd99e", borderRadius: "4px" }}>
-                    AI ART DIRECTED
+                    {isVietnamese ? "AI ĐIỀU PHỐI NGHỆ THUẬT" : "AI ART DIRECTED"}
                   </span>
                 )}
               </div>
@@ -1625,8 +1642,8 @@ export function EditorsPicksPage() {
       {/* Library of Lucky & Danger Wallpapers */}
       <section className="wallpaper-library-section">
         <div className="wallpaper-library-heading">
-          <p className="batch-kicker">THE WALLPAPER LIBRARY</p>
-          <h2>Lucky or unlucky?</h2>
+          <p className="batch-kicker">{isVietnamese ? "THƯ VIỆN HÌNH NỀN" : "THE WALLPAPER LIBRARY"}</p>
+          <h2>{isVietnamese ? "May mắn hay không may?" : "Lucky or unlucky?"}</h2>
           <p>
             Những biểu tượng thị giác mang năng lượng thu hút phước lành và những cảnh báo phong thủy dân gian bạn nên lưu tâm.
           </p>
@@ -1642,14 +1659,14 @@ export function EditorsPicksPage() {
               </div>
               <div className="wallpaper-library-copy">
                 <p className="batch-kicker">
-                  {item.kind === "lucky" ? `LUCKY WALLPAPER 0${index + 1}` : `DANGER WALLPAPER 0${index - 6}`}
+                  {item.kind === "lucky" ? `${isVietnamese ? "HÌNH NỀN MAY MẮN" : "LUCKY WALLPAPER"} 0${index + 1}` : `${isVietnamese ? "HÌNH NỀN CẢNH BÁO" : "DANGER WALLPAPER"} 0${index - 6}`}
                 </p>
                 <h3>{item.title}</h3>
                 <h4>{item.subtitle}</h4>
                 <p>{item.description}</p>
                 {item.kind === "lucky" ? (
                   <a className="wallpaper-library-button lucky" href={item.image} download>
-                    DOWNLOAD WALLPAPER ↓
+                    {isVietnamese ? "TẢI HÌNH NỀN ↓" : "DOWNLOAD WALLPAPER ↓"}
                   </a>
                 ) : (
                   <button
@@ -1657,7 +1674,7 @@ export function EditorsPicksPage() {
                     type="button"
                     onClick={() => setChallengeTitle(item.title)}
                   >
-                    I’M BRAVE — TRY IT
+                    {isVietnamese ? "TÔI GAN DẠ — THỬ NGAY" : "I’M BRAVE — TRY IT"}
                   </button>
                 )}
               </div>
@@ -1680,15 +1697,15 @@ export function EditorsPicksPage() {
               type="button"
               className="wallpaper-challenge-close"
               onClick={() => setChallengeTitle(null)}
-              aria-label="Close warning"
+              aria-label={isVietnamese ? "Đóng cảnh báo" : "Close warning"}
             >
               ×
             </button>
-            <p className="batch-kicker">DANGER WALLPAPER CHALLENGE</p>
+            <p className="batch-kicker">{isVietnamese ? "THỬ THÁCH HÌNH NỀN CẢNH BÁO" : "DANGER WALLPAPER CHALLENGE"}</p>
             <h3 id="wallpaper-challenge-title">{challengeTitle}</h3>
             <p>Đây là một câu chuyện dân gian / folklore trên mạng, không phải kết luận khoa học. Bạn vẫn muốn thử hình nền này chứ?</p>
             <button className="wallpaper-library-button danger" type="button" onClick={() => setChallengeTitle(null)}>
-              I ACCEPT THE VIBE
+              {isVietnamese ? "TÔI CHẤP NHẬN NĂNG LƯỢNG NÀY" : "I ACCEPT THE VIBE"}
             </button>
           </section>
         </div>
@@ -1744,8 +1761,8 @@ type CachedIndicatorReading = {
   savedAt: string;
 };
 
-function getIndicatorReadingCacheKey(fullName: string, birthDate: string, indicatorKey: string, value: string | number) {
-  return [fullName.trim().toLocaleLowerCase(), birthDate, indicatorKey, String(value)].join("::");
+function getIndicatorReadingCacheKey(fullName: string, birthDate: string, indicatorKey: string, value: string | number, locale = "vi") {
+  return [fullName.trim().toLocaleLowerCase(), birthDate, indicatorKey, String(value), locale].join("::");
 }
 
 function getCachedIndicatorReading(cacheKey: string): CachedIndicatorReading | null {
@@ -1782,6 +1799,7 @@ function saveCachedIndicatorReading(cacheKey: string, analysis: string) {
 }
 
 function NumerologyProfileForm({ onSubmit }: { onSubmit: (name: string, birthDate: string) => void }) {
+  const isVietnamese = useLocale() === "vi";
   const [name, setName] = useState("");
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
@@ -1795,26 +1813,27 @@ function NumerologyProfileForm({ onSubmit }: { onSubmit: (name: string, birthDat
   };
 
   return <form className="numerology-profile-form" onSubmit={submit}>
-    <p className="batch-kicker">BEGIN YOUR PERSONAL MAP</p>
-    <h2>Enter your details</h2>
-    <p>We’ll use your name and birth date to reveal the 24 numbers shaping your personal pattern.</p>
-    <label>Full name<input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder="Your name" required /></label>
+    <p className="batch-kicker">{isVietnamese ? "BẮT ĐẦU BẢN ĐỒ CÁ NHÂN" : "BEGIN YOUR PERSONAL MAP"}</p>
+    <h2>{isVietnamese ? "Nhập thông tin của bạn" : "Enter your details"}</h2>
+    <p>{isVietnamese ? "Chúng tôi sẽ dùng họ tên và ngày sinh để mở ra 24 con số tạo nên khuôn mẫu cá nhân của bạn." : "We’ll use your name and birth date to reveal the 24 numbers shaping your personal pattern."}</p>
+    <label>{isVietnamese ? "Họ và tên" : "Full name"}<input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder={isVietnamese ? "Nhập họ và tên" : "Your name"} required /></label>
     <fieldset>
-      <legend>Date of birth</legend>
+      <legend>{isVietnamese ? "Ngày sinh" : "Date of birth"}</legend>
       <div className="numerology-date-fields">
-        <label>Day<input type="number" min="1" max="31" value={day} onChange={(event) => setDay(event.target.value)} placeholder="DD" required /></label>
-        <label>Month<input type="number" min="1" max="12" value={month} onChange={(event) => setMonth(event.target.value)} placeholder="MM" required /></label>
-        <label>Year<input type="number" min="1900" max="2100" value={year} onChange={(event) => setYear(event.target.value)} placeholder="YYYY" required /></label>
+        <label>{isVietnamese ? "Ngày" : "Day"}<input type="number" min="1" max="31" value={day} onChange={(event) => setDay(event.target.value)} placeholder="DD" required /></label>
+        <label>{isVietnamese ? "Tháng" : "Month"}<input type="number" min="1" max="12" value={month} onChange={(event) => setMonth(event.target.value)} placeholder="MM" required /></label>
+        <label>{isVietnamese ? "Năm" : "Year"}<input type="number" min="1900" max="2100" value={year} onChange={(event) => setYear(event.target.value)} placeholder="YYYY" required /></label>
       </div>
     </fieldset>
-    <button type="submit">{submitted ? "24 INDICATORS READY" : "REVEAL MY 24 INDICATORS"}</button>
-    {submitted && <p className="numerology-form-message">Your personal map is ready. Select an indicator below for an AI interpretation.</p>}
+    <button type="submit">{submitted ? (isVietnamese ? "24 CHỈ SỐ ĐÃ SẴN SÀNG" : "24 INDICATORS READY") : (isVietnamese ? "MỞ 24 CHỈ SỐ CỦA TÔI" : "REVEAL MY 24 INDICATORS")}</button>
+    {submitted && <p className="numerology-form-message">{isVietnamese ? "Bản đồ cá nhân đã sẵn sàng. Hãy chọn một chỉ số để nhận lời luận giải từ AI." : "Your personal map is ready. Select an indicator below for an AI interpretation."}</p>}
   </form>;
 }
 
 export function OurTeamPage() {
   const router = useRouter();
   const pathname = usePathname();
+  const isVietnamese = useLocale() === "vi";
   const searchParams = useSearchParams();
   const { profiles, saveProfile } = useProfiles();
   const [fullName, setFullName] = useState("");
@@ -1985,7 +2004,7 @@ export function OurTeamPage() {
     activeFetchAbortControllerRef.current = abortController;
 
     const indicatorValue = String(indicator.value);
-    const cacheKey = getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, indicatorValue);
+    const cacheKey = getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, indicatorValue, isVietnamese ? "vi" : "en");
     const cachedReading = getCachedIndicatorReading(cacheKey);
 
     // If reading is already cached locally -> open modal immediately without animation
@@ -2036,11 +2055,12 @@ export function OurTeamPage() {
           indicatorKey: indicator.key,
           indicatorName: indicator.name,
           indicatorValue: indicator.value,
-          personalityProfile
+            personalityProfile,
+            language: isVietnamese ? "Vietnamese" : "English"
         }),
         signal: abortController.signal
       });
-      if (!response.ok || !response.body) throw new Error("Unable to read this indicator right now.");
+      if (!response.ok || !response.body) throw new Error(isVietnamese ? "Chưa thể đọc chỉ số này lúc này." : "Unable to read this indicator right now.");
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
@@ -2075,7 +2095,7 @@ export function OurTeamPage() {
     } catch (error) {
       if (abortController.signal.aborted) return;
       setAnalysisStage("error");
-      setAnalysis(error instanceof Error ? error.message : "Unable to load the AI interpretation.");
+      setAnalysis(error instanceof Error ? error.message : (isVietnamese ? "Chưa thể tải lời luận giải AI." : "Unable to load the AI interpretation."));
     } finally {
       if (!abortController.signal.aborted) {
         setIsLoading(false);
@@ -2106,28 +2126,28 @@ export function OurTeamPage() {
 
   return <Shell>
     <section className="batch-simple-hero batch-team-hero numerology-profile-hero">
-      <div className="numerology-profile-intro"><p className="batch-kicker">YOUR NUMEROLOGY DASHBOARD</p><h1>Know your numbers.</h1><p>Your name and birth date hold a personal pattern. Start here to discover the 24 indicators that shape your energy, choices, and timing.</p></div>
+      <div className="numerology-profile-intro"><p className="batch-kicker">{isVietnamese ? "BẢN ĐỒ NHÂN SỐ HỌC CỦA BẠN" : "YOUR NUMEROLOGY DASHBOARD"}</p><h1>{isVietnamese ? "Hiểu những con số của bạn." : "Know your numbers."}</h1><p>{isVietnamese ? "Họ tên và ngày sinh lưu giữ một khuôn mẫu riêng. Hãy bắt đầu để khám phá 24 chỉ số định hình năng lượng, lựa chọn và nhịp thời gian của bạn." : "Your name and birth date hold a personal pattern. Start here to discover the 24 indicators that shape your energy, choices, and timing."}</p></div>
       <NumerologyProfileForm onSubmit={reveal} />
     </section>
     <section ref={numerologySectionRef} className={`batch-section batch-team-section numerology-card-section numerology-reveal-${revealPhase}`} aria-busy={revealPhase === "revealing"}>
       <div className="numerology-indicators-heading">
-        <p className="batch-kicker batch-center">YOUR 24 INDICATORS</p>
-        <h2>24 chỉ số thần số học của {(fullName.trim() || "bạn").normalize("NFC")}</h2>
-        <p>Bộ chỉ số được tính riêng từ họ tên và ngày sinh của bạn.</p>
+        <p className="batch-kicker batch-center">{isVietnamese ? "24 CHỈ SỐ CỦA BẠN" : "YOUR 24 INDICATORS"}</p>
+            <h2>{isVietnamese ? "24 chỉ số thần số học của" : "Your 24 numerology indicators"} {isVietnamese ? (fullName.trim() || "bạn").normalize("NFC") : (fullName.trim() || "you").normalize("NFC")}</h2>
+            <p>{isVietnamese ? "Bộ chỉ số được tính riêng từ họ tên và ngày sinh của bạn." : "A personal set of indicators calculated from your name and birth date."}</p>
       </div>
-      {revealPhase !== "revealed" && <p className="numerology-reveal-status" aria-live="polite">{revealPhase === "hidden" ? "ENTER YOUR DETAILS TO UNLOCK YOUR PERSONAL MAP" : "YOUR PERSONAL MAP IS AWAKENING…"}</p>}
+      {revealPhase !== "revealed" && <p className="numerology-reveal-status" aria-live="polite">{revealPhase === "hidden" ? (isVietnamese ? "NHẬP THÔNG TIN ĐỂ MỞ BẢN ĐỒ CÁ NHÂN" : "ENTER YOUR DETAILS TO UNLOCK YOUR PERSONAL MAP") : (isVietnamese ? "BẢN ĐỒ CÁ NHÂN ĐANG THỨC TỈNH…" : "YOUR PERSONAL MAP IS AWAKENING…")}</p>}
       <div className="numerology-energy-wave" aria-hidden="true" />
       <div className="batch-team-grid numerology-card-grid">
         {numerologyCards.map(([image, number, title], index) => {
           const indicator = indicators[index];
           const value = indicator ? String(indicator.value) : "—";
-          const displayTitle = getCompactCardTitle(number, title);
+          const displayTitle = isVietnamese ? getCompactCardTitle(number, title) : (indicator?.name_en || title);
           const displayValue = getCompactCardValue(indicator?.key, value);
           const isNumeric = /^\d+$/.test(value);
           const isReading = selected?.title === displayTitle && isLoading;
           const isCrumpled = butterflyAnim?.cardIndex === index;
           const isInteractive = Boolean(indicator) && revealPhase === "revealed" && !butterflyAnim;
-          const cacheKey = indicator ? getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, value) : "";
+          const cacheKey = indicator ? getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, value, isVietnamese ? "vi" : "en") : "";
           const hasSavedReading = Boolean(indicator && hasCachedIndicatorReading(cacheKey));
           return <article className={`batch-team-card numerology-card ${isReading ? "is-reading" : ""}`} key={image} style={{ "--card-delay": `${Math.min(index, 23) * 55}ms`, opacity: isCrumpled ? 0 : 1, transition: "opacity 0.2s ease" } as CSSProperties} role={isInteractive ? "button" : undefined} tabIndex={isInteractive ? 0 : undefined} aria-busy={isReading} onClick={(event) => isInteractive && readIndicator(index, displayTitle, event.currentTarget)} onKeyDown={(event) => { if (isInteractive && (event.key === "Enter" || event.key === " ")) readIndicator(index, displayTitle, event.currentTarget as HTMLElement); }}>
             <div className="numerology-card-inner">
@@ -2135,13 +2155,13 @@ export function OurTeamPage() {
                 <span className="numerology-card-back-badge">#{number}</span>
               </div>
               <div className="numerology-card-face numerology-card-front" aria-hidden={revealPhase !== "revealed"}>
-                <ChaniImage src={`/images/card/${image}`} alt={displayTitle} /><p className="numerology-card-number">{number} / 24</p><strong className={`numerology-card-value ${isNumeric ? "" : "is-text"}`} title={value}>{displayValue}</strong><h3 title={title}>{displayTitle}</h3><span>{isReading ? "READING…" : hasSavedReading ? "VIEW SAVED READING" : indicator ? "CLICK FOR AI READING" : "ENTER DETAILS TO REVEAL"}</span>
+                <ChaniImage src={`/images/card/${image}`} alt={displayTitle} /><p className="numerology-card-number">{number} / 24</p><strong className={`numerology-card-value ${isNumeric ? "" : "is-text"}`} title={value}>{displayValue}</strong><h3 title={title}>{displayTitle}</h3><span>{isReading ? (isVietnamese ? "ĐANG LUẬN GIẢI…" : "READING…") : hasSavedReading ? (isVietnamese ? "XEM LỜI GIẢI ĐÃ LƯU" : "VIEW SAVED READING") : indicator ? (isVietnamese ? "NHẤN ĐỂ AI LUẬN GIẢI" : "CLICK FOR AI READING") : (isVietnamese ? "NHẬP THÔNG TIN ĐỂ MỞ" : "ENTER DETAILS TO REVEAL")}</span>
               </div>
             </div>
           </article>;
         })}
       </div>
-      <p className="numerology-disclaimer">Don’t be sad if your number looks a little unlucky :)) Even calculators can be wrong too.</p>
+      <p className="numerology-disclaimer">{isVietnamese ? "Đừng buồn nếu con số của bạn trông hơi kém may mắn :)) Ngay cả máy tính cũng có thể sai." : "Don’t be sad if your number looks a little unlucky :)) Even calculators can be wrong too."}</p>
     </section>
 
     {/* Card Crumple Animation Layer */}
@@ -2182,7 +2202,7 @@ export function OurTeamPage() {
               onClick={handleCatchButterfly}
               role="button"
               tabIndex={0}
-              aria-label="Catch the butterfly to reveal your reading"
+              aria-label={isVietnamese ? "Bắt cánh bướm để mở lời luận giải" : "Catch the butterfly to reveal your reading"}
               onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleCatchButterfly(); }}
             >
               <div
@@ -2262,22 +2282,22 @@ export function OurTeamPage() {
       </div>
     )}
 
-    {assessmentPrompt && <div className="indicator-assessment-backdrop" role="presentation"><section className="indicator-assessment-modal" role="dialog" aria-modal="true" aria-labelledby="indicator-assessment-title"><div className="indicator-assessment-symbol" aria-hidden="true">✦</div><p className="batch-kicker">NUMINA / PERSONALITY MAP</p><h2 id="indicator-assessment-title">Make your map more personal.</h2><p>Muốn lời luận giải sát với cách bạn suy nghĩ và cảm nhận hơn? Hãy hoàn thành bài trắc nghiệm 20 câu để tạo bộ vector tính cách riêng cho hồ sơ này.</p><p className="indicator-assessment-meta">20 CÂU HỎI · KHOẢNG 2–3 PHÚT · KHÔNG CÓ ĐÚNG HAY SAI</p><div className="indicator-assessment-actions"><button type="button" className="indicator-assessment-secondary" onClick={skipAssessmentForIdentity}>BỎ QUA LẦN NÀY</button><button type="button" className="indicator-assessment-primary" onClick={continueAssessment}>LÀM BÀI TEST <span>→</span></button></div></section></div>}
+    {assessmentPrompt && <div className="indicator-assessment-backdrop" role="presentation"><section className="indicator-assessment-modal" role="dialog" aria-modal="true" aria-labelledby="indicator-assessment-title"><div className="indicator-assessment-symbol" aria-hidden="true">✦</div><p className="batch-kicker">NUMINA / {isVietnamese ? "BẢN ĐỒ TÍNH CÁCH" : "PERSONALITY MAP"}</p><h2 id="indicator-assessment-title">{isVietnamese ? "Cá nhân hóa bản đồ của bạn." : "Make your map more personal."}</h2><p>{isVietnamese ? "Muốn lời luận giải sát với cách bạn suy nghĩ và cảm nhận hơn? Hãy hoàn thành bài trắc nghiệm 20 câu để tạo bộ vector tính cách riêng cho hồ sơ này." : "Want interpretations that feel closer to how you think and feel? Complete the 20-question assessment to create a personality vector for this profile."}</p><p className="indicator-assessment-meta">20 CÂU HỎI · KHOẢNG 2–3 PHÚT · KHÔNG CÓ ĐÚNG HAY SAI</p><div className="indicator-assessment-actions"><button type="button" className="indicator-assessment-secondary" onClick={skipAssessmentForIdentity}>BỎ QUA LẦN NÀY</button><button type="button" className="indicator-assessment-primary" onClick={continueAssessment}>LÀM BÀI TEST <span>→</span></button></div></section></div>}
     {selected && (() => {
       const illustrationSrc = getNumerologyImagePath(selected.key, selected.value, selected.title);
       return (
         <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) closeModal(); }}>
           <section className={`indicator-ai-modal indicator-ai-modal-split ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title">
             <div className="indicator-ai-orbit" aria-hidden="true" />
-            <button type="button" className="indicator-ai-close" onClick={closeModal} aria-label="Close interpretation">×</button>
+            <button type="button" className="indicator-ai-close" onClick={closeModal} aria-label={isVietnamese ? "Đóng lời luận giải" : "Close interpretation"}>×</button>
             
             {/* Left Column: Heading, Metadata, Status, and Detailed Interpretation */}
             <div className="indicator-ai-left-col">
-              <p className="batch-kicker">NUMINA AI / PERSONAL INDICATOR</p>
+              <p className="batch-kicker">NUMINA AI / {isVietnamese ? "CHỈ SỐ CÁ NHÂN" : "PERSONAL INDICATOR"}</p>
               <h2 id="indicator-ai-title">{selected.title}</h2>
               <p className="indicator-ai-value">{selected.name} · {selected.value}</p>
               <p className={`indicator-ai-source ${readingSource === "local" ? "is-local" : ""}`}>
-                {readingSource === "local" ? "SAVED ON THIS DEVICE · INSTANT READING" : "GENERATED FOR YOUR PERSONAL MAP"}
+                {readingSource === "local" ? (isVietnamese ? "ĐÃ LƯU TRÊN THIẾT BỊ · LUẬN GIẢI NGAY" : "SAVED ON THIS DEVICE · INSTANT READING") : (isVietnamese ? "ĐƯỢC TẠO CHO BẢN ĐỒ CÁ NHÂN" : "GENERATED FOR YOUR PERSONAL MAP")}
               </p>
 
               {isLoading && (
@@ -2314,7 +2334,7 @@ export function OurTeamPage() {
                     {analysis}
                   </ReactMarkdown>
                 ) : (
-                  <p>No interpretation available.</p>
+                  <p>{isVietnamese ? "Chưa có lời luận giải." : "No interpretation available."}</p>
                 )}
               </div>
 
@@ -2329,7 +2349,7 @@ export function OurTeamPage() {
             {/* Right Column: Sacred Energy Artwork Poster Card (Matching Layout from Image 2) */}
             <div className="indicator-ai-right-col">
               <div className="indicator-ai-poster-card">
-                <p className="batch-kicker indicator-ai-poster-kicker">SACRED ENERGY SYMBOL</p>
+                <p className="batch-kicker indicator-ai-poster-kicker">{isVietnamese ? "BIỂU TƯỢNG NĂNG LƯỢNG THIÊNG" : "SACRED ENERGY SYMBOL"}</p>
                 {illustrationSrc ? (
                   <div className="indicator-ai-poster-media">
                     <img src={illustrationSrc} alt={selected.title} className="indicator-ai-poster-img" />

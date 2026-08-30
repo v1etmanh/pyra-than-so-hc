@@ -1,9 +1,25 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
-import { Flex, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
+const SUPPORTED_LOCALES = [
+  { code: "vi", labelKey: "vietnamese", shortLabel: "VI" },
+  { code: "en", labelKey: "english", shortLabel: "EN" },
+] as const;
+
+function removeLocalePrefix(pathname: string, locale: string) {
+  const prefix = new RegExp(`^/${locale}(?=/|$)`);
+  return pathname.replace(prefix, "") || "/";
+}
 
 export const LanguageSwitcher = ({ isHeader = false }: { isHeader?: boolean }) => {
   const t = useTranslations("LanguageSwitcher");
@@ -11,32 +27,49 @@ export const LanguageSwitcher = ({ isHeader = false }: { isHeader?: boolean }) =
   const router = useRouter();
   const pathname = usePathname();
 
-  const hoverBg = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
+  const currentLocale = SUPPORTED_LOCALES.find((item) => item.code === locale) ?? SUPPORTED_LOCALES[0];
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
+  const borderColor = useColorModeValue("blackAlpha.200", "whiteAlpha.400");
+  const hoverBg = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
 
-  const switchLocale = () => {
-    const nextLocale = locale === "vi" ? "en" : "vi";
-    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
-    router.push(`/${nextLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`);
+  const selectLocale = (nextLocale: string) => {
+    if (nextLocale === locale) return;
+    const pathWithoutLocale = removeLocalePrefix(pathname, locale);
+    const nextPath = nextLocale === "vi" && pathWithoutLocale === "/"
+      ? "/"
+      : `/${nextLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+    router.replace(nextPath);
   };
 
   return (
-    <Tooltip label={locale === "vi" ? t("switchLocaleEn") : t("switchLocaleVi")} hasArrow>
-      <Flex
-        as="button"
-        onClick={switchLocale}
-        boxSize={10}
-        align="center"
-        justify="center"
-        rounded="full"
-        fontSize="xs"
-        fontWeight="bold"
+    <Menu placement="bottom-end">
+      <MenuButton
+        as={Button}
+        size="sm"
+        variant="outline"
+        borderColor={borderColor}
         color={textColor}
-        _hover={{ bg: hoverBg, color: "brand.700" }}
-        transition="all 0.2s"
+        fontSize="xs"
+        fontWeight="700"
+        minW={isHeader ? "58px" : "52px"}
+        px={3}
+        aria-label={t("selectLanguage")}
+        _hover={{ bg: hoverBg, borderColor: "brand.400" }}
       >
-        {locale === "vi" ? "EN" : "VI"}
-      </Flex>
-    </Tooltip>
+        {currentLocale.shortLabel}
+      </MenuButton>
+      <MenuList zIndex={2000} minW="160px">
+        {SUPPORTED_LOCALES.map((item) => (
+          <MenuItem
+            key={item.code}
+            onClick={() => selectLocale(item.code)}
+            icon={item.code === locale ? <span aria-hidden="true">✓</span> : undefined}
+            fontWeight={item.code === locale ? "700" : "400"}
+          >
+            {t(item.labelKey)}
+          </MenuItem>
+        ))}
+      </MenuList>
+    </Menu>
   );
 };

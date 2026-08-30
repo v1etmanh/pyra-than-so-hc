@@ -14,6 +14,7 @@ interface LazyIndicatorBody {
   indicatorValue: string | number;
   personalityProfile?: PersonalityProfile;
   providerConfig?: any;
+  language?: 'Vietnamese' | 'English';
 }
 
 export async function POST(req: NextRequest) {
@@ -26,7 +27,8 @@ export async function POST(req: NextRequest) {
       indicatorName,
       indicatorValue,
       personalityProfile,
-      providerConfig
+      providerConfig,
+      language = 'Vietnamese'
     } = body;
 
     if (!indicatorKey || indicatorValue === undefined) {
@@ -57,6 +59,10 @@ ${personalityProfile.toneDirective}
     }
 
     // 3. Build Expert System Prompt
+    const languageDirective = language === 'English'
+      ? 'IMPORTANT: Respond entirely in English. Translate the section headings and explanation naturally into English while preserving all numbers and markdown formatting.'
+      : 'QUAN TRỌNG: Bắt buộc trả lời hoàn toàn bằng tiếng Việt.';
+
     const systemPrompt = `Bạn là Chuyên gia Cao cấp Thần số học Pythagoras (theo trường phái TS. David A. Phillips và Hans Decoz).
 Nhiệm vụ của bạn là luận giải CHI TIẾT & CHUYÊN SÂU khi đương số xem xét chỉ số sau:
 - Họ tên đương số: ${fullName || 'Đương số'}
@@ -89,6 +95,7 @@ HƯỚNG DẪN CẤU TRÚC BÀI LUẬN GIẢI CHUYÊN SÂU (MARKDOWN):
 - Đúc kết ngắn gọn, sâu sắc và truyền cảm hứng.
 
 LƯU Ý QUAN TRỌNG:
+0. ${languageDirective}
 1. TUYỆT ĐỐI TUÂN THỦ CHỈ THỊ VĂN PHONG VÀ TÂM LÝ ĐÃ NÊU Ở TRÊN (nếu người dùng thiên về logic hãy dùng từ ngữ gãy gọn sắc bén; nếu nhạy cảm cảm xúc hãy dùng ngôn từ ấm áp chữa lành).
 2. KHÔNG nói mê tín, không bói toán bề nổi. Chỉ tập trung vào TÂM LÝ HỌC HÀNH VI và PHÁT TRIỂN NỘI TỰC.
 3. BẮT BUỘC IN ĐẬM (**...**) TẤT CẢ các con số (VD: **Số ${indicatorValue}**, **Đường Đời ${indicatorValue}**, **Năm 2026**), các từ khóa năng lượng cốt lõi, màu sắc may mắn, và các gạch đầu dòng then chốt để làm nổi bật và cực kỳ dễ đọc.`;
