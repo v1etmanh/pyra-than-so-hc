@@ -1841,6 +1841,15 @@ export function OurTeamPage() {
   });
   const numerologySectionRef = useRef<HTMLElement | null>(null);
   const revealTimerRef = useRef<number | null>(null);
+  const activeFetchAbortControllerRef = useRef<AbortController | null>(null);
+
+  const closeModal = () => {
+    activeFetchAbortControllerRef.current?.abort();
+    setSelected(null);
+    setAnalysis("");
+    setIsLoading(false);
+    setAnalysisStage("idle");
+  };
   const { profile: personalityProfile, skipAssessment } = usePersonalityProfile(
     fullName && birthDate ? { name: fullName, birthDate } : undefined
   );
@@ -1929,6 +1938,7 @@ export function OurTeamPage() {
 
   useEffect(() => () => {
     if (revealTimerRef.current) window.clearTimeout(revealTimerRef.current);
+    activeFetchAbortControllerRef.current?.abort();
   }, []);
 
   const reveal = (name: string, date: string) => {
@@ -1968,6 +1978,12 @@ export function OurTeamPage() {
     if (revealPhase !== "revealed" || butterflyAnim) return;
     const indicator = indicators[index];
     if (!indicator) return;
+
+    // Abort any prior in-flight request
+    activeFetchAbortControllerRef.current?.abort();
+    const abortController = new AbortController();
+    activeFetchAbortControllerRef.current = abortController;
+
     const indicatorValue = String(indicator.value);
     const cacheKey = getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, indicatorValue);
     const cachedReading = getCachedIndicatorReading(cacheKey);
@@ -1981,6 +1997,12 @@ export function OurTeamPage() {
       setIsLoading(false);
       return;
     }
+
+    // Reset analysis text so previous card's interpretation is never shown
+    setAnalysis("");
+    setReadingSource("ai");
+    setIsLoading(true);
+    setAnalysisStage("retrieving");
 
     // 1. Immediately launch Card Crumple animation layer -> Butterfly flight for unread cards
     if (element) {
@@ -1996,22 +2018,35 @@ export function OurTeamPage() {
           height: rect.height,
         },
       });
+    } else {
+      setSelected({ title, name: indicator.name, value: indicatorValue, key: indicator.key });
     }
 
     // 2. Immediately trigger async API reading in the background
-    setReadingSource("ai");
-    setIsLoading(true);
-    setAnalysisStage("retrieving");
     try {
       await new Promise((resolve) => window.setTimeout(resolve, 650));
+      if (abortController.signal.aborted) return;
       setAnalysisStage("generating");
-      const response = await fetch("/api/numerology/lazy-indicator", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ fullName, birthDay: birthDate, indicatorKey: indicator.key, indicatorName: indicator.name, indicatorValue: indicator.value, personalityProfile }) });
+      const response = await fetch("/api/numerology/lazy-indicator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          birthDay: birthDate,
+          indicatorKey: indicator.key,
+          indicatorName: indicator.name,
+          indicatorValue: indicator.value,
+          personalityProfile
+        }),
+        signal: abortController.signal
+      });
       if (!response.ok || !response.body) throw new Error("Unable to read this indicator right now.");
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
       let text = "";
       while (true) {
+        if (abortController.signal.aborted) break;
         const { done, value } = await reader.read();
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
@@ -2021,18 +2056,30 @@ export function OurTeamPage() {
           if (!line.startsWith("data: ")) continue;
           const payload = line.slice(6).trim();
           if (payload === "[DONE]") continue;
-          try { const event = JSON.parse(payload); if (event.content) { text += event.content; setAnalysis(text); } } catch { /* wait for the next complete SSE event */ }
+          try {
+            const event = JSON.parse(payload);
+            if (event.content && !abortController.signal.aborted) {
+              text += event.content;
+              setAnalysis(text);
+            }
+          } catch {
+            /* wait for the next complete SSE event */
+          }
         }
       }
+      if (abortController.signal.aborted) return;
       if (text.trim() && !text.trimStart().startsWith("⚠️")) {
         saveCachedIndicatorReading(cacheKey, text);
       }
       setAnalysisStage("complete");
     } catch (error) {
+      if (abortController.signal.aborted) return;
       setAnalysisStage("error");
       setAnalysis(error instanceof Error ? error.message : "Unable to load the AI interpretation.");
     } finally {
-      setIsLoading(false);
+      if (!abortController.signal.aborted) {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -2219,10 +2266,10 @@ export function OurTeamPage() {
     {selected && (() => {
       const illustrationSrc = getNumerologyImagePath(selected.key, selected.value, selected.title);
       return (
-        <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) setSelected(null); }}>
+        <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) closeModal(); }}>
           <section className={`indicator-ai-modal indicator-ai-modal-split ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title">
             <div className="indicator-ai-orbit" aria-hidden="true" />
-            <button type="button" className="indicator-ai-close" onClick={() => setSelected(null)} aria-label="Close interpretation">×</button>
+            <button type="button" className="indicator-ai-close" onClick={closeModal} aria-label="Close interpretation">×</button>
             
             {/* Left Column: Heading, Metadata, Status, and Detailed Interpretation */}
             <div className="indicator-ai-left-col">
@@ -2275,7 +2322,7 @@ export function OurTeamPage() {
                 {analysisStage === "error" && (
                   <button type="button" className="indicator-ai-retry" onClick={() => { const index = indicators.findIndex((item) => item.name === selected.name); if (index >= 0) readIndicator(index, selected.title); }}>THỬ LẠI ↻</button>
                 )}
-                {!isLoading && <button type="button" className="indicator-ai-done" onClick={() => setSelected(null)}>ĐÓNG LỜI GIẢI</button>}
+                {!isLoading && <button type="button" className="indicator-ai-done" onClick={closeModal}>ĐÓNG LỜI GIẢI</button>}
               </div>
             </div>
 

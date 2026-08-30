@@ -21,9 +21,23 @@
 .pyra-nav a:hover::after, .pyra-nav a.is-active::after { background: #bda476; }
 .pyra-header-tools { display: flex; align-items: center; justify-self: end; gap: 20px; }
 .pyra-theme-button { border: 0; padding: 4px; background: transparent; color: var(--chani-ink); font-size: 26px; line-height: 1; cursor: pointer; }
-.pyra-profile-button { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 6px 16px 6px 8px; border: 1px solid rgba(42,42,43,.2); border-radius: 28px; background: rgba(255,255,255,.45); color: inherit; font: 14px var(--chani-mono); cursor: pointer; }
+.pyra-profile-wrapper { position: relative; display: inline-block; }
+.pyra-profile-button { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 6px 16px 6px 8px; border: 1px solid rgba(42,42,43,.2); border-radius: 28px; background: rgba(255,255,255,.45); color: inherit; font: 14px var(--chani-mono); cursor: pointer; transition: background .2s ease, border-color .2s ease; }
+.pyra-profile-button:hover, .pyra-profile-button.is-active { background: rgba(255,255,255,.85); border-color: rgba(42,42,43,.4); }
 .pyra-profile-mark { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #d8bb64; color: #fff; font: 18px var(--chani-serif); }
-.pyra-profile-chevron { margin-left: 3px; font-size: 18px; }
+.pyra-profile-chevron { margin-left: 3px; font-size: 18px; display: inline-block; transition: transform .2s ease; }
+.pyra-profile-chevron.is-open { transform: rotate(180deg); }
+.pyra-profile-dropdown { position: absolute; top: calc(100% + 8px); right: 0; min-width: 230px; background: #fbfaf7; border: 1px solid rgba(42,42,43,.2); border-radius: 12px; box-shadow: 0 14px 36px rgba(42,42,43,.14), 0 2px 6px rgba(42,42,43,.06); padding: 8px 0; z-index: 100; animation: pyra-dropdown-in .18s cubic-bezier(.16,1,.3,1); }
+@keyframes pyra-dropdown-in { from { opacity: 0; transform: translateY(-6px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.pyra-dropdown-header { padding: 10px 16px 8px; display: flex; flex-direction: column; gap: 2px; }
+.pyra-dropdown-name { font: 700 13px/1.3 var(--chani-mono); color: var(--chani-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pyra-dropdown-email { font: 11px/1.3 var(--chani-mono); color: rgba(42,42,43,.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pyra-dropdown-divider { height: 1px; background: rgba(42,42,43,.12); margin: 6px 0; }
+.pyra-dropdown-item { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 16px; font: 12px/1.2 var(--chani-mono); color: var(--chani-ink); text-decoration: none; background: transparent; border: none; text-align: left; cursor: pointer; transition: background .15s ease, color .15s ease; box-sizing: border-box; }
+.pyra-dropdown-item:hover { background: rgba(189,164,118,.18); color: var(--chani-ink); }
+.pyra-dropdown-icon { font-size: 14px; width: 18px; display: inline-flex; justify-content: center; align-items: center; opacity: .85; }
+.pyra-dropdown-logout { color: #a34e4e; }
+.pyra-dropdown-logout:hover { background: rgba(163,78,78,.12); color: #8b3232; }
 .pyra-menu-button { display: none; border: 0; background: transparent; color: inherit; font: 11px var(--chani-mono); cursor: pointer; }
 
 .batch-site { background: #f8f7f7; }
