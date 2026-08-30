@@ -26,7 +26,7 @@ const slides: Slide[] = [
       "Explore the numbers behind your story, understand your natural strengths, and find a clearer way forward.",
     cta: "READ YOUR MAP",
     href: "/indicators",
-    image: `${ASSET}/hero-1.png`,
+    image: `${ASSET}/hero-numerology-1.jpg`,
     tone: "dark",
   },
   {
@@ -36,7 +36,7 @@ const slides: Slide[] = [
       "Use your personal year, month, and day to turn uncertainty into one grounded next step.",
     cta: "ASK TODAY",
     href: "/chat",
-    image: `${ASSET}/hero-2.avif`,
+    image: `${ASSET}/hero-numerology-2.jpg`,
     tone: "light",
   },
   {
@@ -46,7 +46,7 @@ const slides: Slide[] = [
       "Turn your numbers and intentions into a visual ritual with lucky wallpapers made for your energy.",
     cta: "OPEN THE STUDIO",
     href: "/lucky-wallpaper",
-    image: `${ASSET}/hero-3.avif`,
+    image: `${ASSET}/hero-numerology-3.jpg`,
     tone: "light",
   },
 ];
@@ -64,7 +64,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "LIFE PATH 7",
     title: "The seeker, the analyst, the quiet observer",
-    image: "hero-1.png",
+    image: "Nautical Pearl Seven.png",
     excerpt: "What a 7 is here to learn through solitude, study, and trust.",
     body: "Life Path 7 moves through the world by looking beneath the surface. You may need quiet before clarity arrives, and your strongest insights often appear when you give yourself space to question, research, and listen inward.",
     takeaway: "Your invitation: let curiosity be a compass, not a reason to hide.",
@@ -72,7 +72,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "BIRTHDAY NUMBER",
     title: "The day you arrived carries its own signature",
-    image: "eclipse-card.png",
+    image: "Vintage Nautical Pearl and Diving Helmet.png",
     excerpt: "A closer look at the natural gifts written into your birth day.",
     body: "Your birthday number describes a quality you can reach for instinctively. It adds a distinct tone to your larger chart: a way of solving problems, connecting with people, or showing up when life asks you to be fully yourself.",
     takeaway: "Start with the number of your birth day before reducing it further.",
@@ -80,7 +80,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "COLOR & ENERGY",
     title: "Why color can change the feeling of a room",
-    image: "hero-3.avif",
+    image: "Vintage Rainbow Butterfly Botanical Collage.png",
     excerpt: "Use color as a ritual cue for focus, rest, courage, or release.",
     body: "Color does not decide your fate, but it can shape attention and atmosphere. A warm tone may help you feel more visible, while a quieter shade can create space for reflection. Choose the color that supports the energy you want to practice today.",
     takeaway: "Think of color as an anchor for intention, not a promise of luck.",
@@ -88,7 +88,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "PERSONAL YEAR",
     title: "The rhythm of your current chapter",
-    image: "leo-season.avif",
+    image: "Golden Quill and Nine-Year Wheel.png",
     excerpt: "Understand the theme your personal year is inviting you to explore.",
     body: "A personal year gives your calendar a symbolic rhythm. Some years ask for beginnings, some for patience, and some for honest completion. Knowing the theme can help you work with the season instead of forcing every door open at once.",
     takeaway: "Move with the chapter you are in; every number has a purpose.",
@@ -96,7 +96,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "EXPRESSION NUMBER",
     title: "The name you carry and the way you express it",
-    image: "hero-2.avif",
+    image: "Cosmic Ideas Burst from Marble Thought.png",
     excerpt: "What your full name can reveal about your creative language.",
     body: "In numerology, the expression number is read from the letters in your full name. It is a reflective tool for exploring how you communicate, build, imagine, and contribute—not a fixed label you have to perform perfectly.",
     takeaway: "Use the number as a mirror, then decide what still feels true.",
@@ -104,7 +104,7 @@ const numerologyInsights: NumerologyInsight[] = [
   {
     label: "MASTER NUMBERS",
     title: "11, 22, and 33: a louder invitation",
-    image: "eclipse-card.png",
+    image: "Mystical Eye Triangle with Golden Numerals.png",
     excerpt: "Why some numbers are read as heightened potential and pressure.",
     body: "Master numbers are often associated with amplified sensitivity, vision, or responsibility. Their energy can feel expansive and demanding at the same time, so the practice is to ground the big idea in one small, repeatable action.",
     takeaway: "Big potential becomes useful when it has a daily container.",
@@ -112,7 +112,7 @@ const numerologyInsights: NumerologyInsight[] = [
 ];
 
 const weeklyFrequency = {
-  label: "PYRA AI RECOMMENDS",
+  label: "NUMINA AI RECOMMENDS",
   title: "Space Song",
   artist: "Beach House",
   prompt: "What should I listen to this week?",
@@ -306,13 +306,37 @@ export default function ChaniHomePage() {
       <section className="chani-section chani-frequency-section">
         <SectionHeading>Your weekly frequency</SectionHeading>
         <div className="frequency-layout">
-          <div className="frequency-visual" aria-hidden="true">
-            <span className="frequency-orbit frequency-orbit-a" />
-            <span className="frequency-orbit frequency-orbit-b" />
+          <div className="frequency-visual spotify-frequency-card" aria-hidden="true">
+            <div className="freq-green-ripples">
+              <span className="green-ring ring-1" />
+              <span className="green-ring ring-2" />
+              <span className="green-ring ring-3" />
+              <span className="green-ring ring-4" />
+              <span className="green-ring ring-5" />
+              <span className="green-ring ring-6" />
+              <span className="green-ring ring-7" />
+            </div>
+            <div className="spotify-freq-badge">
+              <span className="spotify-freq-dot" />
+              <span>TUNED // 432 HZ</span>
+            </div>
             <span className="frequency-star frequency-star-a">✦</span>
             <span className="frequency-star frequency-star-b">✧</span>
-            <span className="frequency-number">7</span>
+            <span className="spotify-freq-num">7</span>
             <span className="frequency-needle">♩</span>
+            <div className="spotify-freq-equalizer">
+              {[30, 65, 45, 80, 50, 95, 40, 70, 60, 85, 45, 75, 60, 35, 80, 50, 70, 45, 60, 80, 50].map((height, i) => (
+                <span
+                  key={i}
+                  className="spotify-freq-bar"
+                  style={{
+                    height: `${height}%`,
+                    animationDelay: `${(i * 0.08).toFixed(2)}s`,
+                    animationDuration: `${0.9 + (i % 4) * 0.2}s`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
           <div className="frequency-answer">
             <p className="frequency-label">{weeklyFrequency.label}</p>
@@ -333,7 +357,7 @@ export default function ChaniHomePage() {
           <p className="guidance-label">{card.label}</p>
           <h3>{card.title}</h3>
           <p>{card.description}</p>
-          <a className="chani-small-button" href="/chat">ASK PYRA AI</a>
+          <a className="chani-small-button" href="/chat">ASK NUMINA AI</a>
         </article>)}</div>
       </section>
 

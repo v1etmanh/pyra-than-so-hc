@@ -9,7 +9,7 @@ const nav = [
   ["MAP", "/"],
   ["MY ACCOUNT", "/account"],
   ["WALLPAPER STUDIO", "/lucky-wallpaper"],
-  ["PYRA AI", "/chat"],
+  ["NUMINA AI", "/chat"],
   ["24 INDICATORS", "/indicators"],
 ];
 
@@ -34,8 +34,13 @@ export default function PyraHeader() {
   return (
     <>
       <header className="pyra-header">
-        <Link className="pyra-wordmark" href="/" aria-label="PYRA home">
-          PYRA
+        <Link className="pyra-wordmark" href="/" aria-label="NUMINA home">
+          <img
+            src="/logo/436f1399-6171-4441-8654-6711279d206b.png"
+            alt="NUMINA Logo"
+            className="pyra-logo-img"
+          />
+          <span>NUMINA</span>
         </Link>
         <button
           className="pyra-menu-button"

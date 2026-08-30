@@ -10,6 +10,8 @@ import { useProfiles } from "@/hooks/useProfiles";
 import { getPersonalityIdentityKey, getStoredPersonalityAssessment, usePersonalityProfile } from "@/hooks/usePersonalityProfile";
 import { useProcessNumerology } from "@/hooks/useProcessNumerology";
 import { useAuth } from "@/hooks/useAuth";
+import { getNumerologyImagePath } from "@/utils/numerology-images";
+import ReactMarkdown from "react-markdown";
 
 const SITE = "/sites/chani-com-6d20749d";
 
@@ -128,8 +130,8 @@ export function PodcastWeekAheadPage() {
       <section className="pyra-ai-workspace">
         <div className="pyra-ai-chat-panel">
           <div className="pyra-ai-chat-header">
-            <p className="batch-kicker">PYRA AI / PERSONAL NUMEROLOGY GUIDE</p>
-            <h1>Ask Pyra anything</h1>
+            <p className="batch-kicker">NUMINA AI / PERSONAL NUMEROLOGY GUIDE</p>
+            <h1>Ask Numina anything</h1>
             <div ref={dropdownRef} style={{ position: "relative", display: "inline-block", zIndex: 1000 }}>
               <button
                 className="pyra-ai-profile-pill"
@@ -190,7 +192,7 @@ export function PodcastWeekAheadPage() {
                         onMouseLeave={(e) => (e.currentTarget.style.background = isSelected ? "rgba(189,164,118,0.2)" : "transparent")}
                       >
                         <div>
-                          <strong style={{ display: "block", fontFamily: "Georgia, serif", fontSize: "14px", color: "#2a2a2b" }}>
+                          <strong style={{ display: "block", fontFamily: "var(--chani-serif)", fontSize: "14px", color: "#2a2a2b" }}>
                             {p.name}
                           </strong>
                           <span style={{ fontSize: "11px", color: "#777", fontFamily: '"Courier New", monospace' }}>
@@ -228,14 +230,32 @@ export function PodcastWeekAheadPage() {
                   <>
                     <span className="pyra-ai-compass">✧</span>
                     <div className="pyra-ai-message ai-message">
-                      <p>
-                        {message.content ||
-                          (message.isStreaming
-                            ? chat.phase === "searching"
-                              ? "ĐANG TRA CỨU TƯ LIỆU…"
-                              : "ĐANG LUẬN GIẢI…"
-                            : "…")}
-                      </p>
+                      <div className="pyra-ai-markdown-body">
+                        {message.content ? (
+                          <ReactMarkdown
+                            components={{
+                              strong: ({ node, ...props }) => <strong className="ai-chat-bold-highlight" {...props} />,
+                              b: ({ node, ...props }) => <b className="ai-chat-bold-highlight" {...props} />,
+                              h1: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
+                              h2: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
+                              h3: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
+                              h4: ({ node, ...props }) => <h4 className="ai-chat-subheading" {...props} />,
+                              li: ({ node, ...props }) => <li className="ai-chat-list-item" {...props} />,
+                              p: ({ node, ...props }) => <p className="ai-chat-paragraph" {...props} />,
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
+                        ) : (
+                          <p className="ai-chat-paragraph">
+                            {message.isStreaming
+                              ? chat.phase === "searching"
+                                ? "ĐANG TRA CỨU TƯ LIỆU…"
+                                : "ĐANG LUẬN GIẢI…"
+                              : "…"}
+                          </p>
+                        )}
+                      </div>
                       <span>
                         {new Date(message.timestamp).toLocaleTimeString([], {
                           hour: "2-digit",
@@ -271,8 +291,8 @@ export function PodcastWeekAheadPage() {
             <input
               value={draft}
               onChange={(event) => setDraft(event.target.value)}
-              placeholder="Ask Pyra anything..."
-              aria-label="Ask Pyra anything"
+              placeholder="Ask Numina anything..."
+              aria-label="Ask Numina anything"
               disabled={chat.isStreaming}
             />
             <button type="submit" aria-label="Send message" disabled={chat.isStreaming}>
@@ -287,11 +307,11 @@ export function PodcastWeekAheadPage() {
             <span className="pyra-human-star star-two">✧</span>
             <span className="pyra-human-hand">☽</span>
           </div>
-          <p className="batch-kicker">PYRA / QUICK GUIDANCE</p>
+          <p className="batch-kicker">NUMINA / QUICK GUIDANCE</p>
           <h2>Ask me today</h2>
           <div className="pyra-human-rule">✦</div>
           <p className="pyra-human-intro">
-            Tap a familiar question and let Pyra read the energy around your day.
+            Tap a familiar question and let Numina read the energy around your day.
           </p>
           <div className="pyra-human-services pyra-quick-questions">
             {quickQuestions.map(([icon, question]) => (
@@ -527,7 +547,7 @@ export function ChartPage() {
       {/* 1. HERO SECTION */}
       <section className="account-hero">
         <div className="account-hero-copy">
-          <p className="batch-kicker">PYRA / SACRED NUMEROLOGY DASHBOARD</p>
+          <p className="batch-kicker">NUMINA / SACRED NUMEROLOGY DASHBOARD</p>
           <h1>
             Your map,<br />
             <em>held close.</em>
@@ -631,10 +651,10 @@ export function ChartPage() {
           }}
         >
           <div>
-            <strong style={{ fontFamily: "Georgia, serif", fontSize: "18px", color: "#2a2a2b" }}>
+            <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "18px", color: "#2a2a2b" }}>
               ✦ Đồng bộ hành trình của bạn lên Đám mây
             </strong>
-            <p style={{ margin: "4px 0 0", fontSize: "12px", fontFamily: '"Courier New", monospace', color: "#444" }}>
+            <p style={{ margin: "4px 0 0", fontSize: "12px", fontFamily: 'var(--chani-mono)', color: "#444" }}>
               Đăng nhập hoặc tạo tài khoản miễn phí để không bao giờ mất hồ sơ và kết quả tra cứu.
             </p>
           </div>
@@ -648,7 +668,7 @@ export function ChartPage() {
               border: "none",
               cursor: "pointer",
               fontSize: "11px",
-              fontFamily: '"Courier New", monospace',
+              fontFamily: 'var(--chani-mono)',
               letterSpacing: "0.06em",
             }}
           >
@@ -662,7 +682,7 @@ export function ChartPage() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "20px", marginBottom: "36px" }}>
           <div>
             <p className="batch-kicker">DAILY COSMIC TRANSIT · {dateFormatted.toUpperCase()}</p>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(36px, 4vw, 54px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
+            <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(36px, 4vw, 54px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
               Năng lượng hôm nay của bạn
             </h2>
           </div>
@@ -674,14 +694,14 @@ export function ChartPage() {
               color: "#fff",
               textDecoration: "none",
               fontSize: "11px",
-              fontFamily: '"Courier New", monospace',
+              fontFamily: 'var(--chani-mono)',
               letterSpacing: "0.05em",
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
             }}
           >
-            HỎI PYRA AI VỀ HÔM NAY ↗
+            HỎI NUMINA AI VỀ HÔM NAY ↗
           </Link>
         </div>
 
@@ -705,36 +725,36 @@ export function ChartPage() {
                   borderRadius: "50%",
                   background: "#bda476",
                   color: "#fff",
-                  fontFamily: "Georgia, serif",
+                  fontFamily: "var(--chani-serif)",
                   fontSize: "22px",
                 }}
               >
                 {personalDayNum}
               </span>
               <div>
-                <span style={{ fontSize: "10px", fontFamily: '"Courier New", monospace', color: "#888", display: "block" }}>
+                <span style={{ fontSize: "10px", fontFamily: 'var(--chani-mono)', color: "#888", display: "block" }}>
                   NGÀY CÁ NHÂN {personalDayNum}
                 </span>
-                <strong style={{ fontFamily: "Georgia, serif", fontSize: "18px", color: "#2a2a2b" }}>
+                <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "18px", color: "#2a2a2b" }}>
                   {todayInsight.title}
                 </strong>
               </div>
             </div>
 
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "13px", lineHeight: "1.6", color: "#555", marginBottom: "20px" }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "13px", lineHeight: "1.6", color: "#555", marginBottom: "20px" }}>
               {todayInsight.theme}
             </p>
 
             <div style={{ padding: "16px", background: "#fcfaf7", borderLeft: "3px solid #bda476", marginBottom: "20px" }}>
-              <span style={{ fontSize: "10px", fontFamily: '"Courier New", monospace', color: "#999", display: "block", marginBottom: "4px" }}>
+              <span style={{ fontSize: "10px", fontFamily: 'var(--chani-mono)', color: "#999", display: "block", marginBottom: "4px" }}>
                 ✦ KHẲNG ĐỊNH TÍCH CỰC (AFFIRMATION)
               </span>
-              <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "14px", color: "#2a2a2b", margin: 0 }}>
+              <p style={{ fontFamily: "var(--chani-serif)", fontStyle: "italic", fontSize: "14px", color: "#2a2a2b", margin: 0 }}>
                 "{todayInsight.affirmation}"
               </p>
             </div>
 
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", color: "#666", margin: 0 }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666", margin: 0 }}>
               <strong>Lời khuyên:</strong> {todayInsight.advice}
             </p>
           </div>
@@ -752,26 +772,26 @@ export function ChartPage() {
           >
             <div>
               <p className="batch-kicker">COSMIC HARMONY</p>
-              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "24px", color: "#2a2a2b", margin: "0 0 20px" }}>
+              <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "24px", color: "#2a2a2b", margin: "0 0 20px" }}>
                 Chỉ dẫn rung động hôm nay
               </h3>
 
               <div style={{ display: "grid", gap: "16px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", color: "#666" }}>Màu sắc thu hút năng lượng:</span>
-                  <strong style={{ fontFamily: "Georgia, serif", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.color}</strong>
+                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Màu sắc thu hút năng lượng:</span>
+                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.color}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", color: "#666" }}>Khung giờ vàng hội tụ:</span>
-                  <strong style={{ fontFamily: "Georgia, serif", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.hours}</strong>
+                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Khung giờ vàng hội tụ:</span>
+                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>{todayInsight.hours}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(42,42,43,0.1)", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", color: "#666" }}>Tháng cá nhân hiện tại:</span>
-                  <strong style={{ fontFamily: "Georgia, serif", fontSize: "13px", color: "#2a2a2b" }}>Tháng {personalMonth}</strong>
+                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Tháng cá nhân hiện tại:</span>
+                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#2a2a2b" }}>Tháng {personalMonth}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", paddingBottom: "10px" }}>
-                  <span style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", color: "#666" }}>Năm cá nhân 2026:</span>
-                  <strong style={{ fontFamily: "Georgia, serif", fontSize: "13px", color: "#8a6d3b" }}>Năm {personalYear} (Chu kỳ 9 năm)</strong>
+                  <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", color: "#666" }}>Năm cá nhân 2026:</span>
+                  <strong style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", color: "#8a6d3b" }}>Năm {personalYear} (Chu kỳ 9 năm)</strong>
                 </div>
               </div>
             </div>
@@ -797,10 +817,10 @@ export function ChartPage() {
       <section style={{ padding: "90px 13vw", background: "#fcfbf9" }}>
         <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 60px" }}>
           <p className="batch-kicker">YOUR SACRED BLUEPRINT</p>
-          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(42px, 5vw, 68px)", color: "#2a2a2b", margin: "0 0 16px", textTransform: "uppercase" }}>
+          <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(42px, 5vw, 68px)", color: "#2a2a2b", margin: "0 0 16px", textTransform: "uppercase" }}>
             4 Trụ Cột Thần Số Học Cốt Lõi
           </h2>
-          <p style={{ fontFamily: '"Courier New", monospace', fontSize: "13px", color: "#666" }}>
+          <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "13px", color: "#666" }}>
             Bộ khung năng lượng định hình bản sắc, tài năng và khát vọng sâu thẳm của {activeProfile.name}.
           </p>
         </div>
@@ -808,6 +828,7 @@ export function ChartPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
           {/* Life Path */}
           <div
+            className="pillar-card"
             style={{
               padding: "32px 24px",
               background: "#eadbd4",
@@ -816,20 +837,28 @@ export function ChartPage() {
               overflow: "hidden",
             }}
           >
-            <span style={{ fontSize: "36px", fontFamily: "Georgia, serif", color: "#8d6056", display: "block", marginBottom: "16px" }}>
+            {getNumerologyImagePath("walksOfLife", lifePath) && (
+              <img
+                src={getNumerologyImagePath("walksOfLife", lifePath)!}
+                alt={`Số Đường Đời ${lifePath}`}
+                className="pillar-card-icon"
+              />
+            )}
+            <span style={{ fontSize: "36px", fontFamily: "var(--chani-serif)", color: "#8d6056", display: "block", marginBottom: "16px" }}>
               ✦ {lifePath}
             </span>
             <p className="batch-kicker" style={{ margin: "0 0 8px" }}>SỐ ĐƯỜNG ĐỜI</p>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
+            <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
               La Bàn Cuộc Đời
             </h3>
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
               Con đường và bài học linh hồn lớn nhất bạn đến cuộc đời này để trải nghiệm và làm chủ.
             </p>
           </div>
 
           {/* Destiny */}
           <div
+            className="pillar-card"
             style={{
               padding: "32px 24px",
               background: "#e0e6db",
@@ -838,20 +867,28 @@ export function ChartPage() {
               overflow: "hidden",
             }}
           >
-            <span style={{ fontSize: "36px", fontFamily: "Georgia, serif", color: "#5d7355", display: "block", marginBottom: "16px" }}>
+            {getNumerologyImagePath("mission", destiny) && (
+              <img
+                src={getNumerologyImagePath("mission", destiny)!}
+                alt={`Số Sứ Mệnh ${destiny}`}
+                className="pillar-card-icon"
+              />
+            )}
+            <span style={{ fontSize: "36px", fontFamily: "var(--chani-serif)", color: "#5d7355", display: "block", marginBottom: "16px" }}>
               ☼ {destiny}
             </span>
             <p className="batch-kicker" style={{ margin: "0 0 8px" }}>SỐ SỨ MỆNH</p>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
+            <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
               Năng Lực Hành Động
             </h3>
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
               Công cụ và tiềm năng bẩm sinh mà vũ trụ trao tặng để bạn hiện thực hóa hoài bão.
             </p>
           </div>
 
           {/* Soul Urge */}
           <div
+            className="pillar-card"
             style={{
               padding: "32px 24px",
               background: "#e4dce8",
@@ -860,20 +897,28 @@ export function ChartPage() {
               overflow: "hidden",
             }}
           >
-            <span style={{ fontSize: "36px", fontFamily: "Georgia, serif", color: "#745b7f", display: "block", marginBottom: "16px" }}>
+            {getNumerologyImagePath("soul", soul) && (
+              <img
+                src={getNumerologyImagePath("soul", soul)!}
+                alt={`Số Linh Hồn ${soul}`}
+                className="pillar-card-icon"
+              />
+            )}
+            <span style={{ fontSize: "36px", fontFamily: "var(--chani-serif)", color: "#745b7f", display: "block", marginBottom: "16px" }}>
               ♡ {soul}
             </span>
             <p className="batch-kicker" style={{ margin: "0 0 8px" }}>SỐ LINH HỒN</p>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
+            <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
               Tiếng Nói Trái Tim
             </h3>
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
               Khát khao chân thật, thầm kín nhất mang lại sự bình yên và hạnh phúc trọn vẹn.
             </p>
           </div>
 
           {/* Personality */}
           <div
+            className="pillar-card"
             style={{
               padding: "32px 24px",
               background: "#eee5d9",
@@ -882,14 +927,21 @@ export function ChartPage() {
               overflow: "hidden",
             }}
           >
-            <span style={{ fontSize: "36px", fontFamily: "Georgia, serif", color: "#9e793f", display: "block", marginBottom: "16px" }}>
+            {getNumerologyImagePath("personality", personalityNum) && (
+              <img
+                src={getNumerologyImagePath("personality", personalityNum)!}
+                alt={`Số Nhân Cách ${personalityNum}`}
+                className="pillar-card-icon"
+              />
+            )}
+            <span style={{ fontSize: "36px", fontFamily: "var(--chani-serif)", color: "#9e793f", display: "block", marginBottom: "16px" }}>
               ◐ {personalityNum}
             </span>
             <p className="batch-kicker" style={{ margin: "0 0 8px" }}>SỐ NHÂN CÁCH</p>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
+            <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "22px", margin: "0 0 12px", color: "#2a2a2b" }}>
               Tấm Gương Ngoại Cảnh
             </h3>
-            <p style={{ fontFamily: '"Courier New", monospace', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
+            <p style={{ fontFamily: 'var(--chani-mono)', fontSize: "12px", lineHeight: "1.5", color: "#555", margin: 0 }}>
               Cách bạn bộc lộ bản thân ra thế giới bên ngoài và ấn tượng bạn tạo nên với mọi người.
             </p>
           </div>
@@ -904,7 +956,7 @@ export function ChartPage() {
               background: "#2a2a2b",
               color: "#fff",
               textDecoration: "none",
-              fontFamily: '"Courier New", monospace',
+              fontFamily: 'var(--chani-mono)',
               fontSize: "12px",
               letterSpacing: "0.06em",
             }}
@@ -919,11 +971,11 @@ export function ChartPage() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "20px", marginBottom: "36px" }}>
           <div>
             <p className="batch-kicker">FAMILY & FRIENDS MAPS ({uniqueProfiles.length}/10)</p>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
+            <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "clamp(32px, 4vw, 48px)", color: "#2a2a2b", margin: 0, textTransform: "uppercase" }}>
               Quản lý danh sách bản đồ đã lưu
             </h2>
           </div>
-          <span style={{ fontFamily: '"Courier New", monospace', fontSize: "11px", color: "#777" }}>
+          <span style={{ fontFamily: 'var(--chani-mono)', fontSize: "11px", color: "#777" }}>
             Tự động lưu trữ trên {user ? "Đám mây Supabase" : "Trình duyệt"}
           </span>
         </div>
@@ -948,15 +1000,15 @@ export function ChartPage() {
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
                     <div>
-                      <strong style={{ display: "block", fontSize: "18px", fontFamily: "Georgia, serif", color: "#2a2a2b" }}>
+                      <strong style={{ display: "block", fontSize: "18px", fontFamily: "var(--chani-serif)", color: "#2a2a2b" }}>
                         {p.name}
                       </strong>
-                      <span style={{ fontSize: "12px", fontFamily: '"Courier New", monospace', color: "#777" }}>
+                      <span style={{ fontSize: "12px", fontFamily: 'var(--chani-mono)', color: "#777" }}>
                         {p.birthDate}
                       </span>
                     </div>
                     {isSelected && (
-                      <span style={{ padding: "3px 8px", background: "#ebd99e", fontSize: "9px", fontFamily: '"Courier New", monospace', borderRadius: "10px" }}>
+                      <span style={{ padding: "3px 8px", background: "#ebd99e", fontSize: "9px", fontFamily: 'var(--chani-mono)', borderRadius: "10px" }}>
                         ĐANG CHỌN
                       </span>
                     )}
@@ -975,7 +1027,7 @@ export function ChartPage() {
                       border: "1px solid #2a2a2b",
                       cursor: "pointer",
                       fontSize: "10px",
-                      fontFamily: '"Courier New", monospace',
+                      fontFamily: 'var(--chani-mono)',
                     }}
                   >
                     CHỌN BẢN ĐỒ
@@ -988,7 +1040,7 @@ export function ChartPage() {
                       color: "#2a2a2b",
                       border: "1px solid rgba(42,42,43,0.3)",
                       fontSize: "10px",
-                      fontFamily: '"Courier New", monospace',
+                      fontFamily: 'var(--chani-mono)',
                       textDecoration: "none",
                       display: "grid",
                       placeItems: "center",
@@ -1007,7 +1059,7 @@ export function ChartPage() {
                       color: "#c44",
                       cursor: "pointer",
                       fontSize: "11px",
-                      fontFamily: '"Courier New", monospace',
+                      fontFamily: 'var(--chani-mono)',
                     }}
                     aria-label={`Xóa hồ sơ ${p.name}`}
                   >
@@ -1022,7 +1074,7 @@ export function ChartPage() {
         {/* Add New Profile Inline Form */}
         <div style={{ padding: "32px", background: "rgba(255,255,255,0.6)", border: "1px dashed rgba(42,42,43,0.3)" }}>
           <p className="batch-kicker" style={{ margin: "0 0 6px" }}>THÊM HỒ SƠ MỚI</p>
-          <h3 style={{ fontFamily: "Georgia, serif", fontSize: "20px", margin: "0 0 16px", color: "#2a2a2b" }}>
+          <h3 style={{ fontFamily: "var(--chani-serif)", fontSize: "20px", margin: "0 0 16px", color: "#2a2a2b" }}>
             Lưu bản đồ người thân, con cái hoặc bạn bè
           </h3>
           <form onSubmit={handleAddNewProfile} style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
@@ -1037,7 +1089,7 @@ export function ChartPage() {
                 padding: "10px 14px",
                 border: "1px solid rgba(42,42,43,0.2)",
                 background: "#fff",
-                fontFamily: '"Courier New", monospace',
+                fontFamily: 'var(--chani-mono)',
                 fontSize: "12px",
               }}
             />
@@ -1051,7 +1103,7 @@ export function ChartPage() {
                 padding: "10px 14px",
                 border: "1px solid rgba(42,42,43,0.2)",
                 background: "#fff",
-                fontFamily: '"Courier New", monospace',
+                fontFamily: 'var(--chani-mono)',
                 fontSize: "12px",
               }}
             />
@@ -1063,7 +1115,7 @@ export function ChartPage() {
                 color: "#fff",
                 border: "none",
                 cursor: "pointer",
-                fontFamily: '"Courier New", monospace',
+                fontFamily: 'var(--chani-mono)',
                 fontSize: "11px",
                 letterSpacing: "0.05em",
               }}
@@ -1071,7 +1123,7 @@ export function ChartPage() {
               + THÊM HỒ SƠ
             </button>
             {newProfileSaved && (
-              <span style={{ fontSize: "11px", color: "#477a45", fontFamily: '"Courier New", monospace' }}>
+              <span style={{ fontSize: "11px", color: "#477a45", fontFamily: 'var(--chani-mono)' }}>
                 Đã thêm hồ sơ thành công! ✓
               </span>
             )}
@@ -1083,16 +1135,16 @@ export function ChartPage() {
       {personality?.scores && (
         <section style={{ padding: "80px 13vw", background: "#eee8df", borderTop: "1px solid rgba(42,42,43,.15)" }}>
           <p className="batch-kicker">INNER DIMENSIONS MAP</p>
-          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "36px", color: "#2a2a2b", margin: "0 0 24px", textTransform: "uppercase" }}>
+          <h2 style={{ fontFamily: "var(--chani-serif)", fontSize: "36px", color: "#2a2a2b", margin: "0 0 24px", textTransform: "uppercase" }}>
             5 Chiều Kích Tâm Lý Nội Tâm
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
             {Object.entries(personality.scores).map(([trait, score]) => (
               <div key={trait} style={{ padding: "20px", background: "rgba(255,255,255,0.7)", border: "1px solid rgba(42,42,43,0.12)" }}>
-                <span style={{ fontSize: "11px", fontFamily: '"Courier New", monospace', color: "#777", textTransform: "uppercase", display: "block" }}>
+                <span style={{ fontSize: "11px", fontFamily: 'var(--chani-mono)', color: "#777", textTransform: "uppercase", display: "block" }}>
                   {trait}
                 </span>
-                <strong style={{ fontSize: "28px", fontFamily: "Georgia, serif", color: "#2a2a2b" }}>
+                <strong style={{ fontSize: "28px", fontFamily: "var(--chani-serif)", color: "#2a2a2b" }}>
                   {Math.round(score * 100)}%
                 </strong>
                 <div style={{ width: "100%", height: "4px", background: "#e0d9cf", marginTop: "8px", borderRadius: "2px", overflow: "hidden" }}>
@@ -1316,7 +1368,7 @@ export function EditorsPicksPage() {
     <Shell>
       <section className="wallpaper-studio-section">
         <div className="wallpaper-studio-copy">
-          <p className="batch-kicker">PYRA / AI SACRED WALLPAPER STUDIO</p>
+          <p className="batch-kicker">NUMINA / AI SACRED WALLPAPER STUDIO</p>
           <h2>Lucky wallpaper studio</h2>
           <p className="wallpaper-studio-lead">
             Kiến tạo bức tranh năng lượng hộ mệnh độc bản. AI Art Director sẽ giải mã bản đồ Thần số học của bạn và kết hợp hình học thiêng liêng để tạo nên hình nền may mắn 8K.
@@ -1470,7 +1522,7 @@ export function EditorsPicksPage() {
           <div className={`wallpaper-preview-device ${device}`}>
             <div className={`wallpaper-preview wallpaper-style-${style} wallpaper-intention-${intention}`}>
               {generatedData?.imageUrl ? (
-                <img src={generatedData.imageUrl} alt="Pyra Lucky Sacred Wallpaper" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={generatedData.imageUrl} alt="Numina Lucky Sacred Wallpaper" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               ) : (
                 <>
                   <span className="wallpaper-preview-stars">✦　✧　·　✦</span>
@@ -1520,21 +1572,21 @@ export function EditorsPicksPage() {
                 )}
               </div>
 
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "13px", lineHeight: "1.6", color: "#333", margin: "0 0 14px" }}>
+              <p style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", lineHeight: "1.6", color: "#333", margin: "0 0 14px" }}>
                 {generatedData.explanation_vi}
               </p>
 
               <div style={{ padding: "12px 14px", background: "#fcfaf7", borderLeft: "3px solid #bda476", marginBottom: "14px" }}>
-                <span style={{ fontSize: "9px", fontFamily: '"Courier New", monospace', color: "#888", display: "block", marginBottom: "3px" }}>
+                <span style={{ fontSize: "9px", fontFamily: 'var(--chani-mono)', color: "#888", display: "block", marginBottom: "3px" }}>
                   KHẨU QUYẾT KÍCH HOẠT MỖI NGÀY:
                 </span>
-                <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "13px", color: "#2a2a2b", margin: 0 }}>
+                <p style={{ fontFamily: "var(--chani-serif)", fontStyle: "italic", fontSize: "13px", color: "#2a2a2b", margin: 0 }}>
                   "{generatedData.affirmation_vi}"
                 </p>
               </div>
 
               {generatedData.luckyColors_vi?.length > 0 && (
-                <div style={{ fontSize: "11px", fontFamily: '"Courier New", monospace', color: "#666", marginBottom: "8px" }}>
+                <div style={{ fontSize: "11px", fontFamily: 'var(--chani-mono)', color: "#666", marginBottom: "8px" }}>
                   <strong>Màu sắc tương hợp:</strong> {generatedData.luckyColors_vi.join(", ")}
                 </div>
               )}
@@ -1767,13 +1819,26 @@ export function OurTeamPage() {
   const { profiles, saveProfile } = useProfiles();
   const [fullName, setFullName] = useState("");
   const [birthDate, setBirthDate] = useState("");
-  const [selected, setSelected] = useState<{ title: string; name: string; value: string } | null>(null);
+  const [selected, setSelected] = useState<{ title: string; name: string; value: string; key?: string } | null>(null);
   const [analysis, setAnalysis] = useState("");
   const [readingSource, setReadingSource] = useState<"ai" | "local">("ai");
   const [isLoading, setIsLoading] = useState(false);
   const [analysisStage, setAnalysisStage] = useState<"idle" | "retrieving" | "generating" | "complete" | "error">("idle");
   const [assessmentPrompt, setAssessmentPrompt] = useState<{ name: string; birthDate: string; identityKey: string } | null>(null);
   const [revealPhase, setRevealPhase] = useState<"hidden" | "revealing" | "revealed">("hidden");
+  const [butterflyAnim, setButterflyAnim] = useState<{
+    stage: "crumpling" | "flying" | "converging" | "exploding";
+    cardIndex: number;
+    title: string;
+    cardRect: { top: number; left: number; width: number; height: number };
+    catchPos?: { x: number; y: number };
+  } | null>(null);
+  const [butterflyPos, setButterflyPos] = useState<{ x: number; y: number; facing: number; tilt: number }>({
+    x: 0,
+    y: 0,
+    facing: 1,
+    tilt: 0,
+  });
   const numerologySectionRef = useRef<HTMLElement | null>(null);
   const revealTimerRef = useRef<number | null>(null);
   const { profile: personalityProfile, skipAssessment } = usePersonalityProfile(
@@ -1784,6 +1849,47 @@ export function OurTeamPage() {
   const localePrefix = pathname.match(/^\/(en|vi)(?=\/|$)/)?.[0] || "";
   const requestedIdentityKey = searchParams.get("identityKey") || "";
   const shouldAnimateReturn = searchParams.get("reveal") === "1";
+
+  useEffect(() => {
+    if (!butterflyAnim || butterflyAnim.stage !== "flying") return;
+
+    let animationFrameId: number;
+    let currentX = butterflyAnim.cardRect.left + butterflyAnim.cardRect.width / 2;
+    let currentY = butterflyAnim.cardRect.top + butterflyAnim.cardRect.height / 2;
+    let targetX = Math.random() * (window.innerWidth - 220) + 110;
+    let targetY = Math.random() * (window.innerHeight - 220) + 110;
+    let lastTargetTime = Date.now();
+    let startTime = Date.now();
+
+    const animate = () => {
+      const now = Date.now();
+      const elapsed = (now - startTime) / 1000;
+
+      if (now - lastTargetTime > 1600) {
+        targetX = Math.random() * (window.innerWidth - 220) + 110;
+        targetY = Math.random() * (window.innerHeight - 220) + 110;
+        lastTargetTime = now;
+      }
+
+      const dx = targetX - currentX;
+      const dy = targetY - currentY;
+      currentX += dx * 0.048 + Math.sin(elapsed * 4.2) * 2.8;
+      currentY += dy * 0.048 + Math.cos(elapsed * 3.6) * 3.2;
+
+      // Facing: original sprite head is on the top-left.
+      // When moving right (dx > 0), flip horizontally (-1) so head leads right.
+      // When moving left (dx < 0), keep natural (1).
+      const facing = dx >= 0 ? -1 : 1;
+      const climbFactor = Math.max(-1, Math.min(1, dy / (Math.abs(dx) + 20)));
+      const tilt = climbFactor * (facing === -1 ? -16 : 16) + Math.sin(elapsed * 6) * 4;
+
+      setButterflyPos({ x: currentX, y: currentY, facing, tilt });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [butterflyAnim?.stage]);
 
   const startReveal = (name: string, date: string) => {
     setFullName(name);
@@ -1858,24 +1964,42 @@ export function OurTeamPage() {
     startReveal(name, birthDate);
   };
 
-  const readIndicator = async (index: number, title: string) => {
-    if (isLoading || revealPhase !== "revealed") return;
+  const readIndicator = async (index: number, title: string, element?: HTMLElement) => {
+    if (revealPhase !== "revealed" || butterflyAnim) return;
     const indicator = indicators[index];
     if (!indicator) return;
     const indicatorValue = String(indicator.value);
     const cacheKey = getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, indicatorValue);
     const cachedReading = getCachedIndicatorReading(cacheKey);
 
-    setSelected({ title, name: indicator.name, value: indicatorValue });
-    setAnalysis(cachedReading?.analysis || "");
-    setReadingSource(cachedReading ? "local" : "ai");
-
+    // If reading is already cached locally -> open modal immediately without animation
     if (cachedReading) {
+      setSelected({ title, name: indicator.name, value: indicatorValue, key: indicator.key });
+      setReadingSource("local");
+      setAnalysis(cachedReading.analysis);
       setAnalysisStage("complete");
       setIsLoading(false);
       return;
     }
 
+    // 1. Immediately launch Card Crumple animation layer -> Butterfly flight for unread cards
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      setButterflyAnim({
+        stage: "crumpling",
+        cardIndex: index,
+        title,
+        cardRect: {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+        },
+      });
+    }
+
+    // 2. Immediately trigger async API reading in the background
+    setReadingSource("ai");
     setIsLoading(true);
     setAnalysisStage("retrieving");
     try {
@@ -1912,6 +2036,27 @@ export function OurTeamPage() {
     }
   };
 
+  const handleCatchButterfly = () => {
+    if (!butterflyAnim || butterflyAnim.stage !== "flying") return;
+    const { cardIndex, title } = butterflyAnim;
+    const indicator = indicators[cardIndex];
+    if (!indicator) return;
+
+    const currentCatchPos = { x: butterflyPos.x, y: butterflyPos.y };
+    setButterflyAnim((prev) => (prev ? { ...prev, stage: "converging", catchPos: currentCatchPos } : null));
+
+    // 1. Orb glides smoothly from catch position to screen center (620ms)
+    window.setTimeout(() => {
+      setButterflyAnim((prev) => (prev ? { ...prev, stage: "exploding" } : null));
+
+      // 2. Huge center explosion erupts at center (680ms), then reveal reading modal
+      window.setTimeout(() => {
+        setButterflyAnim(null);
+        setSelected({ title, name: indicator.name, value: String(indicator.value), key: indicator.key });
+      }, 680);
+    }, 620);
+  };
+
   return <Shell>
     <section className="batch-simple-hero batch-team-hero numerology-profile-hero">
       <div className="numerology-profile-intro"><p className="batch-kicker">YOUR NUMEROLOGY DASHBOARD</p><h1>Know your numbers.</h1><p>Your name and birth date hold a personal pattern. Start here to discover the 24 indicators that shape your energy, choices, and timing.</p></div>
@@ -1920,7 +2065,7 @@ export function OurTeamPage() {
     <section ref={numerologySectionRef} className={`batch-section batch-team-section numerology-card-section numerology-reveal-${revealPhase}`} aria-busy={revealPhase === "revealing"}>
       <div className="numerology-indicators-heading">
         <p className="batch-kicker batch-center">YOUR 24 INDICATORS</p>
-        <h2>24 chỉ số thần số học của {fullName.trim() || "bạn"}</h2>
+        <h2>24 chỉ số thần số học của {(fullName.trim() || "bạn").normalize("NFC")}</h2>
         <p>Bộ chỉ số được tính riêng từ họ tên và ngày sinh của bạn.</p>
       </div>
       {revealPhase !== "revealed" && <p className="numerology-reveal-status" aria-live="polite">{revealPhase === "hidden" ? "ENTER YOUR DETAILS TO UNLOCK YOUR PERSONAL MAP" : "YOUR PERSONAL MAP IS AWAKENING…"}</p>}
@@ -1933,13 +2078,14 @@ export function OurTeamPage() {
           const displayValue = getCompactCardValue(indicator?.key, value);
           const isNumeric = /^\d+$/.test(value);
           const isReading = selected?.title === displayTitle && isLoading;
-          const isInteractive = Boolean(indicator) && revealPhase === "revealed";
+          const isCrumpled = butterflyAnim?.cardIndex === index;
+          const isInteractive = Boolean(indicator) && revealPhase === "revealed" && !butterflyAnim;
           const cacheKey = indicator ? getIndicatorReadingCacheKey(fullName, birthDate, indicator.key, value) : "";
           const hasSavedReading = Boolean(indicator && hasCachedIndicatorReading(cacheKey));
-          return <article className={`batch-team-card numerology-card ${isReading ? "is-reading" : ""}`} key={image} style={{ "--card-delay": `${Math.min(index, 23) * 55}ms` } as CSSProperties} role={isInteractive ? "button" : undefined} tabIndex={isInteractive ? 0 : undefined} aria-busy={isReading} onClick={() => isInteractive && readIndicator(index, displayTitle)} onKeyDown={(event) => { if (isInteractive && (event.key === "Enter" || event.key === " ")) readIndicator(index, displayTitle); }}>
+          return <article className={`batch-team-card numerology-card ${isReading ? "is-reading" : ""}`} key={image} style={{ "--card-delay": `${Math.min(index, 23) * 55}ms`, opacity: isCrumpled ? 0 : 1, transition: "opacity 0.2s ease" } as CSSProperties} role={isInteractive ? "button" : undefined} tabIndex={isInteractive ? 0 : undefined} aria-busy={isReading} onClick={(event) => isInteractive && readIndicator(index, displayTitle, event.currentTarget)} onKeyDown={(event) => { if (isInteractive && (event.key === "Enter" || event.key === " ")) readIndicator(index, displayTitle, event.currentTarget as HTMLElement); }}>
             <div className="numerology-card-inner">
               <div className="numerology-card-face numerology-card-back" aria-hidden={revealPhase === "revealed"}>
-                <span className="numerology-card-back-star">✦</span><strong>{number}</strong><span>PYRA / YOUR MAP</span>
+                <span className="numerology-card-back-badge">#{number}</span>
               </div>
               <div className="numerology-card-face numerology-card-front" aria-hidden={revealPhase !== "revealed"}>
                 <ChaniImage src={`/images/card/${image}`} alt={displayTitle} /><p className="numerology-card-number">{number} / 24</p><strong className={`numerology-card-value ${isNumeric ? "" : "is-text"}`} title={value}>{displayValue}</strong><h3 title={title}>{displayTitle}</h3><span>{isReading ? "READING…" : hasSavedReading ? "VIEW SAVED READING" : indicator ? "CLICK FOR AI READING" : "ENTER DETAILS TO REVEAL"}</span>
@@ -1950,7 +2096,213 @@ export function OurTeamPage() {
       </div>
       <p className="numerology-disclaimer">Don’t be sad if your number looks a little unlucky :)) Even calculators can be wrong too.</p>
     </section>
-    {assessmentPrompt && <div className="indicator-assessment-backdrop" role="presentation"><section className="indicator-assessment-modal" role="dialog" aria-modal="true" aria-labelledby="indicator-assessment-title"><div className="indicator-assessment-symbol" aria-hidden="true">✦</div><p className="batch-kicker">PYRA / PERSONALITY MAP</p><h2 id="indicator-assessment-title">Make your map more personal.</h2><p>Muốn lời luận giải sát với cách bạn suy nghĩ và cảm nhận hơn? Hãy hoàn thành bài trắc nghiệm 20 câu để tạo bộ vector tính cách riêng cho hồ sơ này.</p><p className="indicator-assessment-meta">20 CÂU HỎI · KHOẢNG 2–3 PHÚT · KHÔNG CÓ ĐÚNG HAY SAI</p><div className="indicator-assessment-actions"><button type="button" className="indicator-assessment-secondary" onClick={skipAssessmentForIdentity}>BỎ QUA LẦN NÀY</button><button type="button" className="indicator-assessment-primary" onClick={continueAssessment}>LÀM BÀI TEST <span>→</span></button></div></section></div>}
-    {selected && <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) setSelected(null); }}><section className={`indicator-ai-modal ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title"><div className="indicator-ai-orbit" aria-hidden="true" /><button type="button" className="indicator-ai-close" onClick={() => setSelected(null)} aria-label="Close interpretation">×</button><p className="batch-kicker">PYRA AI / PERSONAL INDICATOR</p><h2 id="indicator-ai-title">{selected.title}</h2><p className="indicator-ai-value">{selected.name} · {selected.value}</p><p className={`indicator-ai-source ${readingSource === "local" ? "is-local" : ""}`}>{readingSource === "local" ? "SAVED ON THIS DEVICE · INSTANT READING" : "GENERATED FOR YOUR PERSONAL MAP"}</p>{isLoading && <div className="indicator-ai-progress" aria-live="polite"><div className="indicator-ai-progress-line"><span className={analysisStage === "retrieving" || analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} /><span className={analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} /><span className={analysisStage === "complete" ? "is-active" : ""} /></div><div className="indicator-ai-status"><span>{analysisStage === "retrieving" ? "ĐANG TRA CỨU TƯ LIỆU" : "ĐÃ TRA CỨU"}</span><span>{analysisStage === "generating" ? "ĐANG LUẬN GIẢI" : analysisStage === "complete" ? "ĐÃ LUẬN GIẢI" : "CHỜ LUẬN GIẢI"}</span><span>PYRA AI</span></div></div>}<div className="indicator-ai-content">{isLoading && !analysis ? "Pyra đang đọc chỉ số của bạn…" : analysis || "No interpretation available."}</div>{analysisStage === "error" && <button type="button" className="indicator-ai-retry" onClick={() => { const index = indicators.findIndex((item) => item.name === selected.name); if (index >= 0) readIndicator(index, selected.title); }}>THỬ LẠI ↻</button>}{!isLoading && <button type="button" className="indicator-ai-done" onClick={() => setSelected(null)}>ĐÓNG LỜI GIẢI</button>}</section></div>}
+
+    {/* Card Crumple Animation Layer */}
+    {butterflyAnim?.stage === "crumpling" && (
+      <div
+        className="card-crumple-layer"
+        style={{
+          top: butterflyAnim.cardRect.top,
+          left: butterflyAnim.cardRect.left,
+          width: butterflyAnim.cardRect.width,
+          height: butterflyAnim.cardRect.height,
+        }}
+      >
+        <video
+          src="/animation/start.webm"
+          autoPlay
+          muted
+          playsInline
+          onEnded={() => setButterflyAnim((prev) => (prev ? { ...prev, stage: "flying" } : null))}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      </div>
+    )}
+
+    {/* Flying Butterfly & Energy Convergence & Center Explosion Backdrop */}
+    {butterflyAnim && butterflyAnim.stage !== "crumpling" && (
+      <div className="butterfly-flight-backdrop">
+        {/* Stage 1: Flying Butterfly */}
+        {butterflyAnim.stage === "flying" && (
+          <>
+            <div
+              className="butterfly-flyer"
+              style={{
+                left: butterflyPos.x,
+                top: butterflyPos.y,
+                transform: "translate(-50%, -50%)",
+              }}
+              onClick={handleCatchButterfly}
+              role="button"
+              tabIndex={0}
+              aria-label="Catch the butterfly to reveal your reading"
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleCatchButterfly(); }}
+            >
+              <div
+                className="butterfly-sprite-container"
+                style={{
+                  transform: `scaleX(${butterflyPos.facing}) rotate(${butterflyPos.tilt}deg)`,
+                  transition: "transform 0.1s linear",
+                }}
+              >
+                <video
+                  src="/animation/excute.webm"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="butterfly-video-sprite"
+                />
+                <div className="butterfly-aura" />
+              </div>
+              <span className="butterfly-tap-label">✦ CHẠM ĐỂ BẮT ✦</span>
+            </div>
+            <div className="butterfly-guidance-pill">
+              <p>✦ Bướm tinh linh đang mang thông điệp vũ trụ — Hãy chạm vào cánh bướm để mở lời giải!</p>
+              <button type="button" onClick={handleCatchButterfly}>Bỏ qua & Xem ngay →</button>
+            </div>
+          </>
+        )}
+
+        {/* Stage 2: Glowing Purple Orb Gliding from Catch Position to Center */}
+        {butterflyAnim.stage === "converging" && (
+          <div
+            className="purple-converge-orb"
+            style={{
+              "--start-x": `${butterflyAnim.catchPos?.x || butterflyPos.x}px`,
+              "--start-y": `${butterflyAnim.catchPos?.y || butterflyPos.y}px`,
+            } as React.CSSProperties}
+            aria-hidden="true"
+          />
+        )}
+
+        {/* Stage 3: Center Jackpot Explosion */}
+        {butterflyAnim.stage === "exploding" && (
+          <div className="purple-center-explosion" aria-hidden="true">
+            <div className="jackpot-ring jackpot-ring-1" />
+            <div className="jackpot-ring jackpot-ring-2" />
+            <div className="jackpot-ring jackpot-ring-3" />
+            <div className="jackpot-core-flare" />
+            <div className="jackpot-starbeams" />
+
+            {Array.from({ length: 20 }).map((_, i) => {
+              const angle = (i * 360) / 20;
+              const dist = 95 + (i % 3) * 50;
+              const delay = (i % 4) * 0.025;
+              const size = 14 + (i % 3) * 6;
+              const isStar = i % 2 === 0;
+              return (
+                <span
+                  key={i}
+                  className={`jackpot-sparkle ${isStar ? "is-star" : "is-diamond"}`}
+                  style={{
+                    "--burst-angle": `${angle}deg`,
+                    "--burst-dist": `${dist}px`,
+                    "--burst-delay": `${delay}s`,
+                    "--burst-size": `${size}px`,
+                  } as React.CSSProperties}
+                >
+                  {isStar ? "✦" : "◆"}
+                </span>
+              );
+            })}
+
+            <div className="jackpot-banner-flash">
+              <span>✦ THÔNG ĐIỆP ĐÃ MỞ ✦</span>
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+
+    {assessmentPrompt && <div className="indicator-assessment-backdrop" role="presentation"><section className="indicator-assessment-modal" role="dialog" aria-modal="true" aria-labelledby="indicator-assessment-title"><div className="indicator-assessment-symbol" aria-hidden="true">✦</div><p className="batch-kicker">NUMINA / PERSONALITY MAP</p><h2 id="indicator-assessment-title">Make your map more personal.</h2><p>Muốn lời luận giải sát với cách bạn suy nghĩ và cảm nhận hơn? Hãy hoàn thành bài trắc nghiệm 20 câu để tạo bộ vector tính cách riêng cho hồ sơ này.</p><p className="indicator-assessment-meta">20 CÂU HỎI · KHOẢNG 2–3 PHÚT · KHÔNG CÓ ĐÚNG HAY SAI</p><div className="indicator-assessment-actions"><button type="button" className="indicator-assessment-secondary" onClick={skipAssessmentForIdentity}>BỎ QUA LẦN NÀY</button><button type="button" className="indicator-assessment-primary" onClick={continueAssessment}>LÀM BÀI TEST <span>→</span></button></div></section></div>}
+    {selected && (() => {
+      const illustrationSrc = getNumerologyImagePath(selected.key, selected.value, selected.title);
+      return (
+        <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) setSelected(null); }}>
+          <section className={`indicator-ai-modal indicator-ai-modal-split ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title">
+            <div className="indicator-ai-orbit" aria-hidden="true" />
+            <button type="button" className="indicator-ai-close" onClick={() => setSelected(null)} aria-label="Close interpretation">×</button>
+            
+            {/* Left Column: Heading, Metadata, Status, and Detailed Interpretation */}
+            <div className="indicator-ai-left-col">
+              <p className="batch-kicker">NUMINA AI / PERSONAL INDICATOR</p>
+              <h2 id="indicator-ai-title">{selected.title}</h2>
+              <p className="indicator-ai-value">{selected.name} · {selected.value}</p>
+              <p className={`indicator-ai-source ${readingSource === "local" ? "is-local" : ""}`}>
+                {readingSource === "local" ? "SAVED ON THIS DEVICE · INSTANT READING" : "GENERATED FOR YOUR PERSONAL MAP"}
+              </p>
+
+              {isLoading && (
+                <div className="indicator-ai-progress" aria-live="polite">
+                  <div className="indicator-ai-progress-line">
+                    <span className={analysisStage === "retrieving" || analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} />
+                    <span className={analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} />
+                    <span className={analysisStage === "complete" ? "is-active" : ""} />
+                  </div>
+                  <div className="indicator-ai-status">
+                    <span>{analysisStage === "retrieving" ? "ĐANG TRA CỨU TƯ LIỆU" : "ĐÃ TRA CỨU"}</span>
+                    <span>{analysisStage === "generating" ? "ĐANG LUẬN GIẢI" : analysisStage === "complete" ? "ĐÃ LUẬN GIẢI" : "CHỜ LUẬN GIẢI"}</span>
+                    <span>NUMINA AI</span>
+                  </div>
+                </div>
+              )}
+
+              <div className="indicator-ai-content">
+                {isLoading && !analysis ? (
+                  <div className="indicator-ai-loading-text">
+                    <span className="indicator-ai-spinner">✦</span>
+                    <p>Numina đang kết nối trường năng lượng và tra cứu tư liệu cho chỉ số <strong>{selected.title} {selected.value}</strong>…</p>
+                  </div>
+                ) : analysis ? (
+                  <ReactMarkdown
+                    components={{
+                      strong: ({ node, ...props }) => <strong className="indicator-highlight-bold" {...props} />,
+                      b: ({ node, ...props }) => <b className="indicator-highlight-bold" {...props} />,
+                      h3: ({ node, ...props }) => <h3 className="indicator-section-h3" {...props} />,
+                      h4: ({ node, ...props }) => <h4 className="indicator-section-h4" {...props} />,
+                      li: ({ node, ...props }) => <li className="indicator-bullet-item" {...props} />,
+                    }}
+                  >
+                    {analysis}
+                  </ReactMarkdown>
+                ) : (
+                  <p>No interpretation available.</p>
+                )}
+              </div>
+
+              <div className="indicator-ai-actions">
+                {analysisStage === "error" && (
+                  <button type="button" className="indicator-ai-retry" onClick={() => { const index = indicators.findIndex((item) => item.name === selected.name); if (index >= 0) readIndicator(index, selected.title); }}>THỬ LẠI ↻</button>
+                )}
+                {!isLoading && <button type="button" className="indicator-ai-done" onClick={() => setSelected(null)}>ĐÓNG LỜI GIẢI</button>}
+              </div>
+            </div>
+
+            {/* Right Column: Sacred Energy Artwork Poster Card (Matching Layout from Image 2) */}
+            <div className="indicator-ai-right-col">
+              <div className="indicator-ai-poster-card">
+                <p className="batch-kicker indicator-ai-poster-kicker">SACRED ENERGY SYMBOL</p>
+                {illustrationSrc ? (
+                  <div className="indicator-ai-poster-media">
+                    <img src={illustrationSrc} alt={selected.title} className="indicator-ai-poster-img" />
+                    <div className="indicator-ai-poster-glow" />
+                  </div>
+                ) : (
+                  <div className="indicator-ai-poster-fallback">
+                    <span>✦</span>
+                    <strong>{selected.value}</strong>
+                  </div>
+                )}
+                <div className="indicator-ai-poster-meta">
+                  <strong>{selected.title}</strong>
+                  <span>CON SỐ BIỂU TRƯNG: {selected.value}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    })()}
   </Shell>;
 }

@@ -125,24 +125,41 @@ function ChatMessageBubbleInner({ message, t }: ChatMessageBubbleProps) {
             className="markdown-content"
             css={{
               '& strong, & b': {
-                color: strongColor,
-                fontWeight: 600
+                color: '#9a3412',
+                fontWeight: 700,
+                background: 'rgba(217, 119, 6, 0.1)',
+                border: '1px solid rgba(217, 119, 6, 0.22)',
+                padding: '1px 6px',
+                borderRadius: '5px',
+                display: 'inline-block',
+                margin: '0 2px',
+                letterSpacing: '0.01em',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
               },
               '& h1, & h2, & h3, & h4': {
-                color: strongColor,
+                color: '#78350f',
                 fontWeight: 700,
-                marginTop: '12px',
-                marginBottom: '6px'
+                marginTop: '16px',
+                marginBottom: '8px',
+                letterSpacing: '-0.01em',
+                borderBottom: '1px dashed rgba(189, 164, 118, 0.35)',
+                paddingBottom: '4px',
               },
               '& ul, & ol': {
-                paddingLeft: '20px',
-                marginBottom: '8px'
+                paddingLeft: '22px',
+                marginBottom: '10px'
               },
               '& li': {
-                marginBottom: '4px'
+                marginBottom: '6px',
+                lineHeight: '1.75'
               },
               '& p': {
-                marginBottom: '8px'
+                marginBottom: '10px',
+                lineHeight: '1.8'
+              },
+              '& em': {
+                color: '#6b21a8',
+                fontStyle: 'italic'
               },
               '& code': {
                 background: 'rgba(0,0,0,0.06)',
@@ -169,11 +186,13 @@ function ChatMessageBubbleInner({ message, t }: ChatMessageBubbleProps) {
                 fontSize: '0.85em'
               },
               '& blockquote': {
-                borderLeft: '3px solid',
-                borderColor: strongColor,
-                paddingLeft: '12px',
+                borderLeft: '3px solid #bda476',
+                background: 'rgba(189, 164, 118, 0.08)',
+                padding: '8px 14px',
+                borderRadius: '0 6px 6px 0',
                 marginLeft: 0,
-                opacity: 0.9
+                marginBottom: '10px',
+                opacity: 0.95
               }
             }}
           >

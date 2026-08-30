@@ -7,20 +7,15 @@ export interface GenerateImageOptions {
   width?: number;
   height?: number;
   seed?: number;
-  engine?: 'auto' | 'subnp' | 'pollinations';
-  model?: 'magic' | 'flux';
+  engine?: 'auto' | 'cloudflare' | 'pollinations';
+  model?: string;
   saveToDisk?: boolean;
-}
-
-function getConfiguredImageModel(): 'magic' | 'flux' {
-  const configured = process.env.WALLPAPER_IMAGE_MODEL?.trim().toLowerCase();
-  return configured === 'magic' ? 'magic' : 'flux';
 }
 
 export interface ImageGenerationResult {
   imageUrl: string;
   seed: number;
-  provider: 'subnp' | 'pollinations' | 'local';
+  provider: 'cloudflare' | 'pollinations' | 'local';
   model: string;
   width: number;
   height: number;
@@ -28,86 +23,95 @@ export interface ImageGenerationResult {
 }
 
 /**
- * Generate image using Subnp.com SSE API (Model: Magic / Flux)
+ * Generate image using Cloudflare Workers AI (@cf/black-forest-labs/flux-1-schnell)
  */
-export async function generateViaSubnp(
+export async function generateViaCloudflare(
   prompt: string,
-  model: 'magic' | 'flux' = 'magic',
-  timeoutMs: number = 25000
-): Promise<{ imageUrl: string; model: string } | null> {
-  const modelsToTry = [model];
-  if (model !== 'magic') modelsToTry.push('magic');
-  if (!modelsToTry.includes('flux')) modelsToTry.push('flux');
+  modelName?: string,
+  timeoutMs: number = 20000,
+  seed: number = Math.floor(Math.random() * 10000000),
+  width: number = 720,
+  height: number = 1280
+): Promise<{ imageUrl: string; model: string; buffer?: Buffer } | null> {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
+  const targetModel = modelName || process.env.CLOUDFLARE_IMAGE_MODEL?.trim() || '@cf/black-forest-labs/flux-1-schnell';
 
-  const headers = {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Content-Type': 'application/json',
-    Accept: 'text/event-stream',
-  };
-
-  for (const targetModel of modelsToTry) {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
-      const resp = await fetch('https://subnp.com/api/free/generate', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ prompt, model: targetModel }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!resp.ok || !resp.body) {
-        continue;
-      }
-
-      const reader = resp.body.getReader();
-      const decoder = new TextDecoder('utf-8');
-      let buffer = '';
-      let imageUrl: string | null = null;
-
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
-
-        for (const line of lines) {
-          const trimmed = line.trim();
-          if (trimmed.startsWith('data: ')) {
-            const jsonStr = trimmed.substring(6).trim();
-            try {
-              const data = JSON.parse(jsonStr);
-              if (data.status === 'complete' && data.imageUrl) {
-                imageUrl = data.imageUrl;
-                break;
-              } else if (data.status === 'error') {
-                break;
-              }
-            } catch {
-              // Ignore partial JSON parse errors
-            }
-          }
-        }
-
-        if (imageUrl) break;
-      }
-
-      if (imageUrl) {
-        return { imageUrl, model: targetModel };
-      }
-    } catch (err) {
-      console.warn(`Subnp model ${targetModel} attempt failed:`, err);
-      continue;
-    }
+  if (!accountId || !apiToken) {
+    console.warn('[Cloudflare AI] Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN in environment');
+    return null;
   }
 
-  return null;
+  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${targetModel}`;
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+    const body: Record<string, any> = {
+      prompt: prompt.trim(),
+    };
+
+    if (targetModel.includes('flux-1-schnell')) {
+      body.steps = 4;
+    }
+
+    const resp = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!resp.ok) {
+      const errText = await resp.text();
+      console.warn(`[Cloudflare AI] HTTP ${resp.status}:`, errText);
+      return null;
+    }
+
+    const data = await resp.json();
+    const base64Data: string | undefined = data?.result?.image || data?.image;
+
+    if (!base64Data) {
+      console.warn('[Cloudflare AI] No image data returned in response:', data);
+      return null;
+    }
+
+    const imageBuffer = Buffer.from(base64Data, 'base64');
+
+    // Save image to public directory for persistent fast delivery
+    try {
+      const publicDir = path.resolve(process.cwd(), 'public', 'images', 'lucky-wallpapers');
+      if (!fs.existsSync(publicDir)) {
+        fs.mkdirSync(publicDir, { recursive: true });
+      }
+
+      const filename = `lucky_cf_${seed}_${width}x${height}.jpg`;
+      const filePath = path.join(publicDir, filename);
+      fs.writeFileSync(filePath, imageBuffer);
+
+      return {
+        imageUrl: `/images/lucky-wallpapers/${filename}`,
+        model: targetModel,
+        buffer: imageBuffer,
+      };
+    } catch (saveErr) {
+      console.warn('[Cloudflare AI] Failed to save image to disk, using data URL fallback:', saveErr);
+      return {
+        imageUrl: `data:image/jpeg;base64,${base64Data}`,
+        model: targetModel,
+        buffer: imageBuffer,
+      };
+    }
+  } catch (err) {
+    console.warn('[Cloudflare AI] Generation request failed:', err);
+    return null;
+  }
 }
 
 /**
@@ -124,7 +128,9 @@ export function getPollinationsUrl(
 }
 
 /**
- * Main Wallpaper Generation Function with Subnp Magic + Pollinations Fallback
+ * Main Wallpaper Generation Function:
+ * 1. Primary: Cloudflare Workers AI (FLUX-1-schnell)
+ * 2. Fallback: Pollinations.ai (FLUX)
  */
 export async function generateWallpaperImage(
   options: GenerateImageOptions
@@ -135,30 +141,36 @@ export async function generateWallpaperImage(
   const prompt = options.prompt;
   const engine = options.engine || 'auto';
 
-  // 1. Try Subnp Magic if engine is 'auto' or 'subnp'
-  if (engine === 'auto' || engine === 'subnp') {
+  // 1. Try Cloudflare Workers AI if engine is 'auto' or 'cloudflare'
+  if (engine === 'auto' || engine === 'cloudflare') {
     try {
-      const subnpRes = await generateViaSubnp(
+      const cfRes = await generateViaCloudflare(
         prompt,
-        options.model || getConfiguredImageModel(),
-        20000
+        options.model,
+        22000,
+        seed,
+        width,
+        height
       );
-      if (subnpRes && subnpRes.imageUrl) {
+      if (cfRes && cfRes.imageUrl) {
+        console.log(`[Wallpaper Generator] Successfully generated via Cloudflare Workers AI (${cfRes.model})`);
         return {
-          imageUrl: subnpRes.imageUrl,
+          imageUrl: cfRes.imageUrl,
           seed,
-          provider: 'subnp',
-          model: subnpRes.model,
+          provider: 'cloudflare',
+          model: cfRes.model,
           width,
           height,
+          localPath: cfRes.imageUrl.startsWith('/') ? cfRes.imageUrl : undefined,
         };
       }
     } catch (err) {
-      console.warn('Subnp generator failed, falling back to Pollinations:', err);
+      console.warn('[Wallpaper Generator] Cloudflare failed, falling back to Pollinations:', err);
     }
   }
 
   // 2. Fallback to Pollinations FLUX
+  console.log('[Wallpaper Generator] Using Fallback Engine: Pollinations.ai FLUX');
   const directUrl = getPollinationsUrl(prompt, width, height, seed);
 
   // If server-side saving is requested, download the image and save to public directory
@@ -178,7 +190,7 @@ export async function generateWallpaperImage(
             fs.mkdirSync(publicDir, { recursive: true });
           }
 
-          const filename = `lucky_${seed}_${width}x${height}.png`;
+          const filename = `lucky_pol_${seed}_${width}x${height}.png`;
           const filePath = path.join(publicDir, filename);
           fs.writeFileSync(filePath, buffer);
 
@@ -194,7 +206,7 @@ export async function generateWallpaperImage(
         }
       }
     } catch (err) {
-      console.warn('Server-side image caching failed, falling back to direct URL:', err);
+      console.warn('Server-side image caching failed for Pollinations, falling back to direct URL:', err);
     }
   }
 

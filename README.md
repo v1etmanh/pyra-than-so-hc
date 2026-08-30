@@ -34,7 +34,7 @@ Dự án chỉ có **một pipeline RAG duy nhất**: `user question → retriev
    ├──────────────────────────────┼──────────────────────────────┼────────────────────┤
    │ 📝 4. BÀI KHẢO SÁT TÍNH CÁCH │ 📚 5. KHO TRI THỨC SỐ HỌC     │ 💬 6. TRỢ LÝ AI &  │
    │ • Trắc nghiệm chuyên sâu     │ • Tra cứu bách khoa 1-33     │   KHAI VẤN 1-1     │
-   │ • Phân tích điểm mạnh / yếu  │ • Đối chiếu hòa hợp tình yêu │ • Chatbot Pyra AI  │
+   │ • Phân tích điểm mạnh / yếu  │ • Đối chiếu hòa hợp tình yêu │ • Chatbot Numina AI  │
    │ • Lộ trình chuyển hóa tâm    │ • Tìm kiếm sim, tên hợp tuổi │ • Đặt lịch WhatsApp│
    └──────────────────────────────┴──────────────────────────────┴────────────────────┘
 ```
@@ -135,7 +135,7 @@ Dự án chỉ có **một pipeline RAG duy nhất**: `user question → retriev
 ---
 
 ### 8️⃣ 💬 Trợ Lý AI Chatbot (AI Assistant)
-* **Trợ lý Pyra AI**: Chatbot đồng hành giải đáp mọi khúc mắc về biểu đồ thần số học theo thời gian thực.
+* **Trợ lý Numina AI**: Chatbot đồng hành giải đáp mọi khúc mắc về biểu đồ thần số học theo thời gian thực.
 
 ---
 
@@ -162,7 +162,7 @@ NumerologyWebApp/
 │   ├── [locale]/                     # Định tuyến đa ngôn ngữ (vi, en)
 │   │   ├── page.tsx                  # Trang chủ & Bảng tính số học chính
 │   │   ├── lucky-wallpaper/          # Studio Tạo Hình Nền May Mắn AI
-│   │   ├── chat/                     # Trợ Lý AI Chatbot (Pyra AI)
+│   │   ├── chat/                     # Trợ Lý AI Chatbot (Numina AI)
 │   │   └── admin/                    # Quản trị hệ thống RAG & Vector DB
 │   ├── api/                          # API Backend Routes
 │   │   ├── lucky-wallpaper/generate/ # API sinh ảnh FLUX / Subnp Magic
@@ -182,7 +182,7 @@ NumerologyWebApp/
 │   ├── numerology.ts                 # Bộ thuật toán Pythagoras & Chaldean
 │   ├── lucky-wallpaper/              # Xây dựng prompt & dual-engine image service
 │   └── profile-knowledge.ts          # Quản lý hồ sơ & bộ nhớ đệm
-├── styles/                           # Global CSS và hệ thống giao diện Pyra/Chani
+├── styles/                           # Global CSS và hệ thống giao diện Numina/Chani
 ├── scripts/                          # Bộ công cụ Python xử lý RAG & ChromaDB
 │   ├── ingest_to_chromadb.py         # Script nạp kho tri thức duy nhất vào ChromaDB
 │   └── jina_local_server.py          # Runtime server embedding cục bộ

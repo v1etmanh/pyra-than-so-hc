@@ -198,7 +198,7 @@ export async function POST(req: NextRequest) {
           if (!sendEvent({
             type: 'status',
             phase: 'generating',
-            message: 'Đang tạo lời giải từ Pyra AI...'
+            message: 'Đang tạo lời giải từ Numina AI...'
           })) return;
 
           if (sources.length > 0) {

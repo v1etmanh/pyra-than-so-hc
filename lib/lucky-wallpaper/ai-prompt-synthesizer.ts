@@ -173,7 +173,7 @@ export async function synthesizeSacredWallpaperPrompt(
 
   if (providers.length > 0) {
     const userContextPrompt = `USER NUMEROLOGY BLUEPRINT:
-- Name: ${input.fullName || 'Pyra Explorer'}
+- Name: ${input.fullName || 'Numina Explorer'}
 - Birth Date: ${input.birthDate || 'N/A'}
 - Life Path Number: ${lpNum} (${lpAesthetics.name_en} / ${lpAesthetics.name_vi})
 - Personal Day: ${dayNum} (${dayAesthetics.name_en} / ${dayAesthetics.name_vi})

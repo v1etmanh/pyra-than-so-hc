@@ -381,7 +381,7 @@ export function useChatRAG(
         }
 
         const errorMessage = timedOut
-          ? 'Pyra phản hồi quá lâu. Vui lòng thử lại sau khi kiểm tra cấu hình AI.'
+          ? 'Numina phản hồi quá lâu. Vui lòng thử lại sau khi kiểm tra cấu hình AI.'
           : err instanceof Error
             ? err.message
             : 'An unexpected error occurred';

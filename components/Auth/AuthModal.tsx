@@ -185,7 +185,7 @@ export function AuthModal() {
         </div>
 
         <p className="batch-kicker" style={{ margin: '0 0 8px', color: '#9b7746' }}>
-          PYRA / SACRED NUMEROLOGY
+          NUMINA / SACRED NUMEROLOGY
         </p>
 
         <h2 id="auth-modal-title" style={{ fontSize: '38px', marginBottom: '10px' }}>
@@ -197,7 +197,7 @@ export function AuthModal() {
         <p className="pyra-login-intro">
           {authModalMode === 'signin' && 'Đăng nhập để đồng bộ bản đồ 24 chỉ số và các bài đọc cá nhân của bạn.'}
           {authModalMode === 'signup' && 'Tạo tài khoản để lưu trữ vĩnh viễn hành trình thần số học của bạn trên đám mây.'}
-          {authModalMode === 'forgot' && 'Nhập email để nhận liên kết khôi phục mật khẩu tài khoản PYRA.'}
+          {authModalMode === 'forgot' && 'Nhập email để nhận liên kết khôi phục mật khẩu tài khoản NUMINA.'}
         </p>
 
         {errorMessage && (

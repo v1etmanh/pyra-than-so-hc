@@ -90,7 +90,8 @@ HƯỚNG DẪN CẤU TRÚC BÀI LUẬN GIẢI CHUYÊN SÂU (MARKDOWN):
 
 LƯU Ý QUAN TRỌNG:
 1. TUYỆT ĐỐI TUÂN THỦ CHỈ THỊ VĂN PHONG VÀ TÂM LÝ ĐÃ NÊU Ở TRÊN (nếu người dùng thiên về logic hãy dùng từ ngữ gãy gọn sắc bén; nếu nhạy cảm cảm xúc hãy dùng ngôn từ ấm áp chữa lành).
-2. KHÔNG nói mê tín, không bói toán bề nổi. Chỉ tập trung vào TÂM LÝ HỌC HÀNH VI và PHÁT TRIỂN NỘI TỰC.`;
+2. KHÔNG nói mê tín, không bói toán bề nổi. Chỉ tập trung vào TÂM LÝ HỌC HÀNH VI và PHÁT TRIỂN NỘI TỰC.
+3. BẮT BUỘC IN ĐẬM (**...**) TẤT CẢ các con số (VD: **Số ${indicatorValue}**, **Đường Đời ${indicatorValue}**, **Năm 2026**), các từ khóa năng lượng cốt lõi, màu sắc may mắn, và các gạch đầu dòng then chốt để làm nổi bật và cực kỳ dễ đọc.`;
 
     const messages = [
       {

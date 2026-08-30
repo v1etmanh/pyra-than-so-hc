@@ -87,7 +87,7 @@ export default function RegisterPage() {
             Begin your personal map.
           </h1>
           <p style={{ maxWidth: '480px', lineHeight: 1.7 }}>
-            Tạo tài khoản miễn phí để lưu giữ vĩnh viễn các hồ sơ thần số học, theo dõi chu kỳ năm/tháng/ngày cá nhân và nhận những lời luận giải từ Pyra AI.
+            Tạo tài khoản miễn phí để lưu giữ vĩnh viễn các hồ sơ thần số học, theo dõi chu kỳ năm/tháng/ngày cá nhân và nhận những lời luận giải từ Numina AI.
           </p>
           <div
             style={{
@@ -238,7 +238,7 @@ export default function RegisterPage() {
               marginTop: '24px',
               textAlign: 'center',
               fontSize: '13px',
-              fontFamily: 'Georgia, serif',
+              fontFamily: 'var(--chani-serif)',
               fontStyle: 'italic',
               color: '#777',
             }}

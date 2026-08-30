@@ -41,13 +41,13 @@ export async function generateMetadata({
       title: t('title'),
       description: t('description'),
       url: `${baseUrl}/${locale}`,
-      siteName: 'Numerology',
+      siteName: 'NUMINA Numerology',
       images: [
         {
-          url: '/icon.svg',
+          url: '/logo/436f1399-6171-4441-8654-6711279d206b.png',
           width: 512,
           height: 512,
-          alt: 'Numerology Logo - Pyra Mascot'
+          alt: 'NUMINA Sacred Numerology Logo'
         }
       ],
       locale: locale,
@@ -57,12 +57,15 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/icon.svg']
+      images: ['/logo/436f1399-6171-4441-8654-6711279d206b.png']
     },
     icons: {
-      icon: '/icon.svg',
-      shortcut: '/icon.svg',
-      apple: '/icon.svg'
+      icon: [
+        { url: '/logo/436f1399-6171-4441-8654-6711279d206b.png', type: 'image/png' },
+        { url: '/favicon.ico' }
+      ],
+      shortcut: '/logo/436f1399-6171-4441-8654-6711279d206b.png',
+      apple: '/logo/436f1399-6171-4441-8654-6711279d206b.png'
     }
   };
 }
@@ -85,13 +88,16 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/logo/436f1399-6171-4441-8654-6711279d206b.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo/436f1399-6171-4441-8654-6711279d206b.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo/436f1399-6171-4441-8654-6711279d206b.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
-              name: 'Numerology',
+              name: 'NUMINA Numerology',
               url: baseUrl,
               applicationCategory: 'LifestyleApplication',
               operatingSystem: 'All',

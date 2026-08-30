@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
       customWish = '',
       seed: customSeed,
       saveToDisk = false,
+      engine = 'auto',
     } = body;
 
     // 1. AI Art Director synthesizes prompt, energy explanation, and affirmation
@@ -43,13 +44,13 @@ export async function POST(req: NextRequest) {
 
     const seed = customSeed ? Number(customSeed) : Math.floor(Math.random() * 10000000);
 
-    // 2. Render the artwork with the configured image engine.
-    // Chat models above only create the visual direction; they do not render pixels.
+    // 2. Render the artwork with the configured image engine (Cloudflare Workers AI -> Fallback Pollinations.ai)
     const imageResult = await generateWallpaperImage({
       prompt: plan.visualPrompt,
       width: plan.width,
       height: plan.height,
       seed,
+      engine,
       saveToDisk,
     });
 
