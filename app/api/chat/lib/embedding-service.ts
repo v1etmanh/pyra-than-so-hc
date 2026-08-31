@@ -87,7 +87,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
 
       if (response.status === 429) {
         rotator.reportFailure(apiKey);
-        console.warn(`[Embedding] Rate limited on key ...${apiKey.slice(-6)}, rotating`);
+        console.warn('[Embedding] Rate limited on current key, rotating');
         continue;
       }
 

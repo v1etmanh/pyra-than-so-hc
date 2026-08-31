@@ -8,6 +8,21 @@ export interface CascadeProvider {
   apiKeys: string[];
 }
 
+export interface ModelCandidate {
+  provider: CascadeProvider;
+  model: string;
+  apiKey: string;
+}
+
+const MODEL_FAILURE_COOLDOWN_MS = 60_000;
+
+// This state intentionally lives only in the server process. It is reset on a
+// cold start/deploy, which keeps failover fast and avoids a write on every
+// failed request to a durable store.
+let preferredNextCandidateKey: string | null = null;
+const failedCandidates = new Map<string, number>();
+const failedProviders = new Map<string, number>();
+
 function parseKeys(...names: string[]): string[] {
   const keys: string[] = [];
   for (const name of names) {
@@ -60,6 +75,105 @@ function customProvider(config: UserProviderConfig): CascadeProvider {
   };
 }
 
+function getCandidateKey(candidate: ModelCandidate): string {
+  // The key is used only as an in-memory map key and is never logged or sent
+  // back to the client. Including it keeps each Gemini key independent.
+  return `${candidate.provider.name}::${candidate.model}::${candidate.apiKey}`;
+}
+
+function getProviderKey(provider: CascadeProvider): string {
+  return `${provider.name}::${provider.baseUrl}`;
+}
+
+function isCoolingDown(candidate: ModelCandidate, now = Date.now()): boolean {
+  const failedAt = failedCandidates.get(getCandidateKey(candidate));
+  return failedAt !== undefined && now - failedAt < MODEL_FAILURE_COOLDOWN_MS;
+}
+
+function isProviderCoolingDown(candidate: ModelCandidate, now = Date.now()): boolean {
+  const failedAt = failedProviders.get(getProviderKey(candidate.provider));
+  return failedAt !== undefined && now - failedAt < MODEL_FAILURE_COOLDOWN_MS;
+}
+
+function flattenCandidates(
+  providers: CascadeProvider[],
+  maxModelsPerProvider?: number,
+  maxKeysPerProvider?: number
+): ModelCandidate[] {
+  return providers.flatMap((provider) => {
+    const models = maxModelsPerProvider
+      ? provider.models.slice(0, maxModelsPerProvider)
+      : provider.models;
+    const apiKeys = maxKeysPerProvider
+      ? provider.apiKeys.slice(0, maxKeysPerProvider)
+      : provider.apiKeys;
+    return models.flatMap((model) =>
+      apiKeys.map((apiKey) => ({ provider, model, apiKey }))
+    );
+  });
+}
+
+/**
+ * Returns candidates in the current process-wide priority order.
+ * User-provided BYOK providers pass rotate=false so their existing behavior
+ * remains unchanged.
+ */
+export function getOrderedModelCandidates(
+  providers: CascadeProvider[],
+  options?: {
+    maxModelsPerProvider?: number;
+    maxKeysPerProvider?: number;
+    rotate?: boolean;
+  }
+): ModelCandidate[] {
+  const candidates = flattenCandidates(
+    providers,
+    options?.maxModelsPerProvider,
+    options?.maxKeysPerProvider
+  );
+  if (options?.rotate === false || candidates.length < 2) return candidates;
+
+  const preferredIndex = preferredNextCandidateKey
+    ? candidates.findIndex(
+        (candidate) => getCandidateKey(candidate) === preferredNextCandidateKey
+      )
+    : -1;
+  const startIndex = preferredIndex >= 0 ? (preferredIndex + 1) % candidates.length : 0;
+  const rotated = [...candidates.slice(startIndex), ...candidates.slice(0, startIndex)];
+  const available = rotated.filter(
+    (candidate) => !isCoolingDown(candidate) && !isProviderCoolingDown(candidate)
+  );
+
+  // If every candidate is cooling down, try them in cursor order rather than
+  // returning no providers at all. This guarantees a recovery attempt.
+  return available.length > 0 ? available : rotated;
+}
+
+/**
+ * Marks a system candidate as failed and moves the next request past it.
+ * The mutation is synchronous, so subsequent requests in this process see it
+ * before beginning their next network operation.
+ */
+export function markModelFailure(candidate: ModelCandidate): void {
+  const candidateKey = getCandidateKey(candidate);
+  failedCandidates.set(candidateKey, Date.now());
+  preferredNextCandidateKey = candidateKey;
+}
+
+/**
+ * A timeout, network failure, or non-auth HTTP error normally applies to the
+ * provider rather than one API key. Skip all of that provider's candidates
+ * until its cooldown expires.
+ */
+export function markProviderFailure(candidate: ModelCandidate): void {
+  failedProviders.set(getProviderKey(candidate.provider), Date.now());
+  preferredNextCandidateKey = getCandidateKey(candidate);
+}
+
+export function isCredentialProviderError(status?: number): boolean {
+  return status === 401 || status === 403;
+}
+
 /**
  * Ordered provider cascade for system chat generation.
  * A provider is only enabled when at least one key is configured.
@@ -71,9 +185,8 @@ export function getProviderCascade(
     return [customProvider(userProviderConfig)];
   }
 
-  // Gemini is the primary provider. The remaining providers are only
-  // fallbacks and must never be attempted before the configured Gemini keys
-  // and models have been exhausted.
+  // Preserve the original provider priority: Gemini first, followed by the
+  // configured fallback providers.
   const tiers: CascadeProvider[] = [
     {
       name: 'Google Gemini',
@@ -145,11 +258,13 @@ export function getProviderCascade(
 export function isRetryableProviderError(status?: number): boolean {
   return (
     !status ||
+    status === 400 ||
     status === 408 ||
     status === 409 ||
     status === 425 ||
     status === 429 ||
     status === 402 ||
+    status === 404 ||
     status >= 500
   );
 }

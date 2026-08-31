@@ -1,6 +1,9 @@
 import {
+  getOrderedModelCandidates,
   getProviderCascade,
-  isRetryableProviderError,
+  isCredentialProviderError,
+  markModelFailure,
+  markProviderFailure,
   requestChatCompletion,
   type CascadeProvider
 } from './provider-cascade';
@@ -94,99 +97,130 @@ export function createStreamingResponse(
         1,
         Number(process.env.LLM_MAX_MODELS_PER_PROVIDER || 2)
       );
-      const maxKeysPerProvider = Math.max(
-        1,
-        Number(process.env.LLM_MAX_KEYS_PER_PROVIDER || 1)
-      );
+      const configuredMaxKeys = Number(process.env.LLM_MAX_KEYS_PER_PROVIDER);
+      const maxKeysPerProvider = Number.isFinite(configuredMaxKeys) && configuredMaxKeys > 0
+        ? Math.floor(configuredMaxKeys)
+        : undefined;
+      const candidates = getOrderedModelCandidates(providers, {
+        maxModelsPerProvider,
+        // BYOK keeps its existing first-key behavior. System providers use
+        // every configured key unless an explicit limit is set.
+        maxKeysPerProvider: userProviderConfig ? 1 : maxKeysPerProvider,
+        rotate: !userProviderConfig
+      });
+      const failedProvidersInRequest = new Set<CascadeProvider>();
 
       try {
-        for (const provider of providers) {
-          let providerTimedOut = false;
-          for (const model of provider.models.slice(0, maxModelsPerProvider)) {
-            if (Date.now() >= cascadeDeadline) break;
-            const messages = buildMessages(systemPrompt, history, model);
+        for (const candidate of candidates) {
+          const { provider, model, apiKey } = candidate;
+          if (failedProvidersInRequest.has(provider)) continue;
+          if (Date.now() >= cascadeDeadline) break;
+          const messages = buildMessages(systemPrompt, history, model);
 
-            for (const apiKey of provider.apiKeys.slice(0, maxKeysPerProvider)) {
-              const remainingMs = cascadeDeadline - Date.now();
-              if (remainingMs <= 0) break;
-              try {
-                const response = await requestChatCompletion(
-                  provider,
-                  model,
-                  messages,
-                  apiKey,
-                  {
-                    stream: true,
-                    timeoutMs: Math.min(
-                      Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 20_000),
-                      remainingMs
-                    )
-                  }
-                );
+          const remainingMs = cascadeDeadline - Date.now();
+          if (remainingMs <= 0) break;
+          let emittedContent = false;
+          try {
+            const response = await requestChatCompletion(
+              provider,
+              model,
+              messages,
+              apiKey,
+              {
+                stream: true,
+                timeoutMs: Math.min(
+                  Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 20_000),
+                  remainingMs
+                )
+              }
+            );
 
-                if (!response.ok || !response.body) {
-                  const body = await response.text().catch(() => '');
-                  lastError = `${providerLabel(provider, model)} failed (${response.status}): ${body.slice(0, 500)}`;
-                  console.warn(`[LLM Cascade] ${lastError}`);
-                  if (!isRetryableProviderError(response.status)) break;
-                  continue;
-                }
-
-                console.log(`[LLM Cascade] Connected to ${providerLabel(provider, model)}`);
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-                let buffer = '';
-
-                try {
-                  while (true) {
-                    const { done, value } = await readWithTimeout(
-                      reader,
-                      streamIdleTimeoutMs
-                    );
-                    if (done) break;
-
-                    buffer += decoder.decode(value, { stream: true });
-                    const lines = buffer.split('\n');
-                    buffer = lines.pop() ?? '';
-
-                    for (const line of lines) {
-                      if (!line.startsWith('data: ')) continue;
-                      const data = line.slice(6).trim();
-                      if (data === '[DONE]') continue;
-
-                      try {
-                        const parsed = JSON.parse(data);
-                        const content = parsed.choices?.[0]?.delta?.content;
-                        if (content) {
-                          controller.enqueue(
-                            encoder.encode(`data: ${JSON.stringify({ content })}\n\n`)
-                          );
-                        }
-                      } catch {
-                        // Ignore malformed or provider-specific SSE chunks.
-                      }
-                    }
-                  }
-                } finally {
-                  await reader.cancel().catch(() => undefined);
-                  reader.releaseLock();
-                }
-
-                controller.enqueue(
-                  encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
-                );
-                controller.close();
-                return;
-              } catch (error) {
-                lastError = error instanceof Error ? error.message : String(error);
-                console.warn(`[LLM Cascade] ${providerLabel(provider, model)} error: ${lastError}`);
-                if (/timed out|aborted|abort/i.test(lastError)) {
-                  providerTimedOut = true;
-                  break;
+            if (!response.ok || !response.body) {
+              const body = await response.text().catch(() => '');
+              lastError = `${providerLabel(provider, model)} failed (${response.status}): ${body.slice(0, 500) || 'empty response body'}`;
+              console.warn(`[LLM Cascade] ${lastError}`);
+              if (!userProviderConfig) {
+                if (isCredentialProviderError(response.status)) {
+                  markModelFailure(candidate);
+                } else {
+                  markProviderFailure(candidate);
+                  failedProvidersInRequest.add(provider);
                 }
               }
+              continue;
             }
-            if (providerTimedOut) break;
+
+            console.log(`[LLM Cascade] Connected to ${providerLabel(provider, model)}`);
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = '';
+
+            try {
+              while (true) {
+                const { done, value } = await readWithTimeout(
+                  reader,
+                  streamIdleTimeoutMs
+                );
+                if (done) break;
+
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split('\n');
+                buffer = lines.pop() ?? '';
+
+                for (const line of lines) {
+                  if (!line.startsWith('data: ')) continue;
+                  const data = line.slice(6).trim();
+                  if (data === '[DONE]') continue;
+
+                  try {
+                    const parsed = JSON.parse(data);
+                    const content = parsed.choices?.[0]?.delta?.content;
+                    if (content) {
+                      emittedContent = true;
+                      controller.enqueue(
+                        encoder.encode(`data: ${JSON.stringify({ content })}\n\n`)
+                      );
+                    }
+                  } catch {
+                    // Ignore malformed or provider-specific SSE chunks.
+                  }
+                }
+              }
+            } finally {
+              await reader.cancel().catch(() => undefined);
+              reader.releaseLock();
+            }
+
+            controller.enqueue(
+              encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
+            );
+            controller.close();
+            return;
+          } catch (error) {
+            lastError = error instanceof Error ? error.message : String(error);
+            console.warn(`[LLM Cascade] ${providerLabel(provider, model)} error: ${lastError}`);
+
+            // Once output has reached the client, switching candidates would
+            // produce a malformed answer by concatenating two responses.
+            if (emittedContent) {
+              controller.enqueue(
+                encoder.encode(
+                  `data: ${JSON.stringify({
+                    content: `\n\n⚠️ Luồng AI bị gián đoạn: ${lastError}`
+                  })}\n\n`
+                )
+              );
+              controller.enqueue(
+                encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
+              );
+              controller.close();
+              return;
+            }
+
+            if (!userProviderConfig) {
+              markProviderFailure(candidate);
+              failedProvidersInRequest.add(provider);
+            }
           }
         }
 

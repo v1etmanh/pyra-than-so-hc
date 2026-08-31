@@ -12,7 +12,14 @@
  *    năm cá nhân sứ mệnh linh hồn nhân cách life path number birth chart"
  * → detectedLanguage: "Vietnamese"
  */
-import { getProviderCascade, requestChatCompletion } from './provider-cascade';
+import {
+  getProviderCascade,
+  getOrderedModelCandidates,
+  isCredentialProviderError,
+  markModelFailure,
+  markProviderFailure,
+  requestChatCompletion
+} from './provider-cascade';
 import { supportsSystemRole } from './model-config';
 import type { UserProviderConfig } from './response-generator';
 
@@ -102,80 +109,92 @@ export async function expandQueryForRetrieval(
   try {
     console.time('[Perf] Query Expansion');
 
-    for (const provider of providers) {
-      for (const model of provider.models.slice(0, 1)) {
-        if (Date.now() >= deadline) break;
-        const expansionMessages = buildExpansionMessages(
-          systemPrompt,
-          recentHistory,
-          originalQuery,
-          model
+    const candidates = getOrderedModelCandidates(providers, {
+      rotate: !userProviderConfig,
+      maxKeysPerProvider: userProviderConfig ? 1 : undefined
+    });
+    const failedProvidersInRequest = new Set<typeof providers[number]>();
+    for (const candidate of candidates) {
+      const { provider, model, apiKey } = candidate;
+      if (failedProvidersInRequest.has(provider)) continue;
+      if (Date.now() >= deadline) break;
+      const expansionMessages = buildExpansionMessages(
+        systemPrompt,
+        recentHistory,
+        originalQuery,
+        model
+      );
+
+      if (Date.now() >= deadline || attempts >= 3) break;
+      attempts += 1;
+      const remainingMs = Math.max(1_000, deadline - Date.now());
+
+      try {
+        const response = await requestChatCompletion(
+          provider,
+          model,
+          expansionMessages,
+          apiKey,
+          // Give the model enough room to return valid JSON even when it
+          // spends tokens reasoning about the numerology context.
+          {
+            maxTokens: 800,
+            temperature: 0.2,
+            timeoutMs: Math.min(EXPANSION_ATTEMPT_TIMEOUT_MS, remainingMs)
+          }
         );
 
-        // Expansion is optional. Use one key per provider so a slow primary
-        // cannot consume the whole budget before fallback providers run.
-        for (const apiKey of provider.apiKeys.slice(0, 1)) {
-        if (Date.now() >= deadline || attempts >= 3) break;
-        attempts += 1;
-        const remainingMs = Math.max(1_000, deadline - Date.now());
-
-        try {
-          const response = await requestChatCompletion(
-            provider,
-            model,
-            expansionMessages,
-            apiKey,
-            // Give the model enough room to return valid JSON even when it
-            // spends tokens reasoning about the numerology context.
-            {
-              maxTokens: 800,
-              temperature: 0.2,
-              timeoutMs: Math.min(EXPANSION_ATTEMPT_TIMEOUT_MS, remainingMs)
-            }
-          );
-
-          if (!response.ok) {
-            console.warn(
-              `[QueryExpansion] API error from ${provider.name}/${model} (status ${response.status})`
-            );
-            continue;
-          }
-
-          const data = await response.json();
-          const rawOutput = data.choices?.[0]?.message?.content?.trim() ?? '';
-
-          console.timeEnd('[Perf] Query Expansion');
-
-          // Parse structured JSON response
-          const { keywords, language } = parseExpansionResponse(
-            rawOutput,
-            originalQuery
-          );
-
-          const expandedQuery = keywords
-            ? `${originalQuery} ${keywords}`
-            : originalQuery;
-
-          console.log(
-            `[QueryExpansion] model="${model}" | lang="${language}" | "${originalQuery}" + keywords: "${keywords || '(none)'}"`
-          );
-
-          return { expandedQuery, detectedLanguage: language };
-        } catch (error) {
+        if (!response.ok) {
           console.warn(
-            `[QueryExpansion] Error on ${provider.name}/${model}:`,
-            error
+            `[QueryExpansion] API error from ${provider.name}/${model} (status ${response.status})`
           );
+          if (!userProviderConfig) {
+            if (isCredentialProviderError(response.status)) {
+              markModelFailure(candidate);
+            } else {
+              markProviderFailure(candidate);
+              failedProvidersInRequest.add(provider);
+            }
+          }
           continue;
         }
+
+        const data = await response.json();
+        const rawOutput = data.choices?.[0]?.message?.content?.trim() ?? '';
+
+        console.timeEnd('[Perf] Query Expansion');
+
+        // Parse structured JSON response
+        const { keywords, language } = parseExpansionResponse(
+          rawOutput,
+          originalQuery
+        );
+
+        const expandedQuery = keywords
+          ? `${originalQuery} ${keywords}`
+          : originalQuery;
+
+        console.log(
+          `[QueryExpansion] model="${model}" | lang="${language}" | "${originalQuery}" + keywords: "${keywords || '(none)'}"`
+        );
+
+        return { expandedQuery, detectedLanguage: language };
+      } catch (error) {
+        console.warn(
+          `[QueryExpansion] Error on ${provider.name}/${model}:`,
+          error
+        );
+        if (!userProviderConfig) {
+          markProviderFailure(candidate);
+          failedProvidersInRequest.add(provider);
+        }
+        continue;
       }
 
-      // All keys exhausted for this model
       if (attempts > 0) {
         console.warn(
           `[QueryExpansion] ${provider.name}/${model} unavailable; trying a bounded fallback`
         );
-      }
       }
     }
 
