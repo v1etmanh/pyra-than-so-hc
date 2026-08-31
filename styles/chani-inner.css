@@ -1136,5 +1136,262 @@
   opacity: 1;
 }
 
+/* Mobile safety rails for the Map cards and AI reading experience. */
+.numerology-profile-form,
+.indicator-ai-modal,
+.indicator-ai-modal-split,
+.indicator-ai-content,
+.indicator-ai-poster-card {
+  box-sizing: border-box;
+}
+
+.numerology-card-grid {
+  min-width: 0;
+}
+
+.numerology-card,
+.numerology-card-inner,
+.numerology-card-front,
+.numerology-card-back {
+  min-width: 0;
+}
+
+.numerology-card-front > img {
+  max-width: 100%;
+}
+
+.indicator-ai-modal {
+  width: min(1000px, calc(100vw - 32px));
+  overflow-x: hidden;
+}
+
+.indicator-ai-modal-split {
+  min-width: 0;
+}
+
+.indicator-ai-left-col,
+.indicator-ai-right-col,
+.indicator-ai-modal-titles,
+.indicator-ai-content {
+  min-width: 0;
+}
+
+.indicator-ai-content,
+.indicator-ai-content * {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.indicator-ai-actions {
+  flex-wrap: wrap;
+}
+
+.pyra-ai-message-row {
+  min-width: 0;
+}
+
+.pyra-ai-message {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.pyra-ai-profile-pill {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pyra-ai-profile-pill > span:not(:last-child) {
+  min-width: 0;
+}
+
+@media (max-width: 840px) {
+  .indicator-ai-modal {
+    max-height: calc(100dvh - 32px);
+    padding: 0;
+  }
+
+  .indicator-ai-modal-split {
+    padding: 42px 24px 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .numerology-profile-hero {
+    overflow: hidden;
+  }
+
+  .numerology-profile-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .numerology-date-fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .numerology-date-fields input {
+    min-width: 0;
+    padding-inline: 5px;
+    font-size: 21px;
+  }
+
+  .numerology-indicators-heading h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .indicator-ai-backdrop {
+    padding: 16px;
+  }
+
+  .indicator-ai-modal-split {
+    gap: 22px;
+    padding: 44px 18px 24px;
+  }
+
+  .indicator-ai-left-col h2 {
+    font-size: clamp(34px, 11vw, 46px);
+    overflow-wrap: anywhere;
+  }
+
+  .indicator-ai-content {
+    padding: 18px 15px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .indicator-ai-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .indicator-ai-done,
+  .indicator-ai-retry {
+    width: 100%;
+  }
+
+  .pyra-ai-workspace {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .pyra-ai-chat-panel,
+  .pyra-human-panel {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .pyra-ai-profile-pill {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pyra-ai-profile-pill > span:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pyra-ai-input-wrap {
+    min-width: 0;
+  }
+
+  .pyra-human-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .numerology-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .numerology-card-inner {
+    height: 250px;
+    min-height: 250px;
+  }
+
+  .pyra-ai-messages {
+    padding-inline: 13px;
+  }
+
+  .pyra-ai-input-wrap {
+    margin-inline: 13px;
+  }
+}
+
+/* Header: keep the brand, menu, language and account controls usable on phones. */
+@media (max-width: 560px) {
+  .pyra-header {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 7px;
+    min-height: 68px;
+    padding: 0 12px;
+  }
+
+  .pyra-wordmark {
+    min-width: 0;
+    gap: 5px;
+    overflow: hidden;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+  }
+
+  .pyra-logo-img {
+    width: 29px;
+    height: 29px;
+    flex: 0 0 auto;
+  }
+
+  .pyra-menu-button {
+    min-height: 40px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+
+  .pyra-header-tools {
+    min-width: 0;
+    gap: 5px;
+  }
+
+  .pyra-header-tools .chakra-button {
+    min-width: 44px;
+    min-height: 38px;
+    padding-inline: 8px;
+  }
+
+  .pyra-profile-button {
+    min-width: 40px;
+    width: 40px;
+    min-height: 40px;
+    height: 40px;
+    justify-content: center;
+    gap: 0;
+    padding: 3px;
+  }
+
+  .pyra-profile-button > span:nth-child(2),
+  .pyra-profile-button > span:nth-child(3) {
+    display: none;
+  }
+
+  .pyra-profile-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .pyra-profile-dropdown {
+    right: -4px;
+    min-width: min(230px, calc(100vw - 24px));
+  }
+
+  .pyra-nav {
+    padding-inline: 16px;
+  }
+}
+
 
 
