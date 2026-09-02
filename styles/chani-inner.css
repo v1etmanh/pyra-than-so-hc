@@ -481,6 +481,7 @@
 .pyra-ai-chat-header .batch-kicker { color: #596059; }
 .pyra-ai-profile-pill { display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 7px 16px 7px 8px; border: 1px solid rgba(42,42,43,.2); border-radius: 30px; background: rgba(250,248,243,.74); color: #3b403e; cursor: pointer; font: 13px var(--chani-mono); }
 .pyra-ai-profile-pill > span:last-child { margin-left: 8px; font-size: 18px; }
+.pyra-ai-profile-picker { position: relative; z-index: 1000; display: inline-block; max-width: 100%; }
 .pyra-ai-avatar, .pyra-ai-mini-avatar { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #cbb2bd; color: #fff; font-family: var(--chani-serif); }
 .pyra-ai-avatar { width: 40px; height: 40px; font-size: 25px; }
 .pyra-ai-messages { position: relative; z-index: 1; display: flex; flex: 1; flex-direction: column; gap: 16px; overflow: auto; padding: 18px 46px 24px; }
@@ -1390,6 +1391,55 @@
 
   .pyra-nav {
     padding-inline: 16px;
+  }
+}
+
+/* Keep the mobile navigation above the AI page content when it is expanded. */
+.pyra-header {
+  z-index: 200;
+}
+
+.pyra-nav {
+  z-index: 201;
+}
+
+.pyra-ai-workspace,
+.pyra-ai-chat-panel,
+.pyra-human-panel {
+  min-width: 0;
+}
+
+.pyra-ai-chat-header h1 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+@media (max-width: 560px) {
+  .pyra-ai-chat-header h1 {
+    font-size: clamp(42px, 12vw, 53px);
+    letter-spacing: -0.6px;
+  }
+
+  .pyra-ai-profile-pill {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pyra-ai-profile-picker {
+    display: block;
+    width: 100%;
+  }
+
+  .pyra-ai-profile-pill > span:nth-child(2) {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pyra-ai-message-row {
+    max-width: 100%;
   }
 }
 

@@ -137,7 +137,7 @@ export function PodcastWeekAheadPage() {
           <div className="pyra-ai-chat-header">
             <p className="batch-kicker">NUMINA AI / {isVietnamese ? "HƯỚNG DẪN NHÂN SỐ HỌC CÁ NHÂN" : "PERSONAL NUMEROLOGY GUIDE"}</p>
             <h1>{isVietnamese ? "Hỏi Numina bất cứ điều gì" : "Ask Numina anything"}</h1>
-            <div ref={dropdownRef} style={{ position: "relative", display: "inline-block", zIndex: 1000 }}>
+            <div ref={dropdownRef} className="pyra-ai-profile-picker">
               <button
                 className="pyra-ai-profile-pill"
                 type="button"
@@ -1759,6 +1759,7 @@ const NUMEROLOGY_REVEAL_DURATION_MS = 2400;
 type CachedIndicatorReading = {
   analysis: string;
   savedAt: string;
+  source?: "knowledge-fallback";
 };
 
 function getIndicatorReadingCacheKey(fullName: string, birthDate: string, indicatorKey: string, value: string | number, locale = "vi") {
@@ -1780,11 +1781,15 @@ function hasCachedIndicatorReading(cacheKey: string) {
   return Boolean(getCachedIndicatorReading(cacheKey));
 }
 
-function saveCachedIndicatorReading(cacheKey: string, analysis: string) {
+function saveCachedIndicatorReading(cacheKey: string, analysis: string, source?: "knowledge-fallback") {
   if (typeof window === "undefined" || !analysis.trim()) return;
   try {
     const cache = JSON.parse(window.localStorage.getItem(INDICATOR_READING_CACHE_KEY) || "{}");
-    cache[cacheKey] = { analysis, savedAt: new Date().toISOString() } satisfies CachedIndicatorReading;
+    cache[cacheKey] = {
+      analysis,
+      savedAt: new Date().toISOString(),
+      ...(source ? { source } : {})
+    } satisfies CachedIndicatorReading;
     const trimmedCache = Object.fromEntries(
       Object.entries(cache)
         .sort(([, left], [, right]) =>
@@ -1840,7 +1845,7 @@ export function OurTeamPage() {
   const [birthDate, setBirthDate] = useState("");
   const [selected, setSelected] = useState<{ title: string; name: string; value: string; key?: string } | null>(null);
   const [analysis, setAnalysis] = useState("");
-  const [readingSource, setReadingSource] = useState<"ai" | "local">("ai");
+  const [readingSource, setReadingSource] = useState<"ai" | "local" | "knowledge-fallback">("ai");
   const [isLoading, setIsLoading] = useState(false);
   const [analysisStage, setAnalysisStage] = useState<"idle" | "retrieving" | "generating" | "complete" | "error">("idle");
   const [assessmentPrompt, setAssessmentPrompt] = useState<{ name: string; birthDate: string; identityKey: string } | null>(null);
@@ -2010,7 +2015,7 @@ export function OurTeamPage() {
     // If reading is already cached locally -> open modal immediately without animation
     if (cachedReading) {
       setSelected({ title, name: indicator.name, value: indicatorValue, key: indicator.key });
-      setReadingSource("local");
+      setReadingSource(cachedReading.source === "knowledge-fallback" ? "knowledge-fallback" : "local");
       setAnalysis(cachedReading.analysis);
       setAnalysisStage("complete");
       setIsLoading(false);
@@ -2065,6 +2070,7 @@ export function OurTeamPage() {
       const decoder = new TextDecoder();
       let buffer = "";
       let text = "";
+      let fallbackUsed = false;
       while (true) {
         if (abortController.signal.aborted) break;
         const { done, value } = await reader.read();
@@ -2078,6 +2084,13 @@ export function OurTeamPage() {
           if (payload === "[DONE]") continue;
           try {
             const event = JSON.parse(payload);
+            if (event.type === "fallback" && typeof event.content === "string") {
+              text = event.content;
+              fallbackUsed = true;
+              setReadingSource("knowledge-fallback");
+              setAnalysis(text);
+              continue;
+            }
             if (event.content && !abortController.signal.aborted) {
               text += event.content;
               setAnalysis(text);
@@ -2089,7 +2102,7 @@ export function OurTeamPage() {
       }
       if (abortController.signal.aborted) return;
       if (text.trim() && !text.trimStart().startsWith("⚠️")) {
-        saveCachedIndicatorReading(cacheKey, text);
+        saveCachedIndicatorReading(cacheKey, text, fallbackUsed ? "knowledge-fallback" : undefined);
       }
       setAnalysisStage("complete");
     } catch (error) {
@@ -2296,8 +2309,12 @@ export function OurTeamPage() {
               <p className="batch-kicker">NUMINA AI / {isVietnamese ? "CHỈ SỐ CÁ NHÂN" : "PERSONAL INDICATOR"}</p>
               <h2 id="indicator-ai-title">{selected.title}</h2>
               <p className="indicator-ai-value">{selected.name} · {selected.value}</p>
-              <p className={`indicator-ai-source ${readingSource === "local" ? "is-local" : ""}`}>
-                {readingSource === "local" ? (isVietnamese ? "ĐÃ LƯU TRÊN THIẾT BỊ · LUẬN GIẢI NGAY" : "SAVED ON THIS DEVICE · INSTANT READING") : (isVietnamese ? "ĐƯỢC TẠO CHO BẢN ĐỒ CÁ NHÂN" : "GENERATED FOR YOUR PERSONAL MAP")}
+              <p className={`indicator-ai-source ${readingSource !== "ai" ? "is-local" : ""}`}>
+                {readingSource === "knowledge-fallback"
+                  ? (isVietnamese ? "TỪ KHO KIẾN THỨC · LUẬN GIẢI DỰ PHÒNG" : "KNOWLEDGE LIBRARY · FALLBACK READING")
+                  : readingSource === "local"
+                    ? (isVietnamese ? "ĐÃ LƯU TRÊN THIẾT BỊ · LUẬN GIẢI NGAY" : "SAVED ON THIS DEVICE · INSTANT READING")
+                    : (isVietnamese ? "ĐƯỢC TẠO CHO BẢN ĐỒ CÁ NHÂN" : "GENERATED FOR YOUR PERSONAL MAP")}
               </p>
 
               {isLoading && (

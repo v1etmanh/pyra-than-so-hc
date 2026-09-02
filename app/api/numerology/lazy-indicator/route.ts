@@ -2,6 +2,10 @@ import { NextRequest } from 'next/server';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
 import type { PersonalityProfile } from '@/utils/personalityTypes';
+import {
+  buildIndicatorKnowledgeFallback,
+  createIndicatorFallbackStream
+} from './fallback';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
@@ -107,7 +111,15 @@ LƯU Ý QUAN TRỌNG:
       }
     ];
 
-    const stream = createStreamingResponse(systemPrompt, messages, providerConfig);
+    const aiStream = createStreamingResponse(systemPrompt, messages, providerConfig);
+    const fallbackContent = buildIndicatorKnowledgeFallback({
+      fullName,
+      indicatorName,
+      indicatorValue,
+      language,
+      knowledgeRecord
+    });
+    const stream = createIndicatorFallbackStream(aiStream, fallbackContent);
 
     return new Response(stream, {
       headers: {
