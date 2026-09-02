@@ -2218,8 +2218,8 @@ export function OurTeamPage() {
     </section>
     <section ref={numerologySectionRef} className={`batch-section batch-team-section numerology-card-section numerology-reveal-${revealPhase}`} aria-busy={revealPhase === "revealing"}>
       <div className="numerology-indicators-heading">
-        <p className="batch-kicker batch-center">{isVietnamese ? "24 CHỈ SỐ CỦA BẠN" : "YOUR 24 INDICATORS"}</p>
-            <h2>{isVietnamese ? "24 chỉ số thần số học của" : "Your 24 numerology indicators"} {isVietnamese ? (fullName.trim() || "bạn").normalize("NFC") : (fullName.trim() || "you").normalize("NFC")}</h2>
+        <p className="batch-kicker batch-center">{isVietnamese ? "BẢN ĐỒ SỐ CỦA BẠN" : "YOUR NUMEROLOGY MAP"}</p>
+            <h2>{isVietnamese ? "Khám phá bản đồ số của bạn" : "Discover your numerology map"}</h2>
             <p>{isVietnamese ? "Bộ chỉ số được tính riêng từ họ tên và ngày sinh của bạn." : "A personal set of indicators calculated from your name and birth date."}</p>
       </div>
       {revealPhase !== "revealed" && <p className="numerology-reveal-status" aria-live="polite">{revealPhase === "hidden" ? (isVietnamese ? "NHẬP THÔNG TIN ĐỂ MỞ BẢN ĐỒ CÁ NHÂN" : "ENTER YOUR DETAILS TO UNLOCK YOUR PERSONAL MAP") : (isVietnamese ? "BẢN ĐỒ CÁ NHÂN ĐANG THỨC TỈNH…" : "YOUR PERSONAL MAP IS AWAKENING…")}</p>}
