@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { MOCK_NUMEROLOGY_INDICATORS } from '../mocks/numerology-indicators';
-import { MOCK_USER_PROFILE_24, normalizeNumerologyProfile } from '../mocks/numerology-profile';
-import { buildMockAnswer, searchMockIndicators } from '../utils/numerology-qa';
+import { MOCK_NUMEROLOGY_INDICATORS } from '../mocks/numerology-indicators.ts';
+import { MOCK_USER_PROFILE_24, normalizeNumerologyProfile } from '../mocks/numerology-profile.ts';
+import { buildMockAnswer, searchMockIndicators } from '../utils/numerology-qa.ts';
 
 test('mock catalog contains exactly 24 unique indicators', () => {
   assert.equal(MOCK_NUMEROLOGY_INDICATORS.length, 24);

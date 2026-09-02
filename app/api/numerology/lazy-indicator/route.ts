@@ -1,29 +1,21 @@
 import { NextRequest } from 'next/server';
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
-import type { PersonalityProfile } from '@/utils/personalityTypes';
 import {
   buildIndicatorKnowledgeFallback,
   createIndicatorFallbackStream
 } from './fallback';
+import { lazyIndicatorRequestSchema, type LazyIndicatorRequest } from '@/lib/security/schemas';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
 
-interface LazyIndicatorBody {
-  fullName: string;
-  birthDay: string;
-  indicatorKey: string;
-  indicatorName: string;
-  indicatorValue: string | number;
-  personalityProfile?: PersonalityProfile;
-  providerConfig?: any;
-  language?: 'Vietnamese' | 'English';
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const body: LazyIndicatorBody = await req.json();
+    const body = lazyIndicatorRequestSchema.parse(await readJsonBody<LazyIndicatorRequest>(req, 128 * 1024));
     const {
       fullName,
       birthDay,
@@ -45,6 +37,39 @@ export async function POST(req: NextRequest) {
     // 1. Direct Knowledge Retrieval from Supabase PostgreSQL (O(1) search < 50ms)
     console.log(`[Direct Lookup] Fetching Supabase knowledge for ${indicatorKey}=${indicatorValue}...`);
     const knowledgeRecord = await getKnowledgeByIndicator(indicatorKey, indicatorValue);
+
+    const fallbackContent = buildIndicatorKnowledgeFallback({
+      fullName,
+      indicatorName,
+      indicatorValue,
+      language,
+      knowledgeRecord
+    });
+
+    const access = await getRequestAccess(req, 'text');
+    if (access instanceof Response) {
+      // A knowledge reading does not consume AI tokens. Keep the experience
+      // useful when quota/rate controls reject the AI request, but still keep
+      // malformed requests and other errors on their original error path.
+      if (fallbackContent && (access.status === 429 || access.status === 503)) {
+        const emptyAiStream = new ReadableStream<Uint8Array>({
+          start(controller) {
+            controller.close();
+          }
+        });
+        const fallbackStream = createIndicatorFallbackStream(emptyAiStream, fallbackContent);
+        return new Response(fallbackStream, {
+          headers: {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            Connection: 'keep-alive',
+            'X-Numina-Source': 'knowledge',
+            'X-Numina-Fallback-Reason': access.status === 429 ? 'quota' : 'usage-control'
+          }
+        });
+      }
+      return access;
+    }
 
     const contextText = knowledgeRecord
       ? `### TƯ LIỆU SÁCH GỐC TRA CỨU TỪ SUPABASE (${knowledgeRecord.title})\n${knowledgeRecord.content}`
@@ -111,24 +136,44 @@ LƯU Ý QUAN TRỌNG:
       }
     ];
 
-    const aiStream = createStreamingResponse(systemPrompt, messages, providerConfig);
-    const fallbackContent = buildIndicatorKnowledgeFallback({
-      fullName,
-      indicatorName,
-      indicatorValue,
-      language,
-      knowledgeRecord
-    });
+    let aiStream: ReadableStream<Uint8Array>;
+    try {
+      aiStream = createStreamingResponse(systemPrompt, messages, providerConfig);
+    } catch (error) {
+      if (!fallbackContent) throw error;
+      aiStream = new ReadableStream({
+        start(controller) {
+          controller.error(error);
+        }
+      });
+    }
     const stream = createIndicatorFallbackStream(aiStream, fallbackContent);
+    recordAiUsage({
+      identity: access.identity,
+      plan: access.plan,
+      feature: 'text',
+      route: '/api/numerology/lazy-indicator',
+      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
+    });
 
     return new Response(stream, {
       headers: {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        Connection: 'keep-alive'
+        Connection: 'keep-alive',
+        'X-Numina-Plan': access.plan,
+        'X-Numina-Remaining': String(access.remaining)
       }
     });
   } catch (error) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
+    if (error instanceof Error && error.name === 'ZodError') {
+      return new Response(JSON.stringify({ error: 'Invalid indicator request.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
     console.error('Lazy indicator API error:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

@@ -1,24 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
-
-// --- Validation Schema ---
-
-const surveyPayloadSchema = z.object({
-  locale: z.enum(['vi', 'en']),
-  page: z.enum(['home', 'chat']),
-  experienceRating: z
-    .enum(['love', 'good', 'neutral', 'needsImprovement'])
-    .nullable(),
-  willingness: z.enum(['yes', 'maybe', 'no']).nullable(),
-  pricingModel: z.enum(['monthly', 'yearly', 'lifetime']).nullable(),
-  priceRange: z.string().nullable(),
-  desiredFeatures: z.array(z.string()).nullable(),
-  customFeature: z.string().max(200).nullable(),
-  feedback: z.string().max(1000).nullable(),
-  usageCount: z.number().int().min(0)
-});
-
-type SurveyPayload = z.infer<typeof surveyPayloadSchema>;
+import { readJsonBody, requestLimitResponse, getClientIp } from '@/lib/security/request';
+import { surveyRequestSchema, type SurveyRequest } from '@/lib/security/schemas';
 
 // --- Rate limiting (simple in-memory, per-deployment) ---
 
@@ -48,10 +30,7 @@ function recordSubmission(identifier: string): void {
 export async function POST(request: NextRequest) {
   try {
     // Rate limit by IP
-    const ip =
-      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-      request.headers.get('x-real-ip') ||
-      'unknown';
+    const ip = getClientIp(request);
 
     if (isRateLimited(ip)) {
       return NextResponse.json(
@@ -61,8 +40,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse and validate body
-    const body = await request.json();
-    const parseResult = surveyPayloadSchema.safeParse(body);
+    const body = await readJsonBody<SurveyRequest>(request, 32 * 1024);
+    const parseResult = surveyRequestSchema.safeParse(body);
 
     if (!parseResult.success) {
       return NextResponse.json(
@@ -75,7 +54,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const payload: SurveyPayload = parseResult.data;
+    const payload: SurveyRequest = parseResult.data;
 
     // Get the Google Apps Script webhook URL
     const webhookUrl = process.env.SURVEY_SHEET_WEBHOOK_URL;
@@ -111,7 +90,8 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(sheetData),
-      signal: AbortSignal.timeout(10000) // 10s timeout
+      signal: AbortSignal.timeout(10000), // 10s timeout
+      redirect: 'error'
     });
 
     if (!webhookResponse.ok) {
@@ -132,6 +112,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('[Survey] Unexpected error:', error);
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }

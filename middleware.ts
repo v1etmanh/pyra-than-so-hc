@@ -16,9 +16,17 @@ export default function middleware(req: NextRequest) {
     const basicAuth = req.headers.get('authorization');
 
     if (basicAuth) {
-      const authValue = basicAuth.split(' ')[1];
-      const decodedValue = atob(authValue);
-      const [user, pwd] = decodedValue.split(':');
+      const [scheme, authValue] = basicAuth.split(' ', 2);
+      let decodedValue = '';
+      try {
+        if (scheme?.toLowerCase() !== 'basic' || !authValue) throw new Error('Invalid auth scheme');
+        decodedValue = atob(authValue);
+      } catch {
+        decodedValue = '';
+      }
+      const separator = decodedValue.indexOf(':');
+      const user = separator >= 0 ? decodedValue.slice(0, separator) : '';
+      const pwd = separator >= 0 ? decodedValue.slice(separator + 1) : '';
 
       const expectedUser = process.env.ADMIN_USERNAME;
       const expectedPwd = process.env.ADMIN_PASSWORD;

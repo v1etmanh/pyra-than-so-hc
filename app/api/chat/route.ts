@@ -20,36 +20,11 @@ import { retrieveContext } from './lib/retrieval-service';
 import { createStreamingResponse } from './lib/response-generator';
 import { buildSystemPrompt } from './prompt';
 import type { RetrievalSource } from './lib/retrieval-service';
-import { checkRateLimit } from './lib/rate-limit';
 import { getProviderCascade } from './lib/provider-cascade';
-
-import type { ChatProfileContext } from '@/hooks/chat-types';
-
-interface IncomingMessage {
-  role: 'user' | 'assistant' | 'system';
-  content: string;
-}
-
-/** Config sent by the client when user has a custom AI provider (BYOK) */
-interface UserProviderConfig {
-  type: string;
-  baseUrl: string;
-  apiKeys: string[];
-  model: string;
-}
-
-interface ChatRequestBody {
-  messages: IncomingMessage[];
-  providerConfig?: UserProviderConfig;
-  /** Skip query expansion step in RAG pipeline */
-  skipExpansion?: boolean;
-  /** Explicit language for RAG (e.g. "Vietnamese", "English") */
-  language?: string;
-  /** Override system prompt — for direct LLM calls */
-  systemPrompt?: string;
-  /** Profile context of user */
-  profile?: ChatProfileContext;
-}
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
+import { chatRequestSchema, type ChatRequest } from '@/lib/security/schemas';
 
 function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -72,39 +47,15 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
 
 export async function POST(req: NextRequest) {
   try {
-    const body: ChatRequestBody = await req.json();
+    const body = chatRequestSchema.parse(await readJsonBody<ChatRequest>(req, 256 * 1024));
     const { messages, providerConfig, skipExpansion, language, systemPrompt: customSystemPrompt, profile } = body;
-
-    // --- Rate Limit Check ---
-    // Get IP address for rate limiting
-    const ip =
-      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
-      req.headers.get('x-real-ip') ??
-      '127.0.0.1';
-    
-    // Check local in-memory limit: 5 requests / 60 giây
-    const { success, limit, reset, remaining } = checkRateLimit(ip, 5, 60000);
-    
-    if (!success) {
-      console.warn(`[RateLimit] IP ${ip} exceeded limit.`);
-      return new Response(
-        JSON.stringify({ error: language === 'English' ? 'Too many requests. Please try again in a moment.' : 'Quá nhiều yêu cầu. Vui lòng thử lại sau một lát.' }),
-        {
-          status: 429,
-          headers: {
-            'Content-Type': 'application/json',
-            'X-RateLimit-Limit': limit.toString(),
-            'X-RateLimit-Remaining': remaining.toString(),
-            'X-RateLimit-Reset': reset.toString()
-          }
-        }
-      );
-    }
-    // ------------------------
 
     if (!messages?.length) {
       return new Response('Messages array is required', { status: 400 });
     }
+
+    const access = await getRequestAccess(req, 'text');
+    if (access instanceof Response) return access;
 
     // Extract latest user message for retrieval
     const latestUserMessage = [...messages]
@@ -222,6 +173,13 @@ export async function POST(req: NextRequest) {
             conversationHistory,
             providerConfig
           );
+          recordAiUsage({
+            identity: access.identity,
+            plan: access.plan,
+            feature: 'text',
+            route: '/api/chat',
+            estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
+          });
           const reader = llmStream.getReader();
           try {
             while (true) {
@@ -255,10 +213,14 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
         Connection: 'keep-alive',
-        'X-Content-Type-Options': 'nosniff'
+        'X-Content-Type-Options': 'nosniff',
+        'X-Numina-Plan': access.plan,
+        'X-Numina-Remaining': String(access.remaining)
       }
     });
   } catch (error) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
     console.error('[Chat API] Error:', error);
     const errorMessage =
       error instanceof Error ? error.message : 'Internal server error';

@@ -266,10 +266,16 @@ export function useChatRAG(
       let accumulatedContent = '';
 
       try {
-        const apiMessages = currentMessages.slice(0, -1).map((m) => ({
-          role: m.role,
-          content: m.content
-        }));
+        // Old sessions can contain an empty assistant placeholder from an
+        // interrupted stream. Do not send those internal placeholders to the
+        // API; the server intentionally rejects empty message content.
+        const apiMessages = currentMessages
+          .slice(0, -1)
+          .filter((m) => m.content.trim().length > 0)
+          .map((m) => ({
+            role: m.role,
+            content: m.content
+          }));
 
         const requestBody: Record<string, unknown> = {
           messages: apiMessages,
@@ -289,7 +295,26 @@ export function useChatRAG(
         });
 
         if (!response.ok) {
-          throw new Error(`Server error: ${response.status}`);
+          let serverMessage: string | null = null;
+          try {
+            const payload = await response.clone().json();
+            if (payload?.code === 'DAILY_LIMIT_REACHED') {
+              serverMessage = locale === 'vi'
+                ? 'Bạn đã dùng hết lượt phân tích chuyên sâu hôm nay. Hãy quay lại ngày mai hoặc nâng cấp Pro để tiếp tục.'
+                : 'You have used all deep-analysis credits for today. Come back tomorrow or upgrade to Pro to continue.';
+            } else if (payload?.code === 'RATE_LIMITED') {
+              serverMessage = locale === 'vi'
+                ? 'Bạn đang gửi yêu cầu quá nhanh. Vui lòng thử lại sau ít phút.'
+                : 'You are sending requests too quickly. Please try again in a few minutes.';
+            } else if (typeof payload?.error === 'string') {
+              serverMessage = payload.error;
+            }
+          } catch {
+            // Keep a generic message when the response is not JSON.
+          }
+          throw new Error(serverMessage || (locale === 'vi'
+            ? 'Numina chưa thể xử lý yêu cầu lúc này.'
+            : 'Numina could not process this request right now.'));
         }
 
         const reader = response.body?.getReader();

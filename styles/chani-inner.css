@@ -218,6 +218,7 @@
 .indicator-ai-value { margin: 0 0 6px; color: #9b7746; font: 12px var(--chani-mono); letter-spacing: .05em; text-transform: uppercase; }
 .indicator-ai-source { margin: 0 0 20px; color: #817a6f; font: 9.5px var(--chani-mono); letter-spacing: .05em; }
 .indicator-ai-source.is-local { color: #577848; font-weight: bold; }
+.indicator-ai-quota-notice { margin: -10px 0 18px; padding: 8px 10px; border-left: 2px solid #bda476; background: rgba(189,164,118,.12); color: #6d542b; font: 10px/1.45 var(--chani-mono); }
 .indicator-ai-progress { margin: 0 0 24px; padding: 14px 16px; border: 1px solid rgba(189,164,118,.42); background: rgba(255,255,255,.6); }
 .indicator-ai-progress-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
 .indicator-ai-progress-line span { height: 4px; background: rgba(42,42,43,.12); transition: background .4s ease, box-shadow .4s ease; }
@@ -1445,3 +1446,131 @@
 
 
 
+.legal-page,.pricing-page { min-height: 100vh; background: #f7f4ee; color: #2a2a2b; padding: 80px 24px; }
+.legal-page-inner,.pricing-page-inner { max-width: 920px; margin: 0 auto; }
+.legal-page h1,.pricing-page h1 { max-width: 800px; margin: 18px 0 12px; font: clamp(48px,8vw,96px)/.9 var(--chani-serif); text-transform: uppercase; }
+.legal-page h2 { margin: 36px 0 8px; font: 28px/1.1 var(--chani-serif); }
+.legal-page p { max-width: 720px; font: 14px/1.7 var(--chani-mono); }
+.legal-updated { color: #777; font-size: 11px !important; }
+.legal-back { display: inline-block; margin: 12px 0; color: #2a2a2b; font: 11px var(--chani-mono); text-decoration: underline; }
+.pricing-lead { max-width: 580px; font: 14px/1.6 var(--chani-mono); }
+.pricing-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin: 48px 0 24px; }
+.pricing-card { padding: 32px; background: #fffdf8; border: 1px solid rgba(42,42,43,.18); box-shadow: 10px 10px 0 rgba(189,164,118,.18); }
+.pricing-card-featured { background: #eadbd4; border-color: #8d6056; }
+.pricing-card h2 { margin: 8px 0 20px; font: 36px var(--chani-serif); }
+.pricing-card > strong { display: block; margin-bottom: 24px; font: 30px var(--chani-serif); }
+.pricing-card small { font: 11px var(--chani-mono); }
+.pricing-card ul { min-height: 126px; padding-left: 18px; font: 12px/2 var(--chani-mono); }
+.pricing-card button { width: 100%; padding: 13px; border: 1px solid #2a2a2b; background: #2a2a2b; color: #fff; font: 11px var(--chani-mono); cursor: pointer; }
+.pricing-card button:disabled { opacity: .6; cursor: wait; }
+.pricing-error { color: #a34e4e; font: 12px var(--chani-mono); }
+.pricing-note { color: #777; font: 11px/1.5 var(--chani-mono); }
+.billing-panel { margin: 40px 13vw; padding: 28px 32px; background: #fffdf8; border: 1px solid rgba(42,42,43,.16); }
+.billing-panel h2 { margin: 6px 0 14px; font: 34px var(--chani-serif); }
+.billing-panel p { font: 12px/1.6 var(--chani-mono); }
+.billing-plan strong { color: #8d6056; }
+.billing-history { margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(42,42,43,.12); }
+.billing-history h3 { margin: 0 0 8px; font: 20px var(--chani-serif); }
+@media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; }.pricing-card ul { min-height: auto; }.billing-panel { margin: 28px 16px; padding: 22px 18px; } }
+
+/* Messenger layout for /chat: compact header, scrollable conversation, and
+   short quick-question chips instead of a tall editorial hero. */
+.pyra-messenger-page { background: #f4f1eb; }
+.pyra-messenger-workspace {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 10px;
+  width: min(100%, 1080px);
+  height: calc(100vh - 94px);
+  min-height: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 18px 24px 20px;
+}
+.pyra-messenger-panel {
+  width: 100%;
+  min-height: 0;
+  height: auto;
+  border-radius: 18px;
+  background: rgba(224, 228, 216, .9);
+  box-shadow: 0 12px 30px rgba(70, 57, 50, .12);
+}
+.pyra-messenger-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 76px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(42, 42, 43, .1);
+  background: rgba(250, 248, 243, .72);
+}
+.pyra-messenger-identity { display: flex; min-width: 0; align-items: center; gap: 11px; }
+.pyra-messenger-bot-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid rgba(189, 164, 118, .65);
+  border-radius: 50%;
+  background: #eadbd4;
+  color: #9b7746;
+  font: 22px var(--chani-serif);
+}
+.pyra-messenger-identity h1 { margin: 0 0 3px; color: #2d3030; font: 22px/1 var(--chani-serif); }
+.pyra-messenger-identity p { margin: 0; color: #77756f; font: 9px var(--chani-mono); letter-spacing: .05em; text-transform: uppercase; }
+.pyra-messenger-header .pyra-ai-profile-picker { flex: 0 1 auto; }
+.pyra-messenger-header .pyra-ai-profile-pill { min-height: 42px; padding: 5px 12px 5px 6px; font-size: 11px; }
+.pyra-messenger-header .pyra-ai-avatar { width: 30px; height: 30px; font-size: 18px; }
+.pyra-messenger-panel .pyra-ai-messages { min-height: 0; padding: 18px 20px 14px; }
+.pyra-messenger-empty { display: grid; min-height: 180px; place-content: center; justify-items: center; gap: 6px; color: rgba(72, 76, 73, .62); text-align: center; }
+.pyra-messenger-empty span { color: #b18a4d; font: 32px var(--chani-serif); }
+.pyra-messenger-empty p { margin: 0; font: 11px var(--chani-mono); }
+.pyra-messenger-panel .pyra-ai-message { max-width: min(76%, 680px); padding: 12px 15px 10px; border-radius: 15px; }
+.pyra-messenger-panel .pyra-ai-message p { font-size: 12.5px; line-height: 1.6; }
+.pyra-messenger-panel .pyra-ai-input-wrap { margin: 0 20px 16px; padding: 6px 7px 6px 14px; border-radius: 22px; background: rgba(255,255,255,.9); }
+.pyra-messenger-panel .pyra-ai-input-wrap button { width: 38px; height: 38px; font-size: 19px; }
+.pyra-messenger-suggestions {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.pyra-messenger-suggestions .pyra-human-art,
+.pyra-messenger-suggestions > .batch-kicker,
+.pyra-messenger-suggestions > h2,
+.pyra-messenger-suggestions > .pyra-human-rule,
+.pyra-messenger-suggestions > .pyra-human-intro { display: none; }
+.pyra-messenger-suggestions .pyra-human-services { display: flex; gap: 7px; overflow-x: auto; padding: 1px 2px 4px; scrollbar-width: thin; }
+.pyra-messenger-suggestions .pyra-human-services button {
+  display: inline-flex;
+  min-width: max-content;
+  min-height: 34px;
+  padding: 5px 11px;
+  gap: 7px;
+  border-radius: 18px;
+  background: rgba(250, 247, 241, .82);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.pyra-messenger-suggestions .pyra-service-icon { width: 22px; height: 22px; font-size: 13px; }
+.pyra-messenger-suggestions .pyra-human-services b { display: none; }
+@media (max-width: 560px) {
+  .pyra-messenger-workspace { height: calc(100svh - 82px); padding: 10px 10px 12px; gap: 8px; }
+  .pyra-messenger-header { min-height: 62px; padding: 10px 12px; gap: 8px; }
+  .pyra-messenger-bot-avatar { width: 34px; height: 34px; flex-basis: 34px; font-size: 18px; }
+  .pyra-messenger-identity h1 { font-size: 18px; }
+  .pyra-messenger-identity p { font-size: 8px; }
+  .pyra-messenger-header .pyra-ai-profile-pill { max-width: 160px; min-height: 36px; gap: 6px; padding-right: 8px; font-size: 9px; }
+  .pyra-messenger-header .pyra-ai-profile-pill > span:nth-child(2) { max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pyra-messenger-header .pyra-ai-profile-pill > span:last-child { margin-left: 0; font-size: 14px; }
+  .pyra-messenger-header .pyra-ai-avatar { width: 26px; height: 26px; font-size: 15px; }
+  .pyra-messenger-panel .pyra-ai-messages { padding: 12px 10px 10px; }
+  .pyra-messenger-panel .pyra-ai-message { max-width: 86%; padding: 10px 12px 8px; }
+  .pyra-messenger-panel .pyra-ai-message p { font-size: 11px; }
+  .pyra-messenger-panel .pyra-ai-input-wrap { margin: 0 10px 10px; }
+}

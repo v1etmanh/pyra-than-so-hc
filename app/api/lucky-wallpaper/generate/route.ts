@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { synthesizeSacredWallpaperPrompt } from '@/lib/lucky-wallpaper/ai-prompt-synthesizer';
 import { generateWallpaperImage } from '@/lib/lucky-wallpaper/image-service';
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
+import { wallpaperRequestSchema, type WallpaperRequest } from '@/lib/security/schemas';
 
 export const maxDuration = 45;
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body = wallpaperRequestSchema.parse(await readJsonBody<WallpaperRequest>(req, 64 * 1024));
     const {
       lifePathNumber = 1,
       destinyNumber,
@@ -25,6 +29,9 @@ export async function POST(req: NextRequest) {
       saveToDisk = false,
       engine = 'auto',
     } = body;
+
+    const access = await getRequestAccess(req, 'wallpaper');
+    if (access instanceof Response) return access;
 
     // 1. AI Art Director synthesizes prompt, energy explanation, and affirmation
     const plan = await synthesizeSacredWallpaperPrompt({
@@ -53,6 +60,14 @@ export async function POST(req: NextRequest) {
       engine,
       saveToDisk,
     });
+    recordAiUsage({
+      identity: access.identity,
+      plan: access.plan,
+      feature: 'wallpaper',
+      route: '/api/lucky-wallpaper/generate',
+      provider: imageResult.provider,
+      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_IMAGE_COST_USD || 0)
+    });
 
     return NextResponse.json({
       success: true,
@@ -79,9 +94,16 @@ export async function POST(req: NextRequest) {
       aiModel: plan.aiModel,
       imageProvider: imageResult.provider,
       imageModel: imageResult.model,
+      plan: access.plan,
+      remaining: access.remaining,
     });
 
   } catch (error: any) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
+    if (error instanceof Error && error.name === 'ZodError') {
+      return NextResponse.json({ success: false, error: 'Invalid wallpaper request.' }, { status: 400 });
+    }
     console.error('[API Lucky Wallpaper Generate Error]:', error);
     return NextResponse.json(
       {

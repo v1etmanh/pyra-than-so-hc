@@ -11,8 +11,10 @@ import { useProfiles } from "@/hooks/useProfiles";
 import { getPersonalityIdentityKey, getStoredPersonalityAssessment, usePersonalityProfile } from "@/hooks/usePersonalityProfile";
 import { useProcessNumerology } from "@/hooks/useProcessNumerology";
 import { useAuth } from "@/hooks/useAuth";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { getNumerologyImagePath } from "@/utils/numerology-images";
 import ReactMarkdown from "react-markdown";
+import { BillingPanel } from '@/components/Billing/BillingPanel';
 
 const SITE = "/sites/chani-com-6d20749d";
 
@@ -130,13 +132,18 @@ export function PodcastWeekAheadPage() {
   const askQuickQuestion = (question: string) => setDraft(question);
 
   return (
-    <main className="chani-site pyra-ai-page">
+    <main className="chani-site pyra-ai-page pyra-messenger-page">
       <InnerHeader />
-      <section className="pyra-ai-workspace">
-        <div className="pyra-ai-chat-panel">
-          <div className="pyra-ai-chat-header">
-            <p className="batch-kicker">NUMINA AI / {isVietnamese ? "HƯỚNG DẪN NHÂN SỐ HỌC CÁ NHÂN" : "PERSONAL NUMEROLOGY GUIDE"}</p>
-            <h1>{isVietnamese ? "Hỏi Numina bất cứ điều gì" : "Ask Numina anything"}</h1>
+      <section className="pyra-ai-workspace pyra-messenger-workspace">
+        <div className="pyra-ai-chat-panel pyra-messenger-panel">
+          <div className="pyra-ai-chat-header pyra-messenger-header">
+            <div className="pyra-messenger-identity">
+              <span className="pyra-messenger-bot-avatar" aria-hidden="true">✦</span>
+              <div>
+                <h1>Numina AI</h1>
+                <p>{isVietnamese ? "Trợ lý thần số học cá nhân" : "Personal numerology guide"}</p>
+              </div>
+            </div>
             <div ref={dropdownRef} className="pyra-ai-profile-picker">
               <button
                 className="pyra-ai-profile-pill"
@@ -213,6 +220,12 @@ export function PodcastWeekAheadPage() {
             </div>
           </div>
           <div className="pyra-ai-messages" aria-live="polite">
+            {chat.messages.length === 0 && !chat.isStreaming && (
+              <div className="pyra-messenger-empty" aria-hidden="true">
+                <span>✦</span>
+                <p>{isVietnamese ? "Hãy gửi một câu hỏi để bắt đầu cuộc trò chuyện." : "Send a question to start the conversation."}</p>
+              </div>
+            )}
             {chat.messages.map((message) => (
               <div
                 className={`pyra-ai-message-row ${message.role === "user" ? "is-user" : "is-ai"}`}
@@ -305,7 +318,7 @@ export function PodcastWeekAheadPage() {
             </button>
           </form>
         </div>
-        <aside className="pyra-human-panel">
+        <aside className="pyra-human-panel pyra-messenger-suggestions">
           <div className="pyra-human-art">
             <span className="pyra-human-moon">◐</span>
             <span className="pyra-human-star star-one">✦</span>
@@ -496,7 +509,8 @@ export function ChartPage() {
   const locale = useLocale();
   const isVietnamese = locale === "vi";
   const localize = (path: string) => isVietnamese ? path : `/en${path}`;
-  const { user, profile: authProfile, signOut, openAuthModal } = useAuth();
+  const { user, profile: authProfile, signOut, deleteAccount, openAuthModal } = useAuth();
+  const { trackEvent } = useAnalytics();
   const { profiles, saveProfile, deleteProfile, isSyncing } = useProfiles();
   const { profile: personality } = usePersonalityProfile();
 
@@ -515,6 +529,7 @@ export function ChartPage() {
   const [newProfileName, setNewProfileName] = useState("");
   const [newProfileBirth, setNewProfileBirth] = useState("");
   const [newProfileSaved, setNewProfileSaved] = useState(false);
+  const [isDeletingAccount, setIsDeletingAccount] = useState(false);
 
   const activeProfile = useMemo(() => {
     if (activeProfileId) {
@@ -546,6 +561,19 @@ export function ChartPage() {
     setNewProfileBirth("");
     setNewProfileSaved(true);
     setTimeout(() => setNewProfileSaved(false), 3000);
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!user || !window.confirm(isVietnamese ? "Xóa tài khoản và toàn bộ hồ sơ đã đồng bộ? Hành động này không thể hoàn tác." : "Delete your account and all synced profiles? This cannot be undone.")) return;
+    setIsDeletingAccount(true);
+    const result = await deleteAccount();
+    setIsDeletingAccount(false);
+    if (result.error) {
+      window.alert(result.error.message);
+      return;
+    }
+    trackEvent('account_delete');
+    window.location.assign(localize("/"));
   };
 
   const today = new Date();
@@ -1166,6 +1194,7 @@ export function ChartPage() {
       )}
 
       {/* 6. SETTINGS & CLOUD SECURITY */}
+      <BillingPanel locale={locale} />
       <section className="account-settings" id="settings">
         <AccountDetailsForm />
         <aside className="account-settings-side">
@@ -1214,6 +1243,16 @@ export function ChartPage() {
                 }}
               >
                 ĐĂNG XUẤT ✕
+              </button>
+            )}
+            {user && (
+              <button
+                type="button"
+                onClick={handleDeleteAccount}
+                disabled={isDeletingAccount}
+                style={{ marginTop: "28px", background: "none", border: "none", color: "#a34e4e", cursor: isDeletingAccount ? "wait" : "pointer", font: '10px "Courier New", monospace', textDecoration: "underline" }}
+              >
+                {isDeletingAccount ? "ĐANG XÓA…" : "XÓA TÀI KHOẢN ✕"}
               </button>
             )}
           </div>
@@ -1760,6 +1799,7 @@ type CachedIndicatorReading = {
   analysis: string;
   savedAt: string;
   source?: "knowledge-fallback";
+  fallbackReason?: "quota" | "usage-control" | "provider";
 };
 
 function getIndicatorReadingCacheKey(fullName: string, birthDate: string, indicatorKey: string, value: string | number, locale = "vi") {
@@ -1781,14 +1821,20 @@ function hasCachedIndicatorReading(cacheKey: string) {
   return Boolean(getCachedIndicatorReading(cacheKey));
 }
 
-function saveCachedIndicatorReading(cacheKey: string, analysis: string, source?: "knowledge-fallback") {
+function saveCachedIndicatorReading(
+  cacheKey: string,
+  analysis: string,
+  source?: "knowledge-fallback",
+  fallbackReason?: CachedIndicatorReading["fallbackReason"]
+) {
   if (typeof window === "undefined" || !analysis.trim()) return;
   try {
     const cache = JSON.parse(window.localStorage.getItem(INDICATOR_READING_CACHE_KEY) || "{}");
     cache[cacheKey] = {
       analysis,
       savedAt: new Date().toISOString(),
-      ...(source ? { source } : {})
+      ...(source ? { source } : {}),
+      ...(fallbackReason ? { fallbackReason } : {})
     } satisfies CachedIndicatorReading;
     const trimmedCache = Object.fromEntries(
       Object.entries(cache)
@@ -1846,6 +1892,7 @@ export function OurTeamPage() {
   const [selected, setSelected] = useState<{ title: string; name: string; value: string; key?: string } | null>(null);
   const [analysis, setAnalysis] = useState("");
   const [readingSource, setReadingSource] = useState<"ai" | "local" | "knowledge-fallback">("ai");
+  const [quotaNotice, setQuotaNotice] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [analysisStage, setAnalysisStage] = useState<"idle" | "retrieving" | "generating" | "complete" | "error">("idle");
   const [assessmentPrompt, setAssessmentPrompt] = useState<{ name: string; birthDate: string; identityKey: string } | null>(null);
@@ -1871,6 +1918,7 @@ export function OurTeamPage() {
     activeFetchAbortControllerRef.current?.abort();
     setSelected(null);
     setAnalysis("");
+    setQuotaNotice("");
     setIsLoading(false);
     setAnalysisStage("idle");
   };
@@ -2017,6 +2065,11 @@ export function OurTeamPage() {
       setSelected({ title, name: indicator.name, value: indicatorValue, key: indicator.key });
       setReadingSource(cachedReading.source === "knowledge-fallback" ? "knowledge-fallback" : "local");
       setAnalysis(cachedReading.analysis);
+      setQuotaNotice(cachedReading.fallbackReason === "quota"
+        ? (isVietnamese
+          ? "Bạn đã hết lượt phân tích chuyên sâu hôm nay. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
+          : "You have used all deep-analysis credits for today. The reference knowledge reading is still available.")
+        : "");
       setAnalysisStage("complete");
       setIsLoading(false);
       return;
@@ -2025,6 +2078,7 @@ export function OurTeamPage() {
     // Reset analysis text so previous card's interpretation is never shown
     setAnalysis("");
     setReadingSource("ai");
+    setQuotaNotice("");
     setIsLoading(true);
     setAnalysisStage("retrieving");
 
@@ -2065,7 +2119,22 @@ export function OurTeamPage() {
         }),
         signal: abortController.signal
       });
-      if (!response.ok || !response.body) throw new Error(isVietnamese ? "Chưa thể đọc chỉ số này lúc này." : "Unable to read this indicator right now.");
+      if (!response.ok || !response.body) {
+        let message = isVietnamese ? "Chưa thể đọc chỉ số này lúc này." : "Unable to read this indicator right now.";
+        try {
+          const payload = await response.clone().json();
+          if (typeof payload?.error === "string") message = payload.error;
+        } catch {
+          // Keep the localized generic message when the server did not return JSON.
+        }
+        throw new Error(message);
+      }
+      const fallbackReason = response.headers.get("X-Numina-Fallback-Reason") as CachedIndicatorReading["fallbackReason"] | null;
+      if (fallbackReason === "quota") {
+        setQuotaNotice(isVietnamese
+          ? "Bạn đã hết lượt phân tích chuyên sâu hôm nay. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
+          : "You have used all deep-analysis credits for today. The reference knowledge reading is still available.");
+      }
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
@@ -2102,7 +2171,12 @@ export function OurTeamPage() {
       }
       if (abortController.signal.aborted) return;
       if (text.trim() && !text.trimStart().startsWith("⚠️")) {
-        saveCachedIndicatorReading(cacheKey, text, fallbackUsed ? "knowledge-fallback" : undefined);
+        saveCachedIndicatorReading(
+          cacheKey,
+          text,
+          fallbackUsed ? "knowledge-fallback" : undefined,
+          fallbackUsed ? (fallbackReason || "provider") : undefined
+        );
       }
       setAnalysisStage("complete");
     } catch (error) {
@@ -2316,6 +2390,7 @@ export function OurTeamPage() {
                     ? (isVietnamese ? "ĐÃ LƯU TRÊN THIẾT BỊ · LUẬN GIẢI NGAY" : "SAVED ON THIS DEVICE · INSTANT READING")
                     : (isVietnamese ? "ĐƯỢC TẠO CHO BẢN ĐỒ CÁ NHÂN" : "GENERATED FOR YOUR PERSONAL MAP")}
               </p>
+              {quotaNotice && <p className="indicator-ai-quota-notice" role="status">{quotaNotice}</p>}
 
               {isLoading && (
                 <div className="indicator-ai-progress" aria-live="polite">

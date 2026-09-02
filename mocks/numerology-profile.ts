@@ -1,4 +1,4 @@
-import type { MockNumerologyIndicator } from './numerology-indicators';
+import type { MockNumerologyIndicator } from './numerology-indicators.ts';
 
 export type NumerologyProfile24 = Record<string, string | number>;
 

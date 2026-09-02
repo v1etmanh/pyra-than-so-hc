@@ -6,8 +6,8 @@ import {
   markProviderFailure,
   requestChatCompletion,
   type CascadeProvider
-} from './provider-cascade';
-import { supportsSystemRole } from './model-config';
+} from './provider-cascade.ts';
+import { supportsSystemRole } from './model-config.ts';
 
 /** Optional user-provided provider config (BYOK). */
 export interface UserProviderConfig {
@@ -129,7 +129,11 @@ export function createStreamingResponse(
               {
                 stream: true,
                 timeoutMs: Math.min(
-                  Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 20_000),
+                  // Move to the next provider quickly when the current model
+                  // does not start responding. Override with
+                  // LLM_STREAM_CONNECT_TIMEOUT_MS when a slower model needs
+                  // more warm-up time.
+                  Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 1_000),
                   remainingMs
                 )
               }
@@ -154,6 +158,7 @@ export function createStreamingResponse(
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let buffer = '';
+            let providerSentDone = false;
 
             try {
               while (true) {
@@ -170,7 +175,10 @@ export function createStreamingResponse(
                 for (const line of lines) {
                   if (!line.startsWith('data: ')) continue;
                   const data = line.slice(6).trim();
-                  if (data === '[DONE]') continue;
+                  if (data === '[DONE]') {
+                    providerSentDone = true;
+                    continue;
+                  }
 
                   try {
                     const parsed = JSON.parse(data);
@@ -189,6 +197,10 @@ export function createStreamingResponse(
             } finally {
               await reader.cancel().catch(() => undefined);
               reader.releaseLock();
+            }
+
+            if (!providerSentDone) {
+              throw new Error('LLM stream ended before completion');
             }
 
             controller.enqueue(

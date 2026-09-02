@@ -7,18 +7,21 @@
  * Response: { models: string[] } | { error: string }
  */
 import { NextRequest, NextResponse } from 'next/server';
+import { readJsonBody, requestLimitResponse, getClientIp } from '@/lib/security/request';
+import { validateResolvedProviderUrl } from '@/lib/security/provider-url';
+import { consumeRateLimit, rateLimitResponse } from '@/lib/security/rate-limit';
+import { providerModelsRequestSchema, type ProviderModelsRequest } from '@/lib/security/schemas';
 
 export const dynamic = 'force-dynamic';
-
-interface ProviderModelsRequest {
-  baseUrl: string;
-  apiKey?: string;
-  providerType: string;
-}
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
   try {
-    const body: ProviderModelsRequest = await req.json();
+    const burst = consumeRateLimit(`provider-models:${getClientIp(req)}`, 10, 60_000);
+    const limited = rateLimitResponse(burst, 'Too many provider checks. Please try again later.');
+    if (limited) return limited;
+
+    const body = providerModelsRequestSchema.parse(await readJsonBody<ProviderModelsRequest>(req, 32 * 1024));
     const { baseUrl, apiKey, providerType } = body;
 
     if (!baseUrl?.trim()) {
@@ -28,7 +31,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const normalizedBaseUrl = baseUrl.replace(/\/$/, '');
+    const normalizedBaseUrl = await validateResolvedProviderUrl(baseUrl);
     const modelsUrl = `${normalizedBaseUrl}/models`;
 
     // Build request headers based on provider type
@@ -47,7 +50,8 @@ export async function POST(req: NextRequest) {
     const response = await fetch(modelsUrl, {
       method: 'GET',
       headers,
-      signal: AbortSignal.timeout(15_000)
+      signal: AbortSignal.timeout(15_000),
+      redirect: 'error'
     });
 
     if (!response.ok) {
@@ -65,6 +69,17 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ models });
   } catch (error) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
+    if (error instanceof Error && (
+      error.name === 'ZodError' ||
+      error.message.startsWith('Provider URL') ||
+      error.message.startsWith('Private or internal provider') ||
+      error.message.startsWith('Private or reserved provider') ||
+      error.message.startsWith('Provider host')
+    )) {
+      return NextResponse.json({ error: 'Invalid provider configuration.' }, { status: 400 });
+    }
     const message =
       error instanceof Error ? error.message : 'Failed to fetch models';
     console.error('[ProviderModels] Error:', message);

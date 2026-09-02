@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
-import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 
 import { notFound } from 'next/navigation';
@@ -9,6 +8,7 @@ import { routing } from '@/src/i18n/routing';
 import { Providers } from '@/app/providers';
 import { getMessages, getTranslations } from 'next-intl/server';
 import '@/styles/chani-globals.css';
+import { AnalyticsConsent } from '@/components/AnalyticsConsent';
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://numerology-app.site';
@@ -120,25 +120,7 @@ export default async function RootLayout({
           </NextIntlClientProvider>
         </Providers>
 
-        <Script
-          id="gtag-src"
-          strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${
-            process.env?.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? 'UA-137260564-1'
-          }`}
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${
-              process.env?.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? 'UA-137260564-1'
-            }', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
+        <AnalyticsConsent analyticsId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
       </body>
     </html>
   );

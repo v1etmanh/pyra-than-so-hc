@@ -1,7 +1,7 @@
 import {
   MOCK_NUMEROLOGY_INDICATORS,
   type MockNumerologyIndicator
-} from '../mocks/numerology-indicators';
+} from '../mocks/numerology-indicators.ts';
 
 export type IndicatorSearchResult = MockNumerologyIndicator & { score: number };
 

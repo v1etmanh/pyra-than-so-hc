@@ -3,7 +3,6 @@ import { test } from 'node:test';
 import {
   buildIndicatorKnowledgeFallback,
   createIndicatorFallbackStream
-// @ts-expect-error Node's type-stripping test runner needs the explicit extension.
 } from '../app/api/numerology/lazy-indicator/fallback.ts';
 
 const encoder = new TextEncoder();

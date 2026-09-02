@@ -1,24 +1,15 @@
 import { NextRequest } from 'next/server';
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
+import { initialAnalysisRequestSchema, type InitialAnalysisRequest } from '@/lib/security/schemas';
 import * as fs from 'fs';
 import * as path from 'path';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
-
-interface InitialAnalysisBody {
-  fullName: string;
-  birthDay: string;
-  coreIndicators: {
-    walksOfLife: number | string;
-    mission: number | string;
-    soul: number | string;
-    personality: number | string;
-    dateOfBirth: number | string;
-  };
-  providerConfig?: any;
-}
 
 // Fallback local memory search if needed
 function searchLocalKnowledge(numbers: string[]): string {
@@ -46,12 +37,15 @@ function searchLocalKnowledge(numbers: string[]): string {
 
 export async function POST(req: NextRequest) {
   try {
-    const body: InitialAnalysisBody = await req.json();
+    const body = initialAnalysisRequestSchema.parse(await readJsonBody<InitialAnalysisRequest>(req, 128 * 1024));
     const { fullName, birthDay, coreIndicators, providerConfig } = body;
 
     if (!coreIndicators) {
       return new Response(JSON.stringify({ error: 'Missing coreIndicators' }), { status: 400 });
     }
+
+    const access = await getRequestAccess(req, 'text');
+    if (access instanceof Response) return access;
 
     const { walksOfLife, mission, soul, personality, dateOfBirth } = coreIndicators;
     const targetNumbers = [String(walksOfLife), String(mission), String(soul), String(personality), String(dateOfBirth)];
@@ -108,15 +102,32 @@ QUY TẮC LUẬN GIẢI CHUYÊN NGHIỆP:
     ];
 
     const stream = createStreamingResponse(systemPrompt, messages, providerConfig);
+    recordAiUsage({
+      identity: access.identity,
+      plan: access.plan,
+      feature: 'text',
+      route: '/api/numerology/initial-analysis',
+      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
+    });
 
     return new Response(stream, {
       headers: {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        Connection: 'keep-alive'
+        Connection: 'keep-alive',
+        'X-Numina-Plan': access.plan,
+        'X-Numina-Remaining': String(access.remaining)
       }
     });
   } catch (error) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
+    if (error instanceof Error && error.name === 'ZodError') {
+      return new Response(JSON.stringify({ error: 'Invalid initial analysis request.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
     console.error('Initial analysis API error:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

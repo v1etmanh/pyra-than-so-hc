@@ -1,22 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { retrieveContext, type RetrievalResult } from '@/app/api/chat/lib/retrieval-service';
-import { createStreamingResponse, type UserProviderConfig } from '@/app/api/chat/lib/response-generator';
+import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
 import { buildNumerologyQASystemPrompt } from '@/lib/numerology-qa-prompt';
 import { searchSupabaseForProfile } from '@/lib/profile-knowledge';
 import { buildMockAnswer, getMockIndicator } from '@/utils/numerology-qa';
 import { normalizeNumerologyProfile, type NumerologyProfile24 } from '@/mocks/numerology-profile';
+import { qaRequestSchema, type QARequest } from '@/lib/security/schemas';
 
 export const dynamic = 'force-dynamic';
-
-type QARequest = {
-  question?: unknown;
-  indicatorKey?: unknown;
-  indicatorValue?: unknown;
-  locale?: unknown;
-  profile?: unknown;
-  mode?: unknown;
-  providerConfig?: UserProviderConfig;
-};
 
 const EMPTY_RETRIEVAL: RetrievalResult = {
   context: '',
@@ -37,23 +31,23 @@ function profileSourceSummary(profile: NumerologyProfile24, hits: Awaited<Return
 export async function POST(request: NextRequest) {
   let body: QARequest;
   try {
-    body = (await request.json()) as QARequest;
+    body = qaRequestSchema.parse(await readJsonBody<QARequest>(request, 128 * 1024));
   } catch {
-    return NextResponse.json({ error: 'Body JSON không hợp lệ.' }, { status: 400 });
+    return NextResponse.json({ error: 'Yêu cầu Q&A không hợp lệ.' }, { status: 400 });
   }
 
-  const question = typeof body.question === 'string' ? body.question.trim() : '';
-  if (question.length < 3) {
-    return NextResponse.json({ error: 'Câu hỏi phải có ít nhất 3 ký tự.' }, { status: 400 });
-  }
+  const question = body.question;
 
-  const indicatorKey = typeof body.indicatorKey === 'string' ? body.indicatorKey : undefined;
+  const access = await getRequestAccess(request, 'text');
+  if (access instanceof Response) return access;
+
+  const indicatorKey = body.indicatorKey;
   const indicator = indicatorKey ? getMockIndicator(indicatorKey) : undefined;
   if (indicatorKey && !indicator) {
     return NextResponse.json({ error: 'Chỉ số không tồn tại trong mock catalog.' }, { status: 404 });
   }
 
-  const locale = typeof body.locale === 'string' ? body.locale : 'vi';
+  const locale = body.locale || 'vi';
   const mode = body.mode === 'inspect' || body.mode === 'mock' ? body.mode : 'stream';
   const normalizedProfile = normalizeNumerologyProfile(body.profile);
 
@@ -128,6 +122,13 @@ export async function POST(request: NextRequest) {
     [{ role: 'user', content: question }],
     body.providerConfig
   );
+  recordAiUsage({
+    identity: access.identity,
+    plan: access.plan,
+    feature: 'text',
+    route: '/api/numerology/qa',
+    estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
+  });
   const encoder = new TextEncoder();
   const sources = [...chromaResult.sources, ...supabaseSources].map((source) => ({
     title: source.title,
@@ -158,7 +159,9 @@ export async function POST(request: NextRequest) {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache',
       Connection: 'keep-alive',
-      'X-Content-Type-Options': 'nosniff'
+      'X-Content-Type-Options': 'nosniff',
+      'X-Numina-Plan': access.plan,
+      'X-Numina-Remaining': String(access.remaining)
     }
   });
 }

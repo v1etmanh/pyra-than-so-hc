@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { createStreamingResponse } from '../app/api/chat/lib/response-generator';
+import { createStreamingResponse } from '../app/api/chat/lib/response-generator.ts';
 import {
   getOrderedModelCandidates,
   getProviderCascade,
   markModelFailure,
   isRetryableProviderError
-} from '../app/api/chat/lib/provider-cascade';
+} from '../app/api/chat/lib/provider-cascade.ts';
 
 async function readStream(stream: ReadableStream<Uint8Array>): Promise<string> {
   const reader = stream.getReader();

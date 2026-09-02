@@ -29,6 +29,7 @@ interface AuthContextType {
     fullName?: string
   ) => Promise<{ error: AuthError | Error | null; user: User | null; session: Session | null }>;
   signOut: () => Promise<void>;
+  deleteAccount: () => Promise<{ error: Error | null }>;
   resetPasswordForEmail: (email: string) => Promise<{ error: AuthError | Error | null }>;
   updateUserProfile: (updates: { full_name?: string; avatar_url?: string }) => Promise<{ error: Error | null }>;
   refreshProfile: () => Promise<void>;
@@ -203,6 +204,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [supabase]);
 
+  const deleteAccount = useCallback(async () => {
+    try {
+      const response = await fetch('/api/account/delete', { method: 'POST' });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(payload.error || 'Account deletion failed');
+      }
+
+      Object.keys(window.localStorage)
+        .filter((key) => /numerology|pyra|profile|meaning|chakra/i.test(key))
+        .forEach((key) => window.localStorage.removeItem(key));
+      await supabase.auth.signOut();
+      setUser(null);
+      setSession(null);
+      setProfile(null);
+      return { error: null };
+    } catch (err) {
+      return { error: err instanceof Error ? err : new Error('Account deletion failed') };
+    }
+  }, [supabase]);
+
   const resetPasswordForEmail = useCallback(
     async (email: string) => {
       try {
@@ -265,6 +287,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       signInWithPassword,
       signUp,
       signOut,
+      deleteAccount,
       resetPasswordForEmail,
       updateUserProfile,
       refreshProfile,
@@ -281,6 +304,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       signInWithPassword,
       signUp,
       signOut,
+      deleteAccount,
       resetPasswordForEmail,
       updateUserProfile,
       refreshProfile,

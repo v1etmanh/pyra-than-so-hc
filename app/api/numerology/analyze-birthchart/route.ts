@@ -1,25 +1,17 @@
 import { NextRequest } from 'next/server';
+import { getRequestAccess } from '@/lib/billing/access';
+import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
-import type { PersonalityProfile } from '@/utils/personalityTypes';
+import { birthChartRequestSchema, type BirthChartRequest } from '@/lib/security/schemas';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
 
-interface AnalyzeBirthChartBody {
-  fullName?: string;
-  birthDay: string;
-  birthChartData: {
-    grid: Array<{ number: number; frequency: number; isIsolated: boolean }>;
-    arrows: Array<{ name: string; numbers: number[]; type: 'strength' | 'empty'; desc: string }>;
-  };
-  personalityProfile?: PersonalityProfile;
-  providerConfig?: any;
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const body: AnalyzeBirthChartBody = await req.json();
+    const body = birthChartRequestSchema.parse(await readJsonBody<BirthChartRequest>(req, 128 * 1024));
     const { fullName, birthDay, birthChartData, personalityProfile, providerConfig } = body;
 
     if (!birthDay || !birthChartData) {
@@ -28,6 +20,9 @@ export async function POST(req: NextRequest) {
         headers: { 'Content-Type': 'application/json' }
       });
     }
+
+    const access = await getRequestAccess(req, 'text');
+    if (access instanceof Response) return access;
 
     // 1. Fetch relevant arrow knowledge from Supabase
     const activeArrows = birthChartData.arrows || [];
@@ -123,15 +118,32 @@ LƯU Ý QUAN TRỌNG:
     ];
 
     const stream = createStreamingResponse(systemPrompt, messages, providerConfig);
+    recordAiUsage({
+      identity: access.identity,
+      plan: access.plan,
+      feature: 'text',
+      route: '/api/numerology/analyze-birthchart',
+      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
+    });
 
     return new Response(stream, {
       headers: {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        Connection: 'keep-alive'
+        Connection: 'keep-alive',
+        'X-Numina-Plan': access.plan,
+        'X-Numina-Remaining': String(access.remaining)
       }
     });
   } catch (error) {
+    const limited = requestLimitResponse(error);
+    if (limited) return limited;
+    if (error instanceof Error && error.name === 'ZodError') {
+      return new Response(JSON.stringify({ error: 'Invalid birth chart request.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
     console.error('Analyze birth chart API error:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

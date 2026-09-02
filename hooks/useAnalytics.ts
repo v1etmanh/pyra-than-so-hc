@@ -21,7 +21,11 @@ type NumerologyEvent =
   | 'profile_load'
   | 'profile_delete'
   | 'formula_view'
-  | 'numerology_calculate';
+  | 'numerology_calculate'
+  | 'pricing_view'
+  | 'checkout_started'
+  | 'checkout_failed'
+  | 'account_delete';
 
 interface EventParams {
   [key: string]: string | number | boolean | undefined;
@@ -45,7 +49,7 @@ export function useAnalytics() {
   );
 
   const trackBirthChartView = useCallback((birthDate: string) => {
-    sendGAEvent('birth_chart_view', { birth_date: birthDate });
+    sendGAEvent('birth_chart_view', { has_birth_date: Boolean(birthDate) });
   }, []);
 
   const trackBirthChartCellClick = useCallback((number: number) => {
@@ -82,7 +86,7 @@ export function useAnalytics() {
     (name: string, birthDate: string) => {
       sendGAEvent('numerology_calculate', {
         has_name: name.length > 0,
-        birth_date: birthDate
+        has_birth_date: Boolean(birthDate)
       });
     },
     []

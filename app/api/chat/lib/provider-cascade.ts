@@ -1,5 +1,6 @@
-import type { UserProviderConfig } from './response-generator';
-import { getChatModels } from './model-config';
+import type { UserProviderConfig } from './response-generator.ts';
+import { getChatModels } from './model-config.ts';
+import { validateProviderBaseUrl } from '../../../../lib/security/provider-url.ts';
 
 export interface CascadeProvider {
   name: string;
@@ -69,7 +70,7 @@ function parseModels(names: string | string[], fallback: string[]): string[] {
 function customProvider(config: UserProviderConfig): CascadeProvider {
   return {
     name: config.type || 'custom',
-    baseUrl: config.baseUrl.replace(/\/$/, ''),
+    baseUrl: validateProviderBaseUrl(config.baseUrl),
     models: [config.model],
     apiKeys: config.apiKeys.filter(Boolean)
   };
@@ -304,7 +305,8 @@ export async function requestChatCompletion(
           ? { temperature: options.temperature }
           : {})
       }),
-      signal: controller.signal
+      signal: controller.signal,
+      redirect: 'error'
     });
   } finally {
     clearTimeout(timeout);
