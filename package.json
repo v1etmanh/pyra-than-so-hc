@@ -51,7 +51,7 @@
     "eslint": "10.2.0",
     "eslint-config-next": "latest",
     "husky": "9.1.7",
-    "lint-staged": "^16.2.6",
+    "lint-staged": "^17.3.0",
     "typescript": "5.9.3"
   }
 }
