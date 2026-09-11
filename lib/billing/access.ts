@@ -2,6 +2,7 @@ import type { NextRequest } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { getClientIp } from '@/lib/security/request';
 import { consumeDurableAccess, type BillingPlan, type UsageFeature } from '@/lib/usage/usage-meter';
+import { effectiveBillingPlan } from '@/lib/billing/types';
 
 export type RequestAccess = {
   userId?: string;
@@ -28,12 +29,8 @@ export async function getRequestAccess(
         .from('numina_subscriptions')
         .select('plan,status,current_period_end')
         .eq('user_id', userId)
-        .in('status', ['active', 'trialing'])
         .maybeSingle();
-
-      const periodIsValid = !subscription?.current_period_end ||
-        new Date(subscription.current_period_end).getTime() > Date.now();
-      if (periodIsValid && subscription?.plan === 'pro') plan = 'pro';
+      plan = effectiveBillingPlan(subscription);
     }
   } catch (error) {
     // Missing billing tables/config must fail closed to Free, never block the app.

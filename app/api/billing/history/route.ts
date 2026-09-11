@@ -10,8 +10,9 @@ export async function GET() {
     if (!auth.user) return NextResponse.json({ history: [] }, { status: 401 });
     const { data, error } = await supabase
       .from('numina_payment_events')
-      .select('id,amount,currency,status,description,created_at')
+      .select('id,provider,amount,currency,status,description,created_at')
       .eq('user_id', auth.user.id)
+      .gt('amount', 0)
       .order('created_at', { ascending: false })
       .limit(50);
     if (error) return NextResponse.json({ history: [] });
@@ -20,4 +21,3 @@ export async function GET() {
     return NextResponse.json({ history: [] });
   }
 }
-

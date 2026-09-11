@@ -165,17 +165,23 @@ export const tarotReadingRequestSchema = z.discriminatedUnion('mode', [
   }).strict()
 ]);
 
-export const checkoutRequestSchema = z.object({
-  plan: z.literal('pro'),
+export const billingCheckoutRequestSchema = z.object({
   locale: z.enum(['vi', 'en']).optional()
 }).strict();
 
-export const stripeWebhookEventSchema = z.object({
-  id: boundedText(200).optional(),
-  type: boundedText(120).min(1),
-  data: z.object({
-    object: z.record(z.string(), z.unknown()).optional()
-  }).optional()
+export const paypalWebhookEventSchema = z.object({
+  id: boundedText(200).min(1),
+  event_type: boundedText(160).min(1),
+  create_time: boundedText(80).optional(),
+  resource: z.record(z.string(), z.unknown()).optional()
+}).passthrough();
+
+export const payosWebhookSchema = z.object({
+  code: boundedText(20),
+  desc: boundedText(500).optional(),
+  success: z.boolean(),
+  data: z.record(z.string(), z.unknown()),
+  signature: boundedText(256).min(1)
 }).passthrough();
 
 export type ProviderModelsRequest = z.infer<typeof providerModelsRequestSchema>;
@@ -185,4 +191,4 @@ export type BirthChartRequest = z.infer<typeof birthChartRequestSchema>;
 export type WallpaperRequest = z.infer<typeof wallpaperRequestSchema>;
 export type SurveyRequest = z.infer<typeof surveyRequestSchema>;
 export type TarotReadingRequestPayload = z.infer<typeof tarotReadingRequestSchema>;
-export type CheckoutRequest = z.infer<typeof checkoutRequestSchema>;
+export type BillingCheckoutRequest = z.infer<typeof billingCheckoutRequestSchema>;

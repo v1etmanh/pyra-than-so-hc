@@ -31,7 +31,7 @@ pnpm dev
 
 Ứng dụng mặc định chạy tại `http://localhost:3200/vi`; đổi locale sang `/en` để kiểm tra bản tiếng Anh.
 
-Sao chép `.env.example` thành `.env.local` rồi điền Supabase, billing và ít nhất một provider AI. Có thể cấu hình nhiều model cho mỗi provider bằng danh sách phân tách bởi dấu phẩy.
+Sao chép `.env.example` thành `.env.local` rồi điền Supabase, PayPal, payOS và ít nhất một provider AI. PayPal dùng subscription theo tháng cho khách quốc tế; payOS tạo VietQR một lần để cấp 30 ngày Pro. Quyền trả phí chỉ được cập nhật sau webhook đã xác thực. Có thể cấu hình nhiều model AI cho mỗi provider bằng danh sách phân tách bởi dấu phẩy.
 
 Ba timeout của stream được tách riêng:
 
@@ -47,6 +47,13 @@ pnpm typecheck
 pnpm lint
 pnpm build
 ```
+
+## Thanh toán Pro
+
+- PayPal: tạo Product và Plan định kỳ 3,99 USD/tháng, sau đó cấu hình `PAYPAL_PRO_PLAN_ID`. Webhook production: `/api/billing/paypal/webhook`.
+- payOS: tạo kênh thanh toán VietQR liên kết tài khoản nhận tiền, sau đó cấu hình client ID, API key và checksum key. Webhook production: `/api/billing/payos/webhook`.
+- Chạy `supabase/migrations/20260911_paypal_payos_billing.sql` trước khi bật nút thanh toán. Migration này thay cấu trúc billing thử nghiệm cũ; dự án chưa có thuê bao trả phí thật.
+- PayPal sandbox và payOS test phải được xác nhận end-to-end trước khi dùng credential live. Redirect về trang tài khoản chỉ hiển thị trạng thái; chỉ webhook hợp lệ mới cấp quyền Pro.
 
 ## Benchmark provider/model fallback
 
