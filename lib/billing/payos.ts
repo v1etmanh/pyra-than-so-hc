@@ -1,9 +1,18 @@
 const PAYOS_API = 'https://api-merchant.payos.vn';
 
+function cleanEnv(value?: string): string | undefined {
+  if (!value) return undefined;
+  let trimmed = value.trim();
+  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+    trimmed = trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
 function payosConfig() {
-  const clientId = process.env.PAYOS_CLIENT_ID?.trim();
-  const apiKey = process.env.PAYOS_API_KEY?.trim();
-  const checksumKey = process.env.PAYOS_CHECKSUM_KEY?.trim();
+  const clientId = cleanEnv(process.env.PAYOS_CLIENT_ID);
+  const apiKey = cleanEnv(process.env.PAYOS_API_KEY);
+  const checksumKey = cleanEnv(process.env.PAYOS_CHECKSUM_KEY);
   if (!clientId || !apiKey || !checksumKey) throw new Error('payOS is not configured.');
   return { clientId, apiKey, checksumKey };
 }
@@ -73,12 +82,19 @@ export async function createPayOSPaymentLink(input: {
 export async function verifyPayOSWebhook(
   data: Record<string, unknown>,
   providedSignature: string
-): Promise<boolean> {
+): Promise<{ valid: boolean; computedSignature: string; keyPreview: string }> {
   const { checksumKey } = payosConfig();
-  if (!/^[a-f0-9]{64}$/i.test(providedSignature)) return false;
-  const providedBytes = Uint8Array.from(providedSignature.match(/.{2}/g)!.map((hex) => Number.parseInt(hex, 16)));
-  const key = await crypto.subtle.importKey(
-    'raw', new TextEncoder().encode(checksumKey), { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
-  );
-  return crypto.subtle.verify('HMAC', key, providedBytes, new TextEncoder().encode(buildPayOSChecksumData(data)));
+  if (!/^[a-f0-9]{64}$/i.test(providedSignature)) {
+    return { valid: false, computedSignature: '', keyPreview: '' };
+  }
+  const dataString = buildPayOSChecksumData(data);
+  const computedSignature = await hmacSha256Hex(checksumKey, dataString);
+  const keyPreview = checksumKey.length >= 8
+    ? `${checksumKey.slice(0, 4)}...${checksumKey.slice(-4)} (len: ${checksumKey.length})`
+    : `(len: ${checksumKey.length})`;
+  return {
+    valid: computedSignature.toLowerCase() === providedSignature.trim().toLowerCase(),
+    computedSignature,
+    keyPreview
+  };
 }

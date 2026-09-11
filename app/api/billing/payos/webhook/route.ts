@@ -10,8 +10,13 @@ export async function POST(request: NextRequest) {
   try {
     const raw = await readJsonBody<Record<string, unknown>>(request, 64 * 1024);
     const payload = payosWebhookSchema.parse(raw);
-    if (!(await verifyPayOSWebhook(payload.data, payload.signature))) {
-      console.error('[PayOSWebhook] Signature mismatch. Received signature:', payload.signature);
+    const verification = await verifyPayOSWebhook(payload.data, payload.signature);
+    if (!verification.valid) {
+      console.error('[PayOSWebhook] Signature mismatch:', {
+        receivedSignature: payload.signature,
+        computedSignature: verification.computedSignature,
+        keyOnVercel: verification.keyPreview
+      });
       return NextResponse.json({ error: 'Invalid payOS webhook signature.' }, { status: 400 });
     }
     const isFailed = payload.success === false
