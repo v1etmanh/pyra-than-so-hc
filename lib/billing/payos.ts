@@ -9,13 +9,14 @@ function payosConfig() {
 }
 
 function checksumValue(value: unknown): string {
-  if (value === null || value === undefined) return '';
+  if (value === null || value === undefined || value === 'null' || value === 'undefined') return '';
   if (typeof value === 'object') return JSON.stringify(value);
   return String(value);
 }
 
 export function buildPayOSChecksumData(data: Record<string, unknown>): string {
   return Object.keys(data)
+    .filter((key) => data[key] !== undefined)
     .sort()
     .map((key) => `${key}=${checksumValue(data[key])}`)
     .join('&');
