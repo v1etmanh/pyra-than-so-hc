@@ -13,7 +13,10 @@ export async function POST(request: NextRequest) {
     if (!(await verifyPayOSWebhook(payload.data, payload.signature))) {
       return NextResponse.json({ error: 'Invalid payOS webhook signature.' }, { status: 400 });
     }
-    if (!payload.success || String(payload.data.code || '') !== '00') {
+    const isFailed = payload.success === false
+      || (payload.code !== undefined && String(payload.code) !== '00')
+      || (payload.data.code !== undefined && String(payload.data.code) !== '00');
+    if (isFailed) {
       return NextResponse.json({ received: true, ignored: true });
     }
     const orderCode = Number(payload.data.orderCode);

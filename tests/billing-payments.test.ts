@@ -8,6 +8,7 @@ import {
 } from '../lib/billing/types.ts';
 import { buildPayOSChecksumData, createPayOSOrderCode } from '../lib/billing/payos.ts';
 import { paypalEventSubscriptionId, paypalNextBillingTime } from '../lib/billing/paypal.ts';
+import { payosWebhookSchema } from '../lib/security/schemas.ts';
 
 test('billing prices are fixed server-side', () => {
   assert.equal(PAYOS_PRO_PRICE_VND, 79_000);
@@ -41,4 +42,20 @@ test('PayPal event helpers resolve subscriptions and renewal dates defensively',
   assert.equal(paypalEventSubscriptionId({ id: 'I-DIRECT' }), 'I-DIRECT');
   assert.equal(paypalEventSubscriptionId({ id: 'SALE-1' }), null);
   assert.equal(paypalNextBillingTime({ billing_info: { next_billing_time: '2026-10-11T00:00:00Z' } }), '2026-10-11T00:00:00Z');
+});
+
+test('payOS webhook schema parses payOS payloads without success field', () => {
+  const parsed = payosWebhookSchema.parse({
+    code: '00',
+    desc: 'success',
+    data: {
+      orderCode: 123,
+      amount: 79000,
+      description: 'NUMINA 123'
+    },
+    signature: 'a'.repeat(64)
+  });
+  assert.equal(parsed.code, '00');
+  assert.equal(parsed.success, undefined);
+  assert.equal(parsed.data.orderCode, 123);
 });

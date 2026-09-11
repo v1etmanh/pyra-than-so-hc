@@ -177,9 +177,9 @@ export const paypalWebhookEventSchema = z.object({
 }).passthrough();
 
 export const payosWebhookSchema = z.object({
-  code: boundedText(20),
+  code: z.union([boundedText(20), z.number().finite()]).optional(),
   desc: boundedText(500).optional(),
-  success: z.boolean(),
+  success: z.boolean().optional(),
   data: z.record(z.string(), z.unknown()),
   signature: boundedText(256).min(1)
 }).passthrough();
