@@ -37,35 +37,35 @@ const CASES: PromptCase[] = [
     workload: 'stream-probe',
     system: 'Follow the user instruction exactly. Do not explain your answer.',
     user: `Return exactly NUMINA_OK on one line. Probe ${index + 1}.`,
-    maxTokens: 32
+    maxTokens: 128
   })),
   {
     id: 'domain-tarot-choice',
     workload: 'stream-domain',
     system: 'Bạn là Numina Tarot. Trả lời bằng tiếng Việt, rõ ràng, không định mệnh hóa.',
     user: 'Câu hỏi: Tôi nên tiếp tục dự án đang chậm hay đổi hướng? Lá The Chariot xuôi ở vị trí lời khuyên. Hãy giải thích trong 4–6 câu và đưa ra 2 hành động thực tế.',
-    maxTokens: 260
+    maxTokens: 600
   },
   {
     id: 'domain-tarot-reflection',
     workload: 'stream-domain',
     system: 'Bạn là Numina Tarot. Chỉ dùng dữ liệu lá bài được cung cấp.',
     user: 'Câu hỏi: Tôi cần nhìn lại điều gì trong mối quan hệ hiện tại? Lá The Hermit xuôi, từ khóa chiêm nghiệm và khoảng lặng. Trả lời 4–6 câu bằng tiếng Việt.',
-    maxTokens: 260
+    maxTokens: 600
   },
   {
     id: 'domain-numerology-life-path',
     workload: 'stream-domain',
     system: 'Bạn là chuyên gia Nhân số học Pythagoras, tập trung vào hành vi thực tế.',
     user: 'Giải thích ngắn gọn Đường đời 7: một điểm mạnh, một cạm bẫy và hai hành động phát triển. Trả lời bằng tiếng Việt.',
-    maxTokens: 260
+    maxTokens: 600
   },
   {
     id: 'domain-numerology-indicator',
     workload: 'stream-domain',
     system: 'Bạn là chuyên gia Nhân số học Pythagoras. Không đưa ra khẳng định mê tín.',
     user: 'Một người có Số Linh hồn 3 nên cân bằng nhu cầu biểu đạt và kỷ luật như thế nào? Trả lời 4–6 câu bằng tiếng Việt.',
-    maxTokens: 260
+    maxTokens: 600
   },
   ...Array.from({ length: 2 }, (_, index): PromptCase => ({
     id: `structured-follow-up-${index + 1}`,
@@ -74,12 +74,14 @@ const CASES: PromptCase[] = [
     user: index === 0
       ? 'Existing reading already explains The Hermit as a need for reflection. Follow-up: Should I journal tonight? Return {"decision":"direct"|"draw","drawCount":0|1|2|3,"reason":"short reason"}.'
       : 'Existing reading covers career direction but not the new relocation question. Return {"decision":"direct"|"draw","drawCount":0|1|2|3,"reason":"short reason"}.',
-    maxTokens: 120
+    maxTokens: 300
   }))
 ];
 
 function parseArgs(argv: string[]): CliOptions {
   const value = (flag: string) => {
+    const direct = argv.find((arg) => arg.startsWith(`${flag}=`));
+    if (direct) return direct.slice(flag.length + 1);
     const index = argv.indexOf(flag);
     return index >= 0 ? argv[index + 1] : undefined;
   };

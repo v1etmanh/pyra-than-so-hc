@@ -17,6 +17,8 @@ const PROVIDER_ENV: Record<string, string> = {
 };
 
 function argValue(flag: string): string | undefined {
+  const direct = process.argv.find((arg) => arg.startsWith(`${flag}=`));
+  if (direct) return direct.slice(flag.length + 1);
   const index = process.argv.indexOf(flag);
   return index >= 0 ? process.argv[index + 1] : undefined;
 }
@@ -64,6 +66,9 @@ function buildEnvSuggestion(ranked: CandidateBenchmarkSummary[]): string {
   ];
   const providerOrder = Array.from(new Set(ranked.filter((item) => item.eligible).map((item) => item.provider)));
   lines.push(`# Provider order: ${providerOrder.length ? providerOrder.join(' -> ') : 'no eligible provider'}`);
+  if (providerOrder.length > 0) {
+    lines.push(`LLM_PROVIDER_ORDER=${providerOrder.join(',')}`);
+  }
 
   for (const [provider, envName] of Object.entries(PROVIDER_ENV)) {
     const models = ranked.filter((item) => item.provider === provider && item.eligible).map((item) => item.model);

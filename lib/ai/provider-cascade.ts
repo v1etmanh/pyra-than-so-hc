@@ -20,9 +20,22 @@ type ReasoningEffort = 'minimal' | 'low' | 'medium' | 'high';
 function getGeminiReasoningEffort(provider: CascadeProvider): ReasoningEffort | undefined {
   if (provider.name !== 'Google Gemini') return undefined;
 
-  const configured = (process.env.GEMINI_REASONING_EFFORT || 'low').trim().toLowerCase();
+  const configured = (process.env.GEMINI_REASONING_EFFORT || 'minimal').trim().toLowerCase();
   return configured === 'minimal' ||
     configured === 'low' ||
+    configured === 'medium' ||
+    configured === 'high'
+    ? configured
+    : undefined;
+}
+
+function getGroqReasoningEffort(
+  provider: CascadeProvider
+): 'low' | 'medium' | 'high' | undefined {
+  if (provider.name !== 'Groq') return undefined;
+
+  const configured = (process.env.GROQ_REASONING_EFFORT || 'low').trim().toLowerCase();
+  return configured === 'low' ||
     configured === 'medium' ||
     configured === 'high'
     ? configured
@@ -333,7 +346,22 @@ export function getProviderCascade(
     }
   ];
 
-  return tiers
+  const configuredOrder = process.env.LLM_PROVIDER_ORDER
+    ?.split(',')
+    .map((name) => name.trim().toLowerCase())
+    .filter(Boolean);
+
+  const orderedTiers = configuredOrder && configuredOrder.length > 0
+    ? [...tiers].sort((a, b) => {
+        const aIndex = configuredOrder.indexOf(a.name.toLowerCase());
+        const bIndex = configuredOrder.indexOf(b.name.toLowerCase());
+        const aRank = aIndex >= 0 ? aIndex : Number.POSITIVE_INFINITY;
+        const bRank = bIndex >= 0 ? bIndex : Number.POSITIVE_INFINITY;
+        return aRank - bRank;
+      })
+    : tiers;
+
+  return orderedTiers
     .map((provider) => ({ ...provider, apiKeys: Array.from(new Set(provider.apiKeys)) }))
     .filter(
       (provider) => provider.baseUrl && provider.models.length > 0 && provider.apiKeys.length > 0
@@ -358,7 +386,7 @@ export async function requestChatCompletion(
 ): Promise<Response> {
   const controller = new AbortController();
   const timeoutMs = options?.timeoutMs ?? Number(process.env.LLM_REQUEST_TIMEOUT_MS || 15000);
-  const reasoningEffort = getGeminiReasoningEffort(provider);
+  const reasoningEffort = getGeminiReasoningEffort(provider) ?? getGroqReasoningEffort(provider);
   const nvidiaThinkingOptions = getNvidiaThinkingOptions(provider, model);
   const timeout = setTimeout(
     () => controller.abort(new Error(`LLM request timed out after ${timeoutMs}ms`)),

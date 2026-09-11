@@ -21,6 +21,8 @@ interface E2EResult {
 }
 
 function argValue(flag: string): string | undefined {
+  const direct = process.argv.find((arg) => arg.startsWith(`${flag}=`));
+  if (direct) return direct.slice(flag.length + 1);
   const index = process.argv.indexOf(flag);
   return index >= 0 ? process.argv[index + 1] : undefined;
 }

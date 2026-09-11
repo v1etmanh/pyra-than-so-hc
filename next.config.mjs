@@ -9,7 +9,7 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
    reactStrictMode: false,
    outputFileTracingRoot: projectRoot,
-   allowedDevOrigins: ['172.17.144.1'],
+   allowedDevOrigins: ['172.17.144.1', '192.168.160.1'],
    async headers() {
       return [
          {
