@@ -6,7 +6,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLocale } from "next-intl";
 import { FormEvent, type CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import PyraHeader from "./PyraHeader";
-import { useChatRAG } from "@/hooks/use-chat-rag";
 import { useProfiles } from "@/hooks/useProfiles";
 import { getPersonalityIdentityKey, getStoredPersonalityAssessment, usePersonalityProfile } from "@/hooks/usePersonalityProfile";
 import { useProcessNumerology } from "@/hooks/useProcessNumerology";
@@ -54,309 +53,13 @@ function Shell({ children }: { children: React.ReactNode }) {
 
 const astroBase = `${SITE}/astro-101-88fc9eb0/assets`;
 
-export function PodcastWeekAheadPage() {
-  const isVietnamese = useLocale() === "vi";
-  const [draft, setDraft] = useState("");
-  const chat = useChatRAG();
-  const { profiles } = useProfiles();
-
-  // Deduplicate profiles by name and birthDate
-  const uniqueProfiles = useMemo(() => {
-    const seen = new Set<string>();
-    return profiles.filter((p) => {
-      const key = `${p.name.trim().toLowerCase()}_${p.birthDate}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  }, [profiles]);
-
-  const [selectedProfileId, setSelectedProfileId] = useState<string | null>(null);
-  const [showProfileSelect, setShowProfileSelect] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const activeProfile = useMemo(() => {
-    if (selectedProfileId) {
-      const found = uniqueProfiles.find((p) => p.id === selectedProfileId);
-      if (found) return found;
-    }
-    return uniqueProfiles[0];
-  }, [uniqueProfiles, selectedProfileId]);
-
-  const indicators = useProcessNumerology(activeProfile?.name || "", activeProfile?.birthDate || "");
-  const lifePath = indicators[0]?.value || "7";
-  const displayName = activeProfile?.name || (isVietnamese ? "Bản đồ của bạn" : "Your Map");
-
-  // Click outside to close dropdown
-  useEffect(() => {
-    if (!showProfileSelect) return;
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setShowProfileSelect(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showProfileSelect]);
-
-  const sendMessage = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const text = draft.trim();
-    if (!text || chat.isStreaming) return;
-    setDraft("");
-
-    const profileContext = activeProfile
-      ? {
-          name: activeProfile.name,
-          birthDate: activeProfile.birthDate,
-          lifePath: String(lifePath),
-          indicators: indicators.map((ind) => ({
-            key: ind.key,
-            name: ind.name,
-            value: String(ind.value ?? "").slice(0, 500),
-          })),
-        }
-      : undefined;
-
-    await chat.sendMessage(text, profileContext);
-  };
-
-  const quickQuestions = [
-    ["☼", "HÔM NAY MẶC MÀU GÌ?"],
-    ["◷", "HÔM NAY NÊN RA ĐƯỜNG MẤY GIỜ?"],
-    ["♧", "HÔM NAY NÊN TẬP TRUNG VÀO ĐIỀU GÌ?"],
-    ["♡", "AI ĐANG MANG ĐẾN NĂNG LƯỢNG TỐT CHO TÔI?"],
-    ["⌁", "HÔM NAY NÊN TRÁNH ĐIỀU GÌ?"],
-    ["✦", "TỐI NAY TÔI NÊN NGHE BÀI HÁT NÀO?"],
-  ];
-  const askQuickQuestion = (question: string) => setDraft(question);
-
-  return (
-    <main className="chani-site pyra-ai-page pyra-messenger-page">
-      <InnerHeader />
-      <section className="pyra-ai-workspace pyra-messenger-workspace">
-        <div className="pyra-ai-chat-panel pyra-messenger-panel">
-          <div className="pyra-ai-chat-header pyra-messenger-header">
-            <div className="pyra-messenger-identity">
-              <span className="pyra-messenger-bot-avatar" aria-hidden="true">✦</span>
-              <div>
-                <h1>Numina AI</h1>
-                <p>{isVietnamese ? "Trợ lý thần số học cá nhân" : "Personal numerology guide"}</p>
-              </div>
-            </div>
-            <div ref={dropdownRef} className="pyra-ai-profile-picker">
-              <button
-                className="pyra-ai-profile-pill"
-                type="button"
-                onClick={() => setShowProfileSelect((prev) => !prev)}
-                aria-expanded={showProfileSelect}
-                aria-label={isVietnamese ? "Chọn hồ sơ đang xem" : "Choose the profile to view"}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="pyra-ai-avatar">{String(lifePath).slice(0, 2)}</span>
-                <span>{displayName} · {isVietnamese ? "Đường đời" : "Life Path"} {lifePath}</span>
-                <span style={{ transition: "transform 0.2s", transform: showProfileSelect ? "rotate(180deg)" : "none" }}>⌄</span>
-              </button>
-
-              {showProfileSelect && uniqueProfiles.length > 0 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "calc(100% + 8px)",
-                    left: 0,
-                    background: "#fdfbf7",
-                    border: "1px solid rgba(42,42,43,.2)",
-                    borderRadius: "12px",
-                    boxShadow: "0 14px 35px rgba(0,0,0,0.18)",
-                    zIndex: 99999,
-                    minWidth: "260px",
-                    padding: "8px 0",
-                    overflow: "hidden",
-                  }}
-                >
-                  <div style={{ padding: "6px 16px", fontSize: "10px", letterSpacing: "0.08em", color: "#888", borderBottom: "1px solid rgba(0,0,0,0.06)", fontFamily: '"Courier New", monospace' }}>
-                    CHỌN BẢN ĐỒ NGÀY SINH
-                  </div>
-                  {uniqueProfiles.map((p) => {
-                    const isSelected = activeProfile?.id === p.id;
-                    return (
-                      <button
-                        key={p.id}
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedProfileId(p.id);
-                          setShowProfileSelect(false);
-                        }}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          width: "100%",
-                          padding: "10px 16px",
-                          background: isSelected ? "rgba(189,164,118,0.2)" : "transparent",
-                          border: "none",
-                          cursor: "pointer",
-                          textAlign: "left",
-                          transition: "background 0.15s",
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = isSelected ? "rgba(189,164,118,0.3)" : "rgba(0,0,0,0.04)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.background = isSelected ? "rgba(189,164,118,0.2)" : "transparent")}
-                      >
-                        <div>
-                          <strong style={{ display: "block", fontFamily: "var(--chani-serif)", fontSize: "14px", color: "#2a2a2b" }}>
-                            {p.name}
-                          </strong>
-                          <span style={{ fontSize: "11px", color: "#777", fontFamily: '"Courier New", monospace' }}>
-                            {p.birthDate}
-                          </span>
-                        </div>
-                        {isSelected && <span style={{ color: "#8a6d3b", fontSize: "14px", fontWeight: "bold" }}>✓</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="pyra-ai-messages" aria-live="polite">
-            {chat.messages.length === 0 && !chat.isStreaming && (
-              <div className="pyra-messenger-empty" aria-hidden="true">
-                <span>✦</span>
-                <p>{isVietnamese ? "Hãy gửi một câu hỏi để bắt đầu cuộc trò chuyện." : "Send a question to start the conversation."}</p>
-              </div>
-            )}
-            {chat.messages.map((message) => (
-              <div
-                className={`pyra-ai-message-row ${message.role === "user" ? "is-user" : "is-ai"}`}
-                key={message.id}
-              >
-                {message.role === "user" ? (
-                  <>
-                    <div className="pyra-ai-message user-message">
-                      <p>{message.content || "…"}</p>
-                      <span>
-                        {new Date(message.timestamp).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
-                      </span>
-                    </div>
-                    <span className="pyra-ai-mini-avatar">↗</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="pyra-ai-compass">✧</span>
-                    <div className="pyra-ai-message ai-message">
-                      <div className="pyra-ai-markdown-body">
-                        {message.content ? (
-                          <ReactMarkdown
-                            components={{
-                              strong: ({ node, ...props }) => <strong className="ai-chat-bold-highlight" {...props} />,
-                              b: ({ node, ...props }) => <b className="ai-chat-bold-highlight" {...props} />,
-                              h1: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
-                              h2: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
-                              h3: ({ node, ...props }) => <h3 className="ai-chat-heading" {...props} />,
-                              h4: ({ node, ...props }) => <h4 className="ai-chat-subheading" {...props} />,
-                              li: ({ node, ...props }) => <li className="ai-chat-list-item" {...props} />,
-                              p: ({ node, ...props }) => <p className="ai-chat-paragraph" {...props} />,
-                            }}
-                          >
-                            {message.content}
-                          </ReactMarkdown>
-                        ) : (
-                          <p className="ai-chat-paragraph">
-                            {message.isStreaming
-                              ? chat.phase === "searching"
-                                ? (isVietnamese ? "ĐANG TRA CỨU TƯ LIỆU…" : "SEARCHING KNOWLEDGE…")
-                                : (isVietnamese ? "ĐANG LUẬN GIẢI…" : "CREATING INTERPRETATION…")
-                              : "…"}
-                          </p>
-                        )}
-                      </div>
-                      <span>
-                        {new Date(message.timestamp).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
-                        {message.isStreaming
-                          ? ` · ${chat.phase === "searching" ? (isVietnamese ? "ĐANG TRA CỨU" : "SEARCHING") : (isVietnamese ? "ĐANG SUY NGHĨ" : "THINKING")}`
-                          : ""}
-                      </span>
-                    </div>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
-          {chat.isStreaming && (
-            <div className="pyra-ai-live-status" aria-live="polite">
-              <span className="pyra-ai-live-dot">✧</span>
-              <span>
-                {chat.phase === "searching"
-                  ? (isVietnamese ? "ĐANG TRA CỨU TƯ LIỆU…" : "SEARCHING KNOWLEDGE…")
-                  : (isVietnamese ? "ĐANG TẠO LỜI GIẢI…" : "CREATING INTERPRETATION…")}
-              </span>
-              <span className="pyra-ai-live-pulse" aria-hidden="true" />
-            </div>
-          )}
-          {chat.error && (
-            <p className="pyra-chat-error" role="alert">
-              {chat.error}
-            </p>
-          )}
-          <form className="pyra-ai-input-wrap" onSubmit={sendMessage}>
-            <input
-              value={draft}
-              onChange={(event) => setDraft(event.target.value)}
-            placeholder={isVietnamese ? "Hỏi Numina bất cứ điều gì..." : "Ask Numina anything..."}
-            aria-label={isVietnamese ? "Đặt câu hỏi cho Numina" : "Ask Numina anything"}
-              disabled={chat.isStreaming}
-            />
-            <button type="submit" aria-label={isVietnamese ? "Gửi tin nhắn" : "Send message"} disabled={chat.isStreaming}>
-              ➤
-            </button>
-          </form>
-        </div>
-        <aside className="pyra-human-panel pyra-messenger-suggestions">
-          <div className="pyra-human-art">
-            <span className="pyra-human-moon">◐</span>
-            <span className="pyra-human-star star-one">✦</span>
-            <span className="pyra-human-star star-two">✧</span>
-            <span className="pyra-human-hand">☽</span>
-          </div>
-          <p className="batch-kicker">NUMINA / {isVietnamese ? "GỢI Ý NHANH" : "QUICK GUIDANCE"}</p>
-          <h2>{isVietnamese ? "Hỏi tôi hôm nay" : "Ask me today"}</h2>
-          <div className="pyra-human-rule">✦</div>
-          <p className="pyra-human-intro">
-            {isVietnamese ? "Chọn một câu hỏi quen thuộc và để Numina đọc nguồn năng lượng quanh ngày hôm nay của bạn." : "Tap a familiar question and let Numina read the energy around your day."}
-          </p>
-          <div className="pyra-human-services pyra-quick-questions">
-            {quickQuestions.map(([icon, question]) => (
-              <button
-                type="button"
-                key={question}
-                onClick={() => askQuickQuestion(question)}
-              >
-                <span className="pyra-service-icon">{icon}</span>
-                <span>{question}</span>
-                <b>›</b>
-              </button>
-            ))}
-          </div>
-        </aside>
-      </section>
-    </main>
-  );
-}
-
-const astroResources = [
+const astroResources: Array<[string, string, string]> = [
   ["The signs", "signs.webp", "The twelve signs of the zodiac each have a unique language, style, and way of moving through the world."],
   ["The houses", "houses.webp", "The houses show where the stories in your birth chart unfold — from home and family to work and community."],
   ["Planets & points", "planets-points.avif", "The planets and points describe the characters, instincts, and inner forces at work in your chart."],
   ["Key terms", "key-terms.webp", "A glossary of the most useful astrology words, translated into language you can actually use."],
   ["Altars", "altars.webp", "Create a personal ritual space to connect with the themes moving through your life and chart."],
-  ["Other fun topics", "fun-topics.webp", "Explore synastry, retrogrades, lunar nodes, and more ways to deepen your practice."],
+  ["Other fun topics", "fun-topics.webp", "Explore synastry, retrogrades, lunar nodes, and more ways to deepen your practice."]
 ];
 
 export function Astro101Page() {
@@ -1894,7 +1597,7 @@ export function OurTeamPage() {
   const [readingSource, setReadingSource] = useState<"ai" | "local" | "knowledge-fallback">("ai");
   const [quotaNotice, setQuotaNotice] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [analysisStage, setAnalysisStage] = useState<"idle" | "retrieving" | "generating" | "complete" | "error">("idle");
+  const [analysisStage, setAnalysisStage] = useState<"idle" | "preparing" | "generating" | "complete" | "error">("idle");
   const [assessmentPrompt, setAssessmentPrompt] = useState<{ name: string; birthDate: string; identityKey: string } | null>(null);
   const [revealPhase, setRevealPhase] = useState<"hidden" | "revealing" | "revealed">("hidden");
   const [butterflyAnim, setButterflyAnim] = useState<{
@@ -2080,7 +1783,7 @@ export function OurTeamPage() {
     setReadingSource("ai");
     setQuotaNotice("");
     setIsLoading(true);
-    setAnalysisStage("retrieving");
+    setAnalysisStage("preparing");
 
     // 1. Immediately launch Card Crumple animation layer -> Butterfly flight for unread cards
     if (element) {
@@ -2395,12 +2098,12 @@ export function OurTeamPage() {
               {isLoading && (
                 <div className="indicator-ai-progress" aria-live="polite">
                   <div className="indicator-ai-progress-line">
-                    <span className={analysisStage === "retrieving" || analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} />
+                    <span className={analysisStage === "preparing" || analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} />
                     <span className={analysisStage === "generating" || analysisStage === "complete" ? "is-active" : ""} />
                     <span className={analysisStage === "complete" ? "is-active" : ""} />
                   </div>
                   <div className="indicator-ai-status">
-                    <span>{analysisStage === "retrieving" ? "ĐANG TRA CỨU TƯ LIỆU" : "ĐÃ TRA CỨU"}</span>
+                    <span>{analysisStage === "preparing" ? "ĐANG CHUẨN BỊ DỮ LIỆU" : "ĐÃ CHUẨN BỊ"}</span>
                     <span>{analysisStage === "generating" ? "ĐANG LUẬN GIẢI" : analysisStage === "complete" ? "ĐÃ LUẬN GIẢI" : "CHỜ LUẬN GIẢI"}</span>
                     <span>NUMINA AI</span>
                   </div>

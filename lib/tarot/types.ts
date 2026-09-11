@@ -1,5 +1,4 @@
-import type { ChatProfileContext } from '@/hooks/chat-types';
-import type { ProviderRequestConfig } from '@/hooks/provider-types';
+import type { ProfileContext, ProviderRequestConfig } from '@/lib/ai/types';
 
 export type TarotLocale = 'vi' | 'en';
 export type TarotSuit = 'wands' | 'cups' | 'swords' | 'pentacles';
@@ -75,7 +74,7 @@ export interface TarotSession {
   drawnCards: DrawnTarotCard[];
   interpretation: string;
   followUps: TarotFollowUp[];
-  profile?: ChatProfileContext;
+  profile?: ProfileContext;
   locale: TarotLocale;
   createdAt: string;
   updatedAt: string;
@@ -99,7 +98,7 @@ export type TarotReadingRequest =
       question: string;
       spreadId: string;
       language: TarotLocale;
-      profile?: ChatProfileContext;
+      profile?: ProfileContext;
       providerConfig?: ProviderRequestConfig;
     }
   | {
@@ -107,14 +106,14 @@ export type TarotReadingRequest =
       question: string;
       language: TarotLocale;
       reading: TarotReadingContext;
-      profile?: ChatProfileContext;
+      profile?: ProfileContext;
       providerConfig?: ProviderRequestConfig;
     }
   | {
       mode: 'regenerate';
       language: TarotLocale;
       reading: TarotReadingContext;
-      profile?: ChatProfileContext;
+      profile?: ProfileContext;
       providerConfig?: ProviderRequestConfig;
     };
 
@@ -130,4 +129,3 @@ export type TarotSSEEvent =
 export function localize(text: LocalizedText, locale: TarotLocale): string {
   return text[locale];
 }
-

@@ -102,7 +102,7 @@ export default async function RootLayout({
               applicationCategory: 'LifestyleApplication',
               operatingSystem: 'All',
               description:
-                'Professional Numerology Analysis and RAG AI Chatbot.',
+                'Professional Numerology, Tarot, and personalized AI analysis.',
               offers: {
                 '@type': 'Offer',
                 price: '0',

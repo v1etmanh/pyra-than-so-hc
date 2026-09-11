@@ -1,7 +1,7 @@
-import type { ChatProfileContext } from '@/hooks/chat-types';
+import type { ProfileContext } from '@/lib/ai/types';
 import type { DrawnTarotCard, TarotLocale, TarotSpread } from './types.ts';
 
-function profileBlock(profile: ChatProfileContext | undefined, locale: TarotLocale): string {
+function profileBlock(profile: ProfileContext | undefined, locale: TarotLocale): string {
   if (!profile || (!profile.name && !profile.birthDate && !profile.lifePath)) return '';
 
   const indicatorLines = (profile.indicators ?? [])
@@ -37,7 +37,7 @@ export function buildInitialReadingPrompt(
   question: string,
   spread: TarotSpread,
   cards: DrawnTarotCard[],
-  profile: ChatProfileContext | undefined,
+  profile: ProfileContext | undefined,
   locale: TarotLocale,
   regenerate = false
 ): string {
@@ -84,7 +84,7 @@ export function buildFollowUpReadingPrompt(input: {
   spread: TarotSpread;
   originalCards: DrawnTarotCard[];
   additionalCards: DrawnTarotCard[];
-  profile?: ChatProfileContext;
+  profile?: ProfileContext;
   locale: TarotLocale;
 }): string {
   const { originalQuestion, previousInterpretation, followUpQuestion, spread, originalCards, additionalCards, profile, locale } = input;

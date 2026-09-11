@@ -4,7 +4,7 @@ import { getRequestAccess } from '@/lib/billing/access';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { tarotReadingRequestSchema, type TarotReadingRequestPayload } from '@/lib/security/schemas';
 import { recordAiUsage } from '@/lib/usage/usage-meter';
-import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
+import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { getTarotCard } from '@/lib/tarot/cards';
 import { drawCardsForSpread, drawSupplementaryCards } from '@/lib/tarot/draw';
 import {

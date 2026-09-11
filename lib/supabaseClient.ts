@@ -38,7 +38,7 @@ function getLocalKnowledgeFallback(
     if (!fs.existsSync(knowledgeDir)) return null;
 
     const files = fs.readdirSync(knowledgeDir).filter((f) => f.endsWith('.md') && !f.endsWith('_all.md'));
-    const targetVal = String(numberValue).trim();
+    const targetVal = String(numberValue).trim().replaceAll('_', '/');
 
     for (const filename of files) {
       const filePath = path.join(knowledgeDir, filename);
@@ -59,9 +59,7 @@ function getLocalKnowledgeFallback(
 
       if (
         meta.indicator_key === indicatorKey &&
-        (meta.number_value === targetVal ||
-          meta.number_value === targetVal.replace('/', '_') ||
-          (meta.number_value && targetVal.includes(meta.number_value)))
+        meta.number_value?.replaceAll('_', '/') === targetVal
       ) {
         return {
           id: meta.id || filename.replace('.md', ''),
@@ -83,66 +81,6 @@ function getLocalKnowledgeFallback(
 }
 
 /**
- * Supports the pgvector schema currently checked into this repo.
- * `numerology_chunks` stores one row per section and identifies the number
- * through `number_tag` (for example, "Số 7"), so normalize it to the same
- * record shape used by the key/value knowledge table.
- */
-async function getKnowledgeFromChunks(
-  url: string,
-  key: string,
-  indicatorKey: string,
-  numberValue: string | number
-): Promise<NumerologyKnowledgeRecord | null> {
-  const value = String(numberValue).trim();
-  const tags = [`Số ${value}`, value];
-
-  for (const tag of tags) {
-    try {
-      const endpoint =
-        `${url}/rest/v1/numerology_chunks?number_tag=eq.${encodeURIComponent(tag)}` +
-        '&select=id,number_tag,indicator_type,section,title,content,key_concepts&limit=1';
-      const response = await fetch(endpoint, {
-        method: 'GET',
-        headers: {
-          apikey: key,
-          Authorization: `Bearer ${key}`
-        },
-        cache: 'no-store'
-      });
-
-      if (!response.ok) continue;
-      const rows = (await response.json()) as Array<{
-        id?: string | number;
-        number_tag?: string;
-        indicator_type?: string;
-        section?: string;
-        title?: string;
-        content?: string;
-        key_concepts?: string[];
-      }>;
-      const row = rows[0];
-      if (!row?.content) continue;
-
-      return {
-        id: String(row.id ?? `${indicatorKey}-${value}`),
-        indicator_key: indicatorKey,
-        number_value: value,
-        indicator_name: indicatorKey,
-        title: row.title || `${row.number_tag || tag} - ${row.section || row.indicator_type || 'knowledge'}`,
-        category: row.section || row.indicator_type || 'general',
-        content: row.content,
-        keywords: row.key_concepts || []
-      };
-    } catch (error) {
-      console.warn('[Supabase Chunks] Fetch failed:', error);
-    }
-  }
-
-  return null;
-}
-
-/**
  * Direct Key-Value Retrieval from Supabase PostgreSQL (O(1) search).
  */
 export async function getKnowledgeByIndicator(
@@ -154,8 +92,9 @@ export async function getKnowledgeByIndicator(
 
   if (url && key) {
     try {
+      const encodedIndicator = encodeURIComponent(indicatorKey);
       const encodedVal = encodeURIComponent(valStr);
-      const endpoint = `${url}/rest/v1/numerology_knowledge?indicator_key=eq.${indicatorKey}&number_value=eq.${encodedVal}&select=*`;
+      const endpoint = `${url}/rest/v1/numerology_knowledge?indicator_key=eq.${encodedIndicator}&number_value=eq.${encodedVal}&select=*`;
 
       const response = await fetch(endpoint, {
         method: 'GET',
@@ -175,8 +114,6 @@ export async function getKnowledgeByIndicator(
         console.warn(`[Supabase Knowledge] Query returned status ${response.status}`);
       }
 
-      const chunkRecord = await getKnowledgeFromChunks(url, key, indicatorKey, numberValue);
-      if (chunkRecord) return chunkRecord;
     } catch (error) {
       console.warn('[Supabase Knowledge] Fetch failed, switching to local fallback:', error);
     }

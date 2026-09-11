@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Generate the Daily Decision RAG knowledge documents.
+"""Generate the Daily Decision knowledge documents.
 
 The source of truth is the 60-question catalogue with per-question, per-day
 contextual decision mappings. The generator writes one Markdown document per

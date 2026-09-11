@@ -10,9 +10,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:unit": "node --experimental-strip-types --test tests/*.test.ts",
-    "rag:ingest": "python scripts/ingest_to_chromadb.py --reset",
-    "rag:migrate-supabase": "python scripts/migrate_chroma_to_supabase.py",
-    "rag:jina": "python scripts/jina_local_server.py",
+    "bench:llm": "node --env-file-if-exists=.env --experimental-strip-types scripts/benchmark-llm.ts",
+    "bench:llm:report": "node --experimental-strip-types scripts/benchmark-llm-report.ts",
+    "bench:llm:e2e": "node --experimental-strip-types scripts/benchmark-llm-e2e.ts",
     "postinstall": "husky install"
   },
   "dependencies": {

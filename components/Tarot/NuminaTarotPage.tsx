@@ -7,7 +7,7 @@ import PyraHeader from '@/components/sites/chani-com-6d20749d/shared/PyraHeader'
 import { useProfiles } from '@/hooks/useProfiles';
 import { useProcessNumerology } from '@/hooks/useProcessNumerology';
 import { useTarotReading } from '@/hooks/use-tarot-reading';
-import type { ChatProfileContext } from '@/hooks/chat-types';
+import type { ProfileContext } from '@/lib/ai/types';
 import { tarotSpreads } from '@/lib/tarot/spreads';
 import type { TarotLocale } from '@/lib/tarot/types';
 import { TarotCardView } from './TarotCard';
@@ -115,7 +115,7 @@ export function NuminaTarotPage() {
   }, [selectedProfileId, uniqueProfiles]);
 
   const indicators = useProcessNumerology(activeProfile?.name || 'Lê Viết Mạnh', activeProfile?.birthDate || '2005-02-07');
-  const profileContext = useMemo<ChatProfileContext | undefined>(() => activeProfile ? ({
+  const profileContext = useMemo<ProfileContext | undefined>(() => activeProfile ? ({
     name: activeProfile.name,
     birthDate: activeProfile.birthDate,
     lifePath: String(indicators[0]?.value ?? '7'),

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { del, get, set } from 'idb-keyval';
 import { generateUUID } from '@/lib/uuid';
-import type { ChatProfileContext } from './chat-types';
+import type { ProfileContext } from '@/lib/ai/types';
 import type {
   DrawnTarotCard,
   StoredDrawnTarotCard,
@@ -28,7 +28,7 @@ interface UseTarotReadingReturn {
   error: string | null;
   isRunning: boolean;
   isHydrated: boolean;
-  startReading: (question: string, spreadId: string, profile?: ChatProfileContext) => Promise<void>;
+  startReading: (question: string, spreadId: string, profile?: ProfileContext) => Promise<void>;
   askFollowUp: (question: string) => Promise<void>;
   regenerate: () => Promise<void>;
   newReading: () => void;
@@ -211,7 +211,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
   const startReading = useCallback(async (
     question: string,
     spreadId: string,
-    profile?: ChatProfileContext
+    profile?: ProfileContext
   ) => {
     const trimmed = question.trim();
     if (trimmed.length < 3 || isRunning) return;

@@ -1,12 +1,13 @@
 // -*- coding: utf-8 -*-
 import {
+  classifyProviderError,
   getOrderedModelCandidates,
   getProviderCascade,
-  isCredentialProviderError,
+  markCredentialFailure,
   markModelFailure,
   markProviderFailure,
   requestChatCompletion
-} from '@/app/api/chat/lib/provider-cascade';
+} from '@/lib/ai/provider-cascade';
 import {
   NUMEROLOGY_AESTHETICS_MAP,
   WALLPAPER_STYLES,
@@ -215,11 +216,16 @@ Please generate the complete JSON specification now:`;
           if (!resp.ok) {
             const errText = await resp.text().catch(() => '');
             console.warn(`[AIPromptSynthesizer] Provider ${provider.name} model ${model} HTTP ${resp.status}:`, errText.slice(0, 200));
-            if (isCredentialProviderError(resp.status)) {
+            const failureScope = classifyProviderError(resp.status, errText);
+            if (failureScope === 'credential') {
+              markCredentialFailure(candidate);
+            } else if (failureScope === 'model') {
               markModelFailure(candidate);
-            } else {
+            } else if (failureScope === 'provider') {
               markProviderFailure(candidate);
               failedProvidersInRequest.add(provider);
+            } else {
+              break;
             }
             continue;
           }
@@ -227,8 +233,7 @@ Please generate the complete JSON specification now:`;
           const resData = await resp.json();
           const rawContent = resData?.choices?.[0]?.message?.content;
           if (!rawContent) {
-            markProviderFailure(candidate);
-            failedProvidersInRequest.add(provider);
+            markModelFailure(candidate);
             continue;
           }
 
@@ -269,8 +274,7 @@ Please generate the complete JSON specification now:`;
 
           // A successful HTTP response with invalid JSON is still a failed
           // model attempt for this structured-output task.
-          markProviderFailure(candidate);
-          failedProvidersInRequest.add(provider);
+          markModelFailure(candidate);
         } catch (err) {
           console.warn(`[AIPromptSynthesizer] Model ${model} on ${provider.name} failed:`, err);
           markProviderFailure(candidate);

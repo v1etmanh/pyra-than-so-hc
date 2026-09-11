@@ -3,17 +3,11 @@
  * Supports multiple providers: OpenAI, OpenRouter, Anthropic, Google, Groq, Grok, Ollama, Custom.
  */
 
-// --- Provider Types ---
+import type { AIProviderType, ProviderRequestConfig } from '@/lib/ai/types';
 
-export type AIProviderType =
-  | 'openai'
-  | 'openrouter'
-  | 'anthropic'
-  | 'google'
-  | 'groq'
-  | 'grok'
-  | 'ollama'
-  | 'custom';
+export type { AIProviderType, ProviderRequestConfig } from '@/lib/ai/types';
+
+// --- Provider Types ---
 
 export interface AIProviderConfig {
   /** Unique identifier */
@@ -32,17 +26,6 @@ export interface AIProviderConfig {
   availableModels: string[];
   /** Whether this provider is currently active for chat */
   isActive: boolean;
-}
-
-/**
- * Lightweight config sent with each chat API request.
- * Contains only what the server needs — no UI state.
- */
-export interface ProviderRequestConfig {
-  type: AIProviderType;
-  baseUrl: string;
-  apiKeys: string[];
-  model: string;
 }
 
 // --- Provider Presets ---

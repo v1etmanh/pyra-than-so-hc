@@ -3,7 +3,7 @@ import { getRequestAccess } from '@/lib/billing/access';
 import { recordAiUsage } from '@/lib/usage/usage-meter';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
-import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
+import { createStreamingResponse } from '@/lib/ai/response-generator';
 import {
   buildIndicatorKnowledgeFallback,
   createIndicatorFallbackStream

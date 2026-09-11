@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Audit generated Daily Decision RAG documents."""
+"""Audit generated Daily Decision knowledge documents."""
 
 from __future__ import annotations
 

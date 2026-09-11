@@ -80,5 +80,5 @@ print("1. [Archetype Purity]: Each number consistently adheres to Pythagorean vi
 print("2. [Psychological Tone]: Highly constructive, non-fatalistic, empowering self-coaching approach.")
 print("3. [Master Numbers Integrity]: Numbers 11, 22, 33 properly differentiated from reduced numbers 2, 4, 6.")
 print("4. [Karmic Debt Depth]: Numbers 13/4, 14/5, 16/7, 19/1 explain root soul cause + ethical transformation.")
-print("5. [RAG Chunking Fitness]: Well-defined H2 headings ensure optimal semantic boundaries for embeddings.")
+print("5. [Content Structure]: Well-defined H2 headings keep the knowledge documents easy to review.")
 print("============================================================")

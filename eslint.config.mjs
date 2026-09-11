@@ -5,6 +5,7 @@ export default [
       'node_modules/**',
       'public/**',
       'new-design/**',
+      'references/**',
       'scripts/**',
       '**/*.{ts,tsx,jsx}'
     ]

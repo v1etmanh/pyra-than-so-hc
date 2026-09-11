@@ -26,14 +26,11 @@ next-env.d.ts
 # Runtime-generated wallpaper files
 /public/images/lucky-wallpapers/
 
-# Local RAG indexes, embedding models, and vector-store artifacts
-/data/chroma_db/
-/data/jina_models/
-/.chroma/
+# Local database artifacts
 *.sqlite
 *.sqlite3
 
-# Python caches and local environments used by RAG scripts
+# Python caches and local environments
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -49,6 +46,7 @@ coverage/
 .nyc_output/
 playwright-report/
 test-results/
+.benchmarks/
 screenshots/
 new-design/screenshots/
 

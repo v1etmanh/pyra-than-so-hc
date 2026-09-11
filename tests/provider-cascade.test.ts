@@ -1,13 +1,14 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { createStreamingResponse } from '../app/api/chat/lib/response-generator.ts';
+import { createStreamingResponse } from '../lib/ai/response-generator.ts';
 import {
+  classifyProviderError,
   getOrderedModelCandidates,
   getProviderCascade,
-  markModelFailure,
+  markCredentialFailure,
   isRetryableProviderError,
   requestChatCompletion
-} from '../app/api/chat/lib/provider-cascade.ts';
+} from '../lib/ai/provider-cascade.ts';
 
 async function readStream(stream: ReadableStream<Uint8Array>): Promise<string> {
   const reader = stream.getReader();
@@ -50,7 +51,8 @@ test('failed cascade candidates are deprioritized and later retried', async () =
     'OPENROUTER_API_KEY',
     'OPENROUTER_FREE_MODELS',
     'LLM_CASCADE_TIMEOUT_MS',
-    'LLM_STREAM_CONNECT_TIMEOUT_MS',
+    'LLM_RESPONSE_HEADER_TIMEOUT_MS',
+    'LLM_FIRST_CONTENT_TIMEOUT_MS',
     'LLM_MAX_KEYS_PER_PROVIDER'
   ];
   const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
@@ -67,7 +69,7 @@ test('failed cascade candidates are deprioritized and later retried', async () =
     process.env.NVIDIA_API_KEY = 'test-nvidia-key';
     process.env.NVIDIA_CHAT_MODELS = 'test/nvidia-a';
     process.env.LLM_CASCADE_TIMEOUT_MS = '5000';
-    process.env.LLM_STREAM_CONNECT_TIMEOUT_MS = '1000';
+    process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS = '1000';
 
     const providers = getProviderCascade();
     assert.equal(providers[0]?.name, 'Google Gemini');
@@ -81,7 +83,7 @@ test('failed cascade candidates are deprioritized and later retried', async () =
     );
 
     const initialCandidates = getOrderedModelCandidates(providers);
-    markModelFailure(initialCandidates[0]!);
+    markCredentialFailure(initialCandidates[0]!);
     assert.deepEqual(
       getOrderedModelCandidates(providers).map(({ provider, model }) => `${provider.name}/${model}`),
       ['Google Gemini/test/gemini-model', 'NVIDIA NIM/test/nvidia-a']
@@ -123,11 +125,19 @@ test('failed cascade candidates are deprioritized and later retried', async () =
       ['NVIDIA NIM/test/nvidia-a', 'Google Gemini/test/gemini-model', 'Google Gemini/test/gemini-model']
     );
 
-    assert.equal(isRetryableProviderError(400), true);
+    assert.equal(isRetryableProviderError(400), false);
     assert.equal(isRetryableProviderError(404), true);
     assert.equal(isRetryableProviderError(429), true);
     assert.equal(isRetryableProviderError(500), true);
-    assert.equal(isRetryableProviderError(401), false);
+    assert.equal(isRetryableProviderError(401), true);
+    assert.equal(classifyProviderError(401), 'credential');
+    assert.equal(classifyProviderError(403), 'credential');
+    assert.equal(classifyProviderError(404), 'model');
+    assert.equal(classifyProviderError(400, 'This model is unsupported'), 'model');
+    assert.equal(classifyProviderError(400, 'Invalid messages payload'), 'request');
+    assert.equal(classifyProviderError(429), 'provider');
+    assert.equal(classifyProviderError(500), 'provider');
+    assert.equal(classifyProviderError(undefined), 'provider');
   } finally {
     globalThis.fetch = originalFetch;
     Date.now = originalNow;
@@ -208,7 +218,8 @@ test('server failures skip the remaining Gemini keys, while 401 retries the next
     'XAI_API_KEY',
     'OPENROUTER_API_KEY',
     'LLM_CASCADE_TIMEOUT_MS',
-    'LLM_STREAM_CONNECT_TIMEOUT_MS',
+    'LLM_RESPONSE_HEADER_TIMEOUT_MS',
+    'LLM_FIRST_CONTENT_TIMEOUT_MS',
     'LLM_MAX_KEYS_PER_PROVIDER'
   ];
   const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
@@ -223,7 +234,7 @@ test('server failures skip the remaining Gemini keys, while 401 retries the next
     process.env.NVIDIA_API_KEY = 'test-nvidia-key';
     process.env.NVIDIA_CHAT_MODELS = 'test/nvidia-fallback';
     process.env.LLM_CASCADE_TIMEOUT_MS = '5000';
-    process.env.LLM_STREAM_CONNECT_TIMEOUT_MS = '1000';
+    process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS = '1000';
 
     const serverFailureCalls: string[] = [];
     globalThis.fetch = async (_input, init) => {
@@ -276,6 +287,226 @@ test('server failures skip the remaining Gemini keys, while 401 retries the next
       'test/credential-failure:key2'
     ]);
     assert.match(credentialOutput, /key two ok/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const name of envNames) {
+      const value = originalEnv.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test('a missing model falls through to the next model on the same provider', async () => {
+  const envNames = [
+    'GEMINI_API_BASE_URL',
+    'GEMINI_API_KEY',
+    'GEMINI_CHAT_MODELS',
+    'NVIDIA_API_KEY',
+    'GROQ_API_KEY',
+    'XAI_API_KEY',
+    'OPENROUTER_API_KEY'
+  ];
+  const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
+  const originalFetch = globalThis.fetch;
+
+  try {
+    for (const name of envNames) delete process.env[name];
+    process.env.GEMINI_API_BASE_URL = 'https://gemini-model-scope.test/v1';
+    process.env.GEMINI_API_KEY = 'test-key';
+    process.env.GEMINI_CHAT_MODELS = 'test/missing-model,test/working-model';
+    const calls: string[] = [];
+    globalThis.fetch = async (_input, init) => {
+      const model = (JSON.parse(String(init?.body)) as { model: string }).model;
+      calls.push(model);
+      if (model === 'test/missing-model') {
+        return new Response(JSON.stringify({ error: 'model not found' }), { status: 404 });
+      }
+      return new Response(
+        'data: {"choices":[{"delta":{"content":"same provider ok"}}]}\n\ndata: [DONE]\n\n',
+        { headers: { 'Content-Type': 'text/event-stream' } }
+      );
+    };
+
+    const output = await readStream(
+      createStreamingResponse('system', [{ role: 'user', content: 'hello' }])
+    );
+    assert.deepEqual(calls, ['test/missing-model', 'test/working-model']);
+    assert.match(output, /same provider ok/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const name of envNames) {
+      const value = originalEnv.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test('reasoning-only chunks do not extend the first-content deadline', async () => {
+  const envNames = [
+    'GEMINI_API_BASE_URL',
+    'GEMINI_API_KEY',
+    'GEMINI_CHAT_MODELS',
+    'NVIDIA_API_KEY',
+    'NVIDIA_CHAT_MODELS',
+    'GROQ_API_KEY',
+    'XAI_API_KEY',
+    'OPENROUTER_API_KEY',
+    'LLM_FIRST_CONTENT_TIMEOUT_MS',
+    'LLM_RESPONSE_HEADER_TIMEOUT_MS'
+  ];
+  const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
+  const originalFetch = globalThis.fetch;
+
+  try {
+    for (const name of envNames) delete process.env[name];
+    process.env.GEMINI_API_BASE_URL = 'https://gemini-reasoning-timeout.test/v1';
+    process.env.GEMINI_API_KEY = 'test-gemini-key';
+    process.env.GEMINI_CHAT_MODELS = 'test/reasoning-only';
+    process.env.NVIDIA_API_KEY = 'test-nvidia-key';
+    process.env.NVIDIA_CHAT_MODELS = 'test/fast-fallback';
+    process.env.LLM_FIRST_CONTENT_TIMEOUT_MS = '1000';
+    process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS = '1000';
+    const calls: string[] = [];
+
+    globalThis.fetch = async (_input, init) => {
+      const model = (JSON.parse(String(init?.body)) as { model: string }).model;
+      calls.push(model);
+      if (model === 'test/fast-fallback') {
+        return new Response(
+          'data: {"choices":[{"delta":{"content":"fallback after content deadline"}}]}\n\ndata: [DONE]\n\n',
+          { headers: { 'Content-Type': 'text/event-stream' } }
+        );
+      }
+
+      let interval: ReturnType<typeof setInterval> | undefined;
+      const body = new ReadableStream<Uint8Array>({
+        start(controller) {
+          interval = setInterval(() => {
+            controller.enqueue(
+              new TextEncoder().encode(
+                'data: {"choices":[{"delta":{"reasoning_content":"still thinking"}}]}\n\n'
+              )
+            );
+          }, 100);
+        },
+        cancel() {
+          if (interval) clearInterval(interval);
+        }
+      });
+      return new Response(body, { headers: { 'Content-Type': 'text/event-stream' } });
+    };
+
+    const output = await readStream(
+      createStreamingResponse('system', [{ role: 'user', content: 'hello' }])
+    );
+    assert.deepEqual(calls, ['test/reasoning-only', 'test/fast-fallback']);
+    assert.match(output, /fallback after content deadline/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const name of envNames) {
+      const value = originalEnv.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test('a pre-token stream break and network error both fall through safely', async () => {
+  const envNames = [
+    'GEMINI_API_BASE_URL',
+    'GEMINI_API_KEY',
+    'GEMINI_CHAT_MODELS',
+    'NVIDIA_API_KEY',
+    'NVIDIA_CHAT_MODELS',
+    'GROQ_API_KEY',
+    'GROQ_CHAT_MODELS',
+    'XAI_API_KEY',
+    'OPENROUTER_API_KEY'
+  ];
+  const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
+  const originalFetch = globalThis.fetch;
+
+  try {
+    for (const name of envNames) delete process.env[name];
+    process.env.GEMINI_API_BASE_URL = 'https://gemini-pre-token-break.test/v1';
+    process.env.GEMINI_API_KEY = 'test-gemini-key';
+    process.env.GEMINI_CHAT_MODELS = 'test/pre-token-break';
+    process.env.NVIDIA_API_KEY = 'test-nvidia-key';
+    process.env.NVIDIA_CHAT_MODELS = 'test/network-error';
+    process.env.GROQ_API_KEY = 'test-groq-key';
+    process.env.GROQ_CHAT_MODELS = 'test/final-success';
+    const calls: string[] = [];
+
+    globalThis.fetch = async (_input, init) => {
+      const model = (JSON.parse(String(init?.body)) as { model: string }).model;
+      calls.push(model);
+      if (model === 'test/pre-token-break') {
+        return new Response(
+          'data: {"choices":[{"delta":{"reasoning_content":"partial thought"}}]}\n\n',
+          { headers: { 'Content-Type': 'text/event-stream' } }
+        );
+      }
+      if (model === 'test/network-error') throw new TypeError('simulated network timeout');
+      return new Response(
+        'data: {"choices":[{"delta":{"content":"recovered safely"}}]}\n\ndata: [DONE]\n\n',
+        { headers: { 'Content-Type': 'text/event-stream' } }
+      );
+    };
+
+    const output = await readStream(
+      createStreamingResponse('system', [{ role: 'user', content: 'hello' }])
+    );
+    assert.deepEqual(calls, [
+      'test/pre-token-break',
+      'test/network-error',
+      'test/final-success'
+    ]);
+    assert.match(output, /recovered safely/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const name of envNames) {
+      const value = originalEnv.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test('request-scoped 400 errors stop instead of fanning out to every provider', async () => {
+  const envNames = [
+    'GEMINI_API_BASE_URL',
+    'GEMINI_API_KEY',
+    'GEMINI_CHAT_MODELS',
+    'NVIDIA_API_KEY',
+    'NVIDIA_CHAT_MODELS',
+    'GROQ_API_KEY',
+    'XAI_API_KEY',
+    'OPENROUTER_API_KEY'
+  ];
+  const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
+  const originalFetch = globalThis.fetch;
+
+  try {
+    for (const name of envNames) delete process.env[name];
+    process.env.GEMINI_API_BASE_URL = 'https://gemini-bad-request.test/v1';
+    process.env.GEMINI_API_KEY = 'test-gemini-key';
+    process.env.GEMINI_CHAT_MODELS = 'test/bad-request';
+    process.env.NVIDIA_API_KEY = 'test-nvidia-key';
+    process.env.NVIDIA_CHAT_MODELS = 'test/should-not-run';
+    const calls: string[] = [];
+    globalThis.fetch = async (_input, init) => {
+      const model = (JSON.parse(String(init?.body)) as { model: string }).model;
+      calls.push(model);
+      return new Response(JSON.stringify({ error: 'Invalid messages payload' }), { status: 400 });
+    };
+
+    const output = await readStream(
+      createStreamingResponse('system', [{ role: 'user', content: 'hello' }])
+    );
+    assert.deepEqual(calls, ['test/bad-request']);
+    assert.match(output, /Không thể kết nối/);
   } finally {
     globalThis.fetch = originalFetch;
     for (const name of envNames) {

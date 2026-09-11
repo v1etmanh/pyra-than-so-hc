@@ -23,7 +23,7 @@ const personalityProfileSchema = z.object({
   completedAt: z.number().finite().optional()
 }).strict();
 
-export const chatProfileSchema = z.object({
+export const profileContextSchema = z.object({
   name: boundedText(200).optional(),
   birthDate: boundedText(32).optional(),
   lifePath: z.union([boundedText(20), z.number().finite()]).optional(),
@@ -32,18 +32,6 @@ export const chatProfileSchema = z.object({
     name: boundedText(160).min(1),
     value: z.union([boundedText(500), z.number().finite()])
   }).strict()).max(24).optional()
-}).strict();
-
-export const chatRequestSchema = z.object({
-  messages: z.array(z.object({
-    role: z.enum(['user', 'assistant', 'system']),
-    content: boundedText(16_000).min(1)
-  }).strict()).min(1).max(30),
-  providerConfig: providerConfigSchema.optional(),
-  skipExpansion: z.boolean().optional(),
-  language: boundedText(40).optional(),
-  systemPrompt: boundedText(16_000).optional(),
-  profile: chatProfileSchema.optional()
 }).strict();
 
 export const providerModelsRequestSchema = z.object({
@@ -93,16 +81,6 @@ export const birthChartRequestSchema = z.object({
     }).strict()).max(12)
   }).strict(),
   personalityProfile: personalityProfileSchema.optional(),
-  providerConfig: providerConfigSchema.optional()
-}).strict();
-
-export const qaRequestSchema = z.object({
-  question: boundedText(12_000).min(3),
-  indicatorKey: boundedText(80).optional(),
-  indicatorValue: z.union([boundedText(500), z.number().finite()]).optional(),
-  locale: z.enum(['vi', 'en']).optional(),
-  profile: chatProfileSchema.optional(),
-  mode: z.enum(['inspect', 'mock', 'stream']).optional(),
   providerConfig: providerConfigSchema.optional()
 }).strict();
 
@@ -157,7 +135,7 @@ const tarotReadingContextSchema = z.object({
 
 const tarotCommonSchema = z.object({
   language: z.enum(['vi', 'en']),
-  profile: chatProfileSchema.optional(),
+  profile: profileContextSchema.optional(),
   providerConfig: providerConfigSchema.optional()
 });
 
@@ -200,12 +178,10 @@ export const stripeWebhookEventSchema = z.object({
   }).optional()
 }).passthrough();
 
-export type ChatRequest = z.infer<typeof chatRequestSchema>;
 export type ProviderModelsRequest = z.infer<typeof providerModelsRequestSchema>;
 export type LazyIndicatorRequest = z.infer<typeof lazyIndicatorRequestSchema>;
 export type InitialAnalysisRequest = z.infer<typeof initialAnalysisRequestSchema>;
 export type BirthChartRequest = z.infer<typeof birthChartRequestSchema>;
-export type QARequest = z.infer<typeof qaRequestSchema>;
 export type WallpaperRequest = z.infer<typeof wallpaperRequestSchema>;
 export type SurveyRequest = z.infer<typeof surveyRequestSchema>;
 export type TarotReadingRequestPayload = z.infer<typeof tarotReadingRequestSchema>;

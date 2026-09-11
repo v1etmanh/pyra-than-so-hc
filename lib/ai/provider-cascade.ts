@@ -1,0 +1,392 @@
+import type { UserProviderConfig } from './types.ts';
+import { getChatModels } from './model-config.ts';
+import { validateProviderBaseUrl } from '../security/provider-url.ts';
+
+export interface CascadeProvider {
+  name: string;
+  baseUrl: string;
+  models: string[];
+  apiKeys: string[];
+}
+
+export interface ModelCandidate {
+  provider: CascadeProvider;
+  model: string;
+  apiKey: string;
+}
+
+type ReasoningEffort = 'minimal' | 'low' | 'medium' | 'high';
+
+function getGeminiReasoningEffort(provider: CascadeProvider): ReasoningEffort | undefined {
+  if (provider.name !== 'Google Gemini') return undefined;
+
+  const configured = (process.env.GEMINI_REASONING_EFFORT || 'low').trim().toLowerCase();
+  return configured === 'minimal' ||
+    configured === 'low' ||
+    configured === 'medium' ||
+    configured === 'high'
+    ? configured
+    : undefined;
+}
+
+function getNvidiaThinkingOptions(
+  provider: CascadeProvider,
+  model: string
+): Record<string, unknown> {
+  if (
+    provider.name !== 'NVIDIA NIM' ||
+    process.env.NVIDIA_ENABLE_THINKING?.trim().toLowerCase() === 'true'
+  ) {
+    return {};
+  }
+
+  if (model.startsWith('nvidia/nemotron-')) {
+    return { chat_template_kwargs: { enable_thinking: false } };
+  }
+
+  if (model.startsWith('deepseek-ai/deepseek-')) {
+    return { chat_template_kwargs: { thinking: false } };
+  }
+
+  return {};
+}
+
+const MODEL_FAILURE_COOLDOWN_MS = 60_000;
+
+export type ProviderFailureScope = 'credential' | 'model' | 'provider' | 'request';
+
+// This state intentionally lives only in the server process. It is reset on a
+// cold start/deploy, which keeps failover fast and avoids a write on every
+// failed request to a durable store.
+let preferredNextCandidateKey: string | null = null;
+const failedCandidates = new Map<string, number>();
+const failedModels = new Map<string, number>();
+const failedProviders = new Map<string, number>();
+
+function parseKeys(...names: string[]): string[] {
+  const keys: string[] = [];
+  for (const name of names) {
+    const value = process.env[name];
+    if (!value) continue;
+    keys.push(
+      ...value
+      .split(',')
+      .map((key) => key.trim())
+      .filter(Boolean)
+    );
+  }
+  return Array.from(new Set(keys));
+}
+
+/**
+ * Reads numbered environment variables such as GEMINI_API_KEY_1..7.
+ * The numeric suffix is sorted so rotation is deterministic.
+ */
+function parseIndexedKeys(prefix: string): string[] {
+  return Object.entries(process.env)
+    .map(([name, value]) => {
+      const suffix = name.startsWith(`${prefix}_`) ? name.slice(prefix.length + 1) : '';
+      return /^\d+$/.test(suffix) && value?.trim()
+        ? { index: Number(suffix), value: value.trim() }
+        : null;
+    })
+    .filter((item): item is { index: number; value: string } => item !== null)
+    .sort((a, b) => a.index - b.index)
+    .map((item) => item.value);
+}
+
+function parseModels(names: string | string[], fallback: string[]): string[] {
+  const envNames = Array.isArray(names) ? names : [names];
+  const value = envNames.map((name) => process.env[name]).find(Boolean);
+  if (!value) return fallback;
+  const models = value
+    .split(',')
+    .map((model) => model.trim())
+    .filter(Boolean);
+  return models.length > 0 ? models : fallback;
+}
+
+function customProvider(config: UserProviderConfig): CascadeProvider {
+  return {
+    name: config.type || 'custom',
+    baseUrl: validateProviderBaseUrl(config.baseUrl),
+    models: [config.model],
+    apiKeys: config.apiKeys.filter(Boolean)
+  };
+}
+
+function getCandidateKey(candidate: ModelCandidate): string {
+  // The key is used only as an in-memory map key and is never logged or sent
+  // back to the client. Including it keeps each Gemini key independent.
+  return `${candidate.provider.name}::${candidate.model}::${candidate.apiKey}`;
+}
+
+function getProviderKey(provider: CascadeProvider): string {
+  return `${provider.name}::${provider.baseUrl}`;
+}
+
+function getModelKey(candidate: ModelCandidate): string {
+  return `${getProviderKey(candidate.provider)}::${candidate.model}`;
+}
+
+function isCoolingDown(candidate: ModelCandidate, now = Date.now()): boolean {
+  const failedAt = failedCandidates.get(getCandidateKey(candidate));
+  return failedAt !== undefined && now - failedAt < MODEL_FAILURE_COOLDOWN_MS;
+}
+
+function isProviderCoolingDown(candidate: ModelCandidate, now = Date.now()): boolean {
+  const failedAt = failedProviders.get(getProviderKey(candidate.provider));
+  return failedAt !== undefined && now - failedAt < MODEL_FAILURE_COOLDOWN_MS;
+}
+
+function isModelCoolingDown(candidate: ModelCandidate, now = Date.now()): boolean {
+  const failedAt = failedModels.get(getModelKey(candidate));
+  return failedAt !== undefined && now - failedAt < MODEL_FAILURE_COOLDOWN_MS;
+}
+
+function flattenCandidates(
+  providers: CascadeProvider[],
+  maxModelsPerProvider?: number,
+  maxKeysPerProvider?: number
+): ModelCandidate[] {
+  return providers.flatMap((provider) => {
+    const models = maxModelsPerProvider
+      ? provider.models.slice(0, maxModelsPerProvider)
+      : provider.models;
+    const apiKeys = maxKeysPerProvider
+      ? provider.apiKeys.slice(0, maxKeysPerProvider)
+      : provider.apiKeys;
+    return models.flatMap((model) =>
+      apiKeys.map((apiKey) => ({ provider, model, apiKey }))
+    );
+  });
+}
+
+/**
+ * Returns candidates in the current process-wide priority order.
+ * User-provided BYOK providers pass rotate=false so their existing behavior
+ * remains unchanged.
+ */
+export function getOrderedModelCandidates(
+  providers: CascadeProvider[],
+  options?: {
+    maxModelsPerProvider?: number;
+    maxKeysPerProvider?: number;
+    rotate?: boolean;
+  }
+): ModelCandidate[] {
+  const candidates = flattenCandidates(
+    providers,
+    options?.maxModelsPerProvider,
+    options?.maxKeysPerProvider
+  );
+  if (options?.rotate === false || candidates.length < 2) return candidates;
+
+  const preferredIndex = preferredNextCandidateKey
+    ? candidates.findIndex(
+        (candidate) => getCandidateKey(candidate) === preferredNextCandidateKey
+      )
+    : -1;
+  const startIndex = preferredIndex >= 0 ? (preferredIndex + 1) % candidates.length : 0;
+  const rotated = [...candidates.slice(startIndex), ...candidates.slice(0, startIndex)];
+  const available = rotated.filter(
+    (candidate) =>
+      !isCoolingDown(candidate) &&
+      !isModelCoolingDown(candidate) &&
+      !isProviderCoolingDown(candidate)
+  );
+
+  // If every candidate is cooling down, try them in cursor order rather than
+  // returning no providers at all. This guarantees a recovery attempt.
+  return available.length > 0 ? available : rotated;
+}
+
+/**
+ * Marks a system candidate as failed and moves the next request past it.
+ * The mutation is synchronous, so subsequent requests in this process see it
+ * before beginning their next network operation.
+ */
+export function markCredentialFailure(candidate: ModelCandidate): void {
+  const candidateKey = getCandidateKey(candidate);
+  failedCandidates.set(candidateKey, Date.now());
+  preferredNextCandidateKey = candidateKey;
+}
+
+/** Skips every credential for one model while keeping sibling models available. */
+export function markModelFailure(candidate: ModelCandidate): void {
+  failedModels.set(getModelKey(candidate), Date.now());
+  preferredNextCandidateKey = getCandidateKey(candidate);
+}
+
+/**
+ * A timeout, network failure, or non-auth HTTP error normally applies to the
+ * provider rather than one API key. Skip all of that provider's candidates
+ * until its cooldown expires.
+ */
+export function markProviderFailure(candidate: ModelCandidate): void {
+  failedProviders.set(getProviderKey(candidate.provider), Date.now());
+  preferredNextCandidateKey = getCandidateKey(candidate);
+}
+
+export function isCredentialProviderError(status?: number): boolean {
+  return status === 401 || status === 403;
+}
+
+/**
+ * Classifies an OpenAI-compatible failure by the narrowest safe fallback scope.
+ * Request errors must not fan out because every provider would receive the same
+ * invalid payload.
+ */
+export function classifyProviderError(
+  status?: number,
+  responseBody = ''
+): ProviderFailureScope {
+  if (status === 401 || status === 403) return 'credential';
+  if (status === 404) return 'model';
+  if (status === 400 || status === 422) {
+    return /model|unsupported|not[ -]?found|does not support/i.test(responseBody)
+      ? 'model'
+      : 'request';
+  }
+  if (
+    status === undefined ||
+    status === 402 ||
+    status === 408 ||
+    status === 409 ||
+    status === 425 ||
+    status === 429 ||
+    status >= 500
+  ) {
+    return 'provider';
+  }
+  return 'request';
+}
+
+/**
+ * Ordered provider cascade for system chat generation.
+ * A provider is only enabled when at least one key is configured.
+ */
+export function getProviderCascade(
+  userProviderConfig?: UserProviderConfig
+): CascadeProvider[] {
+  if (userProviderConfig?.apiKeys?.length) {
+    return [customProvider(userProviderConfig)];
+  }
+
+  // Preserve the original provider priority: Gemini first, followed by the
+  // configured fallback providers.
+  const tiers: CascadeProvider[] = [
+    {
+      name: 'Google Gemini',
+      baseUrl:
+        process.env.GEMINI_API_BASE_URL?.trim() ||
+        process.env.API_BASE_URL?.trim() ||
+        'https://generativelanguage.googleapis.com/v1beta/openai',
+      models: parseModels('GEMINI_CHAT_MODELS', getChatModels()),
+      apiKeys: parseKeys(
+        'GEMINI_API_KEYS',
+        'GEMINI_API_KEY',
+        'GOOGLE_API_KEYS',
+        'GOOGLE_API_KEY',
+        'API_KEYS',
+        'OPENAI_API_KEY'
+      ).concat(parseIndexedKeys('GEMINI_API_KEY'), parseIndexedKeys('GOOGLE_API_KEY'))
+    },
+    {
+      name: 'NVIDIA NIM',
+      baseUrl: 'https://integrate.api.nvidia.com/v1',
+      models: parseModels(['NVIDIA_CHAT_MODELS', 'NVIDIA_CHAT_MODEL'], [
+        'nvidia/nemotron-3.5-lightning-30b-a3b',
+        'meta/muse-glimmer-30b',
+        'poolside/laguna-xs-2.1'
+      ]),
+      apiKeys: parseKeys('NVIDIA_API_KEYS', 'NVIDIA_API_KEY')
+    },
+    {
+      name: 'Groq',
+      baseUrl: 'https://api.groq.com/openai/v1',
+      models: parseModels(['GROQ_CHAT_MODELS', 'GROQ_CHAT_MODEL'], [
+        'openai/gpt-oss-20b',
+        'openai/gpt-oss-120b'
+      ]),
+      apiKeys: parseKeys('GROQ_API_KEYS', 'GROQ_API_KEY')
+    },
+    {
+      name: 'Grok / xAI',
+      baseUrl: 'https://api.x.ai/v1',
+      models: parseModels(['XAI_CHAT_MODELS', 'XAI_CHAT_MODEL'], ['grok-2-latest', 'grok-beta']),
+      apiKeys: parseKeys('XAI_API_KEYS', 'XAI_API_KEY')
+    },
+    {
+      name: 'OpenRouter Free',
+      baseUrl: 'https://openrouter.ai/api/v1',
+      models: parseModels(
+        [
+          'OPENROUTER_FREE_MODELS',
+          'OPENROUTER_FREE_MODEL',
+          'OPENROUTER_CHAT_MODELS',
+          'OPENROUTER_CHAT_MODEL'
+        ],
+        ['openrouter/free']
+      ),
+      apiKeys: parseKeys('OPENROUTER_API_KEYS', 'OPENROUTER_API_KEY')
+    }
+  ];
+
+  return tiers
+    .map((provider) => ({ ...provider, apiKeys: Array.from(new Set(provider.apiKeys)) }))
+    .filter(
+      (provider) => provider.baseUrl && provider.models.length > 0 && provider.apiKeys.length > 0
+    );
+}
+
+export function isRetryableProviderError(status?: number): boolean {
+  return classifyProviderError(status) !== 'request';
+}
+
+export async function requestChatCompletion(
+  provider: CascadeProvider,
+  model: string,
+  messages: Array<{ role: string; content: string }>,
+  apiKey: string,
+  options?: {
+    stream?: boolean;
+    maxTokens?: number;
+    temperature?: number;
+    timeoutMs?: number;
+  }
+): Promise<Response> {
+  const controller = new AbortController();
+  const timeoutMs = options?.timeoutMs ?? Number(process.env.LLM_REQUEST_TIMEOUT_MS || 15000);
+  const reasoningEffort = getGeminiReasoningEffort(provider);
+  const nvidiaThinkingOptions = getNvidiaThinkingOptions(provider, model);
+  const timeout = setTimeout(
+    () => controller.abort(new Error(`LLM request timed out after ${timeoutMs}ms`)),
+    timeoutMs
+  );
+
+  try {
+    return await fetch(`${provider.baseUrl}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model,
+        messages,
+        stream: options?.stream ?? false,
+        ...(options?.maxTokens ? { max_tokens: options.maxTokens } : {}),
+        ...(typeof options?.temperature === 'number'
+          ? { temperature: options.temperature }
+          : {}),
+        ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}),
+        ...nvidiaThinkingOptions
+      }),
+      signal: controller.signal,
+      redirect: 'error'
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
+}

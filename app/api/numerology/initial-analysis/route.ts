@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 import { getRequestAccess } from '@/lib/billing/access';
 import { recordAiUsage } from '@/lib/usage/usage-meter';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
-import { createStreamingResponse } from '@/app/api/chat/lib/response-generator';
+import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { initialAnalysisRequestSchema, type InitialAnalysisRequest } from '@/lib/security/schemas';
 import * as fs from 'fs';
