@@ -1,7 +1,7 @@
 {
   "Header": {
     "home": "Trang chủ",
-    "chat": "Chat AI"
+    "chat": "Tarot AI"
   },
   "Home": {
     "title": "Ứng Dụng Xem Nhân Số Học",
@@ -148,6 +148,94 @@
     "roundRobin": "Luân phiên",
     "reminder": "AI có thể mắc sai lầm, Mọi thông tin chỉ mang tính chất giải trí và cần kiểm soát kỹ lại trong từng câu hỏi"
   },
+  "Tarot": {
+    "tagline": "Một câu hỏi. Một khoảng lặng.",
+    "header": {
+      "home": "Trang chủ",
+      "tarot": "Tarot",
+      "history": "Lịch sử",
+      "numerology": "Bản đồ số",
+      "wallpaper": "Hình nền",
+      "account": "Tài khoản",
+      "signIn": "Đăng nhập",
+      "signOut": "Đăng xuất",
+      "openMenu": "Mở điều hướng",
+      "closeMenu": "Đóng điều hướng",
+      "primaryNavigation": "Điều hướng chính"
+    },
+    "setup": {
+      "kicker": "Một câu hỏi dành cho vũ trụ",
+      "title": "Điều gì đang cần được nhìn rõ?",
+      "trust": "Hãy tin vào trực giác của bạn",
+      "questionLabel": "Câu hỏi của bạn",
+      "placeholder": "Ví dụ: Tôi nên nhìn nhận mối quan hệ này như thế nào?",
+      "drawCards": "Rút {count} lá bài",
+      "suggestedQuestions": "Câu hỏi gợi ý",
+      "sidebarKicker": "Chuẩn bị trải bài",
+      "chooseSpread": "Chọn trải bài",
+      "cardCount": "{count} lá",
+      "profile": "Hồ sơ tham khảo",
+      "noProfile": "Không dùng hồ sơ",
+      "lifePath": "Đường đời",
+      "smallReminder": "Một lời nhắc nhỏ",
+      "reminderQuote": "Đặt câu hỏi mở để nhận được góc nhìn hữu ích hơn.",
+      "disclaimer": "Tarot là công cụ tự soi chiếu, không thay thế tư vấn y tế, pháp lý hoặc tài chính."
+    },
+    "prompts": {
+      "energy": "Tôi cần hiểu điều gì về năng lượng của mình hôm nay?",
+      "relationship": "Mối quan hệ này đang dạy tôi điều gì?",
+      "decision": "Tôi nên cân nhắc điều gì trước quyết định sắp tới?",
+      "career": "Bước đi thực tế nào sẽ giúp công việc của tôi tiến triển?"
+    },
+    "status": {
+      "drawing": "Đang xào và rút bài…",
+      "revealing": "Những lá bài đang mở ra…",
+      "deciding": "Đang xem có cần rút thêm lá…",
+      "behindVeil": "Numina đang luận giải sau bức màn…",
+      "interpreting": "Numina đang luận giải…",
+      "cancelled": "Phiên xem bài đã được dừng.",
+      "failed": "Chưa thể rút bài cho phiên này. Bạn có thể bắt đầu lại."
+    },
+    "reading": {
+      "questionLabel": "Câu hỏi của bạn",
+      "aiKicker": "Lời giải từ Numina",
+      "aiTitle": "Cuộc trò chuyện với trực giác",
+      "you": "Bạn",
+      "followUpLabel": "Bạn muốn hỏi thêm điều gì?",
+      "followUpPlaceholder": "Hỏi tiếp về trải bài này…",
+      "sidebarKicker": "Phiên xem bài",
+      "cardCount": "{count} lá bài",
+      "savedLocally": "Được lưu trên thiết bị này",
+      "energyTitle": "Năng lượng của bạn",
+      "energyWaiting": "Đang chờ những lá bài xuất hiện…",
+      "energyCopy": "Một chương mới luôn có thể bắt đầu.",
+      "reminderTitle": "Một lời nhắc nhỏ",
+      "reminderQuote": "Bạn là một phần của câu chuyện lớn hơn rất nhiều.",
+      "universe": "Vũ trụ",
+      "localNote": "Lịch sử được lưu trên thiết bị này, tối đa 50 phiên."
+    },
+    "actions": {
+      "stop": "Dừng",
+      "regenerate": "Luận giải lại với những lá bài này",
+      "regenerateShort": "Luận giải lại",
+      "send": "Gửi câu hỏi",
+      "reveal": "Lật bài của tôi",
+      "viewReading": "Xem lời giải",
+      "newReading": "Trải bài mới",
+      "delete": "Xóa phiên này"
+    },
+    "history": {
+      "kicker": "Nhật ký riêng tư",
+      "title": "Lịch sử xem bài",
+      "close": "Đóng lịch sử",
+      "empty": "Bạn chưa có phiên xem bài nào trên thiết bị này.",
+      "incomplete": "Phiên chưa hoàn tất",
+      "deleteOne": "Xóa phiên xem bài",
+      "confirmDelete": "Xóa phiên xem bài này?",
+      "confirmClear": "Xóa toàn bộ lịch sử xem bài trên thiết bị này?",
+      "clearAll": "Xóa toàn bộ lịch sử"
+    }
+  },
   "Metadata": {
     "title": "Numerology Web App",
     "description": "Numerology Web App - Tra cứu Nhân Số Học"
@@ -169,7 +257,7 @@
       "map": "BẢN ĐỒ",
       "account": "TÀI KHOẢN",
       "wallpaper": "XƯỞNG HÌNH NỀN",
-      "chat": "NUMINA AI",
+      "chat": "NUMINA TAROT",
       "indicators": "XEM BẢN ĐỒ SỐ"
     },
     "myAccount": "TÀI KHOẢN",

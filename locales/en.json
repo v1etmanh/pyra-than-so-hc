@@ -1,7 +1,7 @@
 {
   "Header": {
     "home": "Home",
-    "chat": "AI Chat"
+    "chat": "AI Tarot"
   },
   "Home": {
     "title": "Numerology Application",
@@ -148,6 +148,94 @@
     "roundRobin": "Round-robin",
     "reminder": "AI can make mistakes. All information is for entertainment purposes and should be carefully reviewed in each question."
   },
+  "Tarot": {
+    "tagline": "One question. One quiet moment.",
+    "header": {
+      "home": "Home",
+      "tarot": "Tarot",
+      "history": "Readings",
+      "numerology": "Your map",
+      "wallpaper": "Wallpaper",
+      "account": "Account",
+      "signIn": "Sign in",
+      "signOut": "Sign out",
+      "openMenu": "Open navigation",
+      "closeMenu": "Close navigation",
+      "primaryNavigation": "Primary navigation"
+    },
+    "setup": {
+      "kicker": "One question for the universe",
+      "title": "What is asking to be seen clearly?",
+      "trust": "Trust your intuition",
+      "questionLabel": "Your question",
+      "placeholder": "For example: How should I understand this relationship?",
+      "drawCards": "Draw {count} cards",
+      "suggestedQuestions": "Suggested questions",
+      "sidebarKicker": "Prepare your reading",
+      "chooseSpread": "Choose a spread",
+      "cardCount": "{count} cards",
+      "profile": "Optional profile",
+      "noProfile": "No profile",
+      "lifePath": "Life Path",
+      "smallReminder": "A little reminder",
+      "reminderQuote": "Open questions tend to offer more useful perspective.",
+      "disclaimer": "Tarot is a reflective tool and does not replace medical, legal or financial advice."
+    },
+    "prompts": {
+      "energy": "What should I understand about my energy today?",
+      "relationship": "What is this relationship teaching me?",
+      "decision": "What should I consider before my next decision?",
+      "career": "What practical step could move my work forward?"
+    },
+    "status": {
+      "drawing": "Shuffling and drawing…",
+      "revealing": "The cards are revealing…",
+      "deciding": "Considering whether more cards are needed…",
+      "behindVeil": "Numina is reading behind the veil…",
+      "interpreting": "Numina is interpreting…",
+      "cancelled": "This reading was stopped.",
+      "failed": "Cards could not be drawn for this reading. You can begin again."
+    },
+    "reading": {
+      "questionLabel": "Your question",
+      "aiKicker": "Numina's reading",
+      "aiTitle": "A conversation with your intuition",
+      "you": "You",
+      "followUpLabel": "What would you like to ask next?",
+      "followUpPlaceholder": "Ask about this reading…",
+      "sidebarKicker": "Your reading",
+      "cardCount": "{count} cards",
+      "savedLocally": "Saved on this device",
+      "energyTitle": "Your energy",
+      "energyWaiting": "Waiting for the cards to appear…",
+      "energyCopy": "A new chapter is always possible.",
+      "reminderTitle": "A little reminder",
+      "reminderQuote": "You are part of a much bigger story.",
+      "universe": "The universe",
+      "localNote": "History stays on this device, up to 50 readings."
+    },
+    "actions": {
+      "stop": "Stop",
+      "regenerate": "Create a fresh reading with these cards",
+      "regenerateShort": "Read again",
+      "send": "Send question",
+      "reveal": "Reveal my cards",
+      "viewReading": "View my reading",
+      "newReading": "New reading",
+      "delete": "Delete reading"
+    },
+    "history": {
+      "kicker": "Your private journal",
+      "title": "Reading history",
+      "close": "Close history",
+      "empty": "You do not have any readings saved on this device yet.",
+      "incomplete": "Incomplete reading",
+      "deleteOne": "Delete reading",
+      "confirmDelete": "Delete this reading?",
+      "confirmClear": "Delete all reading history on this device?",
+      "clearAll": "Clear all history"
+    }
+  },
   "Metadata": {
     "title": "Numerology Web App",
     "description": "Numerology Web App - Fortune Lookup"
@@ -169,7 +257,7 @@
       "map": "MAP",
       "account": "MY ACCOUNT",
       "wallpaper": "WALLPAPER STUDIO",
-      "chat": "NUMINA AI",
+      "chat": "NUMINA TAROT",
       "indicators": "VIEW YOUR MAP"
     },
     "myAccount": "MY ACCOUNT",

@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
 
 const intlMiddleware = createMiddleware(routing);
 
-export default function middleware(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   const url = req.nextUrl.pathname;
 
   // Check if accessing admin UI or admin API
@@ -57,6 +57,6 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // Changed matcher to not explicitly ignore /api, so we can intercept /api/admin
+  // Do not ignore /api here because /api/admin must pass through Basic Auth.
   matcher: ['/((?!_next|_vercel|.*\\..*).*)']
 };

@@ -11,6 +11,7 @@ import type {
   ProviderRequestConfig
 } from './provider-types';
 import { PROVIDER_PRESETS, PROVIDER_STORAGE_KEY, toProviderRequestConfig } from './provider-types';
+import { generateUUID } from '@/lib/uuid';
 
 interface UseProviderSettingsReturn {
   /** All configured providers */
@@ -192,7 +193,7 @@ export function useProviderSettings(): UseProviderSettingsReturn {
     (type: AIProviderType): AIProviderConfig => {
       const preset = PROVIDER_PRESETS[type];
       return {
-        id: crypto.randomUUID(),
+        id: generateUUID(),
         type,
         label: preset.label,
         baseUrl: preset.baseUrl,

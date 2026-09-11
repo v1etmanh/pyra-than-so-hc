@@ -6,6 +6,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { get, set, del } from 'idb-keyval';
+import { generateUUID } from '@/lib/uuid';
 import type {
   ChatMessage,
   RetrievalSourceInfo,
@@ -104,7 +105,7 @@ export function useChatRAG(
         if ('role' in data[0]) {
           // Legacy format migration
           const legacySession: ChatSession = {
-            id: crypto.randomUUID(),
+            id: generateUUID(),
             title: 'Legacy Chat',
             updatedAt: new Date().toISOString(),
             messages: data as ChatMessage[]
@@ -132,7 +133,7 @@ export function useChatRAG(
         }
       } else {
         // First time initialization
-        const initialId = crypto.randomUUID();
+        const initialId = generateUUID();
         setCurrentSessionId(initialId);
         set(CHAT_ACTIVE_ID_KEY, initialId).catch(console.error);
       }
@@ -151,7 +152,7 @@ export function useChatRAG(
     setPhase('idle');
     setError(null);
     setMessages([]);
-    setCurrentSessionId(crypto.randomUUID());
+    setCurrentSessionId(generateUUID());
   }, []);
 
   const switchSession = useCallback(
@@ -178,7 +179,7 @@ export function useChatRAG(
             setCurrentSessionId(next[0].id);
             setMessages(next[0].messages);
           } else {
-            setCurrentSessionId(crypto.randomUUID());
+            setCurrentSessionId(generateUUID());
             setMessages([]);
           }
         }
@@ -212,7 +213,7 @@ export function useChatRAG(
     abortControllerRef.current?.abort();
     setSessions([]);
     setMessages([]);
-    setCurrentSessionId(crypto.randomUUID());
+    setCurrentSessionId(generateUUID());
     setPhase('idle');
     setError(null);
     del(CHAT_STORE_KEY).catch(console.error);
@@ -230,7 +231,7 @@ export function useChatRAG(
 
       // Add user message
       const userMessage: ChatMessage = {
-        id: crypto.randomUUID(),
+        id: generateUUID(),
         role: 'user',
         content: trimmedContent,
         timestamp: new Date()
@@ -242,7 +243,7 @@ export function useChatRAG(
       setError(null);
 
       // Prepare assistant placeholder
-      const assistantId = crypto.randomUUID();
+      const assistantId = generateUUID();
       const assistantMessage: ChatMessage = {
         id: assistantId,
         role: 'assistant',

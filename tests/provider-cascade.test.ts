@@ -5,7 +5,8 @@ import {
   getOrderedModelCandidates,
   getProviderCascade,
   markModelFailure,
-  isRetryableProviderError
+  isRetryableProviderError,
+  requestChatCompletion
 } from '../app/api/chat/lib/provider-cascade.ts';
 
 async function readStream(stream: ReadableStream<Uint8Array>): Promise<string> {
@@ -282,5 +283,74 @@ test('server failures skip the remaining Gemini keys, while 401 retries the next
       if (value === undefined) delete process.env[name];
       else process.env[name] = value;
     }
+  }
+});
+
+test('Gemini reasoning effort is forwarded only to the Gemini provider', async () => {
+  const originalEffort = process.env.GEMINI_REASONING_EFFORT;
+  const originalFetch = globalThis.fetch;
+  const payloads: Array<Record<string, unknown>> = [];
+
+  try {
+    process.env.GEMINI_REASONING_EFFORT = 'low';
+    globalThis.fetch = async (_input, init) => {
+      payloads.push(JSON.parse(String(init?.body)) as Record<string, unknown>);
+      return new Response('{}', { status: 200 });
+    };
+
+    const messages = [{ role: 'user', content: 'hello' }];
+    await requestChatCompletion(
+      { name: 'Google Gemini', baseUrl: 'https://gemini.test/v1', models: ['gemini-test'], apiKeys: ['key'] },
+      'gemini-test',
+      messages,
+      'key'
+    );
+    await requestChatCompletion(
+      { name: 'NVIDIA NIM', baseUrl: 'https://nvidia.test/v1', models: ['nvidia-test'], apiKeys: ['key'] },
+      'nvidia-test',
+      messages,
+      'key'
+    );
+
+    assert.equal(payloads[0]?.reasoning_effort, 'low');
+    assert.equal('reasoning_effort' in (payloads[1] || {}), false);
+  } finally {
+    globalThis.fetch = originalFetch;
+    if (originalEffort === undefined) delete process.env.GEMINI_REASONING_EFFORT;
+    else process.env.GEMINI_REASONING_EFFORT = originalEffort;
+  }
+});
+
+test('NVIDIA thinking is disabled with each model family schema', async () => {
+  const originalThinking = process.env.NVIDIA_ENABLE_THINKING;
+  const originalFetch = globalThis.fetch;
+  const payloads: Array<Record<string, unknown>> = [];
+
+  try {
+    process.env.NVIDIA_ENABLE_THINKING = 'false';
+    globalThis.fetch = async (_input, init) => {
+      payloads.push(JSON.parse(String(init?.body)) as Record<string, unknown>);
+      return new Response('{}', { status: 200 });
+    };
+
+    const provider = {
+      name: 'NVIDIA NIM',
+      baseUrl: 'https://integrate.api.nvidia.com/v1',
+      models: [],
+      apiKeys: ['key']
+    };
+    const messages = [{ role: 'user', content: 'hello' }];
+
+    await requestChatCompletion(provider, 'nvidia/nemotron-3.5-lightning-30b-a3b', messages, 'key');
+    await requestChatCompletion(provider, 'deepseek-ai/deepseek-v4-flash-0731', messages, 'key');
+    await requestChatCompletion(provider, 'meta/muse-glimmer-30b', messages, 'key');
+
+    assert.deepEqual(payloads[0]?.chat_template_kwargs, { enable_thinking: false });
+    assert.deepEqual(payloads[1]?.chat_template_kwargs, { thinking: false });
+    assert.equal('chat_template_kwargs' in (payloads[2] || {}), false);
+  } finally {
+    globalThis.fetch = originalFetch;
+    if (originalThinking === undefined) delete process.env.NVIDIA_ENABLE_THINKING;
+    else process.env.NVIDIA_ENABLE_THINKING = originalThinking;
   }
 });

@@ -1304,6 +1304,478 @@
   }
 }
 
+/* Numina Tarot ----------------------------------------------------------- */
+.numina-tarot-page {
+  min-height: 100vh;
+  color: #352d31;
+  background:
+    radial-gradient(circle at 9% 8%, rgba(209, 172, 137, .22), transparent 31rem),
+    radial-gradient(circle at 93% 22%, rgba(151, 116, 139, .2), transparent 28rem),
+    #f2ede5;
+}
+
+.numina-tarot-shell {
+  width: min(1480px, 100%);
+  min-height: calc(100vh - 88px);
+  margin: 0 auto;
+  padding: 24px clamp(18px, 3.2vw, 52px) 52px;
+}
+
+.numina-tarot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(71, 52, 60, .15);
+  border-radius: 18px;
+  background: rgba(252, 249, 243, .72);
+  box-shadow: 0 12px 34px rgba(70, 52, 59, .07);
+  backdrop-filter: blur(16px);
+}
+
+.numina-tarot-brand { display: flex; min-width: 0; align-items: center; gap: 13px; }
+.numina-tarot-brand > span {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(226, 190, 119, .7);
+  border-radius: 50%;
+  color: #f6dc9c;
+  background: #4b3540;
+  box-shadow: inset 0 0 0 5px rgba(255,255,255,.06);
+  font-size: 22px;
+}
+.numina-tarot-brand p,
+.numina-section-kicker {
+  margin: 0 0 4px;
+  color: #9b7447;
+  font: 700 12px/1.2 var(--chani-mono);
+  letter-spacing: .13em;
+}
+.numina-tarot-brand h1 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #43353b;
+  font: 500 clamp(20px, 2.4vw, 30px)/1.1 var(--chani-serif);
+}
+.numina-tarot-tools { display: flex; align-items: flex-end; gap: 10px; }
+.numina-tarot-tools label { display: grid; gap: 4px; }
+.numina-tarot-tools label > span,
+.tarot-profile-row label > span {
+  color: #71646a;
+  font: 700 12px/1 var(--chani-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.numina-tarot-tools select,
+.tarot-profile-row select {
+  min-height: 42px;
+  max-width: 270px;
+  padding: 0 38px 0 13px;
+  border: 1px solid rgba(76, 58, 65, .2);
+  border-radius: 12px;
+  outline: none;
+  color: #43383d;
+  background: rgba(255,255,255,.78);
+  font: 14px var(--chani-mono);
+}
+.numina-tarot-tools select:focus,
+.tarot-profile-row select:focus,
+.numina-tarot-question-form textarea:focus,
+.numina-follow-up-form input:focus {
+  border-color: #9b7447;
+  box-shadow: 0 0 0 3px rgba(155, 116, 71, .14);
+}
+.tarot-quiet-button,
+.numina-reading-aside button {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid rgba(76, 58, 65, .24);
+  border-radius: 12px;
+  color: #493940;
+  background: transparent;
+  cursor: pointer;
+  font: 700 13px var(--chani-mono);
+}
+.tarot-quiet-button:hover,
+.numina-reading-aside button:hover { border-color: #8d6c45; background: rgba(255,255,255,.64); }
+
+.numina-tarot-start {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(390px, .95fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.numina-tarot-question-panel,
+.numina-tarot-spreads,
+.numina-reading-main,
+.numina-reading-aside {
+  border: 1px solid rgba(70, 51, 59, .14);
+  border-radius: 24px;
+  box-shadow: 0 18px 48px rgba(67, 49, 57, .09);
+}
+.numina-tarot-question-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  padding: clamp(28px, 4.4vw, 62px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.84), rgba(249, 242, 232, .7)),
+    url('/sites/chani-com-6d20749d/chart-9f6c9a84/assets/paper.webp') center/cover;
+}
+.numina-tarot-question-panel::after {
+  position: absolute;
+  right: -90px;
+  bottom: -160px;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(145, 109, 70, .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 38px rgba(145, 109, 70, .035), 0 0 0 80px rgba(145, 109, 70, .025);
+  content: '';
+  pointer-events: none;
+}
+.tarot-step-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #806a5e;
+  font: 700 13px var(--chani-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.tarot-step-label span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid rgba(132, 92, 67, .27);
+  border-radius: 50%;
+  color: #936b44;
+  font-size: 12px;
+}
+.numina-tarot-question-panel h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 0 12px;
+  color: #433039;
+  font: 500 clamp(42px, 5.4vw, 78px)/.94 var(--chani-serif);
+  letter-spacing: -.035em;
+}
+.tarot-help-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: 0 0 26px;
+  color: #716269;
+  font: 16px/1.65 var(--chani-mono);
+}
+.tarot-profile-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.tarot-profile-row label { display: grid; flex: 1; gap: 7px; }
+.tarot-profile-row select { width: 100%; max-width: none; min-height: 48px; }
+.tarot-life-path {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(76, 58, 65, .14);
+  border-radius: 12px;
+  color: #725c64;
+  background: rgba(255,255,255,.54);
+  font: 13px var(--chani-mono);
+  white-space: nowrap;
+}
+.tarot-life-path b { color: #9a6d3b; font: 24px var(--chani-serif); }
+.numina-tarot-question-form {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(76, 58, 65, .2);
+  border-radius: 18px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 12px 28px rgba(78, 59, 67, .07);
+}
+.numina-tarot-question-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  padding: 19px 20px;
+  border: 0;
+  outline: none;
+  color: #3f3438;
+  background: transparent;
+  font: 16px/1.6 var(--chani-mono);
+}
+.numina-tarot-question-form textarea::placeholder { color: #9b9293; }
+.numina-tarot-question-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 10px 9px 18px;
+  border-top: 1px solid rgba(76, 58, 65, .1);
+}
+.numina-tarot-question-form > div > span { color: #968b8d; font: 12px var(--chani-mono); }
+.numina-tarot-question-form button,
+.numina-follow-up-form button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff9ed;
+  background: #513945;
+  cursor: pointer;
+  font: 700 14px var(--chani-mono);
+  transition: transform .2s ease, background .2s ease;
+}
+.numina-tarot-question-form button:hover,
+.numina-follow-up-form button:hover { background: #6a4857; transform: translateY(-1px); }
+.numina-tarot-question-form button:disabled,
+.numina-follow-up-form button:disabled,
+.numina-tarot-tools button:disabled,
+.numina-reading-aside button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.tarot-prompt-chips { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.tarot-prompt-chips button {
+  padding: 9px 12px;
+  border: 1px solid rgba(91, 67, 78, .16);
+  border-radius: 999px;
+  color: #66555c;
+  background: rgba(255,255,255,.5);
+  cursor: pointer;
+  font: 13px/1.35 var(--chani-mono);
+}
+.tarot-prompt-chips button:hover { border-color: rgba(145, 101, 65, .5); background: rgba(255,255,255,.86); }
+.tarot-disclaimer,
+.tarot-local-note {
+  position: relative;
+  z-index: 1;
+  margin: 17px 0 0;
+  color: #847a7d;
+  font: 13px/1.55 var(--chani-mono);
+}
+
+.numina-tarot-spreads {
+  padding: clamp(24px, 3.4vw, 42px);
+  background:
+    linear-gradient(rgba(77, 54, 65, .96), rgba(57, 40, 48, .97)),
+    url('/sites/chani-com-6d20749d/chart-9f6c9a84/assets/paper.webp') center/cover;
+}
+.numina-tarot-spreads .tarot-step-label { color: #eadcca; }
+.numina-tarot-spreads .tarot-step-label span { border-color: rgba(239, 212, 164, .4); color: #f0cf8d; }
+.numina-spread-grid { display: grid; gap: 10px; }
+.numina-spread-grid > button {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 22px;
+  align-items: center;
+  gap: 14px;
+  min-height: 84px;
+  padding: 11px 15px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  color: #f2e9de;
+  background: rgba(255,255,255,.055);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.numina-spread-grid > button:hover { border-color: rgba(236, 203, 143, .52); background: rgba(255,255,255,.09); transform: translateX(3px); }
+.numina-spread-grid > button.is-selected { border-color: #e3bd77; background: rgba(230, 194, 128, .14); box-shadow: inset 3px 0 0 #e5bd75; }
+.spread-card-stack { position: relative; display: block; width: 46px; height: 58px; }
+.spread-card-stack i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(242, 212, 160, .65);
+  border-radius: 5px;
+  background: repeating-linear-gradient(45deg, #73566a 0 4px, #4b3946 4px 8px);
+  box-shadow: 0 3px 7px rgba(0,0,0,.18);
+}
+.spread-card-stack i:nth-child(2) { transform: rotate(7deg) translate(5px, -2px); }
+.spread-card-stack i:nth-child(3) { transform: rotate(14deg) translate(9px, -4px); }
+.spread-copy { display: grid; min-width: 0; gap: 3px; }
+.spread-copy strong { font: 500 19px/1.1 var(--chani-serif); }
+.spread-copy small { color: #d6b982; font: 12px var(--chani-mono); }
+.spread-copy p { margin: 3px 0 0; color: #cdbfc2; font: 13px/1.35 var(--chani-mono); }
+.numina-spread-grid > button > b { color: #e5c17f; font: 22px var(--chani-serif); text-align: center; }
+
+.numina-reading-layout { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 18px; align-items: start; }
+.numina-reading-main { min-width: 0; overflow: hidden; padding: clamp(24px, 4vw, 52px); background: rgba(252,249,243,.82); }
+.numina-reading-question { max-width: 880px; margin: 0 auto 30px; text-align: center; }
+.numina-reading-question > p { margin: 0 0 10px; color: #9b7447; font: 700 12px var(--chani-mono); letter-spacing: .15em; }
+.numina-reading-question h2 { margin: 0 0 11px; color: #402f37; font: 500 clamp(32px, 5vw, 60px)/1.03 var(--chani-serif); }
+.numina-reading-question > span { color: #75666c; font: 14px var(--chani-mono); }
+.numina-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 20px 14px; align-items: start; max-width: 1050px; margin: 0 auto 34px; }
+.numina-card-grid.is-celtic { grid-template-columns: repeat(5, minmax(112px, 1fr)); }
+.numina-card-grid.is-supplementary { grid-template-columns: repeat(auto-fit, minmax(120px, 155px)); justify-content: center; margin: 22px auto; }
+.numina-card { min-width: 0; margin: 0; text-align: center; }
+.numina-card-stage { width: min(100%, 180px); aspect-ratio: .573; margin: 0 auto 12px; perspective: 1100px; }
+.numina-card.is-compact .numina-card-stage { width: min(100%, 132px); }
+.numina-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: numina-card-reveal .85s cubic-bezier(.2,.72,.22,1) both;
+  animation-delay: var(--tarot-reveal-delay);
+}
+.numina-card-back,
+.numina-card-front {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid rgba(87, 59, 70, .25);
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(56, 39, 46, .18);
+  backface-visibility: hidden;
+}
+.numina-card-back {
+  display: grid;
+  place-items: center;
+  color: #f0cc85;
+  background:
+    radial-gradient(circle, transparent 28%, rgba(235,201,139,.2) 29% 30%, transparent 31%),
+    repeating-linear-gradient(45deg, transparent 0 8px, rgba(255,255,255,.035) 8px 9px),
+    #4b3540;
+  transform: rotateY(180deg);
+}
+.numina-card-back::before { position: absolute; inset: 8px; border: 1px solid rgba(240,204,133,.5); border-radius: 6px; content: ''; }
+.numina-card-back span { font-size: 32px; }
+.numina-card-front { background: #e7dbc8; }
+.numina-card-front img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.numina-card-front img.is-reversed { transform: rotate(180deg); }
+.numina-card figcaption { display: grid; justify-items: center; gap: 4px; }
+.numina-card figcaption small { min-height: 1.3em; color: #94734f; font: 700 12px/1.3 var(--chani-mono); text-transform: uppercase; }
+.numina-card figcaption strong { color: #47363e; font: 500 18px/1.15 var(--chani-serif); }
+.numina-card figcaption span { color: #806e75; font: 12px var(--chani-mono); }
+.numina-card figcaption p { margin: 2px 0 0; color: #82767a; font: 12px/1.4 var(--chani-mono); }
+@keyframes numina-card-reveal { from { transform: rotateY(180deg) translateY(8px); opacity: .4; } to { transform: rotateY(0deg) translateY(0); opacity: 1; } }
+
+.numina-tarot-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px auto;
+  color: #765e68;
+  font: 14px var(--chani-mono);
+}
+.numina-tarot-status i { width: 9px; height: 9px; border-radius: 50%; background: #b2814c; box-shadow: 0 0 0 0 rgba(178,129,76,.5); animation: tarot-status-pulse 1.4s infinite; }
+.numina-tarot-status button { margin-left: 8px; border: 0; color: #7c5060; background: none; cursor: pointer; font: 700 13px var(--chani-mono); text-decoration: underline; }
+@keyframes tarot-status-pulse { 70% { box-shadow: 0 0 0 8px rgba(178,129,76,0); } 100% { box-shadow: 0 0 0 0 rgba(178,129,76,0); } }
+.numina-interpretation {
+  max-width: 830px;
+  margin: 28px auto 0;
+  padding: clamp(22px, 3.5vw, 38px);
+  border: 1px solid rgba(99, 71, 82, .14);
+  border-radius: 18px;
+  color: #40373a;
+  background: rgba(255,255,255,.66);
+  box-shadow: 0 12px 30px rgba(72,52,60,.06);
+  font: 16px/1.75 var(--chani-mono);
+}
+.numina-interpretation > :first-child { margin-top: 0; }
+.numina-interpretation > :last-child { margin-bottom: 0; }
+.numina-interpretation h1,
+.numina-interpretation h2,
+.numina-interpretation h3 { margin: 1.4em 0 .55em; color: #523944; font: 500 1.45em/1.2 var(--chani-serif); }
+.numina-interpretation strong { color: #895d36; }
+.numina-interpretation li { margin-bottom: .45em; }
+.numina-interpretation blockquote { margin-left: 0; padding-left: 16px; border-left: 3px solid #c49a5c; color: #66575d; }
+.numina-interpretation.is-follow-up { margin-top: 14px; }
+.tarot-text-skeleton { height: 110px; border-radius: 10px; background: linear-gradient(90deg, rgba(91,67,78,.05), rgba(255,255,255,.8), rgba(91,67,78,.05)); background-size: 200% 100%; animation: tarot-skeleton 1.6s infinite; }
+@keyframes tarot-skeleton { to { background-position: -200% 0; } }
+.numina-follow-up { max-width: 900px; margin: 34px auto 0; padding-top: 30px; border-top: 1px solid rgba(92,67,77,.16); }
+.numina-follow-up-question { display: grid; gap: 6px; padding-left: 16px; border-left: 3px solid #9f7650; }
+.numina-follow-up-question span { color: #987248; font: 700 12px var(--chani-mono); letter-spacing: .1em; text-transform: uppercase; }
+.numina-follow-up-question p { margin: 0; color: #483a40; font: 500 24px/1.3 var(--chani-serif); }
+.tarot-decision-note { margin: 12px auto 0; color: #8a7b80; text-align: center; font: 13px/1.5 var(--chani-mono); }
+.numina-tarot-error { max-width: 830px; margin: 18px auto; padding: 12px 14px; border: 1px solid rgba(155,58,70,.25); border-radius: 10px; color: #8f3340; background: rgba(255,235,237,.75); font: 14px/1.5 var(--chani-mono); }
+.numina-follow-up-form { max-width: 830px; margin: 32px auto 0; }
+.numina-follow-up-form > label { display: block; margin-bottom: 9px; color: #57474e; font: 500 20px var(--chani-serif); }
+.numina-follow-up-form > div { display: flex; gap: 8px; padding: 7px; border: 1px solid rgba(76,58,65,.2); border-radius: 16px; background: rgba(255,255,255,.8); }
+.numina-follow-up-form input { min-width: 0; flex: 1; padding: 0 12px; border: 0; outline: 0; color: #42373b; background: transparent; font: 15px var(--chani-mono); }
+.numina-follow-up-form button { min-width: 48px; padding: 0 14px; font-size: 19px; }
+.numina-reading-aside { position: sticky; top: 104px; padding: 24px; background: rgba(74,52,63,.94); color: #f3e9dc; }
+.numina-reading-aside .numina-section-kicker { color: #e4bf7d; }
+.numina-reading-aside dl { margin: 20px 0 22px; }
+.numina-reading-aside dl > div { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.numina-reading-aside dt { color: #cdbfc4; font: 13px var(--chani-mono); }
+.numina-reading-aside dd { margin: 0; color: #fff8ec; font: 500 15px var(--chani-serif); text-align: right; }
+.numina-reading-aside button { width: 100%; min-height: 48px; margin-top: 9px; border-color: rgba(238,214,174,.28); color: #fff8eb; }
+.numina-reading-aside button:hover { border-color: #e3bd77; background: rgba(255,255,255,.08); }
+.numina-reading-aside button.is-danger { border-color: rgba(232,143,151,.25); color: #f3c5ca; }
+.numina-reading-aside .tarot-local-note { color: #bdaeb3; }
+
+@media (max-width: 1050px) {
+  .numina-tarot-start { grid-template-columns: 1fr; }
+  .numina-tarot-question-panel { min-height: auto; }
+  .numina-reading-layout { grid-template-columns: 1fr; }
+  .numina-reading-aside { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+  .numina-reading-aside .numina-section-kicker,
+  .numina-reading-aside dl,
+  .numina-reading-aside .tarot-local-note { grid-column: 1 / -1; }
+  .numina-card-grid.is-celtic { grid-template-columns: repeat(5, minmax(100px, 1fr)); overflow-x: auto; }
+}
+
+@media (max-width: 680px) {
+  .numina-tarot-shell { padding: 12px 10px 30px; }
+  .numina-tarot-header { align-items: flex-start; flex-direction: column; gap: 13px; padding: 13px; }
+  .numina-tarot-tools { width: 100%; align-items: stretch; }
+  .numina-tarot-tools label { min-width: 0; flex: 1; }
+  .numina-tarot-tools select { width: 100%; max-width: none; }
+  .numina-tarot-brand h1 { font-size: 20px; }
+  .numina-tarot-question-panel,
+  .numina-tarot-spreads,
+  .numina-reading-main,
+  .numina-reading-aside { border-radius: 18px; }
+  .numina-tarot-question-panel { padding: 27px 20px; }
+  .numina-tarot-question-panel h2 { font-size: clamp(40px, 13vw, 58px); }
+  .tarot-profile-row { align-items: stretch; flex-direction: column; }
+  .tarot-life-path { justify-content: space-between; }
+  .numina-tarot-spreads { padding: 25px 17px; }
+  .numina-spread-grid > button { grid-template-columns: 50px minmax(0, 1fr) 18px; padding-inline: 11px; }
+  .spread-card-stack { width: 38px; height: 49px; }
+  .spread-copy strong { font-size: 17px; }
+  .spread-copy p { font-size: 12px; }
+  .numina-reading-main { padding: 28px 13px; }
+  .numina-card-grid,
+  .numina-card-grid.is-celtic { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 9px; overflow: visible; }
+  .numina-card-grid.is-supplementary { grid-template-columns: repeat(auto-fit, minmax(110px, 135px)); }
+  .numina-card-stage { width: min(100%, 150px); }
+  .numina-card figcaption strong { font-size: 16px; }
+  .numina-card figcaption p { font-size: 11px; }
+  .numina-interpretation { padding: 20px 16px; font-size: 15px; }
+  .numina-reading-aside { display: block; padding: 21px; }
+  .numina-tarot-question-form > div { align-items: flex-end; }
+  .numina-tarot-question-form button { padding-inline: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .numina-card-inner,
+  .numina-tarot-status i,
+  .tarot-text-skeleton { animation: none; }
+  .numina-card-inner { transform: none; }
+  .numina-spread-grid > button,
+  .numina-tarot-question-form button,
+  .numina-follow-up-form button { transition: none; }
+}
+
 @media (max-width: 380px) {
   .numerology-card-grid {
     grid-template-columns: 1fr;

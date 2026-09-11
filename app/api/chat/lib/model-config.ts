@@ -9,7 +9,7 @@
 
 // Stable Gemini model available to the configured Google AI Studio keys.
 // Override with CHAT_MODEL or CHAT_MODELS when a different model is desired.
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'gemini-3.6-flash';
 
 /** Model prefixes that do NOT support the "system" role in chat completions */
 const MODELS_WITHOUT_SYSTEM_ROLE = ['gemma-'];

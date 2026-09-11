@@ -1,5 +1,5 @@
-import { PodcastWeekAheadPage } from '@/components/sites/chani-com-6d20749d/shared/ChaniInnerPages';
+import { NuminaTarotPage } from '@/components/Tarot/NuminaTarotPage';
 
 export default function ChatPage() {
-  return <PodcastWeekAheadPage />;
+  return <NuminaTarotPage />;
 }

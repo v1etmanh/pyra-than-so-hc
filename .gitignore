@@ -77,3 +77,6 @@ Desktop.ini
 .vercel/
 .netlify/
 .turbo/
+
+# Local source references used for implementation research
+/references/TarotWhisper/

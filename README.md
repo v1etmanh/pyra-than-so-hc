@@ -218,7 +218,10 @@ PORT=3200
 
 # Primary LLM: Google Gemini (được thử đầu tiên)
 GEMINI_API_KEY=your_gemini_key
-GEMINI_CHAT_MODELS=gemini-2.5-flash
+GEMINI_CHAT_MODELS=gemini-3.6-flash
+GEMINI_REASONING_EFFORT=low
+LLM_STREAM_CONNECT_TIMEOUT_MS=30000
+NVIDIA_ENABLE_THINKING=false
 
 # Fallback LLMs (tùy chọn; nhiều model cách nhau bằng dấu phẩy)
 NVIDIA_API_KEY=your_nvidia_key

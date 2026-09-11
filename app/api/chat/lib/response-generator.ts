@@ -133,7 +133,7 @@ export function createStreamingResponse(
                   // does not start responding. Override with
                   // LLM_STREAM_CONNECT_TIMEOUT_MS when a slower model needs
                   // more warm-up time.
-                  Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 1_000),
+                  Number(process.env.LLM_STREAM_CONNECT_TIMEOUT_MS || 30_000),
                   remainingMs
                 )
               }

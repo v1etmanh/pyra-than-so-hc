@@ -15,6 +15,42 @@ export interface ModelCandidate {
   apiKey: string;
 }
 
+type ReasoningEffort = 'minimal' | 'low' | 'medium' | 'high';
+
+function getGeminiReasoningEffort(provider: CascadeProvider): ReasoningEffort | undefined {
+  if (provider.name !== 'Google Gemini') return undefined;
+
+  const configured = (process.env.GEMINI_REASONING_EFFORT || 'low').trim().toLowerCase();
+  return configured === 'minimal' ||
+    configured === 'low' ||
+    configured === 'medium' ||
+    configured === 'high'
+    ? configured
+    : undefined;
+}
+
+function getNvidiaThinkingOptions(
+  provider: CascadeProvider,
+  model: string
+): Record<string, unknown> {
+  if (
+    provider.name !== 'NVIDIA NIM' ||
+    process.env.NVIDIA_ENABLE_THINKING?.trim().toLowerCase() === 'true'
+  ) {
+    return {};
+  }
+
+  if (model.startsWith('nvidia/nemotron-')) {
+    return { chat_template_kwargs: { enable_thinking: false } };
+  }
+
+  if (model.startsWith('deepseek-ai/deepseek-')) {
+    return { chat_template_kwargs: { thinking: false } };
+  }
+
+  return {};
+}
+
 const MODEL_FAILURE_COOLDOWN_MS = 60_000;
 
 // This state intentionally lives only in the server process. It is reset on a
@@ -209,8 +245,9 @@ export function getProviderCascade(
       name: 'NVIDIA NIM',
       baseUrl: 'https://integrate.api.nvidia.com/v1',
       models: parseModels(['NVIDIA_CHAT_MODELS', 'NVIDIA_CHAT_MODEL'], [
-        'meta/llama-3.3-70b-instruct',
-        'nvidia/llama-3.1-nemotron-70b-instruct'
+        'nvidia/nemotron-3.5-lightning-30b-a3b',
+        'meta/muse-glimmer-30b',
+        'poolside/laguna-xs-2.1'
       ]),
       apiKeys: parseKeys('NVIDIA_API_KEYS', 'NVIDIA_API_KEY')
     },
@@ -239,11 +276,7 @@ export function getProviderCascade(
           'OPENROUTER_CHAT_MODELS',
           'OPENROUTER_CHAT_MODEL'
         ],
-        [
-          'meta-llama/llama-3.3-70b-instruct:free',
-          'google/gemini-2.0-flash-exp:free',
-          'deepseek/deepseek-r1:free'
-        ]
+        ['openrouter/free']
       ),
       apiKeys: parseKeys('OPENROUTER_API_KEYS', 'OPENROUTER_API_KEY')
     }
@@ -284,6 +317,8 @@ export async function requestChatCompletion(
 ): Promise<Response> {
   const controller = new AbortController();
   const timeoutMs = options?.timeoutMs ?? Number(process.env.LLM_REQUEST_TIMEOUT_MS || 15000);
+  const reasoningEffort = getGeminiReasoningEffort(provider);
+  const nvidiaThinkingOptions = getNvidiaThinkingOptions(provider, model);
   const timeout = setTimeout(
     () => controller.abort(new Error(`LLM request timed out after ${timeoutMs}ms`)),
     timeoutMs
@@ -303,7 +338,9 @@ export async function requestChatCompletion(
         ...(options?.maxTokens ? { max_tokens: options.maxTokens } : {}),
         ...(typeof options?.temperature === 'number'
           ? { temperature: options.temperature }
-          : {})
+          : {}),
+        ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}),
+        ...nvidiaThinkingOptions
       }),
       signal: controller.signal,
       redirect: 'error'

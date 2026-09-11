@@ -23,14 +23,14 @@ const personalityProfileSchema = z.object({
   completedAt: z.number().finite().optional()
 }).strict();
 
-const chatProfileSchema = z.object({
+export const chatProfileSchema = z.object({
   name: boundedText(200).optional(),
   birthDate: boundedText(32).optional(),
   lifePath: z.union([boundedText(20), z.number().finite()]).optional(),
   indicators: z.array(z.object({
     key: boundedText(80).min(1),
     name: boundedText(160).min(1),
-    value: z.union([boundedText(80), z.number().finite()])
+    value: z.union([boundedText(500), z.number().finite()])
   }).strict()).max(24).optional()
 }).strict();
 
@@ -57,7 +57,7 @@ export const lazyIndicatorRequestSchema = z.object({
   birthDay: boundedText(32).optional().default(''),
   indicatorKey: boundedText(80).min(1),
   indicatorName: boundedText(160).optional().default(''),
-  indicatorValue: z.union([boundedText(80), z.number().finite()]),
+  indicatorValue: z.union([boundedText(500), z.number().finite()]),
   personalityProfile: personalityProfileSchema.nullable().optional(),
   providerConfig: providerConfigSchema.optional(),
   language: z.enum(['Vietnamese', 'English']).default('Vietnamese')
@@ -99,7 +99,7 @@ export const birthChartRequestSchema = z.object({
 export const qaRequestSchema = z.object({
   question: boundedText(12_000).min(3),
   indicatorKey: boundedText(80).optional(),
-  indicatorValue: z.union([boundedText(80), z.number().finite()]).optional(),
+  indicatorValue: z.union([boundedText(500), z.number().finite()]).optional(),
   locale: z.enum(['vi', 'en']).optional(),
   profile: chatProfileSchema.optional(),
   mode: z.enum(['inspect', 'mock', 'stream']).optional(),
@@ -137,6 +137,56 @@ export const surveyRequestSchema = z.object({
   usageCount: z.number().int().min(0).max(10_000)
 }).strict();
 
+const tarotStoredCardSchema = z.object({
+  cardId: boundedText(40).min(1),
+  isReversed: z.boolean(),
+  positionId: boundedText(80).min(1)
+}).strict();
+
+const tarotReadingContextSchema = z.object({
+  originalQuestion: boundedText(4_000).min(3),
+  spreadId: boundedText(80).min(1),
+  drawnCards: z.array(tarotStoredCardSchema).min(1).max(10),
+  interpretation: boundedText(16_000).min(1),
+  priorFollowUps: z.array(z.object({
+    question: boundedText(4_000).min(1),
+    interpretation: boundedText(16_000).min(1),
+    additionalCards: z.array(tarotStoredCardSchema).max(3)
+  }).strict()).max(10)
+}).strict();
+
+const tarotCommonSchema = z.object({
+  language: z.enum(['vi', 'en']),
+  profile: chatProfileSchema.optional(),
+  providerConfig: providerConfigSchema.optional()
+});
+
+const tarotSpreadIdSchema = z.enum([
+  'single',
+  'three-card',
+  'two-options',
+  'relationship',
+  'timeline',
+  'celtic-cross'
+]);
+
+export const tarotReadingRequestSchema = z.discriminatedUnion('mode', [
+  tarotCommonSchema.extend({
+    mode: z.literal('initial'),
+    question: boundedText(4_000).min(3),
+    spreadId: tarotSpreadIdSchema
+  }).strict(),
+  tarotCommonSchema.extend({
+    mode: z.literal('follow-up'),
+    question: boundedText(4_000).min(3),
+    reading: tarotReadingContextSchema
+  }).strict(),
+  tarotCommonSchema.extend({
+    mode: z.literal('regenerate'),
+    reading: tarotReadingContextSchema
+  }).strict()
+]);
+
 export const checkoutRequestSchema = z.object({
   plan: z.literal('pro'),
   locale: z.enum(['vi', 'en']).optional()
@@ -158,4 +208,5 @@ export type BirthChartRequest = z.infer<typeof birthChartRequestSchema>;
 export type QARequest = z.infer<typeof qaRequestSchema>;
 export type WallpaperRequest = z.infer<typeof wallpaperRequestSchema>;
 export type SurveyRequest = z.infer<typeof surveyRequestSchema>;
+export type TarotReadingRequestPayload = z.infer<typeof tarotReadingRequestSchema>;
 export type CheckoutRequest = z.infer<typeof checkoutRequestSchema>;

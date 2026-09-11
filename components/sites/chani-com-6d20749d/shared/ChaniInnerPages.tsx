@@ -113,7 +113,7 @@ export function PodcastWeekAheadPage() {
           indicators: indicators.map((ind) => ({
             key: ind.key,
             name: ind.name,
-            value: String(ind.value ?? ""),
+            value: String(ind.value ?? "").slice(0, 500),
           })),
         }
       : undefined;
