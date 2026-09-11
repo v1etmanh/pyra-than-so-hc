@@ -1,0 +1,990 @@
+/* ==========================================================================
+   NUMINA TAROT: SACRED PAPER-CUT & TORN PARCHMENT ARTISTRY
+   Layered 3D Paper-Cut, Deckle Edge Parchment & Deep Plum Mystical Altar
+   ========================================================================== */
+
+:root {
+  /* Paper & Parchment Palette */
+  --pc-parchment-base: #f4efe6;
+  --pc-parchment-canvas: #ebe3d5;
+  --pc-parchment-card: #fbf8f2;
+  --pc-parchment-card-edge: #f0e6d6;
+  --pc-parchment-border: rgba(180, 155, 120, 0.38);
+  --pc-parchment-shadow: 0 16px 42px rgba(45, 25, 35, 0.16), 0 4px 10px rgba(45, 25, 35, 0.08);
+
+  /* Deep Plum Velvet & Mystical Wood */
+  --pc-plum-darkest: #241620;
+  --pc-plum-deep: #32202c;
+  --pc-plum-card: #3f2a37;
+  --pc-plum-card-hover: #4d3544;
+  --pc-plum-card-active: #4a3241;
+  --pc-plum-border: rgba(220, 195, 145, 0.16);
+
+  /* Celestial Gold & Starlight */
+  --pc-gold-primary: #e0c58e;
+  --pc-gold-bright: #ffd166;
+  --pc-gold-light: #f6e8cc;
+  --pc-gold-dim: #b89a64;
+  --pc-gold-glow: 0 0 24px rgba(224, 197, 142, 0.42), inset 0 0 10px rgba(224, 197, 142, 0.18);
+
+  /* Typography & Text */
+  --pc-text-dark: #2c2125;
+  --pc-text-muted: #6f5f66;
+  --pc-text-cream: #fbf7ee;
+  --pc-text-gold-light: #f5e3bf;
+  --pc-text-gold-accent: #cfa864;
+}
+
+/* Page Sanctuary Container */
+.numina-tarot-sanctuary {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f5efe6;
+  background-image: 
+    radial-gradient(circle at 12% 10%, rgba(224, 197, 142, 0.22), transparent 36rem),
+    radial-gradient(circle at 88% 18%, rgba(85, 45, 70, 0.12), transparent 34rem),
+    radial-gradient(circle at 50% 85%, rgba(200, 170, 130, 0.14), transparent 40rem);
+  color: var(--pc-text-dark);
+}
+
+/* Header blending for Tarot Sanctuary */
+.numina-tarot-sanctuary header,
+.numina-tarot-sanctuary .pyra-header {
+  background-color: #f4efe6 !important;
+  border-bottom: 1px solid rgba(215, 195, 170, 0.45) !important;
+}
+
+/* Outer Sanctuary Frame Wrapper */
+.tarot-sanctuary-stage {
+  position: relative;
+  width: min(1680px, 100%);
+  margin: 0 auto;
+  padding: 16px clamp(170px, 12.5vw, 215px) 48px;
+}
+
+/* ==========================================================================
+   DECORATIVE PAPER-CUT FLANKS (Left Moon & Cat, Right Arch & Books)
+   ========================================================================== */
+.sanctuary-flank {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sanctuary-flank-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: clamp(190px, 13.5vw, 230px);
+  max-width: 230px;
+  height: 100%;
+  max-height: 960px;
+  z-index: 40; /* High z-index so the flank and cat are NEVER covered by the form */
+  overflow: hidden;
+}
+
+.sanctuary-flank-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: clamp(140px, 10.5vw, 175px);
+  max-width: 175px;
+  height: 100%;
+  max-height: 960px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.flank-bar-img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+  filter: drop-shadow(0 12px 28px rgba(45, 20, 30, 0.16));
+}
+
+.sanctuary-flank-right .flank-bar-img {
+  object-position: top right;
+}
+
+/* Guardian Cat Foreground Layer - Displayed on top of form with highest z-index */
+.flank-cat-foreground {
+  position: absolute;
+  bottom: -4px;
+  left: -8px;
+  width: clamp(200px, 14vw, 240px);
+  height: auto;
+  z-index: 50; /* ALWAYS DISPLAY HIGHEST ON TOP OF EVERYTHING */
+  pointer-events: none;
+  filter: drop-shadow(0 16px 36px rgba(35, 15, 25, 0.45));
+  transform-origin: bottom left;
+}
+
+/* ==========================================================================
+   TOP BANNER: CELESTIAL MOUNTAIN & TORN PAPER BANNER
+   ========================================================================== */
+.tarot-sanctuary-banner {
+  position: relative;
+  width: 100%;
+  min-height: 105px;
+  margin-bottom: 24px;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background: #f7f0e4;
+  border: 1px solid rgba(215, 195, 170, 0.6);
+  box-shadow: 
+    0 4px 14px rgba(45, 25, 35, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tarot-sanctuary-banner::before {
+  content: "";
+  position: absolute;
+  inset: -4px -3px -5px -4px;
+  background: #ebe0d0;
+  border-radius: 26px;
+  z-index: -1;
+  box-shadow: 0 8px 22px rgba(45, 25, 35, 0.08);
+}
+
+/* Left Brand Heading in Banner */
+.tarot-banner-brand {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fcf9f2;
+  border: 1px solid rgba(215, 195, 170, 0.6);
+  border-radius: 16px;
+  padding: 8px 18px 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.tarot-banner-emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #472d3c;
+  color: #e6c88f;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 3px 8px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+}
+
+.tarot-banner-title p {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9c836a;
+  margin: 0 0 2px;
+}
+
+.tarot-banner-title h1 {
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #2e1a25;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Center Mountain in Banner */
+.tarot-banner-center-mountain {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+  height: 100px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.tarot-banner-mountain-art {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(45, 25, 35, 0.1));
+}
+
+/* Center-Right Philosophy Quote */
+.tarot-banner-quote {
+  position: relative;
+  z-index: 3;
+  margin-left: auto;
+  margin-right: 24px;
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #76635a;
+  max-width: 180px;
+  text-align: left;
+}
+
+/* Right Tools (History & New Reading Button) */
+.tarot-banner-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tarot-history-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tarot-history-box span {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #857267;
+}
+
+.tarot-history-select {
+  min-height: 38px;
+  padding: 0 32px 0 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(140, 110, 80, 0.28);
+  background: rgba(255, 255, 255, 0.88);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12px;
+  color: #3a2c33;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(50, 30, 40, 0.05);
+}
+
+.tarot-history-select:focus {
+  border-color: var(--pc-gold-dim);
+  box-shadow: 0 0 0 3px rgba(224, 197, 142, 0.25);
+}
+
+.tarot-btn-new-reading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f3643 0%, #35212d 100%);
+  color: var(--pc-gold-light);
+  border: 1px solid rgba(224, 197, 142, 0.4);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  box-shadow: 
+    0 6px 16px rgba(53, 33, 45, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+}
+
+.tarot-btn-new-reading:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5e4151 0%, #432b3a 100%);
+  border-color: var(--pc-gold-bright);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(53, 33, 45, 0.4);
+}
+
+.tarot-btn-new-reading svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.4s ease;
+}
+
+.tarot-btn-new-reading:hover svg {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   MAIN TWO-COLUMN STAGE (Step 01 Question Board & Step 02 Spreads Board)
+   ========================================================================== */
+.tarot-stage-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(430px, 0.95fr);
+  gap: 28px;
+  align-items: stretch;
+  z-index: 5;
+}
+
+/* STEP LABELS (01 / 02) */
+.tarot-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tarot-step-number {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--pc-gold-dim);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: #7b6250;
+  background: rgba(224, 197, 142, 0.16);
+}
+
+.tarot-step-text {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7b6250;
+}
+
+.tarot-board-plum .tarot-step-number {
+  border-color: var(--pc-gold-primary);
+  color: var(--pc-gold-bright);
+  background: rgba(224, 197, 142, 0.12);
+}
+
+.tarot-board-plum .tarot-step-text {
+  color: var(--pc-gold-light);
+}
+
+/* ==========================================================================
+   COLUMN 1 (LEFT): TORN PARCHMENT QUESTION BOARD
+   ========================================================================== */
+.tarot-board-parchment {
+  position: relative;
+  min-height: 560px;
+  padding: 32px 34px 28px;
+  border-radius: 24px;
+  background-color: #faf6ee;
+  border: 1px solid #dfd2c0;
+  box-shadow: 
+    0 4px 14px rgba(45, 25, 35, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: visible;
+}
+
+.tarot-board-parchment::before {
+  content: "";
+  position: absolute;
+  inset: -5px -4px -6px -5px;
+  background: #eee3d2;
+  border-radius: 26px;
+  z-index: -1;
+  box-shadow: 0 16px 36px rgba(45, 25, 35, 0.12);
+}
+
+/* Main Heading inside Question Board */
+.tarot-question-headline {
+  margin: 0 0 12px;
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-size: clamp(28px, 2.6vw, 40px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--pc-text-dark);
+  letter-spacing: -0.01em;
+  max-width: 440px;
+}
+
+.tarot-question-subtitle {
+  margin: 0 0 16px;
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #6a575f;
+  max-width: 430px;
+}
+
+/* Delicate Golden Star Divider */
+.tarot-board-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 18px;
+  opacity: 0.75;
+}
+
+.divider-star {
+  color: #c4a77d;
+  font-size: 13px;
+}
+
+.divider-line {
+  height: 1px;
+  width: 140px;
+  background: linear-gradient(90deg, #c4a77d 0%, rgba(196, 167, 125, 0) 100%);
+}
+
+/* Profile Selector Row & Life Path Pill */
+.tarot-profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.tarot-profile-caption {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7b6770;
+}
+
+.tarot-profile-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 450px;
+}
+
+.tarot-profile-dropdown {
+  flex: 1;
+  min-width: 200px;
+  height: 42px;
+  padding: 0 36px 0 16px;
+  border-radius: 12px;
+  border: 1px solid #d8cbbe;
+  background: #fffcf7;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 13px;
+  color: #382b32;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(60, 40, 50, 0.04);
+  transition: all 0.2s ease;
+}
+
+.tarot-profile-dropdown:focus {
+  border-color: var(--pc-gold-dim);
+  box-shadow: 0 0 0 3px rgba(224, 197, 142, 0.25);
+}
+
+.tarot-lifepath-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: #faecd8;
+  border: 1px solid #dfcfbc;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12px;
+  font-weight: 600;
+  color: #6a4f38;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(60, 40, 50, 0.04);
+}
+
+.tarot-lifepath-badge strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a3421;
+}
+
+/* Question Input Textarea Box */
+.tarot-input-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #dfd1be;
+  border-radius: 16px;
+  padding: 14px 18px 12px;
+  box-shadow: 
+    inset 0 1px 3px rgba(0, 0, 0, 0.02),
+    0 4px 12px rgba(60, 40, 50, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarot-input-card:focus-within {
+  border-color: var(--pc-gold-dim);
+  box-shadow: 
+    0 0 0 3px rgba(224, 197, 142, 0.25),
+    0 6px 20px rgba(60, 40, 50, 0.06);
+}
+
+.tarot-input-textarea {
+  width: 100%;
+  min-height: 105px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--chani-serif, Georgia, serif);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #2c2025;
+  resize: none;
+}
+
+.tarot-input-textarea::placeholder {
+  color: #9e8d95;
+  font-style: italic;
+}
+
+.tarot-input-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 6px;
+}
+
+.tarot-char-counter {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  color: #9d8b94;
+}
+
+/* Draw Cards Primary Action Button */
+.tarot-btn-draw-cards {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #503444 0%, #3a2230 100%);
+  color: #fff;
+  border: 1px solid rgba(224, 197, 142, 0.4);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 
+    0 6px 18px rgba(58, 34, 48, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tarot-btn-draw-cards:hover {
+  background: linear-gradient(135deg, #624154 0%, #46293a 100%);
+  border-color: var(--pc-gold-bright);
+  color: var(--pc-gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(58, 34, 48, 0.42);
+}
+
+.tarot-btn-draw-cards:disabled {
+  opacity: 0.88;
+  cursor: pointer;
+  transform: none;
+}
+
+.tarot-btn-draw-cards svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transform: rotate(45deg);
+}
+
+/* Overlapping Decorative Accents on Right Edge of Parchment */
+.tarot-parchment-accents {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 145px;
+  pointer-events: none;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sun-card-collage {
+  position: relative;
+  width: 135px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(45, 25, 35, 0.28));
+  transform: rotate(4deg);
+  transition: transform 0.4s ease;
+}
+
+.torn-note-sticker {
+  position: relative;
+  width: 140px;
+  margin-top: -24px;
+  transform: rotate(-2deg);
+  filter: drop-shadow(0 8px 18px rgba(45, 20, 30, 0.22));
+}
+
+.torn-note-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.torn-note-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  margin: 0;
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #553e49;
+  text-align: center;
+}
+
+.torn-note-text span {
+  display: block;
+}
+
+/* ==========================================================================
+   COLUMN 2 (RIGHT): DEEP PLUM SPREADS BOARD
+   ========================================================================== */
+.tarot-board-plum {
+  position: relative;
+  min-height: 560px;
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: 28px;
+  background-color: var(--pc-plum-deep);
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(130, 80, 110, 0.24), transparent 28rem),
+    radial-gradient(circle at 15% 85%, rgba(65, 35, 55, 0.3), transparent 26rem),
+    linear-gradient(160deg, #372331 0%, #291823 100%);
+  border: 1px solid rgba(220, 195, 145, 0.22);
+  box-shadow: 
+    0 24px 60px rgba(25, 12, 20, 0.38),
+    0 4px 16px rgba(25, 12, 20, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Header inside Plum Board */
+.tarot-plum-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tarot-plum-motto {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pc-gold-dim);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Spreads List */
+.tarot-spreads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Spread Card Item */
+.tarot-spread-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: 18px;
+  background: var(--pc-plum-card);
+  border: 1px solid var(--pc-plum-border);
+  color: var(--pc-text-cream);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.tarot-spread-item:hover {
+  background: var(--pc-plum-card-hover);
+  border-color: rgba(224, 197, 142, 0.35);
+  transform: translateX(3px);
+}
+
+/* Spread Card Icon Graphic Box */
+.spread-icon-box {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(18, 10, 16, 0.55);
+  border: 1px solid rgba(220, 195, 145, 0.24);
+  padding: 4px;
+}
+
+.spread-icon-art {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+/* Spread Card Text Content */
+.spread-info-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.spread-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.spread-title-row strong {
+  font-family: var(--chani-serif, Georgia, serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.spread-title-row span {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--pc-gold-dim);
+  letter-spacing: 0.06em;
+}
+
+.spread-info-content p {
+  margin: 0;
+  font-family: var(--chani-serif, Georgia, serif);
+  font-size: 12px;
+  line-height: 1.45;
+  color: #baa8b1;
+}
+
+/* Spread Chevron / Checkmark on Right */
+.spread-indicator-mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  color: #8c737d;
+  transition: all 0.2s ease;
+}
+
+/* ACTIVE STATE FOR SPREAD CARD */
+.tarot-spread-item.is-active {
+  background: var(--pc-plum-card-active);
+  border: 1.5px solid var(--pc-gold-primary);
+  box-shadow: inset 0 0 0 1px rgba(224, 197, 142, 0.4), 0 0 22px rgba(224, 197, 142, 0.35);
+  transform: scale(1.01);
+}
+
+.tarot-spread-item.is-active .spread-icon-box {
+  background: rgba(224, 197, 142, 0.15);
+  border-color: var(--pc-gold-bright);
+}
+
+.tarot-spread-item.is-active .spread-title-row strong {
+  color: var(--pc-gold-light);
+}
+
+.tarot-spread-item.is-active .spread-title-row span {
+  color: var(--pc-gold-bright);
+}
+
+.tarot-spread-item.is-active .spread-info-content p {
+  color: #dcd0d6;
+}
+
+.tarot-spread-item.is-active .spread-indicator-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--pc-gold-primary);
+  color: #2e1c26;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 0 12px rgba(224, 197, 142, 0.6);
+}
+
+/* ==========================================================================
+   ACTIVE READING STAGE (When cards are revealed & AI interpretation streams)
+   ========================================================================== */
+.tarot-reading-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Card Back Design using Celestial Compass */
+.numina-card-back {
+  background: #2b1a25 url('/tarot/UI_item/Celestial%20Compass%20Tarot%20Card%20Back.png') center/cover no-repeat !important;
+  border: 1px solid rgba(224, 197, 142, 0.6) !important;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .tarot-sanctuary-stage {
+    padding: 16px clamp(16px, 3.2vw, 42px) 56px;
+  }
+  .sanctuary-flank {
+    display: none;
+  }
+  .tarot-parchment-accents {
+    right: -24px;
+    transform: scale(0.88);
+  }
+}
+
+@media (max-width: 1040px) {
+  .tarot-stage-grid {
+    grid-template-columns: 1fr;
+  }
+  .tarot-parchment-accents {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 20px auto 0;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .tarot-sanctuary-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tarot-banner-quote {
+    text-align: left;
+    padding: 0;
+  }
+  .tarot-banner-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .tarot-board-parchment,
+  .tarot-board-plum {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+  .tarot-question-headline {
+    font-size: 28px;
+  }
+}
+
+/* ==========================================================================
+   READING MODE - DEDICATED SCROLL MECHANISM FOR INTERPRETATION
+   ========================================================================== */
+.tarot-reading-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.tarot-sanctuary-stage:has(.tarot-reading-container) {
+  min-height: calc(100vh - 120px);
+}
+
+.numina-reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.numina-reading-main {
+  min-width: 0;
+  max-height: calc(100vh - 205px);
+  min-height: 560px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 32px clamp(20px, 3.5vw, 44px) 48px !important;
+  background: #faf5ec !important;
+  border: 1px solid rgba(215, 195, 170, 0.85) !important;
+  border-radius: 28px !important;
+  box-shadow: 
+    0 8px 30px rgba(45, 25, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 145, 110, 0.5) rgba(240, 230, 218, 0.35);
+}
+
+/* Custom Paper-Cut Scrollbar for Reading Content */
+.numina-reading-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.numina-reading-main::-webkit-scrollbar-track {
+  background: rgba(235, 224, 210, 0.45);
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.numina-reading-main::-webkit-scrollbar-thumb {
+  background: rgba(180, 145, 110, 0.55);
+  border-radius: 8px;
+  border: 2px solid #faf5ec;
+}
+
+.numina-reading-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 115, 80, 0.8);
+}
+
+.numina-reading-aside {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 205px);
+  overflow-y: auto;
+  padding: 24px 20px !important;
+  background: #3e2835 !important;
+  border: 1px solid rgba(224, 197, 142, 0.35) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 10px 28px rgba(35, 15, 25, 0.16) !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(224, 197, 142, 0.3) transparent;
+}
+
