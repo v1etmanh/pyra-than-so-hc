@@ -19,10 +19,11 @@ interface AuthContextType {
   profile: UserProfile | null;
   isLoading: boolean;
   isAuthModalOpen: boolean;
-  authModalMode: 'signin' | 'signup' | 'forgot';
-  openAuthModal: (mode?: 'signin' | 'signup' | 'forgot') => void;
+  authModalMode: 'signin' | 'signup' | 'forgot' | 'new_password';
+  openAuthModal: (mode?: 'signin' | 'signup' | 'forgot' | 'new_password') => void;
   closeAuthModal: () => void;
   signInWithPassword: (email: string, password: string) => Promise<{ error: AuthError | Error | null }>;
+  signInWithGoogle: () => Promise<{ error: AuthError | Error | null }>;
   signUp: (
     email: string,
     password: string,
@@ -31,6 +32,7 @@ interface AuthContextType {
   signOut: () => Promise<void>;
   deleteAccount: () => Promise<{ error: Error | null }>;
   resetPasswordForEmail: (email: string) => Promise<{ error: AuthError | Error | null }>;
+  updatePassword: (newPassword: string) => Promise<{ error: AuthError | Error | null }>;
   updateUserProfile: (updates: { full_name?: string; avatar_url?: string }) => Promise<{ error: Error | null }>;
   refreshProfile: () => Promise<void>;
 }
@@ -44,7 +46,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
-  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup' | 'forgot'>('signin');
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup' | 'forgot' | 'new_password'>('signin');
 
   const fetchProfile = useCallback(
     async (userId: string, userEmail?: string) => {
@@ -83,6 +85,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let isMounted = true;
 
+    // Check if redirected from a password recovery link
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (url.searchParams.get('reset_password') === 'true' || url.hash.includes('type=recovery')) {
+        setAuthModalMode('new_password');
+        setIsAuthModalOpen(true);
+      }
+    }
+
     // Get initial active session
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!isMounted) return;
@@ -97,10 +108,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Listen for real-time auth changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (!isMounted) return;
       setSession(session);
       setUser(session?.user ?? null);
+
+      if (event === 'PASSWORD_RECOVERY') {
+        setAuthModalMode('new_password');
+        setIsAuthModalOpen(true);
+      }
 
       if (session?.user) {
         await fetchProfile(session.user.id, session.user.email);
@@ -116,7 +132,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [supabase, fetchProfile]);
 
-  const openAuthModal = useCallback((mode: 'signin' | 'signup' | 'forgot' = 'signin') => {
+  const openAuthModal = useCallback((mode: 'signin' | 'signup' | 'forgot' | 'new_password' = 'signin') => {
     setAuthModalMode(mode);
     setIsAuthModalOpen(true);
   }, []);
@@ -151,6 +167,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     },
     [supabase, fetchProfile]
   );
+
+  const signInWithGoogle = useCallback(async () => {
+    try {
+      const redirectTo = typeof window !== 'undefined'
+        ? `${window.location.origin}/api/auth/callback?next=/account`
+        : undefined;
+
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+        },
+      });
+      return { error };
+    } catch (err) {
+      return { error: err instanceof Error ? err : new Error('Google login failed') };
+    }
+  }, [supabase]);
 
   const signUp = useCallback(
     async (email: string, password: string, fullName?: string) => {
@@ -228,12 +266,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const resetPasswordForEmail = useCallback(
     async (email: string) => {
       try {
+        const redirectTo = typeof window !== 'undefined' 
+          ? `${window.location.origin}/api/auth/callback?next=/account?reset_password=true` 
+          : undefined;
+
         const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-          redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/account` : undefined,
+          redirectTo,
         });
         return { error };
       } catch (err) {
         return { error: err instanceof Error ? err : new Error('Password reset request failed') };
+      }
+    },
+    [supabase]
+  );
+
+  const updatePassword = useCallback(
+    async (newPassword: string) => {
+      try {
+        const { error } = await supabase.auth.updateUser({
+          password: newPassword,
+        });
+        return { error };
+      } catch (err) {
+        return { error: err instanceof Error ? err : new Error('Update password failed') };
       }
     },
     [supabase]
@@ -285,10 +341,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       openAuthModal,
       closeAuthModal,
       signInWithPassword,
+      signInWithGoogle,
       signUp,
       signOut,
       deleteAccount,
       resetPasswordForEmail,
+      updatePassword,
       updateUserProfile,
       refreshProfile,
     }),
@@ -302,10 +360,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       openAuthModal,
       closeAuthModal,
       signInWithPassword,
+      signInWithGoogle,
       signUp,
       signOut,
       deleteAccount,
       resetPasswordForEmail,
+      updatePassword,
       updateUserProfile,
       refreshProfile,
     ]
