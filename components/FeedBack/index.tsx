@@ -16,7 +16,7 @@ export const Feeacback = ({ isHeader = false }: { isHeader?: boolean }) => {
 
   return (
     <Box>
-      <Tooltip label={t('tooltip', { email: 'bumlowkey@proton.me' })} hasArrow>
+      <Tooltip label={t('tooltip', { email: 'mqnyle@gmail.com' })} hasArrow>
         <Flex
           as="button"
           onClick={openSurveyManually}
@@ -27,7 +27,7 @@ export const Feeacback = ({ isHeader = false }: { isHeader?: boolean }) => {
           color={textColor}
           _hover={{ bg: hoverBg }}
           transition="all 0.2s"
-          aria-label={t('tooltip', { email: 'bumlowkey@proton.me' })}
+          aria-label={t('tooltip', { email: 'mqnyle@gmail.com' })}
         >
           <Icon as={MdOutlineFeedback} boxSize={5} />
         </Flex>
