@@ -988,3 +988,133 @@
   scrollbar-color: rgba(224, 197, 142, 0.3) transparent;
 }
 
+/* ==========================================================================
+   READING MODE RESPONSIVE BREAKPOINTS (FIX PHONE / TABLET CRUSH)
+   ========================================================================== */
+@media (max-width: 1040px) {
+  .numina-reading-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .numina-reading-main {
+    max-height: none !important;
+    min-height: auto !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    padding: 28px clamp(18px, 3.5vw, 36px) 36px !important;
+    border-radius: 24px !important;
+  }
+
+  .numina-reading-aside {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding: 24px 20px !important;
+    border-radius: 24px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .tarot-sanctuary-stage:has(.tarot-reading-container) {
+    min-height: auto !important;
+    padding: 12px 10px 48px !important;
+  }
+
+  /* Fix tools bar on phones: prevent button wrapping and allow select to fill nicely */
+  .tarot-banner-tools {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  .tarot-history-box {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .tarot-history-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .tarot-btn-new-reading {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .numina-reading-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .numina-reading-main {
+    padding: 20px 14px 28px !important;
+    border-radius: 18px !important;
+  }
+
+  .numina-reading-question {
+    margin-bottom: 20px !important;
+  }
+
+  .numina-reading-question h2 {
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .numina-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+    gap: 14px 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Single card: center elegantly */
+  .numina-card-grid:has(> .numina-card:only-child) {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .numina-card-grid.is-celtic {
+    grid-template-columns: repeat(5, minmax(84px, 1fr)) !important;
+    overflow-x: auto !important;
+    padding-bottom: 8px !important;
+  }
+
+  .numina-card-stage {
+    width: min(100%, 140px) !important;
+  }
+
+  .numina-interpretation {
+    padding: 16px 14px !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    border-radius: 14px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .numina-reading-aside {
+    display: block !important;
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .numina-reading-aside button {
+    min-height: 44px !important;
+    margin-top: 8px !important;
+    font-size: 13px !important;
+  }
+}
+
+
