@@ -11,7 +11,7 @@ import '@/styles/chani-globals.css';
 import { AnalyticsConsent } from '@/components/AnalyticsConsent';
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://numerology-app.site';
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://numelyra.online';
 
 export async function generateMetadata({
   params

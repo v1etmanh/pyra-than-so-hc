@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://numerology-app.site';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://numelyra.online';
 
 export default function robots(): MetadataRoute.Robots {
   return {
