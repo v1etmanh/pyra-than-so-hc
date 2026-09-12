@@ -3,26 +3,32 @@ const PAYPAL_LIVE_API = 'https://api-m.paypal.com';
 
 type JsonRecord = Record<string, unknown>;
 
+function cleanEnv(val?: string): string {
+  return val ? val.trim().replace(/^['"]|['"]$/g, '') : '';
+}
+
 function paypalApiBase(): string {
-  return process.env.PAYPAL_ENV === 'live' ? PAYPAL_LIVE_API : PAYPAL_SANDBOX_API;
+  const env = cleanEnv(process.env.PAYPAL_ENV).toLowerCase();
+  return env === 'live' ? PAYPAL_LIVE_API : PAYPAL_SANDBOX_API;
 }
 
 function paypalCredentials(): { clientId: string; secret: string } {
-  const clientId = process.env.PAYPAL_CLIENT_ID?.trim();
-  const secret = process.env.PAYPAL_CLIENT_SECRET?.trim();
+  const clientId = cleanEnv(process.env.PAYPAL_CLIENT_ID);
+  const secret = cleanEnv(process.env.PAYPAL_CLIENT_SECRET);
   if (!clientId || !secret) throw new Error('PayPal is not configured.');
   return { clientId, secret };
 }
 
 export function paypalPlanId(): string {
-  const planId = process.env.PAYPAL_PRO_PLAN_ID?.trim();
+  const planId = cleanEnv(process.env.PAYPAL_PRO_PLAN_ID);
   if (!planId) throw new Error('PAYPAL_PRO_PLAN_ID is not configured.');
   return planId;
 }
 
 async function paypalAccessToken(): Promise<string> {
   const { clientId, secret } = paypalCredentials();
-  const response = await fetch(`${paypalApiBase()}/v1/oauth2/token`, {
+  const apiBase = paypalApiBase();
+  const response = await fetch(`${apiBase}/v1/oauth2/token`, {
     method: 'POST',
     headers: {
       Authorization: `Basic ${Buffer.from(`${clientId}:${secret}`).toString('base64')}`,
@@ -33,7 +39,12 @@ async function paypalAccessToken(): Promise<string> {
   });
   const data = await response.json().catch(() => ({})) as JsonRecord;
   if (!response.ok || typeof data.access_token !== 'string') {
-    throw new Error('PayPal authentication failed.');
+    const errorDesc = typeof data.error_description === 'string'
+      ? data.error_description
+      : (typeof data.message === 'string' ? data.message : '');
+    const errCode = typeof data.error === 'string' ? data.error : `${response.status} ${response.statusText}`;
+    console.error(`[PayPalAuth] Error (${errCode}): ${errorDesc} | Endpoint: ${apiBase}`);
+    throw new Error(`PayPal authentication failed: ${errorDesc || errCode || 'Invalid client credentials'}.`);
   }
   return data.access_token;
 }
