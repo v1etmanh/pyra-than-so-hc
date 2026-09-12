@@ -74,23 +74,114 @@ const NUMBER_SEARCH_TERMS: Record<number, string> = {
   33: 'lotus tree nature',
 };
 
+const VIETNAMESE_WISH_DICTIONARY: [string, string][] = [
+  ['siêu nhân', 'superhero warrior armor'],
+  ['sieu nhan', 'superhero warrior armor'],
+  ['anime', 'anime style illustration'],
+  ['hoạt hình', 'cartoon animation character'],
+  ['hoat hinh', 'cartoon animation character'],
+  ['người máy', 'futuristic cyborg robot'],
+  ['nguoi may', 'futuristic cyborg robot'],
+  ['robot', 'futuristic robot'],
+  ['chiến binh', 'epic warrior hero'],
+  ['chien binh', 'epic warrior hero'],
+  ['rồng', 'mythical dragon fantasy'],
+  ['rong', 'mythical dragon fantasy'],
+  ['phượng hoàng', 'phoenix fire bird fantasy'],
+  ['phuong hoang', 'phoenix fire bird fantasy'],
+  ['hoa sen', 'sacred lotus flower'],
+  ['hoa hồng', 'romantic blooming roses'],
+  ['hoa hong', 'romantic blooming roses'],
+  ['mèo', 'cute aesthetic cat'],
+  ['meo', 'cute aesthetic cat'],
+  ['chó', 'faithful dog pet'],
+  ['cho', 'faithful dog pet'],
+  ['sư tử', 'majestic golden lion'],
+  ['su tu', 'majestic golden lion'],
+  ['hổ', 'powerful majestic tiger'],
+  ['ho', 'powerful majestic tiger'],
+  ['đại bàng', 'soaring majestic eagle'],
+  ['dai bang', 'soaring majestic eagle'],
+  ['sói', 'mystical lone wolf'],
+  ['soi', 'mystical lone wolf'],
+  ['xe hơi', 'modern luxury supercar'],
+  ['xe hoi', 'modern luxury supercar'],
+  ['siêu xe', 'futuristic supercar'],
+  ['sieu xe', 'futuristic supercar'],
+  ['ô tô', 'modern sports car'],
+  ['o to', 'modern sports car'],
+  ['vũ trụ', 'deep cosmic galaxy stars'],
+  ['vu tru', 'deep cosmic galaxy stars'],
+  ['thiên hà', 'cosmic nebula galaxy'],
+  ['thien ha', 'cosmic nebula galaxy'],
+  ['mặt trời', 'radiant golden sun sunrise'],
+  ['mat troi', 'radiant golden sun sunrise'],
+  ['mặt trăng', 'mystical luminous moon'],
+  ['mat trang', 'mystical luminous moon'],
+  ['biển', 'tropical blue ocean waves'],
+  ['bien', 'tropical blue ocean waves'],
+  ['núi', 'majestic mountain peak nature'],
+  ['nui', 'majestic mountain peak nature'],
+  ['thác nước', 'tranquil waterfall landscape'],
+  ['thac nuoc', 'tranquil waterfall landscape'],
+  ['tiền', 'gold coins wealth abundance'],
+  ['tien', 'gold coins wealth abundance'],
+  ['vàng', 'golden luxury treasure'],
+  ['vang', 'golden luxury treasure'],
+  ['tài lộc', 'prosperity wealth abundance'],
+  ['tai loc', 'prosperity wealth abundance'],
+  ['bình an', 'zen tranquil meditation peace'],
+  ['binh an', 'zen tranquil meditation peace'],
+  ['tình yêu', 'romantic gentle love hearts'],
+  ['tinh yeu', 'romantic gentle love hearts'],
+];
+
+function translateWishToSearchTerms(wish: string): string {
+  let result = wish.toLowerCase().trim();
+
+  for (const [vi, en] of VIETNAMESE_WISH_DICTIONARY) {
+    if (result.includes(vi)) {
+      result = result.replace(new RegExp(vi, 'g'), ` ${en} `);
+    }
+  }
+
+  return result
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function buildWallpaperSearchQueries(input: PromptBuilderInput): string[] {
   const intention = INTENTION_SEARCH_TERMS[input.intentionId || 'wealth'] || INTENTION_SEARCH_TERMS.wealth;
   const style = STYLE_SEARCH_TERMS[input.styleId || 'sacred_geometry'] || STYLE_SEARCH_TERMS.sacred_geometry;
   const number = NUMBER_SEARCH_TERMS[Number(input.lifePathNumber) || 1] || NUMBER_SEARCH_TERMS[1];
-  const customWish = input.customWish?.replace(/[^a-zA-Z0-9À-ỹ\s-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 48);
 
-  const queries = [
-    customWish ? `${customWish} ${intention} ${style}` : '',
-    `${intention} ${style} ${number}`,
-    `${intention} ${number}`,
-    `${style} ${number}`,
-    `${intention} ${style}`,
-    `${number} nature background`,
-    `${style} abstract background`,
-  ].filter(Boolean);
+  const rawWish = input.customWish?.trim() || '';
+  const translatedWish = rawWish ? translateWishToSearchTerms(rawWish) : '';
 
-  return Array.from(new Set(queries)).slice(0, 6);
+  const queries: string[] = [];
+  if (translatedWish) {
+    const wishWords = translatedWish.split(' ').filter(Boolean).slice(0, 4).join(' ');
+    if (wishWords) {
+      queries.push(`${wishWords} wallpaper background`);
+      queries.push(`${wishWords} ${style.split(' ').slice(0, 2).join(' ')}`);
+      queries.push(`${wishWords} illustration art`);
+      queries.push(`${wishWords} character art`);
+      queries.push(`${wishWords} ${intention.split(' ').slice(0, 2).join(' ')}`);
+      queries.push(`${wishWords} poster`);
+    }
+  } else {
+    queries.push(`${intention} ${style} ${number}`);
+    queries.push(`${intention} ${number}`);
+    queries.push(`${style} ${number}`);
+    queries.push(`${intention} ${style}`);
+    queries.push(`${number} nature background`);
+    queries.push(`${style} abstract background`);
+  }
+
+  return Array.from(new Set(queries.map((q) => q.replace(/\s+/g, ' ').trim()))).filter(Boolean).slice(0, 6);
 }
 
 export function buildLuckyWallpaperPrompt(input: PromptBuilderInput): GeneratedWallpaperPlan {
@@ -127,15 +218,20 @@ export function buildLuckyWallpaperPrompt(input: PromptBuilderInput): GeneratedW
   // Symbols and motifs
   const symbols_en = `${lpAesthetics.sacredSymbol_en}, ${dayAesthetics.keywords_en.join(', ')}`;
 
-  // Custom wish touch
-  const customWishPart = input.customWish?.trim()
-    ? `, infused with ${input.customWish.trim()}`
-    : '';
+  // Custom wish touch - elevated to primary subject when present
+  const rawWish = input.customWish?.trim() || '';
+  const translatedWish = rawWish ? translateWishToSearchTerms(rawWish) : '';
+
+  let centralSubjectDescription = `Sacred numerological energy manifestation of Number ${lpNum} and Day ${dayNum}, featuring ${symbols_en}`;
+  if (rawWish) {
+    const wishSubject = translatedWish || rawWish;
+    centralSubjectDescription = `${wishSubject} (${rawWish}), harmonized with sacred numerological energy of Number ${lpNum} and Day ${dayNum}, featuring ${symbols_en}`;
+  }
 
   // Prompt Construction for FLUX / SD
   const prompt = [
     `Masterpiece digital wallpaper artwork, ${style.name_en} aesthetic.`,
-    `Central subject: Sacred numerological energy manifestation of Number ${lpNum} and Day ${dayNum}, featuring ${symbols_en}${customWishPart}.`,
+    `Central subject: ${centralSubjectDescription}.`,
     `Intention and aura: ${intention.prompt_keywords}.`,
     `Color palette: Harmonized radiant ${colorString_en}, luminous volumetric glow, ethereal rim lighting.`,
     `Atmosphere and details: ${style.prompt_modifiers}, deep contrast, crystalline reflections, subtle cosmic stardust, majestic flow of energy.`,
@@ -146,9 +242,15 @@ export function buildLuckyWallpaperPrompt(input: PromptBuilderInput): GeneratedW
     'blurry, low quality, distorted, deformed, text, watermark, signature, ugly, grain, lowres, oversaturated, pixelated, bad proportions, bad anatomy, cropped';
 
   // Numerological Explanations
-  const explanation_vi = `Hình nền này được kiến tạo riêng cho bạn bằng cách hội tụ năng lượng Số chủ đạo ${lpNum} (${lpAesthetics.name_vi}) cùng nhịp điệu Ngày cá nhân ${dayNum} (${dayAesthetics.name_vi}). Với sắc màu may mắn chủ đạo là ${combinedColors_vi.slice(0, 3).join(', ')}, bức tranh kích hoạt trường năng lượng "${intention.name_vi}", hỗ trợ bạn duy trì sự vững tâm, thu hút phước lành và bứt phá mục tiêu hôm nay.`;
+  const customWishNoticeVi = input.customWish?.trim()
+    ? ` Hình ảnh được kết tinh theo tâm nguyện: "${input.customWish.trim()}", hòa quyện hài hòa cùng thần thái phong cách ${style.name_vi}.`
+    : '';
+  const explanation_vi = `Hình nền này được kiến tạo riêng cho bạn bằng cách hội tụ năng lượng Số chủ đạo ${lpNum} (${lpAesthetics.name_vi}) cùng nhịp điệu Ngày cá nhân ${dayNum} (${dayAesthetics.name_vi}). Với sắc màu may mắn chủ đạo là ${combinedColors_vi.slice(0, 3).join(', ')}, bức tranh kích hoạt trường năng lượng "${intention.name_vi}", hỗ trợ bạn duy trì sự vững tâm, thu hút phước lành và bứt phá mục tiêu hôm nay.${customWishNoticeVi}`;
 
-  const explanation_en = `This lucky wallpaper is personalized by aligning your Life Path Number ${lpNum} (${lpAesthetics.name_en}) with Personal Day ${dayNum} (${dayAesthetics.name_en}). Radiating in your lucky palette of ${combinedColors_en.slice(0, 3).join(', ')}, it activates the energetic vibration of "${intention.name_en}", protecting your mindset and inviting positive breakthroughs today.`;
+  const customWishNoticeEn = input.customWish?.trim()
+    ? ` Visual theme resonates with your personal wish: "${input.customWish.trim()}", seamlessly harmonized with the ${style.name_en} aesthetic.`
+    : '';
+  const explanation_en = `This lucky wallpaper is personalized by aligning your Life Path Number ${lpNum} (${lpAesthetics.name_en}) with Personal Day ${dayNum} (${dayAesthetics.name_en}). Radiating in your lucky palette of ${combinedColors_en.slice(0, 3).join(', ')}, it activates the energetic vibration of "${intention.name_en}", protecting your mindset and inviting positive breakthroughs today.${customWishNoticeEn}`;
 
   return {
     prompt,

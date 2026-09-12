@@ -1043,16 +1043,18 @@ export function EditorsPicksPage() {
 
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationError, setGenerationError] = useState("");
-  const [remainingQuota, setRemainingQuota] = useState<number | null>(() => {
-    if (typeof window === "undefined") return null;
+  const [remainingQuota, setRemainingQuota] = useState<number | null>(null);
+
+  useEffect(() => {
     try {
       const today = new Date().toISOString().slice(0, 10);
       const saved = localStorage.getItem(`numina_wallpaper_remaining_${today}`);
-      return saved !== null ? Number(saved) : null;
-    } catch {
-      return null;
-    }
-  });
+      if (saved !== null) {
+        setRemainingQuota(Number(saved));
+      }
+    } catch {}
+  }, []);
+
   const [generatedData, setGeneratedData] = useState<{
     imageUrl: string;
     explanation_vi: string;
@@ -1060,7 +1062,7 @@ export function EditorsPicksPage() {
     luckyColors_vi: string[];
     searchQuery?: string;
     attribution?: {
-      provider: "Pixabay" | "Pexels";
+      provider: "Pixabay" | "Pexels" | "Cloudflare AI" | string;
       creator: string;
       creatorUrl?: string;
       sourcePageUrl: string;

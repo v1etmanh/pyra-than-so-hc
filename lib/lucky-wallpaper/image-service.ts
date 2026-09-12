@@ -1,6 +1,8 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
-export type WallpaperImageProvider = 'pixabay' | 'pexels';
+export type WallpaperImageProvider = 'pixabay' | 'pexels' | 'cloudflare';
 
 export interface GenerateImageOptions {
   queries: string[];
@@ -14,7 +16,7 @@ export interface GenerateImageOptions {
 }
 
 export interface WallpaperAttribution {
-  provider: 'Pixabay' | 'Pexels';
+  provider: 'Pixabay' | 'Pexels' | 'Cloudflare AI';
   creator: string;
   creatorUrl?: string;
   sourcePageUrl: string;
@@ -25,7 +27,7 @@ export interface ImageGenerationResult {
   imageUrl: string;
   seed: number;
   provider: WallpaperImageProvider;
-  model: 'stock-photo';
+  model: 'stock-photo' | 'flux-1-schnell' | string;
   width: number;
   height: number;
   sourceId: string;
@@ -51,6 +53,7 @@ interface StockPhotoCandidate {
 const PROVIDER_URLS: Record<WallpaperImageProvider, string> = {
   pixabay: 'https://pixabay.com',
   pexels: 'https://www.pexels.com',
+  cloudflare: 'https://cloudflare.com',
 };
 
 function clampQuery(query: string): string {
@@ -98,7 +101,7 @@ function buildProxyUrl(remoteUrl: string, provider: WallpaperImageProvider): str
 
 export function verifyWallpaperAssetToken(token: string, signature: string): {
   url: string;
-  provider: WallpaperImageProvider;
+  provider: 'pixabay' | 'pexels';
 } | null {
   try {
     const expected = Buffer.from(signAssetToken(token));
@@ -125,6 +128,17 @@ export function verifyWallpaperAssetToken(token: string, signature: string): {
   }
 }
 
+const ARTISTIC_QUERY_TERMS = new Set([
+  'anime', 'manga', 'illustration', 'cartoon', 'comic',
+  'drawing', 'vector', 'clipart', 'superhero', 'character',
+  'painting', 'artwork',
+]);
+
+function isArtisticQuery(query: string): boolean {
+  const words = query.toLowerCase().split(/[\s-]+/);
+  return words.some((word) => ARTISTIC_QUERY_TERMS.has(word));
+}
+
 async function searchPixabay(
   query: string,
   width: number,
@@ -135,23 +149,35 @@ async function searchPixabay(
   const apiKey = getPixabayKey();
   if (!apiKey) return [];
 
-  const params = new URLSearchParams({
-    key: apiKey,
-    q: clampQuery(query),
-    lang: 'en',
-    image_type: 'all',
-    orientation: orientationForPixabay(width, height),
-    min_width: String(Math.min(width, 1920)),
-    min_height: String(Math.min(height, 1920)),
-    safesearch: 'true',
-    order: 'popular',
-    per_page: '50',
-  });
-  const response = await fetchImpl(`https://pixabay.com/api/?${params}`, { signal });
-  if (!response.ok) throw new Error(`Pixabay returned HTTP ${response.status}.`);
+  const clamped = clampQuery(query);
+  const preferredImageType = isArtisticQuery(clamped) ? 'illustration' : 'all';
 
-  const data = (await response.json()) as { hits?: Array<Record<string, unknown>> };
-  return (data.hits || []).flatMap((hit) => {
+  const requestPixabay = async (imageType: 'all' | 'illustration' | 'photo' | 'vector') => {
+    const params = new URLSearchParams({
+      key: apiKey,
+      q: clamped,
+      lang: 'en',
+      image_type: imageType,
+      orientation: orientationForPixabay(width, height),
+      min_width: String(Math.min(width, 1920)),
+      min_height: String(Math.min(height, 1920)),
+      safesearch: 'true',
+      order: 'popular',
+      per_page: '50',
+    });
+    const response = await fetchImpl(`https://pixabay.com/api/?${params}`, { signal });
+    if (!response.ok) throw new Error(`Pixabay returned HTTP ${response.status}.`);
+
+    const data = (await response.json()) as { hits?: Array<Record<string, unknown>> };
+    return data.hits || [];
+  };
+
+  let hits = await requestPixabay(preferredImageType);
+  if (hits.length === 0 && preferredImageType !== 'all') {
+    hits = await requestPixabay('all');
+  }
+
+  return hits.flatMap((hit) => {
     const remoteUrl = String(hit.fullHDURL || hit.largeImageURL || hit.webformatURL || '');
     const sourcePageUrl = String(hit.pageURL || '');
     if (!remoteUrl || !sourcePageUrl) return [];
@@ -332,6 +358,105 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
     failedProviders: Array.from(failedProviders),
     hadSuccessfulResponse,
   };
+}
+
+export async function generateViaCloudflare(
+  prompt: string,
+  width: number = 720,
+  height: number = 1280,
+  seed: number = Math.floor(Math.random() * 10_000_000),
+  fetchImpl: typeof fetch = fetch
+): Promise<ImageGenerationResult | null> {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
+  const targetModel = process.env.CLOUDFLARE_IMAGE_MODEL?.trim() || '@cf/black-forest-labs/flux-1-schnell';
+
+  if (!accountId || !apiToken) {
+    console.warn('[Cloudflare AI] Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN in environment');
+    return null;
+  }
+
+  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${targetModel}`;
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25_000);
+
+    const body: Record<string, unknown> = {
+      prompt: prompt.trim(),
+    };
+
+    if (targetModel.includes('flux-1-schnell')) {
+      body.steps = 4;
+    }
+
+    const resp = await fetchImpl(endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!resp.ok) {
+      const errText = await resp.text().catch(() => '');
+      console.warn(`[Cloudflare AI] HTTP ${resp.status}:`, errText);
+      return null;
+    }
+
+    const data = (await resp.json()) as {
+      result?: { image?: string };
+      image?: string;
+    };
+    const base64Data: string | undefined = data?.result?.image || data?.image;
+
+    if (!base64Data) {
+      console.warn('[Cloudflare AI] No image data returned in response');
+      return null;
+    }
+
+    let imageUrl = `data:image/jpeg;base64,${base64Data}`;
+
+    // Save image to public directory for fast, clean URL serving
+    try {
+      const imageBuffer = Buffer.from(base64Data, 'base64');
+      const publicDir = path.resolve(process.cwd(), 'public', 'images', 'lucky-wallpapers');
+      if (!fs.existsSync(publicDir)) {
+        fs.mkdirSync(publicDir, { recursive: true });
+      }
+
+      const filename = `lucky_cf_${seed}_${width}x${height}.jpg`;
+      const filePath = path.join(publicDir, filename);
+      fs.writeFileSync(filePath, imageBuffer);
+      imageUrl = `/images/lucky-wallpapers/${filename}`;
+    } catch (saveErr) {
+      console.warn('[Cloudflare AI] Could not write file to disk, using data URL fallback:', saveErr);
+    }
+
+    return {
+      imageUrl,
+      seed,
+      provider: 'cloudflare',
+      model: 'flux-1-schnell',
+      width,
+      height,
+      sourceId: `cf-${seed}`,
+      query: prompt,
+      attribution: {
+        provider: 'Cloudflare AI',
+        creator: 'Flux-1-schnell',
+        sourcePageUrl: 'https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/',
+        providerUrl: 'https://cloudflare.com',
+      },
+    };
+  } catch (err) {
+    console.warn('[Cloudflare AI] Generation request failed:', err);
+    return null;
+  }
 }
 
 export async function generateWallpaperImage(options: GenerateImageOptions): Promise<ImageGenerationResult> {

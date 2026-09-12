@@ -8,6 +8,7 @@ import {
 } from '../lib/lucky-wallpaper/image-service.ts';
 import { normalizeWallpaperQueries } from '../lib/lucky-wallpaper/keyword-service.ts';
 import { findWallpaperWithAiKeywords } from '../lib/lucky-wallpaper/wallpaper-workflow.ts';
+import { buildWallpaperSearchQueries } from '../lib/lucky-wallpaper/prompt-builder.ts';
 
 const originalEnv = {
   pixabay: process.env.PIXABAY_API_KEY,
@@ -265,3 +266,161 @@ test('provider outage does not trigger a second AI keyword batch', async () => {
 test('wallpaper asset token verification rejects invalid proxies', () => {
   assert.equal(verifyWallpaperAssetToken('invalid-token', 'invalid-sig'), null);
 });
+
+test('buildWallpaperSearchQueries translates Vietnamese custom wish into top queries', () => {
+  const queries = buildWallpaperSearchQueries({
+    lifePathNumber: 7,
+    intentionId: 'wealth',
+    styleId: 'luxury_gold_3d',
+    customWish: 'hình ảnh anime siêu nhân',
+  });
+
+  assert.ok(queries.length >= 3);
+  const firstQuery = queries[0];
+  assert.match(firstQuery, /anime|superhero|warrior/i);
+  assert.match(queries[1], /anime|superhero|gold/i);
+});
+
+test('Pixabay uses illustration image_type when query contains anime/superhero keywords', async () => {
+  configureStockTestEnv();
+  const calls: string[] = [];
+  const fetchImpl: typeof fetch = async (input) => {
+    const url = new URL(String(input));
+    calls.push(url.toString());
+    assert.equal(url.searchParams.get('image_type'), 'illustration');
+    return pixabayResponse([{
+      id: 999,
+      imageWidth: 1080,
+      imageHeight: 1920,
+      pageURL: 'https://pixabay.com/illustrations/anime-superhero-999/',
+      largeImageURL: 'https://cdn.pixabay.com/photo/anime-superhero-999.jpg',
+      user: 'AnimeArtist',
+    }]);
+  };
+
+  const outcome = await searchWallpaperImage({
+    queries: ['anime superhero warrior'],
+    width: 720,
+    height: 1280,
+    seed: 99,
+    fetchImpl,
+  });
+
+  assert.equal(outcome.result?.sourceId, '999');
+  assert.equal(outcome.result?.provider, 'pixabay');
+  assert.equal(calls.length, 1);
+});
+
+test('workflow falls back to Cloudflare drawing when stock photo providers return no suitable images', async () => {
+  let drawCalled = false;
+  let receivedPrompt = '';
+
+  const result = await findWallpaperWithAiKeywords({
+    input: {
+      lifePathNumber: 7,
+      personalDay: 1,
+      styleId: 'luxury_gold_3d',
+      intentionId: 'wealth',
+      customWish: 'hình ảnh anime siêu nhân',
+    },
+    width: 720,
+    height: 1280,
+    seed: 77,
+  }, {
+    generateKeywords: async () => ({
+      queries: ['anime superhero warrior'],
+      source: 'ai',
+      round: 1,
+      aiProvider: 'Groq',
+      aiModel: 'gpt-oss-20b',
+    }),
+    searchImages: async (options) => ({
+      result: null,
+      attemptedQueries: options.queries,
+      failedProviders: [],
+      hadSuccessfulResponse: true,
+    }),
+    fallbackQueries: () => ['superhero anime wallpaper'],
+    drawWithCloudflare: async (prompt, width = 720, height = 1280, seed = 77) => {
+      drawCalled = true;
+      receivedPrompt = prompt;
+      return {
+        imageUrl: `/images/lucky-wallpapers/lucky_cf_${seed}_${width}x${height}.jpg`,
+        seed,
+        provider: 'cloudflare',
+        model: 'flux-1-schnell',
+        width,
+        height,
+        sourceId: `cf-${seed}`,
+        query: prompt,
+        attribution: {
+          provider: 'Cloudflare AI',
+          creator: 'Flux-1-schnell',
+          sourcePageUrl: 'https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/',
+          providerUrl: 'https://cloudflare.com',
+        },
+      };
+    },
+  });
+
+  assert.equal(drawCalled, true);
+  assert.match(receivedPrompt, /anime/i);
+  assert.match(receivedPrompt, /superhero/i);
+  assert.equal(result.image.provider, 'cloudflare');
+  assert.equal(result.image.model, 'flux-1-schnell');
+  assert.equal(result.aiProvider, 'Cloudflare Workers AI');
+});
+
+test('workflow falls back to Cloudflare drawing when stock photo providers fail completely', async () => {
+  let drawCalled = false;
+
+  const result = await findWallpaperWithAiKeywords({
+    input: {
+      lifePathNumber: 8,
+      intentionId: 'wealth',
+    },
+    width: 720,
+    height: 1280,
+    seed: 88,
+  }, {
+    generateKeywords: async () => ({
+      queries: ['gold prosperity abstract'],
+      source: 'ai',
+      round: 1,
+      aiProvider: 'Groq',
+      aiModel: 'gpt-oss-20b',
+    }),
+    searchImages: async (options) => ({
+      result: null,
+      attemptedQueries: options.queries,
+      failedProviders: ['pixabay', 'pexels'],
+      hadSuccessfulResponse: false,
+    }),
+    fallbackQueries: () => ['gold prosperity abstract'],
+    drawWithCloudflare: async (_prompt, width = 720, height = 1280, seed = 88) => {
+      drawCalled = true;
+      return {
+        imageUrl: `/images/lucky-wallpapers/lucky_cf_${seed}_${width}x${height}.jpg`,
+        seed,
+        provider: 'cloudflare',
+        model: 'flux-1-schnell',
+        width,
+        height,
+        sourceId: `cf-${seed}`,
+        query: 'gold prosperity',
+        attribution: {
+          provider: 'Cloudflare AI',
+          creator: 'Flux-1-schnell',
+          sourcePageUrl: 'https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/',
+          providerUrl: 'https://cloudflare.com',
+        },
+      };
+    },
+  });
+
+  assert.equal(drawCalled, true);
+  assert.equal(result.image.provider, 'cloudflare');
+  assert.equal(result.aiProvider, 'Cloudflare Workers AI');
+});
+
+

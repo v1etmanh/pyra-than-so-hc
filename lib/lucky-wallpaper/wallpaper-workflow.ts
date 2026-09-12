@@ -3,6 +3,7 @@ import {
   type WallpaperKeywordBatch,
 } from './keyword-service.ts';
 import {
+  generateViaCloudflare,
   searchWallpaperImage,
   type GenerateImageOptions,
   type ImageGenerationResult,
@@ -10,6 +11,7 @@ import {
   type WallpaperImageSearchOutcome,
 } from './image-service.ts';
 import {
+  buildLuckyWallpaperPrompt,
   buildWallpaperSearchQueries,
   type PromptBuilderInput,
 } from './prompt-builder.ts';
@@ -35,12 +37,14 @@ export interface WallpaperWorkflowDependencies {
   generateKeywords: typeof generateWallpaperKeywordBatch;
   searchImages: (options: GenerateImageOptions) => Promise<WallpaperImageSearchOutcome>;
   fallbackQueries: typeof buildWallpaperSearchQueries;
+  drawWithCloudflare?: typeof generateViaCloudflare;
 }
 
 const defaultDependencies: WallpaperWorkflowDependencies = {
   generateKeywords: generateWallpaperKeywordBatch,
   searchImages: searchWallpaperImage,
   fallbackQueries: buildWallpaperSearchQueries,
+  drawWithCloudflare: generateViaCloudflare,
 };
 
 function mergeProviders(
@@ -81,12 +85,40 @@ export async function findWallpaperWithAiKeywords(
     return outcome.result;
   };
 
+  const tryCloudflareFallback = async (): Promise<WallpaperWorkflowResult | null> => {
+    if (!dependencies.drawWithCloudflare) return null;
+    try {
+      const plan = buildLuckyWallpaperPrompt(options.input);
+      const drawnImage = await dependencies.drawWithCloudflare(
+        plan.prompt,
+        options.width,
+        options.height,
+        options.seed
+      );
+      if (drawnImage) {
+        return {
+          image: drawnImage,
+          keywordSource: 'ai',
+          keywordRound: 0,
+          aiProvider: 'Cloudflare Workers AI',
+          aiModel: drawnImage.model,
+        };
+      }
+    } catch (drawErr) {
+      console.warn('[Wallpaper Workflow] Cloudflare drawing fallback failed:', drawErr);
+    }
+    return null;
+  };
+
   const firstBatch = await dependencies.generateKeywords(options.input, 1, [], deadlineAt);
   if (!firstBatch) {
     const fallbackImage = await search(dependencies.fallbackQueries(options.input));
     if (fallbackImage) {
       return { image: fallbackImage, keywordSource: 'fallback', keywordRound: 0 };
     }
+    const cfFallback = await tryCloudflareFallback();
+    if (cfFallback) return cfFallback;
+
     if (!anySuccessfulStockResponse) {
       throw new Error('Các nguồn ảnh hiện không phản hồi. Vui lòng thử lại sau.');
     }
@@ -96,6 +128,9 @@ export async function findWallpaperWithAiKeywords(
   const firstImage = await search(firstBatch.queries);
   if (firstImage) return resultFromAi(firstImage, firstBatch);
   if (!anySuccessfulStockResponse) {
+    const cfFallback = await tryCloudflareFallback();
+    if (cfFallback) return cfFallback;
+
     throw new Error('Các nguồn ảnh hiện không phản hồi. Vui lòng thử lại sau.');
   }
 
@@ -115,6 +150,9 @@ export async function findWallpaperWithAiKeywords(
   if (fallbackImage) {
     return { image: fallbackImage, keywordSource: 'fallback', keywordRound: 0 };
   }
+
+  const cfFallback = await tryCloudflareFallback();
+  if (cfFallback) return cfFallback;
 
   if (!anySuccessfulStockResponse) {
     throw new Error('Các nguồn ảnh hiện không phản hồi. Vui lòng thử lại sau.');

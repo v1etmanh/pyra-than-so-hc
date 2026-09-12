@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
       device: plan.device,
       lifePathNumber: plan.lifePathNumber,
       personalDay: plan.personalDay,
-      isAIGenerated: false,
+      isAIGenerated: imageResult.provider === 'cloudflare',
       keywordSource: workflow.keywordSource,
       keywordRound: workflow.keywordRound,
       aiProvider: workflow.aiProvider,

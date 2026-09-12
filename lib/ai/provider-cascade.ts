@@ -382,11 +382,12 @@ export async function requestChatCompletion(
     maxTokens?: number;
     temperature?: number;
     timeoutMs?: number;
+    reasoningEffort?: 'low' | 'medium' | 'high';
   }
 ): Promise<Response> {
   const controller = new AbortController();
   const timeoutMs = options?.timeoutMs ?? Number(process.env.LLM_REQUEST_TIMEOUT_MS || 15000);
-  const reasoningEffort = getGeminiReasoningEffort(provider) ?? getGroqReasoningEffort(provider);
+  const reasoningEffort = options?.reasoningEffort ?? (getGeminiReasoningEffort(provider) ?? getGroqReasoningEffort(provider));
   const nvidiaThinkingOptions = getNvidiaThinkingOptions(provider, model);
   const timeout = setTimeout(
     () => controller.abort(new Error(`LLM request timed out after ${timeoutMs}ms`)),
