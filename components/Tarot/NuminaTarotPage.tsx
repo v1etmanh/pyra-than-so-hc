@@ -166,6 +166,11 @@ export function NuminaTarotPage() {
             alt="Celestial Crescent Moon & Flank"
             className="flank-bar-img"
           />
+          <img
+            src="/tarot/UI_item/cat_transparent_overlay.png"
+            alt="Guardian Black Cat"
+            className="flank-cat-foreground"
+          />
         </aside>
 
         {/* Right Outer Sanctuary Flank */}
@@ -187,28 +192,30 @@ export function NuminaTarotPage() {
             </div>
           </div>
 
-          <div className="tarot-banner-center-mountain" aria-hidden="true">
-            <img
-              src="/tarot/UI_item/Celestial%20Paper-Cut%20Mountain%20Banner.png"
-              alt=""
-              className="tarot-banner-mountain-art"
-            />
-          </div>
+          <div className="tarot-banner-center-group">
+            <div className="tarot-banner-center-mountain" aria-hidden="true">
+              <img
+                src="/tarot/UI_item/Celestial%20Paper-Cut%20Mountain%20Banner.png"
+                alt=""
+                className="tarot-banner-mountain-art"
+              />
+            </div>
 
-          <div className="tarot-banner-quote">
-            {isVietnamese ? (
-              <>
-                Đôi khi, vũ trụ trả lời
-                <br />
-                bằng sự tĩnh lặng.
-              </>
-            ) : (
-              <>
-                Sometimes, the universe
-                <br />
-                answers with silence.
-              </>
-            )}
+            <div className="tarot-banner-quote">
+              {isVietnamese ? (
+                <>
+                  Đôi khi, vũ trụ trả lời
+                  <br />
+                  bằng sự tĩnh lặng.
+                </>
+              ) : (
+                <>
+                  Sometimes the universe
+                  <br />
+                  whispers.
+                </>
+              )}
+            </div>
           </div>
 
           <div className="tarot-banner-tools">
