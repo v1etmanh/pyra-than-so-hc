@@ -135,10 +135,10 @@
 .tarot-sanctuary-banner {
   position: relative;
   width: 100%;
-  min-height: 105px;
-  margin-bottom: 24px;
-  padding: 12px 24px;
-  border-radius: 24px;
+  min-height: 76px;
+  margin-bottom: 20px;
+  padding: 8px 18px;
+  border-radius: 20px;
   background: #f7f0e4;
   border: 1px solid rgba(215, 195, 170, 0.6);
   box-shadow: 
@@ -147,7 +147,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .tarot-sanctuary-banner::before {
@@ -155,7 +155,7 @@
   position: absolute;
   inset: -4px -3px -5px -4px;
   background: #ebe0d0;
-  border-radius: 26px;
+  border-radius: 22px;
   z-index: -1;
   box-shadow: 0 8px 22px rgba(45, 25, 35, 0.08);
 }
@@ -166,21 +166,22 @@
   z-index: 3;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   background: #fcf9f2;
   border: 1px solid rgba(215, 195, 170, 0.6);
-  border-radius: 16px;
-  padding: 8px 18px 8px 12px;
+  border-radius: 14px;
+  padding: 6px 14px 6px 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
 }
 
 .tarot-banner-emblem {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #472d3c;
   color: #e6c88f;
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,21 +191,22 @@
 
 .tarot-banner-title p {
   font-family: var(--chani-mono, "Courier New", monospace);
-  font-size: 10.5px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #9c836a;
-  margin: 0 0 2px;
+  margin: 0 0 1px;
 }
 
 .tarot-banner-title h1 {
   font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 600;
   color: #2e1a25;
   margin: 0;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 /* Center Mountain & Philosophy Quote Group */
@@ -212,17 +214,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 10px;
   flex: 1;
-  margin: 0 16px;
+  margin: 0 8px;
   min-width: 0;
   z-index: 2;
+  overflow: hidden;
 }
 
 .tarot-banner-center-mountain {
   position: static;
   transform: none;
-  width: clamp(120px, 11vw, 175px);
+  width: clamp(65px, 6vw, 95px);
   height: auto;
   display: flex;
   align-items: center;
@@ -233,9 +236,9 @@
 .tarot-banner-mountain-art {
   width: 100%;
   height: auto;
-  max-height: 64px;
+  max-height: 38px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 10px rgba(45, 25, 35, 0.1));
+  filter: drop-shadow(0 3px 6px rgba(45, 25, 35, 0.08));
 }
 
 .tarot-banner-quote {
@@ -243,32 +246,33 @@
   margin: 0;
   font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
   font-style: italic;
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.3;
   color: #76635a;
-  max-width: 185px;
+  max-width: 140px;
   text-align: left;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .tarot-banner-quote {
-    font-size: 12px;
-    max-width: 155px;
-    line-height: 1.35;
+    font-size: 10.5px;
+    max-width: 120px;
+    line-height: 1.25;
   }
   .tarot-banner-center-mountain {
-    width: clamp(100px, 9vw, 140px);
+    width: clamp(55px, 5vw, 75px);
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1050px) {
   .tarot-banner-quote {
     display: none;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 800px) {
   .tarot-banner-center-group {
     display: none;
   }
@@ -278,36 +282,41 @@
 .tarot-banner-tools {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .tarot-history-box {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .tarot-history-box span {
   font-family: var(--chani-mono, "Courier New", monospace);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #857267;
 }
 
 .tarot-history-select {
-  min-height: 38px;
-  padding: 0 32px 0 12px;
-  border-radius: 12px;
+  min-height: 36px;
+  max-width: 160px;
+  padding: 0 28px 0 10px;
+  border-radius: 10px;
   border: 1px solid rgba(140, 110, 80, 0.28);
   background: rgba(255, 255, 255, 0.88);
   font-family: var(--chani-mono, "Courier New", monospace);
-  font-size: 12px;
+  font-size: 11.5px;
   color: #3a2c33;
   outline: none;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(50, 30, 40, 0.05);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tarot-history-select:focus {
@@ -318,21 +327,23 @@
 .tarot-btn-new-reading {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 42px;
-  padding: 0 20px;
-  border-radius: 14px;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 12px;
   background: linear-gradient(135deg, #4f3643 0%, #35212d 100%);
   color: var(--pc-gold-light);
   border: 1px solid rgba(224, 197, 142, 0.4);
   font-family: var(--chani-mono, "Courier New", monospace);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   cursor: pointer;
   box-shadow: 
-    0 6px 16px rgba(53, 33, 45, 0.3),
+    0 4px 12px rgba(53, 33, 45, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all 0.25s ease;
 }
 
