@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/src/i18n/routing';
-
-const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://numelyra.online').replace(/\/$/, '');
+import { localizedUrl } from '@/lib/seo/metadata';
 
 const routes = [
   { path: '', changeFrequency: 'weekly', priority: 1 },
@@ -13,11 +12,6 @@ const routes = [
   { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.3 },
   { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.3 },
 ] as const;
-
-function localizedUrl(locale: string, path: string) {
-  const localePrefix = locale === routing.defaultLocale ? '' : `/${locale}`;
-  return `${baseUrl}${localePrefix}${path}`;
-}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.flatMap((route) => {

@@ -9,9 +9,9 @@ import { Providers } from '@/app/providers';
 import { getMessages, getTranslations } from 'next-intl/server';
 import '@/styles/chani-globals.css';
 import { AnalyticsConsent } from '@/components/AnalyticsConsent';
+import { siteBaseUrl } from '@/lib/seo/metadata';
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://numelyra.online';
+const baseUrl = siteBaseUrl;
 
 export async function generateMetadata({
   params
@@ -21,26 +21,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  const alternates = routing.locales.reduce(
-    (acc, l) => {
-      acc[l] = `${baseUrl}/${l}`;
-      return acc;
-    },
-    {} as Record<string, string>
-  );
-
   return {
     title: t('title'),
     description: t('description'),
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: alternates
-    },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${baseUrl}/${locale}`,
       siteName: 'NUMELYRA Numerology',
       images: [
         {
