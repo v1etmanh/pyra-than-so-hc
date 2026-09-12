@@ -2,7 +2,7 @@
 
 ## TarotWhisper
 
-Parts of the Numina Tarot implementation were informed by and adapted from
+Parts of the NUMELYRA Tarot implementation were informed by and adapted from
 [J-York/TarotWhisper](https://github.com/J-York/TarotWhisper), revision
 `2274d271a89360d6dfd4d3109f4b932cd5eb4edf`.
 

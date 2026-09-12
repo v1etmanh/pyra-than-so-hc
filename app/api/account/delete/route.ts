@@ -26,7 +26,7 @@ export async function POST() {
     if (subscription?.provider === 'paypal' && subscription.provider_subscription_id &&
       ['ACTIVE', 'SUSPENDED', 'PAST_DUE'].includes(String(subscription.status || '').toUpperCase())) {
       try {
-        await cancelPayPalSubscription(subscription.provider_subscription_id, 'Numina account deletion');
+        await cancelPayPalSubscription(subscription.provider_subscription_id, 'NUMELYRA account deletion');
       } catch (error) {
         console.error('[AccountDelete] PayPal cancellation failed:', error);
         return NextResponse.json({ error: 'Your PayPal renewal could not be canceled. Your account was not deleted.' }, { status: 502 });

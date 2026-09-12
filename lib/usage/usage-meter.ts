@@ -168,7 +168,7 @@ export function recordAiUsage(input: {
     entry.estimatedCostUsd += Math.max(0, input.estimatedCostUsd || 0);
     entry.lastSeenAt = new Date().toISOString();
   }
-  console.info('[NuminaUsage]', JSON.stringify({
+  console.info('[NUMELYRA Usage]', JSON.stringify({
     ...input,
     day: currentDay(),
     estimatedCostUsd: Math.max(0, input.estimatedCostUsd || 0)

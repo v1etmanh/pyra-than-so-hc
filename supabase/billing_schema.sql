@@ -282,7 +282,7 @@ begin
   insert into public.numina_payment_events(
     user_id, provider, provider_event_id, provider_transaction_id, amount, currency, status, description, created_at
   ) values (
-    v_order.user_id, 'payos', p_event_id, p_transaction_id, v_order.amount, v_order.currency, 'paid', 'Numina Pro 30 days via VietQR', p_paid_at
+    v_order.user_id, 'payos', p_event_id, p_transaction_id, v_order.amount, v_order.currency, 'paid', 'NUMELYRA Pro 30 days via VietQR', p_paid_at
   );
   return jsonb_build_object('applied', true, 'plan', 'pro', 'current_period_end', v_period_end);
 end;

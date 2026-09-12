@@ -114,7 +114,7 @@ const numerologyInsights: NumerologyInsight[] = [
 ];
 
 const weeklyFrequency = {
-  label: "NUMINA AI RECOMMENDS",
+  label: "NUMELYRA AI RECOMMENDS",
   title: "Space Song",
   artist: "Beach House",
   prompt: "What should I listen to this week?",
@@ -159,7 +159,7 @@ const numerologyInsightsVi: NumerologyInsight[] = [
 ];
 
 const weeklyFrequencyVi = {
-  label: "NUMINA AI GỢI Ý",
+  label: "NUMELYRA AI GỢI Ý",
   title: "Space Song",
   artist: "Beach House",
   prompt: "Tuần này tôi nên nghe gì?",
@@ -401,7 +401,7 @@ export default function ChaniHomePage() {
           <p className="guidance-label">{card.label}</p>
           <h3>{card.title}</h3>
           <p>{card.description}</p>
-          <a className="chani-small-button" href={localize("/chat")}>{isVietnamese ? "HỎI NUMINA AI" : "ASK NUMINA AI"}</a>
+          <a className="chani-small-button" href={localize("/chat")}>{isVietnamese ? "HỎI NUMELYRA AI" : "ASK NUMELYRA AI"}</a>
         </article>)}</div>
       </section>
 
@@ -420,11 +420,11 @@ export default function ChaniHomePage() {
         <div><h2>{isVietnamese ? "Năng lượng của bạn luôn có một nơi để hướng tới." : "Your energy has somewhere to go."}</h2><a className="chani-outline-button" href={localize("/indicators")}>{isVietnamese ? "BẮT ĐẦU TẠI ĐÂY" : "BEGIN HERE"}</a></div>
       </section>
 
-      {/* Numina Pro Sacred Sanctuary Banner */}
+      {/* NUMELYRA Pro Sacred Sanctuary Banner */}
       {!isPro && (
-        <section className="home-pro-companion-banner" aria-label="Numina Pro Membership">
+        <section className="home-pro-companion-banner" aria-label="NUMELYRA Pro Membership">
           <div className="home-pro-banner-content">
-            <div className="home-pro-kicker">✦ NUMINA SACRED MEMBERSHIP</div>
+            <div className="home-pro-kicker">✦ NUMELYRA SACRED MEMBERSHIP</div>
             <h2 className="home-pro-title">
               {isVietnamese
                 ? "Khai mở toàn diện thần số, tarot & năng lượng biểu tượng"
@@ -461,9 +461,9 @@ export default function ChaniHomePage() {
       </div>}
 
       <footer className="chani-footer">
-        <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về Numina" : "About Numina"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
+        <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
         <div className="newsletter"><strong>{isVietnamese ? "ĐĂNG KÝ NHẬN BẢN TIN" : "SUBSCRIBE TO OUR NEWSLETTER"}</strong><div><input placeholder="yourname@email.com" /><button>{isVietnamese ? "ĐĂNG KÝ" : "SIGN UP"}</button></div></div>
-        <p className="copyright">© Numina 2026</p>
+        <p className="copyright">© NUMELYRA 2026</p>
       </footer>
     </main>
   );

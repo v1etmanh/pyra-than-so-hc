@@ -23,7 +23,7 @@ export function AssessmentPromptModal({
       part2:
         '\n\nNhững con số Thần số học cho bạn biết hạt mầm tiềm năng vũ trụ trao tặng — nhưng cách bạn tư duy, cách bạn đối diện với nghịch cảnh và phản ứng với cảm xúc mỗi ngày mới quyết định hạt mầm ấy sẽ nở hoa ra sao.\n\n',
       part3:
-        'Hãy dành 2 phút thực hiện bài trắc nghiệm cảm xúc khoa học (chuẩn Mini-IPIP Big Five) này. Numina sẽ kết hợp nhịp đập tâm lý cùng bản đồ số học của bạn, tạo nên lời giải mã chân thật, sâu sắc và may đo độc bản cho riêng bạn.',
+        'Hãy dành 2 phút thực hiện bài trắc nghiệm cảm xúc khoa học (chuẩn Mini-IPIP Big Five) này. NUMELYRA sẽ kết hợp nhịp đập tâm lý cùng bản đồ số học của bạn, tạo nên lời giải mã chân thật, sâu sắc và may đo độc bản cho riêng bạn.',
     }
     : {
       part1:
@@ -33,7 +33,7 @@ export function AssessmentPromptModal({
       part2:
         '\n\nNumbers reveal the raw potential gifted by the universe — but how you think, how you handle pressure, and how you navigate emotions every day are what truly determine how far you will go.\n\n',
       part3:
-        'Take 2 minutes to complete this scientific emotional assessment (Mini-IPIP Big Five). Numina will integrate your psychological traits into your numerology map, delivering the most authentic and deeply tailored interpretation crafted uniquely for you.',
+        'Take 2 minutes to complete this scientific emotional assessment (Mini-IPIP Big Five). NUMELYRA will integrate your psychological traits into your numerology map, delivering the most authentic and deeply tailored interpretation crafted uniquely for you.',
     };
 
   const { part1, highlight, part2, part3 } = content;

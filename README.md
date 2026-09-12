@@ -1,4 +1,4 @@
-# NUMINA Numerology
+# NUMELYRA Numerology
 
 Ứng dụng Next.js cho Thần số học, Tarot và hình nền may mắn tuyển chọn, hỗ trợ giao diện tiếng Việt và tiếng Anh.
 

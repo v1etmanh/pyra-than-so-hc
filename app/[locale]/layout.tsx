@@ -41,13 +41,13 @@ export async function generateMetadata({
       title: t('title'),
       description: t('description'),
       url: `${baseUrl}/${locale}`,
-      siteName: 'NUMINA Numerology',
+      siteName: 'NUMELYRA Numerology',
       images: [
         {
           url: '/logo/436f1399-6171-4441-8654-6711279d206b.png',
           width: 512,
           height: 512,
-          alt: 'NUMINA Sacred Numerology Logo'
+          alt: 'NUMELYRA Sacred Numerology Logo'
         }
       ],
       locale: locale,
@@ -97,7 +97,7 @@ export default async function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
-              name: 'NUMINA Numerology',
+              name: 'NUMELYRA Numerology',
               url: baseUrl,
               applicationCategory: 'LifestyleApplication',
               operatingSystem: 'All',

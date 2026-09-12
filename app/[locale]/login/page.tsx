@@ -112,7 +112,7 @@ export default function LoginPage() {
             SIGN IN
           </p>
           <h2 style={{ fontSize: '38px', marginBottom: '12px' }}>ĐĂNG NHẬP</h2>
-          <p style={{ marginBottom: '24px' }}>Nhập thông tin tài khoản NUMINA của bạn.</p>
+          <p style={{ marginBottom: '24px' }}>Nhập thông tin tài khoản NUMELYRA của bạn.</p>
 
           {errorMessage && (
             <div

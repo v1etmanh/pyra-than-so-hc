@@ -153,7 +153,7 @@ export default function ChaniAppPage() {
     <main className="assessment-shell">
       {view === "intro" && <section className="assessment-intro assessment-glass">
         <div className="assessment-seal">✦</div>
-        <p className="assessment-kicker">NUMINA / {isVietnamese ? "BẢN ĐỒ TÍNH CÁCH" : "PERSONALITY MAP"}</p>
+        <p className="assessment-kicker">NUMELYRA / {isVietnamese ? "BẢN ĐỒ TÍNH CÁCH" : "PERSONALITY MAP"}</p>
         <h1>{isVietnamese ? <>Thấu hiểu bản thể<br /><em>5 chiều không gian tâm hồn</em></> : <>Understand your inner world<br /><em>through five dimensions</em></>}</h1>
         <p className="assessment-lead">{isVietnamese ? "Một bài trắc nghiệm Mini-IPIP gồm 20 câu hỏi để soi chiếu 5 trục tính cách: cách bạn kết nối, chăm sóc, hành động, cảm nhận và tưởng tượng." : "A 20-question Mini-IPIP assessment reflecting five personality dimensions: how you connect, care, act, feel, and imagine."}</p>
         <div className="assessment-trait-preview">{(Object.keys(TRAIT_META) as TraitKey[]).map((trait, index) => <article className={`assessment-trait-chip ${localizedMeta[trait].color}`} key={trait}><span>{String(index + 1).padStart(2, "0")}</span><strong>{localizedMeta[trait].label}</strong><small>{localizedMeta[trait].detail}</small></article>)}</div>

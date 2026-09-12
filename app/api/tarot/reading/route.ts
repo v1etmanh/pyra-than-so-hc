@@ -173,7 +173,7 @@ export async function POST(request: NextRequest): Promise<Response> {
           send({
             type: 'status',
             phase: 'interpreting',
-            message: body.language === 'vi' ? 'Numina đang luận giải…' : 'Numina is interpreting…'
+            message: body.language === 'vi' ? 'NUMELYRA đang luận giải…' : 'NUMELYRA is interpreting…'
           });
           userPrompt = buildInitialReadingPrompt(body.question, spread, baseCards, body.profile, body.language);
         } else {

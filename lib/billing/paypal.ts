@@ -81,7 +81,7 @@ export async function createPayPalSubscription(input: {
       plan_id: paypalPlanId(),
       custom_id: input.userId,
       application_context: {
-        brand_name: 'Numina',
+        brand_name: 'NUMELYRA',
         locale: input.locale === 'vi' ? 'vi-VN' : 'en-US',
         shipping_preference: 'NO_SHIPPING',
         user_action: 'SUBSCRIBE_NOW',

@@ -40,8 +40,8 @@ export function PricingPage({ locale }: { locale: string }) {
 
   return (
     <main className="pricing-page"><div className="pricing-page-inner">
-      <Link className="legal-back" href={vi ? '/' : '/en/'}>← NUMINA</Link>
-      <p className="batch-kicker">NUMINA / {vi ? 'BẢNG GIÁ' : 'PRICING'}</p>
+      <Link className="legal-back" href={vi ? '/' : '/en/'}>← NUMELYRA</Link>
+      <p className="batch-kicker">NUMELYRA / {vi ? 'BẢNG GIÁ' : 'PRICING'}</p>
       <h1>{vi ? 'Một không gian sâu hơn cho hành trình của bạn.' : 'A deeper space for your journey.'}</h1>
       <p className="pricing-lead">{vi ? 'Bắt đầu miễn phí. Nâng cấp bằng VietQR hoặc PayPal khi bạn cần thêm lượt.' : 'Start free. Upgrade with PayPal or VietQR when you need more readings.'}</p>
       <div className="pricing-grid">
@@ -70,7 +70,7 @@ export function PricingPage({ locale }: { locale: string }) {
         </article>
       </div>
       {error && <p className="pricing-error" role="alert">{error}</p>}
-      <p className="pricing-note">{vi ? 'Quyền Pro chỉ được kích hoạt sau khi PayPal hoặc payOS gửi xác nhận bảo mật tới Numina.' : 'Pro access activates only after Numina receives a verified confirmation from PayPal or payOS.'}</p>
+      <p className="pricing-note">{vi ? 'Quyền Pro chỉ được kích hoạt sau khi PayPal hoặc payOS gửi xác nhận bảo mật tới NUMELYRA.' : 'Pro access activates only after NUMELYRA receives a verified confirmation from PayPal or payOS.'}</p>
     </div></main>
   );
 }

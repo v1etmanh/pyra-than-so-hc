@@ -47,7 +47,7 @@ export function AnalyticsConsent({ analyticsId }: { analyticsId?: string }) {
       }}
     >
       <p style={{ margin: '0 0 12px' }}>
-        Numina dùng cookie phân tích để cải thiện sản phẩm. Bạn có thể từ chối; dữ liệu ngày sinh không được gửi vào analytics.
+        NUMELYRA dùng cookie phân tích để cải thiện sản phẩm. Bạn có thể từ chối; dữ liệu ngày sinh không được gửi vào analytics.
       </p>
       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
         <button type="button" onClick={() => choose('rejected')} style={{ padding: '8px 12px', background: 'transparent', border: '1px solid #2a2a2b' }}>TỪ CHỐI</button>
@@ -56,4 +56,3 @@ export function AnalyticsConsent({ analyticsId }: { analyticsId?: string }) {
     </aside>
   );
 }
-

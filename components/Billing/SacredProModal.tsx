@@ -73,32 +73,32 @@ export function SacredProModal() {
   const feature = modalContext?.feature || 'general';
   const headlines = {
     tarot: {
-      kicker: isVietnamese ? 'NUMINA PRO / CHIÊM NGHIỆM' : 'NUMINA PRO / TAROT',
+      kicker: isVietnamese ? 'NUMELYRA PRO / CHIÊM NGHIỆM' : 'NUMELYRA PRO / TAROT',
       title: isVietnamese ? 'Mở khóa Chiêm nghiệm Tarot Không Giới Hạn' : 'Unlock Unlimited Tarot Wisdom',
       desc: isVietnamese
         ? 'Nâng cấp lên 100 lượt luận giải mỗi ngày, mở khóa toàn bộ trải bài Celtic Cross 10 lá và hỏi sâu không giới hạn.'
         : 'Upgrade to 100 readings daily, unlock the 10-card Celtic Cross spread, and enjoy limitless follow-up guidance.',
     },
     wallpaper: {
-      kicker: isVietnamese ? 'NUMINA PRO / HÌNH NỀN' : 'NUMINA PRO / WALLPAPER',
+      kicker: isVietnamese ? 'NUMELYRA PRO / HÌNH NỀN' : 'NUMELYRA PRO / WALLPAPER',
       title: isVietnamese ? 'Mở khóa Studio Hình Nền Năng Lượng' : 'Unlock Lucky Wallpaper Studio',
       desc: isVietnamese
         ? 'Tạo tới 20 hình nền năng lượng mỗi ngày, mở khóa các phong cách 3D ánh vàng độc quyền và tải ảnh 4K Ultra sắc nét.'
         : 'Generate up to 20 lucky wallpapers daily, access exclusive luxury 3D styles, and download pristine 4K resolutions.',
     },
     indicators: {
-      kicker: isVietnamese ? 'NUMINA PRO / THẦN SỐ HỌC' : 'NUMINA PRO / NUMEROLOGY',
+      kicker: isVietnamese ? 'NUMELYRA PRO / THẦN SỐ HỌC' : 'NUMELYRA PRO / NUMEROLOGY',
       title: isVietnamese ? 'Mở khóa Toàn diện Bản đồ Thần số học' : 'Unlock Deep Numerology Insights',
       desc: isVietnamese
         ? '100 lượt phân tích AI chuyên sâu không ngắt quãng, khám phá chu kỳ năng lượng 12 tháng và bản đồ cá nhân trọn vẹn.'
         : '100 uninterrupted in-depth AI analyses, personal 12-month energy forecasts, and complete destiny maps.',
     },
     general: {
-      kicker: isVietnamese ? 'NUMINA PRO / ĐỒNG HÀNH' : 'NUMINA PRO / SANCTUARY',
+      kicker: isVietnamese ? 'NUMELYRA PRO / ĐỒNG HÀNH' : 'NUMELYRA PRO / SANCTUARY',
       title: modalContext?.title || (isVietnamese ? 'Một Không Gian Sâu Hơn Cho Bạn' : 'A Deeper Space For Your Journey'),
       desc: modalContext?.description || (isVietnamese
-        ? 'Đồng hành trọn vẹn cùng Numina với 100 lượt luận giải AI, 20 hình nền mỗi ngày và đặc quyền tính năng cao cấp.'
-        : 'Experience Numina with 100 daily AI readings, 20 wallpapers, and early access to upcoming premium features.'),
+        ? 'Đồng hành trọn vẹn cùng NUMELYRA với 100 lượt luận giải AI, 20 hình nền mỗi ngày và đặc quyền tính năng cao cấp.'
+        : 'Experience NUMELYRA with 100 daily AI readings, 20 wallpapers, and early access to upcoming premium features.'),
     },
   }[feature];
 
@@ -159,8 +159,8 @@ export function SacredProModal() {
           <div className="sacred-pro-active-banner">
             <p>
               {isVietnamese
-                ? '✨ Bạn đang sở hữu gói Numina Pro. Cảm ơn bạn đã đồng hành!'
-                : '✨ You are currently a Numina Pro Member. Thank you for your journey with us!'}
+                ? '✨ Bạn đang sở hữu gói NUMELYRA Pro. Cảm ơn bạn đã đồng hành!'
+                : '✨ You are currently a NUMELYRA Pro Member. Thank you for your journey with us!'}
             </p>
           </div>
         ) : (

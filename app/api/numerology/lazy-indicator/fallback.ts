@@ -27,8 +27,8 @@ export function buildIndicatorKnowledgeFallback({
 
   const name = fullName?.trim() || (language === 'English' ? 'you' : 'bạn');
   const intro = language === 'English'
-    ? `**${name}**, here is the reference interpretation for **${indicatorName} ${indicatorValue}**, taken from Numina's knowledge library.`
-    : `**${name}**, dưới đây là lời giải tham khảo cho **${indicatorName} ${indicatorValue}**, được lấy từ kho kiến thức của Numina.`;
+    ? `**${name}**, here is the reference interpretation for **${indicatorName} ${indicatorValue}**, taken from NUMELYRA's knowledge library.`
+    : `**${name}**, dưới đây là lời giải tham khảo cho **${indicatorName} ${indicatorValue}**, được lấy từ kho kiến thức của NUMELYRA.`;
 
   return `${intro}\n\n${content}`;
 }

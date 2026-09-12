@@ -77,10 +77,10 @@ export default function PyraHeader() {
         <Link className="pyra-wordmark" href={localize("/")} aria-label={t("home")}>
           <img
             src="/logo/436f1399-6171-4441-8654-6711279d206b.png"
-            alt="NUMINA Logo"
+            alt="NUMELYRA Logo"
             className="pyra-logo-img"
           />
-          <span>NUMINA</span>
+          <span>NUMELYRA</span>
         </Link>
         <button
           className="pyra-menu-button"
@@ -131,7 +131,7 @@ export default function PyraHeader() {
                     <span className="pyra-dropdown-name">{displayName}</span>
                     {userEmail && <span className="pyra-dropdown-email">{userEmail}</span>}
                     <div className="pyra-dropdown-plan-badge">
-                      <span>{isPro ? 'NUMINA PRO ✦' : (locale === 'vi' ? 'GÓI MIỄN PHÍ' : 'FREE TIER')}</span>
+                      <span>{isPro ? 'NUMELYRA PRO ✦' : (locale === 'vi' ? 'GÓI MIỄN PHÍ' : 'FREE TIER')}</span>
                       {!isPro && (
                         <button
                           type="button"

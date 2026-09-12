@@ -176,7 +176,7 @@ export function NuminaTarotPage() {
     if (tarot.phase === 'drawing') return isVietnamese ? 'Đang xào và rút bài…' : 'Shuffling and drawing…';
     if (tarot.phase === 'revealing') return isVietnamese ? 'Những lá bài đang mở ra…' : 'The cards are revealing…';
     if (tarot.phase === 'deciding') return isVietnamese ? 'Đang xem có cần rút thêm lá…' : 'Considering another draw…';
-    if (tarot.phase === 'interpreting') return isVietnamese ? 'Numina đang luận giải…' : 'Numina is interpreting…';
+    if (tarot.phase === 'interpreting') return isVietnamese ? 'NUMELYRA đang luận giải…' : 'NUMELYRA is interpreting…';
     return '';
   })();
 
@@ -213,7 +213,7 @@ export function NuminaTarotPage() {
           <div className="tarot-banner-brand">
             <div className="tarot-banner-emblem" aria-hidden="true">✦</div>
             <div className="tarot-banner-title">
-              <p>NUMINA TAROT</p>
+              <p>NUMELYRA TAROT</p>
               <h1>{isVietnamese ? 'Một câu hỏi. Một khoảng lặng.' : 'One question. One quiet moment.'}</h1>
             </div>
           </div>
@@ -478,7 +478,7 @@ export function NuminaTarotPage() {
 
                 {(current.interpretation || tarot.phase === 'interpreting') && (
                   <article className="numina-interpretation">
-                    <p className="numina-section-kicker">{isVietnamese ? 'LỜI GIẢI TỪ NUMINA' : 'NUMINA’S READING'}</p>
+                    <p className="numina-section-kicker">{isVietnamese ? 'LỜI GIẢI TỪ NUMELYRA' : 'NUMELYRA’S READING'}</p>
                     {current.interpretation ? <ReactMarkdown>{current.interpretation}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
                   </article>
                 )}
@@ -513,7 +513,7 @@ export function NuminaTarotPage() {
                         className="tarot-error-upgrade-btn"
                         onClick={() => openUpgradeModal({ feature: 'tarot' })}
                       >
-                        ✦ {isVietnamese ? 'Nâng cấp Numina Pro (Không giới hạn)' : 'Upgrade to Numina Pro (Unlimited)'}
+                        ✦ {isVietnamese ? 'Nâng cấp NUMELYRA Pro (Không giới hạn)' : 'Upgrade to NUMELYRA Pro (Unlimited)'}
                       </button>
                     )}
                   </div>
@@ -550,7 +550,7 @@ export function NuminaTarotPage() {
                 {!isPro && (
                   <div className="tarot-aside-pro-card">
                     <div className="aside-pro-header">
-                      <span>✦ NUMINA PRO</span>
+                      <span>✦ NUMELYRA PRO</span>
                       <small>79K/30D</small>
                     </div>
                     <p>
@@ -634,8 +634,8 @@ export function NuminaTarotPage() {
               </h2>
               <p className="sacred-pro-desc" style={{ fontSize: '14px', lineHeight: '1.6', color: '#dfcfd6', margin: '0 auto' }}>
                 {isVietnamese
-                  ? 'Để Numina xào bài và luận giải Tarot chuẩn xác theo năng lượng riêng của bạn, hãy tạo bản đồ Thần số học trước nhé. Chỉ mất 30 giây!'
-                  : 'To enable Numina to draw cards and interpret Tarot tailored to your unique vibration, please create your Numerology Map first. It only takes 30 seconds!'}
+                  ? 'Để NUMELYRA xào bài và luận giải Tarot chuẩn xác theo năng lượng riêng của bạn, hãy tạo bản đồ Thần số học trước nhé. Chỉ mất 30 giây!'
+                  : 'To enable NUMELYRA to draw cards and interpret Tarot tailored to your unique vibration, please create your Numerology Map first. It only takes 30 seconds!'}
               </p>
             </div>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>

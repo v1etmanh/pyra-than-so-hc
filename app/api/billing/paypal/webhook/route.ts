@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
       p_amount: cents(amount?.total || amount?.value),
       p_currency: String(amount?.currency || amount?.currency_code || 'usd').toLowerCase(),
       p_payment_status: eventType,
-      p_description: 'Numina Pro via PayPal'
+      p_description: 'NUMELYRA Pro via PayPal'
     });
     if (error) throw error;
     if (eventType === 'PAYMENT.SALE.COMPLETED' || eventType === 'BILLING.SUBSCRIPTION.ACTIVATED') {

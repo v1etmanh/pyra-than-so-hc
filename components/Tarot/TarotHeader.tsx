@@ -66,7 +66,7 @@ export function TarotHeader({ historyCount, onOpenHistory }: TarotHeaderProps) {
     <header className={styles.header}>
       <Link className={styles.brand} href={localize('/')} aria-label={t('header.home')}>
         <span className={styles.brandStar} aria-hidden="true">✦</span>
-        <span className={styles.brandText}>NUMINA TAROT</span>
+        <span className={styles.brandText}>NUMELYRA TAROT</span>
         <span className={styles.brandLine}>{t('tagline')}</span>
       </Link>
 

@@ -97,7 +97,7 @@ export default function RegisterPage() {
             Begin your sacred map.
           </h1>
           <p style={{ maxWidth: '480px', lineHeight: 1.7 }}>
-            Tạo tài khoản NUMINA để tính toán trọn bộ 24 chỉ số thần số học pitago, lưu trữ an toàn biểu đồ ngày sinh và tên khai sinh của bạn và gia đình.
+            Tạo tài khoản NUMELYRA để tính toán trọn bộ 24 chỉ số thần số học pitago, lưu trữ an toàn biểu đồ ngày sinh và tên khai sinh của bạn và gia đình.
           </p>
           <div
             style={{

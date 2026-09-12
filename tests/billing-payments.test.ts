@@ -34,8 +34,8 @@ test('payOS renewals add 30 days without discarding remaining access', () => {
 
 test('payOS signature input is canonical and order codes stay safe integers', () => {
   assert.equal(
-    buildPayOSChecksumData({ returnUrl: 'https://numina.app/return', amount: 79000, orderCode: 123, cancelUrl: 'https://numina.app/cancel', description: 'NUMINA 123' }),
-    'amount=79000&cancelUrl=https://numina.app/cancel&description=NUMINA 123&orderCode=123&returnUrl=https://numina.app/return'
+    buildPayOSChecksumData({ returnUrl: 'https://numina.app/return', amount: 79000, orderCode: 123, cancelUrl: 'https://numina.app/cancel', description: 'NUMELYRA 123' }),
+    'amount=79000&cancelUrl=https://numina.app/cancel&description=NUMELYRA 123&orderCode=123&returnUrl=https://numina.app/return'
   );
   assert.equal(Number.isSafeInteger(createPayOSOrderCode(1_700_000_000_000)), true);
 });
@@ -64,7 +64,7 @@ test('payOS webhook schema parses payOS payloads without success field', () => {
     data: {
       orderCode: 123,
       amount: 79000,
-      description: 'NUMINA 123'
+      description: 'NUMELYRA 123'
     },
     signature: 'a'.repeat(64)
   });

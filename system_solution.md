@@ -31,7 +31,7 @@ khái niệm benchmark :  1 cách đo lường so sánh hiệu năng của 1 h�
 - Mỗi model có 1 lượt warm-up không tính điểm, sau đó 30 lượt đo: 10 lượt ở mỗi khung giờ.
 - Trong mỗi batch 10 lượt/model:
   - 4 prompt stream ngắn để đo overhead và token đầu.--> test tính avg tập vô định
-  - 4 prompt chat tiếng Việt đại diện cho Numina.--> hội thoại đơn giản
+  - 4 prompt chat tiếng Việt đại diện cho NUMELYRA.--> hội thoại đơn giản
   - 2 prompt JSON không-stream đại diện cho query expansion.--> mô phorhg hệ thống thực
 - Chạy tuần tự và xáo trộn thứ tự candidate bằng seed để tránh thiên lệch tải hoặc rate limit.
 - Ghi từng mẫu dưới dạng JSONL với: provider, model cấu hình, model thực tế do provider trả về, prompt case, thời điểm, HTTP status, TTFB, TTFT nội dung, tổng thời gian, kích thước output, trạng thái `[DONE]`, kiểm tra định dạng và loại lỗi.

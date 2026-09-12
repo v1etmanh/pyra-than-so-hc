@@ -6,7 +6,7 @@
   "Home": {
     "title": "Numerology Application",
     "subtitle": "Explore your number map through your birth date and name — decode life path, mission, and hidden potential.",
-    "chatNotice": "Experience Numerology with Numina Mascot - AI",
+    "chatNotice": "Experience Numerology with NUMELYRA Mascot - AI",
     "chatBadgeLabel": "NEW",
     "logoAlt": "Numerology Logo",
     "videoTitle": "Decoding Numerology",
@@ -116,14 +116,14 @@
       "drawing": "Shuffling and drawing…",
       "revealing": "The cards are revealing…",
       "deciding": "Considering whether more cards are needed…",
-      "behindVeil": "Numina is reading behind the veil…",
-      "interpreting": "Numina is interpreting…",
+      "behindVeil": "NUMELYRA is reading behind the veil…",
+      "interpreting": "NUMELYRA is interpreting…",
       "cancelled": "This reading was stopped.",
       "failed": "Cards could not be drawn for this reading. You can begin again."
     },
     "reading": {
       "questionLabel": "Your question",
-      "aiKicker": "Numina's reading",
+      "aiKicker": "NUMELYRA's reading",
       "aiTitle": "A conversation with your intuition",
       "you": "You",
       "followUpLabel": "What would you like to ask next?",
@@ -162,8 +162,8 @@
     }
   },
   "Metadata": {
-    "title": "Numerology Web App",
-    "description": "Numerology Web App - Fortune Lookup"
+    "title": "NUMELYRA - Numerology App",
+    "description": "NUMELYRA - Numerology, Tarot, and personalized readings"
   },
   "Footer": {
     "logoAlt": "numerology logo",
@@ -182,12 +182,12 @@
       "map": "MAP",
       "account": "MY ACCOUNT",
       "wallpaper": "WALLPAPER STUDIO",
-      "chat": "NUMINA TAROT",
+      "chat": "NUMELYRA TAROT",
       "indicators": "VIEW YOUR MAP",
       "pricing": "PRO PLAN ✦"
     },
     "myAccount": "MY ACCOUNT",
-    "home": "NUMINA home",
+    "home": "NUMELYRA home",
     "menu": "MENU",
     "close": "CLOSE",
     "toggleNavigation": "Toggle navigation",
@@ -195,7 +195,7 @@
     "userMenu": "User menu",
     "primaryNavigation": "Primary navigation",
     "profile": "Personal profile",
-    "aiChat": "NUMINA AI Chat",
+    "aiChat": "NUMELYRA AI Chat",
     "wallpaper": "Wallpaper Studio",
     "indicators": "View your map",
     "signIn": "SIGN IN",

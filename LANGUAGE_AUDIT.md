@@ -6,7 +6,7 @@ Ngày rà soát: 2026-08-30
 
 - Dự án đã dùng `next-intl`, có hai locale `vi` và `en`, mặc định là `vi` trong `src/i18n/routing.ts`.
 - Giao diện cũ ở `components/` phần lớn đã lấy chuỗi từ `locales/vi.json` và `locales/en.json`.
-- Giao diện Numina/Chani mới đã được rà theo các route đang phục vụ người dùng và mặc định hiển thị tiếng Việt; các nhãn tiếng Anh còn lại là nhánh `/en`, tên thương hiệu/model, hoặc dữ liệu kỹ thuật không hiển thị ở giao diện tiếng Việt.
+- Giao diện NUMELYRA/Chani mới đã được rà theo các route đang phục vụ người dùng và mặc định hiển thị tiếng Việt; các nhãn tiếng Anh còn lại là nhánh `/en`, tên thương hiệu/model, hoặc dữ liệu kỹ thuật không hiển thị ở giao diện tiếng Việt.
 - Nội dung tiếng Anh trong API, tên biến, khóa dữ liệu, tên model và comment kỹ thuật không phải chuỗi giao diện; không nên dịch các phần này.
 
 ## Các vùng cần Việt hóa hoặc đưa vào message key
@@ -23,7 +23,7 @@ Ngày rà soát: 2026-08-30
   - Đã bổ sung bộ chọn ngôn ngữ vào khu vực header và chuẩn hóa đường dẫn theo locale.
 
 - `components/sites/chani-com-6d20749d/shared/ChaniInnerPages.tsx`
-  - Footer dùng chung, trang Chat Numina, trang hồ sơ, xưởng hình nền và trang 24 chỉ số.
+  - Footer dùng chung, trang Chat NUMELYRA, trang hồ sơ, xưởng hình nền và trang 24 chỉ số.
   - Chat, tài khoản, xưởng hình nền, 24 chỉ số và modal AI đã có nhánh Việt/Anh; cache lời luận giải được tách theo locale để không dùng nhầm bản dịch.
 
 - `components/sites/chani-com-6d20749d/app-f53b52ad/ChaniAppPage.tsx`

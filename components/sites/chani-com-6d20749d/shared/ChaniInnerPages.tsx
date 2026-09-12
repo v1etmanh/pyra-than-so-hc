@@ -43,9 +43,9 @@ export function InnerFooter() {
   const isVietnamese = locale === "vi";
   const localize = (path: string) => isVietnamese ? path : `/en${path}`;
   return <footer className="chani-footer batch-footer">
-    <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về Numina" : "About Numina"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
+    <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
     <div className="newsletter"><strong>{isVietnamese ? "ĐĂNG KÝ NHẬN BẢN TIN" : "SUBSCRIBE TO OUR NEWSLETTER"}</strong><div><input placeholder="yourname@email.com" /><button>{isVietnamese ? "ĐĂNG KÝ" : "SIGN UP"}</button></div></div>
-    <p className="copyright">© Numina 2026</p>
+    <p className="copyright">© NUMELYRA 2026</p>
   </footer>;
 }
 
@@ -289,7 +289,7 @@ export function ChartPage() {
       {/* 1. HERO SECTION */}
       <section className="account-hero">
         <div className="account-hero-copy">
-          <p className="batch-kicker">NUMINA / {isVietnamese ? "BẢN ĐỒ NHÂN SỐ HỌC" : "SACRED NUMEROLOGY DASHBOARD"}</p>
+          <p className="batch-kicker">NUMELYRA / {isVietnamese ? "BẢN ĐỒ NHÂN SỐ HỌC" : "SACRED NUMEROLOGY DASHBOARD"}</p>
           <h1>
             {isVietnamese ? "Bản đồ của bạn," : "Your map,"}<br />
             <em>{isVietnamese ? "được nâng niu." : "held close."}</em>
@@ -443,7 +443,7 @@ export function ChartPage() {
               gap: "8px",
             }}
           >
-             {isVietnamese ? "HỎI NUMINA AI VỀ HÔM NAY ↗" : "ASK NUMINA AI ABOUT TODAY ↗"}
+             {isVietnamese ? "HỎI NUMELYRA AI VỀ HÔM NAY ↗" : "ASK NUMELYRA AI ABOUT TODAY ↗"}
           </Link>
         </div>
 
@@ -1193,7 +1193,7 @@ export function EditorsPicksPage() {
       context.fillText(String(lifePath).slice(0, 2), size.width / 2, size.height * 0.54);
       context.font = `${Math.max(20, Math.round(size.width * 0.026))}px Arial, sans-serif`;
       context.fillText(
-        `${isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} ${String(lifePath)}  ·  NUMINA`,
+        `${isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} ${String(lifePath)}  ·  NUMELYRA`,
         size.width / 2,
         size.height * 0.91
       );
@@ -1217,7 +1217,7 @@ export function EditorsPicksPage() {
     <Shell>
       <section className="wallpaper-studio-section">
         <div className="wallpaper-studio-copy">
-          <p className="batch-kicker">NUMINA / {isVietnamese ? "XƯỞNG HÌNH NỀN TUYỂN CHỌN" : "CURATED WALLPAPER STUDIO"}</p>
+          <p className="batch-kicker">NUMELYRA / {isVietnamese ? "XƯỞNG HÌNH NỀN TUYỂN CHỌN" : "CURATED WALLPAPER STUDIO"}</p>
           <h2>{isVietnamese ? "Xưởng hình nền may mắn" : "Lucky wallpaper studio"}</h2>
           <p className="wallpaper-studio-lead">
             {isVietnamese
@@ -1420,7 +1420,7 @@ export function EditorsPicksPage() {
                     className="wallpaper-error-upgrade-btn"
                     onClick={() => openUpgradeModal({ feature: 'wallpaper' })}
                   >
-                    ✦ {isVietnamese ? "Nâng cấp Numina Pro (20 lượt/ngày)" : "Upgrade to Numina Pro (20/day)"}
+                    ✦ {isVietnamese ? "Nâng cấp NUMELYRA Pro (20 lượt/ngày)" : "Upgrade to NUMELYRA Pro (20/day)"}
                   </button>
                 )}
               </div>
@@ -1434,10 +1434,10 @@ export function EditorsPicksPage() {
             <div className={`wallpaper-preview wallpaper-style-${style} wallpaper-intention-${intention}`}>
               {generatedData?.imageUrl ? (
                 <>
-                  <img src={generatedData.imageUrl} alt={isVietnamese ? "Hình nền may mắn Numina" : "Numina lucky wallpaper"} />
+                  <img src={generatedData.imageUrl} alt={isVietnamese ? "Hình nền may mắn NUMELYRA" : "NUMELYRA lucky wallpaper"} />
                   <div className="wallpaper-personalization" aria-hidden="true">
                     <span className="wallpaper-personalization-number">{String(lifePath).slice(0, 2)}</span>
-                    <span className="wallpaper-personalization-label">{isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} {String(lifePath)} · NUMINA</span>
+                    <span className="wallpaper-personalization-label">{isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} {String(lifePath)} · NUMELYRA</span>
                   </div>
                 </>
               ) : (
@@ -2340,7 +2340,7 @@ export function OurTeamPage() {
             
             {/* Left Column: Heading, Metadata, Status, and Detailed Interpretation */}
             <div className="indicator-ai-left-col">
-              <p className="batch-kicker">NUMINA AI / {isVietnamese ? "CHỈ SỐ CÁ NHÂN" : "PERSONAL INDICATOR"}</p>
+              <p className="batch-kicker">NUMELYRA AI / {isVietnamese ? "CHỈ SỐ CÁ NHÂN" : "PERSONAL INDICATOR"}</p>
               <h2 id="indicator-ai-title">{selected.title}</h2>
               <p className="indicator-ai-value">{selected.name} · {selected.value}</p>
               <p className={`indicator-ai-source ${readingSource !== "ai" ? "is-local" : ""}`}>
@@ -2378,7 +2378,7 @@ export function OurTeamPage() {
                   <div className="indicator-ai-status">
                     <span>{analysisStage === "preparing" ? "ĐANG CHUẨN BỊ DỮ LIỆU" : "ĐÃ CHUẨN BỊ"}</span>
                     <span>{analysisStage === "generating" ? "ĐANG LUẬN GIẢI" : analysisStage === "complete" ? "ĐÃ LUẬN GIẢI" : "CHỜ LUẬN GIẢI"}</span>
-                    <span>NUMINA AI</span>
+                    <span>NUMELYRA AI</span>
                   </div>
                 </div>
               )}
@@ -2387,7 +2387,7 @@ export function OurTeamPage() {
                 {isLoading && !analysis ? (
                   <div className="indicator-ai-loading-text">
                     <span className="indicator-ai-spinner">✦</span>
-                    <p>Numina đang kết nối trường năng lượng và tra cứu tư liệu cho chỉ số <strong>{selected.title} {selected.value}</strong>…</p>
+                    <p>NUMELYRA đang kết nối trường năng lượng và tra cứu tư liệu cho chỉ số <strong>{selected.title} {selected.value}</strong>…</p>
                   </div>
                 ) : analysis ? (
                   <ReactMarkdown

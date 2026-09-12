@@ -150,7 +150,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
         signal: controller.signal
       });
       if (!response.ok) {
-        let message = locale === 'vi' ? 'Numina chưa thể bắt đầu trải bài.' : 'Numina could not begin the reading.';
+        let message = locale === 'vi' ? 'NUMELYRA chưa thể bắt đầu trải bài.' : 'NUMELYRA could not begin the reading.';
         try {
           const payload = await response.json() as { error?: string; code?: string };
           if (payload.code === 'DAILY_LIMIT_REACHED') {
@@ -199,7 +199,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
           cancellation.name = 'AbortError';
           throw cancellation;
         }
-        throw new Error(locale === 'vi' ? 'Numina phản hồi quá lâu. Vui lòng thử lại.' : 'Numina took too long to respond. Please try again.');
+        throw new Error(locale === 'vi' ? 'NUMELYRA phản hồi quá lâu. Vui lòng thử lại.' : 'NUMELYRA took too long to respond. Please try again.');
       }
       throw requestError;
     } finally {

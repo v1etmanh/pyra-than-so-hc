@@ -1,4 +1,4 @@
-# Numina closed-beta runbook
+# NUMELYRA closed-beta runbook
 
 ## Scope
 
@@ -21,7 +21,7 @@ Invite 20–50 people who use Vietnamese or English numerology readings on mobil
 4. Free users stop at the daily quota; Pro users receive the higher quota only after a verified PayPal or payOS webhook.
 5. Mobile layout has no horizontal overflow at 320px, 375px, and 768px widths.
 6. Privacy and terms links are reachable in both `/vi` and `/en`.
-7. Account deletion removes the Supabase user and locally stored Numina data.
+7. Account deletion removes the Supabase user and locally stored NUMELYRA data.
 
 ## Weekly metrics
 

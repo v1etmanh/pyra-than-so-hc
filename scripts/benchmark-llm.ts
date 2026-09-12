@@ -36,20 +36,20 @@ const CASES: PromptCase[] = [
     id: `probe-${index + 1}`,
     workload: 'stream-probe',
     system: 'Follow the user instruction exactly. Do not explain your answer.',
-    user: `Return exactly NUMINA_OK on one line. Probe ${index + 1}.`,
+    user: `Return exactly NUMELYRA_OK on one line. Probe ${index + 1}.`,
     maxTokens: 128
   })),
   {
     id: 'domain-tarot-choice',
     workload: 'stream-domain',
-    system: 'Bạn là Numina Tarot. Trả lời bằng tiếng Việt, rõ ràng, không định mệnh hóa.',
+    system: 'Bạn là NUMELYRA Tarot. Trả lời bằng tiếng Việt, rõ ràng, không định mệnh hóa.',
     user: 'Câu hỏi: Tôi nên tiếp tục dự án đang chậm hay đổi hướng? Lá The Chariot xuôi ở vị trí lời khuyên. Hãy giải thích trong 4–6 câu và đưa ra 2 hành động thực tế.',
     maxTokens: 600
   },
   {
     id: 'domain-tarot-reflection',
     workload: 'stream-domain',
-    system: 'Bạn là Numina Tarot. Chỉ dùng dữ liệu lá bài được cung cấp.',
+    system: 'Bạn là NUMELYRA Tarot. Chỉ dùng dữ liệu lá bài được cung cấp.',
     user: 'Câu hỏi: Tôi cần nhìn lại điều gì trong mối quan hệ hiện tại? Lá The Hermit xuôi, từ khóa chiêm nghiệm và khoảng lặng. Trả lời 4–6 câu bằng tiếng Việt.',
     maxTokens: 600
   },
@@ -280,7 +280,7 @@ async function runStreamCase(
     }
 
     const validOutput = prompt.workload === 'stream-probe'
-      ? output.trim() === 'NUMINA_OK'
+      ? output.trim() === 'NUMELYRA_OK'
       : output.trim().length >= 80;
     return {
       version: 1,

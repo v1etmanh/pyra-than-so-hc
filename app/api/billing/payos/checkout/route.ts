@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     orderCode = createPayOSOrderCode();
     const origin = process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin;
     const expiresAtSeconds = Math.floor(Date.now() / 1000) + 15 * 60;
-    const description = `NUMINA ${String(orderCode).slice(-12)}`;
+    const description = `NUMELYRA ${String(orderCode).slice(-12)}`;
     const { error: insertError } = await admin.from('numina_payment_orders').insert({
       user_id: auth.user.id,
       provider: 'payos',

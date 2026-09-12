@@ -77,7 +77,7 @@ export function BillingPanel({ locale }: { locale: string }) {
     && isManageablePayPalStatus(subscription.status);
 
   return <section className="billing-panel">
-    <div><p className="batch-kicker">NUMINA / BILLING</p><h2>{vi ? 'Gói của bạn' : 'Your plan'}</h2></div>
+    <div><p className="batch-kicker">NUMELYRA / BILLING</p><h2>{vi ? 'Gói của bạn' : 'Your plan'}</h2></div>
     {!user ? <p>{vi ? 'Đăng nhập để xem gói và lịch sử thanh toán.' : 'Sign in to view your plan and payment history.'} <Link href={vi ? '/pricing' : '/en/pricing'}>{vi ? 'Xem bảng giá' : 'View pricing'} →</Link></p> : <>
       {loading && !subscription ? <p>{vi ? 'Đang tải…' : 'Loading…'}</p> : <>
         <p className="billing-plan"><strong>{(subscription?.plan || 'free').toUpperCase()}</strong>{subscription?.provider ? ` · ${subscription.provider === 'payos' ? 'VietQR / payOS' : paypalPending ? (vi ? 'PayPal chưa hoàn tất' : 'PayPal incomplete') : 'PayPal'}` : ''}</p>

@@ -1,4 +1,4 @@
-"""Prepare the supplied Numina Tarot concept art for responsive UI use.
+"""Prepare the supplied NUMELYRA Tarot concept art for responsive UI use.
 
 The source sheets remain untouched. Runtime assets are cropped, alpha-trimmed,
 resized, and saved as lossless WebP files under public/tarot/ui.

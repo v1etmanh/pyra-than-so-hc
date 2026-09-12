@@ -37,7 +37,7 @@ export async function POST() {
     }
 
     if (!subscription.cancel_at_period_end) {
-      await cancelPayPalSubscription(subscription.provider_subscription_id, 'Customer requested cancellation from Numina.');
+      await cancelPayPalSubscription(subscription.provider_subscription_id, 'Customer requested cancellation from NUMELYRA.');
       const admin = createAdminClient();
       const { error } = await admin.from('numina_subscriptions').update({
         status: 'CANCELLED',

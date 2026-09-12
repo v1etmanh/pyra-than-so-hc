@@ -6,7 +6,7 @@
   "Home": {
     "title": "Ứng Dụng Xem Nhân Số Học",
     "subtitle": "Khám phá bản đồ số của bạn thông qua ngày sinh và tên — giải mã các chỉ số cuộc sống, sứ mệnh và tiềm năng ẩn giấu.",
-    "chatNotice": "Trải nghiệm Nhân Số Học cùng Numina Mascot",
+    "chatNotice": "Trải nghiệm Nhân Số Học cùng NUMELYRA Mascot",
     "chatBadgeLabel": "MỚI",
     "logoAlt": "Logo Nhân Số Học",
     "videoTitle": "Giải Mã Nhân Số Học",
@@ -116,14 +116,14 @@
       "drawing": "Đang xào và rút bài…",
       "revealing": "Những lá bài đang mở ra…",
       "deciding": "Đang xem có cần rút thêm lá…",
-      "behindVeil": "Numina đang luận giải sau bức màn…",
-      "interpreting": "Numina đang luận giải…",
+      "behindVeil": "NUMELYRA đang luận giải sau bức màn…",
+      "interpreting": "NUMELYRA đang luận giải…",
       "cancelled": "Phiên xem bài đã được dừng.",
       "failed": "Chưa thể rút bài cho phiên này. Bạn có thể bắt đầu lại."
     },
     "reading": {
       "questionLabel": "Câu hỏi của bạn",
-      "aiKicker": "Lời giải từ Numina",
+      "aiKicker": "Lời giải từ NUMELYRA",
       "aiTitle": "Cuộc trò chuyện với trực giác",
       "you": "Bạn",
       "followUpLabel": "Bạn muốn hỏi thêm điều gì?",
@@ -162,8 +162,8 @@
     }
   },
   "Metadata": {
-    "title": "Numerology Web App",
-    "description": "Numerology Web App - Tra cứu Nhân Số Học"
+    "title": "NUMELYRA - Ứng dụng Nhân Số Học",
+    "description": "NUMELYRA - Tra cứu Nhân Số Học, Tarot và luận giải cá nhân hóa"
   },
   "Footer": {
     "logoAlt": "logo Nhân Số Học",
@@ -182,12 +182,12 @@
       "map": "BẢN ĐỒ",
       "account": "TÀI KHOẢN",
       "wallpaper": "XƯỞNG HÌNH NỀN",
-      "chat": "NUMINA TAROT",
+      "chat": "NUMELYRA TAROT",
       "indicators": "XEM BẢN ĐỒ SỐ",
       "pricing": "GÓI PRO ✦"
     },
     "myAccount": "TÀI KHOẢN",
-    "home": "Trang chủ NUMINA",
+    "home": "Trang chủ NUMELYRA",
     "menu": "MENU",
     "close": "ĐÓNG",
     "toggleNavigation": "Mở hoặc đóng điều hướng",
@@ -195,7 +195,7 @@
     "userMenu": "Menu người dùng",
     "primaryNavigation": "Điều hướng chính",
     "profile": "Hồ sơ cá nhân",
-    "aiChat": "Trò chuyện với NUMINA AI",
+    "aiChat": "Trò chuyện với NUMELYRA AI",
     "wallpaper": "Xưởng hình nền",
     "indicators": "Xem bản đồ số",
     "signIn": "ĐĂNG NHẬP",
