@@ -8,8 +8,9 @@ import { initialAnalysisRequestSchema, type InitialAnalysisRequest } from '@/lib
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const maxDuration = 60;
+export const maxDuration = 120;
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 // Fallback local memory search if needed
 function searchLocalKnowledge(numbers: string[]): string {

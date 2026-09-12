@@ -6,8 +6,9 @@ import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { birthChartRequestSchema, type BirthChartRequest } from '@/lib/security/schemas';
 
-export const maxDuration = 60;
+export const maxDuration = 120;
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
   try {

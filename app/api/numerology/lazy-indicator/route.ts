@@ -10,8 +10,9 @@ import {
 } from './fallback';
 import { lazyIndicatorRequestSchema, type LazyIndicatorRequest } from '@/lib/security/schemas';
 
-export const maxDuration = 60;
+export const maxDuration = 120;
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
   try {
