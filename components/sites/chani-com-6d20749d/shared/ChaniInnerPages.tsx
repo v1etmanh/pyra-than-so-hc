@@ -15,6 +15,7 @@ import { getNumerologyImagePath } from "@/utils/numerology-images";
 import ReactMarkdown from "react-markdown";
 import { BillingPanel } from '@/components/Billing/BillingPanel';
 import { useBilling } from "@/hooks/useBilling";
+import { AssessmentPromptModal } from "@/components/Numerology/AssessmentPromptModal";
 
 const SITE = "/sites/chani-com-6d20749d";
 
@@ -992,8 +993,9 @@ const wallpaperLibrary = [
 ];
 
 export function EditorsPicksPage() {
+  const router = useRouter();
   const isVietnamese = useLocale() === "vi";
-  const { profiles } = useProfiles();
+  const { profiles, isLoaded } = useProfiles();
   const { isPro, openUpgradeModal } = useBilling();
 
   // Deduplicate profiles
@@ -1007,6 +1009,7 @@ export function EditorsPicksPage() {
     });
   }, [profiles]);
 
+  const [showProfileRequiredModal, setShowProfileRequiredModal] = useState(false);
   const [activeProfileId, setActiveProfileId] = useState<string | null>(null);
   const activeProfile = useMemo(() => {
     if (activeProfileId) {
@@ -1066,6 +1069,10 @@ export function EditorsPicksPage() {
   } | null>(null);
 
   const generateWallpaper = async () => {
+    if (uniqueProfiles.length === 0) {
+      setShowProfileRequiredModal(true);
+      return;
+    }
     if (!isPro && remainingQuota === 0) {
       openUpgradeModal({ feature: "wallpaper" });
       setGenerationError(isVietnamese ? "Bạn đã dùng hết 2 lượt tạo hình nền miễn phí hôm nay. Hãy nâng cấp Pro để mở khóa 20 lượt/ngày." : "You have reached the free limit of 2 wallpapers for today. Upgrade to Pro for 20/day.");
@@ -1611,6 +1618,87 @@ export function EditorsPicksPage() {
           </section>
         </div>
       )}
+
+      {/* Profile Required Modal */}
+      {showProfileRequiredModal && (
+        <div
+          className="sacred-pro-overlay"
+          role="presentation"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowProfileRequiredModal(false);
+          }}
+        >
+          <div
+            className="sacred-pro-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="wallpaper-profile-modal-title"
+            style={{ maxWidth: "460px", textAlign: "center" }}
+          >
+            <button
+              type="button"
+              className="sacred-pro-close"
+              onClick={() => setShowProfileRequiredModal(false)}
+              aria-label={isVietnamese ? "Đóng" : "Close"}
+            >
+              ✕
+            </button>
+            <div className="sacred-pro-header" style={{ marginBottom: "16px" }}>
+              <div className="sacred-pro-emblem" aria-hidden="true" style={{ margin: "0 auto 12px" }}>✦</div>
+              <span className="sacred-pro-kicker">
+                {isVietnamese ? "CẦN HỒ SƠ NĂNG LƯỢNG" : "NUMEROLOGY MAP REQUIRED"}
+              </span>
+              <h2 id="wallpaper-profile-modal-title" style={{ fontSize: "22px", margin: "8px 0 10px", fontFamily: "var(--chani-serif, Georgia, serif)" }}>
+                {isVietnamese ? "Tạo bản đồ số của bạn trước nhé" : "Create Your Numerology Map First"}
+              </h2>
+              <p className="sacred-pro-desc" style={{ fontSize: "14px", lineHeight: "1.6", color: "#dfcfd6", margin: "0 auto" }}>
+                {isVietnamese
+                  ? "Hình nền may mắn được tính toán và cá nhân hóa chính xác theo Con số Đường đời, Năm & Ngày cá nhân của bạn. Hãy tạo bản đồ số để kích hoạt năng lượng phù hợp nhất!"
+                  : "Lucky wallpapers are calculated and personalized based on your Life Path Number, Personal Year, and Personal Day. Please create your map first!"}
+              </p>
+            </div>
+            <div style={{ display: "flex", gap: "12px", justifyContent: "center", marginTop: "24px" }}>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowProfileRequiredModal(false);
+                  router.push(isVietnamese ? "/indicators" : "/en/indicators");
+                }}
+                style={{
+                  background: "linear-gradient(135deg, #e6c88f 0%, #bd995c 100%)",
+                  color: "#251520",
+                  border: "none",
+                  padding: "12px 24px",
+                  borderRadius: "20px",
+                  fontWeight: 700,
+                  fontSize: "14px",
+                  cursor: "pointer",
+                  letterSpacing: "0.02em",
+                  boxShadow: "0 4px 14px rgba(230, 200, 143, 0.35)",
+                }}
+              >
+                {isVietnamese ? "Tạo bản đồ ngay →" : "Create Map Now →"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowProfileRequiredModal(false)}
+                style={{
+                  background: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(224, 197, 142, 0.3)",
+                  color: "#e6d5de",
+                  padding: "12px 20px",
+                  borderRadius: "20px",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  cursor: "pointer",
+                }}
+              >
+                {isVietnamese ? "Để sau" : "Later"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </Shell>
   );
 }
@@ -1750,6 +1838,7 @@ export function OurTeamPage() {
   const searchParams = useSearchParams();
   const { profiles, saveProfile } = useProfiles();
   const { isPro, openUpgradeModal } = useBilling();
+
   const [fullName, setFullName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [selected, setSelected] = useState<{ title: string; name: string; value: string; key?: string } | null>(null);
@@ -2232,7 +2321,13 @@ export function OurTeamPage() {
       </div>
     )}
 
-    {assessmentPrompt && <div className="indicator-assessment-backdrop" role="presentation"><section className="indicator-assessment-modal" role="dialog" aria-modal="true" aria-labelledby="indicator-assessment-title"><div className="indicator-assessment-symbol" aria-hidden="true">✦</div><p className="batch-kicker">NUMINA / {isVietnamese ? "BẢN ĐỒ TÍNH CÁCH" : "PERSONALITY MAP"}</p><h2 id="indicator-assessment-title">{isVietnamese ? "Cá nhân hóa bản đồ của bạn." : "Make your map more personal."}</h2><p>{isVietnamese ? "Muốn lời luận giải sát với cách bạn suy nghĩ và cảm nhận hơn? Hãy hoàn thành bài trắc nghiệm 20 câu để tạo bộ vector tính cách riêng cho hồ sơ này." : "Want interpretations that feel closer to how you think and feel? Complete the 20-question assessment to create a personality vector for this profile."}</p><p className="indicator-assessment-meta">20 CÂU HỎI · KHOẢNG 2–3 PHÚT · KHÔNG CÓ ĐÚNG HAY SAI</p><div className="indicator-assessment-actions"><button type="button" className="indicator-assessment-secondary" onClick={skipAssessmentForIdentity}>BỎ QUA LẦN NÀY</button><button type="button" className="indicator-assessment-primary" onClick={continueAssessment}>LÀM BÀI TEST <span>→</span></button></div></section></div>}
+    {assessmentPrompt && (
+      <AssessmentPromptModal
+        isVietnamese={isVietnamese}
+        onStart={continueAssessment}
+        onSkip={skipAssessmentForIdentity}
+      />
+    )}
     {selected && (() => {
       const illustrationSrc = getNumerologyImagePath(selected.key, selected.value, selected.title);
       return (

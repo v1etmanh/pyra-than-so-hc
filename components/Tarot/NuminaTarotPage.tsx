@@ -1,7 +1,8 @@
 'use client';
 
-import { FormEvent, useMemo, useRef, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import PyraHeader from '@/components/sites/chani-com-6d20749d/shared/PyraHeader';
 import { useProfiles } from '@/hooks/useProfiles';
@@ -89,15 +90,17 @@ function getSpreadSvgIcon(spreadId: string) {
 }
 
 export function NuminaTarotPage() {
+  const router = useRouter();
   const locale = (useLocale() === 'en' ? 'en' : 'vi') as TarotLocale;
   const isVietnamese = locale === 'vi';
   const tarot = useTarotReading(locale);
   const { isPro, openUpgradeModal } = useBilling();
-  const { profiles } = useProfiles();
+  const { profiles, isLoaded } = useProfiles();
   const [selectedProfileId, setSelectedProfileId] = useState<string>('');
   const [selectedSpreadId, setSelectedSpreadId] = useState('three-card');
   const [question, setQuestion] = useState('');
   const [followUp, setFollowUp] = useState('');
+  const [showProfileRequiredModal, setShowProfileRequiredModal] = useState(false);
   const readingEndRef = useRef<HTMLDivElement>(null);
 
   const uniqueProfiles = useMemo(() => {
@@ -111,16 +114,16 @@ export function NuminaTarotPage() {
   }, [profiles]);
 
   const activeProfile = useMemo(() => {
-    if (selectedProfileId) return uniqueProfiles.find((profile) => profile.id === selectedProfileId);
+    if (selectedProfileId) return uniqueProfiles.find((profile) => profile.id === selectedProfileId) || uniqueProfiles[0] || null;
     if (uniqueProfiles.length > 0) return uniqueProfiles[0];
-    return { id: 'demo', name: 'Lê Viết Mạnh', birthDate: '2005-02-07' };
+    return null;
   }, [selectedProfileId, uniqueProfiles]);
 
-  const indicators = useProcessNumerology(activeProfile?.name || 'Lê Viết Mạnh', activeProfile?.birthDate || '2005-02-07');
+  const indicators = useProcessNumerology(activeProfile?.name || '', activeProfile?.birthDate || '');
   const profileContext = useMemo<ProfileContext | undefined>(() => activeProfile ? ({
     name: activeProfile.name,
     birthDate: activeProfile.birthDate,
-    lifePath: String(indicators[0]?.value ?? '7'),
+    lifePath: String(indicators[0]?.value ?? ''),
     indicators: indicators.map((indicator) => ({
       key: indicator.key,
       name: indicator.name,
@@ -128,11 +131,28 @@ export function NuminaTarotPage() {
     }))
   }) : undefined, [activeProfile, indicators]);
 
+  if (!isLoaded) {
+    return (
+      <div className="tarot-papercut-shell" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center', color: '#8c7667', fontFamily: 'var(--chani-serif), Georgia, serif' }}>
+          <div style={{ fontSize: '28px', marginBottom: '12px' }}>✦</div>
+          <p style={{ fontSize: '15px', letterSpacing: '0.05em' }}>
+            {isVietnamese ? 'Đang chuẩn bị không gian Tarot…' : 'Preparing the Tarot sanctuary…'}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const current = tarot.currentSession;
   const selectedSpread = tarotSpreads.find((spread) => spread.id === selectedSpreadId) ?? tarotSpreads[1];
 
   const submitInitial = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (uniqueProfiles.length === 0) {
+      setShowProfileRequiredModal(true);
+      return;
+    }
     const value = question.trim();
     if (value.length < 3 || tarot.isRunning) return;
     setQuestion('');
@@ -142,6 +162,10 @@ export function NuminaTarotPage() {
 
   const submitFollowUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (uniqueProfiles.length === 0) {
+      setShowProfileRequiredModal(true);
+      return;
+    }
     const value = followUp.trim();
     if (value.length < 3 || tarot.isRunning) return;
     setFollowUp('');
@@ -280,11 +304,19 @@ export function NuminaTarotPage() {
                 <div className="tarot-profile-selector-wrap">
                   <select
                     className="tarot-profile-dropdown"
-                    value={activeProfile?.id ?? 'demo'}
-                    onChange={(event) => setSelectedProfileId(event.target.value)}
+                    value={activeProfile?.id ?? (uniqueProfiles.length === 0 ? 'create_profile' : 'demo')}
+                    onChange={(event) => {
+                      if (event.target.value === 'create_profile') {
+                        setShowProfileRequiredModal(true);
+                        return;
+                      }
+                      setSelectedProfileId(event.target.value);
+                    }}
                   >
                     {uniqueProfiles.length === 0 ? (
-                      <option value="demo">Lê Viết Mạnh · 2005-02-07</option>
+                      <option value="create_profile">
+                        {isVietnamese ? '✦ Bấm để tạo bản đồ số…' : '✦ Click to create your map…'}
+                      </option>
                     ) : (
                       uniqueProfiles.map((profile) => (
                         <option key={profile.id} value={profile.id}>
@@ -295,7 +327,7 @@ export function NuminaTarotPage() {
                   </select>
                   <div className="tarot-lifepath-badge">
                     <span>{isVietnamese ? 'Đường đời' : 'Life Path'}</span>
-                    <strong>{profileContext?.lifePath || '7'}</strong>
+                    <strong>{profileContext?.lifePath || '—'}</strong>
                   </div>
                 </div>
               </div>
@@ -535,7 +567,17 @@ export function NuminaTarotPage() {
                   </div>
                 )}
 
-                <button type="button" onClick={tarot.regenerate} disabled={tarot.isRunning || !current.interpretation}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (uniqueProfiles.length === 0) {
+                      setShowProfileRequiredModal(true);
+                      return;
+                    }
+                    tarot.regenerate();
+                  }}
+                  disabled={tarot.isRunning || !current.interpretation}
+                >
                   {isVietnamese ? 'Luận giải lại, giữ nguyên bài' : 'Regenerate with the same cards'}
                 </button>
                 <button type="button" onClick={tarot.newReading} disabled={tarot.isRunning}>
@@ -557,6 +599,87 @@ export function NuminaTarotPage() {
           </div>
         )}
       </div>
+
+      {/* Profile Required Modal */}
+      {showProfileRequiredModal && (
+        <div
+          className="sacred-pro-overlay"
+          role="presentation"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowProfileRequiredModal(false);
+          }}
+        >
+          <div
+            className="sacred-pro-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tarot-profile-modal-title"
+            style={{ maxWidth: '460px', textAlign: 'center' }}
+          >
+            <button
+              type="button"
+              className="sacred-pro-close"
+              onClick={() => setShowProfileRequiredModal(false)}
+              aria-label={isVietnamese ? 'Đóng' : 'Close'}
+            >
+              ✕
+            </button>
+            <div className="sacred-pro-header" style={{ marginBottom: '16px' }}>
+              <div className="sacred-pro-emblem" aria-hidden="true" style={{ margin: '0 auto 12px' }}>✦</div>
+              <span className="sacred-pro-kicker">
+                {isVietnamese ? 'KẾT NỐI TẦN SỐ NĂNG LƯỢNG' : 'ENERGY MAP REQUIRED'}
+              </span>
+              <h2 id="tarot-profile-modal-title" style={{ fontSize: '22px', margin: '8px 0 10px', fontFamily: 'var(--chani-serif, Georgia, serif)' }}>
+                {isVietnamese ? 'Cần Bản Đồ Thần Số Học' : 'Numerology Map Required'}
+              </h2>
+              <p className="sacred-pro-desc" style={{ fontSize: '14px', lineHeight: '1.6', color: '#dfcfd6', margin: '0 auto' }}>
+                {isVietnamese
+                  ? 'Để Numina xào bài và luận giải Tarot chuẩn xác theo năng lượng riêng của bạn, hãy tạo bản đồ Thần số học trước nhé. Chỉ mất 30 giây!'
+                  : 'To enable Numina to draw cards and interpret Tarot tailored to your unique vibration, please create your Numerology Map first. It only takes 30 seconds!'}
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowProfileRequiredModal(false);
+                  router.push(locale === 'vi' ? '/indicators' : '/en/indicators');
+                }}
+                style={{
+                  background: 'linear-gradient(135deg, #e6c88f 0%, #bd995c 100%)',
+                  color: '#251520',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '20px',
+                  fontWeight: 700,
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  letterSpacing: '0.02em',
+                  boxShadow: '0 4px 14px rgba(230, 200, 143, 0.35)',
+                }}
+              >
+                {isVietnamese ? 'Tạo bản đồ ngay →' : 'Create Map Now →'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowProfileRequiredModal(false)}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(224, 197, 142, 0.3)',
+                  color: '#e6d5de',
+                  padding: '12px 20px',
+                  borderRadius: '20px',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                }}
+              >
+                {isVietnamese ? 'Để sau' : 'Later'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
