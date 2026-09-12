@@ -14,6 +14,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import { getNumerologyImagePath } from "@/utils/numerology-images";
 import ReactMarkdown from "react-markdown";
 import { BillingPanel } from '@/components/Billing/BillingPanel';
+import { useBilling } from "@/hooks/useBilling";
 
 const SITE = "/sites/chani-com-6d20749d";
 
@@ -993,6 +994,7 @@ const wallpaperLibrary = [
 export function EditorsPicksPage() {
   const isVietnamese = useLocale() === "vi";
   const { profiles } = useProfiles();
+  const { isPro, openUpgradeModal } = useBilling();
 
   // Deduplicate profiles
   const uniqueProfiles = useMemo(() => {
@@ -1038,6 +1040,16 @@ export function EditorsPicksPage() {
 
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationError, setGenerationError] = useState("");
+  const [remainingQuota, setRemainingQuota] = useState<number | null>(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const saved = localStorage.getItem(`numina_wallpaper_remaining_${today}`);
+      return saved !== null ? Number(saved) : null;
+    } catch {
+      return null;
+    }
+  });
   const [generatedData, setGeneratedData] = useState<{
     imageUrl: string;
     explanation_vi: string;
@@ -1054,6 +1066,11 @@ export function EditorsPicksPage() {
   } | null>(null);
 
   const generateWallpaper = async () => {
+    if (!isPro && remainingQuota === 0) {
+      openUpgradeModal({ feature: "wallpaper" });
+      setGenerationError(isVietnamese ? "Bạn đã dùng hết 2 lượt tạo hình nền miễn phí hôm nay. Hãy nâng cấp Pro để mở khóa 20 lượt/ngày." : "You have reached the free limit of 2 wallpapers for today. Upgrade to Pro for 20/day.");
+      return;
+    }
     setIsGenerating(true);
     setGenerationError("");
     try {
@@ -1097,7 +1114,23 @@ export function EditorsPicksPage() {
 
       const data = await response.json();
       if (!response.ok || !data.success) {
+        if (response.status === 429 || data.code === "LIMIT_EXCEEDED" || data.code === "DAILY_LIMIT_REACHED" || data.error?.toLowerCase().includes("giới hạn") || data.error?.toLowerCase().includes("limit")) {
+          setRemainingQuota(0);
+          try {
+            const today = new Date().toISOString().slice(0, 10);
+            localStorage.setItem(`numina_wallpaper_remaining_${today}`, "0");
+          } catch {}
+          openUpgradeModal({ feature: "wallpaper" });
+        }
         throw new Error(data.error || "Không thể tạo hình nền.");
+      }
+
+      if (typeof data.remaining === "number") {
+        setRemainingQuota(data.remaining);
+        try {
+          const today = new Date().toISOString().slice(0, 10);
+          localStorage.setItem(`numina_wallpaper_remaining_${today}`, String(data.remaining));
+        } catch {}
       }
 
       setGeneratedData({
@@ -1229,6 +1262,37 @@ export function EditorsPicksPage() {
             </span>
           </div>
 
+          {/* Pro & Quota Tracker */}
+          <div className="wallpaper-quota-bar">
+            <div className="wallpaper-quota-info">
+              <span className="wallpaper-quota-tag">
+                {isPro
+                  ? (isVietnamese ? "✦ GÓI PRO · 20 LƯỢT/NGÀY" : "✦ PRO PLAN · 20/DAY")
+                  : remainingQuota === 0
+                    ? (isVietnamese ? "✦ GÓI MIỄN PHÍ · HẾT LƯỢT HÔM NAY (0/2)" : "✦ FREE PLAN · LIMIT REACHED (0/2)")
+                    : remainingQuota !== null
+                      ? (isVietnamese ? `✦ GÓI MIỄN PHÍ · CÒN ${remainingQuota}/2 LƯỢT HÔM NAY` : `✦ FREE PLAN · ${remainingQuota}/2 REMAINING TODAY`)
+                      : (isVietnamese ? "✦ GÓI MIỄN PHÍ · 2 LƯỢT/NGÀY" : "✦ FREE PLAN · 2/DAY")}
+              </span>
+              <span className="wallpaper-quota-hint">
+                {isPro
+                  ? (isVietnamese ? "Mở khóa tải 4K Ultra HD & 100% phong cách cao cấp" : "4K Ultra HD downloads & all premium styles unlocked")
+                  : remainingQuota === 0
+                    ? (isVietnamese ? "Bạn đã dùng hết 2 lượt tạo hôm nay. Nâng cấp Pro để mở khóa 20 lượt tạo/ngày & tải 4K" : "You used your 2 daily free wallpapers. Upgrade to Pro for 20/day & 4K download")
+                    : (isVietnamese ? "Nâng cấp Pro để mở khóa 20 lượt tạo/ngày & tải 4K" : "Upgrade to Pro for 20 daily wallpapers & 4K download")}
+              </span>
+            </div>
+            {!isPro && (
+              <button
+                type="button"
+                className="wallpaper-pro-upgrade-btn"
+                onClick={() => openUpgradeModal({ feature: 'wallpaper' })}
+              >
+                {isVietnamese ? "NÂNG CẤP 79K ↗" : "UPGRADE $3.99 ↗"}
+              </button>
+            )}
+          </div>
+
           <div className="wallpaper-controls">
             {/* Style Selection */}
             <div className="wallpaper-control-group">
@@ -1323,7 +1387,35 @@ export function EditorsPicksPage() {
                 {generatedData ? (isVietnamese ? "TẢI BẢN CÁ NHÂN HÓA (PNG)" : "DOWNLOAD PERSONALIZED PNG") : (isVietnamese ? "TÌM HÌNH NỀN HD" : "FIND HD WALLPAPER")} <span>↓</span>
               </button>
             </div>
-            {generationError && <p className="wallpaper-error" role="alert">{generationError}</p>}
+            {generatedData && (
+              <button
+                className="wallpaper-pro-4k-button"
+                type="button"
+                onClick={() => {
+                  if (!isPro) {
+                    openUpgradeModal({ feature: 'wallpaper' });
+                  } else {
+                    downloadWallpaper();
+                  }
+                }}
+              >
+                <span>✦</span> {isVietnamese ? "TẢI BẢN 4K ULTRA HD" : "DOWNLOAD 4K ULTRA HD"}
+              </button>
+            )}
+            {generationError && (
+              <div className="wallpaper-error-container" role="alert">
+                <p className="wallpaper-error">{generationError}</p>
+                {!isPro && (
+                  <button
+                    type="button"
+                    className="wallpaper-error-upgrade-btn"
+                    onClick={() => openUpgradeModal({ feature: 'wallpaper' })}
+                  >
+                    ✦ {isVietnamese ? "Nâng cấp Numina Pro (20 lượt/ngày)" : "Upgrade to Numina Pro (20/day)"}
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -1657,6 +1749,7 @@ export function OurTeamPage() {
   const isVietnamese = useLocale() === "vi";
   const searchParams = useSearchParams();
   const { profiles, saveProfile } = useProfiles();
+  const { isPro, openUpgradeModal } = useBilling();
   const [fullName, setFullName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [selected, setSelected] = useState<{ title: string; name: string; value: string; key?: string } | null>(null);
@@ -2160,7 +2253,23 @@ export function OurTeamPage() {
                     ? (isVietnamese ? "ĐÃ LƯU TRÊN THIẾT BỊ · LUẬN GIẢI NGAY" : "SAVED ON THIS DEVICE · INSTANT READING")
                     : (isVietnamese ? "ĐƯỢC TẠO CHO BẢN ĐỒ CÁ NHÂN" : "GENERATED FOR YOUR PERSONAL MAP")}
               </p>
-              {quotaNotice && <p className="indicator-ai-quota-notice" role="status">{quotaNotice}</p>}
+              {quotaNotice && (
+                <div className="indicator-ai-quota-card" role="status">
+                  <div className="indicator-ai-quota-top">
+                    <span>✦ {isVietnamese ? "GIỚI HẠN GÓI MIỄN PHÍ" : "FREE PLAN LIMIT REACHED"}</span>
+                    {!isPro && (
+                      <button
+                        type="button"
+                        className="indicator-upgrade-action-btn"
+                        onClick={() => openUpgradeModal({ feature: "indicators" })}
+                      >
+                        {isVietnamese ? "NÂNG CẤP PRO ↗" : "UPGRADE PRO ↗"}
+                      </button>
+                    )}
+                  </div>
+                  <p>{quotaNotice}</p>
+                </div>
+              )}
 
               {isLoading && (
                 <div className="indicator-ai-progress" aria-live="polite">
@@ -2205,6 +2314,16 @@ export function OurTeamPage() {
                   <button type="button" className="indicator-ai-retry" onClick={() => { const index = indicators.findIndex((item) => item.name === selected.name); if (index >= 0) readIndicator(index, selected.title); }}>THỬ LẠI ↻</button>
                 )}
                 {!isLoading && <button type="button" className="indicator-ai-done" onClick={closeModal}>ĐÓNG LỜI GIẢI</button>}
+                {!isPro && (
+                  <button
+                    type="button"
+                    className="indicator-upgrade-action-btn"
+                    onClick={() => openUpgradeModal({ feature: "indicators" })}
+                    style={{ padding: "8px 16px", fontSize: "11px" }}
+                  >
+                    ✦ {isVietnamese ? "NÂNG CẤP PRO (100 LƯỢT/NGÀY)" : "UPGRADE PRO (100/DAY)"}
+                  </button>
+                )}
               </div>
             </div>
 

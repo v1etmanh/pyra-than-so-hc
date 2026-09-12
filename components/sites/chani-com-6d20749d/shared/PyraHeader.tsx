@@ -4,15 +4,16 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { useBilling } from "@/hooks/useBilling";
 import { useLocale, useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const nav = [
   ["map", "/"],
-  ["account", "/account"],
-  ["wallpaper", "/lucky-wallpaper"],
-  ["chat", "/chat"],
   ["indicators", "/indicators"],
+  ["chat", "/chat"],
+  ["wallpaper", "/lucky-wallpaper"],
+  ["account", "/account"],
 ] as const;
 
 function getActivePath(pathname: string) {
@@ -39,6 +40,7 @@ export default function PyraHeader() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const activePath = getActivePath(pathname);
   const { user, profile, signOut, openAuthModal, isLoading } = useAuth();
+  const { isPro, openUpgradeModal } = useBilling();
   const localize = (path: string) => withLocale(path, locale);
 
   const displayName = profile?.full_name || (user?.email ? user.email.split('@')[0] : t("myAccount"));
@@ -128,6 +130,20 @@ export default function PyraHeader() {
                   <div className="pyra-dropdown-header">
                     <span className="pyra-dropdown-name">{displayName}</span>
                     {userEmail && <span className="pyra-dropdown-email">{userEmail}</span>}
+                    <div className="pyra-dropdown-plan-badge">
+                      <span>{isPro ? 'NUMINA PRO ✦' : (locale === 'vi' ? 'GÓI MIỄN PHÍ' : 'FREE TIER')}</span>
+                      {!isPro && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            openUpgradeModal({ feature: 'general' });
+                          }}
+                        >
+                          {locale === 'vi' ? 'Nâng cấp →' : 'Upgrade →'}
+                        </button>
+                      )}
+                    </div>
                   </div>
                   <div className="pyra-dropdown-divider" />
                   <Link

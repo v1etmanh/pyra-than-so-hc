@@ -2064,3 +2064,634 @@
   .pyra-messenger-panel .pyra-ai-message p { font-size: 11px; }
   .pyra-messenger-panel .pyra-ai-input-wrap { margin: 0 10px 10px; }
 }
+
+/* ==========================================================================
+   SACRED PRO UPGRADE MODAL & OMNIPRESENT PRO SYSTEM
+   Deep Plum Velvet, Celestial Gold & Sacred Parchment Artistry
+   ========================================================================== */
+.sacred-pro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(22, 13, 20, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: sacred-fade-in 0.25s ease-out both;
+}
+
+.sacred-pro-modal {
+  position: relative;
+  width: min(100%, 540px);
+  background-color: #2e1c27;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(180, 120, 155, 0.22), transparent 28rem),
+    radial-gradient(circle at 15% 85%, rgba(224, 197, 142, 0.16), transparent 26rem),
+    linear-gradient(165deg, #372230 0%, #251520 100%);
+  border: 1px solid rgba(224, 197, 142, 0.38);
+  border-radius: 28px;
+  box-shadow:
+    0 24px 60px rgba(18, 9, 15, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  padding: clamp(28px, 4vw, 36px) clamp(22px, 3.5vw, 32px);
+  color: #fbf7ee;
+  animation: sacred-scale-up 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes sacred-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sacred-scale-up {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.sacred-pro-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 197, 142, 0.25);
+  background: rgba(45, 25, 36, 0.6);
+  color: #dfcfd6;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sacred-pro-close:hover {
+  background: rgba(224, 197, 142, 0.2);
+  border-color: #e0c58e;
+  color: #fff;
+}
+
+.sacred-pro-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.sacred-pro-emblem {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: rgba(224, 197, 142, 0.12);
+  border: 1px solid rgba(224, 197, 142, 0.35);
+  color: #ffd166;
+  font-size: 20px;
+  box-shadow: 0 0 20px rgba(224, 197, 142, 0.25);
+}
+
+.sacred-pro-kicker {
+  display: block;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #e0c58e;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sacred-pro-header h2 {
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-size: clamp(24px, 3.2vw, 30px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.sacred-pro-desc {
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #d2c1cb;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.sacred-pro-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sacred-benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(20, 10, 17, 0.45);
+  border: 1px solid rgba(224, 197, 142, 0.18);
+}
+
+.benefit-icon {
+  font-size: 16px;
+  color: #ffd166;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.benefit-text strong {
+  display: block;
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 13px;
+  color: #fbf7ee;
+  margin-bottom: 2px;
+}
+
+.benefit-text small {
+  display: block;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  line-height: 1.35;
+  color: #af9ea7;
+}
+
+.sacred-payment-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sacred-method-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13px 14px;
+  border-radius: 16px;
+  background: rgba(30, 16, 25, 0.6);
+  border: 1.5px solid rgba(224, 197, 142, 0.22);
+  color: #fbf7ee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.sacred-method-btn:hover {
+  background: rgba(50, 30, 42, 0.7);
+  border-color: rgba(224, 197, 142, 0.45);
+}
+
+.sacred-method-btn.is-selected {
+  background: rgba(70, 40, 58, 0.65);
+  border-color: #ffd166;
+  box-shadow: 0 0 16px rgba(224, 197, 142, 0.3), inset 0 0 8px rgba(224, 197, 142, 0.15);
+}
+
+.method-pill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.method-pill-header span {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #dfcfd6;
+}
+
+.method-badge {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(224, 197, 142, 0.2);
+  color: #ffd166 !important;
+  font-size: 8.5px !important;
+}
+
+.sacred-method-btn strong {
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.sacred-method-btn small {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  color: #b7a5ae;
+}
+
+.sacred-checkout-submit {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 230, 170, 0.6);
+  background: linear-gradient(135deg, #e0c58e 0%, #c9a35e 100%);
+  color: #24141f;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(200, 160, 90, 0.3);
+  transition: all 0.25s ease;
+}
+
+.sacred-checkout-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f0d59e 0%, #dab46e 100%);
+  box-shadow: 0 10px 28px rgba(224, 197, 142, 0.45);
+  transform: translateY(-1px);
+}
+
+.sacred-checkout-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.sacred-pro-error {
+  margin: 10px 0 0;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11.5px;
+  color: #fca5a5;
+  text-align: center;
+}
+
+.sacred-pro-guarantee {
+  margin: 14px 0 0;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  color: #ad9ba4;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.sacred-pro-active-banner {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(224, 197, 142, 0.14);
+  border: 1px solid rgba(224, 197, 142, 0.35);
+  text-align: center;
+  color: #f7e6c4;
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   GLOBAL PRO PILL & TOUCHPOINT UI STYLES
+   ========================================================================== */
+.pyra-pro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(190, 155, 90, 0.6);
+  background: linear-gradient(135deg, #f7efe2 0%, #e9dac5 100%);
+  color: #4a3219;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(70, 50, 20, 0.08);
+  transition: all 0.2s ease;
+}
+
+.pyra-pro-pill:hover {
+  border-color: #bfa060;
+  background: linear-gradient(135deg, #fff7ea 0%, #eedfcb 100%);
+  box-shadow: 0 4px 14px rgba(190, 155, 90, 0.25);
+  transform: translateY(-1px);
+}
+
+.pyra-pro-member-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(70, 45, 60, 0.08);
+  border: 1px solid rgba(180, 140, 70, 0.45);
+  color: #8b6826;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.pyra-dropdown-plan-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background: #fbf7ee;
+  border: 1px solid rgba(215, 195, 170, 0.6);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+}
+
+.pyra-dropdown-plan-badge span {
+  font-weight: 700;
+  color: #7d5e38;
+}
+
+.pyra-dropdown-plan-badge button {
+  background: none;
+  border: 0;
+  color: #a85820;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 680px) {
+  .sacred-pro-benefits {
+    grid-template-columns: 1fr;
+  }
+  .sacred-payment-methods {
+    grid-template-columns: 1fr;
+  }
+  .pyra-pro-pill {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   NUMINA PRO TOUCHPOINTS: WALLPAPER STUDIO, INDICATORS & HOME BANNER
+   ========================================================================== */
+
+.wallpaper-quota-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(254, 250, 243, 0.95), rgba(246, 237, 224, 0.95));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 14px rgba(45, 25, 35, 0.04);
+}
+
+.wallpaper-quota-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wallpaper-quota-tag {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #7d5e38;
+}
+
+.wallpaper-quota-hint {
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 12.5px;
+  color: #6d5b58;
+}
+
+.wallpaper-pro-upgrade-btn {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #dfc086 0%, #c39a4f 100%);
+  color: #241420;
+  border: 1px solid rgba(255, 235, 185, 0.8);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(195, 154, 79, 0.3);
+}
+
+.wallpaper-pro-upgrade-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(195, 154, 79, 0.45);
+}
+
+.wallpaper-style-pro-tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #2a1523;
+  color: #ffd166;
+  letter-spacing: 0.08em;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.wallpaper-pro-4k-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2a1523 0%, #1a0b16 100%);
+  color: #f7e7ce;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wallpaper-pro-4k-button span {
+  color: #ffd166;
+}
+
+.wallpaper-pro-4k-button:hover {
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 6px 18px rgba(25, 10, 20, 0.3);
+  transform: translateY(-1px);
+}
+
+.wallpaper-error-container {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(180, 40, 60, 0.08);
+  border: 1px solid rgba(180, 40, 60, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.wallpaper-error-upgrade-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #2a1523;
+  color: #ffd166;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+/* Indicators AI Quota Card */
+.indicator-ai-quota-card {
+  margin: 14px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(253, 248, 238, 0.96), rgba(247, 237, 222, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 14px rgba(45, 25, 35, 0.05);
+}
+
+.indicator-ai-quota-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.indicator-ai-quota-top span {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: #8a6534;
+  letter-spacing: 0.08em;
+}
+
+.indicator-upgrade-action-btn {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #2a1523;
+  color: #ffd166;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.indicator-upgrade-action-btn:hover {
+  background: #3c1c31;
+  border-color: #ffd166;
+}
+
+.indicator-ai-quota-card p {
+  margin: 0;
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 12.5px;
+  color: #665351;
+  line-height: 1.45;
+}
+
+/* Home Companion Pro Banner */
+.home-pro-companion-banner {
+  margin: 40px auto 20px;
+  max-width: 1100px;
+  padding: 24px 28px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #241421 0%, #150912 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 16px 36px rgba(18, 8, 16, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #f7ede6;
+}
+
+.home-pro-banner-content {
+  max-width: 680px;
+}
+
+.home-pro-kicker {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #dfc086;
+  margin-bottom: 6px;
+}
+
+.home-pro-title {
+  font-family: 'Playfair Display', var(--chani-serif), Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff8f0;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.home-pro-desc {
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 14px;
+  color: #dfced6;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.home-pro-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e0c58e 0%, #c9a35e 100%);
+  color: #24141f;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(255, 230, 170, 0.8);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(201, 163, 94, 0.35);
+}
+
+.home-pro-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 163, 94, 0.5);
+}
+
+@media (max-width: 768px) {
+  .wallpaper-quota-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-pro-companion-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .home-pro-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

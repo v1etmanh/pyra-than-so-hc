@@ -12,3 +12,4 @@ export type {
 } from "./provider-types";
 export { PROVIDER_PRESETS, toProviderRequestConfig } from "./provider-types";
 export { useSurveyTrigger, openSurveyManually } from "./useSurveyTrigger";
+export { useBilling, BillingProvider } from "./useBilling";

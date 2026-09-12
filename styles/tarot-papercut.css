@@ -1267,4 +1267,143 @@
   }
 }
 
+/* ==========================================================================
+   TAROT PRO TOUCHPOINTS (Quota pill, spread badges, aside upsell)
+   ========================================================================== */
+.tarot-quota-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(190, 155, 90, 0.45);
+  background: rgba(255, 255, 255, 0.85);
+  color: #5c432d;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(50, 30, 40, 0.04);
+  transition: all 0.2s ease;
+}
 
+.tarot-quota-pill:hover {
+  background: #fff;
+  border-color: #bfa060;
+  box-shadow: 0 4px 12px rgba(190, 155, 90, 0.2);
+  transform: translateY(-1px);
+}
+
+.tarot-quota-pill.is-pro {
+  background: linear-gradient(135deg, rgba(224, 197, 142, 0.25), rgba(255, 240, 200, 0.1));
+  border-color: #ffd166;
+  color: #8b6826;
+  cursor: default;
+}
+
+.tarot-pro-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffd166, #d4a742);
+  color: #241420;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-left: 6px;
+  box-shadow: 0 2px 6px rgba(224, 197, 142, 0.4);
+}
+
+.tarot-aside-pro-card {
+  margin-top: 20px;
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(25, 12, 22, 0.75), rgba(45, 22, 38, 0.6));
+  border: 1px solid rgba(224, 197, 142, 0.3);
+  box-shadow: 0 6px 18px rgba(18, 9, 15, 0.3);
+}
+
+.aside-pro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.aside-pro-header span {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffd166;
+  letter-spacing: 0.08em;
+}
+
+.aside-pro-header small {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 10px;
+  color: #dfcfd6;
+}
+
+.tarot-aside-pro-card p {
+  margin: 0 0 12px;
+  font-family: var(--chani-serif), Georgia, serif;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #dfced7;
+}
+
+.tarot-aside-pro-card button {
+  width: 100%;
+  min-height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 230, 170, 0.5);
+  background: linear-gradient(135deg, #e0c58e 0%, #c9a35e 100%);
+  color: #24141f;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tarot-aside-pro-card button:hover {
+  background: linear-gradient(135deg, #f0d59e 0%, #dab46e 100%);
+  box-shadow: 0 4px 14px rgba(224, 197, 142, 0.4);
+}
+
+.numina-tarot-error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: rgba(140, 29, 64, 0.12);
+  border: 1px solid rgba(220, 100, 120, 0.35);
+  border-radius: 12px;
+}
+
+.tarot-error-upgrade-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e0c58e 0%, #c9a35e 100%);
+  color: #24141f;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 230, 170, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(224, 197, 142, 0.3);
+}
+
+.tarot-error-upgrade-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(224, 197, 142, 0.45);
+}

@@ -7,6 +7,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "utils/themes";
 import { AuthProvider } from "@/hooks/useAuth";
 import { AuthModal } from "@/components/Auth";
+import { BillingProvider } from "@/hooks/useBilling";
+import { SacredProModal } from "@/components/Billing/SacredProModal";
 
 const COLOR_MODE_SCRIPT = `!function(){try{var m="${theme.config?.initialColorMode || "light"}";var e=localStorage.getItem("chakra-ui-color-mode")||m;if(e==="system"){e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}var d=document.documentElement;d.style.colorScheme=e;d.dataset.theme=e}catch(e){}}()`;
 
@@ -29,8 +31,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <EmotionCacheProvider>
       <ChakraProvider theme={theme}>
         <AuthProvider>
-          {children}
-          <AuthModal />
+          <BillingProvider>
+            {children}
+            <AuthModal />
+            <SacredProModal />
+          </BillingProvider>
         </AuthProvider>
       </ChakraProvider>
     </EmotionCacheProvider>

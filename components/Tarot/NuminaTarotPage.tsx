@@ -11,6 +11,7 @@ import type { ProfileContext } from '@/lib/ai/types';
 import { tarotSpreads } from '@/lib/tarot/spreads';
 import type { TarotLocale } from '@/lib/tarot/types';
 import { TarotCardView } from './TarotCard';
+import { useBilling } from '@/hooks/useBilling';
 
 const quickPrompts = {
   vi: [
@@ -91,6 +92,7 @@ export function NuminaTarotPage() {
   const locale = (useLocale() === 'en' ? 'en' : 'vi') as TarotLocale;
   const isVietnamese = locale === 'vi';
   const tarot = useTarotReading(locale);
+  const { isPro, openUpgradeModal } = useBilling();
   const { profiles } = useProfiles();
   const [selectedProfileId, setSelectedProfileId] = useState<string>('');
   const [selectedSpreadId, setSelectedSpreadId] = useState('three-card');
@@ -219,6 +221,19 @@ export function NuminaTarotPage() {
           </div>
 
           <div className="tarot-banner-tools">
+            {isPro ? (
+              <span className="tarot-quota-pill is-pro">✦ 100 {isVietnamese ? 'lượt/ngày' : 'reads/day'}</span>
+            ) : (
+              <button
+                type="button"
+                className="tarot-quota-pill"
+                onClick={() => openUpgradeModal({ feature: 'tarot' })}
+                title={isVietnamese ? 'Gói miễn phí 15 lượt/ngày · Nâng cấp Pro để mở khóa 100 lượt' : 'Free tier 15/day · Upgrade to Pro for 100/day'}
+              >
+                ✦ 15 {isVietnamese ? 'lượt/ngày' : 'reads/day'} · {isVietnamese ? 'Nâng cấp' : 'Upgrade'}
+              </button>
+            )}
+
             <div className="tarot-history-box">
               <span>{isVietnamese ? 'LỊCH SỬ' : 'HISTORY'}</span>
               <select
@@ -397,10 +412,10 @@ export function NuminaTarotPage() {
                           className="spread-icon-art"
                         />
                       </div>
-
                       <div className="spread-info-content">
                         <div className="spread-title-row">
                           <strong>{spread.name[locale]}</strong>
+                          {spread.id === 'celtic-cross' && <span className="tarot-pro-badge">PRO</span>}
                           <span>
                             {spread.positions.length} {isVietnamese ? 'lá' : spread.positions.length === 1 ? 'card' : 'cards'}
                           </span>
@@ -470,7 +485,20 @@ export function NuminaTarotPage() {
                   </section>
                 ))}
 
-                {tarot.error && <p className="numina-tarot-error" role="alert">{tarot.error}</p>}
+                {tarot.error && (
+                  <div className="numina-tarot-error-box" role="alert">
+                    <p className="numina-tarot-error">{tarot.error}</p>
+                    {!isPro && (
+                      <button
+                        type="button"
+                        className="tarot-error-upgrade-btn"
+                        onClick={() => openUpgradeModal({ feature: 'tarot' })}
+                      >
+                        ✦ {isVietnamese ? 'Nâng cấp Numina Pro (Không giới hạn)' : 'Upgrade to Numina Pro (Unlimited)'}
+                      </button>
+                    )}
+                  </div>
+                )}
                 <div ref={readingEndRef} />
 
                 {current.interpretation && (
@@ -499,6 +527,27 @@ export function NuminaTarotPage() {
                   <div><dt>{isVietnamese ? 'Hồ sơ' : 'Profile'}</dt><dd>{current.profile?.name ?? (isVietnamese ? 'Không dùng' : 'None')}</dd></div>
                   <div><dt>{isVietnamese ? 'Hỏi tiếp' : 'Follow-ups'}</dt><dd>{current.followUps.length}</dd></div>
                 </dl>
+
+                {!isPro && (
+                  <div className="tarot-aside-pro-card">
+                    <div className="aside-pro-header">
+                      <span>✦ NUMINA PRO</span>
+                      <small>79K/30D</small>
+                    </div>
+                    <p>
+                      {isVietnamese
+                        ? '100 lượt vấn an AI chuyên sâu mỗi ngày, không giới hạn câu hỏi tiếp theo và mở khóa toàn bộ trải bài thần thánh.'
+                        : '100 deep AI readings daily, unlimited follow-ups, and all celestial spreads unlocked.'}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => openUpgradeModal({ feature: 'tarot' })}
+                    >
+                      {isVietnamese ? 'Nâng cấp ngay' : 'Upgrade Now'}
+                    </button>
+                  </div>
+                )}
+
                 <button type="button" onClick={tarot.regenerate} disabled={tarot.isRunning || !current.interpretation}>
                   {isVietnamese ? 'Luận giải lại, giữ nguyên bài' : 'Regenerate with the same cards'}
                 </button>

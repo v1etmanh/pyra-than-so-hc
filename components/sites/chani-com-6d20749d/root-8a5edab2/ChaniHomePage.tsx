@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale } from "next-intl";
 import PyraHeader from "../shared/PyraHeader";
 import { useProfiles } from "@/hooks/useProfiles";
+import { useBilling } from "@/hooks/useBilling";
 
 const ASSET = "/sites/chani-com-6d20749d/root-8a5edab2/assets";
 
@@ -247,6 +248,7 @@ export default function ChaniHomePage() {
   }, [secondsLeft]);
 
   const isVietnamese = locale === "vi";
+  const { isPro, openUpgradeModal } = useBilling();
   const localizedSlides = isVietnamese ? slidesVi : slides;
   const localizedInsights = isVietnamese ? numerologyInsightsVi : numerologyInsights;
   const localizedWeeklyFrequency = isVietnamese ? weeklyFrequencyVi : weeklyFrequency;
@@ -417,6 +419,32 @@ export default function ChaniHomePage() {
         <ChaniImage src={`${ASSET}/leo-season.avif`} alt="" className="start-art" />
         <div><h2>{isVietnamese ? "Năng lượng của bạn luôn có một nơi để hướng tới." : "Your energy has somewhere to go."}</h2><a className="chani-outline-button" href={localize("/indicators")}>{isVietnamese ? "BẮT ĐẦU TẠI ĐÂY" : "BEGIN HERE"}</a></div>
       </section>
+
+      {/* Numina Pro Sacred Sanctuary Banner */}
+      {!isPro && (
+        <section className="home-pro-companion-banner" aria-label="Numina Pro Membership">
+          <div className="home-pro-banner-content">
+            <div className="home-pro-kicker">✦ NUMINA SACRED MEMBERSHIP</div>
+            <h2 className="home-pro-title">
+              {isVietnamese
+                ? "Khai mở toàn diện thần số, tarot & năng lượng biểu tượng"
+                : "Unlock the full depth of numerology, tarot & energy symbols"}
+            </h2>
+            <p className="home-pro-desc">
+              {isVietnamese
+                ? "Trải nghiệm không giới hạn 100 lượt vấn an AI/ngày, 20 hình nền năng lượng 4K, trọn bộ 78 lá Tarot và ưu tiên xử lý độc quyền."
+                : "Experience 100 daily AI inquiries, 20 high-res 4K wallpapers, full 78-card Tarot sanctuary, and dedicated priority compute."}
+            </p>
+          </div>
+          <button
+            type="button"
+            className="home-pro-btn"
+            onClick={() => openUpgradeModal({ feature: 'general' })}
+          >
+            {isVietnamese ? "NÂNG CẤP PRO · 79.000Đ ↗" : "JOIN PRO · $3.99/MO ↗"}
+          </button>
+        </section>
+      )}
 
       {selectedInsight && <div className="insight-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedInsight(null); }}>
         <section className="insight-modal" role="dialog" aria-modal="true" aria-labelledby="insight-modal-title">
