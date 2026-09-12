@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { synthesizeSacredWallpaperPrompt } from '@/lib/lucky-wallpaper/ai-prompt-synthesizer';
-import { generateWallpaperImage } from '@/lib/lucky-wallpaper/image-service';
+import { buildLuckyWallpaperPrompt } from '@/lib/lucky-wallpaper/prompt-builder';
+import { findWallpaperWithAiKeywords } from '@/lib/lucky-wallpaper/wallpaper-workflow';
+import { NUMEROLOGY_AESTHETICS_MAP } from '@/lib/lucky-wallpaper/constants';
 import { getRequestAccess } from '@/lib/billing/access';
 import { recordAiUsage } from '@/lib/usage/usage-meter';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
@@ -26,15 +27,14 @@ export async function POST(req: NextRequest) {
       fullName = '',
       customWish = '',
       seed: customSeed,
-      saveToDisk = false,
       engine = 'auto',
     } = body;
 
     const access = await getRequestAccess(req, 'wallpaper');
     if (access instanceof Response) return access;
 
-    // 1. AI Art Director synthesizes prompt, energy explanation, and affirmation
-    const plan = await synthesizeSacredWallpaperPrompt({
+    // Build stable numerology copy, then let AI generate concise stock-search queries.
+    const input = {
       lifePathNumber: Number(lifePathNumber) || 1,
       destinyNumber,
       soulUrgeNumber,
@@ -47,27 +47,36 @@ export async function POST(req: NextRequest) {
       deviceType,
       fullName,
       customWish,
-    });
+    };
+    const plan = buildLuckyWallpaperPrompt(input);
 
     const seed = customSeed ? Number(customSeed) : Math.floor(Math.random() * 10000000);
 
-    // 2. Render the artwork with the configured image engine (Cloudflare Workers AI -> Fallback Pollinations.ai)
-    const imageResult = await generateWallpaperImage({
-      prompt: plan.visualPrompt,
+    const workflow = await findWallpaperWithAiKeywords({
+      input,
       width: plan.width,
       height: plan.height,
       seed,
       engine,
-      saveToDisk,
+      deadlineAt: Date.now() + 40_000,
     });
+    const imageResult = workflow.image;
     recordAiUsage({
       identity: access.identity,
       plan: access.plan,
       feature: 'wallpaper',
       route: '/api/lucky-wallpaper/generate',
-      provider: imageResult.provider,
-      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_IMAGE_COST_USD || 0)
+      provider: workflow.aiProvider
+        ? `${workflow.aiProvider} + ${imageResult.provider}`
+        : `rules + ${imageResult.provider}`,
+      estimatedCostUsd: Number(
+        process.env.NUMINA_ESTIMATED_WALLPAPER_COST_USD ||
+        process.env.NUMINA_ESTIMATED_IMAGE_COST_USD ||
+        0
+      )
     });
+
+    const aesthetics = NUMEROLOGY_AESTHETICS_MAP[plan.lifePathNumber] || NUMEROLOGY_AESTHETICS_MAP[1];
 
     return NextResponse.json({
       success: true,
@@ -75,7 +84,8 @@ export async function POST(req: NextRequest) {
       seed: imageResult.seed,
       provider: imageResult.provider,
       model: imageResult.model,
-      prompt: plan.visualPrompt,
+      prompt: imageResult.query,
+      searchQuery: imageResult.query,
       negativePrompt: plan.negativePrompt,
       explanation_vi: plan.explanation_vi,
       explanation_en: plan.explanation_en,
@@ -83,17 +93,21 @@ export async function POST(req: NextRequest) {
       affirmation_en: plan.affirmation_en,
       luckyColors_vi: plan.luckyColors_vi,
       luckyColors_en: plan.luckyColors_en,
-      sacredSymbols: plan.sacredSymbols,
+      sacredSymbols: [aesthetics.sacredSymbol_en, aesthetics.sacredSymbol_vi],
       style: plan.style,
       intention: plan.intention,
       device: plan.device,
       lifePathNumber: plan.lifePathNumber,
       personalDay: plan.personalDay,
-      isAIGenerated: plan.isAIGenerated,
-      aiProvider: plan.aiProvider,
-      aiModel: plan.aiModel,
+      isAIGenerated: false,
+      keywordSource: workflow.keywordSource,
+      keywordRound: workflow.keywordRound,
+      aiProvider: workflow.aiProvider,
+      aiModel: workflow.aiModel,
       imageProvider: imageResult.provider,
       imageModel: imageResult.model,
+      sourceId: imageResult.sourceId,
+      attribution: imageResult.attribution,
       plan: access.plan,
       remaining: access.remaining,
     });

@@ -1037,24 +1037,25 @@ export function EditorsPicksPage() {
     : wallpaperIntentions;
 
   const [isGenerating, setIsGenerating] = useState(false);
-  const [generationPhase, setGenerationPhase] = useState<"idle" | "directing" | "rendering" | "done">("idle");
+  const [generationError, setGenerationError] = useState("");
   const [generatedData, setGeneratedData] = useState<{
     imageUrl: string;
     explanation_vi: string;
     affirmation_vi: string;
     luckyColors_vi: string[];
-    sacredSymbols?: string[];
-    prompt?: string;
-    isAIGenerated?: boolean;
-    aiProvider?: string;
-    aiModel?: string;
-    imageProvider?: string;
-    imageModel?: string;
+    searchQuery?: string;
+    attribution?: {
+      provider: "Pixabay" | "Pexels";
+      creator: string;
+      creatorUrl?: string;
+      sourcePageUrl: string;
+      providerUrl: string;
+    };
   } | null>(null);
 
   const generateWallpaper = async () => {
     setIsGenerating(true);
-    setGenerationPhase("directing");
+    setGenerationError("");
     try {
       const styleIdMap: Record<string, string> = {
         geometry: "sacred_geometry",
@@ -1065,6 +1066,14 @@ export function EditorsPicksPage() {
         minimal: "ethereal_minimalist",
       };
       const styleId = styleIdMap[style] || "sacred_geometry";
+      const intentionIdMap: Record<string, string> = {
+        wealth: "wealth",
+        love: "love",
+        peace: "peace",
+        focus: "career",
+        healing: "peace",
+        courage: "protection",
+      };
       const deviceType = device === "phone" ? "mobile" : device === "laptop" ? "desktop" : "square";
 
       const response = await fetch("/api/lucky-wallpaper/generate", {
@@ -1079,7 +1088,7 @@ export function EditorsPicksPage() {
           personalityNumber: personalityNum,
           personalDay,
           personalYear,
-          intentionId: intention,
+          intentionId: intentionIdMap[intention] || "wealth",
           styleId,
           deviceType,
           customWish: customWish.trim(),
@@ -1091,46 +1100,87 @@ export function EditorsPicksPage() {
         throw new Error(data.error || "Không thể tạo hình nền.");
       }
 
-      setGenerationPhase("rendering");
       setGeneratedData({
         imageUrl: data.imageUrl,
         explanation_vi: data.explanation_vi,
         affirmation_vi: data.affirmation_vi,
         luckyColors_vi: data.luckyColors_vi || [],
-        sacredSymbols: data.sacredSymbols || [],
-        prompt: data.prompt,
-        isAIGenerated: data.isAIGenerated,
-        aiProvider: data.aiProvider,
-        aiModel: data.aiModel,
-        imageProvider: data.imageProvider,
-        imageModel: data.imageModel,
+        searchQuery: data.searchQuery,
+        attribution: data.attribution,
       });
-      setGenerationPhase("done");
     } catch (err) {
       console.error(err);
-      setGenerationPhase("idle");
+      setGenerationError(err instanceof Error ? err.message : (isVietnamese ? "Không thể tìm ảnh phù hợp." : "Could not find a suitable image."));
     } finally {
       setIsGenerating(false);
     }
   };
 
-  const downloadWallpaper = () => {
+  const downloadWallpaper = async () => {
     if (!generatedData?.imageUrl) return;
-    const anchor = document.createElement("a");
-    anchor.href = generatedData.imageUrl;
-    anchor.download = `pyra-lucky-wallpaper-${lifePath}-${intention}.png`;
-    anchor.target = "_blank";
-    anchor.click();
+    try {
+      const response = await fetch(generatedData.imageUrl);
+      if (!response.ok) throw new Error("Image download failed");
+      const bitmap = await createImageBitmap(await response.blob());
+      const size = device === "phone"
+        ? { width: 720, height: 1280 }
+        : device === "laptop"
+          ? { width: 1280, height: 720 }
+          : { width: 1024, height: 1024 };
+      const canvas = document.createElement("canvas");
+      canvas.width = size.width;
+      canvas.height = size.height;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("Canvas is unavailable");
+
+      const scale = Math.max(size.width / bitmap.width, size.height / bitmap.height);
+      const drawWidth = bitmap.width * scale;
+      const drawHeight = bitmap.height * scale;
+      context.drawImage(bitmap, (size.width - drawWidth) / 2, (size.height - drawHeight) / 2, drawWidth, drawHeight);
+
+      const shade = context.createLinearGradient(0, 0, 0, size.height);
+      shade.addColorStop(0, "rgba(8, 8, 12, 0.18)");
+      shade.addColorStop(0.55, "rgba(8, 8, 12, 0.04)");
+      shade.addColorStop(1, "rgba(8, 8, 12, 0.72)");
+      context.fillStyle = shade;
+      context.fillRect(0, 0, size.width, size.height);
+
+      context.textAlign = "center";
+      context.fillStyle = "rgba(255, 255, 255, 0.92)";
+      context.font = `${Math.round(size.width * 0.24)}px Georgia, serif`;
+      context.fillText(String(lifePath).slice(0, 2), size.width / 2, size.height * 0.54);
+      context.font = `${Math.max(20, Math.round(size.width * 0.026))}px Arial, sans-serif`;
+      context.fillText(
+        `${isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} ${String(lifePath)}  ·  NUMINA`,
+        size.width / 2,
+        size.height * 0.91
+      );
+
+      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png", 0.96));
+      if (!blob) throw new Error("Image export failed");
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = `numina-lucky-wallpaper-${lifePath}-${intention}.png`;
+      anchor.click();
+      URL.revokeObjectURL(url);
+      bitmap.close();
+    } catch (error) {
+      console.error(error);
+      setGenerationError(isVietnamese ? "Không thể tải ảnh lúc này. Vui lòng thử lại." : "Could not download the image. Please try again.");
+    }
   };
 
   return (
     <Shell>
       <section className="wallpaper-studio-section">
         <div className="wallpaper-studio-copy">
-          <p className="batch-kicker">NUMINA / {isVietnamese ? "XƯỞNG HÌNH NỀN NHÂN SỐ HỌC AI" : "AI SACRED WALLPAPER STUDIO"}</p>
+          <p className="batch-kicker">NUMINA / {isVietnamese ? "XƯỞNG HÌNH NỀN TUYỂN CHỌN" : "CURATED WALLPAPER STUDIO"}</p>
           <h2>{isVietnamese ? "Xưởng hình nền may mắn" : "Lucky wallpaper studio"}</h2>
           <p className="wallpaper-studio-lead">
-            Kiến tạo bức tranh năng lượng hộ mệnh độc bản. AI Art Director sẽ giải mã bản đồ Thần số học của bạn và kết hợp hình học thiêng liêng để tạo nên hình nền may mắn 8K.
+            {isVietnamese
+              ? "Tìm ảnh chất lượng cao theo bản đồ Thần số học, phong cách và ý định của bạn — nhanh, tự nhiên và không còn hình AI méo lỗi."
+              : "Find a high-quality photo matched to your numerology profile, style, and intention — fast, natural, and free of AI image artifacts."}
           </p>
 
           {/* Profile Switcher */}
@@ -1262,7 +1312,7 @@ export function EditorsPicksPage() {
                 onClick={generateWallpaper}
                 disabled={isGenerating}
               >
-                {generatedData ? "TÁI TẠO BẢN ĐỒ MỚI" : "TẠO THỬ NGAY"} <span>⤨</span>
+                {generatedData ? (isVietnamese ? "TÌM ẢNH KHÁC" : "FIND ANOTHER") : (isVietnamese ? "TÌM THỬ NGAY" : "TRY IT NOW")} <span>⤨</span>
               </button>
               <button
                 className="wallpaper-primary-button"
@@ -1270,9 +1320,10 @@ export function EditorsPicksPage() {
                 onClick={generatedData ? downloadWallpaper : generateWallpaper}
                 disabled={isGenerating}
               >
-                {generatedData ? "TẢI ẢNH GỐC HD (PNG)" : "KÍCH HOẠT & TẠO ẢNH 8K"} <span>↓</span>
+                {generatedData ? (isVietnamese ? "TẢI BẢN CÁ NHÂN HÓA (PNG)" : "DOWNLOAD PERSONALIZED PNG") : (isVietnamese ? "TÌM HÌNH NỀN HD" : "FIND HD WALLPAPER")} <span>↓</span>
               </button>
             </div>
+            {generationError && <p className="wallpaper-error" role="alert">{generationError}</p>}
           </div>
         </div>
 
@@ -1281,7 +1332,13 @@ export function EditorsPicksPage() {
           <div className={`wallpaper-preview-device ${device}`}>
             <div className={`wallpaper-preview wallpaper-style-${style} wallpaper-intention-${intention}`}>
               {generatedData?.imageUrl ? (
-                <img src={generatedData.imageUrl} alt="Numina Lucky Sacred Wallpaper" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <>
+                  <img src={generatedData.imageUrl} alt={isVietnamese ? "Hình nền may mắn Numina" : "Numina lucky wallpaper"} />
+                  <div className="wallpaper-personalization" aria-hidden="true">
+                    <span className="wallpaper-personalization-number">{String(lifePath).slice(0, 2)}</span>
+                    <span className="wallpaper-personalization-label">{isVietnamese ? "SỐ ĐƯỜNG ĐỜI" : "LIFE PATH"} {String(lifePath)} · NUMINA</span>
+                  </div>
+                </>
               ) : (
                 <>
                   <span className="wallpaper-preview-stars">✦　✧　·　✦</span>
@@ -1298,13 +1355,23 @@ export function EditorsPicksPage() {
 
            <p className="wallpaper-preview-note">
             {isGenerating
-              ? generationPhase === "directing"
-                ? (isVietnamese ? "✦ AI ĐANG THIẾT KẾ SIÊU PROMPT PHONG THỦY…" : "✦ AI ART DIRECTOR IS DESIGNING YOUR FENG SHUI PROMPT…")
-                : (isVietnamese ? "✦ AI ĐANG VẼ TÁC PHẨM 8K ĐỘC BẢN…" : "✦ AI GENERATOR IS RENDERING YOUR ONE-OF-A-KIND 8K ART…")
+              ? (isVietnamese ? "✦ AI ĐANG TẠO TỪ KHÓA VÀ TÌM ẢNH PHÙ HỢP…" : "✦ AI IS CREATING SEARCH TERMS AND FINDING A MATCH…")
               : generatedData
-               ? (isVietnamese ? `Tác phẩm phong thủy độc bản của ${activeProfile.name}` : `One-of-a-kind feng shui artwork for ${activeProfile.name}`)
+               ? (isVietnamese ? `Hình nền được tuyển chọn cho ${activeProfile.name}` : `A curated wallpaper for ${activeProfile.name}`)
                : (isVietnamese ? `Bản xem trước phong cách ${style} · Ý niệm ${intention}` : `Preview: ${style} style · ${intention} intention`)}
           </p>
+          {generatedData?.attribution && (
+            <p className="wallpaper-attribution">
+              {isVietnamese ? "Ảnh của " : "Photo by "}
+              <a href={generatedData.attribution.creatorUrl || generatedData.attribution.sourcePageUrl} target="_blank" rel="noreferrer">
+                {generatedData.attribution.creator}
+              </a>
+              {isVietnamese ? " trên " : " on "}
+              <a href={generatedData.attribution.providerUrl} target="_blank" rel="noreferrer">
+                {generatedData.attribution.provider}
+              </a>
+            </p>
+          )}
 
           {/* Sacred Reading Card below image */}
           {generatedData && (
@@ -1324,11 +1391,9 @@ export function EditorsPicksPage() {
                 <span style={{ fontSize: "10px", fontFamily: '"Courier New", monospace', color: "#8a6d3b", fontWeight: "bold" }}>
                   ✦ GIẢI MÃ NĂNG LƯỢNG BẢN ĐỒ THẦN SỐ HỌC
                 </span>
-                {generatedData.isAIGenerated && (
-                  <span style={{ fontSize: "9px", fontFamily: '"Courier New", monospace', padding: "2px 6px", background: "#ebd99e", borderRadius: "4px" }}>
-                    {isVietnamese ? "AI ĐIỀU PHỐI NGHỆ THUẬT" : "AI ART DIRECTED"}
-                  </span>
-                )}
+                <span style={{ fontSize: "9px", fontFamily: '"Courier New", monospace', padding: "2px 6px", background: "#ebd99e", borderRadius: "4px" }}>
+                  {isVietnamese ? "ẢNH THẬT TUYỂN CHỌN" : "CURATED PHOTO"}
+                </span>
               </div>
 
               <p style={{ fontFamily: "var(--chani-serif)", fontSize: "13px", lineHeight: "1.6", color: "#333", margin: "0 0 14px" }}>
@@ -1350,8 +1415,8 @@ export function EditorsPicksPage() {
                 </div>
               )}
 
-              {/* View AI Prompt Toggle */}
-              {generatedData.prompt && (
+              {/* View stock search terms */}
+              {generatedData.searchQuery && (
                 <div style={{ marginTop: "12px" }}>
                   <button
                     type="button"
@@ -1367,11 +1432,13 @@ export function EditorsPicksPage() {
                       padding: 0,
                     }}
                   >
-                    {showPromptDetails ? "Ẩn chi tiết Prompt AI [-]" : "Xem chi tiết Prompt AI Art Director [+]"}
+                    {showPromptDetails
+                      ? (isVietnamese ? "Ẩn từ khóa tìm ảnh [-]" : "Hide search terms [-]")
+                      : (isVietnamese ? "Xem từ khóa tìm ảnh [+]" : "View search terms [+]")}
                   </button>
                   {showPromptDetails && (
                     <div style={{ marginTop: "8px", padding: "10px", background: "#2a2a2b", color: "#ddd", fontSize: "10px", fontFamily: '"Courier New", monospace', lineHeight: "1.4", wordBreak: "break-word" }}>
-                      {generatedData.prompt}
+                      {generatedData.searchQuery}
                     </div>
                   )}
                 </div>

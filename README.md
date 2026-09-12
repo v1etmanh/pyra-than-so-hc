@@ -1,6 +1,6 @@
 # NUMINA Numerology
 
-Ứng dụng Next.js cho Thần số học, Tarot và hình nền may mắn AI, hỗ trợ giao diện tiếng Việt và tiếng Anh.
+Ứng dụng Next.js cho Thần số học, Tarot và hình nền may mắn tuyển chọn, hỗ trợ giao diện tiếng Việt và tiếng Anh.
 
 ## Kiến trúc nội dung và AI
 
@@ -32,6 +32,8 @@ pnpm dev
 Ứng dụng mặc định chạy tại `http://localhost:3200/vi`; đổi locale sang `/en` để kiểm tra bản tiếng Anh.
 
 Sao chép `.env.example` thành `.env.local` rồi điền Supabase, PayPal, payOS và ít nhất một provider AI. PayPal dùng subscription theo tháng cho khách quốc tế; payOS tạo VietQR một lần để cấp 30 ngày Pro. Quyền trả phí chỉ được cập nhật sau webhook đã xác thực. Có thể cấu hình nhiều model AI cho mỗi provider bằng danh sách phân tách bởi dấu phẩy.
+
+Hình nền dùng AI để tạo tối đa hai lượt từ khóa tìm kiếm, mỗi lượt sáu query; ảnh cuối cùng vẫn là ảnh stock từ Pixabay/Pexels chứ không phải ảnh do AI vẽ. Cấu hình `PIXABAY_API_KEY` và, nếu đã xác nhận quyền sử dụng phù hợp, `PEXELS_API_KEY`; thứ tự mặc định là Pixabay rồi Pexels. Nếu model lỗi, hệ thống tự dùng bộ từ khóa quy tắc. `WALLPAPER_ASSET_SIGNING_SECRET` nên là một chuỗi ngẫu nhiên ổn định để các URL ảnh đã lưu tiếp tục hoạt động sau khi đổi API key.
 
 Ba timeout của stream được tách riêng:
 

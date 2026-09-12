@@ -107,6 +107,13 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
     personalDay: number;
     provider?: string;
     model?: string;
+    attribution?: {
+      provider: 'Pixabay' | 'Pexels';
+      creator: string;
+      creatorUrl?: string;
+      sourcePageUrl: string;
+      providerUrl: string;
+    };
     style: StylePreset;
     intention: IntentionOption;
     device: DeviceAspectRatio;
@@ -178,8 +185,8 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
       });
 
       toast({
-        title: 'Tạo hình nền may mắn thành công! ✨',
-        description: 'Trường năng lượng của bạn đã được hội tụ trong tác phẩm.',
+        title: 'Đã tìm thấy hình nền phù hợp! ✨',
+        description: 'Ảnh thật chất lượng cao đã được ghép với bản đồ năng lượng của bạn.',
         status: 'success',
         duration: 4000,
         isClosable: true,
@@ -266,7 +273,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
         >
           <Icon as={FaMagic} />
           <Text fontSize="xl" fontWeight="bold">
-            Hình Nền Thần Số Học May Mắn (Lucky Wallpaper AI)
+            Hình Nền Thần Số Học May Mắn
           </Text>
         </ModalHeader>
         <ModalCloseButton color="white" top={4} right={4} />
@@ -275,7 +282,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
           <Tabs isFitted variant="enclosed" index={activeTab} onChange={(index) => setActiveTab(index)} colorScheme="purple">
             <TabList mb={4}>
               <Tab fontWeight="semibold">
-                {currentResult ? '🖼️ Hình Nền Của Bạn' : '✨ Thiết Lập & Tạo Ảnh'}
+                {currentResult ? '🖼️ Hình Nền Của Bạn' : '✨ Thiết Lập & Tìm Ảnh'}
               </Tab>
               <Tab fontWeight="semibold">
                 ⚙️ Tùy Chỉnh Năng Lượng
@@ -298,10 +305,10 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                     </Box>
                     <VStack spacing={2} textAlign="center">
                       <Text fontSize="lg" fontWeight="bold" bgGradient="linear(to-r, purple.500, pink.500)" bgClip="text">
-                        Đang hội tụ năng lượng Thần số học và khởi tạo tác phẩm...
+                        AI đang tạo từ khóa và tìm ảnh phù hợp...
                       </Text>
                       <Text fontSize="sm" color="gray.500" maxW="400px">
-                        Đang dệt các biểu tượng hình học thiêng, sắc màu may mắn của Số chủ đạo {lifePathNumber} và Ngày cá nhân {personalDay}.
+                        Đang đối chiếu phong cách, ý định, Số chủ đạo {lifePathNumber} và Ngày cá nhân {personalDay}.
                       </Text>
                     </VStack>
                   </VStack>
@@ -351,6 +358,19 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                         )}
                       </Box>
 
+                      {currentResult.attribution && (
+                        <Text fontSize="xs" color="gray.500" textAlign="center">
+                          Ảnh của{' '}
+                          <Text as="a" href={currentResult.attribution.creatorUrl || currentResult.attribution.sourcePageUrl} target="_blank" rel="noreferrer" textDecoration="underline">
+                            {currentResult.attribution.creator}
+                          </Text>{' '}
+                          trên{' '}
+                          <Text as="a" href={currentResult.attribution.providerUrl} target="_blank" rel="noreferrer" textDecoration="underline">
+                            {currentResult.attribution.provider}
+                          </Text>
+                        </Text>
+                      )}
+
                       {/* Action Buttons */}
                       <HStack spacing={3} w="full" justify="center">
                         <Button
@@ -369,7 +389,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                           size="md"
                           onClick={handleReroll}
                         >
-                          Đổi Vận (Tạo lại)
+                          Tìm Ảnh Khác
                         </Button>
                       </HStack>
                     </VStack>
@@ -393,7 +413,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                           </Badge>
                           {currentResult.provider && (
                             <Badge colorScheme="green" variant="outline" px={2.5} py={1} borderRadius="md">
-                              {currentResult.provider === 'subnp' ? '🪄 Subnp Magic' : '⚡ FLUX AI'}
+                              📷 {currentResult.provider === 'pixabay' ? 'Pixabay' : 'Pexels'}
                             </Badge>
                           )}
                         </HStack>
@@ -470,7 +490,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                     </Box>
                     <VStack spacing={2} textAlign="center" maxW="480px">
                       <Text fontSize="xl" fontWeight="bold">
-                        Tạo Hình Nền Phong Thủy Cá Nhân Hóa
+                        Tìm Hình Nền Phong Thủy Cá Nhân Hóa
                       </Text>
                       <Text fontSize="sm" color="gray.500">
                         Kết hợp năng lượng Số chủ đạo <strong>{lifePathNumber}</strong> và Ngày cá nhân <strong>{personalDay}</strong> để dệt nên tác phẩm hình nền trợ mệnh độc nhất vô nhị.
@@ -485,7 +505,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                       shadow="lg"
                       onClick={() => handleGenerate()}
                     >
-                      ✨ Khởi Tạo Hình Nền Ngay
+                      ✨ Tìm Hình Nền Ngay
                     </Button>
                   </VStack>
                 )}
@@ -628,10 +648,10 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
                     bgGradient="linear(to-r, purple.500, pink.500)"
                     _hover={{ bgGradient: 'linear(to-r, purple.600, pink.600)' }}
                     isLoading={isLoading}
-                    loadingText="Đang khởi tạo tác phẩm..."
+                    loadingText="AI đang tạo từ khóa..."
                     onClick={() => handleGenerate()}
                   >
-                    ✨ Áp Dụng & Tạo Hình Nền
+                    ✨ Áp Dụng & Tìm Hình Nền
                   </Button>
                 </VStack>
               </TabPanel>

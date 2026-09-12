@@ -4,11 +4,13 @@ import {
   WALLPAPER_STYLES,
   INTENTION_OPTIONS,
   DEVICE_ASPECT_RATIOS,
+} from './constants.ts';
+import type {
   NumberAesthetics,
   StylePreset,
   IntentionOption,
   DeviceAspectRatio,
-} from './constants';
+} from './constants.ts';
 
 export interface PromptBuilderInput {
   lifePathNumber: number;
@@ -37,6 +39,58 @@ export interface GeneratedWallpaperPlan {
   device: DeviceAspectRatio;
   width: number;
   height: number;
+}
+
+const STYLE_SEARCH_TERMS: Record<string, string> = {
+  sacred_geometry: 'sacred geometry cosmic abstract',
+  luxury_gold_3d: 'gold luxury abstract texture',
+  ethereal_minimalist: 'minimal zen calm nature',
+  cyberpunk_neon: 'neon futuristic abstract',
+  watercolor_nature: 'watercolor botanical nature',
+  tarot_editorial: 'mystical celestial vintage',
+};
+
+const INTENTION_SEARCH_TERMS: Record<string, string> = {
+  wealth: 'gold abundance prosperity',
+  love: 'romantic rose flowers',
+  career: 'mountain sunrise success',
+  peace: 'tranquil lake lotus',
+  creativity: 'colorful abstract art',
+  protection: 'forest mountains light',
+};
+
+const NUMBER_SEARCH_TERMS: Record<number, string> = {
+  1: 'sunrise golden light',
+  2: 'moon reflective lake',
+  3: 'colorful blooming flowers',
+  4: 'stone architecture mountain',
+  5: 'aurora open sky',
+  6: 'rose garden soft light',
+  7: 'night sky lotus',
+  8: 'gold luxury dark',
+  9: 'sunset radiant horizon',
+  11: 'celestial stars light',
+  22: 'grand architecture city',
+  33: 'lotus tree nature',
+};
+
+export function buildWallpaperSearchQueries(input: PromptBuilderInput): string[] {
+  const intention = INTENTION_SEARCH_TERMS[input.intentionId || 'wealth'] || INTENTION_SEARCH_TERMS.wealth;
+  const style = STYLE_SEARCH_TERMS[input.styleId || 'sacred_geometry'] || STYLE_SEARCH_TERMS.sacred_geometry;
+  const number = NUMBER_SEARCH_TERMS[Number(input.lifePathNumber) || 1] || NUMBER_SEARCH_TERMS[1];
+  const customWish = input.customWish?.replace(/[^a-zA-Z0-9À-ỹ\s-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 48);
+
+  const queries = [
+    customWish ? `${customWish} ${intention} ${style}` : '',
+    `${intention} ${style} ${number}`,
+    `${intention} ${number}`,
+    `${style} ${number}`,
+    `${intention} ${style}`,
+    `${number} nature background`,
+    `${style} abstract background`,
+  ].filter(Boolean);
+
+  return Array.from(new Set(queries)).slice(0, 6);
 }
 
 export function buildLuckyWallpaperPrompt(input: PromptBuilderInput): GeneratedWallpaperPlan {

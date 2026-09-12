@@ -461,6 +461,12 @@
 .wallpaper-number-fields select, .wallpaper-full-name input { width: 100%; min-height: 42px; margin-top: 3px; padding: 0 9px; border: 1px solid rgba(42,42,43,.2); border-radius: 0; background: rgba(255,255,255,.68); color: var(--chani-ink); font: 11px "Courier New", monospace; }
 .wallpaper-full-name { margin-top: 14px; }
 .wallpaper-preview > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.wallpaper-personalization { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: linear-gradient(180deg, rgba(8,8,12,.18), rgba(8,8,12,.03) 54%, rgba(8,8,12,.72)); pointer-events: none; text-shadow: 0 2px 18px rgba(0,0,0,.36); }
+.wallpaper-personalization-number { font: clamp(92px, 13vw, 170px)/.8 var(--chani-serif); opacity: .92; }
+.wallpaper-personalization-label { position: absolute; bottom: 7%; max-width: 82%; font: 9px/1.4 var(--chani-mono); letter-spacing: .13em; text-align: center; }
+.wallpaper-attribution { margin: 8px 0 0; color: #6c6663; font: 10px/1.5 var(--chani-mono); text-align: center; }
+.wallpaper-attribution a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.wallpaper-error { margin: 12px 0 0; color: #9c3030; font: 11px/1.5 var(--chani-mono); }
 .wallpaper-result-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
 .wallpaper-result-actions button { min-height: 38px; padding: 0 12px; border: 1px solid var(--chani-ink); background: transparent; color: var(--chani-ink); cursor: pointer; font: 9px "Courier New", monospace; }
 .wallpaper-result-actions button:hover { background: var(--chani-ink); color: #fff; }

@@ -1,5 +1,9 @@
 -- Apply after auth_schema.sql. Payment webhooks write with the service role;
 -- signed-in users can only read their own billing records.
+drop table if exists public.numina_payment_events cascade;
+drop table if exists public.numina_payment_orders cascade;
+drop table if exists public.numina_subscriptions cascade;
+
 create table if not exists public.numina_subscriptions (
   user_id uuid primary key references auth.users(id) on delete cascade,
   plan text not null default 'free' check (plan in ('free', 'pro')),
@@ -337,3 +341,5 @@ revoke all on function public.consume_numina_access(text, text, text, integer, i
 revoke all on function public.record_numina_ai_usage(text, text, date, numeric) from public, anon, authenticated;
 grant execute on function public.consume_numina_access(text, text, text, integer, integer, integer) to service_role;
 grant execute on function public.record_numina_ai_usage(text, text, date, numeric) to service_role;
+
+notify pgrst, 'reload schema';

@@ -84,7 +84,7 @@ export const LuckyWallpaperCard: React.FC<LuckyWallpaperCardProps> = ({
         <VStack align="start" spacing={1.5} maxW="600px">
           <HStack spacing={2}>
             <Badge colorScheme="pink" variant="solid" borderRadius="full" px={2.5} py={0.5} fontSize="2xs">
-              MỚI / AI FEATURE
+              MỚI / ẢNH THẬT HD
             </Badge>
             <HStack spacing={1} color="yellow.300" fontSize="xs" fontWeight="bold">
               <Icon as={MdAutoAwesome} />
@@ -98,7 +98,7 @@ export const LuckyWallpaperCard: React.FC<LuckyWallpaperCardProps> = ({
           </Text>
 
           <Text fontSize="xs" color="whiteAlpha.900" lineHeight="short">
-            Khởi tạo hình nền phong thủy độc bản theo bản đồ số học của bạn. Đổi vận mọi lúc với tính năng Reroll không giới hạn!
+            Tìm ảnh thật chất lượng cao theo bản đồ số học của bạn và đổi sang lựa chọn khác bất cứ lúc nào.
           </Text>
         </VStack>
 

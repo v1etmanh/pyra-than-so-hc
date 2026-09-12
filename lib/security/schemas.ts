@@ -99,7 +99,7 @@ export const wallpaperRequestSchema = z.object({
   customWish: boundedText(500).optional(),
   seed: z.union([boundedText(30), z.number().finite()]).optional(),
   saveToDisk: z.boolean().optional(),
-  engine: z.enum(['auto', 'cloudflare', 'pollinations']).optional()
+  engine: z.enum(['auto', 'pixabay', 'pexels']).optional()
 }).strict();
 
 export const surveyRequestSchema = z.object({
