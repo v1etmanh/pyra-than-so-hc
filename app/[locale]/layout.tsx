@@ -8,6 +8,7 @@ import { routing } from '@/src/i18n/routing';
 import { Providers } from '@/app/providers';
 import { getMessages, getTranslations } from 'next-intl/server';
 import '@/styles/chani-globals.css';
+import '@/styles/numerology-calculators.css';
 import { AnalyticsConsent } from '@/components/AnalyticsConsent';
 import { siteBaseUrl } from '@/lib/seo/metadata';
 
@@ -83,17 +84,15 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'WebApplication',
+              '@type': 'WebSite',
               name: 'NUMELYRA Numerology',
               url: baseUrl,
-              applicationCategory: 'LifestyleApplication',
-              operatingSystem: 'All',
               description:
                 'Professional Numerology, Tarot, and personalized AI analysis.',
-              offers: {
-                '@type': 'Offer',
-                price: '0',
-                priceCurrency: 'USD'
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${baseUrl}/indicators`,
+                'query-input': 'required'
               }
             })
           }}

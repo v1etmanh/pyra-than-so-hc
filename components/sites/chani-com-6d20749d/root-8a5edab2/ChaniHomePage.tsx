@@ -54,62 +54,78 @@ const slides: Slide[] = [
 ];
 
 type NumerologyInsight = {
+  href: string;
   label: string;
   title: string;
   image: string;
   excerpt: string;
-  body: string;
-  takeaway: string;
+  cta: string;
 };
 
 const numerologyInsights: NumerologyInsight[] = [
   {
-    label: "LIFE PATH 7",
-    title: "The seeker, the analyst, the quiet observer",
-    image: "Nautical Pearl Seven.png",
-    excerpt: "What a 7 is here to learn through solitude, study, and trust.",
-    body: "Life Path 7 moves through the world by looking beneath the surface. You may need quiet before clarity arrives, and your strongest insights often appear when you give yourself space to question, research, and listen inward.",
-    takeaway: "Your invitation: let curiosity be a compass, not a reason to hide.",
-  },
-  {
-    label: "BIRTHDAY NUMBER",
-    title: "The day you arrived carries its own signature",
+    href: "/life-path-number-calculator",
+    label: "CORE ARCHETYPE",
+    title: "Life Path Number",
     image: "Vintage Nautical Pearl and Diving Helmet.png",
-    excerpt: "A closer look at the natural gifts written into your birth day.",
-    body: "Your birthday number describes a quality you can reach for instinctively. It adds a distinct tone to your larger chart: a way of solving problems, connecting with people, or showing up when life asks you to be fully yourself.",
-    takeaway: "Start with the number of your birth day before reducing it further.",
+    excerpt: "Calculate your core life purpose, soul lesson, and innate strengths directly from your birth date.",
+    cta: "CALCULATE ↗",
   },
   {
-    label: "COLOR & ENERGY",
-    title: "Why color can change the feeling of a room",
-    image: "Vintage Rainbow Butterfly Botanical Collage.png",
-    excerpt: "Use color as a ritual cue for focus, rest, courage, or release.",
-    body: "Color does not decide your fate, but it can shape attention and atmosphere. A warm tone may help you feel more visible, while a quieter shade can create space for reflection. Choose the color that supports the energy you want to practice today.",
-    takeaway: "Think of color as an anchor for intention, not a promise of luck.",
-  },
-  {
-    label: "PERSONAL YEAR",
-    title: "The rhythm of your current chapter",
-    image: "Golden Quill and Nine-Year Wheel.png",
-    excerpt: "Understand the theme your personal year is inviting you to explore.",
-    body: "A personal year gives your calendar a symbolic rhythm. Some years ask for beginnings, some for patience, and some for honest completion. Knowing the theme can help you work with the season instead of forcing every door open at once.",
-    takeaway: "Move with the chapter you are in; every number has a purpose.",
-  },
-  {
-    label: "EXPRESSION NUMBER",
-    title: "The name you carry and the way you express it",
-    image: "Cosmic Ideas Burst from Marble Thought.png",
-    excerpt: "What your full name can reveal about your creative language.",
-    body: "In numerology, the expression number is read from the letters in your full name. It is a reflective tool for exploring how you communicate, build, imagine, and contribute—not a fixed label you have to perform perfectly.",
-    takeaway: "Use the number as a mirror, then decide what still feels true.",
-  },
-  {
-    label: "MASTER NUMBERS",
-    title: "11, 22, and 33: a louder invitation",
+    href: "/indicators",
+    label: "FULL CONSCIOUSNESS HUB",
+    title: "24-Indicator Master Chart",
     image: "Mystical Eye Triangle with Golden Numerals.png",
-    excerpt: "Why some numbers are read as heightened potential and pressure.",
-    body: "Master numbers are often associated with amplified sensitivity, vision, or responsibility. Their energy can feel expansive and demanding at the same time, so the practice is to ground the big idea in one small, repeatable action.",
-    takeaway: "Big potential becomes useful when it has a daily container.",
+    excerpt: "Our master calculator combining birth name and date to map your full conscious and subconscious blueprint.",
+    cta: "EXPLORE ↗",
+  },
+  {
+    href: "/expression-number-calculator",
+    label: "DESTINY & GIFTS",
+    title: "Expression Number",
+    image: "Cosmic Ideas Burst from Marble Thought.png",
+    excerpt: "Reveal your natural talents, vocal style, and outward potential using all letters in your birth name.",
+    cta: "CALCULATE ↗",
+  },
+  {
+    href: "/soul-urge-number-calculator",
+    label: "INNER LONGING",
+    title: "Soul Urge Number",
+    image: "Vintage Rainbow Butterfly Botanical Collage.png",
+    excerpt: "Uncover your deepest spiritual cravings and emotional truth through the vowels of your name.",
+    cta: "CALCULATE ↗",
+  },
+  {
+    href: "/personal-year-number-calculator",
+    label: "CYCLE & TIMING",
+    title: "Personal Year Number",
+    image: "Golden Quill and Nine-Year Wheel.png",
+    excerpt: "Navigate the rhythm and energetic themes of your current chapter within the classic 9-year cycle.",
+    cta: "CALCULATE ↗",
+  },
+  {
+    href: "/personality-number-calculator",
+    label: "OUTER PERSONA",
+    title: "Personality Number",
+    image: "Personality Mirror and Cosmic Aura.png",
+    excerpt: "Discover your outer aura, social impression, and initial presence using the consonants in your name.",
+    cta: "CALCULATE ↗",
+  },
+  {
+    href: "/birthday-number-calculator",
+    label: "INNATE GIFT",
+    title: "Birthday Number",
+    image: "Nautical Pearl Seven.png",
+    excerpt: "Explore the instinctual superpower and daily problem-solving gifts granted by the exact day you were born.",
+    cta: "CALCULATE ↗",
+  },
+  {
+    href: "/maturity-number-calculator",
+    label: "MID-LIFE INTEGRATION",
+    title: "Maturity Number",
+    image: "Tree of Life and Celestial Sundial.png",
+    excerpt: "Synthesize your Life Path and Expression to illuminate your culminating direction after age 35–40.",
+    cta: "CALCULATE ↗",
   },
 ];
 
@@ -150,12 +166,70 @@ const slidesVi: Slide[] = [
 ];
 
 const numerologyInsightsVi: NumerologyInsight[] = [
-  { label: "ĐƯỜNG ĐỜI 7", title: "Người tìm kiếm, nhà phân tích, người quan sát tĩnh lặng", image: "Nautical Pearl Seven.png", excerpt: "Số 7 học được gì qua sự tĩnh lặng, nghiên cứu và niềm tin.", body: "Đường đời 7 bước qua thế giới bằng cách nhìn sâu hơn bề mặt. Bạn có thể cần sự yên tĩnh trước khi tìm thấy sự sáng rõ; những nhận thức mạnh mẽ nhất thường đến khi bạn cho mình không gian để đặt câu hỏi, nghiên cứu và lắng nghe bên trong.", takeaway: "Lời mời dành cho bạn: hãy để sự tò mò làm la bàn, đừng biến nó thành lý do để trốn tránh." },
-  { label: "CON SỐ NGÀY SINH", title: "Ngày bạn đến với cuộc đời mang một dấu ấn riêng", image: "Vintage Nautical Pearl and Diving Helmet.png", excerpt: "Nhìn gần hơn vào những năng khiếu tự nhiên được ghi trong ngày sinh của bạn.", body: "Con số ngày sinh mô tả một phẩm chất bạn có thể chạm tới theo bản năng. Nó thêm sắc thái riêng vào toàn bộ biểu đồ: cách bạn giải quyết vấn đề, kết nối với người khác và xuất hiện khi cuộc sống cần bạn là chính mình.", takeaway: "Hãy bắt đầu với con số của ngày sinh trước khi rút gọn thêm." },
-  { label: "MÀU SẮC & NĂNG LƯỢNG", title: "Vì sao màu sắc có thể thay đổi cảm nhận về một căn phòng", image: "Vintage Rainbow Butterfly Botanical Collage.png", excerpt: "Dùng màu sắc như một tín hiệu cho sự tập trung, nghỉ ngơi, can đảm hoặc buông bỏ.", body: "Màu sắc không quyết định số phận, nhưng có thể định hình sự chú ý và bầu không khí. Một gam màu ấm có thể giúp bạn hiện diện rõ hơn, còn sắc màu dịu có thể tạo khoảng trống cho suy ngẫm. Hãy chọn màu hỗ trợ nguồn năng lượng bạn muốn thực hành hôm nay.", takeaway: "Hãy xem màu sắc như điểm neo cho chủ ý, không phải lời hứa về may mắn." },
-  { label: "NĂM CÁ NHÂN", title: "Nhịp điệu của chương đời hiện tại", image: "Golden Quill and Nine-Year Wheel.png", excerpt: "Hiểu chủ đề mà năm cá nhân đang mời bạn khám phá.", body: "Năm cá nhân tạo cho lịch của bạn một nhịp điệu biểu tượng. Có năm dành cho khởi đầu, có năm cần kiên nhẫn, cũng có năm dành cho sự hoàn tất chân thành. Biết chủ đề ấy giúp bạn đi cùng mùa của mình thay vì cố mở mọi cánh cửa cùng lúc.", takeaway: "Hãy bước cùng chương đời hiện tại; mỗi con số đều có một mục đích." },
-  { label: "CON SỐ BIỂU ĐẠT", title: "Cái tên bạn mang và cách bạn thể hiện mình", image: "Cosmic Ideas Burst from Marble Thought.png", excerpt: "Tên đầy đủ có thể gợi mở điều gì về ngôn ngữ sáng tạo của bạn.", body: "Trong Nhân số học, con số biểu đạt được đọc từ các chữ cái trong họ tên đầy đủ. Đây là công cụ phản chiếu để khám phá cách bạn giao tiếp, xây dựng, tưởng tượng và đóng góp — không phải một nhãn cố định buộc bạn phải thể hiện hoàn hảo.", takeaway: "Hãy dùng con số như một tấm gương, rồi tự quyết định điều gì còn đúng với mình." },
-  { label: "CÁC CON SỐ MASTER", title: "11, 22 và 33: một lời mời mạnh mẽ hơn", image: "Mystical Eye Triangle with Golden Numerals.png", excerpt: "Vì sao một số con số thường được đọc như tiềm năng và áp lực được khuếch đại.", body: "Các con số Master thường gắn với độ nhạy cảm, tầm nhìn hoặc trách nhiệm mạnh hơn. Năng lượng ấy có thể vừa rộng mở vừa đòi hỏi nhiều, vì vậy hãy neo ý tưởng lớn vào một hành động nhỏ có thể lặp lại mỗi ngày.", takeaway: "Tiềm năng lớn trở nên hữu ích khi có một khuôn khổ hằng ngày." },
+  {
+    href: "/life-path-number-calculator",
+    label: "CHỈ SỐ CHỦ ĐẠO",
+    title: "Con số Đường đời (Life Path)",
+    image: "Vintage Nautical Pearl and Diving Helmet.png",
+    excerpt: "Tính con số chủ đạo từ ngày sinh để thấu suốt bài học linh hồn, năng khiếu và con đường phát triển cá nhân.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/indicators",
+    label: "BẢN ĐỒ TOÀN DIỆN",
+    title: "Bản đồ 24 Chỉ số Pitago",
+    image: "Mystical Eye Triangle with Golden Numerals.png",
+    excerpt: "Công cụ tính tổng hợp toàn diện kết hợp họ tên và ngày sinh để giải mã trọn vẹn tiềm năng và tiềm thức.",
+    cta: "KHÁM PHÁ ↗",
+  },
+  {
+    href: "/expression-number-calculator",
+    label: "SỨ MỆNH & VẬN MỆNH",
+    title: "Chỉ số Sứ mệnh (Expression)",
+    image: "Cosmic Ideas Burst from Marble Thought.png",
+    excerpt: "Giải mã tài năng bẩm sinh, cách bạn hành động và dấu ấn cá nhân qua toàn bộ các chữ cái trong họ tên.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/soul-urge-number-calculator",
+    label: "KHÁT KHAO NỘI TÂM",
+    title: "Chỉ số Linh hồn (Soul Urge)",
+    image: "Vintage Rainbow Butterfly Botanical Collage.png",
+    excerpt: "Khám phá động lực sâu kín, tiếng nói trực giác và điều trái tim bạn thực sự mong cầu qua các nguyên âm.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/personal-year-number-calculator",
+    label: "CHU KỲ & THỜI ĐIỂM",
+    title: "Năm Cá nhân (Personal Year)",
+    image: "Golden Quill and Nine-Year Wheel.png",
+    excerpt: "Định vị năm hiện tại của bạn trong chu kỳ 9 năm để nắm bắt thời cơ bắt đầu, bứt phá hay chiêm nghiệm.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/personality-number-calculator",
+    label: "HÌNH ẢNH ĐỐI NGOẠI",
+    title: "Chỉ số Nhân cách (Personality)",
+    image: "Personality Mirror and Cosmic Aura.png",
+    excerpt: "Nhận diện ấn tượng đầu tiên bạn tỏa ra và cách thế giới đón nhận năng lượng của bạn qua các phụ âm.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/birthday-number-calculator",
+    label: "MÓN QUÀ THIÊN PHÚ",
+    title: "Chỉ số Ngày sinh (Birthday)",
+    image: "Nautical Pearl Seven.png",
+    excerpt: "Món quà đặc biệt từ chính ngày bạn cất tiếng khóc chào đời, phản ánh tài năng phản xạ tự nhiên của bạn.",
+    cta: "TÍNH NGAY ↗",
+  },
+  {
+    href: "/maturity-number-calculator",
+    label: "ĐỈNH CAO CHÍN MUỒI",
+    title: "Chỉ số Trưởng thành (Maturity)",
+    image: "Tree of Life and Celestial Sundial.png",
+    excerpt: "Giao thoa giữa Đường đời và Sứ mệnh, mở ra sứ mệnh nở rộ và hướng đi thăng hoa sau tuổi 35–40.",
+    cta: "TÍNH NGAY ↗",
+  },
 ];
 
 const weeklyFrequencyVi = {
@@ -194,7 +268,6 @@ export default function ChaniHomePage() {
   const [intakeName, setIntakeName] = useState("");
   const [intakeBirth, setIntakeBirth] = useState("");
   const [videoOpen, setVideoOpen] = useState(false);
-  const [selectedInsight, setSelectedInsight] = useState<NumerologyInsight | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(5 * 24 * 60 * 60 + 15 * 60 + 59);
 
   const handleDecodeMap = (e?: React.FormEvent) => {
@@ -215,20 +288,6 @@ export default function ChaniHomePage() {
     const interval = window.setInterval(() => setSecondsLeft((value) => Math.max(0, value - 1)), 1000);
     return () => window.clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    if (!selectedInsight) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelectedInsight(null);
-    };
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [selectedInsight]);
 
   useEffect(() => {
     if (!videoOpen) return;
@@ -271,8 +330,12 @@ export default function ChaniHomePage() {
 
       <section className="chani-hero" aria-label={isVietnamese ? "Nội dung nổi bật" : "Featured updates"}>
         <div className="chani-hero-copy">
-          <div className="chani-hero-kicker">{activeSlide.eyebrow}</div>
-          <h1>{activeSlide.title}</h1>
+          <h1 className="chani-hero-kicker" style={{ fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "14px", fontWeight: 700 }}>
+            {isVietnamese ? "Công cụ tính Thần số học Pitago & Bản đồ Tâm thức" : "Free Pythagorean Numerology Calculators & Blueprint"}
+          </h1>
+          <div className="chani-hero-slide-heading" style={{ margin: "0 0 18px", fontFamily: "var(--chani-serif)", fontSize: "clamp(46px, 5.5vw, 84px)", fontWeight: 400, lineHeight: 0.95, letterSpacing: "-1px" }}>
+            {activeSlide.title}
+          </div>
           <p>{activeSlide.description}</p>
           <a className="chani-outline-button" href={localize(activeSlide.href)}>{activeSlide.cta}</a>
         </div>
@@ -334,64 +397,122 @@ export default function ChaniHomePage() {
 
       {videoOpen && <div className="map-entry-video" role="dialog" aria-modal="true" aria-label={isVietnamese ? "Đang mở bản đồ Nhân số học" : "Entering your numerology map"}><div className="map-entry-flare" /><video autoPlay muted playsInline onEnded={enterNumerologyMap} onError={enterNumerologyMap}><source src="/videos/Video%20Project%2021.mp4" type="video/mp4" /></video><div className="map-entry-video-copy"><span>{isVietnamese ? "ĐANG MỞ BẢN ĐỒ" : "OPENING YOUR MAP"}</span><strong>{isVietnamese ? "Đi theo ánh sáng" : "Follow the light"}</strong></div><button type="button" onClick={enterNumerologyMap}>{isVietnamese ? "VÀO BẢN ĐỒ ↗" : "ENTER MAP ↗"}</button></div>}
 
-      <section className="chani-section chani-blog-section">
+      <section className="chani-section chani-blog-section" aria-label={isVietnamese ? "Công cụ Thần số học Pitago" : "Pythagorean Numerology Calculators"}>
         <SectionHeading>{isVietnamese ? "Đọc vị những con số của bạn" : "Read your numbers"}</SectionHeading>
-        <div className="chani-card-grid">{localizedInsights.map((insight, index) => <article className="chani-card chani-insight-card" key={insight.title}>
-          <button className="chani-card-trigger" type="button" onClick={() => setSelectedInsight(insight)} aria-label={`${isVietnamese ? "Đọc" : "Read"} ${insight.title}`}>
-            <ChaniImage src={`${ASSET}/${insight.image}`} alt="" className={`card-image card-image-${index % 3}`} />
-            <span className="chani-card-label">{insight.label}</span>
-            <h3>{insight.title}</h3>
-            <span className="chani-card-excerpt">{insight.excerpt}</span>
-            <span className="chani-small-button">{isVietnamese ? "ĐỌC THÊM" : "READ MORE"}</span>
-          </button>
-        </article>)}</div>
+        <div className="chani-card-grid">
+          {localizedInsights.map((insight, index) => (
+            <article className="chani-card chani-insight-card" key={insight.href}>
+              <a
+                href={localize(insight.href)}
+                className="chani-card-trigger"
+                aria-label={`${isVietnamese ? "Tính" : "Calculate"} ${insight.title}`}
+              >
+                <ChaniImage
+                  src={`${ASSET}/${insight.image}`}
+                  alt={insight.title}
+                  className={`card-image card-image-${index % 3}`}
+                />
+                <span className="chani-card-label">{insight.label}</span>
+                <h3>{insight.title}</h3>
+                <span className="chani-card-excerpt">{insight.excerpt}</span>
+                <span className="chani-small-button">{insight.cta}</span>
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="chani-section chani-frequency-section">
-        <SectionHeading>{isVietnamese ? "Tần số năng lượng trong tuần" : "Your weekly frequency"}</SectionHeading>
-        <div className="frequency-layout">
-          <div className="frequency-visual spotify-frequency-card" aria-hidden="true">
-            <div className="freq-green-ripples">
-              <span className="green-ring ring-1" />
-              <span className="green-ring ring-2" />
-              <span className="green-ring ring-3" />
-              <span className="green-ring ring-4" />
-              <span className="green-ring ring-5" />
-              <span className="green-ring ring-6" />
-              <span className="green-ring ring-7" />
-            </div>
-            <div className="spotify-freq-badge">
-              <span className="spotify-freq-dot" />
-              <span>TUNED // 432 HZ</span>
-            </div>
-            <span className="frequency-star frequency-star-a">✦</span>
-            <span className="frequency-star frequency-star-b">✧</span>
-            <span className="spotify-freq-num">7</span>
-            <span className="frequency-needle">♩</span>
-            <div className="spotify-freq-equalizer">
-              {[30, 65, 45, 80, 50, 95, 40, 70, 60, 85, 45, 75, 60, 35, 80, 50, 70, 45, 60, 80, 50].map((height, i) => (
-                <span
-                  key={i}
-                  className="spotify-freq-bar"
-                  style={{
-                    height: `${height}%`,
-                    animationDelay: `${(i * 0.08).toFixed(2)}s`,
-                    animationDuration: `${0.9 + (i % 4) * 0.2}s`,
-                  }}
-                />
-              ))}
-            </div>
+      <section className="chani-section chani-frequency-section" aria-label={isVietnamese ? "Tần số năng lượng trong tuần" : "Your weekly frequency"}>
+        {/* Corner celestial stars */}
+        <span className="freq-corner-star freq-star-tl" aria-hidden="true">✦</span>
+        <span className="freq-corner-star freq-star-tr" aria-hidden="true">✦</span>
+
+        {/* Section Header */}
+        <div className="freq-header">
+          <div className="freq-moon-phases" aria-hidden="true">
+            <span>)</span><span>)</span><span>)</span>
+            <span className="freq-moon-circle">◯</span>
+            <span>(</span><span>(</span><span>(</span>
           </div>
+          <h2 className="freq-main-title">{isVietnamese ? "Tần số năng lượng trong tuần" : "YOUR WEEKLY FREQUENCY"}</h2>
+          <p className="freq-sub-kicker">{isVietnamese ? "ÂM NHẠC CHO HÀNH TRÌNH NHÂN SỐ HỌC CỦA BẠN" : "MUSIC FOR YOUR NUMEROLOGY JOURNEY"}</p>
+        </div>
+
+        <div className="frequency-layout">
+          {/* Left: The Botanical Collage with the 7 Album Card */}
+          <div className="freq-visual-container">
+            <ChaniImage
+              src={`${ASSET}/weekly-frequency-album-7.png`}
+              alt="Weekly Frequency - Space Song & Number 7"
+              className="freq-album-collage-img"
+            />
+          </div>
+
+          {/* Center/Right: Track Info, Tags & Player Bar */}
           <div className="frequency-answer">
             <p className="frequency-label">{localizedWeeklyFrequency.label}</p>
             <p className="frequency-prompt">“{localizedWeeklyFrequency.prompt}”</p>
-            <h3>{localizedWeeklyFrequency.title}</h3>
+            <h3 className="freq-track-title">{localizedWeeklyFrequency.title}</h3>
             <p className="frequency-artist">{localizedWeeklyFrequency.artist}</p>
             <p className="frequency-copy">{localizedWeeklyFrequency.answer}</p>
-            <div className="frequency-tags">{localizedWeeklyFrequency.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-            <a className="chani-outline-button" href="https://open.spotify.com/" target="_blank" rel="noreferrer">{isVietnamese ? "PHÁT TẦN SỐ" : "PLAY THE FREQUENCY"}</a>
+            <div className="frequency-tags">
+              {localizedWeeklyFrequency.tags.map((tag) => (
+                <span key={tag} className="freq-pill-tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* Rounded Dark-Forest Player Bar */}
+            <div className="freq-player-bar-wrapper">
+              <a
+                className="freq-player-pill"
+                href="https://open.spotify.com/search/Beach%20House%20Space%20Song"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={isVietnamese ? "Phát tần số trên Spotify" : "Play frequency on Spotify"}
+              >
+                <span className="freq-play-circle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <polygon points="7,4 20,12 7,20" />
+                  </svg>
+                </span>
+                <span className="freq-play-text">{isVietnamese ? "PHÁT TẦN SỐ" : "PLAY THE FREQUENCY"}</span>
+                <div className="freq-mini-visualizer" aria-hidden="true">
+                  {[35, 70, 50, 88, 62, 80, 45, 75, 55, 30].map((h, i) => (
+                    <span
+                      key={i}
+                      className="freq-mini-bar"
+                      style={{
+                        height: `${h}%`,
+                        animationDelay: `${(i * 0.1).toFixed(2)}s`,
+                        animationDuration: `${0.85 + (i % 3) * 0.2}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+              </a>
+            </div>
+
+            <p className="freq-footer-tagline">
+              <span>{isVietnamese ? "ÂM NHẠC" : "MUSIC"}</span>
+              <span className="freq-tag-dot">•</span>
+              <span>{isVietnamese ? "NHÂN SỐ HỌC" : "NUMEROLOGY"}</span>
+              <span className="freq-tag-dot">•</span>
+              <span>{isVietnamese ? "BÌNH YÊN BÊN TRONG" : "A CALMER YOU"}</span>
+            </p>
           </div>
+
+          {/* Far Right Decorative Moon Branch (Desktop) */}
+          <aside className="freq-right-accent" aria-hidden="true">
+            <ChaniImage
+              src={`${ASSET}/weekly-frequency-right-moon.png`}
+              alt=""
+              className="freq-right-accent-img"
+            />
+          </aside>
         </div>
+
+        {/* Bottom Landscape Watercolor Border */}
+        <div className="freq-bottom-hills" aria-hidden="true" />
       </section>
 
       <section className="chani-section chani-guidance-section">
@@ -446,19 +567,6 @@ export default function ChaniHomePage() {
         </section>
       )}
 
-      {selectedInsight && <div className="insight-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedInsight(null); }}>
-        <section className="insight-modal" role="dialog" aria-modal="true" aria-labelledby="insight-modal-title">
-          <button className="insight-modal-close" type="button" onClick={() => setSelectedInsight(null)} aria-label={isVietnamese ? "Đóng nội dung" : "Close insight"}>×</button>
-          <div className="insight-modal-art"><ChaniImage src={`${ASSET}/${selectedInsight.image}`} alt="" /></div>
-          <div className="insight-modal-copy">
-            <p className="chani-hero-kicker">{selectedInsight.label}</p>
-            <h2 id="insight-modal-title">{selectedInsight.title}</h2>
-            <p>{selectedInsight.body}</p>
-            <p className="insight-modal-takeaway">{selectedInsight.takeaway}</p>
-            <button className="chani-outline-button" type="button" onClick={() => setSelectedInsight(null)}>{isVietnamese ? "ĐÓNG" : "CLOSE"}</button>
-          </div>
-        </section>
-      </div>}
 
       <footer className="chani-footer">
         <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
