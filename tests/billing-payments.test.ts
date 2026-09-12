@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHmac } from 'node:crypto';
 import {
   effectiveBillingPlan,
   nextPayosPeriodEnd,
   PAYOS_PRO_PRICE_VND,
   PAYPAL_PRO_PRICE_USD_CENTS
 } from '../lib/billing/types.ts';
-import { buildPayOSChecksumData, createPayOSOrderCode } from '../lib/billing/payos.ts';
+import { buildPayOSChecksumData, createPayOSOrderCode, verifyPayOSWebhook } from '../lib/billing/payos.ts';
 import { paypalEventSubscriptionId, paypalNextBillingTime } from '../lib/billing/paypal.ts';
 import { payosWebhookSchema } from '../lib/security/schemas.ts';
 
@@ -58,4 +59,33 @@ test('payOS webhook schema parses payOS payloads without success field', () => {
   assert.equal(parsed.code, '00');
   assert.equal(parsed.success, undefined);
   assert.equal(parsed.data.orderCode, 123);
+});
+
+test('payOS webhook verification exposes only a boolean result', async () => {
+  const originalConfig = {
+    clientId: process.env.PAYOS_CLIENT_ID,
+    apiKey: process.env.PAYOS_API_KEY,
+    checksumKey: process.env.PAYOS_CHECKSUM_KEY
+  };
+  const testChecksumKey = 'test-checksum-key';
+  process.env.PAYOS_CLIENT_ID = 'test-client-id';
+  process.env.PAYOS_API_KEY = 'test-api-key';
+  process.env.PAYOS_CHECKSUM_KEY = testChecksumKey;
+  try {
+    const data = { amount: 79000, orderCode: 123 };
+    const signature = createHmac('sha256', testChecksumKey)
+      .update(buildPayOSChecksumData(data))
+      .digest('hex');
+    assert.equal(await verifyPayOSWebhook(data, signature), true);
+    assert.equal(await verifyPayOSWebhook(data, '0'.repeat(64)), false);
+  } finally {
+    for (const [name, value] of Object.entries({
+      PAYOS_CLIENT_ID: originalConfig.clientId,
+      PAYOS_API_KEY: originalConfig.apiKey,
+      PAYOS_CHECKSUM_KEY: originalConfig.checksumKey
+    })) {
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
 });

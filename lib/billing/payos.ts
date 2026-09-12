@@ -82,19 +82,12 @@ export async function createPayOSPaymentLink(input: {
 export async function verifyPayOSWebhook(
   data: Record<string, unknown>,
   providedSignature: string
-): Promise<{ valid: boolean; computedSignature: string; keyPreview: string }> {
+): Promise<boolean> {
   const { checksumKey } = payosConfig();
   if (!/^[a-f0-9]{64}$/i.test(providedSignature)) {
-    return { valid: false, computedSignature: '', keyPreview: '' };
+    return false;
   }
   const dataString = buildPayOSChecksumData(data);
   const computedSignature = await hmacSha256Hex(checksumKey, dataString);
-  const keyPreview = checksumKey.length >= 8
-    ? `${checksumKey.slice(0, 4)}...${checksumKey.slice(-4)} (len: ${checksumKey.length})`
-    : `(len: ${checksumKey.length})`;
-  return {
-    valid: computedSignature.toLowerCase() === providedSignature.trim().toLowerCase(),
-    computedSignature,
-    keyPreview
-  };
+  return computedSignature.toLowerCase() === providedSignature.trim().toLowerCase();
 }

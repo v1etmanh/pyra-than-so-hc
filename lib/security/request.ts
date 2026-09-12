@@ -6,6 +6,18 @@ export function getClientIp(request: NextRequest): string {
   const platformIp = (request as NextRequest & { ip?: string }).ip?.trim();
   if (platformIp) return platformIp;
 
+  // Next.js removed request.ip in v15. Vercel supplies a protected client-IP
+  // header, so deployments there can use it without enabling generic proxy
+  // trust. Prefer the Vercel-specific header when another proxy sits in front.
+  if (process.env.VERCEL === '1') {
+    const vercelForwarded = request.headers.get('x-vercel-forwarded-for');
+    const forwarded = request.headers.get('x-forwarded-for');
+    return vercelForwarded?.split(',')[0]?.trim()
+      || forwarded?.split(',')[0]?.trim()
+      || request.headers.get('x-real-ip')?.trim()
+      || 'unknown';
+  }
+
   // Only trust forwarding headers when the deployment proxy is known to
   // overwrite them. Direct clients can otherwise rotate these values and
   // bypass anonymous quotas.
