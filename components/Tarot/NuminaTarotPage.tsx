@@ -221,19 +221,6 @@ export function NuminaTarotPage() {
           </div>
 
           <div className="tarot-banner-tools">
-            {isPro ? (
-              <span className="tarot-quota-pill is-pro">✦ 100 {isVietnamese ? 'lượt/ngày' : 'reads/day'}</span>
-            ) : (
-              <button
-                type="button"
-                className="tarot-quota-pill"
-                onClick={() => openUpgradeModal({ feature: 'tarot' })}
-                title={isVietnamese ? 'Gói miễn phí 15 lượt/ngày · Nâng cấp Pro để mở khóa 100 lượt' : 'Free tier 15/day · Upgrade to Pro for 100/day'}
-              >
-                ✦ 15 {isVietnamese ? 'lượt/ngày' : 'reads/day'} · {isVietnamese ? 'Nâng cấp' : 'Upgrade'}
-              </button>
-            )}
-
             <div className="tarot-history-box">
               <span>{isVietnamese ? 'LỊCH SỬ' : 'HISTORY'}</span>
               <select
