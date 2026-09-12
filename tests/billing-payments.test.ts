@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { createHmac } from 'node:crypto';
 import {
   effectiveBillingPlan,
+  isManageablePayPalStatus,
+  isPendingPayPalStatus,
   nextPayosPeriodEnd,
   PAYOS_PRO_PRICE_VND,
   PAYPAL_PRO_PRICE_USD_CENTS
@@ -43,6 +45,16 @@ test('PayPal event helpers resolve subscriptions and renewal dates defensively',
   assert.equal(paypalEventSubscriptionId({ id: 'I-DIRECT' }), 'I-DIRECT');
   assert.equal(paypalEventSubscriptionId({ id: 'SALE-1' }), null);
   assert.equal(paypalNextBillingTime({ billing_info: { next_billing_time: '2026-10-11T00:00:00Z' } }), '2026-10-11T00:00:00Z');
+});
+
+test('PayPal pending checkout is not treated as a manageable renewal', () => {
+  assert.equal(isPendingPayPalStatus('APPROVAL_PENDING'), true);
+  assert.equal(isPendingPayPalStatus('CREATING'), true);
+  assert.equal(isManageablePayPalStatus('APPROVAL_PENDING'), false);
+  assert.equal(isManageablePayPalStatus('ACTIVE'), true);
+  assert.equal(isManageablePayPalStatus('SUSPENDED'), true);
+  assert.equal(isManageablePayPalStatus('PAST_DUE'), true);
+  assert.equal(isManageablePayPalStatus('CANCELLED'), false);
 });
 
 test('payOS webhook schema parses payOS payloads without success field', () => {

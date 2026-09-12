@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { cancelPayPalSubscription, createPayPalSubscription } from '@/lib/billing/paypal';
-import { hasActiveEntitlement, isTerminalProviderStatus, PAYPAL_PRO_PRICE_USD_CENTS } from '@/lib/billing/types';
+import { hasActiveEntitlement, isManageablePayPalStatus, PAYPAL_PRO_PRICE_USD_CENTS } from '@/lib/billing/types';
 import { billingCheckoutRequestSchema, type BillingCheckoutRequest } from '@/lib/security/schemas';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       .maybeSingle();
 
     if (hasActiveEntitlement(current) ||
-      (current?.provider === 'paypal' && current.provider_subscription_id && !isTerminalProviderStatus(current.status))) {
+      (current?.provider === 'paypal' && current.provider_subscription_id && isManageablePayPalStatus(current.status))) {
       return NextResponse.json({ error: 'An active billing agreement already exists.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
     }
 

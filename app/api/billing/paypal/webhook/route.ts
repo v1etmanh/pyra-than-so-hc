@@ -52,9 +52,15 @@ export async function POST(request: NextRequest) {
     if (!existingUser.user) return NextResponse.json({ received: true, ignored: true });
 
     const { data: current } = await admin.from('numina_subscriptions')
-      .select('current_period_end')
+      .select('provider,provider_subscription_id,current_period_end')
       .eq('user_id', userId)
       .maybeSingle();
+    // A user may abandon one approval flow and start another. Never allow a
+    // late webhook from the superseded PayPal subscription to overwrite the
+    // current billing agreement.
+    if (current?.provider !== 'paypal' || current.provider_subscription_id !== subscriptionId) {
+      return NextResponse.json({ received: true, ignored: true, reason: 'superseded_subscription' });
+    }
     const eventType = event.event_type;
     let status = typeof details.status === 'string' ? details.status : 'ACTIVE';
     let periodEnd = paypalNextBillingTime(details) || current?.current_period_end || null;

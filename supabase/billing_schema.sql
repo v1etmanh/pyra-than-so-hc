@@ -76,6 +76,14 @@ declare
 begin
   if p_provider not in ('paypal', 'payos') then raise exception 'Unsupported billing provider'; end if;
   perform pg_advisory_xact_lock(hashtext(p_user_id::text));
+
+  update public.numina_payment_orders
+     set status = 'expired', updated_at = now()
+   where user_id = p_user_id
+     and status = 'pending'
+     and expires_at is not null
+     and expires_at <= now();
+
   select * into v_existing from public.numina_subscriptions where user_id = p_user_id for update;
 
   if exists(
@@ -85,9 +93,10 @@ begin
   if v_existing.plan = 'pro' and v_existing.current_period_end > now() and v_existing.provider <> p_provider then
     return false;
   end if;
-  if upper(coalesce(v_existing.status, '')) = 'CREATING' then return false; end if;
+  if upper(coalesce(v_existing.status, '')) = 'CREATING'
+     and v_existing.updated_at > now() - interval '2 minutes' then return false; end if;
   if p_provider = 'paypal' and v_existing.provider = 'paypal'
-     and upper(coalesce(v_existing.status, '')) in ('CREATING', 'APPROVAL_PENDING', 'ACTIVE', 'SUSPENDED', 'PAST_DUE') then
+     and upper(coalesce(v_existing.status, '')) in ('ACTIVE', 'SUSPENDED', 'PAST_DUE') then
     return false;
   end if;
 
@@ -101,6 +110,54 @@ begin
       provider_subscription_id = null, status = 'CREATING', current_period_end = null,
       cancel_at_period_end = false, last_provider_event_at = null, updated_at = now();
   end if;
+  return true;
+end;
+$$;
+
+-- Clears a PayPal approval that the user closed before confirming. This is a
+-- local checkout state change only; no paid entitlement exists at this point.
+create or replace function public.abandon_numina_paypal_checkout(p_user_id uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_existing public.numina_subscriptions%rowtype;
+begin
+  perform pg_advisory_xact_lock(hashtext(p_user_id::text));
+  select * into v_existing
+    from public.numina_subscriptions
+   where user_id = p_user_id
+   for update;
+
+  if not found then
+    return false;
+  end if;
+
+  if v_existing.provider <> 'paypal'
+     or upper(coalesce(v_existing.status, '')) not in ('CREATING', 'APPROVAL_PENDING') then
+    return false;
+  end if;
+
+  update public.numina_payment_orders
+     set status = 'canceled', updated_at = now()
+   where user_id = p_user_id
+     and provider = 'paypal'
+     and status = 'pending';
+
+  update public.numina_subscriptions
+     set plan = 'free',
+         provider = null,
+         provider_customer_id = null,
+         provider_subscription_id = null,
+         status = 'INACTIVE',
+         current_period_end = null,
+         cancel_at_period_end = false,
+         last_provider_event_at = null,
+         updated_at = now()
+   where user_id = p_user_id;
+
   return true;
 end;
 $$;
@@ -234,9 +291,11 @@ $$;
 revoke all on function public.apply_numina_paypal_event(uuid, text, text, timestamptz, boolean, text, timestamptz, integer, text, text, text) from public, anon, authenticated;
 revoke all on function public.apply_numina_payos_payment(bigint, text, text, timestamptz) from public, anon, authenticated;
 revoke all on function public.reserve_numina_checkout(uuid, text) from public, anon, authenticated;
+revoke all on function public.abandon_numina_paypal_checkout(uuid) from public, anon, authenticated;
 grant execute on function public.apply_numina_paypal_event(uuid, text, text, timestamptz, boolean, text, timestamptz, integer, text, text, text) to service_role;
 grant execute on function public.apply_numina_payos_payment(bigint, text, text, timestamptz) to service_role;
 grant execute on function public.reserve_numina_checkout(uuid, text) to service_role;
+grant execute on function public.abandon_numina_paypal_checkout(uuid) to service_role;
 
 -- Durable, atomic quota and burst-rate-limit counters. The service role calls
 -- the security-definer functions below; end users have no direct policies.

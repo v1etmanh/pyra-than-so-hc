@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import type { BillingProvider } from '@/lib/billing/types';
+import { isManageablePayPalStatus, isPendingPayPalStatus, type BillingProvider } from '@/lib/billing/types';
 
 type Subscription = { plan: string; provider?: BillingProvider | null; status?: string; current_period_end?: string | null; cancel_at_period_end?: boolean };
 type Payment = { id: string; provider: BillingProvider; amount: number; currency: string; status: string; created_at: string };
@@ -51,14 +51,19 @@ export function BillingPanel({ locale }: { locale: string }) {
     finally { setAction(null); }
   };
 
-  const cancelPayPal = async () => {
-    if (!window.confirm(vi ? 'Dừng tự động gia hạn PayPal? Bạn vẫn dùng Pro đến cuối kỳ đã thanh toán.' : 'Stop PayPal auto-renewal? Pro remains available through the paid period.')) return;
+  const cancelPayPal = async (pending: boolean) => {
+    const confirmation = pending
+      ? (vi ? 'Hủy yêu cầu thanh toán PayPal chưa hoàn tất này?' : 'Discard this incomplete PayPal checkout?')
+      : (vi ? 'Dừng tự động gia hạn PayPal? Bạn vẫn dùng Pro đến cuối kỳ đã thanh toán.' : 'Stop PayPal auto-renewal? Pro remains available through the paid period.');
+    if (!window.confirm(confirmation)) return;
     setAction('cancel'); setMessage('');
     try {
       const response = await fetch('/api/billing/paypal/cancel', { method: 'POST' });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data.error || 'Cancellation unavailable');
-      setMessage(vi ? 'Đã dừng gia hạn. Quyền Pro được giữ đến cuối kỳ.' : 'Renewal canceled. Pro remains active through the paid period.');
+      setMessage(data.abandoned
+        ? (vi ? 'Đã hủy yêu cầu PayPal chưa hoàn tất. Bạn có thể thanh toán lại.' : 'Incomplete PayPal checkout discarded. You can try again.')
+        : (vi ? 'Đã dừng gia hạn. Quyền Pro được giữ đến cuối kỳ.' : 'Renewal canceled. Pro remains active through the paid period.'));
       await loadBilling();
     } catch (error) { setMessage(error instanceof Error ? error.message : 'Cancellation unavailable'); }
     finally { setAction(null); }
@@ -67,19 +72,24 @@ export function BillingPanel({ locale }: { locale: string }) {
   const formatMoney = (payment: Payment) => new Intl.NumberFormat(locale, { style: 'currency', currency: payment.currency.toUpperCase(), maximumFractionDigits: payment.currency.toLowerCase() === 'vnd' ? 0 : 2 }).format(payment.currency.toLowerCase() === 'vnd' ? payment.amount : payment.amount / 100);
   const periodEnd = subscription?.current_period_end ? new Date(subscription.current_period_end) : null;
   const endLabel = periodEnd && Number.isFinite(periodEnd.getTime()) ? periodEnd.toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' }) : null;
+  const paypalPending = subscription?.provider === 'paypal' && isPendingPayPalStatus(subscription.status);
+  const paypalManageable = subscription?.provider === 'paypal'
+    && isManageablePayPalStatus(subscription.status);
 
   return <section className="billing-panel">
     <div><p className="batch-kicker">NUMINA / BILLING</p><h2>{vi ? 'Gói của bạn' : 'Your plan'}</h2></div>
     {!user ? <p>{vi ? 'Đăng nhập để xem gói và lịch sử thanh toán.' : 'Sign in to view your plan and payment history.'} <Link href={vi ? '/pricing' : '/en/pricing'}>{vi ? 'Xem bảng giá' : 'View pricing'} →</Link></p> : <>
       {loading && !subscription ? <p>{vi ? 'Đang tải…' : 'Loading…'}</p> : <>
-        <p className="billing-plan"><strong>{(subscription?.plan || 'free').toUpperCase()}</strong>{subscription?.provider ? ` · ${subscription.provider === 'payos' ? 'VietQR / payOS' : 'PayPal'}` : ''}</p>
+        <p className="billing-plan"><strong>{(subscription?.plan || 'free').toUpperCase()}</strong>{subscription?.provider ? ` · ${subscription.provider === 'payos' ? 'VietQR / payOS' : paypalPending ? (vi ? 'PayPal chưa hoàn tất' : 'PayPal incomplete') : 'PayPal'}` : ''}</p>
         {endLabel && <p>{subscription?.cancel_at_period_end || subscription?.provider === 'payos' ? (vi ? `Có hiệu lực đến ${endLabel}` : `Active until ${endLabel}`) : (vi ? `Gia hạn tiếp theo: ${endLabel}` : `Next renewal: ${endLabel}`)}</p>}
+        {paypalPending && <p className="billing-warning">{vi ? 'Bạn chưa xác nhận thanh toán trên PayPal. Yêu cầu này không trừ tiền và có thể hủy để thử lại.' : 'You did not confirm payment on PayPal. This request did not charge you and can be discarded before retrying.'}</p>}
         {subscription?.status === 'PAST_DUE' && <p className="billing-warning">{vi ? 'Thanh toán PayPal gặp lỗi. Vui lòng cập nhật phương thức thanh toán trong PayPal.' : 'Your PayPal payment failed. Please update the payment method in PayPal.'}</p>}
         <div className="billing-actions">
           {subscription?.provider === 'payos' && <button type="button" onClick={startPayosRenewal} disabled={Boolean(action)}>{action === 'renew' ? (vi ? 'ĐANG MỞ…' : 'OPENING…') : (vi ? 'MUA THÊM 30 NGÀY' : 'ADD 30 DAYS')}</button>}
-          {subscription?.provider === 'paypal' && managementUrl && <a className="billing-external-link" href={managementUrl} target="_blank" rel="noreferrer">{vi ? 'QUẢN LÝ THANH TOÁN TRONG PAYPAL ↗' : 'MANAGE PAYMENT IN PAYPAL ↗'}</a>}
-          {subscription?.provider === 'paypal' && !subscription.cancel_at_period_end && <button type="button" onClick={cancelPayPal} disabled={Boolean(action)}>{action === 'cancel' ? (vi ? 'ĐANG HỦY…' : 'CANCELLING…') : (vi ? 'DỪNG GIA HẠN PAYPAL' : 'CANCEL PAYPAL RENEWAL')}</button>}
-          {subscription?.plan !== 'pro' && subscription?.provider !== 'payos' && <Link className="legal-back" href={vi ? '/pricing' : '/en/pricing'}>{vi ? 'Nâng cấp lại Pro →' : 'Upgrade to Pro again →'}</Link>}
+          {paypalManageable && managementUrl && <a className="billing-external-link" href={managementUrl} target="_blank" rel="noreferrer">{vi ? 'QUẢN LÝ THANH TOÁN TRONG PAYPAL ↗' : 'MANAGE PAYMENT IN PAYPAL ↗'}</a>}
+          {paypalManageable && !subscription?.cancel_at_period_end && <button type="button" onClick={() => cancelPayPal(false)} disabled={Boolean(action)}>{action === 'cancel' ? (vi ? 'ĐANG HỦY…' : 'CANCELLING…') : (vi ? 'DỪNG GIA HẠN PAYPAL' : 'CANCEL PAYPAL RENEWAL')}</button>}
+          {paypalPending && <button type="button" onClick={() => cancelPayPal(true)} disabled={Boolean(action)}>{action === 'cancel' ? (vi ? 'ĐANG HỦY…' : 'DISCARDING…') : (vi ? 'HỦY YÊU CẦU PAYPAL' : 'DISCARD PAYPAL CHECKOUT')}</button>}
+          {subscription?.plan !== 'pro' && subscription?.provider !== 'payos' && !paypalPending && <Link className="legal-back" href={vi ? '/pricing' : '/en/pricing'}>{vi ? 'Nâng cấp lại Pro →' : 'Upgrade to Pro again →'}</Link>}
         </div>
       </>}
       {message && <p className="billing-message" role="status">{message}</p>}

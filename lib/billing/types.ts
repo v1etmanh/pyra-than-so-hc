@@ -46,3 +46,11 @@ export function isTerminalProviderStatus(status: string | null | undefined): boo
     String(status || '').toUpperCase()
   );
 }
+
+export function isPendingPayPalStatus(status: string | null | undefined): boolean {
+  return ['CREATING', 'APPROVAL_PENDING'].includes(String(status || '').toUpperCase());
+}
+
+export function isManageablePayPalStatus(status: string | null | undefined): boolean {
+  return ['ACTIVE', 'SUSPENDED', 'PAST_DUE'].includes(String(status || '').toUpperCase());
+}
