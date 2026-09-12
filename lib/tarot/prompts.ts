@@ -26,11 +26,19 @@ function cardsBlock(cards: DrawnTarotCard[], locale: TarotLocale): string {
   }).join('\n\n');
 }
 
+export function isTwoChoiceContext(spread: TarotSpread, question: string): boolean {
+  if (spread.id === 'two-options') return true;
+  const q = question.toLowerCase();
+  const hasComparativeWord = /\b(hay|hoặc|vs|versus|hay là|hay nên)\b/i.test(q);
+  const hasChoiceIntent = /\b(nên|chọn|lựa chọn|phân vân|lăn tăn|giữa|định|should i|choose|between|or)\b/i.test(q);
+  return hasComparativeWord && hasChoiceIntent;
+}
+
 export function buildTarotSystemPrompt(locale: TarotLocale): string {
   if (locale === 'vi') {
-    return `Bạn là Numina Tarot, một người đọc Tarot Rider–Waite–Smith ấm áp, sáng rõ và có trách nhiệm.\n\nQuy tắc bắt buộc:\n- Chỉ luận các lá, chiều xuôi/ngược và vị trí được cung cấp; không tự thêm hay đổi lá.\n- Trình bày Tarot như công cụ tự soi chiếu và gợi ý lựa chọn, không phải sự thật tuyệt đối hay lời tiên tri chắc chắn.\n- Không khẳng định bạn biết suy nghĩ, ý định hoặc hành động bí mật của người khác.\n- Với sức khỏe, pháp lý, tài chính, an toàn hoặc khủng hoảng tinh thần: nêu giới hạn và khuyến khích tìm chuyên gia phù hợp.\n- Không dùng ngôn ngữ gây sợ hãi, định mệnh hóa, nguyền rủa hoặc khuyến khích phụ thuộc vào việc bói bài.\n- Trả lời hoàn toàn bằng tiếng Việt, có cấu trúc rõ, ấm áp nhưng thành thật.\n- Kết thúc bằng 2–3 hành động thực tế mà người hỏi có thể tự lựa chọn.`;
+    return `Bạn là Numina Tarot, một người đọc Tarot Rider–Waite–Smith ấm áp, sáng rõ và có trách nhiệm.\n\nQuy tắc bắt buộc:\n- Chỉ luận các lá, chiều xuôi/ngược và vị trí được cung cấp; không tự thêm hay đổi lá.\n- Trình bày Tarot như công cụ tự soi chiếu và gợi ý lựa chọn, không phải sự thật tuyệt đối hay lời tiên tri chắc chắn.\n- Không khẳng định bạn biết suy nghĩ, ý định hoặc hành động bí mật của người khác.\n- Với sức khỏe, pháp lý, tài chính, an toàn hoặc khủng hoảng tinh thần: nêu giới hạn và khuyến khích tìm chuyên gia phù hợp.\n- Không dùng ngôn ngữ gây sợ hãi, định mệnh hóa, nguyền rủa hoặc khuyến khích phụ thuộc vào việc bói bài.\n- Với câu hỏi so sánh 2 lựa chọn (hoặc trải bài Hai lựa chọn): bạn không được trả lời nước đôi 50/50 mà phải thể hiện quan điểm phân định rõ ràng dựa trên năng lượng các lá bài, đưa ra tỷ lệ phần trăm (%) nghiêng cụ thể về bên triển vọng hơn để giúp người hỏi giải tỏa sự do dự.\n- Trả lời hoàn toàn bằng tiếng Việt, có cấu trúc rõ, ấm áp nhưng thành thật.\n- Kết thúc bằng 2–3 hành động thực tế mà người hỏi có thể tự lựa chọn.`;
   }
-  return `You are Numina Tarot, a warm, clear and responsible Rider–Waite–Smith reader.\n\nMandatory rules:\n- Interpret only the supplied cards, orientations and positions; never invent or replace a card.\n- Present tarot as reflection and decision support, not certainty or guaranteed prediction.\n- Never claim factual access to another person's private thoughts, intentions or actions.\n- For health, legal, financial, safety or mental-health crises, state the limitation and recommend appropriate professional help.\n- Avoid fear, fatalism, curses or language that encourages dependency on readings.\n- Respond entirely in English with a clear, compassionate and honest structure.\n- End with two or three practical actions the user can choose.`;
+  return `You are Numina Tarot, a warm, clear and responsible Rider–Waite–Smith reader.\n\nMandatory rules:\n- Interpret only the supplied cards, orientations and positions; never invent or replace a card.\n- Present tarot as reflection and decision support, not certainty or guaranteed prediction.\n- Never claim factual access to another person's private thoughts, intentions or actions.\n- For health, legal, financial, safety or mental-health crises, state the limitation and recommend appropriate professional help.\n- Avoid fear, fatalism, curses or language that encourages dependency on readings.\n- For comparative or two-choice questions (or the Two Options spread): do not give a fence-sitting 50/50 response. Take a decisive comparative stance leaning toward the more constructive path based on card energies and provide an explicit percentage (%) breakdown to help resolve hesitation.\n- Respond entirely in English with a clear, compassionate and honest structure.\n- End with two or three practical actions the user can choose.`;
 }
 
 export function buildInitialReadingPrompt(
@@ -44,10 +52,48 @@ export function buildInitialReadingPrompt(
   const regenerateInstruction = regenerate
     ? (locale === 'vi' ? '\nĐây là lần luận giải lại. Giữ nguyên bộ bài nhưng đưa ra cách diễn đạt mới, cụ thể hơn.' : '\nThis is a regeneration. Keep the exact cards but provide a fresh, more concrete interpretation.')
     : '';
+
+  const isTwoChoice = isTwoChoiceContext(spread, question);
+
+  const twoChoiceInstruction = isTwoChoice
+    ? (locale === 'vi'
+      ? `\n\n### CHỈ DẪN BẮT BUỘC CHO CÂU HỎI 2 LỰA CHỌN:
+Người hỏi đang đứng trước ngã rẽ và cần một điểm tựa định hướng rõ ràng để tháo gỡ bế tắc.
+1. BẮT BUỘC thể hiện lập trường nghiêng về một bên dựa trên mức độ thuận lợi / thách thức của các lá bài. Tuyệt đối không trả lời nước đôi 50/50 hay "cả hai đều như nhau".
+2. BẮT BUỘC đưa ra phần đánh giá tỷ lệ phần trăm (%) cụ thể (tổng 2 bên = 100%, ví dụ: Lựa chọn A: 65% | Lựa chọn B: 35%).
+3. Bố cục câu trả lời cần tuân theo:
+   - **Bối cảnh & Nút thắt cốt lõi**: Phân tích tình thế hiện tại dẫn đến sự phân vân.
+   - **Đánh giá Hướng đi A**: Cơ hội, thử thách và kết quả dự báo.
+   - **Đánh giá Hướng đi B**: Cơ hội, thử thách và kết quả dự báo.
+   - **⚖️ Cán cân quyết định & Tỷ lệ nghiêng**:
+     - Ghi rõ tỷ lệ % của từng hướng (kèm lý do cô đọng dựa trên lá bài).
+     - Khẳng định rõ trải bài đang nghiêng về lựa chọn nào và vì sao.
+     - 2–3 hành động thực tế để tối ưu hóa lựa chọn được khuyến nghị.`
+      : `\n\n### MANDATORY INSTRUCTION FOR TWO-CHOICE DILEMMAS:
+The querent is at a crossroads and needs decisive guidance to break through hesitation.
+1. MUST take a clear stance leaning toward one path based on card energies. Never provide a fence-sitting, neutral 50/50 response.
+2. MUST provide an explicit percentage (%) balance breakdown (totaling 100%, e.g., Option A: 65% | Option B: 35%).
+3. Structure the response as follows:
+   - **Core Context**: Underlying dynamics of the dilemma.
+   - **Path A Evaluation**: Opportunities, frictions, and likely outcome.
+   - **Path B Evaluation**: Opportunities, frictions, and likely outcome.
+   - **⚖️ Decision Balance & Leaning Percentage**:
+     - State the exact percentage for each option with concise rationales.
+     - State clearly which option the cards favor and why.
+     - 2–3 concrete actions to execute the recommended path effectively.`)
+    : '';
+
   if (locale === 'vi') {
-    return `## Câu hỏi\n${question}\n\n## Trải bài\n${spread.name.vi}: ${spread.description.vi}\n\n## Các lá đã rút\n${cardsBlock(cards, locale)}${profileBlock(profile, locale)}${regenerateInstruction}\n\nHãy mở đầu bằng thông điệp tổng quan, sau đó luận từng vị trí trong quan hệ với câu hỏi, kết nối các lá với nhau và đưa ra chỉ dẫn thực tế.`;
+    const closingInstruction = isTwoChoice
+      ? 'Hãy phân tích sâu sắc, so sánh đa chiều và đưa ra cán cân tỷ lệ % cùng khuyến nghị dứt khoát.'
+      : 'Hãy mở đầu bằng thông điệp tổng quan, sau đó luận từng vị trí trong quan hệ với câu hỏi, kết nối các lá với nhau và đưa ra chỉ dẫn thực tế.';
+    return `## Câu hỏi\n${question}\n\n## Trải bài\n${spread.name.vi}: ${spread.description.vi}\n\n## Các lá đã rút\n${cardsBlock(cards, locale)}${profileBlock(profile, locale)}${twoChoiceInstruction}${regenerateInstruction}\n\n${closingInstruction}`;
   }
-  return `## Question\n${question}\n\n## Spread\n${spread.name.en}: ${spread.description.en}\n\n## Drawn cards\n${cardsBlock(cards, locale)}${profileBlock(profile, locale)}${regenerateInstruction}\n\nBegin with the overall message, interpret each position in relation to the question, connect the cards, and finish with practical guidance.`;
+
+  const closingInstruction = isTwoChoice
+    ? 'Analyze deeply, compare both paths rigorously, and provide the percentage balance with decisive guidance.'
+    : 'Begin with the overall message, interpret each position in relation to the question, connect the cards, and finish with practical guidance.';
+  return `## Question\n${question}\n\n## Spread\n${spread.name.en}: ${spread.description.en}\n\n## Drawn cards\n${cardsBlock(cards, locale)}${profileBlock(profile, locale)}${twoChoiceInstruction}${regenerateInstruction}\n\n${closingInstruction}`;
 }
 
 export function buildFollowUpDecisionPrompt(
@@ -91,8 +137,16 @@ export function buildFollowUpReadingPrompt(input: {
   const extra = additionalCards.length
     ? `\n\n${locale === 'vi' ? '## Lá bổ sung' : '## Supplementary cards'}\n${cardsBlock(additionalCards, locale)}`
     : '';
+
+  const isTwoChoice = isTwoChoiceContext(spread, originalQuestion) || isTwoChoiceContext(spread, followUpQuestion);
+  const twoChoiceFollowUp = isTwoChoice
+    ? (locale === 'vi'
+      ? '\nNếu câu hỏi này đào sâu về 2 phương án, hãy duy trì lập trường nhất quán, củng cố hoặc hiệu chỉnh tỷ lệ % nghiêng kèm lý do thực tế.'
+      : '\nIf this follow-up continues comparing the two options, maintain a decisive stance and reinforce or refine the percentage leaning with concrete reasons.')
+    : '';
+
   if (locale === 'vi') {
-    return `## Câu hỏi ban đầu\n${originalQuestion}\n\n## Trải bài ban đầu\n${spread.name.vi}\n${cardsBlock(originalCards, locale)}\n\n## Lời giải trước\n${previousInterpretation.slice(0, 12_000)}\n\n## Câu hỏi tiếp theo\n${followUpQuestion}${extra}${profileBlock(profile, locale)}\n\nTrả lời trực tiếp câu hỏi tiếp theo, giữ nhất quán với bài đã rút và nói rõ khi điều gì chỉ là khả năng.`;
+    return `## Câu hỏi ban đầu\n${originalQuestion}\n\n## Trải bài ban đầu\n${spread.name.vi}\n${cardsBlock(originalCards, locale)}\n\n## Lời giải trước\n${previousInterpretation.slice(0, 12_000)}\n\n## Câu hỏi tiếp theo\n${followUpQuestion}${extra}${profileBlock(profile, locale)}${twoChoiceFollowUp}\n\nTrả lời trực tiếp câu hỏi tiếp theo, giữ nhất quán với bài đã rút và nói rõ khi điều gì chỉ là khả năng.`;
   }
-  return `## Original question\n${originalQuestion}\n\n## Original spread\n${spread.name.en}\n${cardsBlock(originalCards, locale)}\n\n## Previous interpretation\n${previousInterpretation.slice(0, 12_000)}\n\n## Follow-up question\n${followUpQuestion}${extra}${profileBlock(profile, locale)}\n\nAnswer the follow-up directly, remain consistent with the drawn cards, and clearly label possibilities as possibilities.`;
+  return `## Original question\n${originalQuestion}\n\n## Original spread\n${spread.name.en}\n${cardsBlock(originalCards, locale)}\n\n## Previous interpretation\n${previousInterpretation.slice(0, 12_000)}\n\n## Follow-up question\n${followUpQuestion}${extra}${profileBlock(profile, locale)}${twoChoiceFollowUp}\n\nAnswer the follow-up directly, remain consistent with the drawn cards, and clearly label possibilities as possibilities.`;
 }

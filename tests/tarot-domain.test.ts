@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { allTarotCards, majorArcanaCards, minorArcanaCards } from '../lib/tarot/cards.ts';
 import { drawCardsForSpread, drawSupplementaryCards } from '../lib/tarot/draw.ts';
-import { parseFollowUpDecision } from '../lib/tarot/prompts.ts';
+import { parseFollowUpDecision, isTwoChoiceContext, buildInitialReadingPrompt } from '../lib/tarot/prompts.ts';
 import { getTarotSpread, tarotSpreads } from '../lib/tarot/spreads.ts';
 import { tarotReadingRequestSchema } from '../lib/security/schemas.ts';
 
@@ -119,4 +119,25 @@ test('tarot request schema accepts valid modes and rejects malformed payloads', 
     }
   });
   assert.equal(profileWithLongIndicator.success, true);
+});
+
+test('two-choice dilemmas enforce percentage balance and decisive leaning in prompts', () => {
+  const twoOptionsSpread = getTarotSpread('two-options');
+  assert.ok(twoOptionsSpread);
+  assert.equal(isTwoChoiceContext(twoOptionsSpread, 'Bất kỳ câu hỏi nào'), true);
+
+  const threeCardSpread = getTarotSpread('three-card');
+  assert.ok(threeCardSpread);
+  assert.equal(isTwoChoiceContext(threeCardSpread, 'Nên chọn công ty A hay công ty B?'), true);
+  assert.equal(isTwoChoiceContext(threeCardSpread, 'Năng lượng tuần này thế nào?'), false);
+
+  const cards = drawCardsForSpread(twoOptionsSpread);
+  const promptVi = buildInitialReadingPrompt('Nên đi du học hay ở lại làm việc?', twoOptionsSpread, cards, undefined, 'vi');
+  assert.match(promptVi, /CHỈ DẪN BẮT BUỘC CHO CÂU HỎI 2 LỰA CHỌN/);
+  assert.match(promptVi, /tỷ lệ phần trăm \(%\)/);
+  assert.match(promptVi, /Cán cân quyết định & Tỷ lệ nghiêng/);
+
+  const promptEn = buildInitialReadingPrompt('Should I take job A or job B?', twoOptionsSpread, cards, undefined, 'en');
+  assert.match(promptEn, /MANDATORY INSTRUCTION FOR TWO-CHOICE DILEMMAS/);
+  assert.match(promptEn, /Decision Balance & Leaning Percentage/);
 });
