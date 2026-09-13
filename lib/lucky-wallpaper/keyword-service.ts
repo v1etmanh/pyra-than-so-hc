@@ -138,6 +138,9 @@ CORE RULES:
     ? `- User's explicit visual subject / theme (PRIORITY): "${rawWish}"
   * User strongly desires this specific subject/style! Translate any Vietnamese terms into English stock search keywords and feature this subject in queries 1-4, combined with lucky colors (${luckyColors}) and style (${style.name_en}).`
     : `- User's custom wish: None (focus on numerology symbols, intention and aesthetic).`;
+  const styleGuard = style.id === 'tarot_editorial'
+    ? '- Tarot imagery is allowed because the selected style explicitly requests it.'
+    : '- Do NOT search for tarot cards, oracle cards, card decks, or framed card artwork; the selected style is not Tarot.';
 
   const user = `Create six stock-image search queries for a personalized numerology wallpaper.
 ${wishContext}
@@ -145,6 +148,7 @@ ${wishContext}
 - Personal Day ${personalDay}: ${dayAesthetics.name_en}; motifs: ${dayAesthetics.keywords_en.join(', ')}
 - Lucky colors: ${luckyColors}
 - Style: ${style.name_en}
+${styleGuard}
 - Intention: ${intention.name_en}; visual direction: ${intention.prompt_keywords}
 - Target: ${device.label_en}, ${device.ratio}
 ${retryContext}`;
@@ -208,7 +212,14 @@ export async function generateWallpaperKeywordBatch(
         .toLowerCase()
         .split(/\s+/)
         .filter((term) => term.length >= 3);
-      const queries = normalizeWallpaperQueries(parsed, previousQueries, personalNameTerms);
+      const nonTarotTerms = input.styleId === 'tarot_editorial'
+        ? []
+        : ['tarot', 'card', 'cards', 'deck', 'oracle', 'divination'];
+      const queries = normalizeWallpaperQueries(
+        parsed,
+        previousQueries,
+        [...personalNameTerms, ...nonTarotTerms]
+      );
       if (queries.length !== MAX_QUERIES) {
         markModelFailure(candidate);
         continue;

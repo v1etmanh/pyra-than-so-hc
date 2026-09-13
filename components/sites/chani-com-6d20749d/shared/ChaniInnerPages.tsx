@@ -1088,8 +1088,8 @@ export function EditorsPicksPage() {
         gold: "luxury_gold_3d",
         zen: "ethereal_minimalist",
         botanical: "watercolor_nature",
-        cosmic: "tarot_editorial",
-        minimal: "ethereal_minimalist",
+        cosmic: "cosmic_celestial",
+        minimal: "minimalist_clean",
       };
       const styleId = styleIdMap[style] || "sacred_geometry";
       const intentionIdMap: Record<string, string> = {

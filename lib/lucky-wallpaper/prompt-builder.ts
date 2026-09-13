@@ -47,6 +47,8 @@ const STYLE_SEARCH_TERMS: Record<string, string> = {
   ethereal_minimalist: 'minimal zen calm nature',
   cyberpunk_neon: 'neon futuristic abstract',
   watercolor_nature: 'watercolor botanical nature',
+  cosmic_celestial: 'deep space nebula galaxy stars',
+  minimalist_clean: 'clean minimal abstract background',
   tarot_editorial: 'mystical celestial vintage',
 };
 

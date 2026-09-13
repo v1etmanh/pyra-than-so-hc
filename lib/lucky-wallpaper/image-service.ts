@@ -321,9 +321,12 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
           ? await searchPixabay(query, width, height, controller.signal, fetchImpl)
           : await searchPexels(query, width, height, controller.signal, fetchImpl);
         hadSuccessfulResponse = true;
-        const selected = candidates.find((candidate) =>
+        const suitableCandidates = candidates.filter((candidate) =>
           isSuitableWallpaperCandidate(candidate, width, height)
         );
+        const selected = suitableCandidates.length > 0
+          ? suitableCandidates[Math.abs(Math.trunc(seed)) % suitableCandidates.length]
+          : undefined;
         if (!selected) continue;
 
         return {

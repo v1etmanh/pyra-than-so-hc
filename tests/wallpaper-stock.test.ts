@@ -98,7 +98,7 @@ test('candidate quality gate covers portrait, landscape and square targets', () 
   assert.equal(isSuitableWallpaperCandidate({ width: 1200, height: 1200 }, 720, 1280), false);
 });
 
-test('search tries Pixabay then Pexels and takes the first candidate that passes quality checks', async () => {
+test('search tries Pixabay then Pexels and takes a candidate that passes quality checks', async () => {
   configureStockTestEnv();
   const calls: string[] = [];
   const fetchImpl: typeof fetch = async (input) => {
@@ -281,6 +281,50 @@ test('buildWallpaperSearchQueries translates Vietnamese custom wish into top que
   assert.match(queries[1], /anime|superhero|gold/i);
 });
 
+test('cosmic wallpaper fallback searches for space imagery without tarot cards', () => {
+  const queries = buildWallpaperSearchQueries({
+    lifePathNumber: 7,
+    intentionId: 'peace',
+    styleId: 'cosmic_celestial',
+  });
+
+  assert.ok(queries.some((query) => /space|nebula|galaxy|stars/i.test(query)));
+  assert.equal(queries.some((query) => /tarot|\bcards?\b|deck/i.test(query)), false);
+});
+
+test('stock selection uses the seed to vary among suitable candidates', async () => {
+  configureStockTestEnv();
+  const candidates = [1, 2, 3].map((id) => ({
+    id,
+    width: 1200,
+    height: 1800,
+    url: `https://www.pexels.com/photo/cosmic-${id}/`,
+    photographer: `Artist ${id}`,
+    src: { original: `https://images.pexels.com/photos/${id}/cosmic.jpeg` },
+  }));
+  const fetchImpl: typeof fetch = async () => pexelsResponse(candidates);
+
+  const first = await searchWallpaperImage({
+    queries: ['deep space nebula galaxy'],
+    width: 720,
+    height: 1280,
+    seed: 0,
+    engine: 'pexels',
+    fetchImpl,
+  });
+  const second = await searchWallpaperImage({
+    queries: ['deep space nebula galaxy'],
+    width: 720,
+    height: 1280,
+    seed: 1,
+    engine: 'pexels',
+    fetchImpl,
+  });
+
+  assert.equal(first.result?.sourceId, '1');
+  assert.equal(second.result?.sourceId, '2');
+});
+
 test('Pixabay uses illustration image_type when query contains anime/superhero keywords', async () => {
   configureStockTestEnv();
   const calls: string[] = [];
@@ -422,5 +466,3 @@ test('workflow falls back to Cloudflare drawing when stock photo providers fail 
   assert.equal(result.image.provider, 'cloudflare');
   assert.equal(result.aiProvider, 'Cloudflare Workers AI');
 });
-
-

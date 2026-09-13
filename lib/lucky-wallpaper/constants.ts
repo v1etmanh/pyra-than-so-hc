@@ -184,6 +184,22 @@ export const WALLPAPER_STYLES: StylePreset[] = [
     themeColor: "#3B82F6",
   },
   {
+    id: "cosmic_celestial",
+    name_vi: "Vũ Trụ & Thiên Hà",
+    name_en: "Deep Space & Celestial Cosmos",
+    description_vi: "Tinh vân, thiên hà và các dải sáng vũ trụ sâu thẳm, không mang hình thức lá bài",
+    prompt_modifiers: "deep-space nebula clouds, luminous galaxies, constellations and distant stars, sweeping aurora ribbons, cinematic celestial depth, uninterrupted borderless full-frame panorama",
+    themeColor: "#6366F1",
+  },
+  {
+    id: "minimalist_clean",
+    name_vi: "Tối Giản Hiện Đại",
+    name_en: "Clean Modern Minimalism",
+    description_vi: "Mảng màu tinh gọn, khoảng thở rộng và một điểm nhấn biểu tượng thanh lịch",
+    prompt_modifiers: "clean modern minimalism, spacious negative space, subtle gradient background, one elegant symbolic focal point, soft diffused light, refined uninterrupted borderless composition",
+    themeColor: "#94A3B8",
+  },
+  {
     id: "tarot_editorial",
     name_vi: "Nghệ Thuật Tarot Huyền Bí",
     name_en: "Mystical Tarot Editorial",
