@@ -2,15 +2,19 @@
 
 import React, { useState, FormEvent, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
+import { FiShield } from 'react-icons/fi';
 import { useAuth } from '@/hooks/useAuth';
 import PyraHeader from '@/components/sites/chani-com-6d20749d/shared/PyraHeader';
 import { InnerFooter } from '@/components/sites/chani-com-6d20749d/shared/ChaniInnerPages';
 
 export default function LoginPage() {
   const router = useRouter();
-  const { user, signInWithPassword, signInWithGoogle, isLoading: isAuthLoading } = useAuth();
+  const locale = useLocale();
+  const t = useTranslations('Auth');
+  const localize = (path: string) => `/${locale}${path}`;
+  const { user, signInWithPassword, signInWithGoogle, openAuthModal, isLoading: isAuthLoading } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,16 +24,16 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (user && !isAuthLoading) {
-      router.push('/account');
+      router.push(localize('/account'));
     }
-  }, [user, isAuthLoading, router]);
+  }, [user, isAuthLoading, router, locale]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
     if (!email || !password) {
-      setErrorMessage('Vui lòng điền đầy đủ email và mật khẩu.');
+      setErrorMessage(t('requiredCredentials'));
       return;
     }
 
@@ -39,12 +43,12 @@ export default function LoginPage() {
 
     if (error) {
       if (error.message.toLowerCase().includes('invalid login credentials')) {
-        setErrorMessage('Email hoặc mật khẩu không chính xác.');
+        setErrorMessage(t('invalidCredentials'));
       } else {
-        setErrorMessage(error.message || 'Đăng nhập không thành công.');
+        setErrorMessage(t('signInFailed'));
       }
     } else {
-      router.push('/account');
+      router.push(localize('/account'));
     }
   };
 
@@ -54,7 +58,7 @@ export default function LoginPage() {
     const { error } = await signInWithGoogle();
     if (error) {
       setIsLoading(false);
-      setErrorMessage(error.message || 'Đăng nhập bằng Google không thành công.');
+      setErrorMessage(t('googleSignInFailed'));
     }
   };
 
@@ -74,13 +78,13 @@ export default function LoginPage() {
       >
         <div className="numerology-profile-intro">
           <p className="batch-kicker" style={{ color: '#bda476' }}>
-            ✦ SACRED NUMEROLOGY / SECURE AUTHENTICATION
+            {t('secureAuthKicker')}
           </p>
           <h1 style={{ fontSize: 'clamp(46px, 6vw, 84px)', marginBottom: '20px' }}>
-            Welcome back to your map.
+            {t('loginHeroTitle')}
           </h1>
           <p style={{ maxWidth: '480px', lineHeight: 1.7 }}>
-            Đăng nhập để tiếp tục hành trình khám phá 24 chỉ số thần số học, mở khóa các phân tích chuyên sâu và đồng bộ dữ liệu của bạn trên mọi thiết bị.
+            {t('loginHeroCopy')}
           </p>
           <div
             style={{
@@ -93,9 +97,9 @@ export default function LoginPage() {
               gap: '14px',
             }}
           >
-            <span style={{ fontSize: '24px', color: '#bda476' }}>☼</span>
+            <FiShield aria-hidden="true" style={{ fontSize: '24px', color: '#bda476', flexShrink: 0 }} />
             <span style={{ fontSize: '12px', fontFamily: '"Courier New", monospace' }}>
-              Dữ liệu của bạn được bảo mật an toàn với chuẩn mã hóa Supabase.
+              {t('secureData')}
             </span>
           </div>
         </div>
@@ -109,10 +113,10 @@ export default function LoginPage() {
           }}
         >
           <p className="batch-kicker" style={{ margin: '0 0 10px', color: '#9b7746' }}>
-            SIGN IN
+            {t('signInKicker')}
           </p>
-          <h2 style={{ fontSize: '38px', marginBottom: '12px' }}>ĐĂNG NHẬP</h2>
-          <p style={{ marginBottom: '24px' }}>Nhập thông tin tài khoản NUMELYRA của bạn.</p>
+          <h2 style={{ fontSize: '38px', marginBottom: '12px' }}>{t('signIn')}</h2>
+          <p style={{ marginBottom: '24px' }}>{t('signInSubtitle')}</p>
 
           {errorMessage && (
             <div
@@ -160,18 +164,18 @@ export default function LoginPage() {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
             </svg>
-            TIẾP TỤC VỚI GOOGLE
+            {t('continueWithGoogle')}
           </button>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', opacity: 0.5 }}>
             <div style={{ flex: 1, height: '1px', background: '#2a2a2b' }} />
-            <span style={{ fontSize: '11px', fontFamily: '"Courier New", monospace' }}>HOẶC QUA EMAIL</span>
+            <span style={{ fontSize: '11px', fontFamily: '"Courier New", monospace' }}>{t('orWithEmail')}</span>
             <div style={{ flex: 1, height: '1px', background: '#2a2a2b' }} />
           </div>
 
           <form onSubmit={handleSubmit}>
             <label>
-              EMAIL
+              {t('email')}
               <input
                 type="email"
                 value={email}
@@ -184,7 +188,7 @@ export default function LoginPage() {
             </label>
 
             <label style={{ position: 'relative', marginTop: '16px' }}>
-              MẬT KHẨU
+              {t('password')}
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
@@ -209,7 +213,7 @@ export default function LoginPage() {
                   fontFamily: '"Courier New", monospace',
                 }}
               >
-                {showPassword ? 'ẨN' : 'HIỆN'}
+                {showPassword ? t('hidePassword') : t('showPassword')}
               </button>
             </label>
 
@@ -224,11 +228,15 @@ export default function LoginPage() {
               }}
             >
               <label style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
-                <input type="checkbox" defaultChecked /> Ghi nhớ
+                <input type="checkbox" defaultChecked /> {t('rememberMe')}
               </label>
-              <Link href="/account" style={{ color: '#886a92', textDecoration: 'underline' }}>
-                Quên mật khẩu?
-              </Link>
+              <button
+                type="button"
+                onClick={() => openAuthModal('forgot')}
+                style={{ color: '#886a92', textDecoration: 'underline', border: 0, background: 'transparent', padding: 0, cursor: 'pointer', font: 'inherit' }}
+              >
+                {t('forgotPassword')}
+              </button>
             </div>
 
             <button
@@ -236,7 +244,7 @@ export default function LoginPage() {
               disabled={isLoading}
               style={{ width: '100%', marginTop: '24px' }}
             >
-              {isLoading ? 'ĐANG XÁC THỰC…' : 'ĐĂNG NHẬP ↗'}
+              {isLoading ? t('signingIn') : `${t('signIn')} ↗`}
             </button>
           </form>
 
@@ -250,12 +258,12 @@ export default function LoginPage() {
               color: '#777',
             }}
           >
-            Chưa có tài khoản?{' '}
+            {t('noAccount')}{' '}
             <Link
-              href="/register"
+              href={localize('/register')}
               style={{ fontStyle: 'normal', color: '#886a92', textDecoration: 'underline', marginLeft: '4px' }}
             >
-              Đăng ký tài khoản mới ↗
+              {t('createNewAccount')} ↗
             </Link>
           </p>
         </div>

@@ -7,6 +7,16 @@ import { useAuth } from "@/hooks/useAuth";
 import { useBilling } from "@/hooks/useBilling";
 import { useLocale, useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import {
+  FiArrowUpRight,
+  FiChevronDown,
+  FiGrid,
+  FiImage,
+  FiLogOut,
+  FiMessageCircle,
+  FiSun,
+  FiUser,
+} from "react-icons/fi";
 
 const nav = [
   ["map", "/"],
@@ -106,7 +116,7 @@ export default function PyraHeader() {
         <div className="pyra-header-tools">
           <LanguageSwitcher isHeader />
           <button className="pyra-theme-button" type="button" aria-label={t("themePreview")}>
-            ☼
+            <FiSun aria-hidden="true" />
           </button>
           {user ? (
             <div className="pyra-profile-wrapper" ref={dropdownRef}>
@@ -122,7 +132,7 @@ export default function PyraHeader() {
                 <span style={{ maxWidth: '120px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {displayName.toUpperCase()}
                 </span>
-                <span className={`pyra-profile-chevron ${dropdownOpen ? 'is-open' : ''}`}>⌄</span>
+                <FiChevronDown className={`pyra-profile-chevron ${dropdownOpen ? 'is-open' : ''}`} aria-hidden="true" />
               </button>
 
               {dropdownOpen && (
@@ -131,7 +141,7 @@ export default function PyraHeader() {
                     <span className="pyra-dropdown-name">{displayName}</span>
                     {userEmail && <span className="pyra-dropdown-email">{userEmail}</span>}
                     <div className="pyra-dropdown-plan-badge">
-                      <span>{isPro ? 'NUMELYRA PRO ✦' : (locale === 'vi' ? 'GÓI MIỄN PHÍ' : 'FREE TIER')}</span>
+                      <span>{isPro ? t("proPlan") : t("freeTier")}</span>
                       {!isPro && (
                         <button
                           type="button"
@@ -140,7 +150,7 @@ export default function PyraHeader() {
                             openUpgradeModal({ feature: 'general' });
                           }}
                         >
-                          {locale === 'vi' ? 'Nâng cấp →' : 'Upgrade →'}
+                          {t("upgrade")} →
                         </button>
                       )}
                     </div>
@@ -152,7 +162,7 @@ export default function PyraHeader() {
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
-                    <span className="pyra-dropdown-icon">👤</span>
+                    <FiUser className="pyra-dropdown-icon" aria-hidden="true" />
                     <span>{t("profile")}</span>
                   </Link>
                   <Link
@@ -161,7 +171,7 @@ export default function PyraHeader() {
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
-                    <span className="pyra-dropdown-icon">✦</span>
+                    <FiMessageCircle className="pyra-dropdown-icon" aria-hidden="true" />
                     <span>{t("aiChat")}</span>
                   </Link>
                   <Link
@@ -170,7 +180,7 @@ export default function PyraHeader() {
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
-                    <span className="pyra-dropdown-icon">🖼️</span>
+                    <FiImage className="pyra-dropdown-icon" aria-hidden="true" />
                     <span>{t("wallpaper")}</span>
                   </Link>
                   <Link
@@ -179,7 +189,7 @@ export default function PyraHeader() {
                     onClick={() => setDropdownOpen(false)}
                     role="menuitem"
                   >
-                    <span className="pyra-dropdown-icon">📊</span>
+                    <FiGrid className="pyra-dropdown-icon" aria-hidden="true" />
                     <span>{t("indicators")}</span>
                   </Link>
                   <div className="pyra-dropdown-divider" />
@@ -189,7 +199,7 @@ export default function PyraHeader() {
                     onClick={handleSignOut}
                     role="menuitem"
                   >
-                    <span className="pyra-dropdown-icon">🚪</span>
+                    <FiLogOut className="pyra-dropdown-icon" aria-hidden="true" />
                     <span>{t("signOut")}</span>
                   </button>
                 </div>
@@ -204,9 +214,9 @@ export default function PyraHeader() {
               disabled={isLoading}
               style={{ cursor: 'pointer' }}
             >
-              <span className="pyra-profile-mark">✦</span>
+              <span className="pyra-profile-mark"><FiUser aria-hidden="true" /></span>
               <span>{t("signIn")}</span>
-              <span className="pyra-profile-chevron">↗</span>
+              <FiArrowUpRight className="pyra-profile-chevron" aria-hidden="true" />
             </button>
           )}
         </div>

@@ -100,11 +100,11 @@ export default async function RootLayout({
       </head>
 
       <body suppressHydrationWarning>
-        <Providers>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>
             {children}
-          </NextIntlClientProvider>
-        </Providers>
+          </Providers>
+        </NextIntlClientProvider>
 
         <AnalyticsConsent analyticsId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
       </body>

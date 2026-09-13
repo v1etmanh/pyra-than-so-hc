@@ -2334,10 +2334,11 @@ export function OurTeamPage() {
       const illustrationSrc = getNumerologyImagePath(selected.key, selected.value, selected.title);
       return (
         <div className="indicator-ai-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isLoading) closeModal(); }}>
-          <section className={`indicator-ai-modal indicator-ai-modal-split ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title">
+          <section className={`indicator-ai-modal ${isLoading ? "is-loading" : "is-ready"}`} role="dialog" aria-modal="true" aria-labelledby="indicator-ai-title">
             <div className="indicator-ai-orbit" aria-hidden="true" />
             <button type="button" className="indicator-ai-close" onClick={closeModal} aria-label={isVietnamese ? "Đóng lời luận giải" : "Close interpretation"}>×</button>
-            
+
+            <div className="indicator-ai-modal-body indicator-ai-modal-split">
             {/* Left Column: Heading, Metadata, Status, and Detailed Interpretation */}
             <div className="indicator-ai-left-col">
               <p className="batch-kicker">NUMELYRA AI / {isVietnamese ? "CHỈ SỐ CÁ NHÂN" : "PERSONAL INDICATOR"}</p>
@@ -2444,6 +2445,7 @@ export function OurTeamPage() {
                   <span>CON SỐ BIỂU TRƯNG: {selected.value}</span>
                 </div>
               </div>
+            </div>
             </div>
           </section>
         </div>

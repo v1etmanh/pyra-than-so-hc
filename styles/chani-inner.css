@@ -103,6 +103,12 @@
   cursor: pointer;
 }
 
+.pyra-theme-button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
 .pyra-profile-wrapper {
   position: relative;
   display: inline-block;
@@ -143,7 +149,8 @@
 
 .pyra-profile-chevron {
   margin-left: 3px;
-  font-size: 18px;
+  width: 18px;
+  height: 18px;
   display: inline-block;
   transition: transform .2s ease;
 }
@@ -230,8 +237,9 @@
 }
 
 .pyra-dropdown-icon {
-  font-size: 14px;
+  flex: 0 0 auto;
   width: 18px;
+  height: 18px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2034,6 +2042,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow: hidden;
   background: rgba(42, 42, 43, .45);
   backdrop-filter: blur(8px);
   animation: indicator-ai-fade-in .28s ease both;
@@ -2041,14 +2050,23 @@
 
 .indicator-ai-modal {
   position: relative;
-  width: min(1000px, 94vw);
-  max-height: min(840px, calc(100vh - 48px));
-  overflow-y: auto;
-  padding: 48px 52px 42px;
+  width: min(920px, calc(100vw - 48px));
+  max-height: min(760px, calc(100dvh - 48px));
+  overflow: hidden;
   border: 1px solid rgba(42, 42, 43, .22);
   background: #fbf9f5 url('/sites/chani-com-6d20749d/chart-9f6c9a84/assets/paper.webp') center/cover;
   box-shadow: 18px 18px 0 rgba(189, 164, 118, .25);
   animation: indicator-ai-modal-in .42s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.indicator-ai-modal-body {
+  box-sizing: border-box;
+  max-height: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 42px 42px 36px;
+  scrollbar-gutter: stable;
 }
 
 .indicator-ai-modal-split {
@@ -2106,7 +2124,7 @@
   background: rgba(255, 255, 255, .85);
   cursor: pointer;
   font: 24px/24px var(--chani-serif);
-  z-index: 10;
+  z-index: 20;
   transition: all 0.2s ease;
 }
 
@@ -2124,7 +2142,7 @@
 .indicator-ai-left-col h2 {
   max-width: 520px;
   margin: 0 0 10px;
-  font: 52px/.92 var(--chani-serif);
+  font: clamp(38px, 5vw, 48px)/.96 var(--chani-serif);
   letter-spacing: -1px;
   text-transform: uppercase;
   color: #2a2a2b;
@@ -2333,8 +2351,8 @@
 .indicator-ai-poster-media {
   position: relative;
   width: 100%;
-  max-width: 230px;
-  height: 230px;
+  max-width: 210px;
+  height: 210px;
   display: grid;
   place-items: center;
   margin: 4px auto 16px;
@@ -2343,8 +2361,8 @@
 }
 
 .indicator-ai-poster-img {
-  max-width: 195px;
-  max-height: 195px;
+  max-width: 180px;
+  max-height: 180px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -5419,6 +5437,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow: hidden;
   background: rgba(42, 42, 43, .36);
   backdrop-filter: blur(7px);
 }
@@ -5426,10 +5445,21 @@
 .pyra-login-modal {
   position: relative;
   width: min(490px, 100%);
-  padding: 47px 48px 35px;
+  max-height: min(720px, calc(100dvh - 48px));
+  overflow: hidden;
   border: 1px solid rgba(42, 42, 43, .2);
   background: #f6f1ec url('/sites/chani-com-6d20749d/chart-9f6c9a84/assets/paper.webp') center/cover;
   box-shadow: 15px 15px 0 rgba(42, 42, 43, .16);
+}
+
+.pyra-login-scroll {
+  box-sizing: border-box;
+  max-height: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 40px 42px 32px;
+  scrollbar-gutter: stable;
 }
 
 .pyra-login-modal::before {
@@ -5447,20 +5477,20 @@
   position: relative;
   margin: 0 0 15px;
   color: #303031;
-  font: 54px/.9 var(--chani-serif);
+  font: clamp(38px, 6vw, 48px)/.94 var(--chani-serif);
   letter-spacing: -1px;
 }
 
 .pyra-login-intro {
   max-width: 360px;
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: #67615f;
   font: 12px/1.6 var(--chani-mono);
 }
 
 .pyra-login-close {
   position: absolute;
-  z-index: 1;
+  z-index: 20;
   top: 13px;
   right: 15px;
   display: grid;
@@ -5477,7 +5507,7 @@
 
 .pyra-login-modal form {
   display: grid;
-  gap: 17px;
+  gap: 14px;
 }
 
 .pyra-login-modal form>label {
@@ -5571,12 +5601,21 @@
 }
 
 @media (max-width: 560px) {
+  .pyra-login-backdrop {
+    padding: 12px;
+  }
+
   .pyra-login-modal {
-    padding: 40px 23px 28px;
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+  }
+
+  .pyra-login-scroll {
+    padding: 38px 20px 24px;
   }
 
   .pyra-login-modal h2 {
-    font-size: 47px;
+    font-size: clamp(34px, 11vw, 42px);
   }
 
   .pyra-login-options {
@@ -6107,6 +6146,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow: hidden;
   background: rgba(42, 42, 43, .42);
   backdrop-filter: blur(7px);
 }
@@ -6758,7 +6798,7 @@
 }
 
 .indicator-ai-modal {
-  width: min(1000px, calc(100vw - 32px));
+  width: min(920px, calc(100vw - 48px));
   overflow-x: hidden;
 }
 
@@ -6839,7 +6879,12 @@
   }
 
   .indicator-ai-backdrop {
-    padding: 16px;
+    padding: 12px;
+  }
+
+  .indicator-ai-modal {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
   }
 
   .indicator-ai-modal-split {
@@ -9297,9 +9342,11 @@
    ========================================================================== */
 .indicator-assessment-modal-rich {
   position: relative;
-  width: min(640px, 94vw);
-  max-width: 640px;
-  padding: 44px 36px 36px;
+  width: min(600px, calc(100vw - 48px));
+  max-width: 600px;
+  max-height: min(720px, calc(100dvh - 48px));
+  padding: 0;
+  overflow: hidden;
   border-radius: 26px;
   border: 1px solid rgba(189, 164, 118, 0.5);
   background: #fbf8f2;
@@ -9314,6 +9361,16 @@
   color: #383234;
   text-align: center;
   animation: assessment-modal-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.indicator-assessment-scroll {
+  box-sizing: border-box;
+  max-height: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 36px 32px 30px;
+  scrollbar-gutter: stable;
 }
 
 @keyframes assessment-modal-in {
@@ -9343,7 +9400,7 @@
   place-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 10;
+  z-index: 20;
 }
 
 .indicator-assessment-close:hover {
@@ -9376,11 +9433,11 @@
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(189, 164, 118, 0.32);
   border-radius: 18px;
-  padding: 22px 24px;
+  padding: 18px 20px;
   text-align: left;
   cursor: pointer;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  min-height: 180px;
+  min-height: 150px;
   box-shadow: 0 4px 18px rgba(71, 45, 60, 0.04);
 }
 
@@ -9392,8 +9449,8 @@
 .indicator-assessment-paragraph {
   color: #383033;
   font-family: var(--chani-serif, Georgia, serif);
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.68;
   margin: 0 0 14px;
 }
 
@@ -9511,8 +9568,17 @@
 }
 
 @media (max-width: 560px) {
+  .indicator-assessment-backdrop {
+    padding: 12px;
+  }
+
   .indicator-assessment-modal-rich {
-    padding: 32px 18px 28px;
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .indicator-assessment-scroll {
+    padding: 32px 16px 24px;
   }
 
   .indicator-assessment-title {

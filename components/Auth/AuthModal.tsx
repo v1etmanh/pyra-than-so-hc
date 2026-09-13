@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState, FormEvent, useEffect } from 'react';
-import Image from 'next/image';
 import { useAuth } from '@/hooks/useAuth';
+import { useTranslations } from 'next-intl';
 
 export function AuthModal() {
+  const t = useTranslations('Auth');
   const {
     isAuthModalOpen,
     authModalMode,
@@ -43,7 +44,7 @@ export function AuthModal() {
     setSuccessMessage(null);
 
     if (!email || !password) {
-      setErrorMessage('Vui lòng điền đầy đủ email và mật khẩu.');
+      setErrorMessage(t('requiredCredentials'));
       return;
     }
 
@@ -53,9 +54,9 @@ export function AuthModal() {
 
     if (error) {
       if (error.message.toLowerCase().includes('invalid login credentials')) {
-        setErrorMessage('Email hoặc mật khẩu không chính xác.');
+        setErrorMessage(t('invalidCredentials'));
       } else {
-        setErrorMessage(error.message || 'Đăng nhập không thành công.');
+        setErrorMessage(t('signInFailed'));
       }
     }
   };
@@ -66,17 +67,17 @@ export function AuthModal() {
     setSuccessMessage(null);
 
     if (!email || !password) {
-      setErrorMessage('Vui lòng nhập email và mật khẩu.');
+      setErrorMessage(t('requiredCredentials'));
       return;
     }
 
     if (password.length < 6) {
-      setErrorMessage('Mật khẩu cần tối thiểu 6 ký tự.');
+      setErrorMessage(t('passwordTooShort'));
       return;
     }
 
     if (password !== confirmPassword) {
-      setErrorMessage('Mật khẩu xác nhận không khớp.');
+      setErrorMessage(t('passwordMismatch'));
       return;
     }
 
@@ -86,15 +87,15 @@ export function AuthModal() {
 
     if (error) {
       if (error.message.toLowerCase().includes('already registered')) {
-        setErrorMessage('Email này đã được đăng ký. Vui lòng đăng nhập.');
+        setErrorMessage(t('emailRegistered'));
       } else {
-        setErrorMessage(error.message || 'Đăng ký không thành công.');
+        setErrorMessage(t('signUpFailed'));
       }
     } else {
       if (!session) {
-        setSuccessMessage('Đăng ký thành công! Vui lòng kiểm tra email để xác nhận (hoặc đăng nhập).');
+        setSuccessMessage(t('signUpCheckEmail'));
       } else {
-        setSuccessMessage('Đăng ký thành công! Đang chuyển hướng...');
+        setSuccessMessage(t('signUpSuccess'));
       }
     }
   };
@@ -105,7 +106,7 @@ export function AuthModal() {
     setSuccessMessage(null);
 
     if (!email) {
-      setErrorMessage('Vui lòng nhập email của bạn.');
+      setErrorMessage(t('emailRequired'));
       return;
     }
 
@@ -114,9 +115,9 @@ export function AuthModal() {
     setIsLoading(false);
 
     if (error) {
-      setErrorMessage(error.message || 'Không thể gửi email khôi phục.');
+      setErrorMessage(t('resetFailed'));
     } else {
-      setSuccessMessage('Đã gửi liên kết đặt lại mật khẩu về email của bạn.');
+      setSuccessMessage(t('resetSent'));
     }
   };
 
@@ -126,7 +127,7 @@ export function AuthModal() {
     const { error } = await signInWithGoogle();
     if (error) {
       setIsLoading(false);
-      setErrorMessage(error.message || 'Đăng nhập bằng Google không thành công.');
+      setErrorMessage(t('googleSignInFailed'));
     }
   };
 
@@ -136,12 +137,12 @@ export function AuthModal() {
     setSuccessMessage(null);
 
     if (password.length < 6) {
-      setErrorMessage('Mật khẩu mới cần tối thiểu 6 ký tự.');
+      setErrorMessage(t('newPasswordTooShort'));
       return;
     }
 
     if (password !== confirmPassword) {
-      setErrorMessage('Mật khẩu xác nhận không trùng khớp.');
+      setErrorMessage(t('passwordMismatch'));
       return;
     }
 
@@ -150,9 +151,9 @@ export function AuthModal() {
     setIsLoading(false);
 
     if (error) {
-      setErrorMessage(error.message || 'Không thể cập nhật mật khẩu.');
+      setErrorMessage(t('updatePasswordFailed'));
     } else {
-      setSuccessMessage('Đặt lại mật khẩu thành công! Bạn có thể sử dụng mật khẩu mới ngay.');
+      setSuccessMessage(t('passwordUpdated'));
       setTimeout(() => {
         closeAuthModal();
       }, 2000);
@@ -190,12 +191,12 @@ export function AuthModal() {
           <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
           <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
         </svg>
-        TIẾP TỤC VỚI GOOGLE
+        {t('continueWithGoogle')}
       </button>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', opacity: 0.5 }}>
         <div style={{ flex: 1, height: '1px', background: '#2a2a2b' }} />
-        <span style={{ fontSize: '11px', fontFamily: '"Courier New", monospace' }}>HOẶC QUA EMAIL</span>
+        <span style={{ fontSize: '11px', fontFamily: '"Courier New", monospace' }}>{t('orWithEmail')}</span>
         <div style={{ flex: 1, height: '1px', background: '#2a2a2b' }} />
       </div>
     </>
@@ -225,10 +226,12 @@ export function AuthModal() {
           className="pyra-login-close"
           onClick={closeAuthModal}
           disabled={isLoading}
-          aria-label="Đóng cửa sổ"
+          aria-label={t('close')}
         >
           ×
         </button>
+
+        <div className="pyra-login-scroll">
 
         {authModalMode !== 'new_password' && (
           <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', borderBottom: '1px solid rgba(42,42,43,.15)', paddingBottom: '12px' }}>
@@ -247,7 +250,7 @@ export function AuthModal() {
                 textTransform: 'uppercase',
               }}
             >
-              ĐĂNG NHẬP
+              {t('signIn')}
             </button>
             <button
               type="button"
@@ -264,27 +267,27 @@ export function AuthModal() {
                 textTransform: 'uppercase',
               }}
             >
-              ĐĂNG KÝ
+              {t('signUp')}
             </button>
           </div>
         )}
 
         <p className="batch-kicker" style={{ margin: '0 0 8px', color: '#9b7746' }}>
-          NUMELYRA / SACRED NUMEROLOGY
+          {t('sacredNumerology')}
         </p>
 
         <h2 id="auth-modal-title" style={{ fontSize: '38px', marginBottom: '10px' }}>
-          {authModalMode === 'signin' && 'Welcome back.'}
-          {authModalMode === 'signup' && 'Begin your map.'}
-          {authModalMode === 'forgot' && 'Reset password.'}
-          {authModalMode === 'new_password' && 'New password.'}
+          {authModalMode === 'signin' && t('signInTitle')}
+          {authModalMode === 'signup' && t('signUpTitle')}
+          {authModalMode === 'forgot' && t('forgotTitle')}
+          {authModalMode === 'new_password' && t('newPasswordTitle')}
         </h2>
 
         <p className="pyra-login-intro">
-          {authModalMode === 'signin' && 'Đăng nhập để đồng bộ bản đồ 24 chỉ số và các bài đọc cá nhân của bạn.'}
-          {authModalMode === 'signup' && 'Tạo tài khoản để lưu trữ vĩnh viễn hành trình thần số học của bạn trên đám mây.'}
-          {authModalMode === 'forgot' && 'Nhập email để nhận liên kết khôi phục mật khẩu tài khoản NUMELYRA.'}
-          {authModalMode === 'new_password' && 'Nhập mật khẩu mới an toàn cho tài khoản của bạn.'}
+          {authModalMode === 'signin' && t('signInIntro')}
+          {authModalMode === 'signup' && t('signUpIntro')}
+          {authModalMode === 'forgot' && t('forgotIntro')}
+          {authModalMode === 'new_password' && t('newPasswordIntro')}
         </p>
 
         {errorMessage && (
@@ -326,7 +329,7 @@ export function AuthModal() {
             {renderGoogleButton()}
             <form onSubmit={handleSignIn}>
               <label>
-                EMAIL
+                {t('email')}
                 <input
                   type="email"
                   value={email}
@@ -339,7 +342,7 @@ export function AuthModal() {
               </label>
 
               <label style={{ position: 'relative' }}>
-                MẬT KHẨU
+                {t('password')}
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
@@ -364,7 +367,7 @@ export function AuthModal() {
                     fontFamily: '"Courier New", monospace',
                   }}
                 >
-                  {showPassword ? 'ẨN' : 'HIỆN'}
+                  {showPassword ? t('hidePassword') : t('showPassword')}
                 </button>
               </label>
 
@@ -383,7 +386,7 @@ export function AuthModal() {
                     padding: 0,
                   }}
                 >
-                  Quên mật khẩu?
+                  {t('forgotPassword')}
                 </button>
               </div>
 
@@ -394,21 +397,21 @@ export function AuthModal() {
                 style={{ width: '100%', marginTop: '10px' }}
               >
                 {isLoading ? (
-                  <span>ĐANG XÁC THỰC…</span>
+                  <span>{t('signingIn')}</span>
                 ) : (
                   <>
-                    <span>✦</span> ĐĂNG NHẬP
+                    <span aria-hidden="true">✦</span> {t('signIn')}
                   </>
                 )}
               </button>
 
               <p className="pyra-login-signup">
-                Chưa có tài khoản?{' '}
+                {t('noAccount')}{' '}
                 <button
                   type="button"
                   onClick={() => openAuthModal('signup')}
                 >
-                  Đăng ký ngay ↗
+                  {t('createNow')} ↗
                 </button>
               </p>
             </form>
@@ -420,19 +423,19 @@ export function AuthModal() {
             {renderGoogleButton()}
             <form onSubmit={handleSignUp}>
               <label>
-                HỌ VÀ TÊN
+                {t('fullName')}
                 <input
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Nguyễn Văn A"
+                  placeholder={t('fullNamePlaceholder')}
                   autoComplete="name"
                   disabled={isLoading}
                 />
               </label>
 
               <label>
-                EMAIL
+                {t('email')}
                 <input
                   type="email"
                   value={email}
@@ -445,7 +448,7 @@ export function AuthModal() {
               </label>
 
               <label style={{ position: 'relative' }}>
-                MẬT KHẨU (TỐI THIỂU 6 KÝ TỰ)
+                {t('minimumPassword')}
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
@@ -470,12 +473,12 @@ export function AuthModal() {
                     fontFamily: '"Courier New", monospace',
                   }}
                 >
-                  {showPassword ? 'ẨN' : 'HIỆN'}
+                  {showPassword ? t('hidePassword') : t('showPassword')}
                 </button>
               </label>
 
               <label>
-                XÁC NHẬN MẬT KHẨU
+                {t('confirmPassword')}
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={confirmPassword}
@@ -494,21 +497,21 @@ export function AuthModal() {
                 style={{ width: '100%', marginTop: '10px' }}
               >
                 {isLoading ? (
-                  <span>ĐANG KHỞI TẠO…</span>
+                  <span>{t('creatingAccount')}</span>
                 ) : (
                   <>
-                    <span>✦</span> TẠO TÀI KHOẢN MỚI
+                    <span aria-hidden="true">✦</span> {t('createNewAccount')}
                   </>
                 )}
               </button>
 
               <p className="pyra-login-signup">
-                Đã có tài khoản?{' '}
+                {t('alreadyHaveAccount')}{' '}
                 <button
                   type="button"
                   onClick={() => openAuthModal('signin')}
                 >
-                  Đăng nhập ↗
+                  {t('signIn')} ↗
                 </button>
               </p>
             </form>
@@ -518,7 +521,7 @@ export function AuthModal() {
         {authModalMode === 'forgot' && (
           <form onSubmit={handleResetPassword}>
             <label>
-              EMAIL TÀI KHOẢN
+              {t('accountEmail')}
               <input
                 type="email"
                 value={email}
@@ -537,21 +540,21 @@ export function AuthModal() {
               style={{ width: '100%', marginTop: '10px' }}
             >
               {isLoading ? (
-                <span>ĐANG GỬI…</span>
+                <span>{t('sendingReset')}</span>
               ) : (
                 <>
-                  <span>✦</span> GỬI LIÊN KẾT KHÔI PHỤC
+                  <span aria-hidden="true">✦</span> {t('sendResetLink')}
                 </>
               )}
             </button>
 
             <p className="pyra-login-signup">
-              Quay lại{' '}
+              {t('backTo')}{' '}
               <button
                 type="button"
                 onClick={() => openAuthModal('signin')}
               >
-                Đăng nhập ↗
+                {t('signIn')} ↗
               </button>
             </p>
           </form>
@@ -560,7 +563,7 @@ export function AuthModal() {
         {authModalMode === 'new_password' && (
           <form onSubmit={handleSetNewPassword}>
             <label style={{ position: 'relative' }}>
-              MẬT KHẨU MỚI (TỐI THIỂU 6 KÝ TỰ)
+              {t('newPassword')}
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
@@ -585,12 +588,12 @@ export function AuthModal() {
                   fontFamily: '"Courier New", monospace',
                 }}
               >
-                {showPassword ? 'ẨN' : 'HIỆN'}
+                {showPassword ? t('hidePassword') : t('showPassword')}
               </button>
             </label>
 
             <label>
-              XÁC NHẬN MẬT KHẨU MỚI
+              {t('confirmNewPassword')}
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={confirmPassword}
@@ -609,15 +612,16 @@ export function AuthModal() {
               style={{ width: '100%', marginTop: '10px' }}
             >
               {isLoading ? (
-                <span>ĐANG CẬP NHẬT…</span>
+                <span>{t('updatingPassword')}</span>
               ) : (
                 <>
-                  <span>✦</span> LƯU MẬT KHẨU MỚI
+                  <span aria-hidden="true">✦</span> {t('saveNewPassword')}
                 </>
               )}
             </button>
           </form>
         )}
+        </div>
       </section>
     </div>
   );

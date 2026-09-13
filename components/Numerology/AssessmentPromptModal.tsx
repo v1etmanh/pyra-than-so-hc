@@ -123,6 +123,8 @@ export function AssessmentPromptModal({
           ✕
         </button>
 
+        <div className="indicator-assessment-scroll">
+
         {/* Pulsating Celestial Emblem */}
         <div className="indicator-assessment-symbol" aria-hidden="true">
           ✦
@@ -238,6 +240,7 @@ export function AssessmentPromptModal({
             {isVietnamese ? 'LÀM BÀI TEST NGAY (2 PHÚT)' : 'TAKE THE TEST NOW (2 MINS)'}{' '}
             <span>→</span>
           </button>
+        </div>
         </div>
       </section>
     </div>
