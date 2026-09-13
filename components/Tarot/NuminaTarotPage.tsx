@@ -9,7 +9,11 @@ import { useProfiles } from '@/hooks/useProfiles';
 import { useProcessNumerology } from '@/hooks/useProcessNumerology';
 import { useTarotReading } from '@/hooks/use-tarot-reading';
 import type { ProfileContext } from '@/lib/ai/types';
-import { getTarotCardRevealKey, getTarotRevealProgress } from '@/lib/tarot/presentation';
+import {
+  getTarotCardRevealKey,
+  getTarotRevealProgress,
+  normalizeTarotMarkdown,
+} from '@/lib/tarot/presentation';
 import { tarotSpreads } from '@/lib/tarot/spreads';
 import type { DrawnTarotCard, TarotLocale } from '@/lib/tarot/types';
 import { TarotCardView } from './TarotCard';
@@ -580,7 +584,7 @@ export function NuminaTarotPage() {
                 {mainRevealProgress.complete && (current.interpretation || tarot.isRunning) && (
                   <article ref={interpretationRef} className="numina-interpretation is-reveal-unlocked">
                     <p className="numina-section-kicker">{isVietnamese ? 'LỜI GIẢI TỪ NUMELYRA' : 'NUMELYRA’S READING'}</p>
-                    {current.interpretation ? <ReactMarkdown>{current.interpretation}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
+                    {current.interpretation ? <ReactMarkdown>{normalizeTarotMarkdown(current.interpretation)}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
                   </article>
                 )}
 
@@ -638,7 +642,7 @@ export function NuminaTarotPage() {
                           id={`tarot-follow-up-reading-${item.id}`}
                           className="numina-interpretation is-follow-up is-reveal-unlocked"
                         >
-                          {item.interpretation ? <ReactMarkdown>{item.interpretation}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
+                          {item.interpretation ? <ReactMarkdown>{normalizeTarotMarkdown(item.interpretation)}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
                         </article>
                       )}
                       {item.error && <p className="numina-tarot-error">{item.error}</p>}

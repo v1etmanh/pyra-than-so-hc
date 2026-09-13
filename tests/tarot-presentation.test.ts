@@ -7,6 +7,7 @@ import {
   getTarotRevealProgress,
   getTarotSpreadLayout,
   getTarotStageMode,
+  normalizeTarotMarkdown,
   normalizeTarotRevealKeys
 } from '../lib/tarot/presentation.ts';
 
@@ -79,4 +80,26 @@ test('energy chips are localized, deduplicated and limited to three', () => {
   assert.equal(keywords.length, 3);
   assert.equal(new Set(keywords.map((item) => item.toLocaleLowerCase('vi'))).size, 3);
   assert.ok(keywords.every(Boolean));
+});
+
+test('tarot Markdown tables are converted into mobile-safe bullet lists', () => {
+  const markdown = `## Cán cân quyết định
+
+| Tiêu chí | Lựa chọn A | Lựa chọn B |
+|:---|---:|:---:|
+| Cơ hội | 65% | 35% |
+| Thử thách | Cần kiên nhẫn | Dễ phân tâm |
+
+Hãy chọn điều phù hợp.`;
+
+  const normalized = normalizeTarotMarkdown(markdown);
+
+  assert.doesNotMatch(normalized, /^\s*\|.*\|\s*$/m);
+  assert.match(normalized, /- \*\*Tiêu chí:\*\* Cơ hội; \*\*Lựa chọn A:\*\* 65%; \*\*Lựa chọn B:\*\* 35%/);
+  assert.match(normalized, /Hãy chọn điều phù hợp\./);
+});
+
+test('ordinary Tarot prose containing a pipe is left unchanged', () => {
+  const markdown = 'Lựa chọn A: 65% | Lựa chọn B: 35%';
+  assert.equal(normalizeTarotMarkdown(markdown), markdown);
 });
