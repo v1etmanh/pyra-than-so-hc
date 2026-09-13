@@ -1345,16 +1345,75 @@
   color: #7f6c76 !important;
 }
 
-/* Single card: centered beautifully like target mockup */
+/* Card Grid & Presentation */
+.numina-card-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 22px 26px !important;
+  max-width: 960px !important;
+  margin: 20px auto 28px !important;
+}
+
+.numina-card {
+  flex: 0 0 auto !important;
+  width: 195px !important;
+  text-align: center !important;
+}
+
+/* Single card: centered beautifully and majestically sized */
 .numina-card-grid:has(> .numina-card:only-child) {
   display: flex !important;
   justify-content: center !important;
-  margin: 18px 0 24px !important;
+  margin: 20px auto 28px !important;
+}
+
+.numina-card-grid:has(> .numina-card:only-child) .numina-card {
+  width: 240px !important;
+}
+
+.numina-card-grid:has(> .numina-card:only-child) .numina-card-stage {
+  max-width: 240px !important;
 }
 
 .numina-card-stage {
-  width: min(100%, 156px) !important;
-  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 195px !important;
+  aspect-ratio: 0.573 !important;
+  margin: 0 auto 12px !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+/* Compact / supplementary cards */
+.numina-card.is-compact {
+  width: 155px !important;
+}
+
+.numina-card.is-compact .numina-card-stage {
+  max-width: 155px !important;
+}
+
+/* Defensively lock concealed cards: front face NEVER renders or leaks on hover */
+.numina-card.is-concealed .numina-card-front {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* While concealed: hover strictly maintains 180deg (face-down); NEVER rotate to 172deg, NO brightness filter */
+.numina-card.is-concealed .numina-card-stage:hover .numina-card-inner {
+  transform: rotateY(180deg) translateY(-6px) !important;
+  filter: none !important;
+  box-shadow: 0 16px 36px rgba(45, 20, 32, 0.28), 0 0 24px rgba(224, 197, 142, 0.45) !important;
+}
+
+/* Smooth reveal state: only becomes visible upon user click */
+.numina-card.is-revealed .numina-card-front {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 .numina-card-front img {
@@ -1363,13 +1422,68 @@
   border: 1px solid rgba(215, 195, 170, 0.5) !important;
 }
 
+/* Caption with stable min-height so dimensions are identical before vs after clicking */
 .numina-card figcaption {
-  margin-top: 14px !important;
+  margin-top: 10px !important;
+  min-height: 84px !important;
   text-align: center !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: flex-start !important;
   gap: 2px !important;
+}
+
+.numina-card-details {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2px !important;
+  width: 100% !important;
+  animation: numina-card-details-in .35s ease both !important;
+}
+
+.numina-card-concealed-mark {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  min-height: 64px !important;
+  width: 100% !important;
+  padding: 4px 8px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all .25s ease !important;
+}
+
+.numina-card.is-concealed:hover .numina-card-concealed-mark {
+  background: rgba(240, 204, 133, 0.12) !important;
+}
+
+.numina-concealed-star {
+  font-size: 16px !important;
+  color: #c4a468 !important;
+  animation: numina-star-pulse 2.2s infinite ease-in-out !important;
+}
+
+.numina-concealed-hint {
+  font-family: var(--chani-mono, "Courier New", monospace) !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #9c836a !important;
+  background: rgba(240, 204, 133, 0.18) !important;
+  border: 1px solid rgba(215, 195, 170, 0.55) !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 2px 6px rgba(45, 25, 35, 0.05) !important;
+}
+
+@keyframes numina-star-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.22); opacity: 1; filter: drop-shadow(0 0 6px rgba(240, 204, 133, 0.8)); }
 }
 
 .numina-card figcaption small {
@@ -1384,9 +1498,10 @@
 
 .numina-card figcaption strong {
   font-family: 'Playfair Display', var(--chani-serif), Georgia, serif !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
   font-weight: 600 !important;
   color: #2e1c25 !important;
+  line-height: 1.25 !important;
 }
 
 .numina-card figcaption span {
@@ -1499,33 +1614,63 @@
   }
 
   .numina-card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)) !important;
-    gap: 10px 8px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px 8px !important;
     margin-bottom: 16px !important;
   }
 
-  /* Single card: center elegantly */
+  .numina-card {
+    flex: 0 0 auto !important;
+    width: clamp(96px, 29vw, 116px) !important;
+  }
+
+  .numina-card-stage {
+    width: 100% !important;
+    max-width: clamp(96px, 29vw, 116px) !important;
+    margin: 0 auto 8px !important;
+  }
+
+  /* Single card on mobile */
   .numina-card-grid:has(> .numina-card:only-child) {
     display: flex !important;
     justify-content: center !important;
   }
 
+  .numina-card-grid:has(> .numina-card:only-child) .numina-card {
+    width: min(100%, 185px) !important;
+  }
+
   .numina-card-grid:has(> .numina-card:only-child) .numina-card-stage {
-    width: min(100%, 140px) !important;
+    max-width: 185px !important;
   }
 
   .numina-card-grid.is-celtic {
+    display: grid !important;
     grid-template-columns: repeat(5, minmax(78px, 1fr)) !important;
     overflow-x: auto !important;
     padding-bottom: 8px !important;
+    gap: 8px 6px !important;
   }
 
-  .numina-card-stage {
-    width: min(100%, 115px) !important;
+  .numina-card-grid.is-celtic .numina-card {
+    width: 100% !important;
   }
 
   .numina-card figcaption {
-    margin-top: 8px !important;
+    margin-top: 6px !important;
+    min-height: 70px !important;
+  }
+
+  .numina-card-concealed-mark {
+    min-height: 52px !important;
+  }
+
+  .numina-concealed-hint {
+    font-size: 9px !important;
+    padding: 2px 7px !important;
+    letter-spacing: 0.08em !important;
   }
 
   .numina-card figcaption strong {

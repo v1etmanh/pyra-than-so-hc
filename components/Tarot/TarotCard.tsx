@@ -65,7 +65,24 @@ export function TarotCardView({
             <p>{drawn.card.keywords[direction].slice(0, 3).map((keyword) => keyword[locale]).join(' · ')}</p>
           </div>
         ) : (
-          <span className="numina-card-concealed-mark" aria-hidden="true">✦</span>
+          <div
+            className="numina-card-concealed-mark"
+            onClick={onReveal}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onReveal();
+              }
+            }}
+            title={revealLabel}
+          >
+            <span className="numina-concealed-star">✦</span>
+            <small className="numina-concealed-hint">
+              {locale === 'vi' ? 'Chạm để lật bài' : 'Tap to reveal'}
+            </small>
+          </div>
         )}
       </figcaption>
     </figure>

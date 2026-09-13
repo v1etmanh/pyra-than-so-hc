@@ -7499,8 +7499,7 @@
 }
 
 .numina-card.is-concealed .numina-card-stage:hover .numina-card-inner {
-  filter: brightness(1.08);
-  transform: rotateY(172deg) translateY(-4px);
+  transform: rotateY(180deg) translateY(-4px);
 }
 
 .numina-card-back,
