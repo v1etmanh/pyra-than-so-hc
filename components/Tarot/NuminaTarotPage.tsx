@@ -758,7 +758,7 @@ export function NuminaTarotPage() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="tarot-profile-modal-title"
-            style={{ maxWidth: '460px', textAlign: 'center' }}
+            style={{ width: 'min(460px, calc(100vw - 32px))', maxWidth: '460px', textAlign: 'center' }}
           >
             <button
               type="button"
@@ -782,7 +782,7 @@ export function NuminaTarotPage() {
                   : 'To enable NUMELYRA to draw cards and interpret Tarot tailored to your unique vibration, please create your Numerology Map first. It only takes 30 seconds!'}
               </p>
             </div>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '24px', flexWrap: 'wrap' }}>
               <button
                 type="button"
                 onClick={() => {
