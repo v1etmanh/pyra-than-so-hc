@@ -59,6 +59,7 @@ export interface TarotFollowUp {
   decision: 'direct' | 'draw' | null;
   reason: string;
   additionalCards: DrawnTarotCard[];
+  revealedAdditionalCardKeys: string[];
   interpretation: string;
   status: 'running' | 'done' | 'error';
   error: string | null;
@@ -72,6 +73,7 @@ export interface TarotSession {
   spreadId: string;
   spread: TarotSpread | null;
   drawnCards: DrawnTarotCard[];
+  revealedCardKeys: string[];
   interpretation: string;
   followUps: TarotFollowUp[];
   profile?: ProfileContext;

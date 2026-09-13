@@ -8,37 +8,65 @@ interface TarotCardViewProps {
   index: number;
   locale: TarotLocale;
   compact?: boolean;
+  isRevealed: boolean;
+  onReveal: () => void;
 }
 
-export function TarotCardView({ drawn, index, locale, compact = false }: TarotCardViewProps) {
+export function TarotCardView({
+  drawn,
+  index,
+  locale,
+  compact = false,
+  isRevealed,
+  onReveal
+}: TarotCardViewProps) {
   const direction = drawn.isReversed ? 'reversed' : 'upright';
   const directionLabel = drawn.isReversed
     ? (locale === 'vi' ? 'Ngược' : 'Reversed')
     : (locale === 'vi' ? 'Xuôi' : 'Upright');
-  const style = { '--tarot-reveal-delay': `${index * 170}ms` } as CSSProperties;
+  const style = { '--tarot-card-index': index } as CSSProperties;
+  const revealLabel = locale === 'vi'
+    ? `Lật lá ${drawn.position.name.vi}`
+    : `Reveal ${drawn.position.name.en}`;
 
   return (
-    <figure className={`numina-card ${compact ? 'is-compact' : ''}`} style={style}>
-      <div className="numina-card-stage">
+    <figure
+      className={`numina-card ${compact ? 'is-compact' : ''} ${isRevealed ? 'is-revealed' : 'is-concealed'}`}
+      style={style}
+    >
+      <button
+        type="button"
+        className="numina-card-stage"
+        onClick={onReveal}
+        disabled={isRevealed}
+        aria-label={isRevealed ? `${drawn.card.name[locale]} — ${directionLabel}` : revealLabel}
+        aria-expanded={isRevealed}
+      >
         <div className="numina-card-inner">
-          <div className="numina-card-back" aria-hidden="true">
+          <div className="numina-card-back" aria-hidden={isRevealed}>
             <span>✦</span>
           </div>
-          <div className="numina-card-front">
+          <div className="numina-card-front" aria-hidden={!isRevealed}>
             {/* The source scans are local development assets; release remains subject to the documented asset-license gate. */}
             <img
               src={drawn.card.image}
-              alt={`${drawn.card.name[locale]} — ${directionLabel}`}
+              alt={isRevealed ? `${drawn.card.name[locale]} — ${directionLabel}` : ''}
               className={drawn.isReversed ? 'is-reversed' : ''}
             />
           </div>
         </div>
-      </div>
+      </button>
       <figcaption>
         <small>{drawn.position.name[locale]}</small>
-        <strong>{drawn.card.name[locale]}</strong>
-        <span>{directionLabel}</span>
-        <p>{drawn.card.keywords[direction].slice(0, 3).map((keyword) => keyword[locale]).join(' · ')}</p>
+        {isRevealed ? (
+          <div className="numina-card-details">
+            <strong>{drawn.card.name[locale]}</strong>
+            <span>{directionLabel}</span>
+            <p>{drawn.card.keywords[direction].slice(0, 3).map((keyword) => keyword[locale]).join(' · ')}</p>
+          </div>
+        ) : (
+          <span className="numina-card-concealed-mark" aria-hidden="true">✦</span>
+        )}
       </figcaption>
     </figure>
   );

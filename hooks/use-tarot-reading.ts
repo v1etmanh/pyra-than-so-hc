@@ -9,11 +9,13 @@ import type {
   StoredDrawnTarotCard,
   TarotLocale,
   TarotPhase,
+  TarotFollowUp,
   TarotReadingContext,
   TarotReadingRequest,
   TarotSession,
   TarotSSEEvent
 } from '@/lib/tarot/types';
+import { getTarotCardRevealKey, normalizeTarotRevealKeys } from '@/lib/tarot/presentation';
 
 const TAROT_STORE_KEY = 'numina-tarot-readings-v1';
 const TAROT_ACTIVE_KEY = 'numina-tarot-active-v1';
@@ -30,6 +32,8 @@ interface UseTarotReadingReturn {
   isHydrated: boolean;
   startReading: (question: string, spreadId: string, profile?: ProfileContext) => Promise<void>;
   askFollowUp: (question: string) => Promise<void>;
+  revealCard: (card: DrawnTarotCard) => void;
+  revealFollowUpCard: (followUpId: string, card: DrawnTarotCard) => void;
   regenerate: () => Promise<void>;
   newReading: () => void;
   switchSession: (id: string) => void;
@@ -66,6 +70,33 @@ function isUserCancellation(error: unknown): boolean {
   return error instanceof Error && error.name === 'AbortError';
 }
 
+function normalizeStoredSession(session: TarotSession): TarotSession {
+  const stored = session as TarotSession & {
+    revealedCardKeys?: unknown;
+    followUps?: Array<TarotFollowUp & { revealedAdditionalCardKeys?: unknown }>;
+  };
+  const drawnCards = Array.isArray(stored.drawnCards) ? stored.drawnCards : [];
+  const followUps = Array.isArray(stored.followUps) ? stored.followUps : [];
+
+  return {
+    ...stored,
+    drawnCards,
+    revealedCardKeys: normalizeTarotRevealKeys(drawnCards, stored.revealedCardKeys, true),
+    followUps: followUps.map((followUp) => {
+      const additionalCards = Array.isArray(followUp.additionalCards) ? followUp.additionalCards : [];
+      return {
+        ...followUp,
+        additionalCards,
+        revealedAdditionalCardKeys: normalizeTarotRevealKeys(
+          additionalCards,
+          followUp.revealedAdditionalCardKeys,
+          true
+        )
+      };
+    })
+  };
+}
+
 export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
   const [sessions, setSessions] = useState<TarotSession[]>([]);
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
@@ -91,10 +122,15 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
     updater: (session: TarotSession) => TarotSession
   ) => {
     setSessions((previous) => {
+      let changed = false;
       const next = previous.map((session) => {
         if (session.id !== id) return session;
-        return { ...updater(session), updatedAt: new Date().toISOString() };
+        const updated = updater(session);
+        if (updated === session) return session;
+        changed = true;
+        return { ...updated, updatedAt: new Date().toISOString() };
       });
+      if (!changed) return previous;
       persist(next);
       return next;
     });
@@ -106,9 +142,13 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
       .then(([storedSessions, storedActive]) => {
         if (!mounted) return;
         const validSessions = Array.isArray(storedSessions)
-          ? storedSessions.filter((session) => session && typeof session.id === 'string').slice(0, MAX_SESSIONS)
+          ? storedSessions
+            .filter((session) => session && typeof session.id === 'string')
+            .slice(0, MAX_SESSIONS)
+            .map(normalizeStoredSession)
           : [];
         setSessions(validSessions);
+        if (validSessions.length > 0) void set(TAROT_STORE_KEY, validSessions).catch(console.error);
         const nextActive = storedActive && validSessions.some((session) => session.id === storedActive)
           ? storedActive
           : validSessions[0]?.id ?? null;
@@ -224,6 +264,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
       spreadId,
       spread: null,
       drawnCards: [],
+      revealedCardKeys: [],
       interpretation: '',
       followUps: [],
       profile,
@@ -275,6 +316,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
         decision: null,
         reason: '',
         additionalCards: [],
+        revealedAdditionalCardKeys: [],
         interpretation: '',
         status: 'running',
         error: null,
@@ -343,6 +385,36 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
       setPhase('error');
     }
   }, [currentSession, isRunning, locale, patchSession, runRequest]);
+
+  const revealCard = useCallback((card: DrawnTarotCard) => {
+    const session = currentSession;
+    if (!session) return;
+    const key = getTarotCardRevealKey(card);
+    patchSession(session.id, (current) => {
+      if (!current.drawnCards.some((drawn) => getTarotCardRevealKey(drawn) === key)) return current;
+      const revealedCardKeys = current.revealedCardKeys ?? [];
+      if (revealedCardKeys.includes(key)) return current;
+      return { ...current, revealedCardKeys: [...revealedCardKeys, key] };
+    });
+  }, [currentSession, patchSession]);
+
+  const revealFollowUpCard = useCallback((followUpId: string, card: DrawnTarotCard) => {
+    const session = currentSession;
+    if (!session) return;
+    const key = getTarotCardRevealKey(card);
+    patchSession(session.id, (current) => {
+      const followUp = current.followUps.find((item) => item.id === followUpId);
+      if (!followUp || !followUp.additionalCards.some((drawn) => getTarotCardRevealKey(drawn) === key)) return current;
+      const revealedKeys = followUp.revealedAdditionalCardKeys ?? [];
+      if (revealedKeys.includes(key)) return current;
+      return {
+        ...current,
+        followUps: current.followUps.map((item) => item.id === followUpId
+          ? { ...item, revealedAdditionalCardKeys: [...revealedKeys, key] }
+          : item)
+      };
+    });
+  }, [currentSession, patchSession]);
 
   const regenerate = useCallback(async () => {
     const session = currentSession;
@@ -425,6 +497,8 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
     isHydrated,
     startReading,
     askFollowUp,
+    revealCard,
+    revealFollowUpCard,
     regenerate,
     newReading,
     switchSession,

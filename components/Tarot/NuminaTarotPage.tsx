@@ -9,8 +9,9 @@ import { useProfiles } from '@/hooks/useProfiles';
 import { useProcessNumerology } from '@/hooks/useProcessNumerology';
 import { useTarotReading } from '@/hooks/use-tarot-reading';
 import type { ProfileContext } from '@/lib/ai/types';
+import { getTarotCardRevealKey, getTarotRevealProgress } from '@/lib/tarot/presentation';
 import { tarotSpreads } from '@/lib/tarot/spreads';
-import type { TarotLocale } from '@/lib/tarot/types';
+import type { DrawnTarotCard, TarotLocale } from '@/lib/tarot/types';
 import { TarotCardView } from './TarotCard';
 import { useBilling } from '@/hooks/useBilling';
 
@@ -102,6 +103,9 @@ export function NuminaTarotPage() {
   const [followUp, setFollowUp] = useState('');
   const [showProfileRequiredModal, setShowProfileRequiredModal] = useState(false);
   const readingEndRef = useRef<HTMLDivElement>(null);
+  const interpretationRef = useRef<HTMLElement>(null);
+  const pendingMainRevealScrollRef = useRef<string | null>(null);
+  const pendingFollowUpRevealScrollRef = useRef<{ sessionId: string; followUpId: string } | null>(null);
 
   const uniqueProfiles = useMemo(() => {
     const seen = new Set<string>();
@@ -131,6 +135,50 @@ export function NuminaTarotPage() {
     }))
   }) : undefined, [activeProfile, indicators]);
 
+  const current = tarot.currentSession;
+  const mainRevealProgress = getTarotRevealProgress(
+    current?.drawnCards ?? [],
+    current?.revealedCardKeys
+  );
+
+  useEffect(() => {
+    const pendingSessionId = pendingMainRevealScrollRef.current;
+    if (!current || pendingSessionId !== current.id) return;
+    if (!mainRevealProgress.complete || !current.interpretation) return;
+
+    pendingMainRevealScrollRef.current = null;
+    window.requestAnimationFrame(() => {
+      interpretationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [current, mainRevealProgress.complete]);
+
+  useEffect(() => {
+    const pending = pendingFollowUpRevealScrollRef.current;
+    if (!current || !pending || pending.sessionId !== current.id) return;
+    const followUp = current.followUps.find((item) => item.id === pending.followUpId);
+    if (!followUp || !followUp.interpretation) return;
+    const progress = getTarotRevealProgress(
+      followUp.additionalCards,
+      followUp.revealedAdditionalCardKeys
+    );
+    if (!progress.complete) return;
+
+    pendingFollowUpRevealScrollRef.current = null;
+    window.requestAnimationFrame(() => {
+      document.getElementById(`tarot-follow-up-reading-${followUp.id}`)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [current]);
+
+  useEffect(() => {
+    if (pendingMainRevealScrollRef.current && pendingMainRevealScrollRef.current !== current?.id) {
+      pendingMainRevealScrollRef.current = null;
+    }
+    if (pendingFollowUpRevealScrollRef.current?.sessionId !== current?.id) {
+      pendingFollowUpRevealScrollRef.current = null;
+    }
+  }, [current?.id]);
+
   if (!isLoaded) {
     return (
       <div className="tarot-papercut-shell" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -144,8 +192,36 @@ export function NuminaTarotPage() {
     );
   }
 
-  const current = tarot.currentSession;
   const selectedSpread = tarotSpreads.find((spread) => spread.id === selectedSpreadId) ?? tarotSpreads[1];
+
+  const revealInitialCard = (card: DrawnTarotCard) => {
+    if (!current) return;
+    const key = getTarotCardRevealKey(card);
+    if ((current.revealedCardKeys ?? []).includes(key)) return;
+    if (mainRevealProgress.revealed + 1 >= mainRevealProgress.total) {
+      pendingMainRevealScrollRef.current = current.id;
+    }
+    tarot.revealCard(card);
+  };
+
+  const revealFollowUpCard = (
+    followUpId: string,
+    card: DrawnTarotCard
+  ) => {
+    if (!current) return;
+    const followUp = current.followUps.find((item) => item.id === followUpId);
+    if (!followUp) return;
+    const key = getTarotCardRevealKey(card);
+    if ((followUp.revealedAdditionalCardKeys ?? []).includes(key)) return;
+    const progress = getTarotRevealProgress(
+      followUp.additionalCards,
+      followUp.revealedAdditionalCardKeys
+    );
+    if (progress.revealed + 1 >= progress.total) {
+      pendingFollowUpRevealScrollRef.current = { sessionId: current.id, followUpId };
+    }
+    tarot.revealFollowUpCard(followUpId, card);
+  };
 
   const submitInitial = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -173,6 +249,21 @@ export function NuminaTarotPage() {
   };
 
   const statusLabel = (() => {
+    if (current?.drawnCards.length && !mainRevealProgress.complete) {
+      if (tarot.phase === 'ready' && current.interpretation) {
+        return isVietnamese
+          ? `Lời giải đã sẵn sàng · Lật ${mainRevealProgress.remaining} lá còn lại`
+          : `Your reading is ready · Reveal ${mainRevealProgress.remaining} remaining ${mainRevealProgress.remaining === 1 ? 'card' : 'cards'}`;
+      }
+      return isVietnamese
+        ? `Chạm vào từng lá để lật · Đã lật ${mainRevealProgress.revealed}/${mainRevealProgress.total} · NUMELYRA đang luận giải…`
+        : `Tap each card to reveal · ${mainRevealProgress.revealed}/${mainRevealProgress.total} revealed · NUMELYRA is interpreting…`;
+    }
+    if (current?.drawnCards.length && mainRevealProgress.complete && tarot.isRunning && !current.interpretation) {
+      return isVietnamese
+        ? 'Đã lật đủ bài · NUMELYRA đang hoàn thiện lời giải…'
+        : 'All cards revealed · NUMELYRA is finishing your reading…';
+    }
     if (tarot.phase === 'drawing') return isVietnamese ? 'Đang xào và rút bài…' : 'Shuffling and drawing…';
     if (tarot.phase === 'revealing') return isVietnamese ? 'Những lá bài đang mở ra…' : 'The cards are revealing…';
     if (tarot.phase === 'deciding') return isVietnamese ? 'Đang xem có cần rút thêm lá…' : 'Considering another draw…';
@@ -463,9 +554,19 @@ export function NuminaTarotPage() {
 
                 {current.drawnCards.length > 0 && (
                   <div className={`numina-card-grid ${current.spreadId === 'celtic-cross' ? 'is-celtic' : ''}`}>
-                    {current.drawnCards.map((drawn, index) => (
-                      <TarotCardView key={`${drawn.position.id}-${drawn.card.id}`} drawn={drawn} index={index} locale={locale} />
-                    ))}
+                    {current.drawnCards.map((drawn, index) => {
+                      const key = getTarotCardRevealKey(drawn);
+                      return (
+                        <TarotCardView
+                          key={key}
+                          drawn={drawn}
+                          index={index}
+                          locale={locale}
+                          isRevealed={(current.revealedCardKeys ?? []).includes(key)}
+                          onReveal={() => revealInitialCard(drawn)}
+                        />
+                      );
+                    })}
                   </div>
                 )}
 
@@ -476,33 +577,74 @@ export function NuminaTarotPage() {
                   </div>
                 )}
 
-                {(current.interpretation || tarot.phase === 'interpreting') && (
-                  <article className="numina-interpretation">
+                {mainRevealProgress.complete && (current.interpretation || tarot.isRunning) && (
+                  <article ref={interpretationRef} className="numina-interpretation is-reveal-unlocked">
                     <p className="numina-section-kicker">{isVietnamese ? 'LỜI GIẢI TỪ NUMELYRA' : 'NUMELYRA’S READING'}</p>
                     {current.interpretation ? <ReactMarkdown>{current.interpretation}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
                   </article>
                 )}
 
-                {current.followUps.map((item) => (
-                  <section className="numina-follow-up" key={item.id}>
-                    <div className="numina-follow-up-question">
-                      <span>{isVietnamese ? 'Hỏi tiếp' : 'Follow-up'}</span>
-                      <p>{item.question}</p>
-                    </div>
-                    {item.additionalCards.length > 0 && (
-                      <div className="numina-card-grid is-supplementary">
-                        {item.additionalCards.map((drawn, index) => (
-                          <TarotCardView key={`${drawn.position.id}-${drawn.card.id}`} drawn={drawn} index={index} locale={locale} compact />
-                        ))}
+                {current.followUps.map((item) => {
+                  const revealProgress = getTarotRevealProgress(
+                    item.additionalCards,
+                    item.revealedAdditionalCardKeys
+                  );
+                  const isUnlocked = item.additionalCards.length === 0
+                    ? item.decision !== 'draw'
+                    : revealProgress.complete;
+                  const followUpReadingReady = item.status === 'done' && Boolean(item.interpretation);
+
+                  return (
+                    <section className="numina-follow-up" key={item.id}>
+                      <div className="numina-follow-up-question">
+                        <span>{isVietnamese ? 'Hỏi tiếp' : 'Follow-up'}</span>
+                        <p>{item.question}</p>
                       </div>
-                    )}
-                    {item.reason && <p className="tarot-decision-note">{item.reason}</p>}
-                    <article className="numina-interpretation is-follow-up">
-                      {item.interpretation ? <ReactMarkdown>{item.interpretation}</ReactMarkdown> : item.status === 'running' ? <div className="tarot-text-skeleton" /> : null}
+                      {item.additionalCards.length > 0 && (
+                        <>
+                          <div className="numina-card-grid is-supplementary">
+                            {item.additionalCards.map((drawn, index) => {
+                              const key = getTarotCardRevealKey(drawn);
+                              return (
+                                <TarotCardView
+                                  key={key}
+                                  drawn={drawn}
+                                  index={index}
+                                  locale={locale}
+                                  compact
+                                  isRevealed={(item.revealedAdditionalCardKeys ?? []).includes(key)}
+                                  onReveal={() => revealFollowUpCard(item.id, drawn)}
+                                />
+                              );
+                            })}
+                          </div>
+                          {!isUnlocked && (
+                            <div className="numina-reveal-progress" role="status" aria-live="polite">
+                              <i />
+                              {followUpReadingReady
+                                ? (isVietnamese
+                                  ? `Lời giải đã sẵn sàng · Lật ${revealProgress.remaining} lá còn lại`
+                                  : `Your follow-up is ready · Reveal ${revealProgress.remaining} remaining ${revealProgress.remaining === 1 ? 'card' : 'cards'}`)
+                                : (isVietnamese
+                                  ? `Chạm để lật bài bổ sung · Đã lật ${revealProgress.revealed}/${revealProgress.total}`
+                                  : `Tap to reveal the clarifying cards · ${revealProgress.revealed}/${revealProgress.total} revealed`)}
+                            </div>
+                          )}
+                        </>
+                      )}
+                      {isUnlocked && item.reason && <p className="tarot-decision-note">{item.reason}</p>}
+                      {isUnlocked && (item.interpretation || item.status === 'running') && (
+                        <article
+                          id={`tarot-follow-up-reading-${item.id}`}
+                          className="numina-interpretation is-follow-up is-reveal-unlocked"
+                        >
+                          {item.interpretation ? <ReactMarkdown>{item.interpretation}</ReactMarkdown> : <div className="tarot-text-skeleton" />}
+                        </article>
+                      )}
                       {item.error && <p className="numina-tarot-error">{item.error}</p>}
-                    </article>
-                  </section>
-                ))}
+                    </section>
+                  );
+                })}
 
                 {tarot.error && (
                   <div className="numina-tarot-error-box" role="alert">
@@ -520,7 +662,7 @@ export function NuminaTarotPage() {
                 )}
                 <div ref={readingEndRef} />
 
-                {current.interpretation && (
+                {mainRevealProgress.complete && current.interpretation && (
                   <form className="numina-follow-up-form" onSubmit={submitFollowUp}>
                     <label htmlFor="tarot-follow-up">{isVietnamese ? 'Bạn muốn hỏi thêm điều gì?' : 'What would you like to ask next?'}</label>
                     <div>
@@ -567,19 +709,21 @@ export function NuminaTarotPage() {
                   </div>
                 )}
 
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (uniqueProfiles.length === 0) {
-                      setShowProfileRequiredModal(true);
-                      return;
-                    }
-                    tarot.regenerate();
-                  }}
-                  disabled={tarot.isRunning || !current.interpretation}
-                >
-                  {isVietnamese ? 'Luận giải lại, giữ nguyên bài' : 'Regenerate with the same cards'}
-                </button>
+                {mainRevealProgress.complete && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (uniqueProfiles.length === 0) {
+                        setShowProfileRequiredModal(true);
+                        return;
+                      }
+                      tarot.regenerate();
+                    }}
+                    disabled={tarot.isRunning || !current.interpretation}
+                  >
+                    {isVietnamese ? 'Luận giải lại, giữ nguyên bài' : 'Regenerate with the same cards'}
+                  </button>
+                )}
                 <button type="button" onClick={tarot.newReading} disabled={tarot.isRunning}>
                   {isVietnamese ? 'Bắt đầu trải bài mới' : 'Start a new reading'}
                 </button>

@@ -3,9 +3,53 @@ import assert from 'node:assert/strict';
 import { allTarotCards } from '../lib/tarot/cards.ts';
 import {
   deriveTarotEnergyKeywords,
+  getTarotCardRevealKey,
+  getTarotRevealProgress,
   getTarotSpreadLayout,
-  getTarotStageMode
+  getTarotStageMode,
+  normalizeTarotRevealKeys
 } from '../lib/tarot/presentation.ts';
+
+test('tarot reveal progress counts only keys belonging to the current draw', () => {
+  const cards = allTarotCards.slice(0, 3).map((card, index) => ({
+    card,
+    isReversed: false,
+    position: {
+      id: `position-${index}`,
+      name: { vi: `Vị trí ${index}`, en: `Position ${index}` },
+      description: { vi: '', en: '' }
+    }
+  }));
+  const firstKey = getTarotCardRevealKey(cards[0]);
+  const secondKey = getTarotCardRevealKey(cards[1]);
+
+  assert.deepEqual(getTarotRevealProgress(cards, []), {
+    revealed: 0,
+    total: 3,
+    remaining: 3,
+    complete: false
+  });
+  assert.deepEqual(getTarotRevealProgress(cards, [firstKey, firstKey, 'not-in-this-draw']), {
+    revealed: 1,
+    total: 3,
+    remaining: 2,
+    complete: false
+  });
+  assert.deepEqual(getTarotRevealProgress(cards, [secondKey, firstKey, getTarotCardRevealKey(cards[2])]), {
+    revealed: 3,
+    total: 3,
+    remaining: 0,
+    complete: true
+  });
+  assert.equal(getTarotRevealProgress([], []).complete, false);
+
+  assert.deepEqual(normalizeTarotRevealKeys(cards, undefined, true), cards.map(getTarotCardRevealKey));
+  assert.deepEqual(normalizeTarotRevealKeys(cards, [], true), []);
+  assert.deepEqual(
+    normalizeTarotRevealKeys(cards, [firstKey, firstKey, 'not-in-this-draw'], true),
+    [firstKey]
+  );
+});
 
 test('tarot presentation state keeps fresh cards concealed until reveal', () => {
   assert.equal(getTarotStageMode(false, false, false, 'idle'), 'setup');
