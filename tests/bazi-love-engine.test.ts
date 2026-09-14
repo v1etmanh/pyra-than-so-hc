@@ -185,3 +185,27 @@ test('Shishen calculation covers all 10 relationship roles', () => {
   assert.equal(calcShishen('甲', '壬'), '偏印'); // Indirect Resource
   assert.equal(calcShishen('甲', '癸'), '正印'); // Direct Resource
 });
+
+test('calculateYearlyTimeline generates accurate 5-year pillars and marriage signals', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'Lê Viết Manh', birthDate: '1995-07-15', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'male' },
+    { name: 'Trần Thị Thanh Thảo', birthDate: '1995-06-25', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'female' },
+    2026
+  );
+
+  assert.ok(result.yearlyTimeline);
+  assert.equal(result.yearlyTimeline.length, 5);
+
+  const [y2026, y2027, y2028, y2029, y2030] = result.yearlyTimeline;
+  assert.equal(`${y2026.gan}${y2026.zhi}`, '丙午');
+  assert.equal(`${y2027.gan}${y2027.zhi}`, '丁未');
+  assert.equal(`${y2028.gan}${y2028.zhi}`, '戊申');
+  assert.equal(`${y2029.gan}${y2029.zhi}`, '己酉');
+  assert.equal(`${y2030.gan}${y2030.zhi}`, '庚戌');
+
+  assert.equal(y2026.year, 2026);
+  assert.equal(y2027.year, 2027);
+  assert.ok(y2027.ganName.vi === 'Đinh' && y2027.zhiName.vi === 'Mùi');
+  assert.ok(y2027.marriageSignal !== undefined);
+});
+

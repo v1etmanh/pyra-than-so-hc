@@ -22,7 +22,8 @@ import type {
   CompatibilityNote,
   ConfidenceLevel,
   FiveElement,
-  LocalizedText
+  LocalizedText,
+  YearlyPillarDynamic
 } from './types.ts';
 
 // ---------------------------------------------------------------------------
@@ -1073,6 +1074,165 @@ export function scoreDayunSync(
   return { score: pts, notes };
 }
 
+export function calculateYearlyTimeline(
+  chartA: InternalBaziChart,
+  chartB: InternalBaziChart,
+  focusYears: number[]
+): YearlyPillarDynamic[] {
+  const rzA = chartA.pillars[2].zhi;
+  const rgA = chartA.pillars[2].gan;
+  const rzB = chartB.pillars[2].zhi;
+  const rgB = chartB.pillars[2].gan;
+  const monthZhiA = chartA.pillars[1].zhi;
+
+  return focusYears.map((year) => {
+    const ganIndex = ((year - 4) % 10 + 10) % 10;
+    const zhiIndex = ((year - 4) % 12 + 12) % 12;
+    const gan = GAN[ganIndex];
+    const zhi = ZHI[zhiIndex];
+    const ganName = GAN_NAMES[gan] || { vi: gan, en: gan };
+    const zhiName = ZHI_NAMES[zhi] || { vi: zhi, en: zhi };
+    const elementZh = GAN_WUXING_ZH[gan] || '木';
+    const element = CHINESE_TO_ELEMENT[elementZh] || 'wood';
+    const elementName = WUXING_NAMES[elementZh] || { vi: elementZh, en: elementZh };
+
+    const checkBranchInteractions = (
+      targetZhi: string,
+      targetGan: string,
+      personLabel: { vi: string; en: string }
+    ): LocalizedText[] => {
+      const notes: LocalizedText[] = [];
+      const heKey1 = `${zhi}_${targetZhi}`;
+      const heKey2 = `${targetZhi}_${zhi}`;
+
+      // 1. Liu He with spouse palace
+      const liuHe = ZHI_LIU_HE_MAP[heKey1] || ZHI_LIU_HE_MAP[heKey2];
+      if (liuHe) {
+        notes.push({
+          vi: `Lưu niên ${zhiName.vi} lục hợp với Cung Phu Thê (${ZHI_NAMES[targetZhi]?.vi || targetZhi}): ${liuHe.vi} → Kích hoạt duyên lành, hỷ sự và sự gắn bó khăng khít`,
+          en: `Yearly branch ${zhiName.en} forms Six Combinations with Spouse Palace (${ZHI_NAMES[targetZhi]?.en || targetZhi}) → Harmonious marital bond and commitment affinity`
+        });
+      }
+
+      // 2. San He / Ban He with spouse palace
+      for (const group of SAN_HE_GROUPS) {
+        if (group.branches.includes(zhi) && group.branches.includes(targetZhi) && zhi !== targetZhi) {
+          notes.push({
+            vi: `Lưu niên ${zhiName.vi} cùng Cung Phu Thê (${ZHI_NAMES[targetZhi]?.vi || targetZhi}) tạo thế bán hợp / tam hợp (${group.name.vi}) → Thuận lợi kết giao, xây dựng gia đạo`,
+            en: `Yearly branch ${zhiName.en} and Spouse Palace form combination frame (${group.name.en}) → Favorable for deep commitment and family foundation`
+          });
+        }
+      }
+
+      // 3. Chong (clash) with spouse palace
+      const chong = ZHI_CHONG_MAP[heKey1] || ZHI_CHONG_MAP[heKey2];
+      if (chong) {
+        notes.push({
+          vi: `Lưu niên ${zhiName.vi} tương xung Cung Phu Thê (${ZHI_NAMES[targetZhi]?.vi || targetZhi}): ${chong.vi} → Biến động tâm lý hoặc ngoại cảnh, cần lắng nghe và nhường nhịn`,
+          en: `Yearly branch ${zhiName.en} clashes with Spouse Palace (${ZHI_NAMES[targetZhi]?.en || targetZhi}) → Dynamics change, requires patience and calm communication`
+        });
+      }
+
+      // 4. Stem combination with day master
+      const ganHe = GAN_HE_MAP[`${gan}_${targetGan}`] || GAN_HE_MAP[`${targetGan}_${gan}`];
+      if (ganHe) {
+        notes.push({
+          vi: `Lưu niên Can ${ganName.vi} thiên hợp Nhật chủ (${GAN_NAMES[targetGan]?.vi || targetGan}): ${ganHe.vi} → Tăng cường lực hút tình cảm và tinh thần đồng điệu`,
+          en: `Yearly stem ${ganName.en} combines with Day Master (${GAN_NAMES[targetGan]?.en || targetGan}) → Deepens emotional attraction and alignment`
+        });
+      }
+
+      // 5. Nobleman (Tian Yi Gui Ren)
+      if (TIANYI_BY_RIGAN[targetGan]?.includes(zhi)) {
+        notes.push({
+          vi: `Lưu niên ngộ Thiên Ất Quý Nhân của ${personLabel.vi} → Gặp nhiều trợ lực cát lành, biến hung thành cát`,
+          en: `Yearly branch is Nobleman for ${personLabel.en} → Supportive guidance and favorable blessings`
+        });
+      }
+
+      // 6. Peach Blossom (Tao Hua)
+      if (TAOHUA_BY_RIZHI[targetZhi] === zhi) {
+        notes.push({
+          vi: `Lưu niên ngộ Đào Hoa của Cung Phu Thê ${personLabel.vi} → Tình cảm khởi sắc nồng thắm, thuận lợi cho hỷ sự`,
+          en: `Yearly branch is Peach Blossom for ${personLabel.en}'s spouse palace → Romantic vitality and wedding auspiciousness`
+        });
+      }
+
+      return notes;
+    };
+
+    const interactionsA = checkBranchInteractions(rzA, rgA, { vi: 'Người A', en: 'Person A' });
+    const interactionsB = checkBranchInteractions(rzB, rgB, { vi: 'Người B', en: 'Person B' });
+
+    // Marriage signal assessment
+    let favorable = false;
+    const reasonsVi: string[] = [];
+    const reasonsEn: string[] = [];
+
+    const hasLiuHeA = Boolean(ZHI_LIU_HE_MAP[`${zhi}_${rzA}`] || ZHI_LIU_HE_MAP[`${rzA}_${zhi}`]);
+    const hasLiuHeB = Boolean(ZHI_LIU_HE_MAP[`${zhi}_${rzB}`] || ZHI_LIU_HE_MAP[`${rzB}_${zhi}`]);
+    const hasBanHeA = SAN_HE_GROUPS.some((g) => g.branches.includes(zhi) && g.branches.includes(rzA) && zhi !== rzA);
+    const hasBanHeB = SAN_HE_GROUPS.some((g) => g.branches.includes(zhi) && g.branches.includes(rzB) && zhi !== rzB);
+    const resolvesCrossClash = monthZhiA === '午' && rzB === '子' && (zhi === '未' || zhi === '丑' || zhi === '辰' || zhi === '申');
+
+    if (hasLiuHeA || hasBanHeA) {
+      favorable = true;
+      reasonsVi.push(`Chi năm hợp Cung Phu Thê Người A (${ZHI_NAMES[rzA]?.vi || rzA})`);
+      reasonsEn.push(`Year branch harmonizes with Person A's spouse palace`);
+    }
+    if (hasLiuHeB || hasBanHeB) {
+      favorable = true;
+      reasonsVi.push(`Chi năm hợp Cung Phu Thê Người B (${ZHI_NAMES[rzB]?.vi || rzB})`);
+      reasonsEn.push(`Year branch harmonizes with Person B's spouse palace`);
+    }
+    if (resolvesCrossClash) {
+      favorable = true;
+      reasonsVi.push(`Hóa giải xung đột trục Tý - Ngọ giữa hai người`);
+      reasonsEn.push(`Harmonizes the Zi-Wu axis clash between the two charts`);
+    }
+
+    const hasChongA = Boolean(ZHI_CHONG_MAP[`${zhi}_${rzA}`] || ZHI_CHONG_MAP[`${rzA}_${zhi}`]);
+    const hasChongB = Boolean(ZHI_CHONG_MAP[`${zhi}_${rzB}`] || ZHI_CHONG_MAP[`${rzB}_${zhi}`]);
+    if (hasChongA || hasChongB) {
+      favorable = false;
+      reasonsVi.push(`Có tương xung với Cung Phu Thê, nên ưu tiên thấu hiểu và vững tâm lý`);
+      reasonsEn.push(`Clashes with spouse palace; warrants steady communication`);
+    }
+
+    const note: LocalizedText = favorable
+      ? {
+          vi: `Năm mang năng lượng thuận hòa (${reasonsVi.join('; ')}), rất thuận lợi để tính chuyện gắn kết dài lâu, đính hôn hoặc cưới hỏi.`,
+          en: `Year bears auspicious relational harmony (${reasonsEn.join('; ')}), highly favorable for commitment, engagement, or wedding plans.`
+        }
+      : {
+          vi:
+            reasonsVi.length > 0
+              ? `Năm cần bình tâm và linh hoạt (${reasonsVi.join('; ')}), nên vun đắp sự thấu hiểu trước khi quyết định các bước ngoặt lớn.`
+              : `Năm mang tính bình hòa, thích hợp bồi đắp nền tảng công việc, tài chính và sự gắn kết thường nhật.`,
+          en:
+            reasonsEn.length > 0
+              ? `Year calls for mutual patience (${reasonsEn.join('; ')}), ideal for deepening understanding before major milestones.`
+              : `Year is stable and neutral, well-suited for building everyday connection, financial stability, and emotional trust.`
+        };
+
+    return {
+      year,
+      gan,
+      zhi,
+      ganName,
+      zhiName,
+      element,
+      elementName,
+      interactionsA,
+      interactionsB,
+      marriageSignal: {
+        favorable,
+        note
+      }
+    };
+  });
+}
+
 // ---------------------------------------------------------------------------
 // 5. Complete Dual Evaluation with Unknown Hour Range Scanning
 // ---------------------------------------------------------------------------
@@ -1210,20 +1370,32 @@ export function evaluateBaziCompatibility(
   const repChartA = aCandidates[0];
   const repChartB = bCandidates[0];
 
-  const toPublicChart = (chart: InternalBaziChart, label: 'A' | 'B', timeKnown: boolean): BaziPublicChart => ({
-    label,
-    pillars: [
-      chart.pillars[0],
-      chart.pillars[1],
-      chart.pillars[2],
-      timeKnown ? chart.pillars[3] : null
-    ],
-    dayMaster: chart.dayMaster,
-    dayMasterElement: chart.dayMasterElement,
-    usefulElement: chart.usefulElement,
-    challengingElement: chart.challengingElement,
-    timeKnown
-  });
+  const toPublicChart = (
+    chart: InternalBaziChart,
+    label: 'A' | 'B',
+    timeKnown: boolean,
+    birthDate: string
+  ): BaziPublicChart => {
+    const birthYear = parseInt(birthDate.split('-')[0], 10) || undefined;
+    const currentAge = birthYear ? currentYear - birthYear : undefined;
+
+    return {
+      label,
+      pillars: [
+        chart.pillars[0],
+        chart.pillars[1],
+        chart.pillars[2],
+        timeKnown ? chart.pillars[3] : null
+      ],
+      dayMaster: chart.dayMaster,
+      dayMasterElement: chart.dayMasterElement,
+      usefulElement: chart.usefulElement,
+      challengingElement: chart.challengingElement,
+      timeKnown,
+      birthYear,
+      currentAge
+    };
+  };
 
   const assumptions: LocalizedText[] = [];
   if (!aHasTime && !bHasTime) {
@@ -1248,12 +1420,13 @@ export function evaluateBaziCompatibility(
     confidence,
     focusYears,
     charts: [
-      toPublicChart(repChartA, 'A', aHasTime),
-      toPublicChart(repChartB, 'B', bHasTime)
+      toPublicChart(repChartA, 'A', aHasTime, personA.birthDate),
+      toPublicChart(repChartB, 'B', bHasTime, personB.birthDate)
     ],
     layers,
     strengths,
     frictions,
-    assumptions
+    assumptions,
+    yearlyTimeline: calculateYearlyTimeline(repChartA, repChartB, focusYears)
   };
 }

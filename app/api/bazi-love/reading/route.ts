@@ -109,6 +109,14 @@ export async function POST(request: NextRequest): Promise<Response> {
         }
       };
 
+      if (request.signal.aborted) {
+        close();
+        return;
+      }
+      request.signal.addEventListener('abort', () => {
+        close();
+      });
+
       try {
         // 1. Calculate Bazi synastry server-side (deterministic engine, blind to raw identities)
         send({

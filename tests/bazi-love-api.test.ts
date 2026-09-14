@@ -210,3 +210,19 @@ test('English prompts use localized evidence and follow-ups retain deterministic
   assert.match(followUp, /Data confidence/);
   assert.match(followUp, /representative value|Five Elements Complementarity/);
 });
+
+test('Evidence includes 5-year yearly timeline and follow-up prompt instructs direct dialogue', () => {
+  const people = [
+    { name: 'Lê Viết Manh', birthDate: '1995-07-15', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'male' as const },
+    { name: 'Trần Thị Thanh Thảo', birthDate: '1995-06-25', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'female' as const }
+  ] as const;
+  const compatibility = evaluateBaziCompatibility(people[0], people[1], 2026);
+  const followUpVi = buildBaziLoveFollowUpPrompt(compatibility, 'Chúng tôi có thể kết hôn năm mấy?', 'vi');
+
+  assert.match(followUpVi, /Chi tiết 5 năm Lưu Niên/);
+  assert.match(followUpVi, /Năm 2026/);
+  assert.match(followUpVi, /Năm 2027/);
+  assert.match(followUpVi, /Trả lời TRỰC DIỆN/);
+  assert.match(followUpVi, /TUYỆT ĐỐI KHÔNG lặp lại các tiêu đề tóm tắt báo cáo mẫu/);
+});
+

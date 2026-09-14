@@ -17,12 +17,14 @@ interface BaziLoveChatProps {
 
 const QUICK_PROMPTS = {
   vi: [
+    'Thời điểm nào trong 5 năm tới thuận hòa nhất để tính chuyện hôn nhân / gắn kết lâu dài?',
     'Cách hóa giải điểm ma sát lớn nhất giữa hai người là gì?',
     'Chúng tôi nên giao tiếp thế nào khi có bất đồng?',
     'Trong 5 năm tới, giai đoạn nào cần đồng lòng nhất?',
     'Đối phương thường biểu đạt cảm xúc và quan tâm qua cách nào?'
   ],
   en: [
+    'Which period in the next 5 years is most favorable for marriage or long-term commitment?',
     'How can we best harmonize our primary friction area?',
     'What communication guidelines work best during disagreements?',
     'Which phase in the next 5 years requires the most mutual patience?',

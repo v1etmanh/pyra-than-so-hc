@@ -31,6 +31,8 @@ export interface BaziPublicChart {
   usefulElement: FiveElement;
   challengingElement: FiveElement;
   timeKnown: boolean;
+  birthYear?: number;
+  currentAge?: number;
 }
 
 export interface CompatibilityNote {
@@ -53,6 +55,22 @@ export interface CompatibilityLayer {
   notes: CompatibilityNote[];
 }
 
+export interface YearlyPillarDynamic {
+  year: number;
+  gan: string;
+  zhi: string;
+  ganName: LocalizedText;
+  zhiName: LocalizedText;
+  element: FiveElement;
+  elementName: LocalizedText;
+  interactionsA: LocalizedText[];
+  interactionsB: LocalizedText[];
+  marriageSignal?: {
+    favorable: boolean;
+    note: LocalizedText;
+  };
+}
+
 export interface BaziCompatibilityResult {
   engineVersion: 'bazi-love-ts-v1';
   confidence: ConfidenceLevel;
@@ -62,6 +80,7 @@ export interface BaziCompatibilityResult {
   strengths: CompatibilityNote[];
   frictions: CompatibilityNote[];
   assumptions: LocalizedText[];
+  yearlyTimeline?: YearlyPillarDynamic[];
 }
 
 export interface BaziLoveChatMessage {
