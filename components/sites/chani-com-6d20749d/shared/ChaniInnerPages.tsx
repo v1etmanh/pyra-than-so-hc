@@ -2221,7 +2221,21 @@ export function OurTeamPage() {
           autoPlay
           muted
           playsInline
+          ref={(el) => {
+            if (el) el.playbackRate = 1.8;
+          }}
+          onPlay={(e) => {
+            e.currentTarget.playbackRate = 1.8;
+          }}
+          onTimeUpdate={(e) => {
+            // Con bướm origami đã thành hình trọn vẹn ở mốc 3.7s (chạy 1.8x mất ~2.0s).
+            // Chuyển ngay sang trạng thái bướm bay lượn thay vì chờ hết 7s video tĩnh.
+            if (e.currentTarget.currentTime >= 3.7) {
+              setButterflyAnim((prev) => (prev?.stage === "crumpling" ? { ...prev, stage: "flying" } : prev));
+            }
+          }}
           onEnded={() => setButterflyAnim((prev) => (prev ? { ...prev, stage: "flying" } : null))}
+          onError={() => setButterflyAnim((prev) => (prev ? { ...prev, stage: "flying" } : null))}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
