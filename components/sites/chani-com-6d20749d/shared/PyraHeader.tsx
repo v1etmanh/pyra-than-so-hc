@@ -22,6 +22,7 @@ const nav = [
   ["map", "/"],
   ["indicators", "/indicators"],
   ["chat", "/chat"],
+  ["love", "/love-compatibility"],
   ["wallpaper", "/lucky-wallpaper"],
   ["account", "/account"],
 ] as const;
@@ -32,6 +33,7 @@ function getActivePath(pathname: string) {
   if (normalizedPath === "/account") return "/account";
   if (normalizedPath === "/lucky-wallpaper") return "/lucky-wallpaper";
   if (normalizedPath === "/chat") return "/chat";
+  if (normalizedPath === "/love-compatibility") return "/love-compatibility";
   if (normalizedPath === "/indicators") return "/indicators";
   return "";
 }

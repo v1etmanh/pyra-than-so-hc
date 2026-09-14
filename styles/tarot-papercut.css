@@ -504,6 +504,40 @@
   margin-bottom: 18px;
 }
 
+.tarot-profile-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.tarot-btn-add-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 8px;
+  background: rgba(224, 197, 142, 0.16);
+  border: 1px solid rgba(224, 197, 142, 0.45);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: #5c3e29;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tarot-btn-add-profile:hover {
+  background: rgba(224, 197, 142, 0.28);
+  border-color: rgba(196, 167, 125, 0.75);
+  color: #3b2212;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(60, 40, 50, 0.08);
+}
+
 .tarot-profile-caption {
   font-family: var(--chani-mono, "Courier New", monospace);
   font-size: 11px;
@@ -516,8 +550,9 @@
 .tarot-profile-selector-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
-  max-width: 450px;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 520px;
 }
 
 .tarot-profile-dropdown {
@@ -1853,3 +1888,231 @@
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(224, 197, 142, 0.45);
 }
+
+/* ==========================================================================
+   TAROT ADD / SWITCH PROFILE MODAL
+   ========================================================================== */
+.tarot-profile-modal-card {
+  width: min(500px, calc(100vw - 28px)) !important;
+  max-width: 500px !important;
+  padding: 30px 24px !important;
+  box-sizing: border-box !important;
+}
+
+.tarot-modal-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tarot-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.tarot-form-label {
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #e2ceb8;
+  text-transform: uppercase;
+}
+
+.tarot-form-input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(224, 197, 142, 0.35);
+  background: rgba(24, 13, 21, 0.72);
+  color: #faf5ee;
+  font-family: var(--chani-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.tarot-form-input:focus {
+  border-color: #e6c88f;
+  background: rgba(30, 16, 26, 0.92);
+  box-shadow: 0 0 0 3px rgba(230, 200, 143, 0.22);
+}
+
+.tarot-form-input::placeholder {
+  color: rgba(223, 207, 214, 0.45);
+}
+
+.tarot-form-date {
+  color-scheme: dark;
+}
+
+.tarot-lifepath-preview-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(230, 200, 143, 0.12);
+  border: 1px solid rgba(230, 200, 143, 0.32);
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 12.5px;
+  color: #f7e7c4;
+}
+
+.tarot-lifepath-preview-chip .preview-star {
+  color: #e6c88f;
+}
+
+.tarot-lifepath-preview-chip .preview-number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e6c88f 0%, #c9a562 100%);
+  color: #23121d;
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.tarot-form-error-msg {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(220, 53, 69, 0.18);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #ffb8b8;
+  font-size: 12.5px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.tarot-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tarot-modal-btn-submit {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e6c88f 0%, #c9a562 100%);
+  border: none;
+  color: #24131e;
+  font-family: var(--chani-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(230, 200, 143, 0.3);
+  transition: all 0.2s ease;
+}
+
+.tarot-modal-btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f0d5a0 0%, #d8b471 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230, 200, 143, 0.4);
+}
+
+.tarot-modal-btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.tarot-modal-btn-cancel {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 197, 142, 0.25);
+  color: #dfcfd6;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tarot-modal-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.tarot-modal-existing-wrap {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(224, 197, 142, 0.2);
+  text-align: left;
+}
+
+.tarot-modal-existing-header {
+  margin-bottom: 8px;
+}
+
+.tarot-modal-existing-title {
+  display: block;
+  font-family: var(--chani-mono, "Courier New", monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: #bfa89b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tarot-modal-profiles-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.tarot-profile-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(224, 197, 142, 0.25);
+  color: #dfcfd6;
+  font-size: 12px;
+  font-family: var(--chani-sans, sans-serif);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.tarot-profile-pill:hover {
+  background: rgba(230, 200, 143, 0.16);
+  border-color: rgba(230, 200, 143, 0.5);
+  color: #fff;
+}
+
+.tarot-profile-pill.active {
+  background: rgba(230, 200, 143, 0.22);
+  border-color: #e6c88f;
+  color: #f7e7c4;
+  font-weight: 600;
+}
+
+.tarot-profile-pill .pill-dot {
+  opacity: 0.5;
+}
+
+.tarot-profile-pill .pill-date {
+  font-family: var(--chani-mono, monospace);
+  font-size: 11px;
+  opacity: 0.82;
+}
+
+.tarot-profile-pill .pill-check {
+  color: #e6c88f;
+  font-weight: bold;
+}
+

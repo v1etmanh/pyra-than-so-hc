@@ -1,4 +1,5 @@
 import type { DrawnTarotCard, TarotLocale, TarotPhase } from './types.ts';
+import { normalizeMarkdownForMobile } from '../markdown/presentation.ts';
 
 export type TarotStageMode = 'setup' | 'drawing' | 'concealed' | 'reading' | 'error' | 'cancelled';
 export type TarotSpreadLayout = 'single' | 'three' | 'five' | 'celtic';
@@ -10,69 +11,13 @@ export interface TarotRevealProgress {
   complete: boolean;
 }
 
-function splitMarkdownTableRow(line: string): string[] {
-  let value = line.trim();
-  if (value.startsWith('|')) value = value.slice(1);
-  if (value.endsWith('|')) value = value.slice(0, -1);
-  return value.split('|').map((cell) => cell.trim());
-}
-
-function isMarkdownTableDivider(line: string): boolean {
-  const cells = splitMarkdownTableRow(line);
-  return cells.length >= 2 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
-}
-
-function cleanTableHeader(value: string): string {
-  return value.replace(/[*_`\[\]]/g, '').trim();
-}
-
 /**
  * Converts GFM-style tables into wrapping bullet lists before ReactMarkdown
  * renders them. This keeps provider output safe on narrow screens even when a
  * model ignores the Tarot prompt's no-table instruction.
  */
 export function normalizeTarotMarkdown(markdown: string): string {
-  if (!markdown.includes('|')) return markdown;
-
-  const lines = markdown.replace(/\r\n/g, '\n').split('\n');
-  const output: string[] = [];
-
-  for (let index = 0; index < lines.length;) {
-    const headerLine = lines[index];
-    const dividerLine = lines[index + 1];
-    if (!headerLine.includes('|') || !dividerLine || !isMarkdownTableDivider(dividerLine)) {
-      output.push(headerLine);
-      index += 1;
-      continue;
-    }
-
-    const headers = splitMarkdownTableRow(headerLine).map(cleanTableHeader);
-    const rows: string[][] = [];
-    index += 2;
-
-    while (index < lines.length && lines[index].includes('|') && lines[index].trim()) {
-      if (!isMarkdownTableDivider(lines[index])) {
-        rows.push(splitMarkdownTableRow(lines[index]));
-      }
-      index += 1;
-    }
-
-    if (rows.length === 0) {
-      output.push(headerLine, dividerLine);
-      continue;
-    }
-
-    for (const row of rows) {
-      const parts = row.flatMap((cell, cellIndex) => {
-        if (!cell) return [];
-        const header = headers[cellIndex];
-        return header ? [`**${header}:** ${cell}`] : [cell];
-      });
-      if (parts.length > 0) output.push(`- ${parts.join('; ')}`);
-    }
-  }
-
-  return output.join('\n');
+  return normalizeMarkdownForMobile(markdown);
 }
 
 export function getTarotCardRevealKey(drawn: DrawnTarotCard): string {

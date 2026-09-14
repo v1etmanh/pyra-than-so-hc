@@ -8,6 +8,7 @@ export const siteBaseUrl = (
 export type PublicPagePath =
   | ''
   | '/chat'
+  | '/love-compatibility'
   | '/indicators'
   | '/lucky-wallpaper'
   | '/assessment'
@@ -34,6 +35,10 @@ const pageMetadata: Record<SupportedLocale, Record<PublicPagePath, PageCopy>> = 
     '/chat': {
       title: 'Tarot AI và luận giải cá nhân | NUMELYRA',
       description: 'Trải bài Tarot AI và nhận luận giải cá nhân hóa dựa trên câu hỏi của bạn.',
+    },
+    '/love-compatibility': {
+      title: 'Ghép đôi Bát Tự & Thấu cảm tình duyên | NUMELYRA',
+      description: 'Phân tích tương hợp Bát Tự, ngũ hành bổ khuyết và chu kỳ vận thế tình duyên cùng NUMELYRA AI.',
     },
     '/indicators': {
       title: 'Công cụ tính Thần số học miễn phí: Bản đồ 24 chỉ số | NUMELYRA',
@@ -96,6 +101,10 @@ const pageMetadata: Record<SupportedLocale, Record<PublicPagePath, PageCopy>> = 
     '/chat': {
       title: 'AI Tarot and Personalized Readings | NUMELYRA',
       description: 'Draw Tarot cards and receive an AI-powered interpretation tailored to your question.',
+    },
+    '/love-compatibility': {
+      title: 'Bazi Love Compatibility & Relational AI | NUMELYRA',
+      description: 'Explore Bazi synastry, elemental balance, and 5-year relational luck cycles with NUMELYRA AI.',
     },
     '/indicators': {
       title: 'Free Numerology Calculator: Your Full 24-Indicator Chart | NUMELYRA',

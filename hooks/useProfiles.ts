@@ -153,7 +153,7 @@ export function useProfiles() {
     (
       name: string,
       birthDate: string
-    ): { success: boolean; isMaxReached: boolean } => {
+    ): { success: boolean; isMaxReached: boolean; profile?: NumerologyProfile } => {
       const trimmedName = name.trim();
       if (!trimmedName || !birthDate) {
         return { success: false, isMaxReached: false };
@@ -172,22 +172,24 @@ export function useProfiles() {
       }
 
       let updatedProfiles = [...current];
+      let savedProfile: NumerologyProfile;
       if (existingIndex >= 0) {
-        updatedProfiles[existingIndex] = {
+        savedProfile = {
           ...updatedProfiles[existingIndex],
           name: trimmedName,
           birthDate,
           createdAt: new Date().toISOString(),
         };
+        updatedProfiles[existingIndex] = savedProfile;
       } else {
-        const newProfile: NumerologyProfile = {
+        savedProfile = {
           id: generateProfileId(),
           name: trimmedName,
           birthDate,
           createdAt: new Date().toISOString(),
           userId: user?.id,
         };
-        updatedProfiles = [newProfile, ...updatedProfiles];
+        updatedProfiles = [savedProfile, ...updatedProfiles];
       }
 
       setProfiles(updatedProfiles);
@@ -245,7 +247,7 @@ export function useProfiles() {
           });
       }
 
-      return { success: true, isMaxReached: false };
+      return { success: true, isMaxReached: false, profile: savedProfile };
     },
     [profiles, user]
   );
