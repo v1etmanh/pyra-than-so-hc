@@ -11,6 +11,10 @@ import {
   calcClimateProfile,
   SAMPLE_HOURS
 } from '../lib/bazi-love/engine.ts';
+import {
+  routeRelationQuestion,
+  selectRelationEvidence
+} from '../lib/bazi-love/relation-intelligence.ts';
 
 test('Golden fixture: Person A chart matches Python solve_bazi', () => {
   const chartA = solveSingleChart({
@@ -93,6 +97,7 @@ test('Confidence levels based on birth time specification', () => {
   assert.equal(bothKnown.confidence, 'high');
   assert.equal(bothKnown.charts[0].timeKnown, true);
   assert.equal(bothKnown.charts[1].timeKnown, true);
+  assert.equal(bothKnown.evaluatedScenarios, 1);
   assert.ok(!bothKnown.layers[0].uncertain);
 
   // One unknown -> medium
@@ -105,6 +110,7 @@ test('Confidence levels based on birth time specification', () => {
   assert.equal(oneKnown.charts[0].timeKnown, true);
   assert.equal(oneKnown.charts[1].timeKnown, false);
   assert.equal(oneKnown.charts[1].pillars[3], null);
+  assert.equal(oneKnown.evaluatedScenarios, 13);
   assert.equal(oneKnown.layers[0].uncertain, true);
 
   // Both unknown -> low
@@ -118,6 +124,7 @@ test('Confidence levels based on birth time specification', () => {
   assert.equal(bothUnknown.charts[1].timeKnown, false);
   assert.equal(bothUnknown.charts[0].pillars[3], null);
   assert.equal(bothUnknown.charts[1].pillars[3], null);
+  assert.equal(bothUnknown.evaluatedScenarios, 169);
   assert.ok(bothUnknown.assumptions.length > 0);
 });
 
@@ -209,3 +216,113 @@ test('calculateYearlyTimeline generates accurate 5-year pillars and marriage sig
   assert.ok(y2027.marriageSignal !== undefined);
 });
 
+test('Relation Intelligence v2 preserves 13 x 13 unknown-hour scenarios and a full evidence pool', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'female' },
+    2026
+  );
+
+  assert.equal(result.engineVersion, 'bazi-love-ts-v1');
+  assert.equal(result.relationEngineVersion, 'relation-intelligence-v2');
+  assert.equal(result.evaluatedScenarios, 169);
+  assert.ok(result.relationEvidence.length > 8);
+  assert.ok(result.layers.every((layer) => layer.notes.length <= 8));
+  assert.ok(result.relationEvidence.every((item) => item.occurrenceRate >= 0.25));
+});
+
+test('Relation evidence uses stable fingerprints and exposes both Ten Gods directions', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', timezone: 'Asia/Ho_Chi_Minh', calculationSex: 'female' },
+    2026
+  );
+  const ids = result.relationEvidence.map((item) => item.id);
+  const tenGods = result.relationEvidence.filter((item) => item.source === 'ten_god');
+
+  assert.equal(new Set(ids).size, ids.length);
+  assert.ok(ids.every((id) => !/Người|Person|\s/.test(id)));
+  assert.deepEqual(new Set(tenGods.map((item) => item.direction)), new Set(['A_TO_B', 'B_TO_A']));
+  assert.ok(tenGods.every((item) => item.id.startsWith(`TEN_GOD:${item.direction}:`)));
+  assert.ok(tenGods.every((item) => item.dimensions.includes('perception')));
+});
+
+test('Useful and challenging elements are represented as directional evidence', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', timezone: 'UTC', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', timezone: 'UTC', calculationSex: 'female' },
+    2026
+  );
+  const elementEvidence = result.relationEvidence.filter((item) =>
+    item.source === 'useful_element' || item.source === 'challenging_element'
+  );
+
+  assert.ok(elementEvidence.some((item) => item.direction === 'A_TO_B'));
+  assert.ok(elementEvidence.some((item) => item.direction === 'B_TO_A'));
+  assert.ok(elementEvidence.every((item) => typeof item.facts.ratio === 'number'));
+});
+
+test('Branch interaction matrix retains positions and marks Day-Day as the Spouse Palace', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', birthTime: '14:30', timezone: 'UTC', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', birthTime: '09:15', timezone: 'UTC', calculationSex: 'female' },
+    2026
+  );
+  const dayDay = result.branchInteractionMatrix.find((cell) =>
+    cell.aPillar === 'day' && cell.bPillar === 'day'
+  );
+  const hourHour = result.branchInteractionMatrix.find((cell) =>
+    cell.aPillar === 'hour' && cell.bPillar === 'hour'
+  );
+
+  assert.equal(result.branchInteractionMatrix.length, 16);
+  assert.equal(dayDay?.spousePalace, true);
+  assert.equal(dayDay?.importance, 'highest');
+  assert.equal(hourHour?.hourSensitive, true);
+  assert.ok(result.relationEvidence.some((item) =>
+    item.id.startsWith('BRANCH:')
+    && typeof item.facts.aPillar === 'string'
+    && typeof item.facts.bPillar === 'string'
+  ));
+});
+
+test('Dimension and directional profiles cite evidence instead of producing probabilities', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', timezone: 'UTC', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', timezone: 'UTC', calculationSex: 'female' },
+    2026
+  );
+  const evidenceIds = new Set(result.relationEvidence.map((item) => item.id));
+  const perceptionA = result.directionalProfile.aTowardB.perception;
+  const perceptionB = result.directionalProfile.bTowardA.perception;
+
+  assert.ok(result.dimensionProfiles.length >= 20);
+  assert.ok(perceptionA.evidenceIds.some((id) => id.startsWith('TEN_GOD:B_TO_A:')));
+  assert.ok(perceptionB.evidenceIds.some((id) => id.startsWith('TEN_GOD:A_TO_B:')));
+  assert.ok(result.dimensionProfiles.every((profile) =>
+    profile.evidenceIds.every((id) => evidenceIds.has(id))
+  ));
+});
+
+test('Question router and selector deterministically respect intent and direction', () => {
+  const result = evaluateBaziCompatibility(
+    { name: 'A', birthDate: '1990-05-12', timezone: 'UTC', calculationSex: 'male' },
+    { name: 'B', birthDate: '1992-08-20', timezone: 'UTC', calculationSex: 'female' },
+    2026
+  );
+  const perception = routeRelationQuestion('Người A nhìn Người B như thế nào?');
+  const initiative = routeRelationQuestion('Ai có xu hướng chủ động theo đuổi hơn?');
+  const timing = selectRelationEvidence(result.relationEvidence, 'Năm nào thuận lợi để kết hôn?', 8);
+
+  assert.equal(perception.id, 'perception');
+  assert.ok(perception.directions.includes('B_TO_A'));
+  assert.ok(!perception.directions.includes('A_TO_B'));
+  assert.equal(initiative.id, 'initiative');
+  assert.ok(initiative.dimensions.includes('initiative'));
+  assert.equal(timing.intent.id, 'timing');
+  assert.ok(timing.evidence.length > 0);
+  assert.ok(timing.evidence.every((item) =>
+    item.dimensions.some((dimension) => timing.intent.dimensions.includes(dimension))
+  ));
+  assert.ok(timing.evidence.some((item) => item.source === 'liunian'));
+});

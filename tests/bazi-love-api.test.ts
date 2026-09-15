@@ -226,3 +226,31 @@ test('Evidence includes 5-year yearly timeline and follow-up prompt instructs di
   assert.match(followUpVi, /TUYỆT ĐỐI KHÔNG lặp lại các tiêu đề tóm tắt báo cáo mẫu/);
 });
 
+test('Follow-up prompts route questions to structured, question-specific relation evidence', () => {
+  const people = [
+    { name: 'Alex', birthDate: '1990-05-12', timezone: 'UTC', calculationSex: 'male' as const },
+    { name: 'Jordan', birthDate: '1992-08-20', timezone: 'UTC', calculationSex: 'female' as const }
+  ] as const;
+  const compatibility = evaluateBaziCompatibility(people[0], people[1], 2026);
+  const perception = buildBaziLoveFollowUpPrompt(
+    compatibility,
+    'Người A nhìn Người B như thế nào?',
+    'vi'
+  );
+  const timing = buildBaziLoveFollowUpPrompt(
+    compatibility,
+    'Năm nào thuận lợi để kết hôn?',
+    'vi'
+  );
+
+  assert.match(perception, /Relation Intelligence v2/);
+  assert.match(perception, /Ý định câu hỏi: perception/);
+  assert.match(perception, /TEN_GOD:B_TO_A:/);
+  assert.doesNotMatch(perception, /TEN_GOD:A_TO_B:/);
+  assert.doesNotMatch(perception, /Bằng chứng trợ lực nổi bật|Bằng chứng về vùng ma sát/);
+  assert.doesNotMatch(perception, /Chi tiết 5 năm Lưu Niên/);
+  assert.match(timing, /Ý định câu hỏi: timing/);
+  assert.match(timing, /Chi tiết 5 năm Lưu Niên/);
+  assert.match(timing, /LIUNIAN:TIMING_[AB]:202[6-9]|LIUNIAN:TIMING_[AB]:2030/);
+  assert.match(timing, /Số kịch bản giờ sinh đã đánh giá: 169/);
+});

@@ -14,6 +14,7 @@ import { Solar, Lunar } from 'lunar-typescript';
 import type {
   BaziCompatibilityResult,
   BaziLovePersonInput,
+  BaziPillarPosition,
   BaziPillar,
   BaziPublicChart,
   CalculationSex,
@@ -23,8 +24,19 @@ import type {
   ConfidenceLevel,
   FiveElement,
   LocalizedText,
+  RelationDimension,
+  RelationDirection,
+  RelationEvidenceSource,
+  RelationPolarity,
   YearlyPillarDynamic
 } from './types.ts';
+import {
+  aggregateRelationEvidence,
+  buildBranchInteractionMatrix,
+  buildDirectionalRelationProfile,
+  buildRelationDimensionProfiles,
+  type ScenarioRelationEvidence
+} from './relation-intelligence.ts';
 
 // ---------------------------------------------------------------------------
 // 1. Core Tables & Constants
@@ -1074,6 +1086,434 @@ export function scoreDayunSync(
   return { score: pts, notes };
 }
 
+const RELATION_PILLARS: BaziPillarPosition[] = ['year', 'month', 'day', 'hour'];
+
+function stableSymbolPair(left: string, right: string, order: readonly string[]): string {
+  return order.indexOf(left) <= order.indexOf(right) ? `${left}_${right}` : `${right}_${left}`;
+}
+
+function makeScenarioEvidence(input: {
+  id: string;
+  source: RelationEvidenceSource;
+  subtype: string;
+  direction: RelationDirection;
+  dimensions: RelationDimension[];
+  polarity: RelationPolarity;
+  weight: number;
+  hourSensitive: boolean;
+  facts: ScenarioRelationEvidence['facts'];
+  text: LocalizedText;
+}): ScenarioRelationEvidence {
+  return input;
+}
+
+function tenGodSemantics(role: string): {
+  dimensions: RelationDimension[];
+  polarity: RelationPolarity;
+  weight: number;
+} {
+  switch (role) {
+    case '正印':
+      return { dimensions: ['perception', 'emotional_safety', 'support', 'dependency'], polarity: 'supportive', weight: 8 };
+    case '偏印':
+      return { dimensions: ['perception', 'emotional_connection', 'support', 'independence'], polarity: 'mixed', weight: 6 };
+    case '食神':
+      return { dimensions: ['perception', 'expression', 'communication', 'emotional_connection'], polarity: 'supportive', weight: 7 };
+    case '伤官':
+      return { dimensions: ['perception', 'expression', 'communication', 'conflict', 'pressure'], polarity: 'mixed', weight: 7 };
+    case '正财':
+      return { dimensions: ['perception', 'attraction', 'initiative', 'commitment', 'support'], polarity: 'supportive', weight: 8 };
+    case '偏财':
+      return { dimensions: ['perception', 'attraction', 'initiative', 'independence'], polarity: 'mixed', weight: 6 };
+    case '正官':
+      return { dimensions: ['perception', 'attraction', 'commitment', 'power_balance', 'trust'], polarity: 'supportive', weight: 8 };
+    case '七杀':
+      return { dimensions: ['perception', 'attraction', 'initiative', 'power_balance', 'pressure'], polarity: 'challenging', weight: 7 };
+    case '劫财':
+      return { dimensions: ['perception', 'independence', 'power_balance', 'conflict'], polarity: 'challenging', weight: 6 };
+    default:
+      return { dimensions: ['perception', 'closeness', 'independence', 'values'], polarity: 'mixed', weight: 5 };
+  }
+}
+
+/**
+ * Converts one already-solved chart pair into semantic relationship facts.
+ * It deliberately does not modify or replace any v1 compatibility score.
+ */
+export function buildScenarioRelationEvidence(
+  a: InternalBaziChart,
+  b: InternalBaziChart,
+  focusYears: number[]
+): ScenarioRelationEvidence[] {
+  const evidence: ScenarioRelationEvidence[] = [];
+  const aTotal = Object.values(a.wuxingScores).reduce((sum, value) => sum + value, 0) || 1;
+  const bTotal = Object.values(b.wuxingScores).reduce((sum, value) => sum + value, 0) || 1;
+
+  const recordElement = (
+    elementZh: string,
+    sourceScores: Record<string, number>,
+    sourceTotal: number,
+    direction: 'A_TO_B' | 'B_TO_A',
+    target: 'A' | 'B',
+    kind: 'useful' | 'challenging'
+  ) => {
+    const ratio = (sourceScores[elementZh] || 0) / sourceTotal;
+    const pct = Math.round(ratio * 100);
+    const element = CHINESE_TO_ELEMENT[elementZh] || 'wood';
+    const elementName = WUXING_NAMES[elementZh] || { vi: elementZh, en: elementZh };
+    const provider = direction === 'A_TO_B' ? 'A' : 'B';
+
+    if (kind === 'useful' && (ratio >= 0.18 || ratio < 0.05)) {
+      const strong = ratio >= 0.18;
+      const weight = strong ? Math.round(ratio * 30 * 10) / 10 : 3;
+      evidence.push(makeScenarioEvidence({
+        id: `USEFUL_ELEMENT:${direction}:${element}:${strong ? 'PRESENT' : 'ABSENT'}`,
+        source: 'useful_element',
+        subtype: strong ? 'useful_element_present' : 'useful_element_absent',
+        direction,
+        dimensions: strong
+          ? ['support', 'emotional_safety', 'growth', 'closeness']
+          : ['support', 'emotional_safety', 'growth'],
+        polarity: strong ? 'supportive' : 'challenging',
+        weight,
+        hourSensitive: true,
+        facts: { element, elementZh, ratio, percent: pct, provider, recipient: target },
+        text: strong
+          ? {
+              vi: `Người ${provider} mang mạnh Dụng thần ${elementName.vi} của Người ${target}, tạo xu hướng nâng đỡ và bổ khuyết.`,
+              en: `Person ${provider} strongly supplies Person ${target}'s useful ${elementName.en} element, supporting nourishment and growth.`
+            }
+          : {
+              vi: `Dụng thần ${elementName.vi} của Người ${target} gần như vắng ở Người ${provider}, nên nguồn bổ khuyết theo chiều này còn hạn chế.`,
+              en: `Person ${target}'s useful ${elementName.en} element is nearly absent in Person ${provider}, limiting nourishment in this direction.`
+            }
+      }));
+    }
+
+    if (kind === 'challenging' && ratio >= 0.25) {
+      evidence.push(makeScenarioEvidence({
+        id: `CHALLENGING_ELEMENT:${direction}:${element}:STRONG`,
+        source: 'challenging_element',
+        subtype: 'challenging_element_strong',
+        direction,
+        dimensions: ['pressure', 'conflict', 'emotional_safety', 'growth'],
+        polarity: 'challenging',
+        weight: Math.round(ratio * 24 * 10) / 10,
+        hourSensitive: true,
+        facts: { element, elementZh, ratio, percent: pct, provider, recipient: target },
+        text: {
+          vi: `Người ${provider} mang mạnh Kỵ thần ${elementName.vi} của Người ${target}, có thể kích hoạt áp lực cần được điều tiết có ý thức.`,
+          en: `Person ${provider} strongly supplies Person ${target}'s challenging ${elementName.en} element, which may activate pressure requiring conscious regulation.`
+        }
+      }));
+    }
+  };
+
+  recordElement(a.yongshenZh, b.wuxingScores, bTotal, 'B_TO_A', 'A', 'useful');
+  recordElement(b.yongshenZh, a.wuxingScores, aTotal, 'A_TO_B', 'B', 'useful');
+  recordElement(a.jishenZh, b.wuxingScores, bTotal, 'B_TO_A', 'A', 'challenging');
+  recordElement(b.jishenZh, a.wuxingScores, aTotal, 'A_TO_B', 'B', 'challenging');
+
+  const recordTenGod = (
+    role: string,
+    direction: 'A_TO_B' | 'B_TO_A',
+    sourceGan: string,
+    targetGan: string
+  ) => {
+    const semantics = tenGodSemantics(role);
+    const source = direction === 'A_TO_B' ? 'A' : 'B';
+    const target = direction === 'A_TO_B' ? 'B' : 'A';
+    const roleName = SHISHEN_NAMES[role] || { vi: role, en: role };
+    evidence.push(makeScenarioEvidence({
+      id: `TEN_GOD:${direction}:${role}`,
+      source: 'ten_god',
+      subtype: role,
+      direction,
+      dimensions: semantics.dimensions,
+      polarity: semantics.polarity,
+      weight: semantics.weight,
+      hourSensitive: false,
+      facts: { role, source, target, sourceDayMaster: sourceGan, targetDayMaster: targetGan },
+      text: {
+        vi: `Nhật chủ Người ${source} kích hoạt mẫu Thập Thần 「${roleName.vi}」 trong cách Người ${target} trải nghiệm mối quan hệ.`,
+        en: `Person ${source}'s Day Master activates the "${roleName.en}" Ten Gods pattern in how Person ${target} experiences the relationship.`
+      }
+    }));
+  };
+
+  recordTenGod(calcShishen(b.dayMaster, a.dayMaster), 'A_TO_B', a.dayMaster, b.dayMaster);
+  recordTenGod(calcShishen(a.dayMaster, b.dayMaster), 'B_TO_A', b.dayMaster, a.dayMaster);
+
+  const pillarWeights = [0.6, 0.9, 1, 0.7];
+  for (let i = 0; i < a.pillars.length; i++) {
+    for (let j = 0; j < b.pillars.length; j++) {
+      const aPillar = RELATION_PILLARS[i];
+      const bPillar = RELATION_PILLARS[j];
+      const spousePalace = i === 2 && j === 2;
+      const hourSensitive = i === 3 || j === 3;
+      const importance = spousePalace ? 'highest' : (i === 2 || j === 2 ? 'high' : 'medium');
+      const positionalFacts = { aPillar, bPillar, spousePalace, importance };
+      const w = (pillarWeights[i] + pillarWeights[j]) / 2;
+      const ga = a.pillars[i].gan;
+      const gb = b.pillars[j].gan;
+      const ganPair = stableSymbolPair(ga, gb, GAN);
+      const stemCombination = GAN_HE_MAP[`${ga}_${gb}`] || GAN_HE_MAP[`${gb}_${ga}`];
+
+      if (stemCombination) {
+        evidence.push(makeScenarioEvidence({
+          id: `STEM:${aPillar.toUpperCase()}_${bPillar.toUpperCase()}:合:${ganPair}`,
+          source: 'stem_relation',
+          subtype: '合',
+          direction: 'MUTUAL',
+          dimensions: ['attraction', 'communication', 'expression', 'conflict_repair'],
+          polarity: 'supportive',
+          weight: Math.round(6 * w * 10) / 10,
+          hourSensitive,
+          facts: { ...positionalFacts, aStem: ga, bStem: gb, transformedElement: stemCombination.hua },
+          text: {
+            vi: `Thiên can A.${PILLAR_NAMES[i].vi} và B.${PILLAR_NAMES[j].vi} tương hợp: ${stemCombination.vi}.`,
+            en: `The stems at A.${PILLAR_NAMES[i].en} and B.${PILLAR_NAMES[j].en} combine: ${stemCombination.en}.`
+          }
+        }));
+      } else if (GAN_CHONG_SET.has(`${ga}_${gb}`)) {
+        evidence.push(makeScenarioEvidence({
+          id: `STEM:${aPillar.toUpperCase()}_${bPillar.toUpperCase()}:冲:${ganPair}`,
+          source: 'stem_relation',
+          subtype: '冲',
+          direction: 'MUTUAL',
+          dimensions: ['communication', 'expression', 'conflict', 'pressure'],
+          polarity: 'challenging',
+          weight: Math.round(4 * w * 10) / 10,
+          hourSensitive,
+          facts: { ...positionalFacts, aStem: ga, bStem: gb },
+          text: {
+            vi: `Thiên can A.${PILLAR_NAMES[i].vi} và B.${PILLAR_NAMES[j].vi} tương xung, dễ tạo khác biệt trong biểu đạt.`,
+            en: `The stems at A.${PILLAR_NAMES[i].en} and B.${PILLAR_NAMES[j].en} clash, indicating differences in expression.`
+          }
+        }));
+      }
+
+      const za = a.pillars[i].zhi;
+      const zb = b.pillars[j].zhi;
+      const zhiPair = stableSymbolPair(za, zb, ZHI);
+      const relationSource: RelationEvidenceSource = spousePalace ? 'spouse_palace' : 'branch_relation';
+      const addBranchEvidence = (
+        subtype: string,
+        polarity: RelationPolarity,
+        dimensions: RelationDimension[],
+        weight: number,
+        detail: LocalizedText,
+        transformedElement: string | null = null
+      ) => evidence.push(makeScenarioEvidence({
+        id: `BRANCH:${aPillar.toUpperCase()}_${bPillar.toUpperCase()}:${subtype}:${zhiPair}`,
+        source: relationSource,
+        subtype,
+        direction: 'MUTUAL',
+        dimensions,
+        polarity,
+        weight,
+        hourSensitive,
+        facts: { ...positionalFacts, aBranch: za, bBranch: zb, transformedElement },
+        text: detail
+      }));
+
+      if (za === zb) {
+        addBranchEvidence(
+          '同支',
+          'mixed',
+          ['closeness', 'emotional_connection', 'values', 'dependency'],
+          spousePalace ? 5 : Math.round(2 * w * 10) / 10,
+          {
+            vi: `Địa chi A.${PILLAR_NAMES[i].vi} và B.${PILLAR_NAMES[j].vi} đồng chi, tạo nhịp quen thuộc nhưng có thể lặp lại cùng một mẫu.`,
+            en: `The branches at A.${PILLAR_NAMES[i].en} and B.${PILLAR_NAMES[j].en} are identical, creating familiarity while potentially repeating a shared pattern.`
+          }
+        );
+      } else {
+        const liuHe = ZHI_LIU_HE_MAP[`${za}_${zb}`] || ZHI_LIU_HE_MAP[`${zb}_${za}`];
+        const liuChong = ZHI_CHONG_MAP[`${za}_${zb}`] || ZHI_CHONG_MAP[`${zb}_${za}`];
+        if (liuHe) {
+          addBranchEvidence(
+            '六合',
+            'supportive',
+            ['attraction', 'closeness', 'commitment', 'conflict_repair', 'marriage'],
+            Math.round((7 * w + (spousePalace ? 5 : 0)) * 10) / 10,
+            { vi: `${liuHe.vi}${spousePalace ? ' tại Cung Phu Thê.' : '.'}`, en: `${liuHe.en}${spousePalace ? ' at the Spouse Palaces.' : '.'}` },
+            liuHe.hua
+          );
+        } else if (liuChong) {
+          addBranchEvidence(
+            '冲',
+            'challenging',
+            ['attraction', 'conflict', 'instability', 'daily_life', 'long_term', 'pressure'],
+            Math.round((6 * w + (spousePalace ? 4 : 0)) * 10) / 10,
+            { vi: `${liuChong.vi}${spousePalace ? ' tại Cung Phu Thê.' : '.'}`, en: `${liuChong.en}${spousePalace ? ' at the Spouse Palaces.' : '.'}` }
+          );
+        } else if (ZHI_HAI_SET.has(`${za}_${zb}`)) {
+          addBranchEvidence(
+            '害',
+            'challenging',
+            ['emotional_safety', 'trust', 'communication', 'conflict'],
+            Math.round(3 * w * 10) / 10,
+            { vi: 'Hai địa chi tương hại, dễ tạo hiểu lầm kín đáo cần được nói rõ.', en: 'The branches form a harm relation, pointing to subtle misunderstandings that benefit from being named.' }
+          );
+        }
+
+        const sanHe = SAN_HE_GROUPS.find((group) => group.branches.includes(za) && group.branches.includes(zb));
+        if (sanHe) {
+          addBranchEvidence(
+            '半合',
+            'supportive',
+            ['support', 'values', 'growth', 'daily_life', 'closeness'],
+            4,
+            { vi: `${sanHe.name.vi} tạo thế bán hợp giữa hai vị trí.`, en: `${sanHe.name.en} creates a semi-combination between the two positions.` },
+            sanHe.hua
+          );
+        }
+      }
+    }
+  }
+
+  const aBranches = a.pillars.map((pillar) => pillar.zhi);
+  const bBranches = b.pillars.map((pillar) => pillar.zhi);
+  const recordMarker = (
+    subtype: '桃花' | '天乙贵人',
+    branch: string,
+    direction: 'A_TO_B' | 'B_TO_A',
+    source: RelationEvidenceSource,
+    hourSensitive: boolean
+  ) => {
+    const provider = direction === 'A_TO_B' ? 'A' : 'B';
+    const recipient = direction === 'A_TO_B' ? 'B' : 'A';
+    const markerName = subtype === '桃花'
+      ? { vi: 'Đào Hoa', en: 'Peach Blossom' }
+      : { vi: 'Thiên Ất Quý Nhân', en: 'Nobleman' };
+    evidence.push(makeScenarioEvidence({
+      id: `${subtype === '桃花' ? 'PEACH_BLOSSOM' : 'NOBLEMAN'}:${direction}:${branch}`,
+      source,
+      subtype,
+      direction,
+      dimensions: subtype === '桃花'
+        ? ['attraction', 'emotional_connection', 'initiative', 'closeness']
+        : ['support', 'emotional_safety', 'trust', 'growth'],
+      polarity: 'supportive',
+      weight: subtype === '桃花' ? 4 : 5,
+      hourSensitive,
+      facts: { branch, provider, recipient },
+      text: {
+        vi: `${markerName.vi} của Người ${recipient} hiện diện ở Người ${provider}.`,
+        en: `Person ${recipient}'s ${markerName.en} marker appears in Person ${provider}'s chart.`
+      }
+    }));
+  };
+
+  const aPeach = TAOHUA_BY_RIZHI[a.pillars[2].zhi];
+  const bPeach = TAOHUA_BY_RIZHI[b.pillars[2].zhi];
+  if (aPeach && bBranches.includes(aPeach)) {
+    recordMarker('桃花', aPeach, 'B_TO_A', 'spouse_palace', !bBranches.slice(0, 3).includes(aPeach));
+  }
+  if (bPeach && aBranches.includes(bPeach)) {
+    recordMarker('桃花', bPeach, 'A_TO_B', 'spouse_palace', !aBranches.slice(0, 3).includes(bPeach));
+  }
+  for (const branch of (TIANYI_BY_RIGAN[a.dayMaster] || []).filter((zhi) => bBranches.includes(zhi))) {
+    recordMarker('天乙贵人', branch, 'B_TO_A', 'nobleman', !bBranches.slice(0, 3).includes(branch));
+  }
+  for (const branch of (TIANYI_BY_RIGAN[b.dayMaster] || []).filter((zhi) => aBranches.includes(zhi))) {
+    recordMarker('天乙贵人', branch, 'A_TO_B', 'nobleman', !aBranches.slice(0, 3).includes(branch));
+  }
+
+  const cycle = scoreDayunSync(a, b, focusYears);
+  const cycleScore = cycle.score;
+  evidence.push(makeScenarioEvidence({
+    id: `DAYUN:TIMING_MUTUAL:${focusYears[0]}_${focusYears[focusYears.length - 1]}`,
+    source: 'dayun',
+    subtype: 'luck_cycle_synchrony',
+    direction: 'TIMING_MUTUAL',
+    dimensions: ['timing', 'growth', 'long_term', 'support'],
+    polarity: cycleScore > 0 ? 'supportive' : cycleScore < 0 ? 'challenging' : 'neutral',
+    weight: Math.abs(cycleScore),
+    hourSensitive: false,
+    facts: { startYear: focusYears[0], endYear: focusYears[focusYears.length - 1], score: cycleScore },
+    text: cycle.notes[0]?.text || { vi: 'Nhịp Đại Vận chung đã được tính.', en: 'Shared Luck Cycle rhythm was calculated.' }
+  }));
+
+  for (const year of focusYears) {
+    const gan = GAN[((year - 4) % 10 + 10) % 10];
+    const zhi = ZHI[((year - 4) % 12 + 12) % 12];
+    const yearName = `${GAN_NAMES[gan]?.vi || gan} ${ZHI_NAMES[zhi]?.vi || zhi}`;
+    const targets = [
+      { label: 'A' as const, direction: 'TIMING_A' as const, chart: a },
+      { label: 'B' as const, direction: 'TIMING_B' as const, chart: b }
+    ];
+    for (const target of targets) {
+      const dayBranch = target.chart.pillars[2].zhi;
+      const dayStem = target.chart.pillars[2].gan;
+      const branchPair = stableSymbolPair(zhi, dayBranch, ZHI);
+      const baseFacts = { year, yearStem: gan, yearBranch: zhi, target: target.label, spousePalaceBranch: dayBranch };
+      const liuHe = ZHI_LIU_HE_MAP[`${zhi}_${dayBranch}`] || ZHI_LIU_HE_MAP[`${dayBranch}_${zhi}`];
+      const chong = ZHI_CHONG_MAP[`${zhi}_${dayBranch}`] || ZHI_CHONG_MAP[`${dayBranch}_${zhi}`];
+      const banHe = SAN_HE_GROUPS.find((group) => group.branches.includes(zhi) && group.branches.includes(dayBranch) && zhi !== dayBranch);
+      const stemHe = GAN_HE_MAP[`${gan}_${dayStem}`] || GAN_HE_MAP[`${dayStem}_${gan}`];
+
+      if (liuHe) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:六合:${branchPair}`,
+          source: 'liunian', subtype: '六合', direction: target.direction,
+          dimensions: ['timing', 'commitment', 'marriage', 'closeness'], polarity: 'supportive', weight: 9,
+          hourSensitive: false, facts: { ...baseFacts, relation: '六合' },
+          text: { vi: `Năm ${year} (${yearName}) lục hợp Cung Phu Thê Người ${target.label}.`, en: `Year ${year} forms a Six Combination with Person ${target.label}'s Spouse Palace.` }
+        }));
+      }
+      if (banHe) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:半合:${branchPair}`,
+          source: 'liunian', subtype: '半合', direction: target.direction,
+          dimensions: ['timing', 'commitment', 'marriage', 'family_context', 'growth'], polarity: 'supportive', weight: 6,
+          hourSensitive: false, facts: { ...baseFacts, relation: '半合', transformedElement: banHe.hua },
+          text: { vi: `Năm ${year} (${yearName}) tạo thế bán hợp với Cung Phu Thê Người ${target.label}.`, en: `Year ${year} forms a semi-combination with Person ${target.label}'s Spouse Palace.` }
+        }));
+      }
+      if (chong) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:冲:${branchPair}`,
+          source: 'liunian', subtype: '冲', direction: target.direction,
+          dimensions: ['timing', 'conflict', 'instability', 'marriage', 'long_term'], polarity: 'challenging', weight: 8,
+          hourSensitive: false, facts: { ...baseFacts, relation: '冲' },
+          text: { vi: `Năm ${year} (${yearName}) tương xung Cung Phu Thê Người ${target.label}.`, en: `Year ${year} clashes with Person ${target.label}'s Spouse Palace.` }
+        }));
+      }
+      if (stemHe) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:STEM_合:${stableSymbolPair(gan, dayStem, GAN)}`,
+          source: 'liunian', subtype: 'stem_combination', direction: target.direction,
+          dimensions: ['timing', 'attraction', 'emotional_connection'], polarity: 'supportive', weight: 5,
+          hourSensitive: false, facts: { ...baseFacts, targetDayMaster: dayStem, transformedElement: stemHe.hua },
+          text: { vi: `Thiên can năm ${year} tương hợp Nhật chủ Người ${target.label}.`, en: `The stem of year ${year} combines with Person ${target.label}'s Day Master.` }
+        }));
+      }
+      if ((TIANYI_BY_RIGAN[dayStem] || []).includes(zhi)) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:NOBLEMAN:${zhi}`,
+          source: 'liunian', subtype: 'nobleman', direction: target.direction,
+          dimensions: ['timing', 'support', 'growth'], polarity: 'supportive', weight: 5,
+          hourSensitive: false, facts: { ...baseFacts, marker: 'nobleman' },
+          text: { vi: `Năm ${year} kích hoạt Thiên Ất Quý Nhân của Người ${target.label}.`, en: `Year ${year} activates Person ${target.label}'s Nobleman marker.` }
+        }));
+      }
+      if (TAOHUA_BY_RIZHI[dayBranch] === zhi) {
+        evidence.push(makeScenarioEvidence({
+          id: `LIUNIAN:${target.direction}:${year}:PEACH_BLOSSOM:${zhi}`,
+          source: 'liunian', subtype: 'peach_blossom', direction: target.direction,
+          dimensions: ['timing', 'attraction', 'reconnection', 'commitment'], polarity: 'supportive', weight: 5,
+          hourSensitive: false, facts: { ...baseFacts, marker: 'peach_blossom' },
+          text: { vi: `Năm ${year} kích hoạt Đào Hoa của Người ${target.label}.`, en: `Year ${year} activates Person ${target.label}'s Peach Blossom marker.` }
+        }));
+      }
+    }
+  }
+
+  return evidence;
+}
+
 export function calculateYearlyTimeline(
   chartA: InternalBaziChart,
   chartB: InternalBaziChart,
@@ -1268,6 +1708,7 @@ export function evaluateBaziCompatibility(
     roles: { scores: [], notesMap: new Map() },
     cycles: { scores: [], notesMap: new Map() }
   };
+  const relationScenarios: ScenarioRelationEvidence[][] = [];
 
   for (const ca of aCandidates) {
     for (const cb of bCandidates) {
@@ -1275,6 +1716,7 @@ export function evaluateBaziCompatibility(
       const inter = scoreGanzhiInteractions(ca, cb);
       const r = scoreShishenMatch(ca, cb);
       const c = scoreDayunSync(ca, cb, focusYears);
+      relationScenarios.push(buildScenarioRelationEvidence(ca, cb, focusYears));
 
       layerResults.elements.scores.push(e.score);
       layerResults.interactions.scores.push(inter.score);
@@ -1282,6 +1724,8 @@ export function evaluateBaziCompatibility(
       layerResults.cycles.scores.push(c.score);
 
       const recordScenarioNotes = (id: CompatibilityLayerId, notes: CompatibilityNote[]) => {
+        // Legacy v1 prose aggregation is retained only for the capped UI summary.
+        // Relation Intelligence v2 aggregates semantic facts separately by stable ID.
         const uniqueNotes = new Map(notes.map((note) => [note.text.vi, note]));
         uniqueNotes.forEach((note, key) => {
           const previous = layerResults[id].notesMap.get(key);
@@ -1415,9 +1859,16 @@ export function evaluateBaziCompatibility(
     });
   }
 
+  const relationEvidence = aggregateRelationEvidence(relationScenarios);
+  const dimensionProfiles = buildRelationDimensionProfiles(relationEvidence, relationScenarios);
+  const directionalProfile = buildDirectionalRelationProfile(relationEvidence, relationScenarios);
+  const branchInteractionMatrix = buildBranchInteractionMatrix(relationEvidence);
+
   return {
     engineVersion: 'bazi-love-ts-v1',
+    relationEngineVersion: 'relation-intelligence-v2',
     confidence,
+    evaluatedScenarios: aCandidates.length * bCandidates.length,
     focusYears,
     charts: [
       toPublicChart(repChartA, 'A', aHasTime, personA.birthDate),
@@ -1427,6 +1878,10 @@ export function evaluateBaziCompatibility(
     strengths,
     frictions,
     assumptions,
-    yearlyTimeline: calculateYearlyTimeline(repChartA, repChartB, focusYears)
+    yearlyTimeline: calculateYearlyTimeline(repChartA, repChartB, focusYears),
+    relationEvidence,
+    dimensionProfiles,
+    directionalProfile,
+    branchInteractionMatrix
   };
 }
