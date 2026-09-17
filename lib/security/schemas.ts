@@ -133,6 +133,12 @@ const tarotReadingContextSchema = z.object({
   }).strict()).max(10)
 }).strict();
 
+// Regeneration rebuilds the answer from the original cards and question, so it
+// must also recover a session whose provider completed without returning text.
+const tarotRegenerateContextSchema = tarotReadingContextSchema.extend({
+  interpretation: boundedText(16_000)
+});
+
 const tarotCommonSchema = z.object({
   language: z.enum(['vi', 'en']),
   profile: profileContextSchema.optional(),
@@ -161,7 +167,7 @@ export const tarotReadingRequestSchema = z.discriminatedUnion('mode', [
   }).strict(),
   tarotCommonSchema.extend({
     mode: z.literal('regenerate'),
-    reading: tarotReadingContextSchema
+    reading: tarotRegenerateContextSchema
   }).strict()
 ]);
 

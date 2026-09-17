@@ -186,12 +186,16 @@ test('System prompt explicitly enforces no Markdown tables and no fatalistic pre
   assert.match(sysVi, /không phán định mệnh/i);
   assert.match(sysVi, /không suy diễn suy nghĩ/i);
   assert.match(sysVi, /nội dung không đáng tin/i);
+  assert.match(sysVi, /Đặt kết luận lên đầu/i);
+  assert.match(sysVi, /Không dùng kết luận rỗng/i);
 
   // En checks
   assert.match(sysEn, /Never use Markdown tables/i);
   assert.match(sysEn, /Never make fatalistic/i);
   assert.match(sysEn, /Never claim to know either person’s thoughts/i);
   assert.match(sysEn, /untrusted content/i);
+  assert.match(sysEn, /Put the conclusion first/i);
+  assert.match(sysEn, /Do not use empty conclusions/i);
 });
 
 test('English prompts use localized evidence and follow-ups retain deterministic context', () => {
@@ -224,6 +228,29 @@ test('Evidence includes 5-year yearly timeline and follow-up prompt instructs di
   assert.match(followUpVi, /Năm 2027/);
   assert.match(followUpVi, /Trả lời TRỰC DIỆN/);
   assert.match(followUpVi, /TUYỆT ĐỐI KHÔNG lặp lại các tiêu đề tóm tắt báo cáo mẫu/);
+  assert.match(followUpVi, /60–100 từ/);
+  assert.match(followUpVi, /## Kết luận nhanh/);
+});
+
+test('Bazi initial prompts use a concise conclusion-first contract instead of the old five-part report', () => {
+  const people = [
+    { name: 'Alex', birthDate: '1990-05-12', timezone: 'UTC', calculationSex: 'male' as const },
+    { name: 'Jordan', birthDate: '1992-08-20', timezone: 'UTC', calculationSex: 'female' as const }
+  ] as const;
+  const compatibility = evaluateBaziCompatibility(people[0], people[1], 2026);
+
+  const focusedVi = buildBaziLoveInitialPrompt(compatibility, 'vi', 'Chúng tôi có nên tiến tới hôn nhân không?');
+  assert.match(focusedVi, /120–180 từ/);
+  assert.match(focusedVi, /## Kết luận nhanh/);
+  assert.match(focusedVi, /Trả lời thẳng trọng tâm/);
+  assert.match(focusedVi, /Đúng 2 hành động/);
+  assert.doesNotMatch(focusedVi, /## 1\. Bức tranh năng lượng/);
+
+  const holisticEn = buildBaziLoveInitialPrompt(compatibility, 'en');
+  assert.match(holisticEn, /supportive, balanced, or challenging/);
+  assert.match(holisticEn, /## Quick conclusion/);
+  assert.doesNotMatch(holisticEn, /Detailed 5-year Annual Pillars/);
+  assert.doesNotMatch(holisticEn, /## 1\. Energetic landscape/);
 });
 
 test('Follow-up prompts route questions to structured, question-specific relation evidence', () => {

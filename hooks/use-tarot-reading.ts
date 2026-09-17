@@ -418,7 +418,7 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
 
   const regenerate = useCallback(async () => {
     const session = currentSession;
-    if (!session || !session.spread || !session.drawnCards.length || !session.interpretation || isRunning) return;
+    if (!session || !session.spread || !session.drawnCards.length || isRunning) return;
     const context = readingContext(session);
     const previousInterpretation = session.interpretation;
     patchSession(session.id, (current) => ({ ...current, interpretation: '' }));

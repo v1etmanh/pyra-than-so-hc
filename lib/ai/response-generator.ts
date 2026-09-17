@@ -13,6 +13,12 @@ import type { UserProviderConfig } from './types.ts';
 
 export type { UserProviderConfig } from './types.ts';
 
+export interface StreamingGenerationOptions {
+  maxTokens?: number;
+  temperature?: number;
+  reasoningEffort?: 'low' | 'medium' | 'high';
+}
+
 function buildMessages(
   systemPrompt: string,
   history: Array<{ role: string; content: string }>,
@@ -73,7 +79,8 @@ function readWithTimeout<T>(
 export function createStreamingResponse(
   systemPrompt: string,
   history: Array<{ role: string; content: string }>,
-  userProviderConfig?: UserProviderConfig
+  userProviderConfig?: UserProviderConfig,
+  generationOptions?: StreamingGenerationOptions
 ): ReadableStream<Uint8Array> {
   const providers = getProviderCascade(userProviderConfig);
 
@@ -128,6 +135,9 @@ export function createStreamingResponse(
               apiKey,
               {
                 stream: true,
+                maxTokens: generationOptions?.maxTokens,
+                temperature: generationOptions?.temperature,
+                reasoningEffort: generationOptions?.reasoningEffort,
                 timeoutMs: Math.min(
                   Number(
                     process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS ||
@@ -218,6 +228,9 @@ export function createStreamingResponse(
 
             if (!providerSentDone) {
               throw new Error('LLM stream ended before completion');
+            }
+            if (!emittedContent) {
+              throw new Error('LLM stream completed without response content');
             }
 
             controller.enqueue(

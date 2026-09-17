@@ -173,7 +173,18 @@ export async function POST(request: NextRequest): Promise<Response> {
         }
 
         // 4. Stream LLM interpretation
-        const llmStream = createStreamingResponse(systemPrompt, messages, body.providerConfig);
+        const llmStream = createStreamingResponse(
+          systemPrompt,
+          messages,
+          body.providerConfig,
+          {
+            // Leave ample room for hidden reasoning tokens; the prompt
+            // contract controls the concise user-visible response length.
+            maxTokens: body.mode === 'follow-up' ? 1600 : 2400,
+            temperature: 0.2,
+            reasoningEffort: 'medium'
+          }
+        );
         await consumeNormalizedLlmStream(llmStream, (content) => send({ type: 'content', content }));
 
         send({ type: 'done' });

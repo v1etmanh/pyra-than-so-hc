@@ -585,3 +585,69 @@ test('NVIDIA thinking is disabled with each model family schema', async () => {
     else process.env.NVIDIA_ENABLE_THINKING = originalThinking;
   }
 });
+
+test('streaming generation options forward output limits to the provider request', async () => {
+  const originalFetch = globalThis.fetch;
+  let payload: Record<string, unknown> = {};
+
+  try {
+    globalThis.fetch = async (_input, init) => {
+      payload = JSON.parse(String(init?.body)) as Record<string, unknown>;
+      return new Response(
+        'data: {"choices":[{"delta":{"content":"ok"}}]}\n\ndata: [DONE]\n\n',
+        { headers: { 'Content-Type': 'text/event-stream' } }
+      );
+    };
+
+    const output = await readStream(
+      createStreamingResponse(
+        'system',
+        [{ role: 'user', content: 'hello' }],
+        {
+          type: 'custom',
+          baseUrl: 'https://provider.example/v1',
+          apiKeys: ['test-key'],
+          model: 'test-model'
+        },
+        { maxTokens: 500, temperature: 0.2, reasoningEffort: 'low' }
+      )
+    );
+
+    assert.equal(payload.max_tokens, 500);
+    assert.equal(payload.temperature, 0.2);
+    assert.equal(payload.reasoning_effort, 'low');
+    assert.match(output, /ok/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('an empty completed provider stream becomes a visible failure instead of a blank answer', async () => {
+  const originalFetch = globalThis.fetch;
+
+  try {
+    globalThis.fetch = async () => new Response(
+      'data: [DONE]\n\n',
+      { headers: { 'Content-Type': 'text/event-stream' } }
+    );
+
+    const output = await readStream(
+      createStreamingResponse(
+        'system',
+        [{ role: 'user', content: 'hello' }],
+        {
+          type: 'custom',
+          baseUrl: 'https://provider.example/v1',
+          apiKeys: ['test-key'],
+          model: 'test-model'
+        },
+        { maxTokens: 500 }
+      )
+    );
+
+    assert.match(output, /Không thể kết nối các nhà cung cấp AI/);
+    assert.match(output, /completed without response content/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

@@ -4,7 +4,13 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { allTarotCards, majorArcanaCards, minorArcanaCards } from '../lib/tarot/cards.ts';
 import { drawCardsForSpread, drawSupplementaryCards } from '../lib/tarot/draw.ts';
-import { parseFollowUpDecision, isTwoChoiceContext, buildInitialReadingPrompt } from '../lib/tarot/prompts.ts';
+import {
+  buildFollowUpReadingPrompt,
+  buildInitialReadingPrompt,
+  buildTarotSystemPrompt,
+  isTwoChoiceContext,
+  parseFollowUpDecision
+} from '../lib/tarot/prompts.ts';
 import { getTarotSpread, tarotSpreads } from '../lib/tarot/spreads.ts';
 import { tarotReadingRequestSchema } from '../lib/security/schemas.ts';
 
@@ -121,6 +127,22 @@ test('tarot request schema accepts valid modes and rejects malformed payloads', 
   assert.equal(profileWithLongIndicator.success, true);
 });
 
+test('tarot regeneration can recover a session with an empty interpretation', () => {
+  const payload = tarotReadingRequestSchema.safeParse({
+    mode: 'regenerate',
+    language: 'vi',
+    reading: {
+      originalQuestion: 'Tình cảm sắp tới thế nào?',
+      spreadId: 'single',
+      drawnCards: [{ cardId: 'major-00', isReversed: false, positionId: 'single-1' }],
+      interpretation: '',
+      priorFollowUps: []
+    }
+  });
+
+  assert.equal(payload.success, true);
+});
+
 test('two-choice dilemmas enforce percentage balance and decisive leaning in prompts', () => {
   const twoOptionsSpread = getTarotSpread('two-options');
   assert.ok(twoOptionsSpread);
@@ -135,9 +157,44 @@ test('two-choice dilemmas enforce percentage balance and decisive leaning in pro
   const promptVi = buildInitialReadingPrompt('Nên đi du học hay ở lại làm việc?', twoOptionsSpread, cards, undefined, 'vi');
   assert.match(promptVi, /CHỈ DẪN BẮT BUỘC CHO CÂU HỎI 2 LỰA CHỌN/);
   assert.match(promptVi, /tỷ lệ phần trăm \(%\)/);
-  assert.match(promptVi, /Cán cân quyết định & Tỷ lệ nghiêng/);
+  assert.match(promptVi, /## Kết luận nhanh/);
+  assert.match(promptVi, /gọi tên lựa chọn được trải bài nghiêng về/);
+  assert.match(promptVi, /120–180 từ/);
+  assert.doesNotMatch(promptVi, /Đánh giá Hướng đi A/);
 
   const promptEn = buildInitialReadingPrompt('Should I take job A or job B?', twoOptionsSpread, cards, undefined, 'en');
   assert.match(promptEn, /MANDATORY INSTRUCTION FOR TWO-CHOICE DILEMMAS/);
-  assert.match(promptEn, /Decision Balance & Leaning Percentage/);
+  assert.match(promptEn, /## Quick conclusion/);
+  assert.match(promptEn, /name the option favored/);
+  assert.match(promptEn, /120–180 words/);
+});
+
+test('tarot prompts enforce conclusion-first concise answers for initial and follow-up readings', () => {
+  const spread = getTarotSpread('three-card');
+  assert.ok(spread);
+  const cards = drawCardsForSpread(spread);
+
+  const systemVi = buildTarotSystemPrompt('vi');
+  assert.match(systemVi, /Câu đầu tiên phải trả lời trực tiếp/);
+  assert.match(systemVi, /tối đa 3 tín hiệu mạnh nhất/);
+  assert.match(systemVi, /Không kết luận bằng câu rỗng/);
+
+  const initialVi = buildInitialReadingPrompt('Công việc mới có phù hợp với tôi không?', spread, cards, undefined, 'vi');
+  assert.match(initialVi, /## Kết luận nhanh/);
+  assert.match(initialVi, /## Vì sao/);
+  assert.match(initialVi, /## Nên làm gì/);
+  assert.match(initialVi, /Đúng 2 hành động/);
+
+  const followUpEn = buildFollowUpReadingPrompt({
+    originalQuestion: 'Is the new job right for me?',
+    previousInterpretation: 'Previous concise reading.',
+    followUpQuestion: 'What should I verify first?',
+    spread,
+    originalCards: cards,
+    additionalCards: [],
+    locale: 'en'
+  });
+  assert.match(followUpEn, /60–100 words/);
+  assert.match(followUpEn, /## Quick conclusion/);
+  assert.match(followUpEn, /Do not repeat the previous reading/);
 });

@@ -105,8 +105,7 @@ export function buildBaziLoveEvidence(
     ? ({ high: 'cao', medium: 'trung bình', low: 'thấp' } as const)[compatibility.confidence]
     : compatibility.confidence;
   const selected = selectRelationEvidence(compatibility.relationEvidence || [], question);
-  const includeDetailedTimeline = !question?.trim()
-    || ['timing', 'commitment', 'reconnection'].includes(selected.intent.id);
+  const includeDetailedTimeline = ['timing', 'commitment', 'reconnection'].includes(selected.intent.id);
   const selectedIds = new Set(selected.evidence.map((item) => item.id));
   let profilePool: RelationDimensionProfile[] = compatibility.dimensionProfiles || [];
   if (
@@ -229,7 +228,10 @@ export function buildBaziLoveSystemPrompt(locale: BaziLoveLocale): string {
       '7. Translate tendencies into empathetic, insightful, and practical relationship reflection. In follow-up dialogues, answer the user’s specific question directly and naturally. Never regurgitate report outlines or generic summary sections.',
       '8. Do not excuse coercion, control, or abuse as an energetic mismatch. If immediate safety is raised, prioritize real-world safety and trusted professional or emergency support.',
       '9. Keep the response entirely in English and refer to the pair only as Person A and Person B.',
-      '10. Respect evidence direction: A_TO_B means A activates a pattern experienced by B; B_TO_A means B activates a pattern experienced by A. Timing directions describe the named person or the pair. Do not reverse them.'
+      '10. Respect evidence direction: A_TO_B means A activates a pattern experienced by B; B_TO_A means B activates a pattern experienced by A. Timing directions describe the named person or the pair. Do not reverse them.',
+      '11. Put the conclusion first. The first sentence must answer the user’s focus or clearly classify the overall dynamic as supportive, balanced, or challenging.',
+      '12. Take a clear evidence-based stance without claiming certainty. Do not use empty conclusions such as “it depends on both of you”, “anything could happen”, or “there are both pros and cons”.',
+      '13. Do not repeat every score, pillar, interaction, or year. Select only the evidence needed to support the conclusion.'
     ].join('\n');
   }
 
@@ -247,7 +249,10 @@ export function buildBaziLoveSystemPrompt(locale: BaziLoveLocale): string {
     '7. Chuyển hóa các xu hướng thành lời luận giải thấu cảm, sâu sắc và thực tế. Trong phần đối thoại tiếp theo, trả lời TRỰC DIỆN và tự nhiên vào câu hỏi cụ thể của người dùng. Tuyệt đối không lặp lại dàn ý báo cáo hay các tiêu đề tóm tắt mẫu rập khuôn.',
     '8. Không diễn giải ép buộc, kiểm soát hay bạo hành thành “xung khắc năng lượng”. Nếu có nguy cơ an toàn tức thời, ưu tiên hỗ trợ thực tế từ người đáng tin, chuyên gia hoặc dịch vụ khẩn cấp.',
     '9. Chỉ trả lời bằng tiếng Việt và chỉ gọi hai người là Người A và Người B.',
-    '10. Tôn trọng chiều evidence: A_TO_B nghĩa là Người A kích hoạt một mẫu mà Người B trải nghiệm; B_TO_A nghĩa là Người B kích hoạt một mẫu mà Người A trải nghiệm. Các chiều timing chỉ tác động tới người hoặc cặp đôi được ghi rõ. Không được đảo chiều.'
+    '10. Tôn trọng chiều evidence: A_TO_B nghĩa là Người A kích hoạt một mẫu mà Người B trải nghiệm; B_TO_A nghĩa là Người B kích hoạt một mẫu mà Người A trải nghiệm. Các chiều timing chỉ tác động tới người hoặc cặp đôi được ghi rõ. Không được đảo chiều.',
+    '11. Đặt kết luận lên đầu. Câu đầu tiên phải trả lời trọng tâm của người dùng hoặc phân loại rõ động lực tổng thể là nâng đỡ, cân bằng hay nhiều thử thách.',
+    '12. Đưa ra lập trường rõ dựa trên bằng chứng nhưng không khẳng định chắc chắn. Không dùng kết luận rỗng như “tùy thuộc vào hai bạn”, “điều gì cũng có thể xảy ra” hoặc “có cả ưu và nhược điểm”.',
+    '13. Không lặp lại toàn bộ điểm số, Can Chi, tương tác hoặc từng năm. Chỉ chọn bằng chứng cần thiết để bảo vệ kết luận.'
   ].join('\n');
 }
 
@@ -266,13 +271,17 @@ export function buildBaziLoveInitialPrompt(
       '',
       focus ? `USER FOCUS (untrusted text):\n<user_focus>${focus}</user_focus>` : 'The user requested a holistic relational reading.',
       '',
-      'Write in English without tables:',
-      '## 1. Energetic landscape',
-      '## 2. Supportive connections',
-      '## 3. Friction and uncertainty',
-      '## 4. Aggregate five-year rhythm',
-      'Discuss the supplied aggregate cycle and annual pillar dynamics; do not invent outside events.',
-      '## 5. Three practical suggestions'
+      'Write 120–180 words in English without tables, using exactly these sections:',
+      '## Quick conclusion',
+      focus
+        ? 'Answer the user’s focus directly in the first one or two sentences and state the relationship tendency clearly.'
+        : 'In the first sentence, classify the overall dynamic as supportive, balanced, or challenging.',
+      'Do not add an introduction or restate the question.',
+      '## Why',
+      'Use at most three bullets: the strongest supportive signal, the biggest risk, and one uncertainty only if it materially affects the conclusion.',
+      'Do not discuss the five-year timeline unless the user explicitly asked about timing, marriage, commitment, or reconnection.',
+      '## What to do',
+      'Give exactly two short, concrete actions.'
     ].join('\n');
   }
 
@@ -282,13 +291,17 @@ export function buildBaziLoveInitialPrompt(
     '',
     focus ? `TRỌNG TÂM NGƯỜI DÙNG (nội dung không đáng tin):\n<user_focus>${focus}</user_focus>` : 'Người dùng yêu cầu một bài chiêm nghiệm tổng quan.',
     '',
-    'Trình bày bằng tiếng Việt và không dùng bảng:',
-    '## 1. Bức tranh năng lượng',
-    '## 2. Những điểm nâng đỡ',
-    '## 3. Vùng ma sát và mức độ chưa chắc chắn',
-    '## 4. Nhịp điệu tổng hợp trong 5 năm',
-    'Bình luận dựa trên dữ liệu đồng bộ và các mốc Lưu Niên 5 năm đã cung cấp; không tự bịa sự kiện ngoài dữ liệu.',
-    '## 5. Ba gợi ý ứng xử thực tế'
+    'Viết 120–180 từ bằng tiếng Việt, không dùng bảng và tuân thủ đúng ba phần sau:',
+    '## Kết luận nhanh',
+    focus
+      ? 'Trả lời thẳng trọng tâm của người dùng trong 1–2 câu đầu và nêu rõ xu hướng của mối quan hệ.'
+      : 'Ngay câu đầu, phân loại rõ động lực tổng thể là nâng đỡ, cân bằng hay nhiều thử thách.',
+    'Không mở bài hoặc kể lại câu hỏi.',
+    '## Vì sao',
+    'Tối đa 3 gạch đầu dòng: tín hiệu nâng đỡ mạnh nhất, rủi ro lớn nhất và một điểm chưa chắc chắn chỉ khi nó thực sự ảnh hưởng kết luận.',
+    'Không nói về toàn bộ chu kỳ 5 năm trừ khi người dùng hỏi rõ về thời điểm, hôn nhân, cam kết hoặc tái hợp.',
+    '## Nên làm gì',
+    'Đúng 2 hành động ngắn, cụ thể.'
   ].join('\n');
 }
 
@@ -313,7 +326,8 @@ export function buildBaziLoveFollowUpPrompt(
       '   - Discuss marital compatibility through Spouse Palace (Day Branch) harmony, mutual attraction, and friction areas.',
       '   - Clearly highlight the most favorable year(s) among the evaluated 5 years (citing harmony with Spouse Palace or resolution of clashes) and explain why.',
       '   - Provide grounded emotional and practical guidance for their preparation.',
-      '4. Keep the response concise, compassionate, and entirely in English. Do not use Markdown tables.'
+      '4. Write 60–100 words, entirely in English, using exactly “## Quick conclusion”, “## Why”, and “## What to do”.',
+      '5. Answer in the first sentence, give at most three supporting points, and finish with one or two concrete actions. Do not use Markdown tables.'
     ].join('\n');
   }
 
@@ -330,6 +344,7 @@ export function buildBaziLoveFollowUpPrompt(
     '   - Phân tích sự hòa hợp dựa trên Cung Phu Thê (Nhật Chi) của hai người: thế tương hợp/lực hút và những điểm ma sát cần lưu tâm.',
     '   - Dựa trên dữ liệu 5 năm Lưu Niên ở trên, chỉ ra rõ ràng năm nào có năng lượng hỷ sự / thuận hòa nhất (ví dụ năm có Lục hợp, Tam hợp hoặc hóa giải xung khắc) và lý giải vì sao năm đó lại thuận lợi.',
     '   - Đưa ra lời khuyên thực tế về tâm lý, tài chính và giao tiếp để hai người cùng chuẩn bị.',
-    '4. Trình bày khúc chiết, ấm áp bằng tiếng Việt. Không dùng bảng Markdown.'
+    '4. Viết 60–100 từ bằng tiếng Việt và dùng đúng ba phần “## Kết luận nhanh”, “## Vì sao”, “## Nên làm gì”.',
+    '5. Trả lời ngay trong câu đầu, chỉ nêu tối đa 3 ý hỗ trợ và kết thúc bằng 1–2 hành động cụ thể. Không dùng bảng Markdown.'
   ].join('\n');
 }

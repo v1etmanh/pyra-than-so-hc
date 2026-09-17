@@ -806,7 +806,7 @@ export function NuminaTarotPage() {
                       }
                       tarot.regenerate();
                     }}
-                    disabled={tarot.isRunning || !current.interpretation}
+                    disabled={tarot.isRunning || !current.drawnCards.length}
                   >
                     {isVietnamese ? 'Luận giải lại, giữ nguyên bài' : 'Regenerate with the same cards'}
                   </button>

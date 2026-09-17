@@ -216,7 +216,8 @@ export async function POST(request: NextRequest): Promise<Response> {
                     body.language
                   )
                 }],
-                body.providerConfig
+                body.providerConfig,
+                { maxTokens: 300, temperature: 0, reasoningEffort: 'low' }
               )
             );
             const decision = parseFollowUpDecision(decisionText);
@@ -253,7 +254,15 @@ export async function POST(request: NextRequest): Promise<Response> {
         const llmStream = createStreamingResponse(
           systemPrompt,
           [{ role: 'user', content: userPrompt }],
-          body.providerConfig
+          body.providerConfig,
+          {
+            // Reasoning-capable providers count hidden reasoning against this
+            // budget. Keep ample internal reasoning room while the prompt
+            // strictly limits the user-visible answer length.
+            maxTokens: body.mode === 'follow-up' ? 1600 : 2400,
+            temperature: 0.2,
+            reasoningEffort: 'medium'
+          }
         );
         await consumeNormalizedLlmStream(llmStream, (content) => {
           send({ type: 'content', content });

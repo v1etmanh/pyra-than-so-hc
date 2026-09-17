@@ -84,3 +84,6 @@ Desktop.ini
 
 # Local source references used for implementation research
 /references/TarotWhisper/
+
+# Separate local mobile application workspace
+/mobile_app/
