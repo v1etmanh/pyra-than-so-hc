@@ -3,6 +3,7 @@ import { evaluateBaziCompatibility } from '@/lib/bazi-love/engine';
 import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
+import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 
 export const runtime = 'nodejs';
 
@@ -60,6 +61,34 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { message, decision, profiles, indicators, tarotCards } = body;
+
+    // 0. BỘ LỌC TỐC HÀNH: Phát hiện câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (0 token LLM, phản hồi < 0.1ms)
+    const trashCheck = isTrashOrMeaninglessPrompt(message);
+    if (decision?.intent === 'trash' || trashCheck.isTrash) {
+      return NextResponse.json({
+        ok: true,
+        data: {
+          replyText: TRASH_PROMPT_GUIDANCE,
+          cardPayload: {
+            type: 'agent_synthesis',
+            decision: {
+              mode: 'single',
+              intent: 'trash',
+              needsTarot: false,
+              spreadId: null,
+              cardCount: 0,
+              targetIndicators: [],
+              thoughtProcess: `Phát hiện câu hỏi không có chủ đề hoặc mục đích rõ ràng (${trashCheck.reason || 'Ký tự vô nghĩa'}). Gửi phản hồi định hướng để người dùng đặt câu hỏi có ý nghĩa.`
+            },
+            profiles,
+            indicators1: [],
+            indicators2: [],
+            drawnCards: [],
+            isTrashPrompt: true
+          }
+        }
+      }, { headers: corsHeaders });
+    }
 
     const p1 = profiles?.[0] || { fullName: 'Người A', birthDate: '2000-01-01', gender: 'female' };
     const p2 = profiles?.[1];

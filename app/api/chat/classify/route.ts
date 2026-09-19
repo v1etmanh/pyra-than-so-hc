@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
+import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
+
 export interface AgentDecision {
   mode: 'single' | 'compatibility';
-  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'love_match' | 'general';
+  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'love_match' | 'trash' | 'general';
   needsTarot: boolean;
   spreadId: 'single' | 'three-card' | 'two-options' | 'relationship' | null;
   cardCount: number;
   targetIndicators: string[];
   thoughtProcess: string;
+  /** Present only when the app should ask the user to clarify instead of reading cards. */
+  replyText?: string;
 }
 
 export const runtime = 'nodejs';
@@ -33,6 +37,22 @@ export async function POST(request: NextRequest) {
     const isCouple = profiles?.length >= 2;
     const p1 = profiles?.[0]?.fullName || 'Người hỏi';
     const p2 = profiles?.[1]?.fullName;
+
+    // 0. BỘ LỌC TỐC HÀNH: Phát hiện ngay câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (<0.1ms, 0 token)
+    const trashCheck = isTrashOrMeaninglessPrompt(message);
+    if (trashCheck.isTrash) {
+      const trashDecision: AgentDecision = {
+        mode: 'single',
+        intent: 'trash',
+        needsTarot: false,
+        spreadId: null,
+        cardCount: 0,
+        targetIndicators: [],
+        thoughtProcess: `Phát hiện câu hỏi không có chủ đề hoặc mục đích rõ ràng (${trashCheck.reason}). Cần hướng dẫn người dùng đặt câu hỏi cụ thể.`,
+        replyText: TRASH_PROMPT_GUIDANCE
+      };
+      return NextResponse.json({ ok: true, data: trashDecision }, { headers: corsHeaders });
+    }
 
     // 1. Trường hợp 2 hồ sơ: TỰ ĐỘNG KÍCH HOẠT THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (KHÔNG CẦN TAROT)
     if (isCouple && p2) {
@@ -66,7 +86,10 @@ DANH MỤC Ý ĐỊNH (intent):
 4. "daily_guidance": Hỏi sinh hoạt đời thường, lời khuyên tức thời trong ngày (ví dụ: "tôi nên ăn gì", "mai mặc màu gì", "hôm nay làm gì", "đi đâu",...).
    -> needsTarot: true, spreadId: "single", cardCount: 1
 
-5. "general": Các câu hỏi khác.
+5. "trash": Câu hỏi vô nghĩa, gõ phím ngẫu nhiên, spam, không có chủ đề hoặc mục đích rõ ràng (ví dụ: "a,.", "ta", "121", "asdfgh", "không biết hỏi gì", "thử máy", "alo alo",...).
+   -> needsTarot: false, spreadId: null, cardCount: 0, targetIndicators: []
+
+6. "general": Các câu hỏi khác có chủ đề rõ ràng nhưng không thuộc các nhóm trên.
    -> needsTarot: true, spreadId: "single", cardCount: 1
 
 CATALOG CÁC CHỈ SỐ THẦN SỐ HỌC ĐỂ CHỌN CHO targetIndicators:
@@ -81,12 +104,12 @@ CATALOG CÁC CHỈ SỐ THẦN SỐ HỌC ĐỂ CHỌN CHO targetIndicators:
 - "attitude": Số Thái Độ (phản ứng đầu tiên trước thử thách, tâm thế khi đối diện cơ hội hay biến cố)
 
 QUY TẮC BẮT BUỘC VỀ targetIndicators:
-- Bạn phải TỰ ĐỘNG CHỌN từ 1 đến TỐI ĐA 5 chỉ số (1 <= targetIndicators.length <= 5) phù hợp nhất với bản chất câu hỏi của người dùng.
+- Bạn phải TỰ ĐỘNG CHỌN từ 1 đến TỐI ĐA 5 chỉ số (1 <= targetIndicators.length <= 5) phù hợp nhất với bản chất câu hỏi của người dùng (nếu intent là "trash" thì để mảng rỗng []).
 - BẮT ĐẦU NGAY LẬP TỨC BẰNG KÝ TỰ { VÀ KẾT THÚC BẰNG }. TUYỆT ĐỐI KHÔNG SUY NGHĨ, KHÔNG DÙNG THẺ SUY NGHĨ HAY GIẢI THÍCH TRƯỚC KHI XUẤT JSON.
 Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown format, không có bất kỳ văn bản nào ngoài JSON) theo mẫu sau:
 {
   "mode": "single",
-  "intent": "two_choices" | "timing_trajectory" | "core_personality" | "daily_guidance" | "general",
+  "intent": "two_choices" | "timing_trajectory" | "core_personality" | "daily_guidance" | "trash" | "general",
   "needsTarot": true | false,
   "spreadId": "two-options" | "three-card" | "single" | null,
   "cardCount": 0 | 1 | 3 | 5,
@@ -138,8 +161,18 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
     }
     const parsedDecision = JSON.parse(jsonMatch[0]);
 
-    // Giới hạn targetIndicators tối đa 5 phần tử
-    if (Array.isArray(parsedDecision.targetIndicators)) {
+    // LLM vẫn có thể nhận ra một câu không có chủ đề. Chuẩn hoá quyết định đó
+    // để mobile có thể trả lời ngay, không tính chỉ số hay rút bài.
+    if (parsedDecision.intent === 'trash') {
+      parsedDecision.mode = 'single';
+      parsedDecision.needsTarot = false;
+      parsedDecision.spreadId = null;
+      parsedDecision.cardCount = 0;
+      parsedDecision.targetIndicators = [];
+      parsedDecision.replyText = TRASH_PROMPT_GUIDANCE;
+    }
+    // Giới hạn targetIndicators tối đa 5 phần tử cho các câu hỏi hợp lệ.
+    else if (Array.isArray(parsedDecision.targetIndicators)) {
       parsedDecision.targetIndicators = parsedDecision.targetIndicators
         .filter((k: any) => typeof k === 'string' && k.length > 0)
         .slice(0, 5);
