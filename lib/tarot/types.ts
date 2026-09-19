@@ -96,28 +96,28 @@ export interface TarotReadingContext {
 
 export type TarotReadingRequest =
   | {
-      mode: 'initial';
-      question: string;
-      spreadId: string;
-      language: TarotLocale;
-      profile?: ProfileContext;
-      providerConfig?: ProviderRequestConfig;
-    }
+    mode: 'initial';
+    question: string;
+    spreadId: string;
+    language: TarotLocale;
+    profile?: ProfileContext;
+    providerConfig?: ProviderRequestConfig;
+  }
   | {
-      mode: 'follow-up';
-      question: string;
-      language: TarotLocale;
-      reading: TarotReadingContext;
-      profile?: ProfileContext;
-      providerConfig?: ProviderRequestConfig;
-    }
+    mode: 'follow-up';
+    question: string;
+    language: TarotLocale;
+    reading: TarotReadingContext;
+    profile?: ProfileContext;
+    providerConfig?: ProviderRequestConfig;
+  }
   | {
-      mode: 'regenerate';
-      language: TarotLocale;
-      reading: TarotReadingContext;
-      profile?: ProfileContext;
-      providerConfig?: ProviderRequestConfig;
-    };
+    mode: 'regenerate';
+    language: TarotLocale;
+    reading: TarotReadingContext;
+    profile?: ProfileContext;
+    providerConfig?: ProviderRequestConfig;
+  };
 
 export type TarotSSEEvent =
   | { type: 'status'; phase: TarotPhase; message: string }

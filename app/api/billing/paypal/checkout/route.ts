@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { getRequestAuth } from '@/lib/supabase/request-auth';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { cancelPayPalSubscription, createPayPalSubscription } from '@/lib/billing/paypal';
 import { hasActiveEntitlement, isManageablePayPalStatus, PAYPAL_PRO_PRICE_USD_CENTS } from '@/lib/billing/types';
@@ -12,16 +12,15 @@ export async function POST(request: NextRequest) {
   let reservedUserId: string | null = null;
   let createdSubscriptionId: string | null = null;
   try {
-    const supabase = await createClient();
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) return NextResponse.json({ error: 'Please sign in first.', code: 'NOT_AUTHENTICATED' }, { status: 401 });
+    const { supabase, user } = await getRequestAuth(request);
+    if (!user) return NextResponse.json({ error: 'Please sign in first.', code: 'NOT_AUTHENTICATED' }, { status: 401 });
 
     const body = billingCheckoutRequestSchema.parse(await readJsonBody<BillingCheckoutRequest>(request, 8 * 1024));
     const locale = body.locale || 'vi';
     const { data: current } = await supabase
       .from('numina_subscriptions')
       .select('plan,provider,provider_subscription_id,status,current_period_end')
-      .eq('user_id', auth.user.id)
+      .eq('user_id', user.id)
       .maybeSingle();
 
     if (hasActiveEntitlement(current) ||
@@ -31,16 +30,16 @@ export async function POST(request: NextRequest) {
 
     const admin = createAdminClient();
     const { data: reserved, error: reserveError } = await admin.rpc('reserve_numina_checkout', {
-      p_user_id: auth.user.id,
+      p_user_id: user.id,
       p_provider: 'paypal'
     });
     if (reserveError) throw reserveError;
     if (!reserved) return NextResponse.json({ error: 'Another checkout or billing agreement is already active.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
-    reservedUserId = auth.user.id;
+    reservedUserId = user.id;
 
     const origin = process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin;
     const subscription = await createPayPalSubscription({
-      userId: auth.user.id,
+      userId: user.id,
       locale,
       returnUrl: `${origin}/${locale}/account?billing=paypal-return`,
       cancelUrl: `${origin}/${locale}/pricing?billing=cancelled`
@@ -49,7 +48,7 @@ export async function POST(request: NextRequest) {
     const now = new Date();
     const expiresAt = new Date(now.getTime() + 30 * 60 * 1000).toISOString();
     const { error: subscriptionError } = await admin.from('numina_subscriptions').upsert({
-      user_id: auth.user.id,
+      user_id: user.id,
       plan: 'free',
       provider: 'paypal',
       provider_subscription_id: subscription.id,
@@ -61,7 +60,7 @@ export async function POST(request: NextRequest) {
     }, { onConflict: 'user_id' });
     if (subscriptionError) throw subscriptionError;
     const { error: orderError } = await admin.from('numina_payment_orders').insert({
-      user_id: auth.user.id,
+      user_id: user.id,
       provider: 'paypal',
       provider_order_id: subscription.id,
       amount: PAYPAL_PRO_PRICE_USD_CENTS,

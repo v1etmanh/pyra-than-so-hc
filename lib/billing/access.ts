@@ -1,5 +1,5 @@
 import type { NextRequest } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { getRequestAuth } from '@/lib/supabase/request-auth';
 import { getClientIp } from '@/lib/security/request';
 import { consumeDurableAccess, type BillingPlan, type UsageFeature } from '@/lib/usage/usage-meter';
 import { effectiveBillingPlan } from '@/lib/billing/types';
@@ -20,9 +20,8 @@ export async function getRequestAccess(
   let plan: BillingPlan = 'free';
 
   try {
-    const supabase = await createClient();
-    const { data } = await supabase.auth.getUser();
-    userId = data.user?.id;
+    const { supabase, user } = await getRequestAuth(request);
+    userId = user?.id;
 
     if (userId) {
       const { data: subscription } = await supabase

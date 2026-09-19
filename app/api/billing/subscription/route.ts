@@ -1,18 +1,17 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { getRequestAuth } from '@/lib/supabase/request-auth';
 import { effectiveBillingPlan, isManageablePayPalStatus, isPendingPayPalStatus } from '@/lib/billing/types';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const supabase = await createClient();
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) return NextResponse.json({ plan: 'free', authenticated: false });
+    const { supabase, user } = await getRequestAuth(request);
+    if (!user) return NextResponse.json({ plan: 'free', authenticated: false });
     const { data, error } = await supabase
       .from('numina_subscriptions')
       .select('plan,provider,provider_subscription_id,status,current_period_end,cancel_at_period_end')
-      .eq('user_id', auth.user.id)
+      .eq('user_id', user.id)
       .maybeSingle();
     const plan = error ? 'free' : effectiveBillingPlan(data);
     const paypalManageable = data?.provider === 'paypal'

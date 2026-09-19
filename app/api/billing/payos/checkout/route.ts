@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { getRequestAuth } from '@/lib/supabase/request-auth';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { createPayOSOrderCode, createPayOSPaymentLink } from '@/lib/billing/payos';
 import { hasActiveEntitlement, PAYOS_PRO_PRICE_VND } from '@/lib/billing/types';
@@ -12,33 +12,32 @@ export async function POST(request: NextRequest) {
   let orderCode: number | null = null;
   let reservedUserId: string | null = null;
   try {
-    const supabase = await createClient();
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) return NextResponse.json({ error: 'Please sign in first.', code: 'NOT_AUTHENTICATED' }, { status: 401 });
+    const { supabase, user } = await getRequestAuth(request);
+    if (!user) return NextResponse.json({ error: 'Please sign in first.', code: 'NOT_AUTHENTICATED' }, { status: 401 });
     const body = billingCheckoutRequestSchema.parse(await readJsonBody<BillingCheckoutRequest>(request, 8 * 1024));
     const locale = body.locale || 'vi';
     const { data: current } = await supabase.from('numina_subscriptions')
       .select('plan,provider,status,current_period_end')
-      .eq('user_id', auth.user.id).maybeSingle();
+      .eq('user_id', user.id).maybeSingle();
     if (hasActiveEntitlement(current) && current?.provider === 'paypal') {
       return NextResponse.json({ error: 'Your PayPal subscription is still active.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
     }
 
     const admin = createAdminClient();
     const { data: reserved, error: reserveError } = await admin.rpc('reserve_numina_checkout', {
-      p_user_id: auth.user.id,
+      p_user_id: user.id,
       p_provider: 'payos'
     });
     if (reserveError) throw reserveError;
     if (!reserved) return NextResponse.json({ error: 'Another checkout or billing agreement is already active.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
-    reservedUserId = auth.user.id;
+    reservedUserId = user.id;
 
     orderCode = createPayOSOrderCode();
     const origin = process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin;
     const expiresAtSeconds = Math.floor(Date.now() / 1000) + 15 * 60;
     const description = `NUMELYRA ${String(orderCode).slice(-12)}`;
     const { error: insertError } = await admin.from('numina_payment_orders').insert({
-      user_id: auth.user.id,
+      user_id: user.id,
       provider: 'payos',
       order_code: orderCode,
       amount: PAYOS_PRO_PRICE_VND,

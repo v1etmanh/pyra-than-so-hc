@@ -10,6 +10,19 @@ import { wallpaperRequestSchema, type WallpaperRequest } from '@/lib/security/sc
 export const maxDuration = 45;
 export const dynamic = 'force-dynamic';
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+};
+
+// Expo Web runs on a different origin while developing, so it sends a
+// preflight request before the JSON POST. Native clients do not need this,
+// but responding here keeps the shared endpoint usable on every app target.
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = wallpaperRequestSchema.parse(await readJsonBody<WallpaperRequest>(req, 64 * 1024));

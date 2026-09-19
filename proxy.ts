@@ -50,6 +50,18 @@ export default function proxy(req: NextRequest) {
 
   // Bypass next-intl for normal API routes
   if (url.startsWith('/api/')) {
+    // Native clients attach their Supabase access token as a Bearer header.
+    // Expo Web therefore sends an OPTIONS preflight before checkout requests.
+    if (req.method === 'OPTIONS') {
+      return new NextResponse(null, {
+        status: 204,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+        },
+      });
+    }
     return NextResponse.next();
   }
 
