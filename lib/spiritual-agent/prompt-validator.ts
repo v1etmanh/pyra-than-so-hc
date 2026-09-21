@@ -7,16 +7,16 @@
  * 3. Hướng dẫn người dùng đặt câu hỏi có chủ đề và mục đích rõ ràng.
  */
 
-export const TRASH_PROMPT_GUIDANCE = `✦ TIỂU LINH MIÊU NHẮN BẠN:
-Câu hỏi của bạn dường như chưa có chủ đề hoặc mục đích rõ ràng (ví dụ: gõ thử phím hoặc ký tự ngẫu nhiên).
+export const TRASH_PROMPT_GUIDANCE = `✦ KẾT LUẬN NHANH:
+Mình chưa đủ chủ đề để đưa ra gợi ý hữu ích.
 
-Để ngọn lửa dẫn lối và các lá bài Tarot phản chiếu chuẩn xác năng lượng của bạn, hãy đặt một câu hỏi có mục đích cụ thể nhé!
+✦ VÌ SAO:
+• Câu hỏi hiện chưa nêu điều bạn muốn biết hoặc đang phân vân.
+• Một chủ đề rõ ràng sẽ giúp phần luận giải sát hơn.
 
-💡 Bạn có thể thử đặt câu hỏi như:
-• "Sự nghiệp trong 6 tháng tới của tôi sẽ ra sao?"
-• "Tôi đang phân vân giữa hai lựa chọn A và B, nên đi hướng nào?"
-• "Bản đồ Thần số học nói gì về tính cách cốt lõi và sứ mệnh của tôi?"
-• "Hôm nay tôi nên làm gì để thu hút may mắn và tài lộc?"`;
+✦ NÊN LÀM GÌ:
+• Hỏi theo một chủ đề như tình cảm, công việc hoặc một quyết định cụ thể.
+• Ví dụ: “Tôi nên tập trung điều gì trong công việc tuần này?”.`;
 
 // Bảng nguyên âm tiếng Việt và tiếng Anh để nhận diện từ có nghĩa
 const VOWEL_REGEX = /[aeiouyàáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]/i;

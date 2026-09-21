@@ -123,7 +123,7 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
       systemPrompt,
       [{ role: 'user', content: userPrompt }],
       undefined,
-      { maxTokens: 1000, temperature: 0.1 }
+      { maxTokens: 250, temperature: 0.1 }
     );
 
     const reader = stream.getReader();

@@ -4,6 +4,7 @@ import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
+import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
 
 export const runtime = 'nodejs';
 
@@ -13,12 +14,16 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
 
-async function generateLlmText(systemPrompt: string, userPrompt: string): Promise<string> {
+async function generateLlmText(
+  systemPrompt: string,
+  userPrompt: string,
+  maxTokens: number
+): Promise<string> {
   const stream = createStreamingResponse(
     systemPrompt,
     [{ role: 'user', content: userPrompt }],
     undefined,
-    { maxTokens: 2000, temperature: 0.7, reasoningEffort: 'low' }
+    { maxTokens, temperature: 0.7, reasoningEffort: 'low' }
   );
   const reader = stream.getReader();
   const decoder = new TextDecoder();
@@ -155,10 +160,9 @@ export async function POST(request: NextRequest) {
       cardPayload.drawnCards = []; // KHÔNG DÙNG BÀI TAROT
 
       replyText = [
-        `✦ KẾT LUẬN TỔNG QUAN TỬ VI & BÁT TỰ:\nTheo luận giải Tử Vi Đẩu Số & Bát Tự Tứ Trụ, mức độ tương hợp duyên nợ giữa ${p1.fullName} và ${p2.fullName} đạt ${baziScore}%. Hai bạn có duyên số bù trừ sâu sắc cả về ngũ hành bản mệnh lẫn nếp sống đời thường.`,
-        `\n✦ PHÂN TÍCH TỬ VI ĐẨU SỐ & CUNG PHU THÊ:\n${baziSummary || '• Bản Mệnh & Cung Phu Thê: Năng lượng tương sinh tương dưỡng, cần giữ gìn sự hòa khí và thấu hiểu.'}`,
-        `\n✦ VÌ SAO (GÓC NHÌN CAN CHI & NẠP ÂM BẢN MỆNH):\nHai lá số phản chiếu bài học nhân duyên: ${p1.fullName} mang lại sự định hướng và điểm tựa tinh thần, trong khi ${p2.fullName} bồi đắp sự ấm áp, nhẫn nại và sự chia sẻ kịp thời. Sự bù trừ này giúp cả hai chuyển hóa những khía cạnh nóng nảy để cùng nhau trưởng thành.`,
-        `\n✦ NÊN LÀM GÌ ĐỂ HÓA GIẢI & HẠNH PHÚC LÂU DÀI:\nHãy thực hành lắng nghe chân thành, tôn trọng không gian riêng của nhau và cùng nhau đặt ra các mục tiêu dài hạn cho gia đạo để sinh khí luôn hưng vượng.`
+        `✦ KẾT LUẬN NHANH:\n${p1.fullName} và ${p2.fullName} đạt khoảng ${baziScore}% tương hợp. Điểm quan trọng là giữ giao tiếp rõ ràng khi hai người khác nhịp sống.`,
+        `\n✦ VÌ SAO:\n• Cung Phu Thê và ngũ hành cho thấy hai bạn có cả điểm bổ trợ lẫn bài học cân bằng.\n• Kết quả này là gợi ý để hiểu nhau, không thay cho lựa chọn thực tế của hai người.`,
+        `\n✦ NÊN LÀM GÌ:\n• Nói rõ mong đợi và ranh giới ngay từ đầu.\n• Chọn một mục tiêu chung nhỏ để cùng thực hiện trong tháng này.`
       ].join('\n');
     }
     // 2. Hai lựa chọn (A vs B)
@@ -168,18 +172,26 @@ export async function POST(request: NextRequest) {
       cardPayload.optionSplit = { optionA, optionB };
 
       replyText = [
-        `✦ KẾT LUẬN NHANH:\nVũ trụ và quẻ bài ủng hộ Phương Án A (nghiêng ${optionA}%) hơn so với Phương Án B (${optionB}%). Phương án A mở ra dòng chảy năng lượng hanh thông hơn.`,
-        `\n✦ VÌ SAO (PHÂN TÍCH 5 LÁ TAROT & TƯ DUY LÝ TRÍ):\n• Nền tảng hiện tại: Bạn đang đứng trước ngã rẽ quan trọng, trực giác mách bảo cần đổi mới.\n• Phương án A: Thu hút vận may và cơ hội phát triển năng lực nội tại.\n• Phương án B: Tiềm ẩn các chi phí cơ hội và rào cản vô hình chưa lường trước.\n• Tư duy lý trí & Năm cá nhân: Thúc đẩy bạn dũng cảm dứt điểm quyết định.`,
-        `\n✦ NÊN LÀM GÌ:\nHãy lập kế hoạch triển khai cho Phương Án A ngay trong tháng này. Tránh để sự do dự làm phân tán nguồn lực.`
+        `✦ KẾT LUẬN NHANH:\nPhương án A đang thuận hơn (${optionA}% so với ${optionB}%). Hãy chọn A nếu nó vẫn phù hợp nguồn lực và ưu tiên thực tế của bạn.`,
+        `\n✦ VÌ SAO:\n• Trải bài cho thấy A có đà phát triển rõ hơn.\n• B có thể an toàn trước mắt nhưng dễ làm bạn chậm quyết định.\n• Tư duy lý trí và năm cá nhân nghiêng về hành động có chuẩn bị.`,
+        `\n✦ NÊN LÀM GÌ:\n• Viết ba bước đầu tiên cho A.\n• Đặt mốc kiểm tra lại sau một tuần.`
       ].join('\n');
     }
     // 3. Thuần 24 chỉ số Thần số học (0 lá Tarot)
     else if (!decision?.needsTarot || decision?.intent === 'core_personality') {
-      const indStr = p1Indicators.map((i: any) => `• ${i.name} = ${i.value}: ${i.meaning}`).join('\n');
+      const indicatorReasons = (resolvedP1.length > 0 ? resolvedP1 : p1Indicators)
+        .slice(0, 3)
+        .map((i: any) => `• ${i.name} = ${i.value}.`)
+        .filter((item: string) => item.length <= 140);
+      const indicatorSummary = [
+        ...indicatorReasons,
+        '• Các chỉ số cốt lõi đều nhắc bạn giữ sự tự chủ và cân bằng.',
+        '• Tiến bộ bền vững đến từ việc lặp lại những lựa chọn phù hợp.',
+      ].slice(0, Math.max(2, indicatorReasons.length)).join('\n');
       replyText = [
-        `✦ KẾT LUẬN NHANH:\nBản đồ Thần số học chuyên sâu của ${p1.fullName} mang tần số rung động mạnh mẽ của người có năng lực lãnh đạo, tính tự lập cao và tâm hồn giàu lòng nhân ái.`,
-        `\n✦ VÌ SAO (TRÍCH XUẤT TỪ BẢN ĐỒ 24 CHỈ SỐ PYTHAGORAS):\n${indStr}`,
-        `\n✦ NÊN LÀM GÌ:\nHãy phát huy bài học từ Số Đường Đời và Số Sứ Mệnh, chủ động nhận lãnh trách nhiệm trong công việc và giữ tâm an trước các biến động bên ngoài.`
+        `✦ KẾT LUẬN NHANH:\nBản đồ của ${p1.fullName} cho thấy tiềm năng phát triển tốt khi bạn kết hợp chủ động với sự kiên định.`,
+        `\n✦ VÌ SAO:\n${indicatorSummary}`,
+        `\n✦ NÊN LÀM GÌ:\n• Chọn một mục tiêu phù hợp thế mạnh của bạn.\n• Duy trì một thói quen nhỏ trong 14 ngày tới.`
       ].join('\n');
     }
     // 4. Mặc định / 1 lá / 3 lá
@@ -190,51 +202,46 @@ export async function POST(request: NextRequest) {
 
       if (isFood) {
         replyText = [
-          `✦ KẾT LUẬN NHANH:\nHôm nay bạn nên thưởng thức một món ăn tươi mới, thanh nhẹ và kích thích vị giác như: Phở/bún nước dùng thanh ngọt, salad tôm bơ ngũ sắc, hoặc thử một món mới lạ mà trước giờ bạn chưa từng ăn!`,
-          `\n✦ VÌ SAO (LÁ BÀI ${c1?.card?.nameVi || 'TAROT'} & NĂNG LƯỢNG SỐ HỌC):\nLá bài ${c1?.card?.nameVi || 'The Fool'} (${c1?.isReversed ? 'Lá Ngược' : 'Lá Xuôi'}) mang nguồn năng lượng của sự khám phá và khởi đầu mới. Kết hợp cùng các chỉ số ngày sinh của bạn, cơ thể đang cần nạp nguồn dinh dưỡng tươi mát, lành tính và giàu sinh khí để tinh thần luôn nhẹ nhõm, minh mẫn.`,
-          `\n✦ NÊN LÀM GÌ:\nHãy chọn một quán ăn có không gian thoáng mát, ăn chậm nhai kỹ và thưởng thức kèm một ly nước ép hoa quả mát lành nhé!`
+          `✦ KẾT LUẬN NHANH:\nHôm nay hợp với một bữa nhẹ, tươi và dễ tiêu như phở, bún hoặc salad.`,
+          `\n✦ VÌ SAO:\n• Lá ${c1?.card?.nameVi || 'Tarot'} gợi tinh thần khám phá và làm mới nhịp sinh hoạt.\n• Một bữa nhẹ giúp bạn giữ năng lượng ổn định hơn.`,
+          `\n✦ NÊN LÀM GÌ:\n• Chọn món có rau và đạm vừa phải.\n• Ăn chậm, uống đủ nước.`
         ].join('\n');
       } else {
         replyText = [
-          `✦ KẾT LUẬN NHANH:\nThông điệp trực giác dẫn lối cho bạn: "${c1?.card?.meaningUpright || 'Vũ trụ đang gửi tín hiệu nhắc nhở bạn vững tin'}".`,
-          `\n✦ VÌ SAO:\nLá bài ${c1?.card?.nameVi || 'Tarot'} phản chiếu đúng tâm trạng và bài học mà bạn đang cần chuyển hóa lúc này. Kết hợp cùng Số Đường Đời của bạn, năng lượng đang hội tụ để tạo bước ngoặt mới.`,
-          `\n✦ NÊN LÀM GÌ:\nGiữ vững tâm thế lạc quan, lắng nghe trực giác và đưa ra hành động dứt khoát.`
+          `✦ KẾT LUẬN NHANH:\nThông điệp hiện tại là giữ vững hướng đi và đừng vội phản ứng theo cảm xúc.`,
+          `\n✦ VÌ SAO:\n• Lá ${c1?.card?.nameVi || 'Tarot'} nhấn mạnh bài học ${c1?.isReversed ? 'nhìn lại và điều chỉnh' : 'chủ động hành động'}.\n• Một lựa chọn bình tĩnh sẽ giúp bạn thấy rõ bước tiếp theo.`,
+          `\n✦ NÊN LÀM GÌ:\n• Chọn một việc quan trọng nhất hôm nay.\n• Hoàn thành nó trước khi nhận thêm cam kết.`
         ].join('\n');
       }
     }
 
-    // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA SÂU SẮC
+    const responseBudget = getChatResponseBudget({
+      intent: decision?.intent,
+      cardCount: Math.max(cards.length, Number(decision?.cardCount) || 0),
+      isCouple,
+    });
+    const fallbackReply = normalizeChatReply('', replyText, responseBudget.complexity);
+
+    // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA NGẮN GỌN
     try {
-      const systemPrompt = `Bạn là Tiểu Linh Miêu — linh miêu hộ mệnh thông thái, tinh tế, dí dỏm và ấm áp của ứng dụng tâm linh NUMELYRA.
-Bạn đang tư vấn và dẫn dắt người dùng dựa trên năng lượng Thần số học Pythagoras, Tarot Rider-Waite và Tử Vi Đẩu Số.
+      const systemPrompt = `Bạn là Tiểu Linh Miêu — linh miêu hộ mệnh thông thái, tinh tế và ấm áp của NUMELYRA.
+Bạn tư vấn dựa trên dữ liệu Thần số học Pythagoras, Tarot Rider-Waite và Tử Vi Đẩu Số đã được cung cấp.
 
 QUY TẮC BẮT BUỘC:
-1. TRƯỜNG HỢP XEM TÌNH DUYÊN GHÉP ĐÔI 2 NGƯỜI:
-   - BẮT BUỘC LUẬN GIẢI 100% THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (Cung Phu Thê, Thiên Can Ngũ Hợp/Xung, Ngũ Hành Nạp Âm, Bát Trạch Quái Mệnh).
-   - TUYỆT ĐỐI KHÔNG ĐƯỢC NHẮC ĐẾN BẤT KỲ LÁ BÀI TAROT NÀO! (Ghép đôi 2 người chỉ dùng Tử Vi Đẩu Số & Bát Tự).
-2. TRƯỜNG HỢP CÂU HỎI 1 NGƯỜI:
-   - Phân tích sâu sắc, kết hợp đầy đủ các lá bài Tarot đã rút và chỉ số Thần số học tương ứng.
-3. TRẢ LỜI TRỰC DIỆN, THỰC TẾ ĐÚNG CÂU HỎI:
-   - Trả lời rõ ràng, cụ thể, không né tránh. Nếu hỏi so sánh 2 lựa chọn (A vs B), phải nêu rõ chọn phương án nào và tỷ lệ phần trăm nghiêng.
-4. BẮT BUỘC PHẢI CÓ ĐẦY ĐỦ CẢ 3 PHẦN, TUYỆT ĐỐI KHÔNG ĐƯỢC THIẾU HOẶC BỎ DỞ PHẦN NÀO:
+1. Với ghép đôi hai người: chỉ dùng Tử Vi Đẩu Số và Bát Tự Tứ Trụ; tuyệt đối không nhắc Tarot.
+2. Với một người: chỉ dùng các lá Tarot và chỉ số đã cung cấp; không tự bịa thêm dữ kiện.
+3. Với hai lựa chọn: nêu rõ phương án nghiêng về và tỷ lệ phần trăm.
+4. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
 ✦ KẾT LUẬN NHANH:
-[1-2 câu trả lời thẳng, dứt khoát vào câu hỏi, nêu rõ kết quả lựa chọn hoặc thông điệp cốt lõi]
+[Tối đa 2 câu ngắn, trả lời thẳng vào câu hỏi]
 
 ✦ VÌ SAO:
-[PHẦN QUAN TRỌNG NHẤT: Luận giải chi tiết, rõ ràng từng khía cạnh:
-- Nếu là Trải bài 5 lá (Hai Lựa Chọn A vs B): BẮT BUỘC phân tích chi tiết:
-  • Lá 1 (Tình trạng nền tảng): Nói lên điều gì về hoàn cảnh, tâm thế của người hỏi?
-  • Phương án A: Lá 2 (Tiến trình) và Lá 3 (Kết quả) mở ra thuận lợi, cơ hội hay chuyển biến gì?
-  • Phương án B: Lá 4 (Tiến trình) và Lá 5 (Kết quả) tiềm ẩn rào cản, khó khăn hay bài học gì?
-  • Đối chiếu với Tư duy lý trí và Số đường đời để giải thích tại sao trực giác và logic vũ trụ ủng hộ phương án A hơn B (hoặc ngược lại).
-- Nếu là Trải bài 3 lá (Vận trình): Phân tích lần lượt Quá khứ, Hiện tại, Tương lai và Năm cá nhân.
-- Nếu là Trải bài 1 lá: Phân tích hình tượng lá bài, chiều xuôi/ngược và sự đồng điệu với năng lượng số học.
-- Nếu là Tình duyên 2 người: Phân tích sâu sắc Tứ Trụ Bát Tự, Cung Phu Thê, Thiên Can và Cung Phi Bát Trạch.]
+[Tối đa ${responseBudget.complexity === 'complex' ? '4' : '3'} bullet; mỗi bullet chỉ một câu ngắn và kết thúc bằng dấu chấm. Với trải bài nhiều lá, gộp các lá cùng ý thay vì diễn giải từng lá thành đoạn dài.]
 
 ✦ NÊN LÀM GÌ:
-[2-3 lời khuyên hành động cụ thể, thực tế, làm được ngay, vừa mang tính tâm linh dẫn đường vừa giàu tính hành động đời sống]
+[1-2 bullet là hành động cụ thể, làm được ngay; mỗi bullet kết thúc bằng dấu chấm]
 
-5. Giọng điệu: Thân thiện, thông thái, ấm áp mang phong cách linh miêu hộ mệnh gần gũi. Độ dài từ 300 - 500 từ để mang lại trải nghiệm luận giải chi tiết, thấu đáo và chạm tới cảm xúc người hỏi.`;
+5. Giọng điệu thân thiện, thông thái, ấm áp. Tổng câu trả lời không vượt quá ${responseBudget.maxWords} từ tiếng Việt hoặc ${responseBudget.maxChars} ký tự. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
 
       const userPrompt = `Câu hỏi của người dùng: "${message}"
 Hồ sơ người hỏi: ${p1.fullName} (Ngày sinh: ${p1.birthDate}) ${p2 ? `\nHồ sơ người thứ 2: ${p2.fullName} (Ngày sinh: ${p2.birthDate})` : ''}
@@ -246,23 +253,14 @@ ${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (${p2
 ${baziSummary ? `\nLuận giải Bát Tự & Cung Phu Thê (Điểm hòa hợp: ${baziScore}%):\n${baziSummary}` : ''}
 ${cardPayload.optionSplit ? `\nPhân bổ lựa chọn: Phương án A (${cardPayload.optionSplit.optionA}%) vs Phương án B (${cardPayload.optionSplit.optionB}%)` : ''}`;
 
-      const aiText = await generateLlmText(systemPrompt, userPrompt);
-      const hasExplanation = aiText && (
-        aiText.includes('✦ VÌ SAO:') || 
-        aiText.includes('✦ VÌ SAO') || 
-        aiText.includes('VÌ SAO:') ||
-        aiText.includes('## Vì sao') ||
-        aiText.includes('PHÂN TÍCH')
-      );
-      if (aiText && aiText.length > 80 && hasExplanation) {
-        replyText = aiText;
-      } else if (aiText && aiText.length > 30) {
-        console.warn('[Chat Agent Route] LLM response truncated or missing explanation, augmenting with template:');
-        // Ghép kết luận ngắn của AI với phần giải thích chi tiết mẫu để đảm bảo không bao giờ thiếu phần giải thích
-        replyText = `${aiText.trim()}\n\n${replyText.split('✦ VÌ SAO')[1] ? '✦ VÌ SAO' + replyText.split('✦ VÌ SAO')[1] : ''}`.trim();
-      }
+      const aiText = await generateLlmText(systemPrompt, userPrompt, responseBudget.maxTokens);
+      // Either return a complete, bounded response or the short fallback. Never
+      // append a template to partial model output, as that can repeat sections
+      // and exceed the mobile-friendly response budget.
+      replyText = normalizeChatReply(aiText, fallbackReply, responseBudget.complexity);
     } catch (llmError) {
       console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
+      replyText = fallbackReply;
     }
 
     return NextResponse.json({
