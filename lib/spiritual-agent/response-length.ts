@@ -21,24 +21,24 @@ export type ChatResponseBudget = {
 export const CHAT_RESPONSE_BUDGETS: Record<ChatResponseComplexity, ChatResponseBudget> = {
   standard: {
     complexity: 'standard',
-    maxTokens: 400,
-    maxWords: 150,
-    maxChars: 900,
+    maxTokens: 800,
+    maxWords: 350,
+    maxChars: 2200,
     sectionLimits: {
-      conclusion: { maxWords: 36, maxChars: 180 },
-      reasoning: { maxWords: 80, maxChars: 440 },
-      actions: { maxWords: 34, maxChars: 180 },
+      conclusion: { maxWords: 80, maxChars: 450 },
+      reasoning: { maxWords: 250, maxChars: 1500 },
+      actions: { maxWords: 80, maxChars: 450 },
     },
   },
   complex: {
     complexity: 'complex',
-    maxTokens: 600,
-    maxWords: 220,
-    maxChars: 1400,
+    maxTokens: 1200,
+    maxWords: 500,
+    maxChars: 3000,
     sectionLimits: {
-      conclusion: { maxWords: 45, maxChars: 260 },
-      reasoning: { maxWords: 130, maxChars: 780 },
-      actions: { maxWords: 45, maxChars: 250 },
+      conclusion: { maxWords: 100, maxChars: 600 },
+      reasoning: { maxWords: 350, maxChars: 2000 },
+      actions: { maxWords: 100, maxChars: 600 },
     },
   },
 };
@@ -113,31 +113,33 @@ function isCompleteSentence(value: string): boolean {
 
 function normalizeBullets(value: string, minimum: number, maximum: number): string | null {
   const lines = value.split('\n').filter(Boolean);
-  if (lines.length < minimum || lines.length > maximum) return null;
+  if (lines.length < minimum) return null;
 
-  const bullets = lines.map((line) => {
+  const limitedLines = lines.slice(0, maximum);
+  const bullets = limitedLines.map((line) => {
     const match = line.match(/^(?:[•*-]|\d+[.)])\s+(.+)$/);
-    const content = match?.[1].trim();
-    return content && isCompleteSentence(content) ? `• ${content}` : null;
+    let content = match ? match[1].trim() : line.trim();
+    if (!content) return null;
+    if (!isCompleteSentence(content)) {
+      content = `${content}.`;
+    }
+    return `• ${content}`;
   });
 
-  return bullets.every(Boolean) ? bullets.join('\n') : null;
+  const valid = bullets.filter(Boolean) as string[];
+  return valid.length >= minimum ? valid.join('\n') : null;
 }
 
 function normalizeStructure(sections: ParsedSections): ParsedSections | null {
   const conclusionLines = sections.conclusion.split('\n').filter(Boolean);
-  const conclusion = conclusionLines.join(' ');
-  if (
-    conclusionLines.length > 2 ||
-    /^(?:[•*-]|\d+[.)])\s+/.test(conclusion) ||
-    sentenceCount(conclusion) > 2 ||
-    !isCompleteSentence(conclusion)
-  ) {
-    return null;
+  let conclusion = conclusionLines.join(' ').trim();
+  if (!conclusion) return null;
+  if (!isCompleteSentence(conclusion)) {
+    conclusion = `${conclusion}.`;
   }
 
-  const reasoning = normalizeBullets(sections.reasoning, 2, 4);
-  const actions = normalizeBullets(sections.actions, 1, 2);
+  const reasoning = normalizeBullets(sections.reasoning, 1, 5);
+  const actions = normalizeBullets(sections.actions, 1, 3);
   if (!reasoning || !actions) return null;
 
   return { conclusion, reasoning, actions };
@@ -202,8 +204,19 @@ function safeFallback(fallback: string, budget: ChatResponseBudget): string {
 }
 
 /**
- * Canonicalizes a valid three-section reply. Invalid, incomplete, or overlong
- * model output falls back as a whole, which prevents a mid-sentence cut-off.
+ * Truncates an overlong section gently without breaking sentences.
+ */
+function trimToBudget(text: string, maxChars: number): string {
+  if (text.length <= maxChars) return text;
+  const sliced = text.slice(0, maxChars);
+  const lastDot = Math.max(sliced.lastIndexOf('.'), sliced.lastIndexOf('!'), sliced.lastIndexOf('?'));
+  return lastDot > 40 ? sliced.slice(0, lastDot + 1) : `${sliced.trim()}...`;
+}
+
+/**
+ * Canonicalizes a valid three-section reply. If the model output is slightly
+ * overlong or missing punctuation, it cleans and formats it rather than
+ * discarding it into a stale fallback template.
  */
 export function normalizeChatReply(
   raw: string,
@@ -212,10 +225,34 @@ export function normalizeChatReply(
 ): string {
   const budget = CHAT_RESPONSE_BUDGETS[complexity];
   const fallbackReply = safeFallback(fallback, budget);
-  const parsed = parseSections(raw);
-  const sections = parsed && normalizeStructure(parsed);
-  if (!sections) return fallbackReply;
+  
+  if (!raw || raw.trim().length < 20) return fallbackReply;
 
-  const formatted = formatSections(sections);
-  return fitsBudget(sections, formatted, budget) ? formatted : fallbackReply;
+  // 1. Cố gắng parse 3 phần chuẩn
+  const parsed = parseSections(raw);
+  if (parsed) {
+    const sections = normalizeStructure(parsed);
+    if (sections) {
+      // Tự động gọt nhẹ nếu vượt giới hạn thay vì vứt bỏ
+      const trimmedSections: ParsedSections = {
+        conclusion: trimToBudget(sections.conclusion, budget.sectionLimits.conclusion.maxChars),
+        reasoning: trimToBudget(sections.reasoning, budget.sectionLimits.reasoning.maxChars),
+        actions: trimToBudget(sections.actions, budget.sectionLimits.actions.maxChars),
+      };
+      return formatSections(trimmedSections);
+    }
+  }
+
+  // 2. Nếu AI trả về câu trả lời có ý nghĩa nhưng không đúng 3 heading
+  // (Ví dụ AI viết thành đoạn văn phân tích), tự động trích xuất cấu trúc để giữ lời AI
+  const cleanRaw = raw
+    .replace(/^[\s\S]*?(?=✦?\s*KẾT LUẬN|✦?\s*VÌ SAO|Chào bạn|Thông điệp|Lá bài)/i, '')
+    .trim();
+
+  if (cleanRaw.length >= 60 && !cleanRaw.includes('The user is asking about')) {
+    // Nếu có dạng 3 đoạn hoặc văn bản phân tích, định dạng lại
+    return cleanRaw.slice(0, budget.maxChars);
+  }
+
+  return fallbackReply;
 }

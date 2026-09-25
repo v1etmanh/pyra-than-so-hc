@@ -16,7 +16,11 @@ export type { UserProviderConfig } from './types.ts';
 export interface StreamingGenerationOptions {
   maxTokens?: number;
   temperature?: number;
-  reasoningEffort?: 'low' | 'medium' | 'high';
+  reasoningEffort?: 'none' | 'low' | 'medium' | 'high';
+  /** OpenAI-compatible structured-output mode, used by intent classification. */
+  responseFormat?: 'json_object';
+  /** Prevent reasoning tokens from being emitted as part of a user-visible response. */
+  includeReasoning?: boolean;
 }
 
 function buildMessages(
@@ -138,6 +142,8 @@ export function createStreamingResponse(
                 maxTokens: generationOptions?.maxTokens,
                 temperature: generationOptions?.temperature,
                 reasoningEffort: generationOptions?.reasoningEffort,
+                responseFormat: generationOptions?.responseFormat,
+                includeReasoning: generationOptions?.includeReasoning,
                 timeoutMs: Math.min(
                   Number(
                     process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS ||

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
+import { getProviderCascade } from '@/lib/ai/provider-cascade';
+import type { UserProviderConfig } from '@/lib/ai/types';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 
 export interface AgentDecision {
@@ -21,6 +23,22 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
+
+/**
+ * Classification is deliberately pinned to the model evaluated for this task.
+ * The main cascade remains available only if Groq credentials are absent.
+ */
+function classificationProvider(): UserProviderConfig | undefined {
+  const groq = getProviderCascade().find((provider) => provider.name === 'Groq');
+  if (!groq) return undefined;
+
+  return {
+    type: 'Groq',
+    baseUrl: groq.baseUrl,
+    apiKeys: groq.apiKeys,
+    model: 'openai/gpt-oss-20b'
+  };
+}
 
 export async function OPTIONS() {
   return new NextResponse(null, {
@@ -119,11 +137,22 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
 
     const userPrompt = `Câu hỏi của người dùng: "${message}"\nHồ sơ người hỏi: ${p1}`;
 
+    const groqProvider = classificationProvider();
+    if (groqProvider) {
+      console.info('[API /api/chat/classify] Primary model: Groq/openai/gpt-oss-20b');
+    }
+
     const stream = createStreamingResponse(
       systemPrompt,
       [{ role: 'user', content: userPrompt }],
-      undefined,
-      { maxTokens: 250, temperature: 0.1 }
+      groqProvider,
+      {
+        maxTokens: 250,
+        temperature: 0.1,
+        reasoningEffort: 'low',
+        responseFormat: 'json_object',
+        includeReasoning: false
+      }
     );
 
     const reader = stream.getReader();

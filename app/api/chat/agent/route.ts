@@ -23,7 +23,7 @@ async function generateLlmText(
     systemPrompt,
     [{ role: 'user', content: userPrompt }],
     undefined,
-    { maxTokens, temperature: 0.7, reasoningEffort: 'low' }
+    { maxTokens: Math.max(800, maxTokens), temperature: 0.7 }
   );
   const reader = stream.getReader();
   const decoder = new TextDecoder();
@@ -241,7 +241,7 @@ QUY TẮC BẮT BUỘC:
 ✦ NÊN LÀM GÌ:
 [1-2 bullet là hành động cụ thể, làm được ngay; mỗi bullet kết thúc bằng dấu chấm]
 
-5. Giọng điệu thân thiện, thông thái, ấm áp. Tổng câu trả lời không vượt quá ${responseBudget.maxWords} từ tiếng Việt hoặc ${responseBudget.maxChars} ký tự. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
+5. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
 
       const userPrompt = `Câu hỏi của người dùng: "${message}"
 Hồ sơ người hỏi: ${p1.fullName} (Ngày sinh: ${p1.birthDate}) ${p2 ? `\nHồ sơ người thứ 2: ${p2.fullName} (Ngày sinh: ${p2.birthDate})` : ''}
@@ -253,11 +253,9 @@ ${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (${p2
 ${baziSummary ? `\nLuận giải Bát Tự & Cung Phu Thê (Điểm hòa hợp: ${baziScore}%):\n${baziSummary}` : ''}
 ${cardPayload.optionSplit ? `\nPhân bổ lựa chọn: Phương án A (${cardPayload.optionSplit.optionA}%) vs Phương án B (${cardPayload.optionSplit.optionB}%)` : ''}`;
 
-      const aiText = await generateLlmText(systemPrompt, userPrompt, responseBudget.maxTokens);
-      // Either return a complete, bounded response or the short fallback. Never
-      // append a template to partial model output, as that can repeat sections
-      // and exceed the mobile-friendly response budget.
+      const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens));
       replyText = normalizeChatReply(aiText, fallbackReply, responseBudget.complexity);
+      console.log('[Chat Agent Route] Generated reply successfully, using AI text:', replyText !== fallbackReply);
     } catch (llmError) {
       console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
       replyText = fallbackReply;

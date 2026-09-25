@@ -622,6 +622,41 @@ test('streaming generation options forward output limits to the provider request
   }
 });
 
+test('structured-output generation options forward JSON and reasoning controls', async () => {
+  const originalFetch = globalThis.fetch;
+  let payload: Record<string, unknown> = {};
+
+  try {
+    globalThis.fetch = async (_input, init) => {
+      payload = JSON.parse(String(init?.body)) as Record<string, unknown>;
+      return new Response(
+        'data: {"choices":[{"delta":{"content":"{}"}}]}\n\ndata: [DONE]\n\n',
+        { headers: { 'Content-Type': 'text/event-stream' } }
+      );
+    };
+
+    await readStream(
+      createStreamingResponse(
+        'system',
+        [{ role: 'user', content: 'classify this' }],
+        {
+          type: 'Groq',
+          baseUrl: 'https://provider.example/v1',
+          apiKeys: ['test-key'],
+          model: 'openai/gpt-oss-20b'
+        },
+        { responseFormat: 'json_object', includeReasoning: false, reasoningEffort: 'low' }
+      )
+    );
+
+    assert.deepEqual(payload.response_format, { type: 'json_object' });
+    assert.equal(payload.include_reasoning, false);
+    assert.equal(payload.reasoning_effort, 'low');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test('an empty completed provider stream becomes a visible failure instead of a blank answer', async () => {
   const originalFetch = globalThis.fetch;
 

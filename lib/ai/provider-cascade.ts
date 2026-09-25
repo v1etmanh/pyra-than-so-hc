@@ -382,7 +382,9 @@ export async function requestChatCompletion(
     maxTokens?: number;
     temperature?: number;
     timeoutMs?: number;
-    reasoningEffort?: 'low' | 'medium' | 'high';
+    reasoningEffort?: 'none' | 'low' | 'medium' | 'high';
+    responseFormat?: 'json_object';
+    includeReasoning?: boolean;
   }
 ): Promise<Response> {
   const controller = new AbortController();
@@ -410,6 +412,10 @@ export async function requestChatCompletion(
           ? { temperature: options.temperature }
           : {}),
         ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}),
+        ...(options?.responseFormat ? { response_format: { type: options.responseFormat } } : {}),
+        ...(typeof options?.includeReasoning === 'boolean'
+          ? { include_reasoning: options.includeReasoning }
+          : {}),
         ...nvidiaThinkingOptions
       }),
       signal: controller.signal,
