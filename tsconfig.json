@@ -42,6 +42,9 @@
   "exclude": [
     "node_modules",
     "new-design",
-    "references"
+    "references",
+    "scratch",
+    "mobile_app",
+    "scripts"
   ]
 }
