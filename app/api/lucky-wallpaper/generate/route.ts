@@ -41,10 +41,15 @@ export async function POST(req: NextRequest) {
       customWish = '',
       seed: customSeed,
       engine = 'auto',
+      count: requestedCount,
     } = body;
 
     const access = await getRequestAccess(req, 'wallpaper');
     if (access instanceof Response) return access;
+
+    const targetCount = requestedCount !== undefined
+      ? Math.max(1, Math.min(8, Number(requestedCount) || 4))
+      : 4;
 
     // Build stable numerology copy, then let AI generate concise stock-search queries.
     const input = {
@@ -71,17 +76,22 @@ export async function POST(req: NextRequest) {
       height: plan.height,
       seed,
       engine,
+      count: targetCount,
       deadlineAt: Date.now() + 40_000,
     });
-    const imageResult = workflow.image;
+    const images = workflow.images && workflow.images.length > 0
+      ? workflow.images
+      : (workflow.image ? [workflow.image] : []);
+    const primaryImage = images[0] || workflow.image;
+
     recordAiUsage({
       identity: access.identity,
       plan: access.plan,
       feature: 'wallpaper',
       route: '/api/lucky-wallpaper/generate',
       provider: workflow.aiProvider
-        ? `${workflow.aiProvider} + ${imageResult.provider}`
-        : `rules + ${imageResult.provider}`,
+        ? `${workflow.aiProvider} + ${primaryImage.provider}`
+        : `rules + ${primaryImage.provider}`,
       estimatedCostUsd: Number(
         process.env.NUMINA_ESTIMATED_WALLPAPER_COST_USD ||
         process.env.NUMINA_ESTIMATED_IMAGE_COST_USD ||
@@ -93,12 +103,22 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      imageUrl: imageResult.imageUrl,
-      seed: imageResult.seed,
-      provider: imageResult.provider,
-      model: imageResult.model,
-      prompt: imageResult.query,
-      searchQuery: imageResult.query,
+      imageUrl: primaryImage.imageUrl,
+      imageUrls: images.map((img) => img.imageUrl),
+      images: images.map((img) => ({
+        imageUrl: img.imageUrl,
+        seed: img.seed,
+        provider: img.provider,
+        model: img.model,
+        sourceId: img.sourceId,
+        query: img.query,
+        attribution: img.attribution,
+      })),
+      seed: primaryImage.seed,
+      provider: primaryImage.provider,
+      model: primaryImage.model,
+      prompt: primaryImage.query,
+      searchQuery: primaryImage.query,
       negativePrompt: plan.negativePrompt,
       explanation_vi: plan.explanation_vi,
       explanation_en: plan.explanation_en,
@@ -112,15 +132,15 @@ export async function POST(req: NextRequest) {
       device: plan.device,
       lifePathNumber: plan.lifePathNumber,
       personalDay: plan.personalDay,
-      isAIGenerated: imageResult.provider === 'cloudflare',
+      isAIGenerated: primaryImage.provider === 'cloudflare',
       keywordSource: workflow.keywordSource,
       keywordRound: workflow.keywordRound,
       aiProvider: workflow.aiProvider,
       aiModel: workflow.aiModel,
-      imageProvider: imageResult.provider,
-      imageModel: imageResult.model,
-      sourceId: imageResult.sourceId,
-      attribution: imageResult.attribution,
+      imageProvider: primaryImage.provider,
+      imageModel: primaryImage.model,
+      sourceId: primaryImage.sourceId,
+      attribution: primaryImage.attribution,
       plan: access.plan,
       remaining: access.remaining,
     });

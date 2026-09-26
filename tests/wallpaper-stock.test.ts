@@ -466,3 +466,103 @@ test('workflow falls back to Cloudflare drawing when stock photo providers fail 
   assert.equal(result.image.provider, 'cloudflare');
   assert.equal(result.aiProvider, 'Cloudflare Workers AI');
 });
+
+test('searchWallpaperImage returns 4 distinct suitable candidates when count: 4 is requested', async () => {
+  configureStockTestEnv();
+  const candidates = Array.from({ length: 12 }, (_, i) => ({
+    id: 100 + i,
+    width: 1080,
+    height: 1920,
+    url: `https://www.pexels.com/photo/candidate-${i}/`,
+    photographer: `Photographer ${i}`,
+    src: { original: `https://images.pexels.com/photos/${i}/original.jpeg` },
+  }));
+
+  const outcome = await searchWallpaperImage({
+    queries: ['sacred geometry pattern'],
+    width: 720,
+    height: 1280,
+    seed: 5,
+    count: 4,
+    engine: 'pexels',
+    fetchImpl: async () => pexelsResponse(candidates),
+  });
+
+  assert.ok(outcome.results);
+  assert.equal(outcome.results.length, 4);
+  assert.equal(outcome.result?.imageUrl, outcome.results[0].imageUrl);
+
+  // All 4 sourceIds must be distinct
+  const uniqueIds = new Set(outcome.results.map((r) => r.sourceId));
+  assert.equal(uniqueIds.size, 4);
+
+  // All 4 imageUrls must be valid proxy URLs
+  for (const item of outcome.results) {
+    assert.match(item.imageUrl, /^\/api\/lucky-wallpaper\/image\?token=/);
+  }
+});
+
+test('searchWallpaperImage uses stride to space out candidate selections from a single query', async () => {
+  configureStockTestEnv();
+  const candidates = Array.from({ length: 20 }, (_, i) => ({
+    id: 200 + i,
+    width: 1080,
+    height: 1920,
+    url: `https://www.pexels.com/photo/stride-${i}/`,
+    photographer: `Photographer ${i}`,
+    src: { original: `https://images.pexels.com/photos/${i}/original.jpeg` },
+  }));
+
+  const outcome = await searchWallpaperImage({
+    queries: ['galaxy stars nebula'],
+    width: 720,
+    height: 1280,
+    seed: 0,
+    count: 4,
+    engine: 'pexels',
+    fetchImpl: async () => pexelsResponse(candidates),
+  });
+
+  assert.equal(outcome.results?.length, 4);
+  const ids = outcome.results.map((r) => Number(r.sourceId));
+  // stride = Math.floor(20 / 4) = 5 -> indices: 0, 5, 10, 15
+  assert.deepEqual(ids, [200, 205, 210, 215]);
+});
+
+test('workflow returns list of 4 images in both images array and primary image', async () => {
+  const fakeCandidates = Array.from({ length: 4 }, (_, i) => ({
+    ...fakeImage(`query-${i}`),
+    imageUrl: `/api/lucky-wallpaper/image?token=test_${i}`,
+    sourceId: `source_${i}`,
+  }));
+
+  const result = await findWallpaperWithAiKeywords({
+    input: { lifePathNumber: 7 },
+    width: 720,
+    height: 1280,
+    seed: 42,
+    count: 4,
+  }, {
+    generateKeywords: async () => ({
+      queries: ['mystical mountain horizon'],
+      source: 'ai',
+      round: 1,
+      aiProvider: 'Test AI',
+      aiModel: 'test-model',
+    }),
+    searchImages: async () => ({
+      result: fakeCandidates[0],
+      results: fakeCandidates,
+      attemptedQueries: ['mystical mountain horizon'],
+      failedProviders: [],
+      hadSuccessfulResponse: true,
+    }),
+    fallbackQueries: () => ['fallback queries'],
+  });
+
+  assert.equal(result.images.length, 4);
+  assert.equal(result.image.imageUrl, fakeCandidates[0].imageUrl);
+  assert.equal(result.images[0].imageUrl, fakeCandidates[0].imageUrl);
+  assert.equal(result.images[3].imageUrl, fakeCandidates[3].imageUrl);
+});
+

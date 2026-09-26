@@ -18,6 +18,7 @@ import {
 
 export interface WallpaperWorkflowResult {
   image: ImageGenerationResult;
+  images: ImageGenerationResult[];
   keywordSource: 'ai' | 'fallback';
   keywordRound: 0 | 1 | 2;
   aiProvider?: string;
@@ -31,6 +32,7 @@ export interface WallpaperWorkflowOptions {
   seed: number;
   engine?: GenerateImageOptions['engine'];
   deadlineAt?: number;
+  count?: number;
 }
 
 export interface WallpaperWorkflowDependencies {
@@ -64,25 +66,30 @@ export async function findWallpaperWithAiKeywords(
   dependencies: WallpaperWorkflowDependencies = defaultDependencies
 ): Promise<WallpaperWorkflowResult> {
   const deadlineAt = options.deadlineAt ?? Date.now() + 40_000;
+  const targetCount = Math.max(1, Math.min(8, options.count ?? 4));
   const attemptedQueries: string[] = [];
   const failedProviders = new Set<WallpaperImageProvider>();
   let anySuccessfulStockResponse = false;
 
-  const search = async (queries: string[]): Promise<ImageGenerationResult | null> => {
-    if (queries.length === 0 || Date.now() >= deadlineAt) return null;
+  const search = async (queries: string[]): Promise<ImageGenerationResult[]> => {
+    if (queries.length === 0 || Date.now() >= deadlineAt) return [];
     const outcome = await dependencies.searchImages({
       queries,
       width: options.width,
       height: options.height,
       seed: options.seed,
       engine: options.engine,
+      count: targetCount,
       excludedProviders: Array.from(failedProviders),
       deadlineAt,
     });
     attemptedQueries.push(...outcome.attemptedQueries);
     mergeProviders(failedProviders, outcome.failedProviders);
     anySuccessfulStockResponse ||= outcome.hadSuccessfulResponse;
-    return outcome.result;
+    const list = outcome.results && outcome.results.length > 0
+      ? outcome.results
+      : (outcome.result ? [outcome.result] : []);
+    return list;
   };
 
   const tryCloudflareFallback = async (): Promise<WallpaperWorkflowResult | null> => {
@@ -98,6 +105,7 @@ export async function findWallpaperWithAiKeywords(
       if (drawnImage) {
         return {
           image: drawnImage,
+          images: [drawnImage],
           keywordSource: 'ai',
           keywordRound: 0,
           aiProvider: 'Cloudflare Workers AI',
@@ -112,9 +120,9 @@ export async function findWallpaperWithAiKeywords(
 
   const firstBatch = await dependencies.generateKeywords(options.input, 1, [], deadlineAt);
   if (!firstBatch) {
-    const fallbackImage = await search(dependencies.fallbackQueries(options.input));
-    if (fallbackImage) {
-      return { image: fallbackImage, keywordSource: 'fallback', keywordRound: 0 };
+    const fallbackImages = await search(dependencies.fallbackQueries(options.input));
+    if (fallbackImages.length > 0) {
+      return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0 };
     }
     const cfFallback = await tryCloudflareFallback();
     if (cfFallback) return cfFallback;
@@ -125,8 +133,8 @@ export async function findWallpaperWithAiKeywords(
     throw new Error('Không tìm thấy ảnh phù hợp lúc này. Vui lòng thử lại với phong cách khác.');
   }
 
-  const firstImage = await search(firstBatch.queries);
-  if (firstImage) return resultFromAi(firstImage, firstBatch);
+  const firstImages = await search(firstBatch.queries);
+  if (firstImages.length > 0) return resultFromAi(firstImages, firstBatch);
   if (!anySuccessfulStockResponse) {
     const cfFallback = await tryCloudflareFallback();
     if (cfFallback) return cfFallback;
@@ -141,14 +149,14 @@ export async function findWallpaperWithAiKeywords(
     deadlineAt
   );
   if (secondBatch) {
-    const secondImage = await search(secondBatch.queries);
-    if (secondImage) return resultFromAi(secondImage, secondBatch);
+    const secondImages = await search(secondBatch.queries);
+    if (secondImages.length > 0) return resultFromAi(secondImages, secondBatch);
   }
 
   const fallback = unseenQueries(dependencies.fallbackQueries(options.input), attemptedQueries);
-  const fallbackImage = await search(fallback);
-  if (fallbackImage) {
-    return { image: fallbackImage, keywordSource: 'fallback', keywordRound: 0 };
+  const fallbackImages = await search(fallback);
+  if (fallbackImages.length > 0) {
+    return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0 };
   }
 
   const cfFallback = await tryCloudflareFallback();
@@ -161,11 +169,12 @@ export async function findWallpaperWithAiKeywords(
 }
 
 function resultFromAi(
-  image: ImageGenerationResult,
+  images: ImageGenerationResult[],
   batch: WallpaperKeywordBatch
 ): WallpaperWorkflowResult {
   return {
-    image,
+    image: images[0],
+    images,
     keywordSource: 'ai',
     keywordRound: batch.round,
     aiProvider: batch.aiProvider,

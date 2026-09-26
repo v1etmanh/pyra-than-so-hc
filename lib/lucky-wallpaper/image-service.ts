@@ -13,6 +13,7 @@ export interface GenerateImageOptions {
   excludedProviders?: WallpaperImageProvider[];
   fetchImpl?: typeof fetch;
   deadlineAt?: number;
+  count?: number;
 }
 
 export interface WallpaperAttribution {
@@ -37,6 +38,7 @@ export interface ImageGenerationResult {
 
 export interface WallpaperImageSearchOutcome {
   result: ImageGenerationResult | null;
+  results?: ImageGenerationResult[];
   attemptedQueries: string[];
   failedProviders: WallpaperImageProvider[];
   hadSuccessfulResponse: boolean;
@@ -273,6 +275,7 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
   const width = options.width || 720;
   const height = options.height || 1280;
   const seed = options.seed ?? Math.floor(Math.random() * 10_000_000);
+  const targetCount = options.count !== undefined ? Math.max(1, Math.min(8, options.count)) : 1;
   const queries = Array.from(new Set(options.queries.map(clampQuery).filter(Boolean)));
 
   if (queries.length === 0) throw new Error('No wallpaper search terms were provided.');
@@ -286,6 +289,7 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
     if (excludedProviders.size > 0) {
       return {
         result: null,
+        results: [],
         attemptedQueries: [],
         failedProviders: [],
         hadSuccessfulResponse: false,
@@ -296,11 +300,11 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
 
   const failedProviders = new Set<WallpaperImageProvider>();
   const attemptedQueries: string[] = [];
+  const collectedResults: ImageGenerationResult[] = [];
+  const seenIds = new Set<string>();
   let hadSuccessfulResponse = false;
   const fetchImpl = options.fetchImpl || fetch;
 
-  // Query relevance has priority. For every query, try the configured stock
-  // providers in order and stop at the first candidate that passes the gate.
   for (const query of queries) {
     attemptedQueries.push(query);
     for (const provider of availableProviders) {
@@ -308,7 +312,8 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
       const remainingMs = (options.deadlineAt ?? Date.now() + 4_500) - Date.now();
       if (remainingMs < 250) {
         return {
-          result: null,
+          result: collectedResults[0] ?? null,
+          results: collectedResults,
           attemptedQueries,
           failedProviders: Array.from(failedProviders),
           hadSuccessfulResponse,
@@ -322,29 +327,51 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
           : await searchPexels(query, width, height, controller.signal, fetchImpl);
         hadSuccessfulResponse = true;
         const suitableCandidates = candidates.filter((candidate) =>
-          isSuitableWallpaperCandidate(candidate, width, height)
+          isSuitableWallpaperCandidate(candidate, width, height) &&
+          !seenIds.has(`${provider}:${candidate.id}`)
         );
-        const selected = suitableCandidates.length > 0
-          ? suitableCandidates[Math.abs(Math.trunc(seed)) % suitableCandidates.length]
-          : undefined;
-        if (!selected) continue;
 
-        return {
-          result: {
-            imageUrl: buildProxyUrl(selected.remoteUrl, provider),
-            seed,
-            provider,
-            model: 'stock-photo',
-            width,
-            height,
-            sourceId: selected.id,
-            query,
-            attribution: selected.attribution,
-          },
-          attemptedQueries,
-          failedProviders: Array.from(failedProviders),
-          hadSuccessfulResponse,
-        };
+        if (suitableCandidates.length > 0) {
+          const needed = targetCount - collectedResults.length;
+          const countToTake = Math.min(needed, suitableCandidates.length);
+          const totalSuitable = suitableCandidates.length;
+          const startIndex = Math.abs(Math.trunc(seed)) % totalSuitable;
+          const stride = Math.max(1, Math.floor(totalSuitable / countToTake));
+
+          for (let i = 0; i < countToTake; i++) {
+            const pickedIndex = (startIndex + i * stride) % totalSuitable;
+            let chosen = suitableCandidates[pickedIndex];
+            if (seenIds.has(`${provider}:${chosen.id}`)) {
+              const alternative = suitableCandidates.find(c => !seenIds.has(`${provider}:${c.id}`));
+              if (!alternative) break;
+              chosen = alternative;
+            }
+
+            seenIds.add(`${provider}:${chosen.id}`);
+            collectedResults.push({
+              imageUrl: buildProxyUrl(chosen.remoteUrl, provider),
+              seed: seed + collectedResults.length,
+              provider,
+              model: 'stock-photo',
+              width,
+              height,
+              sourceId: chosen.id,
+              query,
+              attribution: chosen.attribution,
+            });
+          }
+
+          if (collectedResults.length >= targetCount) {
+            clearTimeout(timeoutId);
+            return {
+              result: collectedResults[0] ?? null,
+              results: collectedResults,
+              attemptedQueries,
+              failedProviders: Array.from(failedProviders),
+              hadSuccessfulResponse,
+            };
+          }
+        }
       } catch {
         // Authentication, rate-limit, timeout and network errors are provider
         // failures. Do not retry that provider with a different keyword.
@@ -356,7 +383,8 @@ export async function searchWallpaperImage(options: GenerateImageOptions): Promi
   }
 
   return {
-    result: null,
+    result: collectedResults[0] ?? null,
+    results: collectedResults,
     attemptedQueries,
     failedProviders: Array.from(failedProviders),
     hadSuccessfulResponse,
