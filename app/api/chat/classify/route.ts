@@ -6,7 +6,7 @@ import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritu
 
 export interface AgentDecision {
   mode: 'single' | 'compatibility';
-  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'love_match' | 'trash' | 'general';
+  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'where_to_go' | 'love_match' | 'trash' | 'general';
   needsTarot: boolean;
   spreadId: 'single' | 'three-card' | 'two-options' | 'relationship' | null;
   cardCount: number;
@@ -48,9 +48,11 @@ export async function OPTIONS() {
 }
 
 export async function POST(request: NextRequest) {
+  let messageForFallback = '';
   try {
     const body = await request.json();
     const { message, profiles } = body;
+    messageForFallback = typeof message === 'string' ? message.toLowerCase() : '';
 
     const isCouple = profiles?.length >= 2;
     const p1 = profiles?.[0]?.fullName || 'Người hỏi';
@@ -101,13 +103,17 @@ DANH MỤC Ý ĐỊNH (intent):
 3. "core_personality": Hỏi về bản thân, tính cách cốt lõi, sứ mệnh, điểm mạnh yếu (ví dụ: "tính cách tôi thế nào", "sứ mệnh của tôi",...).
    -> needsTarot: false, spreadId: null, cardCount: 0
 
-4. "daily_guidance": Hỏi sinh hoạt đời thường, lời khuyên tức thời trong ngày (ví dụ: "tôi nên ăn gì", "mai mặc màu gì", "hôm nay làm gì", "đi đâu",...).
+4. "where_to_go": Tìm một địa điểm thực tế để đến, di chuyển hoặc gặp gỡ (ví dụ: "đi đâu bây giờ", "quán cà phê yên tĩnh quanh đây", "cuối tuần đi đâu chơi", "chỗ hẹn hò nào hợp",...).
+   -> needsTarot: true, spreadId: "single", cardCount: 1. Tarot chỉ chọn vibe sau các điều kiện thực tế như khu vực, khoảng cách, ngân sách và người đi cùng.
+   -> Chọn 1-5 targetIndicators đúng với nhu cầu đang hỏi để DeepSeek dùng làm lớp gợi ý chiêm nghiệm khi chọn loại địa điểm. Ví dụ: hẹn hò/nhu cầu cảm xúc ưu tiên soul, personality; cần yên tĩnh suy ngẫm ưu tiên walksOfLife, yearIndividual; trải nghiệm mới ưu tiên dateOfBirth, attitude. Không tự mặc định một bộ chỉ số cố định.
+
+5. "daily_guidance": Hỏi sinh hoạt đời thường, lời khuyên tức thời trong ngày, không phải tìm địa điểm (ví dụ: "mai mặc màu gì", "hôm nay nên làm gì",...).
    -> needsTarot: true, spreadId: "single", cardCount: 1
 
-5. "trash": Câu hỏi vô nghĩa, gõ phím ngẫu nhiên, spam, không có chủ đề hoặc mục đích rõ ràng (ví dụ: "a,.", "ta", "121", "asdfgh", "không biết hỏi gì", "thử máy", "alo alo",...).
+6. "trash": Câu hỏi vô nghĩa, gõ phím ngẫu nhiên, spam, không có chủ đề hoặc mục đích rõ ràng (ví dụ: "a,.", "ta", "121", "asdfgh", "không biết hỏi gì", "thử máy", "alo alo",...).
    -> needsTarot: false, spreadId: null, cardCount: 0, targetIndicators: []
 
-6. "general": Các câu hỏi khác có chủ đề rõ ràng nhưng không thuộc các nhóm trên.
+7. "general": Các câu hỏi khác có chủ đề rõ ràng nhưng không thuộc các nhóm trên.
    -> needsTarot: true, spreadId: "single", cardCount: 1
 
 CATALOG CÁC CHỈ SỐ THẦN SỐ HỌC ĐỂ CHỌN CHO targetIndicators:
@@ -127,7 +133,7 @@ QUY TẮC BẮT BUỘC VỀ targetIndicators:
 Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown format, không có bất kỳ văn bản nào ngoài JSON) theo mẫu sau:
 {
   "mode": "single",
-  "intent": "two_choices" | "timing_trajectory" | "core_personality" | "daily_guidance" | "trash" | "general",
+  "intent": "two_choices" | "timing_trajectory" | "core_personality" | "daily_guidance" | "where_to_go" | "trash" | "general",
   "needsTarot": true | false,
   "spreadId": "two-options" | "three-card" | "single" | null,
   "cardCount": 0 | 1 | 3 | 5,
@@ -221,15 +227,17 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
     console.warn('[API /api/chat/classify] Fallback activated:', error.message);
     
     // Fallback thông minh nếu AI JSON parse thất bại
-    const lower = (request.url || '').toLowerCase();
+    const isWhereToGo = /\b(đi đâu|chỗ nào|nơi nào|quán nào|cà phê nào|cafe nào|địa điểm|đi chơi|hẹn hò ở đâu|dạo ở đâu|tham quan)\b/i.test(messageForFallback);
     const fallbackDecision = {
       mode: 'single',
-      intent: 'general',
+      intent: isWhereToGo ? 'where_to_go' : 'general',
       needsTarot: true,
       spreadId: 'single',
       cardCount: 1,
-      targetIndicators: ['walksOfLife', 'yearIndividual'],
-      thoughtProcess: 'Tiểu Linh Miêu kết nối năng lượng trực giác và rút 1 lá Tarot dẫn lối cho câu hỏi của bạn.'
+      targetIndicators: isWhereToGo ? ['dateOfBirth', 'walksOfLife'] : ['walksOfLife', 'yearIndividual'],
+      thoughtProcess: isWhereToGo
+        ? 'Tiểu Linh Miêu sẽ lọc địa điểm theo nhu cầu thực tế trước, rồi rút một lá Tarot để chọn vibe phù hợp.'
+        : 'Tiểu Linh Miêu kết nối năng lượng trực giác và rút 1 lá Tarot dẫn lối cho câu hỏi của bạn.'
     };
 
     return NextResponse.json({

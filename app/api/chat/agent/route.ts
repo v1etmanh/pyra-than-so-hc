@@ -5,14 +5,56 @@ import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
+import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
 
 export const runtime = 'nodejs';
+
+type PlaceRecommendations = {
+  areaLabel: string;
+  attribution: 'VietMap';
+  searchQuery: string;
+  summary: string;
+  nextStep: string;
+  places: Array<{
+    placeId: string;
+    name: string;
+    address: string;
+    distanceKm: number | null;
+    categories: string[];
+    whySelected: string;
+  }>;
+};
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
+
+/**
+ * Lets us diagnose whether the client sent a usable location without writing
+ * precise coordinates to server logs.
+ */
+function summarizePlaceContext(value: unknown) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return { placeContextProvided: false };
+  }
+
+  const context = value as Record<string, unknown>;
+  const latitude = context.latitude;
+  const longitude = context.longitude;
+  const latitudeValid = typeof latitude === 'number' && Number.isFinite(latitude) && latitude >= -90 && latitude <= 90;
+  const longitudeValid = typeof longitude === 'number' && Number.isFinite(longitude) && longitude >= -180 && longitude <= 180;
+
+  return {
+    placeContextProvided: true,
+    latitudeProvided: latitude !== undefined && latitude !== null,
+    longitudeProvided: longitude !== undefined && longitude !== null,
+    latitudeType: typeof latitude,
+    longitudeType: typeof longitude,
+    validCoordinates: latitudeValid && longitudeValid,
+  };
+}
 
 async function generateLlmText(
   systemPrompt: string,
@@ -65,7 +107,7 @@ export async function OPTIONS() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { message, decision, profiles, indicators, tarotCards } = body;
+    const { message, decision, profiles, indicators, tarotCards, placeContext } = body;
 
     // 0. BỘ LỌC TỐC HÀNH: Phát hiện câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (0 token LLM, phản hồi < 0.1ms)
     const trashCheck = isTrashOrMeaninglessPrompt(message);
@@ -114,6 +156,8 @@ export async function POST(request: NextRequest) {
     let replyText = '';
     let baziScore = 85;
     let baziSummary = '';
+    let placeRecommendations: PlaceRecommendations | null = null;
+    let placeSearchUnavailable = false;
     let cardPayload: any = {
       type: 'agent_synthesis',
       decision: decision || {
@@ -130,6 +174,60 @@ export async function POST(request: NextRequest) {
       indicators2: resolvedP2.length > 0 ? resolvedP2 : p2Indicators,
       drawnCards: cards
     };
+
+    // DeepSeek builds the query and ranks results; VietMap remains the sole
+    // factual source for place names and addresses.
+    if (decision?.intent === 'where_to_go') {
+      console.info('[Chat Agent Route] VietMap location context:', summarizePlaceContext(placeContext));
+      if (!placeContext || typeof placeContext !== 'object') {
+        placeSearchUnavailable = true;
+      } else {
+        try {
+          const vietMapResult = await findVietMapPlaces({
+            message: typeof message === 'string' ? message : '',
+            context: placeContext as VietMapSearchContext,
+            spiritualContext: {
+              tarotCards: cards.slice(0, 5).map((card: any) => ({
+                name: typeof card?.card?.nameVi === 'string' ? card.card.nameVi : '',
+                orientation: card?.isReversed ? 'reversed' as const : 'upright' as const,
+                position: typeof card?.position?.nameVi === 'string' ? card.position.nameVi : '',
+                meaning: typeof (card?.isReversed ? card?.card?.meaningReversed : card?.card?.meaningUpright) === 'string'
+                  ? (card.isReversed ? card.card.meaningReversed : card.card.meaningUpright)
+                  : '',
+              })),
+              indicators: resolvedP1.slice(0, 5).map((indicator) => ({
+                key: indicator.key,
+                name: indicator.nameVi,
+                value: indicator.value,
+                summary: indicator.summaryLine,
+              })),
+            },
+          });
+          if (vietMapResult.places.length === 0) throw new Error('VietMap returned no matching places.');
+          placeRecommendations = {
+            areaLabel: 'Vị trí hiện tại',
+            attribution: 'VietMap',
+            searchQuery: vietMapResult.searchQuery,
+            summary: vietMapResult.summary,
+            nextStep: vietMapResult.nextStep,
+            places: vietMapResult.places.map(({ placeId, name, address, distanceKm, categories }) => ({
+              placeId,
+              name,
+              address,
+              distanceKm,
+              categories,
+              whySelected: vietMapResult.placeReasons.find((reason) => reason.placeId === placeId)?.reason
+                || 'Được DeepSeek xếp hạng từ các kết quả đã xác thực của VietMap.',
+            })),
+          };
+          cardPayload.placeSuggestions = placeRecommendations;
+        } catch (placeError) {
+          // Do not log the request context because it contains precise coordinates.
+          console.warn('[Chat Agent Route] VietMap / DeepSeek place search unavailable:', placeError instanceof Error ? placeError.message : 'unknown error');
+          placeSearchUnavailable = true;
+        }
+      }
+    }
 
     // 1. Tương hợp 2 người (THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ - KHÔNG CẦN TAROT)
     if (isCouple && p2) {
@@ -177,7 +275,28 @@ export async function POST(request: NextRequest) {
         `\n✦ NÊN LÀM GÌ:\n• Viết ba bước đầu tiên cho A.\n• Đặt mốc kiểm tra lại sau một tuần.`
       ].join('\n');
     }
-    // 3. Thuần 24 chỉ số Thần số học (0 lá Tarot)
+    // 3. Địa điểm thực tế: VietMap is the factual source; DeepSeek only plans and ranks.
+    else if (decision?.intent === 'where_to_go') {
+      if (placeRecommendations) {
+        replyText = formatPlaceReply({
+          searchQuery: placeRecommendations.searchQuery,
+          summary: placeRecommendations.summary,
+          nextStep: placeRecommendations.nextStep,
+          places: placeRecommendations.places,
+          placeReasons: placeRecommendations.places.map((place) => ({
+            placeId: place.placeId,
+            reason: place.whySelected,
+          })),
+        });
+      } else {
+        replyText = [
+          `✦ KẾT LUẬN NHANH:\nTiểu Linh Miêu chưa có đủ kết quả VietMap đáng tin cậy để gợi ý một địa điểm cụ thể.`,
+          `\n✦ VÌ SAO:\n• ${placeSearchUnavailable ? 'VietMap hoặc DeepSeek chưa trả về đủ dữ liệu địa điểm.' : 'Bạn cần cấp vị trí hiện tại trước khi tìm.'}\n• Vì không có nguồn xác thực, Tiểu Linh Miêu sẽ không đoán tên quán, giờ mở cửa hay đánh giá.`,
+          `\n✦ NÊN LÀM GÌ:\n• Bật quyền vị trí và thử lại.\n• Giữ khoảng cách tìm kiếm rộng hơn nếu khu vực có ít địa điểm.`
+        ].join('\n');
+      }
+    }
+    // 4. Thuần 24 chỉ số Thần số học (0 lá Tarot)
     else if (!decision?.needsTarot || decision?.intent === 'core_personality') {
       const indicatorReasons = (resolvedP1.length > 0 ? resolvedP1 : p1Indicators)
         .slice(0, 3)
@@ -194,7 +313,7 @@ export async function POST(request: NextRequest) {
         `\n✦ NÊN LÀM GÌ:\n• Chọn một mục tiêu phù hợp thế mạnh của bạn.\n• Duy trì một thói quen nhỏ trong 14 ngày tới.`
       ].join('\n');
     }
-    // 4. Mặc định / 1 lá / 3 lá
+    // 5. Mặc định / 1 lá / 3 lá
     else {
       const c1 = cards[0];
       const lowerQ = (message || '').toLowerCase();
@@ -222,6 +341,15 @@ export async function POST(request: NextRequest) {
     });
     const fallbackReply = normalizeChatReply('', replyText, responseBudget.complexity);
 
+    // Place replies always stay deterministic. Names and addresses come only
+    // from VietMap, never from the normal chat model output.
+    if (decision?.intent === 'where_to_go') {
+      return NextResponse.json({
+        ok: true,
+        data: { replyText: fallbackReply, cardPayload }
+      }, { headers: corsHeaders });
+    }
+
     // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA NGẮN GỌN
     try {
       const systemPrompt = `Bạn là Tiểu Linh Miêu — linh miêu hộ mệnh thông thái, tinh tế và ấm áp của NUMELYRA.
@@ -231,7 +359,8 @@ QUY TẮC BẮT BUỘC:
 1. Với ghép đôi hai người: chỉ dùng Tử Vi Đẩu Số và Bát Tự Tứ Trụ; tuyệt đối không nhắc Tarot.
 2. Với một người: chỉ dùng các lá Tarot và chỉ số đã cung cấp; không tự bịa thêm dữ kiện.
 3. Với hai lựa chọn: nêu rõ phương án nghiêng về và tỷ lệ phần trăm.
-4. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
+4. Với "where_to_go": chỉ nêu các địa điểm đã có trong dữ liệu VietMap được cung cấp. Không tự tạo rating, địa chỉ, giờ mở cửa, khoảng cách, giá hoặc tên địa điểm. Tarot chỉ là lớp diễn giải vibe, không thay thế điều kiện thực tế.
+5. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
 ✦ KẾT LUẬN NHANH:
 [Tối đa 2 câu ngắn, trả lời thẳng vào câu hỏi]
 
@@ -241,7 +370,7 @@ QUY TẮC BẮT BUỘC:
 ✦ NÊN LÀM GÌ:
 [1-2 bullet là hành động cụ thể, làm được ngay; mỗi bullet kết thúc bằng dấu chấm]
 
-5. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
+6. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
 
       const userPrompt = `Câu hỏi của người dùng: "${message}"
 Hồ sơ người hỏi: ${p1.fullName} (Ngày sinh: ${p1.birthDate}) ${p2 ? `\nHồ sơ người thứ 2: ${p2.fullName} (Ngày sinh: ${p2.birthDate})` : ''}
@@ -251,7 +380,8 @@ DỮ LIỆU THẦN SỐ HỌC PYTHAGORAS BẢN MỆNH (${p1.fullName}):
 ${formatIndicatorsForPrompt(resolvedP1)}
 ${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (${p2.fullName}):\n${formatIndicatorsForPrompt(resolvedP2)}` : ''}
 ${baziSummary ? `\nLuận giải Bát Tự & Cung Phu Thê (Điểm hòa hợp: ${baziScore}%):\n${baziSummary}` : ''}
-${cardPayload.optionSplit ? `\nPhân bổ lựa chọn: Phương án A (${cardPayload.optionSplit.optionA}%) vs Phương án B (${cardPayload.optionSplit.optionB}%)` : ''}`;
+${cardPayload.optionSplit ? `\nPhân bổ lựa chọn: Phương án A (${cardPayload.optionSplit.optionA}%) vs Phương án B (${cardPayload.optionSplit.optionB}%)` : ''}
+${placeRecommendations ? `\nDỮ LIỆU ĐỊA ĐIỂM ĐÃ XÁC THỰC TỪ VIETMAP (chỉ dùng đúng các tên này):\n${placeRecommendations.places.map((place) => `• ${place.name}`).join('\n')}` : ''}`;
 
       const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens));
       replyText = normalizeChatReply(aiText, fallbackReply, responseBudget.complexity);

@@ -1,6 +1,6 @@
 type ExpectedDecision = {
   mode: 'single';
-  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'general';
+  intent: 'two_choices' | 'timing_trajectory' | 'core_personality' | 'daily_guidance' | 'where_to_go' | 'general';
   needsTarot: boolean;
   spreadId: 'single' | 'three-card' | 'two-options' | null;
   cardCount: 0 | 1 | 3 | 5;
@@ -48,6 +48,16 @@ const cases: Case[] = [
     id: 'daily-clothes',
     message: 'Ngày mai nên mặc màu gì khi đi gặp khách hàng?',
     expected: { mode: 'single', intent: 'daily_guidance', needsTarot: true, spreadId: 'single', cardCount: 1 }
+  },
+  {
+    id: 'where-to-go-weekend',
+    message: 'Cuối tuần này tôi nên đi đâu chơi một mình ở Cầu Giấy?',
+    expected: { mode: 'single', intent: 'where_to_go', needsTarot: true, spreadId: 'single', cardCount: 1 }
+  },
+  {
+    id: 'where-to-go-date',
+    message: 'Tìm giúp tôi một quán cà phê yên tĩnh để hẹn hò.',
+    expected: { mode: 'single', intent: 'where_to_go', needsTarot: true, spreadId: 'single', cardCount: 1 }
   },
   {
     id: 'general-love',

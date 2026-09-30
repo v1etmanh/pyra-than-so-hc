@@ -9,7 +9,8 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
    reactStrictMode: false,
    outputFileTracingRoot: projectRoot,
-   allowedDevOrigins: ['172.17.144.1', '192.168.160.1'],
+   // LAN hosts used by the Expo/web client while running `next dev`.
+   allowedDevOrigins: ['172.17.144.1', '192.168.160.1', '192.168.10.1'],
    async headers() {
       return [
          {
@@ -26,7 +27,8 @@ const nextConfig = {
                { key: 'X-Content-Type-Options', value: 'nosniff' },
                { key: 'X-Frame-Options', value: 'DENY' },
                { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-               { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+               // The web client may request one-time location; camera and microphone stay disabled.
+               { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(self)' },
             ],
          },
       ];
