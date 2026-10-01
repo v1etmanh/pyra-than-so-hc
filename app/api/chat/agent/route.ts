@@ -6,6 +6,8 @@ import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numero
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
 import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
+import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
+import { getTarotSpread } from '@/lib/tarot/spreads';
 
 export const runtime = 'nodejs';
 
@@ -30,6 +32,24 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
+
+const supportedIndicatorKeys = new Set([
+  'walksOfLife', 'mission', 'soul', 'personality', 'dateOfBirth', 'mature', 'balance',
+  'rationalThinking', 'subconsciousPower', 'passion', 'attitude', 'karmicDebts', 'missingNumbers',
+  'bridgeLifeMission', 'bridgeSoulPersonality', 'bridgeMaturityPassion', 'yearIndividual',
+  'monthIndividual', 'dayIndividual', 'way', 'challenges', 'arrows', 'nameChart', 'birthChart'
+]);
+
+type SuppliedIndicator = { key: string; name: string; value: string | number };
+
+function normalizeSuppliedIndicators(value: unknown): SuppliedIndicator[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is SuppliedIndicator => Boolean(
+    item && typeof item === 'object' &&
+    typeof item.key === 'string' && supportedIndicatorKeys.has(item.key) &&
+    typeof item.name === 'string' && (typeof item.value === 'string' || typeof item.value === 'number')
+  ));
+}
 
 /**
  * Lets us diagnose whether the client sent a usable location without writing
@@ -152,6 +172,28 @@ export async function POST(request: NextRequest) {
 
     const resolvedP1 = resolveTargetIndicators(p1.fullName, p1.birthDate, requestedKeys);
     const resolvedP2 = (isCouple && p2) ? resolveTargetIndicators(p2.fullName, p2.birthDate, requestedKeys) : [];
+    const suppliedP1Indicators = normalizeSuppliedIndicators(p1Indicators);
+    const suppliedP2Indicators = normalizeSuppliedIndicators(p2Indicators);
+    const selectedKeys = Array.isArray(decision?.targetIndicators)
+      ? Array.from(new Set(decision.targetIndicators.filter((key: unknown): key is string =>
+        typeof key === 'string' && supportedIndicatorKeys.has(key)
+      ))).slice(0, 5)
+      : [];
+    const selectedIndicators = isCouple
+      ? []
+      : suppliedP1Indicators.filter((indicator) => selectedKeys.includes(indicator.key));
+    const knowledgeDocs = await Promise.all(selectedIndicators.map(async (indicator) => ({
+      indicator,
+      record: await getKnowledgeByIndicator(indicator.key, indicator.value)
+    })));
+    const retrievedKnowledge = knowledgeDocs.filter(({ record }) => Boolean(record?.content?.trim()));
+    const numerologyKnowledgeContext = isCouple
+      ? ''
+      : retrievedKnowledge.length
+      ? retrievedKnowledge.map(({ indicator, record }) =>
+        `[TƯ LIỆU THẦN SỐ HỌC: ${indicator.name} (${indicator.key} = ${indicator.value}) | ${record!.title}]\n${record!.content}`
+      ).join('\n\n')
+      : 'Không tìm thấy tài liệu gốc khớp với các chỉ số đã chọn. Không tự diễn giải Thần số học chỉ từ tên hoặc giá trị số; hãy tập trung vào Tarot và các dữ liệu khác được cung cấp.';
 
     let replyText = '';
     let baziScore = 85;
@@ -170,8 +212,8 @@ export async function POST(request: NextRequest) {
         thoughtProcess: 'Tiểu Linh Miêu kết hợp Tử Vi Đẩu Số (Bát Tự) và 5 Lá Tarot Mối Quan Hệ.'
       },
       profiles,
-      indicators1: resolvedP1.length > 0 ? resolvedP1 : p1Indicators,
-      indicators2: resolvedP2.length > 0 ? resolvedP2 : p2Indicators,
+      indicators1: suppliedP1Indicators,
+      indicators2: suppliedP2Indicators,
       drawnCards: cards
     };
 
@@ -265,14 +307,10 @@ export async function POST(request: NextRequest) {
     }
     // 2. Hai lựa chọn (A vs B)
     else if (decision?.intent === 'two_choices') {
-      const optionA = 68;
-      const optionB = 32;
-      cardPayload.optionSplit = { optionA, optionB };
-
       replyText = [
-        `✦ KẾT LUẬN NHANH:\nPhương án A đang thuận hơn (${optionA}% so với ${optionB}%). Hãy chọn A nếu nó vẫn phù hợp nguồn lực và ưu tiên thực tế của bạn.`,
-        `\n✦ VÌ SAO:\n• Trải bài cho thấy A có đà phát triển rõ hơn.\n• B có thể an toàn trước mắt nhưng dễ làm bạn chậm quyết định.\n• Tư duy lý trí và năm cá nhân nghiêng về hành động có chuẩn bị.`,
-        `\n✦ NÊN LÀM GÌ:\n• Viết ba bước đầu tiên cho A.\n• Đặt mốc kiểm tra lại sau một tuần.`
+        `✦ KẾT LUẬN NHANH:\nHãy đối chiếu hai lựa chọn với các lá bài ở từng vị trí và ưu tiên thực tế của bạn trước khi quyết định.`,
+        `\n✦ VÌ SAO:\n• Trải bài Hai lựa chọn chỉ ra tiến trình và thách thức riêng của mỗi hướng.\n• Các lá bài gợi xu hướng để cân nhắc, không phải xác suất hay bảo đảm kết quả.`,
+        `\n✦ NÊN LÀM GÌ:\n• Ghi lại lợi ích và chi phí thực tế của từng phương án.\n• Chọn một bước thử nhỏ để kiểm chứng hướng phù hợp hơn.`
       ].join('\n');
     }
     // 3. Địa điểm thực tế: VietMap is the factual source; DeepSeek only plans and ranks.
@@ -298,37 +336,42 @@ export async function POST(request: NextRequest) {
     }
     // 4. Thuần 24 chỉ số Thần số học (0 lá Tarot)
     else if (!decision?.needsTarot || decision?.intent === 'core_personality') {
-      const indicatorReasons = (resolvedP1.length > 0 ? resolvedP1 : p1Indicators)
-        .slice(0, 3)
-        .map((i: any) => `• ${i.name} = ${i.value}.`)
-        .filter((item: string) => item.length <= 140);
-      const indicatorSummary = [
-        ...indicatorReasons,
-        '• Các chỉ số cốt lõi đều nhắc bạn giữ sự tự chủ và cân bằng.',
-        '• Tiến bộ bền vững đến từ việc lặp lại những lựa chọn phù hợp.',
-      ].slice(0, Math.max(2, indicatorReasons.length)).join('\n');
+      const documentedIndicators = selectedIndicators.filter((indicator) =>
+        retrievedKnowledge.some(({ indicator: found }) => found.key === indicator.key)
+      );
+      const indicatorSummary = documentedIndicators.length
+        ? documentedIndicators.slice(0, 3).map((indicator) => `• ${indicator.name} = ${indicator.value}; đã đối chiếu với tư liệu gốc tương ứng.`).join('\n')
+        : '• Chưa tìm thấy tư liệu gốc khớp với chỉ số đã chọn nên chưa thể đưa ra luận giải Thần số học đáng tin cậy.\n• Hãy thử lại sau khi hồ sơ và kho kiến thức được đồng bộ.';
       replyText = [
-        `✦ KẾT LUẬN NHANH:\nBản đồ của ${p1.fullName} cho thấy tiềm năng phát triển tốt khi bạn kết hợp chủ động với sự kiên định.`,
+        `✦ KẾT LUẬN NHANH:\n${documentedIndicators.length ? `Các tư liệu Thần số học đã tra cứu cho ${p1.fullName} có thể giúp bạn soi chiếu câu hỏi.` : 'Hiện chưa có đủ tư liệu Thần số học để luận giải câu hỏi này.'}`,
         `\n✦ VÌ SAO:\n${indicatorSummary}`,
-        `\n✦ NÊN LÀM GÌ:\n• Chọn một mục tiêu phù hợp thế mạnh của bạn.\n• Duy trì một thói quen nhỏ trong 14 ngày tới.`
+        `\n✦ NÊN LÀM GÌ:\n• Kiểm tra tên và giá trị các chỉ số trong hồ sơ.\n• Đặt lại câu hỏi sau khi có tư liệu tương ứng.`
       ].join('\n');
     }
     // 5. Mặc định / 1 lá / 3 lá
     else {
       const c1 = cards[0];
+      const cardsForFallback = cards.slice(0, 10);
+      const groupSize = Math.max(1, Math.ceil(cardsForFallback.length / 3));
+      const cardGroups = Array.from({ length: Math.ceil(cardsForFallback.length / groupSize) }, (_, groupIndex) =>
+        cardsForFallback.slice(groupIndex * groupSize, (groupIndex + 1) * groupSize)
+      );
+      const cardSignals = cardGroups.map((group, groupIndex) => `• ${group.map((card: any, index: number) =>
+        `${card.position?.nameVi || `Vị trí ${groupIndex * groupSize + index + 1}`} — ${card.card?.nameVi || 'Tarot'} (${card.isReversed ? 'ngược' : 'xuôi'})`
+      ).join('; ')}.`).join('\n');
       const lowerQ = (message || '').toLowerCase();
       const isFood = /ăn|món|thực đơn|uống|nấu|bữa|sáng|trưa|tối|đói/i.test(lowerQ);
 
       if (isFood) {
         replyText = [
           `✦ KẾT LUẬN NHANH:\nHôm nay hợp với một bữa nhẹ, tươi và dễ tiêu như phở, bún hoặc salad.`,
-          `\n✦ VÌ SAO:\n• Lá ${c1?.card?.nameVi || 'Tarot'} gợi tinh thần khám phá và làm mới nhịp sinh hoạt.\n• Một bữa nhẹ giúp bạn giữ năng lượng ổn định hơn.`,
+          `\n✦ VÌ SAO:\n${cardSignals || `• Lá ${c1?.card?.nameVi || 'Tarot'} là một gợi ý để suy ngẫm.`}\n• Hãy đối chiếu thông điệp với hoàn cảnh thực tế của bạn.`,
           `\n✦ NÊN LÀM GÌ:\n• Chọn món có rau và đạm vừa phải.\n• Ăn chậm, uống đủ nước.`
         ].join('\n');
       } else {
         replyText = [
           `✦ KẾT LUẬN NHANH:\nThông điệp hiện tại là giữ vững hướng đi và đừng vội phản ứng theo cảm xúc.`,
-          `\n✦ VÌ SAO:\n• Lá ${c1?.card?.nameVi || 'Tarot'} nhấn mạnh bài học ${c1?.isReversed ? 'nhìn lại và điều chỉnh' : 'chủ động hành động'}.\n• Một lựa chọn bình tĩnh sẽ giúp bạn thấy rõ bước tiếp theo.`,
+          `\n✦ VÌ SAO:\n${cardSignals || `• Lá ${c1?.card?.nameVi || 'Tarot'} gợi một điểm cần chú ý.`}\n• Cần đọc từng lá theo đúng vai trò vị trí trong trải bài.`,
           `\n✦ NÊN LÀM GÌ:\n• Chọn một việc quan trọng nhất hôm nay.\n• Hoàn thành nó trước khi nhận thêm cam kết.`
         ].join('\n');
       }
@@ -352,15 +395,22 @@ export async function POST(request: NextRequest) {
 
     // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA NGẮN GỌN
     try {
+      const spread = getTarotSpread(decision?.spreadId);
+      const spreadContext = spread
+        ? `Trải bài được chọn: ${spread.name.vi} (${spread.id}), ${spread.positions.length} lá.\n${spread.positions.map((position, index) => `${index + 1}. ${position.name.vi}: ${position.description.vi}`).join('\n')}`
+        : 'Không có trải bài Tarot trong chế độ này.';
+
       const systemPrompt = `Bạn là Tiểu Linh Miêu — linh miêu hộ mệnh thông thái, tinh tế và ấm áp của NUMELYRA.
-Bạn tư vấn dựa trên dữ liệu Thần số học Pythagoras, Tarot Rider-Waite và Tử Vi Đẩu Số đã được cung cấp.
+Bạn tư vấn dựa trên các lá Tarot Rider-Waite theo vị trí, tài liệu Thần số học đã tra cứu và Tử Vi Đẩu Số/Bát Tự nếu được cung cấp.
 
 QUY TẮC BẮT BUỘC:
 1. Với ghép đôi hai người: chỉ dùng Tử Vi Đẩu Số và Bát Tự Tứ Trụ; tuyệt đối không nhắc Tarot.
-2. Với một người: chỉ dùng các lá Tarot và chỉ số đã cung cấp; không tự bịa thêm dữ kiện.
-3. Với hai lựa chọn: nêu rõ phương án nghiêng về và tỷ lệ phần trăm.
-4. Với "where_to_go": chỉ nêu các địa điểm đã có trong dữ liệu VietMap được cung cấp. Không tự tạo rating, địa chỉ, giờ mở cửa, khoảng cách, giá hoặc tên địa điểm. Tarot chỉ là lớp diễn giải vibe, không thay thế điều kiện thực tế.
-5. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
+2. Với một người: Tarot là lớp diễn giải chính. Chỉ dùng nội dung Thần số học có trong tài liệu được cung cấp; nếu không có tài liệu cho chỉ số, không tự suy luận từ giá trị số.
+3. Với trải bài nhiều lá: tổng hợp tín hiệu theo tên và vai trò vị trí; không chỉ dựa vào lá đầu tiên, không cần diễn giải máy móc từng lá.
+4. Với câu hỏi tình cảm: không khẳng định biết suy nghĩ, ý định hoặc hành động riêng tư của đối phương.
+5. Với hai lựa chọn: nêu hướng mà các lá bài nghiêng về nếu có đủ tín hiệu; không tự tạo tỷ lệ phần trăm hoặc xác suất.
+6. Với "where_to_go": chỉ nêu các địa điểm đã có trong dữ liệu VietMap được cung cấp. Không tự tạo rating, địa chỉ, giờ mở cửa, khoảng cách, giá hoặc tên địa điểm. Tarot chỉ là lớp diễn giải vibe, không thay thế điều kiện thực tế.
+7. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
 ✦ KẾT LUẬN NHANH:
 [Tối đa 2 câu ngắn, trả lời thẳng vào câu hỏi]
 
@@ -370,17 +420,17 @@ QUY TẮC BẮT BUỘC:
 ✦ NÊN LÀM GÌ:
 [1-2 bullet là hành động cụ thể, làm được ngay; mỗi bullet kết thúc bằng dấu chấm]
 
-6. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
+8. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Tarot là công cụ tự soi chiếu, không phải tiên tri chắc chắn; với khủng hoảng sức khỏe/an toàn, khuyến khích tìm hỗ trợ chuyên môn. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
 
       const userPrompt = `Câu hỏi của người dùng: "${message}"
 Hồ sơ người hỏi: ${p1.fullName} (Ngày sinh: ${p1.birthDate}) ${p2 ? `\nHồ sơ người thứ 2: ${p2.fullName} (Ngày sinh: ${p2.birthDate})` : ''}
-${isCouple ? 'CHẾ ĐỘ GHÉP ĐÔI 2 NGƯỜI: 100% THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (KHÔNG CÓ LÁ BÀI TAROT).' : (cards.length > 0 ? `Các lá bài Tarot đã rút:\n${cards.map((c: any, i: number) => `• Vị trí ${i+1} [${c.position?.nameVi || i+1}]: ${c.card?.nameVi} (${c.isReversed ? 'Lá Ngược' : 'Lá Xuôi'}) - Ý nghĩa: ${c.isReversed ? c.card?.meaningReversed : c.card?.meaningUpright}`).join('\n')}` : 'Không sử dụng lá bài Tarot.')}
+${isCouple ? 'CHẾ ĐỘ GHÉP ĐÔI 2 NGƯỜI: 100% THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (KHÔNG CÓ LÁ BÀI TAROT).' : `${spreadContext}\n${cards.length > 0 ? `Các lá bài Tarot đã rút:\n${cards.map((c: any, i: number) => `• Vị trí ${i+1} [${c.position?.nameVi || i+1}]: ${c.card?.nameVi} (${c.isReversed ? 'Lá Ngược' : 'Lá Xuôi'}) - Ý nghĩa: ${c.isReversed ? c.card?.meaningReversed : c.card?.meaningUpright}`).join('\n')}` : 'Không có lá Tarot được cung cấp.'}`}
 
 DỮ LIỆU THẦN SỐ HỌC PYTHAGORAS BẢN MỆNH (${p1.fullName}):
-${formatIndicatorsForPrompt(resolvedP1)}
-${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (${p2.fullName}):\n${formatIndicatorsForPrompt(resolvedP2)}` : ''}
+${numerologyKnowledgeContext}
+${selectedIndicators.length ? `\nCÁC CHỈ SỐ ĐÃ CHỌN VÀ GIÁ TRỊ HỒ SƠ:\n${selectedIndicators.map((indicator) => `• ${indicator.name} (${indicator.key}): ${indicator.value}${retrievedKnowledge.some(({ indicator: found }) => found.key === indicator.key) ? '' : ' — không có tài liệu khớp, không diễn giải chỉ số này.'}`).join('\n')}` : ''}
+${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (tham khảo):\n${formatIndicatorsForPrompt(resolvedP2)}` : ''}
 ${baziSummary ? `\nLuận giải Bát Tự & Cung Phu Thê (Điểm hòa hợp: ${baziScore}%):\n${baziSummary}` : ''}
-${cardPayload.optionSplit ? `\nPhân bổ lựa chọn: Phương án A (${cardPayload.optionSplit.optionA}%) vs Phương án B (${cardPayload.optionSplit.optionB}%)` : ''}
 ${placeRecommendations ? `\nDỮ LIỆU ĐỊA ĐIỂM ĐÃ XÁC THỰC TỪ VIETMAP (chỉ dùng đúng các tên này):\n${placeRecommendations.places.map((place) => `• ${place.name}`).join('\n')}` : ''}`;
 
       const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens));
