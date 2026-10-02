@@ -7,7 +7,7 @@ import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
-import { getChatResponseBudget, normalizeChatReply, normalizeChatReplyWithDiagnostics } from '@/lib/spiritual-agent/response-length';
+import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
 import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { getTarotSpread } from '@/lib/tarot/spreads';
@@ -137,7 +137,14 @@ async function generateLlmText(
     knowledgeMatchedKeys: string[];
   }
 ): Promise<string> {
-  const generationOptions = { maxTokens: Math.max(1600, maxTokens * 2), temperature: 0.7 };
+  const generationOptions = {
+    // Leave room for a complete, longer structured reply.  Keeping provider
+    // reasoning off prevents it from consuming the completion budget.
+    maxTokens: Math.max(2400, maxTokens * 2),
+    temperature: 0.7,
+    reasoningEffort: 'low' as const,
+    includeReasoning: false,
+  };
   await saveChatPromptSnapshot(systemPrompt, userPrompt, generationOptions, indicatorSelection);
 
   const stream = createStreamingResponse(
@@ -523,17 +530,11 @@ export async function POST(request: NextRequest) {
         selectedKeys: selectedIndicators.map((indicator) => indicator.key),
         knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key)
       });
-      const normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
-      replyText = normalized.replyText;
-      if (normalized.usedAI) {
-        console.log('[Chat Agent Route] Generated reply successfully, using AI text: true');
-      } else {
-        console.warn('[Chat Agent Route] AI reply rejected; using template:', {
-          reason: normalized.rejectionReason,
-          responseChars: aiText.length,
-          complexity: responseBudget.complexity,
-        });
-      }
+      // Do not gate a useful answer behind a rigid display format. The client
+      // may receive any complete text the model produces; fallback stays for
+      // empty output and request/provider failures only.
+      replyText = aiText.trim() || fallbackReply;
+      console.log('[Chat Agent Route] Generated reply successfully, using AI text:', Boolean(aiText.trim()));
     } catch (llmError) {
       console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
       replyText = fallbackReply;

@@ -170,7 +170,7 @@ ${personalityIndicatorKeys.map((key) => `- "${key}": ${personalityIndicatorDescr
 QUY TẮC BẮT BUỘC VỀ targetIndicators:
 - Chỉ chọn trong 6 chỉ số ở catalog trên; thông thường chọn 1–3, tối đa 5 khi người dùng yêu cầu phân tích toàn diện. Không chọn cho đủ số lượng.
 - "mission" chỉ dành cho câu hỏi nói rõ về sứ mệnh, nghề nghiệp hoặc đóng góp; không dùng nó để suy đoán tính cách trong lời khuyên thường ngày.
-- Ưu tiên chỉ số mô tả cách suy nghĩ, cảm xúc hoặc phản ứng liên quan trực tiếp tới câu hỏi. Các chỉ số này là góc nhìn tham khảo, không phải nguyên nhân đã được chứng minh của tính cách.
+- Ưu tiên chỉ số mô tả cách suy nghĩ, cảm xúc hoặc phản ứng liên quan trực tiếp tới câu hỏi. Các chỉ số này là những lát cắt tham khảo để tạo chân dung riêng, không phải nguyên nhân đã được chứng minh của tính cách hay nhãn gán cho người hỏi.
 - Với câu hỏi về thời điểm hoặc tương lai, Tarot đảm nhiệm diễn tiến; không đưa các chỉ số chu kỳ vào targetIndicators chỉ để dự báo.
 - Nếu intent là "trash", để mảng rỗng [].
 - BẮT ĐẦU NGAY LẬP TỨC BẰNG KÝ TỰ { VÀ KẾT THÚC BẰNG }. TUYỆT ĐỐI KHÔNG SUY NGHĨ, KHÔNG DÙNG THẺ SUY NGHĨ HAY GIẢI THÍCH TRƯỚC KHI XUẤT JSON.
@@ -182,7 +182,7 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
   "spreadId": "single" | "three-card" | "two-options" | "relationship" | "timeline" | "celtic-cross" | null,
   "cardCount": ${tarotSpreads.map((spread) => spread.positions.length).filter((value, index, all) => all.indexOf(value) === index).sort((a, b) => a - b).join(' | ')},
   "targetIndicators": ["chỉ_số_1", "chỉ_số_2", "chỉ_số_tối_đa_5"],
-  "thoughtProcess": "1 câu tiếng Việt ngắn gọn giải thích lý do Tiểu Linh Miêu chọn trải bài và các chỉ số này để hiển thị cho người dùng xem."
+  "thoughtProcess": "1 câu tiếng Việt ngắn gọn giải thích lý do Tiểu Linh Miêu chọn trải bài và các lát cắt này để cá nhân hóa câu trả lời; không gọi người hỏi là một con số hoặc một nhãn nhân cách."
 }`;
 
     const userPrompt = `Câu hỏi của người dùng: "${message}"\nHồ sơ người hỏi: ${p1}`;

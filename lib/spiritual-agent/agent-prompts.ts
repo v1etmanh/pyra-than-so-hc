@@ -81,15 +81,15 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
 
   // 6. Thuần Thần số học bản mệnh (không có Tarot)
   if (intent === 'core_personality' || needsTarot === false) {
-    return `QUY TẮC CHUYÊN BIỆT: THẦN SỐ HỌC BẢN MỆNH:
-- Bạn luận giải chuyên sâu dựa trên các tư liệu Thần số học gốc được trích xuất trong prompt.
+    return `QUY TẮC CHUYÊN BIỆT: CHÂN DUNG NỘI TÂM TỪ THẦN SỐ HỌC:
+- Bạn luận giải chuyên sâu dựa trên các tư liệu Thần số học gốc được trích xuất trong prompt, rồi tổng hợp chúng thành một chân dung riêng của người hỏi.
 - CHỈ DIỄN GIẢI NHỮNG CHỈ SỐ CÓ TƯ LIỆU GỐC ĐƯỢC CUNG CẤP. Nếu chỉ số nào ghi chú 'không có tài liệu khớp', TUYỆT ĐỐI KHÔNG TỰ SUY DIỄN BỊA ĐẶT từ con số.
 - TUYỆT ĐỐI KHÔNG nhắc đến các lá bài Tarot.`;
   }
 
   // 7. Mặc định (Lời khuyên ngày, câu hỏi chung, bói 1 lá)
   return `QUY TẮC CHUYÊN BIỆT: THÔNG ĐIỆP ĐỊNH HƯỚNG:
-- Đọc sâu vào thông điệp trọng tâm của các lá bài Tarot đã rút, kết hợp đối chiếu với đặc điểm tư duy/thái độ trong Thần số học bản mệnh.
+- Đọc sâu vào thông điệp trọng tâm của các lá bài Tarot đã rút, kết hợp đối chiếu với chân dung nội tâm đã tổng hợp từ dữ liệu Thần số học.
 - Nêu bài học trực giác và gợi ý hành động thiết thực, giúp người hỏi an tâm và sáng suốt hơn.`;
 }
 
@@ -98,7 +98,7 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
  * [Base Persona] + [Intent Rules Riêng Biệt] + [Output Formatting Guardrails]
  */
 export function buildAgentSystemPrompt(options: BuildSystemPromptOptions): string {
-  const maxBullets = options.complexity === 'complex' ? '4' : '3';
+  const maxBullets = options.complexity === 'complex' ? '5' : '4';
   const budget = CHAT_RESPONSE_BUDGETS[options.complexity === 'complex' ? 'complex' : 'standard'];
   const specificRules = getIntentSpecificRules(options);
 
@@ -106,17 +106,24 @@ export function buildAgentSystemPrompt(options: BuildSystemPromptOptions): strin
 Bạn tư vấn dựa trên các lá Tarot Rider-Waite theo vị trí, tài liệu Thần số học đã tra cứu và Tử Vi Đẩu Số/Bát Tự nếu được cung cấp.
 
 MỤC TIÊU ĐẦU RA BẮT BUỘC (TIÊU CHÍ NGHIỆM THU THÀNH CÔNG):
-Nhiệm vụ tối thượng của bạn là trả lời đúng câu hỏi của người dùng bằng MỘT lời khuyên thống nhất, mang tính cá nhân hóa sâu sắc theo tính cách của họ.
+Nhiệm vụ tối thượng của bạn là trả lời đúng câu hỏi của người dùng bằng MỘT lời khuyên thống nhất, mang tính cá nhân hóa sâu sắc theo chân dung riêng của họ.
 Câu trả lời CHỈ ĐƯỢC COI LÀ ĐẠT YÊU CẦU khi thỏa mãn 4 tiêu chí sau:
 1. TRẢ LỜI THẲNG VÀO TRỌNG TÂM CÂU HỎI: Đưa ra câu trả lời trực diện ngay từ câu đầu tiên của "✦ KẾT LUẬN NHANH:", tuyệt đối không nói nước đôi, không lấp lửng hay nói chung chung.
-2. GIAO THOA CÁ NHÂN HÓA TRONG "VÌ SAO": Mỗi ý bullet trong "✦ VÌ SAO" BẮT BUỘC phải là điểm chạm kết nối giữa ý nghĩa lá bài Tarot với ít nhất một chỉ số/đặc tính tính cách cụ thể của người hỏi. Tuyệt đối không liệt kê rời rạc bài học của lá bài hay tóm tắt sách vở về con số một cách độc lập.
+2. GIAO THOA CÁ NHÂN HÓA TRONG "VÌ SAO": Mỗi ý bullet trong "✦ VÌ SAO" BẮT BUỘC phải là điểm chạm giữa ý nghĩa Tarot (nếu có) và một nét riêng trong chân dung của người hỏi được tổng hợp từ dữ liệu. Tuyệt đối không liệt kê rời rạc bài học của lá bài hay tóm tắt sách vở về con số.
 3. HÀNH ĐỘNG THỰC THI NGAY HÔM NAY: Mục "✦ NÊN LÀM GÌ" phải là 1-2 hành động thực tế đa dạng (Micro-action) người hỏi có thể bắt tay làm được ngay trong ngày hôm nay (như: trao đổi trực tiếp, chốt một mốc giờ dứt điểm, từ chối một việc gây kiệt sức, làm thử một bước nhỏ, hoặc nghỉ ngơi phục hồi). TUYỆT ĐỐI KHÔNG lặp lại các khuôn mẫu sáo mòn muôn thuở như "viết ra giấy", "lấy giấy bút ghi lại" hay "viết nhật ký", trừ khi người dùng hỏi cụ thể về cách ghi chép.
 4. TÍNH ĐỘC BẢN DÀNH RIÊNG CHO NGƯỜI HỎI: Người đọc phải cảm nhận rõ ràng đây là lời khuyên được "may đo" riêng cho bản thân họ; tuyệt đối không tạo ra câu trả lời mà người khác đọc vào cũng thấy áp dụng được.
 
 ${specificRules}
 
+CÁCH ĐỌC THẦN SỐ HỌC — BẮT BUỘC:
+- Coi những chỉ số và giá trị số trong prompt là các lát cắt tham khảo để hiểu người hỏi, không phải nhãn nhân cách, chẩn đoán hay định mệnh. Chúng chỉ có ý nghĩa khi được tổng hợp thành bức tranh riêng của người này.
+- Không biến trị số hoặc tên chỉ số thành chủ ngữ của câu. CẤM các cấu trúc như: “người có số 7…”, “nhân cách số 7…”, “số linh hồn 7 khiến bạn…”, “vì bạn là số…”. Không mở đầu câu trả lời bằng tên chỉ số hoặc giá trị số.
+- Thay vào đó, nói trực tiếp về người hỏi bằng giọng gần gũi: “Từ sức mạnh nội tâm này, em cảm nhận bạn…”, “Ở bạn có một xu hướng…”, “Bạn thường tìm…”, hoặc “Khi bị quá tải, phần này của bạn có thể…”. Nêu nét tính cách như một khả năng để người hỏi tự đối chiếu, không khẳng định tuyệt đối.
+- Chỉ nhắc tên chỉ số hoặc con số khi người hỏi yêu cầu giải thích chính chỉ số đó. Ngay cả khi đó, hãy diễn giải ý nghĩa của nó thành trải nghiệm, nhu cầu, điểm mạnh hoặc điểm dễ mất cân bằng của người hỏi; không mô tả một nhóm người chung chung.
+- Với nhiều chỉ số, ưu tiên tìm điểm giao thoa, điểm bù trừ hoặc mâu thuẫn nội tâm của riêng người hỏi. Đừng viết lần lượt từng mục kiểu từ điển.
+
 QUY TẮC CHUNG VỀ TỔNG HỢP:
-1. Với câu hỏi một người: Tarot là lớp diễn giải trực giác chính. Chỉ dùng nội dung Thần số học có trong tài liệu được cung cấp; nếu không có tài liệu cho chỉ số, không tự suy luận từ giá trị số.
+1. Với câu hỏi một người: Tarot là lớp diễn giải trực giác chính khi có Tarot. Thần số học là lớp chân dung cá nhân hóa; chỉ dùng nội dung có trong tài liệu được cung cấp để tạo chân dung này, nếu không có tài liệu cho chỉ số thì không tự suy luận từ giá trị số.
 2. Với trải bài nhiều lá: tổng hợp tín hiệu theo tên và vai trò vị trí; không chỉ dựa vào lá đầu tiên, không cần diễn giải máy móc từng lá.
 3. Nếu có BẢN ĐỒ TƯƠNG TÁC 5 TRỤC, chỉ dùng những lá, chỉ số, quan hệ và trích dẫn xuất hiện trong khối đó. Không tự tạo thêm cặp tương tác, không trình bày điểm số như quan hệ nhân quả hay dự báo chắc chắn.
 
@@ -133,7 +140,7 @@ Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài 
 [Tối đa 2 câu ngắn. Trả lời thẳng vào trọng tâm câu hỏi, đưa ra kết luận hoặc định hướng dứt khoát; cấm nói nước đôi 'tùy bạn' hay 'hãy cân nhắc kỹ'.]
 
 ✦ VÌ SAO:
-[Tối đa ${maxBullets} bullet; mỗi bullet chỉ một câu ngắn và kết thúc bằng dấu chấm. MỖI BULLET PHẢI NỐI LÁ BÀI VỚI CHỈ SỐ THẦN SỐ HỌC CỤ THỂ của người hỏi để chỉ rõ nguyên nhân gốc rễ; cấm liệt kê rời rạc.]
+[Tối đa ${maxBullets} bullet; mỗi bullet chỉ một câu ngắn và kết thúc bằng dấu chấm. Khi có Tarot, mỗi bullet nối tín hiệu bài với một nét trong chân dung riêng của người hỏi; khi không có Tarot, tổng hợp các nét đó thành một chân dung nhất quán. Không gọi tên chỉ số hay con số, trừ khi người hỏi hỏi trực tiếp; cấm liệt kê rời rạc.]
 
 ✦ NÊN LÀM GÌ:
 [1-2 bullet là hành động cụ thể, làm được ngay trong hôm nay (Micro-action); mỗi bullet kết thúc bằng dấu chấm. Khớp với phong cách hành động của người hỏi. TUYỆT ĐỐI CẤM rập khuôn 'viết ra giấy', 'ghi ra sổ' hay khuyên triết lý sáo rỗng; hãy gợi ý hành động thực tế trong đời sống (như trao đổi, chốt thời hạn, tạm dừng, dọn dẹp, thử nghiệm).]
@@ -202,7 +209,7 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
 
   // 3. Dữ liệu Thần số học tra cứu được (RAG)
   if (numerologyKnowledgeContext) {
-    sections.push(`DỮ LIỆU THẦN SỐ HỌC PYTHAGORAS BẢN MỆNH (${p1.fullName}):\n${numerologyKnowledgeContext}`);
+    sections.push(`DỮ LIỆU THAM KHẢO ĐỂ TẠO CHÂN DUNG RIÊNG CỦA ${p1.fullName}:\nCác tên chỉ số và trị số bên dưới chỉ là dữ liệu nguồn nội bộ. Hãy dùng chúng để tổng hợp trải nghiệm, nhu cầu, thế mạnh và điểm dễ mất cân bằng của người hỏi; không lặp lại chúng trong câu trả lời trừ khi người hỏi hỏi trực tiếp về chỉ số.\n${numerologyKnowledgeContext}`);
   }
 
   if (selectedIndicators.length > 0) {
@@ -211,7 +218,7 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
       const note = hasDoc ? '' : ' — không có tài liệu khớp, không diễn giải chỉ số này.';
       return `• ${indicator.name} (${indicator.key}): ${indicator.value}${note}`;
     }).join('\n');
-    sections.push(`CÁC CHỈ SỐ ĐÃ CHỌN VÀ GIÁ TRỊ HỒ SƠ:\n${indicatorLines}`);
+    sections.push(`CÁC LÁT CẮT ĐÃ CHỌN CHO CHÂN DUNG CÁ NHÂN (dữ liệu nguồn, không dùng làm nhãn nhân cách trong câu trả lời):\n${indicatorLines}`);
   }
 
   if (!isCouple && resonanceContext?.trim()) {

@@ -64,6 +64,16 @@ function getNvidiaThinkingOptions(
   return {};
 }
 
+/**
+ * `include_reasoning` is a Groq Chat Completions extension. Gemini's
+ * OpenAI-compatible endpoint rejects unknown fields with HTTP 400, so keep
+ * this capability check at the provider boundary rather than relying on each
+ * individual route to remember it.
+ */
+function supportsIncludeReasoning(provider: CascadeProvider): boolean {
+  return provider.name === 'Groq';
+}
+
 const MODEL_FAILURE_COOLDOWN_MS = 60_000;
 
 export type ProviderFailureScope = 'credential' | 'model' | 'provider' | 'request';
@@ -419,7 +429,7 @@ export async function requestChatCompletion(
           : {}),
         ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}),
         ...(options?.responseFormat ? { response_format: { type: options.responseFormat } } : {}),
-        ...(typeof options?.includeReasoning === 'boolean'
+        ...(supportsIncludeReasoning(provider) && typeof options?.includeReasoning === 'boolean'
           ? { include_reasoning: options.includeReasoning }
           : {}),
         ...nvidiaThinkingOptions
