@@ -1,0 +1,702 @@
+[
+  {
+    "cardId": "wands-01",
+    "cardNameVi": "Át Gậy",
+    "cardNameEn": "Ace of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cảm hứng, khởi động, tiềm năng. Ý nghĩa: Át Gậy xuôi nhấn mạnh cảm hứng, khởi động, tiềm năng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khởi động, tiềm năng", "rationale": "Bùng nổ tia lửa hành động đầu tiên, bắt tay vào khởi sự." },
+      "EMO": { "score": 1, "evidenceQuote": "cảm hứng", "rationale": "Hào hứng, nhiệt tình và đam mê thuần khiết." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 2, "evidenceQuote": "khởi động, tiềm năng", "rationale": "Sẵn sàng đón nhận cơ hội mới mẻ tràn đầy năng lượng lửa." },
+      "INT": { "score": 1, "evidenceQuote": "cảm hứng", "rationale": "Linh cảm sáng tạo mạnh mẽ thúc giục từ bên trong." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "khởi động vội", "rationale": "Cả thèm chóng chán, hừng hực lúc đầu nhưng thiếu bền bỉ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu kế hoạch", "rationale": "Nhiệt tình quá mức mà thiếu chuẩn bị nền tảng." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng", "rationale": "Lao vào việc mới mà chưa tính toán rủi ro." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-01",
+    "cardNameVi": "Át Gậy",
+    "cardNameEn": "Ace of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: trì hoãn, thiếu động lực, lỡ nhịp. Ý nghĩa: Át Gậy ngược gợi ý trì hoãn, thiếu động lực, lỡ nhịp; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Dừng lại để tìm nguyên nhân mất lửa trước khi khởi động lại." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "điều chỉnh nhịp độ", "rationale": "Lên lại kế hoạch để tránh lỡ nhịp tiếp theo." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn lại thiếu động lực", "rationale": "Tự vấn xem ngọn lửa đam mê thực sự đang nằm ở đâu." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trì hoãn, thiếu động lực, lỡ nhịp", "rationale": "Tê liệt ngọn lửa hành động, chán nản, bỏ lỡ thời cơ vàng." },
+      "EMO": { "score": -1, "evidenceQuote": "thiếu động lực", "rationale": "Cảm giác nguội lạnh, hụt hẫng và cạn kiệt năng lượng." },
+      "STR": { "score": -1, "evidenceQuote": "lỡ nhịp", "rationale": "Nhịp độ hỗn loạn, không bắt kịp tiến độ công việc." },
+      "RSK": { "score": -1, "evidenceQuote": "ngần ngại", "rationale": "Sợ thất bại nên không dám đánh lửa bắt đầu." },
+      "INT": { "score": -1, "evidenceQuote": "mất cảm hứng", "rationale": "Cảm giác trống rỗng và mất kết nối với đam mê cá nhân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-02",
+    "cardNameVi": "2 Gậy",
+    "cardNameEn": "Two of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kế hoạch, tầm nhìn, lựa chọn. Ý nghĩa: 2 Gậy xuôi nhấn mạnh kế hoạch, tầm nhìn, lựa chọn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "kế hoạch, lựa chọn", "rationale": "Chủ động quan sát từ lâu đài để chuẩn bị xuất quân." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "kế hoạch, tầm nhìn", "rationale": "Tư duy chiến lược bài bản, vạch lộ trình tương lai rõ ràng." },
+      "RSK": { "score": 1, "evidenceQuote": "lựa chọn, tầm nhìn vươn xa", "rationale": "Hướng ra thế giới rộng lớn bên ngoài vùng an toàn." },
+      "INT": { "score": 1, "evidenceQuote": "tầm nhìn", "rationale": "Nhìn xa trông rộng, thấu suốt bức tranh toàn cảnh." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "đứng nhìn", "rationale": "Có thể đứng lên kế hoạch quá lâu mà chưa chịu bước đi." },
+      "EMO": { "score": -1, "evidenceQuote": "cô độc trên cao", "rationale": "Có khoảng cách với thực tế bình dân." },
+      "STR": { "score": 1, "evidenceQuote": "kế hoạch", "rationale": "Cầu toàn trong việc tính toán phương án." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-02",
+    "cardNameVi": "2 Gậy",
+    "cardNameEn": "Two of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: do dự, sợ thay đổi, hạn chế. Ý nghĩa: 2 Gậy ngược gợi ý do dự, sợ thay đổi, hạn chế; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Nhận ra sự do dự để tìm cách tháo gỡ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "thu hẹp mục tiêu", "rationale": "Tập trung vào phạm vi vừa sức hơn trước khi mở rộng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn rõ hạn chế", "rationale": "Nhận thức trung thực về giới hạn năng lực hiện tại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "do dự", "rationale": "Chần chừ đứng núi này trông núi nọ, không quyết đoán." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "hạn chế", "rationale": "Tầm nhìn bị bó hẹp trong bốn bức tường quen thuộc." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ thay đổi, hạn chế", "rationale": "Sợ bước chân ra biển lớn, cam chịu giam mình trong vùng an toàn." },
+      "INT": { "score": -1, "evidenceQuote": "thiếu tầm nhìn", "rationale": "Mất phương hướng chiến lược, lo âu về tương lai." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-03",
+    "cardNameVi": "3 Gậy",
+    "cardNameEn": "Three of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: mở rộng, tiến triển, hợp tác. Ý nghĩa: 3 Gậy xuôi nhấn mạnh mở rộng, tiến triển, hợp tác; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tiến triển, mở rộng", "rationale": "Đoàn thuyền đã ra khơi, hành động mở rộng quy mô mạnh mẽ." },
+      "EMO": { "score": 1, "evidenceQuote": "hợp tác", "rationale": "Gắn kết, liên minh cùng nhau phát triển." },
+      "STR": { "score": 1, "evidenceQuote": "mở rộng có tổ chức", "rationale": "Quản trị chuỗi hành trình và vận hành trơn tru." },
+      "RSK": { "score": 2, "evidenceQuote": "mở rộng ra biển lớn", "rationale": "Can đảm khám phá những thị trường và chân trời mới." },
+      "INT": { "score": 1, "evidenceQuote": "dự báo tương lai", "rationale": "Nhìn thấy trước thành quả của những nỗ lực đã gieo trồng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "mở rộng nhanh", "rationale": "Có thể mở rộng quy mô quá nhanh so với nội lực." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "mạo hiểm", "rationale": "Gặp rủi ro từ các biến cố đường xa ngoài tầm kiểm soát." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-03",
+    "cardNameVi": "3 Gậy",
+    "cardNameEn": "Three of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: trở ngại, chậm trễ, thất vọng. Ý nghĩa: 3 Gậy ngược gợi ý trở ngại, chậm trễ, thất vọng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Đánh giá lại lộ trình vận tải và phân phối." },
+      "EMO": { "score": 1, "evidenceQuote": "vượt qua thất vọng", "rationale": "Xoa dịu tinh thần đồng đội sau những vấp váp ban đầu." },
+      "STR": { "score": 1, "evidenceQuote": "khắc phục trở ngại", "rationale": "Tái cơ cấu và tìm phương án dự phòng hữu hiệu." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận diện rào cản", "rationale": "Thấu suốt nguyên nhân khiến chuyến tàu bị hoãn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chậm trễ", "rationale": "Kế hoạch bị đình đốn, thuyền chưa thể cập bến như mong đợi." },
+      "EMO": { "score": -1, "evidenceQuote": "thất vọng", "rationale": "Buồn bã, nản chí vì kỳ vọng quá cao không thành." },
+      "STR": { "score": -1, "evidenceQuote": "trở ngại", "rationale": "Vướng phải các rào cản hậu cần và thủ tục phức tạp." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ rủi ro đường xa", "rationale": "Ngần ngại thu hồi vốn hoặc không dám mạo hiểm tiếp." },
+      "INT": { "score": -1, "evidenceQuote": "tính toán sai", "rationale": "Dự báo thiếu chính xác về điều kiện thực tế." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-04",
+    "cardNameVi": "4 Gậy",
+    "cardNameEn": "Four of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: ổn định, ăn mừng, thuộc về. Ý nghĩa: 4 Gậy xuôi nhấn mạnh ổn định, ăn mừng, thuộc về; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "ăn mừng", "rationale": "Tổ chức lễ hội, chia sẻ niềm vui thắng lợi với cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "thuộc về, ăn mừng", "rationale": "Ấm áp, đoàn viên, cảm giác gắn kết gia đình và cộng đồng." },
+      "STR": { "score": 2, "evidenceQuote": "ổn định", "rationale": "Xây dựng nền móng kiên cố, hoàn thành cột mốc quan trọng." },
+      "RSK": { "score": 0, "evidenceQuote": "an cư lạc nghiệp", "rationale": "Tận hưởng sự bình yên và an toàn sau thời gian phấn đấu." },
+      "INT": { "score": 1, "evidenceQuote": "hòa hợp", "rationale": "Cảm nhận sự thiêng liêng của mái ấm và nơi thuộc về." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "tiệc tùng", "rationale": "Có thể mải mê vui chơi ăn mừng quá chén." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại rời vùng ấm êm", "rationale": "Không muốn bước tiếp vì đang quá thỏa mãn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-04",
+    "cardNameVi": "4 Gậy",
+    "cardNameEn": "Four of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bất ổn, thiếu hỗ trợ, căng thẳng. Ý nghĩa: 4 Gậy ngược gợi ý bất ổn, thiếu hỗ trợ, căng thẳng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Tìm cách giải tỏa bầu không khí ngột ngạt." },
+      "EMO": { "score": 1, "evidenceQuote": "hàn gắn gia đình", "rationale": "Nhận ra nhu cầu thấu hiểu để hòa giải bất đồng." },
+      "STR": { "score": 1, "evidenceQuote": "củng cố lại nền tảng", "rationale": "Sửa chữa những vết rạn nứt trong cấu trúc gia đình/nhóm." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận diện căng thẳng", "rationale": "Hiểu rõ căn nguyên của sự thiếu hòa hợp." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "căng thẳng", "rationale": "Không khí gia đình ngột ngạt làm tê liệt cảm hứng sáng tạo." },
+      "EMO": { "score": -2, "evidenceQuote": "thiếu hỗ trợ, bất ổn", "rationale": "Cảm giác cô đơn ngay trong chính ngôi nhà hay tập thể của mình." },
+      "STR": { "score": -2, "evidenceQuote": "bất ổn nền móng", "rationale": "Rạn nứt nội bộ, các cam kết chung bị lung lay." },
+      "RSK": { "score": -1, "evidenceQuote": "bất an", "rationale": "Lo sợ mất đi chỗ dựa tinh thần quen thuộc." },
+      "INT": { "score": -1, "evidenceQuote": "xa cách nội tâm", "rationale": "Đóng chặt lòng mình lại vì thất vọng về người thân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-05",
+    "cardNameVi": "5 Gậy",
+    "cardNameEn": "Five of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cạnh tranh, va chạm, thử thách. Ý nghĩa: 5 Gậy xuôi nhấn mạnh cạnh tranh, va chạm, thử thách; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "cạnh tranh, va chạm", "rationale": "Tham gia tranh tài sôi nổi, rèn luyện kỹ năng qua cọ xát thực tế." },
+      "EMO": { "score": 0, "evidenceQuote": "thử thách lành mạnh", "rationale": "Cạnh tranh công bằng để cùng nhau tiến bộ." },
+      "STR": { "score": -1, "evidenceQuote": "va chạm hỗn độn", "rationale": "Nhiều ý kiến trái chiều đan xen, tạm thời chưa có tiếng nói chung." },
+      "RSK": { "score": 1, "evidenceQuote": "đối diện thử thách", "rationale": "Không ngại cọ xát, dám đứng lên bảo vệ ý kiến." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "va chạm quá đà", "rationale": "Hành vi hiếu chiến, thích gây sự hơn là tìm giải pháp." },
+      "EMO": { "score": -1, "evidenceQuote": "xung đột cái tôi", "rationale": "Bực bội, cay cú vì ai cũng muốn phần thắng về mình." },
+      "STR": { "score": -2, "evidenceQuote": "hỗn loạn", "rationale": "Trống đánh xuôi kèn thổi ngược, mất phương hướng tập thể." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "nhiễu loạn tiếng ồn", "rationale": "Bị cuốn vào tranh cãi vụn vặt mà quên mục tiêu lớn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-05",
+    "cardNameVi": "5 Gậy",
+    "cardNameEn": "Five of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: né xung đột, hòa giải, dồn nén. Ý nghĩa: 5 Gậy ngược gợi ý né xung đột, hòa giải, dồn nén; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "hòa giải", "rationale": "Hạ vũ khí, chủ động ngồi lại để tìm kiếm thỏa hiệp hòa bình." },
+      "EMO": { "score": 1, "evidenceQuote": "hòa giải", "rationale": "Xoa dịu cái tôi, hướng tới sự đồng thuận và cảm thông." },
+      "STR": { "score": 1, "evidenceQuote": "lập lại trật tự", "rationale": "Tìm ra quy chế chung để chấm dứt sự tranh giành hỗn loạn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự vô nghĩa của tranh cãi", "rationale": "Hiểu rằng tranh cãi hơn thua không đem lại lợi ích thực sự." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "né xung đột", "rationale": "Trốn tránh đối thoại thẳng thắn, giả vờ bình yên." },
+      "EMO": { "score": -2, "evidenceQuote": "dồn nén", "rationale": "Nuốt giận vào trong, tích tụ uất ức như thùng thuốc súng ngầm." },
+      "STR": { "score": -1, "evidenceQuote": "bất đồng ngầm", "rationale": "Vấn đề cốt lõi không được giải quyết rốt ráo." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ va chạm", "rationale": "Hèn nhát, sợ mếch lòng nên để quyền lợi bị chà đạp." },
+      "INT": { "score": -1, "evidenceQuote": "bằng mặt không bằng lòng", "rationale": "Tự dối lòng rằng mọi chuyện vẫn ổn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-06",
+    "cardNameVi": "6 Gậy",
+    "cardNameEn": "Six of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chiến thắng, công nhận, tự tin. Ý nghĩa: 6 Gậy xuôi nhấn mạnh chiến thắng, công nhận, tự tin; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chiến thắng, diễu hành", "rationale": "Gặt hái thành tựu vẻ vang, ngẩng cao đầu cưỡi ngựa vinh quang." },
+      "EMO": { "score": 2, "evidenceQuote": "công nhận, tự tin", "rationale": "Niềm tự hào lành mạnh, được đám đông chúc mừng và tán thưởng." },
+      "STR": { "score": 1, "evidenceQuote": "trật tự người chiến thắng", "rationale": "Khẳng định vị thế và uy tín lãnh đạo vững chắc." },
+      "RSK": { "score": 1, "evidenceQuote": "tự tin", "rationale": "Vững tin vào năng lực bản thân sau khi đã chứng minh được kết quả." },
+      "INT": { "score": 1, "evidenceQuote": "nhận thức giá trị", "rationale": "Thấu suốt công sức đã bỏ ra xứng đáng với tràng pháo tay." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "say men chiến thắng", "rationale": "Có thể nghiện sự tung hô của đám đông." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "kiêu hãnh", "rationale": "Nguy cơ ảo tưởng sức mạnh, quên mất sự giúp đỡ của đồng đội." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-06",
+    "cardNameVi": "6 Gậy",
+    "cardNameEn": "Six of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kiêu hãnh, thiếu công nhận, thất bại. Ý nghĩa: 6 Gậy ngược gợi ý kiêu hãnh, thiếu công nhận, thất bại; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Chậm lại để soi xét lý do ngã ngựa trước khi tái xuất." },
+      "EMO": { "score": 1, "evidenceQuote": "khiêm nhường", "rationale": "Học bài học khiêm tốn sâu sắc từ sự thờ ơ của đám đông." },
+      "STR": { "score": 1, "evidenceQuote": "khắc phục sai sót", "rationale": "Chỉnh đốn lại chiến thuật thay vì than vãn." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng khí làm lại", "rationale": "Dám đối diện với thất bại mà không sụp đổ hoàn toàn." },
+      "INT": { "score": 2, "evidenceQuote": "nhìn thấu hư vinh", "rationale": "Nhận ra sự phù phiếm của lời khen ngợi bề ngoài." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thất bại", "rationale": "Mất mặt, lẩn tránh xuất hiện trước đám đông." },
+      "EMO": { "score": -2, "evidenceQuote": "kiêu hãnh tổn thương, thiếu công nhận", "rationale": "Uất ức, cay đắng, cảm giác bị cả thế giới quay lưng bạc bẽo." },
+      "STR": { "score": -1, "evidenceQuote": "sụp đổ hình tượng", "rationale": "Mất uy tín cá nhân vì hứa hươu vượn mà không làm được." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ mất mặt", "rationale": "Bị nỗi sợ thất bại bóp nghẹt, không dám dấn thân nữa." },
+      "INT": { "score": -1, "evidenceQuote": "cái tôi mù quáng", "rationale": "Đổ lỗi cho hoàn cảnh thay vì chịu trách nhiệm cho sự thất bại." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-07",
+    "cardNameVi": "7 Gậy",
+    "cardNameEn": "Seven of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kiên định, bảo vệ, dũng khí. Ý nghĩa: 7 Gậy xuôi nhấn mạnh kiên định, bảo vệ, dũng khí; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bảo vệ, kiên định", "rationale": "Một mình đứng vững trên điểm cao kiên cường chống trả mọi đối thủ." },
+      "EMO": { "score": 0, "evidenceQuote": "giữ vững lập trường", "rationale": "Không dao động trước áp lực từ số đông đối nghịch." },
+      "STR": { "score": 2, "evidenceQuote": "ranh giới, bảo vệ lập trường", "rationale": "Thiết lập ranh giới kiên cố, không nhượng bộ nguyên tắc cốt lõi." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng khí", "rationale": "Can trường đứng mũi chịu sào, dám đương đầu với thử thách áp đảo." },
+      "INT": { "score": 1, "evidenceQuote": "niềm tin vững chắc", "rationale": "Biết rõ điều mình đang chiến đấu là hoàn toàn chính đáng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "chống đỡ liên tục", "rationale": "Có thể kiệt sức vì lúc nào cũng trong tư thế phòng thủ tác chiến." },
+      "EMO": { "score": -1, "evidenceQuote": "căng thẳng cô độc", "rationale": "Cảm giác đơn độc chiến đấu với cả thế giới." },
+      "STR": { "score": 1, "evidenceQuote": "phòng thủ", "rationale": "Cứng nhắc, từ chối mọi cơ hội thỏa hiệp có lợi." },
+      "RSK": { "score": 1, "evidenceQuote": "ngoan cường", "rationale": "Cố chấp tử thủ ngay cả khi trận chiến không còn cần thiết." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-07",
+    "cardNameVi": "7 Gậy",
+    "cardNameEn": "Seven of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: quá tải, bỏ cuộc, phòng thủ quá mức. Ý nghĩa: 7 Gậy ngược gợi ý quá tải, bỏ cuộc, phòng thủ quá mức; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "hạ gậy nghỉ ngơi", "rationale": "Biết buông gậy đúng lúc để tránh bị gãy đổ hoàn toàn." },
+      "EMO": { "score": 1, "evidenceQuote": "chấp nhận giới hạn", "rationale": "Thông cảm cho bản thân khi không thể gánh vác tất cả." },
+      "STR": { "score": 1, "evidenceQuote": "chọn lọc trận chiến", "rationale": "Học cách buông bỏ những trận địa không đáng để dồn sức cho việc chính." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thấu hiểu sự kiệt sức", "rationale": "Nhận ra phòng thủ mù quáng chỉ làm hao mòn sinh lực." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "bỏ cuộc, quá tải", "rationale": "Đầu hàng vô điều kiện vì kiệt sức, buông xuôi trận địa." },
+      "EMO": { "score": -2, "evidenceQuote": "quá tải, bất an", "rationale": "Áp lực đè nặng khiến tâm lý suy sụp hoàn toàn." },
+      "STR": { "score": -2, "evidenceQuote": "vỡ trận, phòng thủ quá mức", "rationale": "Phản ứng thái quá hoặc ranh giới bị đối phương đập tan nát." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ đối đầu", "rationale": "Khiếp sợ trước sự công kích, không còn dũng khí tự vệ." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng chiến đấu", "rationale": "Nghi ngờ chính những giá trị mà mình từng bảo vệ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-08",
+    "cardNameVi": "8 Gậy",
+    "cardNameEn": "Eight of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tốc độ, tin tức, chuyển động. Ý nghĩa: 8 Gậy xuôi nhấn mạnh tốc độ, tin tức, chuyển động; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tốc độ, chuyển động", "rationale": "Hành động thần tốc, mọi thứ lao đi vun vút như tên bắn." },
+      "EMO": { "score": 1, "evidenceQuote": "tin tức tốt", "rationale": "Hân hoan đón nhận những thông điệp tích cực bay tới." },
+      "STR": { "score": 1, "evidenceQuote": "đường bay thông suốt", "rationale": "Mọi vật cản biến mất, dòng chảy thông suốt không gì cản nổi." },
+      "RSK": { "score": 2, "evidenceQuote": "tốc độ cao", "rationale": "Táo bạo tận dụng thời cơ chớp nhoáng không chần chừ." },
+      "INT": { "score": 1, "evidenceQuote": "tin tức, đồng bộ", "rationale": "Linh cảm nhạy bén bắt kịp tần số của vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "chuyển động quá nhanh", "rationale": "Có thể vội vã tới mức bỏ qua chi tiết an toàn quan trọng." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu hãm phanh", "rationale": "Khó kiểm soát tình hình khi tốc độ vượt quá ngưỡng an toàn." },
+      "RSK": { "score": 1, "evidenceQuote": "lao nhanh", "rationale": "Dễ vấp ngã nếu đường bay có chướng ngại vật ngầm." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-08",
+    "cardNameVi": "8 Gậy",
+    "cardNameEn": "Eight of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: trì hoãn, hỗn loạn, vội vàng. Ý nghĩa: 8 Gậy ngược gợi ý trì hoãn, hỗn loạn, vội vàng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "chậm lại để kiểm soát", "rationale": "Hãm tốc độ lại để tránh đâm sầm vào chướng ngại vật." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "lập lại trật tự khỏi hỗn loạn", "rationale": "Sắp xếp lại các bức thông điệp và quy trình bị xáo trộn." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh vội vàng", "rationale": "Ý thức được mối nguy hại của sự hấp tấp." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự nhiễu loạn thông tin", "rationale": "Gạn đục khơi trong giữa bão tin đồn và sự chậm trễ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "trì hoãn, lỡ nhịp", "rationale": "Bị đình trệ ở phút chót, thông tin quan trọng bị thất lạc." },
+      "EMO": { "score": -1, "evidenceQuote": "bồn chồn, hoảng hốt", "rationale": "Bực tức vì bị kẹt cứng trong lúc đang muốn lao đi." },
+      "STR": { "score": -2, "evidenceQuote": "hỗn loạn, vội vàng", "rationale": "Hấp tấp dẫn tới sai sót dây chuyền, loạn cào cào." },
+      "RSK": { "score": 1, "evidenceQuote": "liều mạng trong hoảng loạn", "rationale": "Càng vội càng làm ẩu, đốt cháy giai đoạn mù quáng." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng tốc độ", "rationale": "Đầu óc quay cuồng không còn biết đâu là ưu tiên số một." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-09",
+    "cardNameVi": "9 Gậy",
+    "cardNameEn": "Nine of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: bền bỉ, cảnh giác, ranh giới. Ý nghĩa: 9 Gậy xuôi nhấn mạnh bền bỉ, cảnh giác, ranh giới; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "bền bỉ", "rationale": "Kiên gan chiến đấu đến cùng dù mình mẩy đầy thương tích." },
+      "EMO": { "score": 0, "evidenceQuote": "cảnh giác", "rationale": "Cẩn trọng giữ gìn tâm trí, không dễ dãi mở lòng bừa bãi." },
+      "STR": { "score": 2, "evidenceQuote": "ranh giới, cảnh giác", "rationale": "Rào chắn kiên cố, kỷ luật phòng thủ thép bảo vệ thành quả." },
+      "RSK": { "score": 1, "evidenceQuote": "dám đứng vững sau bão", "rationale": "Can trường chống gậy canh gác, không bỏ chạy trước hiểm nguy." },
+      "INT": { "score": 1, "evidenceQuote": "kinh nghiệm trận mạc", "rationale": "Rút kinh nghiệm sâu sắc từ những vết sẹo quá khứ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "bó gối phòng thủ", "rationale": "Có thể quá co cụm phòng ngự mà không dám tấn công." },
+      "EMO": { "score": -2, "evidenceQuote": "hoài nghi, cảnh giác quá mức", "rationale": "Đa nghi thái quá, nhìn ai cũng tưởng là kẻ thù đến cướp phá." },
+      "STR": { "score": 1, "evidenceQuote": "cứng nhắc", "rationale": "Xây tường rào quá cao giam hãm chính bản thân mình." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị thương thêm lần nữa", "rationale": "Ám ảnh chấn thương cũ khiến không dám tin ai." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-09",
+    "cardNameVi": "9 Gậy",
+    "cardNameEn": "Nine of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kiệt sức, nghi ngờ, cứng nhắc. Ý nghĩa: 9 Gậy ngược gợi ý kiệt sức, nghi ngờ, cứng nhắc; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "nghỉ ngơi băng bó", "rationale": "Chấp nhận hạ hàng rào xuống để được điều trị vết thương." },
+      "EMO": { "score": 1, "evidenceQuote": "bớt nghi ngờ", "rationale": "Bắt đầu học cách tin tưởng và chia sẻ gánh nặng phòng thủ." },
+      "STR": { "score": 1, "evidenceQuote": "mở cổng thành", "rationale": "Tháo bỏ sự cứng nhắc để đón nhận luồng gió mới." },
+      "RSK": { "score": 1, "evidenceQuote": "dám thả lỏng phòng vệ", "rationale": "Can đảm hạ thấp tấm khiên để kết nối lại." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự kiệt sức", "rationale": "Thấu suốt rằng mình không thể đơn độc chống lại cả thế giới mãi mãi." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "kiệt sức hoàn toàn", "rationale": "Gục ngã bên bờ rào vì cố gồng gánh quá giới hạn chịu đựng." },
+      "EMO": { "score": -2, "evidenceQuote": "nghi ngờ hoang tưởng", "rationale": "Tâm bệnh hoang tưởng, ghen tuông hoặc thù ghét vô căn cứ." },
+      "STR": { "score": -2, "evidenceQuote": "cứng nhắc đến gãy vụn", "rationale": "Cố chấp không chịu linh hoạt khiến hệ thống phòng thủ sụp đổ." },
+      "RSK": { "score": -2, "evidenceQuote": "tê liệt vì sợ hãi", "rationale": "Sợ đến mức không dám cựa quậy, hoảng loạn tinh thần." },
+      "INT": { "score": -1, "evidenceQuote": "mất hết lý trí phòng vệ", "rationale": "Đầu óc mụ mị vì thiếu ngủ và căng thẳng kéo dài." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-10",
+    "cardNameVi": "10 Gậy",
+    "cardNameEn": "Ten of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: gánh nặng, trách nhiệm, hoàn tất. Ý nghĩa: 10 Gậy xuôi nhấn mạnh gánh nặng, trách nhiệm, hoàn tất; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "gánh vác, hoàn tất", "rationale": "Dồn hết tàn lực bước những bước cuối cùng để đưa bó gậy về đích." },
+      "EMO": { "score": 0, "evidenceQuote": "trách nhiệm", "rationale": "Tận tụy hy sinh vì nghĩa vụ và lời hứa danh dự." },
+      "STR": { "score": 2, "evidenceQuote": "ôm trọn trách nhiệm, kỷ luật cao", "rationale": "Sức chịu đựng phi thường, kiên định hoàn thành cam kết." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận gánh nặng", "rationale": "Không thoái thác nhiệm vụ dù biết con đường vô cùng chông gai." },
+      "INT": { "score": 1, "evidenceQuote": "hướng về đích đến", "rationale": "Nhìn thấy mái nhà thành phố phía trước để làm động lực." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "cố gồng", "rationale": "Ôm đồm quá nhiều việc cùng lúc không chịu san sẻ." },
+      "EMO": { "score": -1, "evidenceQuote": "nặng nề", "rationale": "Mất hết niềm vui sống, biến công việc thành cực hình." },
+      "STR": { "score": 1, "evidenceQuote": "còng lưng vì trách nhiệm", "rationale": "Quá cứng nhắc với nghĩa vụ khiến cột sống bị quá tải." },
+      "RSK": { "score": -1, "evidenceQuote": "nguy cơ gãy gánh giữa đường", "rationale": "Có thể sụp đổ bất thình lình vì kiệt sức." },
+      "INT": { "score": -1, "evidenceQuote": "bị bó gậy che khuất tầm nhìn", "rationale": "Cúi gầm mặt cắm đầu đi mà không thấy đường phía trước." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-10",
+    "cardNameVi": "10 Gậy",
+    "cardNameEn": "Ten of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: sụp sức, ôm đồm, buông gánh. Ý nghĩa: 10 Gậy ngược gợi ý sụp sức, ôm đồm, buông gánh; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "buông bớt gánh nặng", "rationale": "Chủ động vứt bớt những cây gậy không cần thiết để giải thoát bản thân." },
+      "EMO": { "score": 1, "evidenceQuote": "thở phào nhẹ nhõm", "rationale": "Cảm nhận sự tự do sau khi dám nói lời từ chối gánh vác hộ người khác." },
+      "STR": { "score": 1, "evidenceQuote": "phân quyền, tái cơ cấu", "rationale": "Biết cách ủy quyền và chia việc cho đồng đội." },
+      "RSK": { "score": 1, "evidenceQuote": "dám buông tay", "rationale": "Dũng cảm từ bỏ sự hoàn hảo và danh hiệu người hùng cô độc." },
+      "INT": { "score": 2, "evidenceQuote": "nhận ra sự vô lý của ôm đồm", "rationale": "Thức tỉnh rằng mình không cần phải chịu trách nhiệm cho cuộc đời của mọi người." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sụp sức hoàn toàn", "rationale": "Gãy gục giữa đường, cơ thể và tinh thần sụp đổ hoàn toàn." },
+      "EMO": { "score": -2, "evidenceQuote": "uất ức vì ôm đồm", "rationale": "Oán trách người xung quanh vô tâm dù chính mình tự nhận việc." },
+      "STR": { "score": -2, "evidenceQuote": "đứt gánh", "rationale": "Kế hoạch đổ vỡ tan tành do người cầm trịch gục ngã." },
+      "RSK": { "score": -1, "evidenceQuote": "trốn chạy trách nhiệm phút chót", "rationale": "Bỏ của chạy lấy người khi không thể chịu đựng thêm." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng hy sinh", "rationale": "Mê muội nghĩ rằng mình buông tay thì mọi thứ sẽ sụp đổ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-11",
+    "cardNameVi": "Tiểu Đồng Gậy",
+    "cardNameEn": "Page of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: khám phá, tin vui, tò mò. Ý nghĩa: Tiểu Đồng Gậy xuôi nhấn mạnh khám phá, tin vui, tò mò; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "khám phá, học hỏi", "rationale": "Chủ động tìm tòi những điều mới lạ với tâm thế háo hức." },
+      "EMO": { "score": 1, "evidenceQuote": "tin vui, hân hoan", "rationale": "Tràn đầy nhiệt huyết tuổi trẻ, vui tươi và tràn đầy sức sống." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 2, "evidenceQuote": "tò mò dấn thân", "rationale": "Không ngại thử nghiệm cái mới, ham học hỏi và dũng cảm." },
+      "INT": { "score": 1, "evidenceQuote": "thông điệp sáng tạo", "rationale": "Đón nhận những ý tưởng tươi mới như chồi non nảy lộc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "ngây thơ", "rationale": "Dễ bị cảm xúc hưng phấn ban đầu làm lu mờ thực tế." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu kinh nghiệm", "rationale": "Còn non nớt trong việc tổ chức và thực thi bài bản." },
+      "RSK": { "score": 1, "evidenceQuote": "liều lĩnh trẻ con", "rationale": "Nghịch ngợm thử lửa mà chưa biết đến nguy cơ bỏng tay." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-11",
+    "cardNameVi": "Tiểu Đồng Gậy",
+    "cardNameEn": "Page of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thiếu hướng, nóng vội, xao nhãng. Ý nghĩa: Tiểu Đồng Gậy ngược gợi ý thiếu hướng, nóng vội, xao nhãng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại sự phân tâm", "rationale": "Chậm lại để rèn luyện tính kiên nhẫn và tập trung." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "tìm người hướng dẫn", "rationale": "Cần một người thầy dẫn dắt để đưa vào kỷ luật thực tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự xao nhãng", "rationale": "Tự nhìn lại để gom nhặt lại sự chú ý bị phân tán." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "nóng vội", "rationale": "Cả thèm chóng chán, làm việc nhảy cóc, hỏng việc vì hấp tấp." },
+      "EMO": { "score": -1, "evidenceQuote": "bực bội, dỗi hờn", "rationale": "Mất kiên nhẫn khi không được chú ý hoặc không có kết quả ngay." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu hướng, xao nhãng", "rationale": "Vô kỷ luật, mất tập trung, đầu voi đuôi chuột." },
+      "RSK": { "score": 1, "evidenceQuote": "bồng bột", "rationale": "Hành động thiếu suy nghĩ gây phiền toái cho người khác." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng đam mê", "rationale": "Không biết mình thực sự thích gì, quẩn quanh trong nông nổi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-12",
+    "cardNameVi": "Kỵ Sĩ Gậy",
+    "cardNameEn": "Knight of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hành động, phiêu lưu, nhiệt huyết. Ý nghĩa: Kỵ Sĩ Gậy xuôi nhấn mạnh hành động, phiêu lưu, nhiệt huyết; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hành động, nhiệt huyết", "rationale": "Lao đi phi thường như ngọn lửa bùng cháy, dũng mãnh và quyết liệt." },
+      "EMO": { "score": 1, "evidenceQuote": "nhiệt huyết", "rationale": "Đam mê cháy bỏng, truyền cảm hứng hành động cho người khác." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 2, "evidenceQuote": "phiêu lưu, dấn thân", "rationale": "Thích mạo hiểm, sẵn sàng lao vào chiến địa không chút do dự." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "quá đà", "rationale": "Có thể lao nhanh tới mức giẫm đạp lên quy tắc và an toàn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu kế hoạch dài hạn", "rationale": "Chỉ giỏi xung trận ngắn hạn, thiếu tính bền bỉ hậu cần." },
+      "RSK": { "score": 2, "evidenceQuote": "liều lĩnh", "rationale": "Nguy cơ đâm đầu vào tường vì quá tự tin vào tốc độ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-12",
+    "cardNameVi": "Kỵ Sĩ Gậy",
+    "cardNameEn": "Knight of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bốc đồng, giận dữ, bất ổn. Ý nghĩa: Kỵ Sĩ Gậy ngược gợi ý bốc đồng, giận dữ, bất ổn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "hãm phanh ngựa chiến", "rationale": "Học cách ghìm cương ngọn lửa giận dữ trước khi gây họa." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "tìm lại sự bình ổn", "rationale": "Cần khuôn khổ kỷ luật để kiềm chế bản tính hoang dã." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh liều lĩnh mù quáng", "rationale": "Nhận ra tác hại của việc đốt cháy giai đoạn." },
+      "INT": { "score": 1, "evidenceQuote": "tự vấn cơn giận", "rationale": "Soi rọi lại gốc rễ sự bất ổn và nóng tính của bản thân." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "bốc đồng, phá hoại", "rationale": "Hành động thiếu kiểm soát, thiêu rụi mọi thứ trên đường đi." },
+      "EMO": { "score": -2, "evidenceQuote": "giận dữ, hung hăng", "rationale": "Cáu bẳn, nổi trận lôi đình, bạo lực cảm xúc với người xung quanh." },
+      "STR": { "score": -2, "evidenceQuote": "bất ổn", "rationale": "Hỗn loạn hoàn toàn, không thể lường trước được hành vi." },
+      "RSK": { "score": 2, "evidenceQuote": "liều lĩnh điên rồ", "rationale": "Đánh cược tất cả vào sự bốc đồng mù quáng." },
+      "INT": { "score": -2, "evidenceQuote": "mất trí vì giận", "rationale": "Cơn giận dữ bốc hỏa thiêu rụi hoàn toàn khả năng tư duy sáng suốt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-13",
+    "cardNameVi": "Nữ Hoàng Gậy",
+    "cardNameEn": "Queen of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tự tin, hấp dẫn, độc lập. Ý nghĩa: Nữ Hoàng Gậy xuôi nhấn mạnh tự tin, hấp dẫn, độc lập; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "độc lập, hành động cuốn hút", "rationale": "Hành động tự tin, làm chủ hoàn toàn sân khấu cuộc đời mình." },
+      "EMO": { "score": 2, "evidenceQuote": "hấp dẫn, ấm áp", "rationale": "Thần thái rạng rỡ, quyến rũ, hào phóng và lan tỏa năng lượng tích cực." },
+      "STR": { "score": 1, "evidenceQuote": "độc lập, bản lĩnh", "rationale": "Có năng lực tự quản và thiết lập ranh giới vững vàng." },
+      "RSK": { "score": 2, "evidenceQuote": "tự tin tỏa sáng", "rationale": "Không e ngại ánh mắt phán xét, tự hào là chính mình." },
+      "INT": { "score": 1, "evidenceQuote": "trực giác nhạy bén (hoa hướng dương)", "rationale": "Kết nối tốt với bản năng sống và năng lượng sáng tạo." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "thích là tâm điểm", "rationale": "Có thể muốn mọi sự chú ý phải đổ dồn về mình." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "quá kiêu hãnh", "rationale": "Khó chấp nhận bị người khác xem thường." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-13",
+    "cardNameVi": "Nữ Hoàng Gậy",
+    "cardNameEn": "Queen of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: ghen tuông, bất an, ích kỷ. Ý nghĩa: Nữ Hoàng Gậy ngược gợi ý ghen tuông, bất an, ích kỷ; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại sự bất an", "rationale": "Chậm lại để chữa lành cảm giác thiếu an toàn bên trong." },
+      "EMO": { "score": 1, "evidenceQuote": "chữa lành lòng tự trọng", "rationale": "Tìm lại giá trị thật của bản thân mà không cần phụ thuộc sự khen ngợi." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm soát lại cảm xúc", "rationale": "Kìm hãm thói ghen tuông bằng sự thấu hiểu." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn rõ sự ích kỷ", "rationale": "Thành thật với lòng mình về nỗi sợ bị lép vế." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tranh giành hào quang", "rationale": "Dìm người khác xuống để mình được nổi bật." },
+      "EMO": { "score": -2, "evidenceQuote": "ghen tuông, bất an, ích kỷ", "rationale": "Ghen ăn tức ở, đố kỵ độc hại và thao túng người thân." },
+      "STR": { "score": -1, "evidenceQuote": "áp đặt quyền uy", "rationale": "Đòi hỏi người khác phải phục tùng ý muốn cá nhân." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất vị thế", "rationale": "Bất an sâu sắc về nhan sắc, tài năng hoặc sự chú ý." },
+      "INT": { "score": -1, "evidenceQuote": "mất đi vẻ rạng rỡ chân thật", "rationale": "Tâm trí bị vẩn đục bởi sự đố kỵ nhỏ nhen." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-14",
+    "cardNameVi": "Vua Gậy",
+    "cardNameEn": "King of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lãnh đạo, tầm nhìn, quyết đoán. Ý nghĩa: Vua Gậy xuôi nhấn mạnh lãnh đạo, tầm nhìn, quyết đoán; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lãnh đạo, quyết đoán", "rationale": "Hành động đỉnh đạc, dứt khoát của một vị tướng lĩnh thống lĩnh chiến trường." },
+      "EMO": { "score": 1, "evidenceQuote": "truyền cảm hứng lãnh đạo", "rationale": "Lôi cuốn mọi người bằng tầm nhìn vĩ đại và lòng dũng cảm." },
+      "STR": { "score": 2, "evidenceQuote": "lãnh đạo có tầm nhìn", "rationale": "Quản trị đại cục xuất sắc, biến tầm nhìn thành kế hoạch hành động quy mô." },
+      "RSK": { "score": 2, "evidenceQuote": "quyết đoán, dám nghĩ dám làm", "rationale": "Can trường đứng đầu ngọn sóng, dám chịu trách nhiệm cho đại cuộc." },
+      "INT": { "score": 1, "evidenceQuote": "tầm nhìn", "rationale": "Trực giác nhạy bén về thời cuộc và con người." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động độc đoán", "rationale": "Có xu hướng áp đặt mệnh lệnh thép thiếu linh hoạt." },
+      "EMO": { "score": -1, "evidenceQuote": "nóng nảy", "rationale": "Dễ nổi giận khi cấp dưới không theo kịp tốc độ của mình." },
+      "STR": { "score": 1, "evidenceQuote": "chỉ huy", "rationale": "Có thể trở nên bảo thủ với tầm nhìn của riêng mình." },
+      "RSK": { "score": 1, "evidenceQuote": "tự tin thái quá", "rationale": "Đánh giá thấp đối thủ vì quá tin vào uy quyền của mình." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "wands-14",
+    "cardNameVi": "Vua Gậy",
+    "cardNameEn": "King of Wands",
+    "type": "minor",
+    "suit": "wands",
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: độc đoán, hấp tấp, phi thực tế. Ý nghĩa: Vua Gậy ngược gợi ý độc đoán, hấp tấp, phi thực tế; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "hạ bớt cái tôi chỉ huy", "rationale": "Lắng nghe ý kiến của tập thể thay vì một mình quyết định." },
+      "EMO": { "score": 1, "evidenceQuote": "đồng cảm với cấp dưới", "rationale": "Học cách tôn trọng nhịp độ và cảm xúc của đồng đội." },
+      "STR": { "score": 1, "evidenceQuote": "đưa về thực tế", "rationale": "Chỉnh sửa lại các kế hoạch viển vông cho sát sườn hơn." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh hấp tấp", "rationale": "Kìm chế tham vọng bành trướng thiếu cơ sở." },
+      "INT": { "score": 1, "evidenceQuote": "tự soi rọi sự độc đoán", "rationale": "Thức tỉnh trước thói ngạo mạn quyền lực của chính mình." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hấp tấp, cưỡng ép", "rationale": "Đốt cháy giai đoạn, ép buộc người khác thực hiện ý đồ phi thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "độc đoán, tàn nhẫn", "rationale": "Gia trưởng, trịch thượng, không coi ai ra gì." },
+      "STR": { "score": -2, "evidenceQuote": "phi thực tế", "rationale": "Chiến lược rỗng tuếch, bánh vẽ viển vông làm hao tổn tài nguyên." },
+      "RSK": { "score": 2, "evidenceQuote": "đánh bạc liều lĩnh", "rationale": "Đưa cả tập thể vào thế nguy hiểm vì cái tôi hiếu chiến." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng trong tham vọng", "rationale": "Mất hoàn toàn sự sáng suốt để phân biệt thực tế và ảo tưởng." }
+    },
+    "overallConfidence": 0.95
+  }
+]

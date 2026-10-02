@@ -1,0 +1,65 @@
+[
+  {
+    "id": "birthChart-matrix",
+    "indicatorKey": "birthChart",
+    "indicatorNameVi": "Biểu Đồ Ngày Sinh",
+    "numberValue": "matrix",
+    "title": "Luận Giải Biểu Đồ Ngày Sinh 3x3 Và Phá Vỡ Thế Cô Lập Các Con Số",
+    "sourceSnippet": "Biểu đồ Ngày sinh (Birth Chart) theo trường phái Pythagoras được xây dựng trên một ma trận 3x3 gồm 9 ô vuông tương ứng với các con số tự nhiên từ 1 đến 9. Toàn bộ cấu trúc này phản ánh 3 tầng năng lượng cốt lõi của một con người: Trục Thể Chất (1-4-7: hành động, thực tế), Trục Tâm Hồn (2-5-8: trực giác, cảm xúc, tự do), và Trục Trí Não (3-6-9: trí tuệ, sáng tạo, hoài bão). Hiện tượng Con số bị cô lập (1, 3, 7, 9) xảy ra khi một con số ở 4 góc không có liên kết xung quanh, gây bế tắc tâm lý nghiêm trọng và cần được hóa giải bằng kích hoạt Số 5 ảo và kỹ thuật hành vi thực tế.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Chia nhỏ mục tiêu vĩ mô thành các hành động vi mô làm ngay trong ngày; bắt tay vào làm việc thực tế từ những việc nhỏ nhặt nhất",
+        "rationale": "Chuyển hóa hoài bão thành các hành động vi mô thực tế hàng ngày để phá vỡ sự tê liệt."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tập thói quen nói lời yêu thương, chia sẻ suy nghĩ thật với bạn bè và người thân... Phát triển tình yêu thương vô điều kiện",
+        "rationale": "Kích hoạt tình yêu thương chân thành và lòng trắc ẩn để kết nối cảm xúc với thế giới."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "ma trận 3x3 gồm 9 ô vuông... Trục Thể chất (1, 4, 7)... Trục Tâm hồn (2, 5, 8)... Trục Trí não (3, 6, 9)",
+        "rationale": "Cấu trúc ma trận 3x3 mẫu mực thiết lập sự cân bằng hoàn chỉnh giữa Thể chất, Tâm hồn và Trí não."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Hòa mình vào thiên nhiên hoang sơ: Đi dạo công viên, leo núi, cắm trại, tiếp đất",
+        "rationale": "Tiếp đất hòa mình vào thiên nhiên để cân bằng tâm lý và giải tỏa căng thẳng."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Đọc sách triết học, thiền định; khi gặp mất mát hãy tự hỏi: 'Vũ trụ muốn mình học bài học gì qua biến cố này?'",
+        "rationale": "Trí tuệ minh triết đúc kết bài học sau biến cố và giải mã sự vận hành của ma trận số học."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "hoàn toàn bất lực trong khâu hành động thực thi... 'nghĩ lớn nhưng không biết bắt đầu từ đâu'... chán nản buông xuôi",
+        "rationale": "Tê liệt khâu thực thi hành động, bất lực không biết bắt đầu từ đâu dẫn đến buông xuôi."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "cảm thấy vô cùng cô đơn, lạc lõng giữa đám đông... thường xuyên bị hiểu lầm, uất ức và có xu hướng thu mình lại hoặc bộc phát những cơn giận dữ",
+        "rationale": "Cảm giác cô độc sâu sắc, u uất, dễ giận dữ bất thường và rơi vào tâm lý nạn nhân cay đắng."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "hoàn toàn không có bất kỳ con số lân cận nào bao quanh kết nối... Năng lượng của con số đó bị 'nhốt kín trong ốc đảo'",
+        "rationale": "Đứt gãy liên kết cấu trúc năng lượng, biến các con số thành ốc đảo cô lập xung đột."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "luôn sống trong sự hoài nghi u uất... hoang tưởng lo âu vô cớ",
+        "rationale": "Bất an, hoang tưởng lo âu vô cớ và mất phương hướng hành động."
+      },
+      "INT": {
+        "score": -2,
+        "evidenceQuote": "hội chứng suy nghĩ quá mức (Overthinking), hoang tưởng lo âu vô cớ... rất khó rút ra bài học giác ngộ",
+        "rationale": "Overthinking cực đoan, hoang tưởng lo âu và bế tắc không đúc kết được bài học giác ngộ."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

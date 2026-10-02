@@ -1,0 +1,250 @@
+{
+  "method": "Local structural audit and source/excerpt matching. Quote-not-found is a review flag, not proof of semantic hallucination. No human-gold or multi-rater agreement measurement.",
+  "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+  "datasetSha256": {
+    "major-arcana.json": "c436b820bda46aebacbc4c91a946ed4c37fbc55b7bdca7a196eb0116ce64f291",
+    "wands.json": "2499cf6de0b8ce582e0c2142c4d7a22ce83a265d2315e81bebd3e7c568e36a65",
+    "cups.json": "22f9847c181615fc3d5f50091e0bcefc081d5d091ce1b10433a4ef37108f013e",
+    "swords.json": "4068119aeb0da9ff544e4d0816cfbb1c614d4cce7250d5ce43b224f140edf76d",
+    "pentacles.json": "d31840dff6c5c473d6ce93bbe30b7fb2eaa7c4c0cf4cf859dea6a5b564503692"
+  },
+  "stats": {
+    "records": 156,
+    "cards": 78,
+    "cells": 1560,
+    "nonzero": 287,
+    "nonemptyQuotes": 290,
+    "exactQuotes": 290,
+    "fragmentOnlyQuotes": 0,
+    "unsupportedQuotes": 0,
+    "nonzeroEmptyQuotes": 0,
+    "nonzeroUnsupportedQuotes": 0,
+    "zeroNonemptyQuotes": 3,
+    "sourceMismatches": 0,
+    "metadataMismatches": 0,
+    "schemaErrors": 0,
+    "byFile": {
+      "major-arcana.json": {
+        "records": 44,
+        "unsupportedQuotes": 0,
+        "nonzeroUnsupportedQuotes": 0,
+        "nonzeroEmptyQuotes": 0
+      },
+      "wands.json": {
+        "records": 28,
+        "unsupportedQuotes": 0,
+        "nonzeroUnsupportedQuotes": 0,
+        "nonzeroEmptyQuotes": 0
+      },
+      "cups.json": {
+        "records": 28,
+        "unsupportedQuotes": 0,
+        "nonzeroUnsupportedQuotes": 0,
+        "nonzeroEmptyQuotes": 0
+      },
+      "swords.json": {
+        "records": 28,
+        "unsupportedQuotes": 0,
+        "nonzeroUnsupportedQuotes": 0,
+        "nonzeroEmptyQuotes": 0
+      },
+      "pentacles.json": {
+        "records": 28,
+        "unsupportedQuotes": 0,
+        "nonzeroUnsupportedQuotes": 0,
+        "nonzeroEmptyQuotes": 0
+      }
+    },
+    "byAspectState": {
+      "core:upright": {
+        "distribution": {
+          "0": 307,
+          "1": 53,
+          "2": 16,
+          "-1": 11,
+          "-2": 3
+        },
+        "nonzero": 83,
+        "positive": 69,
+        "negative": 14
+      },
+      "shadow:upright": {
+        "distribution": {
+          "0": 377,
+          "2": 1,
+          "-1": 9,
+          "-2": 3
+        },
+        "nonzero": 13,
+        "positive": 1,
+        "negative": 12
+      },
+      "core:reversed": {
+        "distribution": {
+          "0": 289,
+          "1": 16,
+          "2": 9,
+          "-1": 56,
+          "-2": 20
+        },
+        "nonzero": 101,
+        "positive": 25,
+        "negative": 76
+      },
+      "shadow:reversed": {
+        "distribution": {
+          "0": 300,
+          "1": 3,
+          "2": 8,
+          "-1": 59,
+          "-2": 20
+        },
+        "nonzero": 90,
+        "positive": 11,
+        "negative": 79
+      }
+    },
+    "byAxis": {
+      "core:upright:ACT": {
+        "0": 56,
+        "1": 15,
+        "2": 4,
+        "-1": 1,
+        "-2": 2
+      },
+      "core:upright:EMO": {
+        "0": 58,
+        "1": 11,
+        "2": 5,
+        "-1": 4
+      },
+      "core:upright:STR": {
+        "0": 57,
+        "1": 19,
+        "2": 1,
+        "-2": 1
+      },
+      "core:upright:RSK": {
+        "0": 68,
+        "1": 4,
+        "2": 1,
+        "-1": 5
+      },
+      "core:upright:INT": {
+        "0": 68,
+        "1": 4,
+        "2": 5,
+        "-1": 1
+      },
+      "shadow:upright:ACT": {
+        "0": 75,
+        "-1": 1,
+        "-2": 2
+      },
+      "shadow:upright:EMO": {
+        "0": 74,
+        "-1": 4
+      },
+      "shadow:upright:STR": {
+        "0": 77,
+        "-2": 1
+      },
+      "shadow:upright:RSK": {
+        "0": 75,
+        "2": 1,
+        "-1": 2
+      },
+      "shadow:upright:INT": {
+        "0": 76,
+        "-1": 2
+      },
+      "core:reversed:ACT": {
+        "0": 53,
+        "1": 7,
+        "-1": 14,
+        "-2": 4
+      },
+      "core:reversed:EMO": {
+        "0": 48,
+        "1": 5,
+        "-2": 8,
+        "-1": 17
+      },
+      "core:reversed:STR": {
+        "0": 57,
+        "1": 1,
+        "2": 6,
+        "-1": 12,
+        "-2": 2
+      },
+      "core:reversed:RSK": {
+        "0": 66,
+        "2": 2,
+        "-1": 6,
+        "-2": 4
+      },
+      "core:reversed:INT": {
+        "0": 65,
+        "1": 3,
+        "2": 1,
+        "-2": 2,
+        "-1": 7
+      },
+      "shadow:reversed:ACT": {
+        "0": 57,
+        "1": 3,
+        "-1": 14,
+        "-2": 4
+      },
+      "shadow:reversed:EMO": {
+        "0": 51,
+        "-2": 8,
+        "-1": 19
+      },
+      "shadow:reversed:STR": {
+        "0": 58,
+        "2": 6,
+        "-1": 12,
+        "-2": 2
+      },
+      "shadow:reversed:RSK": {
+        "0": 65,
+        "2": 2,
+        "-1": 7,
+        "-2": 4
+      },
+      "shadow:reversed:INT": {
+        "0": 69,
+        "-2": 2,
+        "-1": 7
+      }
+    },
+    "confidence": {
+      "null": 156
+    },
+    "recordsWithEvidenceFlags": 0,
+    "provenanceFields": [
+      "cardId",
+      "cardNameVi",
+      "cardNameEn",
+      "type",
+      "suit",
+      "number",
+      "state",
+      "sourceSnippet",
+      "core",
+      "shadow",
+      "overallConfidence",
+      "confidenceMethod",
+      "evidenceCoverage",
+      "annotationVersion",
+      "rubricVersion",
+      "sourceSha256",
+      "rubricSha256",
+      "provenance",
+      "reviewStatus",
+      "reviewFlags"
+    ]
+  },
+  "issues": []
+}

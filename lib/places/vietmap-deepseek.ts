@@ -1,3 +1,5 @@
+import { createCurrentTimeContext, formatCurrentTimeContext, type CurrentTimeContext } from '../spiritual-agent/time-context.ts';
+
 export type PlaceBudget = 'low' | 'medium' | 'flexible';
 export type PlaceCompanion = 'solo' | 'date' | 'friends' | 'family';
 
@@ -184,16 +186,37 @@ function safeSpiritualContext(context: SpiritualPlaceContext | undefined) {
   };
 }
 
-async function createVietMapQuery(
+function isOpenEndedPlaceRequest(message: string): boolean {
+  const lower = message.toLowerCase();
+  return /(đi đâu|chỗ nào|nơi nào|địa điểm|đi chơi)/.test(lower)
+    && !/(cà phê|cafe|coffee|công viên|nhà sách|bảo tàng|rạp phim|quán ăn|nhà hàng|ăn gì|uống gì|đi dạo|mua sắm)/.test(lower);
+}
+
+function placeQueryCategory(query: string): string {
+  const lower = query.toLowerCase();
+  if (/(cà phê|cafe|coffee)/.test(lower)) return 'cafe';
+  if (/(công viên|đi dạo|bờ hồ)/.test(lower)) return 'outdoors';
+  if (/(nhà sách|thư viện)/.test(lower)) return 'books';
+  if (/(quán ăn|nhà hàng|ẩm thực)/.test(lower)) return 'food';
+  return lower;
+}
+
+async function createVietMapQueries(
   message: string,
   context: VietMapSearchContext,
-  spiritualContext: SpiritualPlaceContext | undefined
-): Promise<string> {
-  const plan = await deepSeekJson<{ searchQuery?: unknown }>(
-    `Bạn tạo truy vấn tìm POI cho VietMap. Chỉ trả về JSON hợp lệ theo mẫu {"searchQuery":"..."}.\n` +
-      `Dùng yêu cầu thực tế là ưu tiên; Tarot và Thần số học chỉ giúp suy ra không khí hoặc loại trải nghiệm phù hợp. searchQuery phải là cụm từ tiếng Việt ngắn (2-120 ký tự) mô tả POI thực tế, ví dụ "quán cà phê yên tĩnh" hoặc "công viên đi dạo". Không nêu tên doanh nghiệp, không dùng các từ Tarot, lá bài, Thần số học hoặc numerology, không trả lời cho người dùng, không thêm trường khác.`,
+  spiritualContext: SpiritualPlaceContext | undefined,
+  timeContext: string
+): Promise<string[]> {
+  const broad = isOpenEndedPlaceRequest(message);
+  const plan = await deepSeekJson<{ searchQuery?: unknown; searchQueries?: unknown }>(
+    `Bạn tạo truy vấn tìm POI cho VietMap. Chỉ trả về JSON hợp lệ. Dùng thời gian hiện tại để chọn trải nghiệm phù hợp buổi; ưu tiên mốc thời gian người dùng nêu, không suy đoán lịch sinh hoạt hay giờ mở cửa.\n` +
+      (broad
+        ? `Câu hỏi chưa nêu loại địa điểm: trả về {"searchQueries":["...","...","..."]} gồm đúng 3 loại trải nghiệm khác nhau để người dùng có lựa chọn; không mặc định cả ba là quán cà phê.`
+        : `Câu hỏi đã nêu loại trải nghiệm: trả về {"searchQuery":"..."} bám sát loại đó.`) +
+      ` Ưu tiên nhu cầu thực tế; Tarot và Thần số học chỉ giúp chọn không khí phù hợp. Mỗi truy vấn là cụm tiếng Việt ngắn (2-120 ký tự) mô tả loại POI. Không nêu tên doanh nghiệp, không dùng các từ Tarot, lá bài, Thần số học hoặc numerology, không trả lời cho người dùng, không thêm trường khác.`,
     JSON.stringify({
       userRequest: message,
+      timeContext,
       preferences: {
         maxDistanceKm: context.maxDistanceKm,
         budget: context.budget,
@@ -202,9 +225,25 @@ async function createVietMapQuery(
       },
       spiritualContext: safeSpiritualContext(spiritualContext),
     }),
-    100
+    broad ? 180 : 100
   );
-  return normalizeSearchQuery(plan.searchQuery);
+  const rawQueries = broad && Array.isArray(plan.searchQueries)
+    ? plan.searchQueries
+    : [plan.searchQuery];
+  const queries = Array.from(new Set(rawQueries.map((value) => normalizeSearchQuery(value))));
+  if (broad) {
+    const seenCategories = new Set<string>();
+    for (let index = queries.length - 1; index >= 0; index--) {
+      const category = placeQueryCategory(queries[index]);
+      if (seenCategories.has(category)) queries.splice(index, 1);
+      else seenCategories.add(category);
+    }
+    for (const fallback of ['công viên đi dạo', 'nhà sách', 'quán ăn']) {
+      if (queries.length >= 3) break;
+      if (!queries.some((query) => placeQueryCategory(query) === placeQueryCategory(fallback))) queries.push(fallback);
+    }
+  }
+  return queries.slice(0, broad ? 3 : 1);
 }
 
 function parseVietMapResults(payload: unknown, maxDistanceKm: number): VietMapPlace[] {
@@ -330,14 +369,32 @@ export function formatPlaceReply(result: VietMapSearchResult): string {
  * may rank only those POIs. It never receives the user's exact coordinates.
  */
 export async function findVietMapPlaces(input: {
+  timeContext?: CurrentTimeContext;
   message: string;
   context: VietMapSearchContext;
   spiritualContext?: SpiritualPlaceContext;
 }): Promise<VietMapSearchResult> {
   const context = normalizeContext(input.context);
   const spiritualContext = safeSpiritualContext(input.spiritualContext);
-  const searchQuery = await createVietMapQuery(input.message, context, spiritualContext);
-  const candidates = await searchVietMap(searchQuery, context);
+  const timeContext = formatCurrentTimeContext(input.timeContext ?? createCurrentTimeContext());
+  const searchQueries = await createVietMapQueries(input.message, context, spiritualContext, timeContext);
+  const searchQuery = searchQueries.join(' · ');
+  const results = await Promise.allSettled(searchQueries.map((query) => searchVietMap(query, context)));
+  const firstFailure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
+  if (results.every((result) => result.status === 'rejected')) {
+    throw firstFailure?.reason ?? new Error('VietMap place search failed.');
+  }
+  const sourceByPlaceId = new Map<string, number>();
+  const candidates: VietMapPlace[] = [];
+  for (let queryIndex = 0; queryIndex < results.length; queryIndex++) {
+    const result = results[queryIndex];
+    if (result.status !== 'fulfilled') continue;
+    for (const place of result.value.slice(0, searchQueries.length > 1 ? 5 : 10)) {
+      if (sourceByPlaceId.has(place.placeId)) continue;
+      sourceByPlaceId.set(place.placeId, queryIndex);
+      candidates.push(place);
+    }
+  }
   if (candidates.length === 0) {
     return { searchQuery, places: [], placeReasons: [], summary: '', nextStep: '' };
   }
@@ -354,6 +411,7 @@ export async function findVietMapPlaces(input: {
         `selectedIndexes phải chứa 1-3 chỉ số nguyên, không lặp, chỉ nằm trong danh sách. placeReasons chỉ dùng index trong selectedIndexes và có một reason tiếng Việt ngắn cho từng nơi. summary liên hệ nhu cầu hiện tại với Tarot/chỉ số đã cung cấp như một gợi ý chiêm nghiệm, không khẳng định chắc chắn. nextStep là một hành động thực tế ngắn. Không bịa rating, giờ mở cửa, giá, tiện nghi, khoảng cách, địa chỉ hoặc tên địa điểm; không lặp tên địa điểm trong reason.`,
       JSON.stringify({
         userRequest: input.message,
+        timeContext,
         preferences: { budget: context.budget, companion: context.companion, openNow: context.openNow },
         spiritualContext,
         vietMapCandidates: candidates.map((place, index) => ({
@@ -375,8 +433,29 @@ export async function findVietMapPlaces(input: {
       typeof index === 'number' && Number.isInteger(index) && index >= 0 && index < candidates.length
     ))).slice(0, 3)
     : [];
-  const places = (selectedIndexes.length > 0 ? selectedIndexes : candidates.slice(0, 3).map((_, index) => index))
-    .map((index) => candidates[index]);
+  const rankedIndexes = selectedIndexes.length > 0
+    ? selectedIndexes
+    : candidates.slice(0, 3).map((_, index) => index);
+  let finalIndexes = rankedIndexes;
+  if (searchQueries.length > 1) {
+    const diverseIndexes: number[] = [];
+    const represented = new Set<number>();
+    for (const index of rankedIndexes) {
+      const source = sourceByPlaceId.get(candidates[index].placeId);
+      if (source === undefined || represented.has(source)) continue;
+      diverseIndexes.push(index);
+      represented.add(source);
+    }
+    for (let queryIndex = 0; queryIndex < searchQueries.length; queryIndex++) {
+      if (represented.has(queryIndex)) continue;
+      const candidateIndex = candidates.findIndex((place) => sourceByPlaceId.get(place.placeId) === queryIndex);
+      if (candidateIndex < 0) continue;
+      diverseIndexes.push(candidateIndex);
+      represented.add(queryIndex);
+    }
+    finalIndexes = [...diverseIndexes, ...rankedIndexes.filter((index) => !diverseIndexes.includes(index))].slice(0, 3);
+  }
+  const places = finalIndexes.map((index) => candidates[index]);
 
   const validPlaceIds = new Set(places.map((place) => place.placeId));
   const placeReasons = Array.isArray(ranking.placeReasons)

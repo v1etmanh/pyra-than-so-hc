@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "arrows-1-4-7",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "1-4-7",
+    "title": "Mũi Tên Thực Tế 1-4-7 (Trục Thể Chất)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 1-4-7 (Trục Thể chất đầy đủ trên ma trận 3x3), bạn là con người của hành động thực tế, khéo léo tay chân và cực kỳ thực tế. Bạn chỉ tin vào những gì mắt thấy, tai nghe, tay sờ và đã được kiểm chứng thực tế. Bạn có năng khiếu xuất chúng trong các công việc kỹ thuật, cơ khí, thủ công mỹ nghệ, xây dựng hoặc thể thao.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "con người của hành động thực tế, khéo léo tay chân và cực kỳ thực tế",
+        "rationale": "Năng lực hành động thực tiễn cao, khéo léo tay chân và giải quyết công việc cụ thể."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "chỉ tin vào những gì mắt thấy, tai nghe, tay sờ",
+        "rationale": "Cảm xúc thực dụng, dựa trên sự việc người thật việc thật."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Rèn luyện tính kỷ luật vật lý; biến các ý tưởng trong đầu thành những sản phẩm cụ thể có thể cầm nắm được",
+        "rationale": "Cấu trúc kỷ luật vật lý chuẩn mực, biến ý tưởng thành sản phẩm hiện hữu."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "đã được kiểm chứng thực tế",
+        "rationale": "Thận trọng, chỉ tin tưởng những gì đã được kiểm chứng rõ ràng."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "năng khiếu xuất chúng trong các công việc kỹ thuật, cơ khí, thủ công mỹ nghệ, xây dựng hoặc thể thao",
+        "rationale": "Trí tuệ kỹ thuật, vận động thể chất và hiểu biết cơ học thực tiễn."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "chỉ tin vào những gì mắt thấy, tai nghe, tay sờ",
+        "rationale": "Khô khan, hoài nghi những giá trị trừu tượng hoặc tâm linh không nhìn thấy được."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "chỉ tin vào những gì mắt thấy",
+        "rationale": "Chủ nghĩa duy vật cực đoan, khó tiếp thu các góc nhìn triết học sâu xa."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-1-4-7",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-1-4-7",
+    "title": "Mũi Tên Hỗn Độn / Thiếu Trật Tự (Trống 1-4-7)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 1-4-7 (Trống cả 3 số 1, 4, 7 hoặc thiếu vắng liên kết trục vật chất): Bạn rơi vào 'Mũi tên Hỗn độn / Thiếu trật tự'. Bạn gặp rất nhiều khó khăn trong việc thích nghi với đời sống vật chất thực tế; làm việc lộn xộn, thiếu ngăn nắp, vụng về trong thao tác tay chân, hay mơ mộng viển vông và dễ bị người khác lừa gạt trong các vấn đề kinh tế thực tế.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Tự tay dọn dẹp phòng ngủ và bàn làm việc ngăn nắp mỗi ngày; tập thói quen ghi chép chi tiêu chi tiết",
+        "rationale": "Thực hành điền số ảo bằng hành vi cụ thể hàng ngày để rèn luyện nếp sống."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "tự mình sửa chữa các đồ dùng hư hỏng nhỏ trong nhà",
+        "rationale": "Tìm kiếm sự an tâm qua việc tự tay chăm sóc không gian sống."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Điền số 4 ảo: Tự tay dọn dẹp... Điền số 1 ảo: Tự mình đưa ra các quyết định thực tế",
+        "rationale": "Nỗ lực tái lập trật tự kỷ luật và quản lý tài chính ngăn nắp."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "luôn kiểm tra số dư tài chính trước khi chi tiêu",
+        "rationale": "Cần thận trọng tối đa trong các giao dịch tài chính để tránh bị lừa gạt."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "rèn luyện những kỹ năng thể chất vi mô",
+        "rationale": "Học cách thích nghi với thực tế đời sống vật chất."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "làm việc lộn xộn, thiếu ngăn nắp, vụng về trong thao tác tay chân",
+        "rationale": "Thao tác vụng về, làm việc cẩu thả, bừa bãi và lộn xộn."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "hay mơ mộng viển vông",
+        "rationale": "Thoát ly thực tế, mơ mộng viển vông thiếu tiếp đất."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Mũi tên Hỗn độn / Thiếu trật tự... khó khăn trong việc thích nghi với đời sống vật chất thực tế",
+        "rationale": "Mất trật tự nghiêm trọng, thiếu kỷ luật tổ chức và quản trị đời sống."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "dễ bị người khác lừa gạt trong các vấn đề kinh tế thực tế",
+        "rationale": "Ngây thơ trong kinh tế dẫn đến dễ bị lừa đảo tài sản."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "khó khăn trong việc thích nghi với đời sống vật chất",
+        "rationale": "Nhận thức kém về quy luật vận hành của thế giới vật chất."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-2-5-8",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "2-5-8",
+    "title": "Mũi Tên Cân Bằng Cảm Xúc 2-5-8 (Trục Tâm Hồn)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 2-5-8 (Trục Tâm hồn trọn vẹn), bạn sở hữu khả năng làm chủ và cân bằng cảm xúc xuất chúng. Bạn có một trái tim ấm áp, trực giác tâm linh sâu sắc, sự thấu cảm tuyệt vời và phong thái điềm đạm, an nhiên trước mọi biến cố cuộc đời. Bạn là chỗ dựa tinh thần bình an cho những người xung quanh.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "chỗ dựa tinh thần bình an cho những người xung quanh",
+        "rationale": "Chủ động che chở, nâng đỡ tinh thần và hỗ trợ người khác trong giông bão."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "khả năng làm chủ và cân bằng cảm xúc xuất chúng. Bạn có một trái tim ấm áp... phong thái điềm đạm, an nhiên",
+        "rationale": "Đỉnh cao cân bằng cảm xúc, trái tim ấm áp bao dung và an nhiên tự tại."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "làm chủ và cân bằng cảm xúc",
+        "rationale": "Cấu trúc tâm lý vững vàng, kiểm soát xúc cảm điều hòa."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "an nhiên trước mọi biến cố cuộc đời",
+        "rationale": "Điềm tĩnh đối diện với mọi biến thiên của số phận."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "trực giác tâm linh sâu sắc, sự thấu cảm tuyệt vời",
+        "rationale": "Trực giác tâm linh tinh anh và sự thấu cảm nhân tâm sâu sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Mũi tên sở hữu mang năng lượng cân bằng cảm xúc cao."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-2-5-8",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-2-5-8",
+    "title": "Mũi Tên Nhạy Cảm Quá Mức (Trống 2-5-8)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 2-5-8 (Mũi tên Nhạy cảm quá mức / Dễ tổn thương): Bạn cực kỳ nhạy cảm và dễ bị tổn thương tâm lý sâu sắc. Bạn có xu hướng tự ái cao, hay suy diễn lời nói của người khác theo hướng tiêu cực, dễ rơi vào trạng thái mặc cảm, tự ti, tủi thân hoặc bùng nổ cảm xúc thất thường khiến các mối quan hệ rạn nứt.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "Tập giải tỏa cảm xúc thông qua nghệ thuật, ca hát, viết lách hoặc đi dạo thiên nhiên",
+        "rationale": "Chủ động giải tỏa xúc cảm lành mạnh qua nghệ thuật và thiên nhiên."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Xây dựng 'Ranh giới cảm xúc an toàn'... nuôi dưỡng sự tĩnh tại nội tâm",
+        "rationale": "Học cách thiết lập ranh giới cảm xúc an toàn và bảo vệ tâm hồn."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Điền số 8 ảo: Rèn luyện sự bình thản trước lời khen chê; nhận thức rõ giá trị tự thân",
+        "rationale": "Thiết lập cấu trúc giá trị tự thân vững vàng, không phụ thuộc ngoại cảnh."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "hoàn toàn làm chủ được cách mình phản ứng",
+        "rationale": "Hạn chế phản ứng bốc đồng, giữ sự an toàn cho tâm lý."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Tập lắng nghe sâu sắc mà không phán xét... Dạy trẻ cách gọi tên cảm xúc",
+        "rationale": "Trí tuệ nhận thức và gọi tên cảm xúc chính xác."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "bùng nổ cảm xúc thất thường khiến các mối quan hệ rạn nứt",
+        "rationale": "Hành vi bộc phát mất kiểm soát làm đổ vỡ các mối quan hệ."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "cực kỳ nhạy cảm và dễ bị tổn thương tâm lý sâu sắc. Bạn có xu hướng tự ái cao, hay suy diễn lời nói... tự ti, tủi thân",
+        "rationale": "Tự ái cao độ, dễ tổn thương, mặc cảm tự ti và u uất tủi thân."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "bùng nổ cảm xúc thất thường",
+        "rationale": "Mất ổn định cấu trúc cảm xúc nội tâm, thất thường không đoán trước."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "dễ rơi vào trạng thái mặc cảm",
+        "rationale": "Sợ tổn thương dẫn đến co cụm phòng thủ tiêu cực."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "hay suy diễn lời nói của người khác theo hướng tiêu cực",
+        "rationale": "Tư duy suy diễn tiêu cực, bóp méo ý tốt của người xung quanh."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-3-6-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "3-6-9",
+    "title": "Mũi Tên Sáng Trí 3-6-9 (Trục Trí Não)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 3-6-9 (Trục Trí não đầy đủ), bạn sở hữu một trí tuệ siêu việt, trí nhớ cực kỳ sắc bén và tư duy logic nhạy bén. Bạn học nhanh hiểu rộng, có năng khiếu học thuật xuất chúng, khả năng phân tích tổng hợp thông tin vượt trội và luôn khao khát nâng cao tri thức.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "luôn khao khát nâng cao tri thức... học nhanh hiểu rộng",
+        "rationale": "Chủ động học hỏi, nghiên cứu và tiếp thu kiến thức mới liên tục."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "tư duy logic nhạy bén",
+        "rationale": "Lý trí sắc sảo, xử lý vấn đề dựa trên bằng chứng và sự thật."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "khả năng phân tích tổng hợp thông tin vượt trội... tư duy logic",
+        "rationale": "Cấu trúc hóa thông tin logic và tổng hợp kiến thức phức tạp xuất chúng."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "năng khiếu học thuật xuất chúng",
+        "rationale": "Tự tin trong nghiên cứu và học thuật."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "trí tuệ siêu việt, trí nhớ cực kỳ sắc bén và tư duy logic nhạy bén",
+        "rationale": "Đỉnh cao trí nhớ và năng lực tư duy trừu tượng sắc sảo."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "tư duy logic",
+        "rationale": "Dễ sa vào thuần lý trí, lạnh lùng xem nhẹ tình cảm."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "trí tuệ siêu việt",
+        "rationale": "Nguy cơ kiêu ngạo trí thức hoặc kén chọn, coi thường người kém hiểu biết."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-3-6-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-3-6-9",
+    "title": "Mũi Tên Trí Nhớ Ngắn / Đãng Trí (Trống 3-6-9)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 3-6-9 (Mũi tên Trí nhớ ngắn / Đãng trí): Bạn hay quên, đãng trí, khó tập trung suy nghĩ sâu trong thời gian dài; gặp nhiều trở ngại khi phải ghi nhớ các dữ liệu phức tạp hoặc học tập những kiến thức trừu tượng, dẫn đến việc lười suy nghĩ và dễ bỏ cuộc.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Sử dụng sổ tay hoặc ứng dụng ghi chú để ghi lại mọi việc cần làm; đọc sách 30 phút mỗi ngày",
+        "rationale": "Hành động ghi chép cụ thể ra giấy để hỗ trợ trí nhớ."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tập trung làm đẹp không gian sống và nuôi dưỡng lòng trắc ẩn để kích hoạt bán cầu não phải",
+        "rationale": "Kích hoạt cảm xúc yêu thương và lòng trắc ẩn kích thích não bộ."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Đặt ra các mục tiêu có ý nghĩa nhân văn để tạo động lực cho não bộ hoạt động tích cực",
+        "rationale": "Xây dựng thói quen ghi chú khoa học và lịch trình học tập bài bản."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Chơi các trò chơi trí tuệ (Sudoku, cờ vua, rubik)",
+        "rationale": "Chủ động rèn luyện trí tuệ qua các thử thách tư duy."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "rèn luyện não bộ như một cơ bắp... luôn ghi chép công việc ra giấy",
+        "rationale": "Phương pháp rèn luyện trí nhớ kiên trì qua các bài tập hàng ngày."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "lười suy nghĩ và dễ bỏ cuộc",
+        "rationale": "Lười động não, nhanh nản chí và dễ bỏ cuộc khi gặp bài toán khó."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cảm xúc cụ thể."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "khó tập trung suy nghĩ sâu trong thời gian dài",
+        "rationale": "Thiếu khả năng duy trì sự tập trung có trật tự trong thời gian dài."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -2,
+        "evidenceQuote": "hay quên, đãng trí, khó tập trung suy nghĩ sâu... gặp nhiều trở ngại khi phải ghi nhớ các dữ liệu phức tạp",
+        "rationale": "Trí nhớ ngắn, đãng trí và suy giảm năng lực phân tích trừu tượng."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-1-2-3",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "1-2-3",
+    "title": "Mũi Tên Kế Hoạch 1-2-3 (Hàng Ngang Kế Hoạch)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 1-2-3 (Hàng ngang Kế hoạch đầy đủ), bạn là bậc thầy của việc tổ chức và lập kế hoạch. Bạn luôn làm việc có phương pháp, nhìn xa trông rộng, chuẩn bị kỹ lưỡng mọi kịch bản trước khi hành động và kiểm soát tiến độ công việc vô cùng chặt chẽ.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "chuẩn bị kỹ lưỡng mọi kịch bản trước khi hành động và kiểm soát tiến độ công việc vô cùng chặt chẽ",
+        "rationale": "Hành động có chuẩn bị kỹ lưỡng, kiểm soát chặt chẽ tiến độ."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "luôn làm việc có phương pháp",
+        "rationale": "Thái độ làm việc khoa học, điềm tĩnh và thận trọng."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "bậc thầy của việc tổ chức và lập kế hoạch. Bạn luôn làm việc có phương pháp, nhìn xa trông rộng",
+        "rationale": "Đỉnh cao của năng lực tổ chức, hoạch định chiến lược và quản lý tiến độ."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "chuẩn bị kỹ lưỡng mọi kịch bản trước khi hành động",
+        "rationale": "Kiểm soát rủi ro bài bản bằng nhiều kịch bản dự phòng chi tiết."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "nhìn xa trông rộng... kiểm soát tiến độ công việc vô cùng chặt chẽ",
+        "rationale": "Tầm nhìn xa trông rộng, tư duy hoạch định chiến lược xuất sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "chuẩn bị kỹ lưỡng mọi kịch bản",
+        "rationale": "Có thể chần chừ hành động nếu kế hoạch chưa đạt độ hoàn hảo tuyệt đối."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cảm xúc cụ thể."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "kiểm soát tiến độ công việc vô cùng chặt chẽ",
+        "rationale": "Cứng nhắc bám chấp vào kế hoạch, khó linh hoạt khi có sự cố phát sinh."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-1-2-3",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-1-2-3",
+    "title": "Mũi Tên Tùy Hứng / Thiếu Kế Hoạch (Trống 1-2-3)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 1-2-3 (Mũi tên Tùy hứng / Thiếu kế hoạch): Bạn sống hoàn toàn theo cảm hứng ngẫu hứng, 'nước đến chân mới nhảy', làm việc không có phương pháp bài bản, dễ bị mất phương hướng và thường xuyên bỏ dở các mục tiêu dài hạn giữa chừng.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Tự mình xác lập 1 mục tiêu ưu tiên duy nhất mỗi ngày... Lập kế hoạch 10 phút mỗi tối",
+        "rationale": "Tập trung hành động dứt điểm từng mục tiêu ưu tiên cụ thể trong ngày."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "Lắng nghe ý kiến đóng góp của cộng sự để hoàn thiện bản kế hoạch",
+        "rationale": "Hòa đồng lắng nghe ý kiến đóng góp của cộng sự."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Lập danh sách công việc (To-do list) bằng sơ đồ tư duy (Mindmap)... quản lý dự án hiện đại",
+        "rationale": "Ứng dụng các công cụ quản lý để bù đắp sự thiếu hụt phương pháp."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "viết ra 3 việc quan trọng nhất phải làm vào ngày mai",
+        "rationale": "Học cách kiểm soát rủi ro trì hoãn bằng lịch trình chuẩn bị trước."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "sơ đồ tư duy (Mindmap) sinh động và rõ ràng",
+        "rationale": "Phát triển tư duy trực quan để ghi nhớ mục tiêu dễ dàng hơn."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "'nước đến chân mới nhảy', làm việc không có phương pháp bài bản... thường xuyên bỏ dở các mục tiêu dài hạn",
+        "rationale": "Trì hoãn đến phút chót, làm việc tùy tiện và hay bỏ dở mục tiêu dài hạn."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "sống hoàn toàn theo cảm hứng ngẫu hứng",
+        "rationale": "Hành xử theo cảm hứng nhất thời, tâm lý thất thường."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Mũi tên Tùy hứng / Thiếu kế hoạch... làm việc không có phương pháp bài bản, dễ bị mất phương hướng",
+        "rationale": "Thiếu phương pháp tổ chức hoàn toàn, mất phương hướng và hỗn loạn công việc."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "'nước đến chân mới nhảy'",
+        "rationale": "Gặp rủi ro thất bại cao do không có kế hoạch dự phòng."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-4-5-6",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "4-5-6",
+    "title": "Mũi Tên Ý Chí 4-5-6 (Hàng Ngang Ý Chí)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 4-5-6 (Hàng ngang Ý chí trọn vẹn), bạn sở hữu một ý chí kiên cường như thép, lòng dũng cảm phi thường và nghị lực vượt khó không gì lay chuyển được. Trước mọi bão giông nghịch cảnh, bạn không bao giờ bỏ cuộc và luôn kiên định chiến đấu đến cùng.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Trước mọi bão giông nghịch cảnh, bạn không bao giờ bỏ cuộc và luôn kiên định chiến đấu đến cùng",
+        "rationale": "Hành động ngoan cường, bền bỉ chiến đấu đến cùng không lùi bước."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "lòng dũng cảm phi thường và nghị lực vượt khó không gì lay chuyển được",
+        "rationale": "Dũng khí phi thường, tinh thần lạc quan quật cường trước nghịch cảnh."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "ý chí kiên cường như thép... kiên định chiến đấu đến cùng",
+        "rationale": "Kỷ luật thép và cấu trúc ý chí kiên định tuyệt đối."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "lòng dũng cảm phi thường... Trước mọi bão giông nghịch cảnh",
+        "rationale": "Dám đương đầu với mọi bão giông rủi ro lớn nhất."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "tôi luyện cơ bắp ý chí",
+        "rationale": "Tâm trí kiên định, thấu hiểu quy luật thử thách và tôi luyện."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "ý chí kiên cường như thép",
+        "rationale": "Có thể trở nên quá cứng rắn, thiếu mềm mỏng thấu cảm với người yếu đuối hơn."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "chiến đấu đến cùng",
+        "rationale": "Cố chấp bám đuổi mục tiêu ngay cả khi hoàn cảnh đã thay đổi hoàn toàn."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-4-5-6",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-4-5-6",
+    "title": "Mũi Tên Bất An / Uất Giận (Trống 4-5-6)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 4-5-6 (Mũi tên Bất an / Uất giận / Thất vọng): Bạn rất dễ bị nản lòng thoái chí khi gặp trở ngại; dễ rơi vào trạng thái bất an, lo âu, thất vọng về bản thân và cuộc đời; có xu hướng than thân trách phận và bỏ cuộc ngay trước ngưỡng cửa thành công.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Rèn luyện thói quen kiên trì hoàn thành 100% công việc dù là việc nhỏ nhất... rèn luyện thể thao đường dài",
+        "rationale": "Chủ động kiên trì hoàn thành 100% công việc nhỏ và luyện tập thể thao."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Nhìn nhận nghịch cảnh như bài học vũ trụ giúp tôi luyện trái tim dũng cảm và yêu thương",
+        "rationale": "Chuyển hóa cảm xúc thất vọng thành bài học vũ trụ nuôi dưỡng yêu thương."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "chia nhỏ mục tiêu lớn thành các bước vi mô cực kỳ dễ làm... tôi luyện cơ bắp ý chí",
+        "rationale": "Thiết lập cấu trúc mục tiêu vi mô để từng bước khôi phục ý chí."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Ăn mừng mỗi chiến thắng nhỏ để tạo dopamine tích cực",
+        "rationale": "Khích lệ lòng tự tin bước qua nỗi sợ hãi."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "dạy trẻ tinh thần 'thất bại là mẹ thành công'",
+        "rationale": "Tư duy đúc kết bài học sau mỗi vấp ngã để trưởng thành."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "rất dễ bị nản lòng thoái chí khi gặp trở ngại... bỏ cuộc ngay trước ngưỡng cửa thành công",
+        "rationale": "Nhanh nản chí, thoái lui hành động và bỏ cuộc ngay trước đích đến."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "dễ rơi vào trạng thái bất an, lo âu, thất vọng về bản thân và cuộc đời; có xu hướng than thân trách phận",
+        "rationale": "Bất an, oán trách số phận, thất vọng sâu sắc và u uất."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "nản lòng thoái chí",
+        "rationale": "Sụp đổ ý chí và mất kỷ luật kiên trì trước khó khăn."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "bất an, lo âu",
+        "rationale": "Sợ hãi nghịch cảnh, chùn bước trước các thử thách cuộc đời."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-7-8-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "7-8-9",
+    "title": "Mũi Tên Hoạt Động 7-8-9 (Hàng Ngang Hoạt Động)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 7-8-9 (Hàng ngang Hoạt động đầy đủ), bạn là người vô cùng năng động, tràn đầy sinh lực và luôn chân luôn tay. Bạn thích di chuyển, yêu thiên nhiên, đam mê thể thao và luôn tìm kiếm cơ hội hành động để tạo ra giá trị thực tế.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "vô cùng năng động, tràn đầy sinh lực và luôn chân luôn tay. Bạn thích di chuyển, yêu thiên nhiên, đam mê thể thao",
+        "rationale": "Hành động liên tục, tràn đầy sinh lực và đam mê vận động thể chất."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "luôn chân luôn tay... đam mê thể thao và luôn tìm kiếm cơ hội",
+        "rationale": "Hào hứng, nhiệt tình và tràn ngập sinh khí tích cực."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "luôn tìm kiếm cơ hội hành động để tạo ra giá trị thực tế",
+        "rationale": "Định hướng hoạt động vào việc kiến tạo giá trị thực tiễn."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "thích di chuyển... tìm kiếm cơ hội hành động",
+        "rationale": "Sẵn sàng dấn thân trải nghiệm các môi trường mới lạ."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "tạo ra giá trị thực tế",
+        "rationale": "Tư duy thực tế thông qua các trải nghiệm thực địa sinh động."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "luôn chân luôn tay",
+        "rationale": "Nguy cơ hoạt động quá mức, khó ngồi yên tĩnh tâm và dễ bị kiệt sức."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cảm xúc cụ thể."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "thích di chuyển",
+        "rationale": "Có thể thiếu thời gian chiêm nghiệm sâu sắc nội tâm do quá mải mê bên ngoài."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-7-8-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-7-8-9",
+    "title": "Mũi Tên Thụ Động / Trì Trệ (Trống 7-8-9)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 7-8-9 (Mũi tên Thụ động / Trì trệ): Bạn có xu hướng lười vận động, thích nằm ỳ một chỗ, thụ động chờ đợi người khác thúc đẩy, dễ bị ì trệ tâm lý và thiếu sự nhiệt huyết dấn thân vào các hoạt động thực tế.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "vận động cơ thể ngay lập tức: Đặt chuông báo thức rời khỏi giường, đi bộ 10.000 bước mỗi ngày",
+        "rationale": "Hành động vận động cơ thể ngay lập tức để phá vỡ quán tính lười biếng."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "chủ động tham gia vào các hoạt động tập thể ngoài trời",
+        "rationale": "Hòa nhập cộng đồng để lấy lại cảm hứng và sự gắn kết."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Tạo thói quen đứng dậy vận động sau mỗi 45 phút làm việc để duy trì dòng chảy sinh khí",
+        "rationale": "Thiết lập cấu trúc nhắc nhở vận động định kỳ sau mỗi 45 phút."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Đặt ra các mục tiêu tài chính cụ thể và chủ động tìm kiếm cơ hội",
+        "rationale": "Chủ động tìm kiếm cơ hội hành động kinh tế."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Tích cực tham gia các hoạt động tình nguyện, thiện nguyện ngoài trời vì cộng đồng",
+        "rationale": "Nhận thức giá trị sức khỏe thể chất đối với trí tuệ tinh thần."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "lười vận động, thích nằm ỳ một chỗ, thụ động chờ đợi người khác thúc đẩy... thiếu sự nhiệt huyết dấn thân",
+        "rationale": "Lười biếng, thụ động nằm ỳ một chỗ và chờ đợi người khác giục giã."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "dễ bị ì trệ tâm lý",
+        "rationale": "Tâm lý ì trệ, chán nản, thiếu sinh khí và cạn kiệt nhiệt huyết."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "thụ động chờ đợi người khác thúc đẩy",
+        "rationale": "Thiếu tính chủ động tự điều hành cuộc sống của chính mình."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "thiếu sự nhiệt huyết dấn thân",
+        "rationale": "Co cụm thụ động, không dám bước ra thử thách thực tế."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-1-5-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "1-5-9",
+    "title": "Mũi Tên Quyết Tâm 1-5-9 (Đường Chéo Quyết Tâm)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 1-5-9 (Đường chéo Quyết tâm trọn vẹn), bạn sở hữu lòng quyết tâm phi thường và sự kiên trì bền bỉ đến mức 'đá cũng phải mòn'. Một khi bạn đã đặt ra mục tiêu, không có bất kỳ trở ngại nào có thể ngăn cản bạn tiến bước tới đích.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "không có bất kỳ trở ngại nào có thể ngăn cản bạn tiến bước tới đích... kiên trì bền bỉ đến mức 'đá cũng phải mòn'",
+        "rationale": "Hành động quyết liệt, kiên định vượt qua mọi trở ngại để chạm đích."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "lòng quyết tâm phi thường",
+        "rationale": "Khát khao mãnh liệt và tinh thần bất khuất không nao núng."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Một khi bạn đã đặt ra mục tiêu, không có bất kỳ trở ngại nào có thể ngăn cản",
+        "rationale": "Tập trung tuyệt đối vào mục tiêu đã định, kỷ luật tự thân sắt đá."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "không có bất kỳ trở ngại nào có thể ngăn cản bạn",
+        "rationale": "Bất chấp mọi rủi ro chông gai trên đường chinh phục mục tiêu."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "giữ đúng lời hứa với chính mình là nguyên tắc sống bất khả xâm phạm",
+        "rationale": "Ý thức sâu sắc về chữ tín và cam kết với chính bản thân."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "kiên trì bền bỉ đến mức 'đá cũng phải mòn'",
+        "rationale": "Có thể trở nên ngoan cố, cứng nhắc không chịu buông bỏ khi mục tiêu không còn phù hợp."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "không có bất kỳ trở ngại nào có thể ngăn cản",
+        "rationale": "Cố chấp đâm đầu vào tường đá dù thực tế đã đổi khác."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-1-5-9",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-1-5-9",
+    "title": "Mũi Tên Trì Hoãn / Chần Chừ (Trống 1-5-9)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 1-5-9 (Mũi tên Trì hoãn / Chần chừ): Bạn mắc hội chứng trì hoãn mãn tính (Chronic Procrastination). Bạn luôn chần chừ do dự, chần chừ bắt đầu và dễ dàng buông xuôi, bỏ cuộc giữa chừng khi gặp khó khăn nhỏ.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Áp dụng Quy tắc 5 giây (5-Second Rule): Khi có ý định làm việc gì, đếm 5-4-3-2-1 và hành động ngay lập tức không chần chừ",
+        "rationale": "Hành động ngay lập tức bằng quy tắc 5 giây để bẻ gãy thói quen trì hoãn."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "Tự thưởng cho bản thân sau khi kiên trì hoàn thành xong mục tiêu",
+        "rationale": "Tạo cảm xúc phần thưởng tích cực củng cố động lực."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "chia nhỏ công việc thành từng phiên Pomodoro 25 phút và cam kết làm việc tập trung cao độ",
+        "rationale": "Thiết lập cấu trúc phiên làm việc Pomodoro 25 phút tập trung."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Tự cam kết hoàn thành 1 việc quan trọng nhất trước 10 giờ sáng",
+        "rationale": "Dám cam kết giải quyết việc khó khăn sớm nhất trong ngày."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "xem việc giữ đúng lời hứa với chính mình là nguyên tắc sống bất khả xâm phạm",
+        "rationale": "Nâng cao nhận thức về lòng tự trọng và chữ tín cá nhân."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "mắc hội chứng trì hoãn mãn tính (Chronic Procrastination). Bạn luôn chần chừ do dự, chần chừ bắt đầu và dễ dàng buông xuôi, bỏ cuộc giữa chừng",
+        "rationale": "Trì hoãn kinh niên, chần chừ do dự và dễ dàng buông xuôi bỏ cuộc."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "dễ dàng buông xuôi",
+        "rationale": "Cảm giác bất lực, tự ti và nản lòng trước khó khăn."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "bỏ cuộc giữa chừng khi gặp khó khăn nhỏ",
+        "rationale": "Thiếu kỷ luật tự giác, phá vỡ mục tiêu đã đề ra."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "chần chừ do dự",
+        "rationale": "Sợ hãi rủi ro bắt đầu khiến bản thân dậm chân tại chỗ."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-3-5-7",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "3-5-7",
+    "title": "Mũi Tên Tâm Linh / Nhạy Bén 3-5-7 (Đường Chéo Tâm Linh)",
+    "sourceSnippet": "Khi SỞ HỮU Mũi tên Sức mạnh 3-5-7 (Đường chéo Tâm linh / Nhạy bén tâm thức), bạn sở hữu trực giác tâm linh siêu việt và giác quan thứ 6 cực kỳ chuẩn xác. Bạn có niềm tin sâu sắc vào các quy luật vũ trụ, có duyên với triết học, tâm linh và có năng lực chữa lành tâm hồn cho người khác.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "có năng lực chữa lành tâm hồn cho người khác",
+        "rationale": "Hành động lắng nghe, tư vấn và chữa lành tâm hồn cho cộng đồng."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "niềm tin sâu sắc vào các quy luật vũ trụ... năng lực chữa lành tâm hồn",
+        "rationale": "Trái tim rộng mở, đức tin thuần khiết và tình yêu thương xoa dịu tổn thương."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "niềm tin sâu sắc vào các quy luật vũ trụ",
+        "rationale": "Cấu trúc thế giới quan dựa trên nền tảng các quy luật tự nhiên bất biến."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "giác quan thứ 6 cực kỳ chuẩn xác",
+        "rationale": "Trực giác mách bảo giúp định hướng an toàn qua các khúc quanh cuộc đời."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "trực giác tâm linh siêu việt và giác quan thứ 6 cực kỳ chuẩn xác. Bạn có niềm tin sâu sắc vào các quy luật vũ trụ, có duyên với triết học, tâm linh",
+        "rationale": "Đỉnh cao giác ngộ tâm linh, trực giác siêu nhiên và minh triết triết học sâu sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể ở mũi tên sở hữu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "có duyên với triết học, tâm linh",
+        "rationale": "Có thể quá nhạy cảm với năng lượng xung quanh, dễ bị ảnh hưởng tâm trạng."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "trực giác tâm linh siêu việt",
+        "rationale": "Nguy cơ mê tín hoặc xa rời đời sống thực tế nếu thiếu cân bằng tiếp đất."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "arrows-empty-3-5-7",
+    "indicatorKey": "arrows",
+    "indicatorNameVi": "Mũi tên cá tính 3x3",
+    "numberValue": "empty-3-5-7",
+    "title": "Mũi Tên Hoài Nghi / Mất Niềm Tin (Trống 3-5-7)",
+    "sourceSnippet": "Hậu quả khi BỊ TRỐNG Mũi tên 3-5-7 (Mũi tên Hoài nghi / Mất niềm tin): Bạn trở nên cực kỳ đa nghi, hoài nghi tất cả mọi người và mọi việc xung quanh; chỉ tin vào những gì mắt thấy tai nghe một cách phiến diện; luôn sống trong tâm trạng bất an, lo lắng và mất phương hướng tinh thần.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "Thực hành thiền định tĩnh tâm 15 phút mỗi ngày để kết nối với sự bình an nội tâm",
+        "rationale": "Dành thời gian tĩnh tâm hàng ngày để thanh lọc tâm trí."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "mở lòng tin tưởng những người tử tế và học cách lắng nghe tiếng nói trực giác bên trong",
+        "rationale": "Mở rộng trái tim, học cách tin tưởng và lắng nghe trực giác."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "tìm hiểu khoa học lượng tử và các quy luật tự nhiên (Nhân quả, Hấp dẫn)",
+        "rationale": "Cấu trúc hóa nhận thức quy luật tự nhiên một cách khoa học."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "Cho phép bản thân được trải nghiệm những điều tâm linh/nghệ thuật với tâm thế cởi mở",
+        "rationale": "Cởi mở đón nhận trải nghiệm mới lạ mà không vội phán xét."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Đọc sách triết học, tâm lý học và mở rộng tư duy học hỏi những điều mới lạ",
+        "rationale": "Nâng cấp tri thức triết học để giải tỏa nỗi hoài nghi mù quáng."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "sống trong tâm trạng bất an, lo lắng và mất phương hướng",
+        "rationale": "Bất an, hoang mang do dự làm tê liệt hành động quyết đoán."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "cực kỳ đa nghi, hoài nghi tất cả mọi người và mọi việc xung quanh... luôn sống trong tâm trạng bất an",
+        "rationale": "Đa nghi tột độ, bất an thường trực và mất niềm tin vào tình người."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "hoài nghi tất cả mọi người",
+        "rationale": "Quá sợ hãi bị lừa gạt dẫn đến không dám tin tưởng bất kỳ ai."
+      },
+      "INT": {
+        "score": -2,
+        "evidenceQuote": "chỉ tin vào những gì mắt thấy tai nghe một cách phiến diện... mất phương hướng tinh thần",
+        "rationale": "Tư duy phiến diện, nông cạn, mù mịt về phương hướng tinh thần."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -1,0 +1,255 @@
+[
+  {
+    "id": "mature-1",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "1",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 1",
+    "sourceSnippet": "Sau tuổi 35, người mang Con số Trưởng thành 1 bước vào giai đoạn thức tỉnh bản ngã mạnh mẽ nhất. Bạn thôi không còn tìm kiếm sự chấp thuận bên ngoài hay sống theo kỳ vọng của người khác. Ý chí tự lập kiên cường, bản lĩnh độc lập và khát vọng tiên phong trỗi dậy, thôi thúc bạn đứng lên làm chủ hoàn toàn vận mệnh, tự tạo ra con đường sự nghiệp riêng biệt và dẫn dắt người khác bằng chính tấm gương tự cường của mình.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự tạo ra con đường sự nghiệp riêng biệt và dẫn dắt người khác", "rationale": "Khát vọng tiên phong và ý chí hành động độc lập mạnh mẽ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "rèn luyện tính tự chịu trách nhiệm tuyệt đối, nâng cao năng lực tư duy chiến lược", "rationale": "Tổ chức và quản trị bản thân với trách nhiệm cao độ." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng cảm bước ra làm chủ sự nghiệp của mình, tinh thần dám chịu trách nhiệm tối cao", "rationale": "Sẵn sàng chấp nhận rủi ro để khởi nghiệp và tự đứng mũi chịu sào." },
+      "INT": { "score": 1, "evidenceQuote": "thức tỉnh bản ngã mạnh mẽ nhất, khả năng ra quyết định chuẩn xác", "rationale": "Sự thấu suốt nội tại và định hướng bản thân độc lập." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lãnh đạo bằng quyền lực cái tôi", "rationale": "Áp đặt độc đoán, hành động theo cái tôi cá nhân." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm giác cô đơn trên đỉnh cao, khó chia sẻ gánh nặng với người khác", "rationale": "Cô lập cảm xúc, khó mở lòng tin tưởng đồng đội." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "lo sợ bị mất vị thế lãnh đạo", "rationale": "Bất an về quyền lực và vị thế cá nhân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-2",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "2",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 2",
+    "sourceSnippet": "Bước qua tuổi 35, người mang Con số Trưởng thành 2 trải qua sự chuyển hóa nội tâm sâu sắc: bạn nhận ra giá trị vô giá của sự bình yên tâm hồn, sự hòa hợp trong các mối quan hệ và sức mạnh của lòng trắc ẩn. Bạn không còn hứng thú với những cuộc tranh đua quyền lực bề nổi mà hướng tới việc hàn gắn các rạn nứt, nuôi dưỡng tình yêu thương và kiến tạo môi trường sống an lành.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 2, "evidenceQuote": "nuôi dưỡng tình yêu thương, rèn luyện khả năng lắng nghe thấu cảm", "rationale": "Tâm hồn bao dung, kết nối yêu thương và chữa lành các mối quan hệ." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập ranh giới cảm xúc lành mạnh", "rationale": "Thiết lập cấu trúc bảo vệ cảm xúc để không bị tổn thương." },
+      "RSK": { "score": -1, "evidenceQuote": "không còn hứng thú với những cuộc tranh đua quyền lực", "rationale": "Xu hướng lùi về hậu phương, dĩ hòa vi quý, tránh đối đầu xung đột." },
+      "INT": { "score": 2, "evidenceQuote": "sử dụng trực giác và sự nhạy cảm của bạn như một công cụ lắng nghe, thấu suốt", "rationale": "Trực giác nhạy bén thấu suốt tâm lý và năng lượng xung quanh." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "lo sợ bị cô đơn, bỏ rơi, nhạy cảm thái quá trước sự vô tâm của người khác", "rationale": "Bi kịch hóa cảm xúc, lệ thuộc tình cảm và dễ suy sụp tinh thần." },
+      "STR": { "score": -1, "evidenceQuote": "để bản thân bị tổn thương hay lợi dụng", "rationale": "Thiếu ranh giới bảo vệ, để người khác thao túng cảm xúc." },
+      "RSK": { "score": -1, "evidenceQuote": "hội chứng tổ chim trống, sợ bị cô đơn", "rationale": "Bất an, sợ hãi khi phải đối mặt với sự chia xa." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-3",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "3",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 3",
+    "sourceSnippet": "Sau tuổi 35, tài năng sáng tạo, khiếu hài hước và năng lực ngôn từ của người mang Con số Trưởng thành 3 đạt đến độ chín muồi rực rỡ nhất. Bạn thấu hiểu sâu sắc rằng sự lạc quan, tiếng cười và niềm vui sống đích thực chính là liều thuốc chữa lành tuyệt vời nhất cho nhân loại. Bạn thôi thúc muốn cất lên tiếng nói khai phóng, truyền cảm hứng và nâng đỡ tinh thần cho mọi người.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cất lên tiếng nói khai phóng, truyền cảm hứng và nâng đỡ tinh thần", "rationale": "Hành động lan tỏa năng lượng tích cực thông qua ngôn từ và nghệ thuật." },
+      "EMO": { "score": 2, "evidenceQuote": "niềm vui sống đích thực chính là liều thuốc chữa lành tuyệt vời nhất", "rationale": "Nâng đỡ tinh thần, lan tỏa tình yêu đời và sự ấm áp hân hoan." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp năng lượng sáng tạo bay bổng với tính kỷ luật thực thi bền bỉ", "rationale": "Đưa sự sáng tạo vào khuôn khổ và kỷ luật nghiêm túc." },
+      "RSK": { "score": 1, "evidenceQuote": "sáng tạo nội dung một cách nghiêm túc, lan tỏa ái ngữ", "rationale": "Tự tin bộc lộ bản thân và phong cách cá nhân trước công chúng." },
+      "INT": { "score": 1, "evidenceQuote": "chuyển hóa sự hóm hỉnh duyên dáng thành trí tuệ sâu sắc", "rationale": "Trực giác ngôn ngữ và sự thấu suốt nhân sinh quan." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lãng phí năng lượng tuổi trẻ vào những cuộc vui bề nổi", "rationale": "Phân tán năng lượng, sa đà vào những trò tiêu khiển vô bổ." },
+      "EMO": { "score": -1, "evidenceQuote": "rơi vào cảm giác hối tiếc", "rationale": "Cảm giác hối tiếc muộn màng và bất an tâm lý." },
+      "STR": { "score": -1, "evidenceQuote": "sáng tạo bay bổng thiếu kỷ luật", "rationale": "Thiếu tập trung, khó hoàn thành các tác phẩm dài hạn." },
+      "RSK": { "score": -1, "evidenceQuote": "nỗi sợ tuổi già, sợ mất đi sức hút cá nhân", "rationale": "Lo sợ mất phong độ và sự chú ý của mọi người." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-4",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "4",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 4",
+    "sourceSnippet": "Bước qua tuổi 35, người mang Con số Trưởng thành 4 khao khát mãnh liệt việc kiến tạo một nền móng vững như bàn thạch về tài chính, gia đình và sự nghiệp. Tính kỷ luật, sự chuẩn mực, óc tổ chức khoa học và tinh thần trách nhiệm của bạn đạt tới mức độ điêu luyện, mang lại sự an toàn, tin cậy tuyệt đối cho tổ chức và gia đình.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "kiến tạo một nền móng vững như bàn thạch, từng bước tích lũy và xây dựng cơ nghiệp", "rationale": "Lao động bền bỉ, kiên trì hiện thực hóa cơ nghiệp." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "tính kỷ luật, sự chuẩn mực, óc tổ chức khoa học và tinh thần trách nhiệm", "rationale": "Năng lực tổ chức, chuẩn hóa quy trình và quản trị hệ thống mẫu mực." },
+      "RSK": { "score": -2, "evidenceQuote": "coi trọng sự an toàn tài chính và nhà cửa đất đai", "rationale": "Cực kỳ thận trọng, ưu tiên tuyệt đối sự an toàn và kiểm soát rủi ro." },
+      "INT": { "score": 1, "evidenceQuote": "kế hoạch tài chính minh bạch, xây dựng cơ nghiệp bài bản", "rationale": "Tư duy thực tế, nhìn nhận sự việc qua lăng kính logic và hiệu quả." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm giác kiệt sức vì gánh nặng trách nhiệm quá lớn", "rationale": "Căng thẳng tinh thần, khô khan do tự tạo áp lực trách nhiệm." },
+      "STR": { "score": -2, "evidenceQuote": "trở nên cứng nhắc, bảo thủ, khó thích nghi", "rationale": "Cứng nhắc độc đoán, bám chấp quy tắc cũ và triệt tiêu đổi mới." },
+      "RSK": { "score": -2, "evidenceQuote": "khó thích nghi với công nghệ mới và tư duy cấp tiến", "rationale": "Kháng cự thay đổi vì sợ mất kiểm soát và an toàn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-5",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "5",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 5",
+    "sourceSnippet": "Sau tuổi 35, người mang Con số Trưởng thành 5 nhận ra chân lý: tự do đích thực không phải là trốn chạy hay thay đổi liên tục, mà là sự giải phóng tâm trí khỏi các định kiến cũ kỹ và năng lực làm chủ cuộc sống. Bạn khao khát đi du lịch khám phá thế giới, trải nghiệm các nền văn hóa đa dạng, mở rộng tầm nhìn và sống một cuộc đời phong phú, không hối tiếc.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khám phá thế giới, trải nghiệm các nền văn hóa đa dạng, dám bước ra khỏi vùng an toàn", "rationale": "Hành động phiêu lưu, tiên phong đón nhận trải nghiệm mới." },
+      "EMO": { "score": 1, "evidenceQuote": "sống một cuộc đời phong phú, không hối tiếc", "rationale": "Tâm hồn phóng khoáng, tận hưởng cuộc sống trọn vẹn." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật tự thân là đỉnh cao của tự do, xây dựng nền tảng tài chính tự động", "rationale": "Làm chủ bản thân và xây dựng nguồn lực linh hoạt." },
+      "RSK": { "score": 2, "evidenceQuote": "truyền cảm hứng cho mọi người dám bước ra khỏi vùng an toàn để sống can đảm", "rationale": "Dám chấp nhận thử thách và đổi mới không ngừng." },
+      "INT": { "score": 1, "evidenceQuote": "sự giải phóng tâm trí khỏi các định kiến cũ kỹ và năng lực làm chủ cuộc sống", "rationale": "Trực giác thích ứng cao và tầm nhìn cởi mở không định kiến." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "khát vọng bay nhảy, thay đổi liên tục", "rationale": "Hành động thiếu cam kết, đứng núi này trông núi nọ." },
+      "EMO": { "score": -1, "evidenceQuote": "nỗi bất an vì chưa có sự nghiệp cố định, cảm giác chênh vênh", "rationale": "Hoang mang, chông chênh trước áp lực định cư và trách nhiệm." },
+      "STR": { "score": -2, "evidenceQuote": "rơi vào cảnh bấp bênh", "rationale": "Thiếu cấu trúc bền vững, dễ bị phân tán nguồn lực." },
+      "RSK": { "score": -1, "evidenceQuote": "trốn chạy trách nhiệm gia đình", "rationale": "Trốn tránh nghĩa vụ vì sợ mất đi sự thoải mái cá nhân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-6",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "6",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 6",
+    "sourceSnippet": "Bước qua tuổi 35, trái tim của người mang Con số Trưởng thành 6 mở rộng với tình yêu thương bao la dành cho gia đình, con cháu và cộng đồng. Bạn tìm thấy ý nghĩa sống tối thượng trong việc chăm sóc tổ ấm, vun đắp các mối quan hệ hòa thuận, làm đẹp cho không gian sống và chở che cho những người yếu thế. Di sản bạn để lại là tình yêu thương vô điều kiện và một gia đình hạnh phúc, thuận hòa.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm sóc tổ ấm, vun đắp các mối quan hệ hòa thuận, làm đẹp cho không gian sống", "rationale": "Hành động tận tụy vì phúc lợi của gia đình và người thân." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương bao la dành cho gia đình, tình yêu thương vô điều kiện", "rationale": "Lòng trắc ẩn sâu sắc và sự hy sinh cao cả vì hạnh phúc chung." },
+      "STR": { "score": 1, "evidenceQuote": "người giữ lửa ấm gia tộc, quản trị tổ chức bảo trợ xã hội", "rationale": "Kiến tạo trật tự và không gian sống an lành, ấm cúng." },
+      "RSK": { "score": -1, "evidenceQuote": "nhìn thấy những người thân yêu được sống trong bình an, mạnh khỏe", "rationale": "Ưu tiên sự ổn định bình yên của gia đình hơn là mạo hiểm bên ngoài." },
+      "INT": { "score": 1, "evidenceQuote": "hướng về cội nguồn yêu thương và sự gắn kết gia đình", "rationale": "Thấu hiểu giá trị cốt lõi của tình thân và sự kết nối huyết thống." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "cảm giác ấm ức khi sự hy sinh của mình bị xem nhẹ, lo âu thái quá", "rationale": "Oán trách, kỳ vọng đáp lại và tự gây tổn thương cảm xúc." },
+      "STR": { "score": -1, "evidenceQuote": "khó buông lỏng kiểm soát", "rationale": "Bao bọc thái quá, can thiệp sâu vào cuộc sống của người khác." },
+      "RSK": { "score": -1, "evidenceQuote": "thêu dệt kịch bản xấu cho người thân", "rationale": "Bị chi phối bởi nỗi ám ảnh về những nguy cơ đe dọa người thân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-7",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "7",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 7",
+    "sourceSnippet": "Sau tuổi 35, người mang Con số Trưởng thành 7 rút lui dần khỏi những cuộc đua tranh phù phiếm để quay về thế giới nội tâm sâu thẳm. Bạn khao khát thấu suốt chân lý vũ trụ, giải mã các quy luật tâm linh và đúc kết những trải nghiệm thăng trầm thành tri thức uyên bác để sống một cuộc đời tĩnh tại, thanh cao.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "rút lui dần khỏi những cuộc đua tranh phù phiếm", "rationale": "Giảm bớt hoạt động giao tế ồn ào để thu mình nghiên cứu sâu." },
+      "EMO": { "score": 0, "evidenceQuote": "sống một cuộc đời tĩnh tại, thanh cao", "rationale": "Cảm xúc an định, tách biệt khỏi những xao động thế tục." },
+      "STR": { "score": 1, "evidenceQuote": "đúc kết những trải nghiệm thăng trầm thành tri thức uyên bác", "rationale": "Hệ thống hóa trải nghiệm thành phương pháp luận và tri thức." },
+      "RSK": { "score": -1, "evidenceQuote": "tìm thấy sự bình an tuyệt đối trong giai đoạn nửa sau cuộc đời", "rationale": "Ưu tiên sự thanh tịnh và độc lập tinh thần hơn mạo hiểm trần tục." },
+      "INT": { "score": 2, "evidenceQuote": "khao khát thấu suốt chân lý vũ trụ, kết nối với cõi tĩnh lặng nội tâm, kết nối trực giác", "rationale": "Trực giác siêu việt và năng lực triết học thấu thị quy luật vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "mất kết nối với xã hội xung quanh", "rationale": "Xa lánh xã hội, thụ động khép kín trong tháp ngà cá nhân." },
+      "EMO": { "score": -2, "evidenceQuote": "cảm giác cô độc sâu sắc, hoài nghi cay đắng trước những bất công trần thế", "rationale": "Bi quan cay đắng, khép kín trái tim vì mất niềm tin vào con người." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "hoài nghi cay đắng", "rationale": "Phòng thủ tiêu cực, e ngại rủi ro bị phản bội hoặc lừa dối." },
+      "INT": { "score": -1, "evidenceQuote": "hoài nghi cay đắng", "rationale": "Trí tuệ biến thành sự hoài nghi yếm thế, mất đi sự bao dung." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-8",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "8",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 8",
+    "sourceSnippet": "Bước qua tuổi 35, năng lực điều hành, quản trị nguồn lực và tư duy tài chính của người mang Con số Trưởng thành 8 đạt đến độ chín muồi quyền năng nhất. Bạn tự tin đứng ra làm chủ doanh nghiệp, kiến tạo dòng tiền vững mạnh, quản lý tài sản quy mô lớn và sử dụng sức mạnh kinh tế để khẳng định vị thế và phụng sự xã hội chính trực.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự tin đứng ra làm chủ doanh nghiệp, kiến tạo dòng tiền vững mạnh, bứt phá tài chính", "rationale": "Hành động quyết liệt, tập trung hiện thực hóa các mục tiêu tài chính." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực điều hành, quản trị nguồn lực và tư duy tài chính, quản lý tài sản quy mô lớn", "rationale": "Kỹ năng quản trị hệ thống và kiểm soát nguồn lực vật chất xuất sắc." },
+      "RSK": { "score": 1, "evidenceQuote": "quản trị rủi ro dòng tiền một cách chuyên nghiệp, thu hút các cơ hội kinh doanh lớn", "rationale": "Dám chấp nhận rủi ro có tính toán kỹ lưỡng trên thương trường." },
+      "INT": { "score": 1, "evidenceQuote": "độ nhạy bén thương trường, hiện thực hóa các mục tiêu tài chính đỉnh cao", "rationale": "Trực giác kinh doanh sắc sảo và tầm nhìn chiến lược thực tế." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "cái bẫy của sự thực dụng lạnh lùng làm tổn thương các mối quan hệ tình cảm", "rationale": "Đo lường mọi thứ bằng tiền bạc, làm rạn nứt tình cảm chân thành." },
+      "STR": { "score": -1, "evidenceQuote": "áp lực tài chính đè nặng", "rationale": "Bị cuốn vào vòng xoáy kiểm soát dòng tiền và quyền lực quá mức." },
+      "RSK": { "score": -1, "evidenceQuote": "nỗi sợ mất mát tài sản", "rationale": "Ám ảnh sợ phá sản, keo kiệt hoặc phòng thủ tài chính thái quá." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-9",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "9",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 9",
+    "sourceSnippet": "Sau tuổi 35, người mang Con số Trưởng thành 9 nhìn thấu sự vô thường của danh lợi và vật chất cá nhân. Tâm nguyện lớn nhất của bạn ở nửa sau đời người là cống hiến cho xã hội, xoa dịu nỗi đau của đồng loại, bảo vệ công lý và để lại một di sản nhân văn cao đẹp cho thế hệ mai sau.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cống hiến cho xã hội, xoa dịu nỗi đau của đồng loại, tham gia trực tiếp vào các dự án thiện nguyện", "rationale": "Hành động phụng sự vị tha vì lợi ích của tập thể và cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu nhân loại bao la và những giá trị tinh thần bất hủ, lối sống vị tha, khiêm nhường", "rationale": "Tình thương đại đồng, lòng từ bi và bao dung không giới hạn." },
+      "STR": { "score": 1, "evidenceQuote": "phụng sự đi cùng trí tuệ, chuẩn bị nền tảng tài chính tối thiểu vững chắc", "rationale": "Tổ chức các hoạt động xã hội có kế hoạch và cân bằng thực tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "nhìn thấu sự vô thường của danh lợi và vật chất cá nhân, thực hành buông xả và tha thứ", "rationale": "Trực giác đạo đức cao thượng và nhận thức sâu sắc về lẽ vô thường." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "nỗi trăn trở đau đáu trước những bất công xã hội, sự thất vọng khi lòng tốt bị lợi dụng", "rationale": "Đau buồn u sầu vì lý tưởng hóa lòng người và thực tế trần tục." },
+      "STR": { "score": -1, "evidenceQuote": "dằn vặt vì những sai lầm trong quá khứ", "rationale": "Thiếu buông bỏ, ôm giữ gánh nặng lỗi lầm của bản thân." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ lòng tốt bị lợi dụng", "rationale": "E ngại bị phụ bạc nhưng lại không dám đặt ranh giới dứt khoát." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-11",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "11",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 11",
+    "sourceSnippet": "Bước qua tuổi 35, người mang Con số Trưởng thành Master 11 trải qua sự thức tỉnh tâm linh mạnh mẽ. Trực giác siêu giác quan, năng lực thấu cảm năng lượng và sức mạnh truyền cảm hứng của bạn nở rộ, biến bạn thành ngọn đèn hải đăng soi đường cho những ai đang bế tắc, lạc lối tìm lại phương hướng cuộc đời.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "soi đường cho những ai đang bế tắc, dùng lời nói nâng đỡ tâm hồn", "rationale": "Hành động khai sáng, chữa lành và truyền cảm hứng sống tích cực." },
+      "EMO": { "score": 2, "evidenceQuote": "năng lực thấu cảm năng lượng, chia sẻ những thông điệp yêu thương", "rationale": "Cảm nhận tinh tế năng lượng cảm xúc của người khác để xoa dịu vết thương." },
+      "STR": { "score": 1, "evidenceQuote": "thực hành nối đất (Grounding) nghiêm ngặt, thiền định thanh lọc năng lượng", "rationale": "Xây dựng kỷ luật tự thân để cân bằng kênh năng lượng tâm linh." },
+      "RSK": { "score": 1, "evidenceQuote": "tin tưởng vào tiếng nói nội tâm và sử dụng món quà tâm linh này để phụng sự", "rationale": "Dũng cảm bước theo tiếng gọi tâm linh khác biệt với số đông." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh tâm linh mạnh mẽ, trực giác siêu giác quan", "rationale": "Trực giác thấu thị vượt trội và kết nối sâu sắc với trí tuệ vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "sự nhạy cảm quá mức khiến hệ thần kinh dễ bị quá tải, cảm giác lạc lõng", "rationale": "Dễ bị tổn thương tâm lý, quá tải cảm xúc trước năng lượng tiêu cực." },
+      "STR": { "score": -1, "evidenceQuote": "hoang mang trước những trải nghiệm tâm linh vượt khỏi tầm hiểu biết", "rationale": "Mất cân bằng giữa thế giới tâm linh và đời sống thực tế." },
+      "RSK": { "score": -1, "evidenceQuote": "cảm giác lạc lõng giữa xã hội thực dụng", "rationale": "Thu mình sợ hãi vì cảm thấy khác biệt và không được thấu hiểu." },
+      "INT": { "score": -1, "evidenceQuote": "hoang mang trước những trải nghiệm tâm linh", "rationale": "Rối loạn nhận thức khi không phân định được thực và ảo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mature-22",
+    "indicatorKey": "mature",
+    "indicatorNameVi": "Số Trưởng Thành",
+    "numberValue": "22",
+    "title": "Năng Lượng Tuổi Trung Niên Của Con Số Trưởng Thành 22",
+    "sourceSnippet": "Sau tuổi 35, năng lượng của Con số Trưởng thành Master 22 (The Master Builder) trỗi dậy mạnh mẽ nhất. Sau khi đã tích lũy đủ độ chín về kinh nghiệm chuyên môn và ý chí kỷ luật ở nửa đầu đời người, bạn sẵn sàng lãnh đạo và hiện thực hóa các đại dự án có quy mô tầm cỡ quốc gia hoặc quốc tế, để lại các công trình thế kỷ phục vụ cộng đồng.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lãnh đạo và hiện thực hóa các đại dự án có quy mô tầm cỡ quốc gia hoặc quốc tế", "rationale": "Hành động kiến tạo quy mô vĩ mô với quyết tâm phi thường." },
+      "EMO": { "score": 1, "evidenceQuote": "để lại các công trình thế kỷ phục vụ cộng đồng, giữ vững sự chính trực và đạo đức", "rationale": "Tâm nguyện cống hiến các công trình hữu ích cho muôn đời sau." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực thực thi kỷ luật thép, lập kế hoạch chiến lược dài hạn, quy tụ cộng sự tài đức", "rationale": "Tổ chức và quản trị đại dự án với sự chuẩn mực và tầm nhìn kiến thiết." },
+      "RSK": { "score": 2, "evidenceQuote": "hiện thực hóa các đại dự án, lập bản đồ chiến lược di sản 10 - 20 năm", "rationale": "Dám gánh vác các dự án quy mô khổng lồ đầy thử thách." },
+      "INT": { "score": 2, "evidenceQuote": "kết hợp tầm nhìn vĩ mô của số 11 với năng lực thực thi kỷ luật thép của số 4", "rationale": "Trực giác chiến lược vĩ đại gắn liền với năng lực hiện thực hóa." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "áp lực trách nhiệm khổng lồ khiến bạn dễ bị căng thẳng thần kinh tột độ, kiệt sức", "rationale": "Quá tải tinh thần và thể chất do gánh vác trách nhiệm quá lớn." },
+      "STR": { "score": -1, "evidenceQuote": "cám dỗ thao túng quyền lực nếu cái tôi lấn át", "rationale": "Lạm dụng quyền lực, kiểm soát độc đoán để đạt mục tiêu vĩ mô." },
+      "RSK": { "score": -1, "evidenceQuote": "căng thẳng thần kinh tột độ", "rationale": "Bị đè bẹp bởi rủi ro thất bại của những dự án tầm cỡ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  }
+]

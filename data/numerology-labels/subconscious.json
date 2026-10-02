@@ -1,0 +1,209 @@
+[
+  {
+    "id": "subconsciousPower-1",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "1",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 1",
+    "sourceSnippet": "Cấp độ lý thuyết giả định tương ứng với 8 bài học nghiệp/số thiếu trong tên. Mức độ nội lực sơ khai nhất, cần sự trợ lực và che chở hoàn toàn từ môi trường bảo bọc bên ngoài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." }
+    },
+    "overallConfidence": 0
+  },
+  {
+    "id": "subconsciousPower-2",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "2",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 2",
+    "sourceSnippet": "Cấp độ lý thuyết giả định tương ứng với 7 bài học nghiệp/số thiếu trong tên. Mức độ nội lực rất mỏng manh, phụ thuộc lớn vào sự dìu dắt và đồng hành liên tục của người khác.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn (cấp độ lý thuyết)." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không đủ bằng chứng trực tiếp trong tài liệu nguồn; bỏ qua trục này." }
+    },
+    "overallConfidence": 0
+  },
+  {
+    "id": "subconsciousPower-3",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "3",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 3",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 3 có mức độ vững vàng tâm lý ở giai đoạn sơ khởi. Tiềm thức của bạn rất dễ bị chao đảo trước những biến cố lớn, thường xuyên trải qua cảm giác tự ti, nghi ngờ năng lực bản thân và sợ hãi sự thay đổi đột ngột. Khả năng chống chịu nghịch cảnh của bạn cần được tôi luyện và phụ thuộc nhiều vào môi trường nâng đỡ từ bên ngoài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "từng bước tích lũy thành công nhỏ để củng cố niềm tin cho tiềm thức", "rationale": "Chia nhỏ thử thách để hành động từng bước xây dựng nội lực." },
+      "EMO": { "score": 1, "evidenceQuote": "ghi nhận 3 thành tựu nhỏ mỗi ngày để lập trình lại tiềm thức tích cực", "rationale": "Củng cố cảm xúc tích cực và ghi nhận giá trị bản thân." },
+      "STR": { "score": 1, "evidenceQuote": "chia nhỏ thử thách thành các bước vi mô, thiền củng cố luân xa gốc", "rationale": "Thiết lập kế hoạch vi mô và kỷ luật nối đất." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tôi có đầy đủ nguồn lực và trí tuệ để học hỏi và vượt qua mọi thử thách", "rationale": "Thức tỉnh nhận thức về nguồn lực nội tại." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "có xu hướng rút lui, co cụm hoặc cảm thấy bất lực không biết bắt đầu từ đâu", "rationale": "Tê liệt hành động, thoái lui khi đối diện áp lực." },
+      "EMO": { "score": -2, "evidenceQuote": "dễ bị cảm xúc tiêu cực chi phối, tự ti, nghi ngờ năng lực bản thân", "rationale": "Cảm xúc tiêu cực lấn át, hoang mang và tự ti." },
+      "STR": { "score": -1, "evidenceQuote": "mất nhiều thời gian để lấy lại thăng bằng", "rationale": "Khó tái thiết lập trật tự tâm lý khi xảy ra biến cố." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi sự thay đổi đột ngột, lo sợ bị thất bại", "rationale": "Sợ rủi ro thay đổi và hoảng sợ trước thất bại." },
+      "INT": { "score": -1, "evidenceQuote": "tiềm thức rất dễ bị chao đảo", "rationale": "Mất niềm tin vào trực giác và trí tuệ tự thân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-4",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "4",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 4",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 4 có mức độ vững vàng tâm lý trung bình - yếu khi đứng trước những tình huống bất định, hỗn loạn. Bạn chỉ cảm thấy an tâm và tự tin khi mọi thứ diễn ra theo một kế hoạch rõ ràng, có quy trình chuẩn mực và có người đồng hành đáng tin cậy bên cạnh.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "rèn luyện sức bền thể chất ít nhất 30 phút mỗi ngày", "rationale": "Hành động rèn luyện thể chất để tăng sức bền hệ thần kinh." },
+      "EMO": { "score": 1, "evidenceQuote": "thực hành thở chánh niệm để đưa tâm trí về trạng thái cân bằng", "rationale": "Điều hòa cảm xúc bằng hơi thở chánh niệm." },
+      "STR": { "score": 2, "evidenceQuote": "chuẩn bị kế hoạch dự phòng (Plan B), viết sẵn 2 kịch bản xử lý rủi ro", "rationale": "Tính tổ chức cao, lên kịch bản dự phòng chi tiết." },
+      "RSK": { "score": -1, "evidenceQuote": "an tâm và tự tin khi mọi thứ diễn ra theo một kế hoạch rõ ràng, có quy trình chuẩn mực", "rationale": "Ưu tiên phương án an toàn, tránh mạo hiểm." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thấy các dữ liệu thực tế rõ ràng thì mới dám bắt tay vào hành động", "rationale": "Tư duy dựa trên dữ liệu thực tế khách quan." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "phản xạ tiềm thức ban đầu là đóng băng (Freeze)", "rationale": "Đóng băng phản xạ, bất động không dám hành động." },
+      "EMO": { "score": -1, "evidenceQuote": "lo lắng thái quá về các rủi ro tồi tệ nhất", "rationale": "Âu lo thái quá làm suy giảm tinh thần." },
+      "STR": { "score": -1, "evidenceQuote": "mất một khoảng thời gian để định thần", "rationale": "Mất phương hướng khi trật tự kế hoạch bị phá vỡ." },
+      "RSK": { "score": -2, "evidenceQuote": "lo lắng thái quá về các rủi ro tồi tệ nhất", "rationale": "Ám ảnh sợ hãi rủi ro tiêu cực làm tê liệt hành động." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-5",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "5",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 5",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 5 sở hữu nội lực ở mức trung bình. Bạn có khả năng thích ứng linh hoạt và xoay xở khá tốt trước những biến động ngắn hạn. Tuy nhiên, nếu áp lực hoặc nghịch cảnh kéo dài liên tục, bạn dễ bị suy kiệt năng lượng và rơi vào trạng thái hoang mang, mất phương hướng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "rất hăng hái dấn thân vào lúc đầu, thử thách cam kết 30 ngày", "rationale": "Hăng hái hành động và thử thách bản thân rèn luyện thói quen." },
+      "EMO": { "score": 1, "evidenceQuote": "thực hành kỹ thuật Định tâm (Centering) để nạp lại năng lượng cho tâm trí", "rationale": "Tĩnh tâm nạp lại năng lượng cảm xúc tích cực." },
+      "STR": { "score": 1, "evidenceQuote": "duy trì nhịp độ ổn định, kiên trì từng bước một cho đến khi cán đích", "rationale": "Xây dựng kỷ luật bền bỉ để phân bổ sức lực trường kỳ." },
+      "RSK": { "score": 1, "evidenceQuote": "khả năng thích ứng linh hoạt và xoay xở khá tốt trước những biến động", "rationale": "Linh hoạt xoay xở trước những biến động bất ngờ." },
+      "INT": { "score": 1, "evidenceQuote": "viết nhật ký bài học sau mỗi vấp ngã để đúc kết giải pháp khắc phục", "rationale": "Trực giác rút ra bài học kinh nghiệm sau thất bại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "muốn buông xuôi, bỏ dở giữa chừng để tìm kiếm lối thoát mới", "rationale": "Bỏ cuộc giữa chừng khi gặp trở ngại kéo dài." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ nản lòng và muốn bỏ cuộc, hoang mang mất phương hướng", "rationale": "Dễ chán nản, suy giảm ý chí khi áp lực dai dẳng." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu tính kiên định bền bỉ dưới áp lực trường kỳ", "rationale": "Thiếu sức bền kỷ luật dài hạn, dễ đứt gãy cam kết." },
+      "RSK": { "score": -1, "evidenceQuote": "tìm kiếm lối thoát mới nhẹ nhàng hơn", "rationale": "Thoái lui né tránh khó khăn thử thách." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-6",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "6",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 6",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 6 sở hữu nội lực khá vững vàng và ổn định. Bạn có khả năng tự phục hồi tốt sau các thất bại trong công việc. Tuy nhiên, 'gót chân Achilles' của bạn nằm ở khía cạnh tình cảm và gia đình: Bạn rất dễ bị suy giảm nội lực khi người thân gặp nạn hoặc các mối quan hệ tình cảm bị rạn nứt.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "khả năng tự phục hồi tốt sau các thất bại trong công việc, phản ứng điềm tĩnh và có trách nhiệm", "rationale": "Chủ động phục hồi và hành động có trách nhiệm cao trong công việc." },
+      "EMO": { "score": 2, "evidenceQuote": "thiền Quán Tâm Từ, gửi năng lượng bình an và chúc phúc cho người thân", "rationale": "Tình yêu thương bao dung và lòng trắc ẩn từ bi." },
+      "STR": { "score": 1, "evidenceQuote": "tách biệt ranh giới cảm xúc, học cách nói Không lành mạnh", "rationale": "Thiết lập ranh giới bảo vệ nội lực cá nhân." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "hiểu rằng mỗi người đều có hành trình tiến hóa và bài học riêng", "rationale": "Thấu hiểu quy luật bài học số phận của mỗi người." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "tự dằn vặt, nhận hết lỗi về mình và lo lắng thái quá khiến sức khỏe tinh thần bị ảnh hưởng", "rationale": "Tự dằn vặt, nhận lỗi thay người khác làm tổn thương sâu sắc tinh thần." },
+      "STR": { "score": -1, "evidenceQuote": "gánh nghiệp thay họ, suy giảm nội lực khi các mối quan hệ tình cảm bị rạn nứt", "rationale": "Để rạn nứt tình cảm làm tê liệt năng lực hành động." },
+      "RSK": { "score": -1, "evidenceQuote": "lo lắng thái quá khiến sức khỏe tinh thần bị ảnh hưởng", "rationale": "Ám ảnh sợ hãi rủi ro xảy đến cho người thân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-7",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "7",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 7",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 7 có mức độ vững vàng tâm lý và chỉ số phục hồi rất cao. Bạn sở hữu cơ chế tự bảo vệ và tự chữa lành tuyệt vời thông qua việc đào sâu suy ngẫm, nhìn thấu các quy luật vũ trụ và chuyển hóa mọi nghịch cảnh thành tri thức tiến hóa.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "bình thản tìm ra con đường tái thiết, phục hồi nhanh hơn người khác sau những cú sốc", "rationale": "Khả năng tái thiết thực tế nhanh sau các cú sốc." },
+      "EMO": { "score": 1, "evidenceQuote": "cơ chế tự bảo vệ và tự chữa lành tuyệt vời, không bị tổn thương quá lâu", "rationale": "Cảm xúc an định, tự chữa lành tổn thương bằng trí tuệ." },
+      "STR": { "score": 1, "evidenceQuote": "duy trì thói quen chiêm nghiệm tĩnh lặng, ghi chép nhật ký triết học", "rationale": "Hệ thống hóa bài học nội tâm có phương pháp và kỷ luật." },
+      "RSK": { "score": 1, "evidenceQuote": "lùi lại một bước, quan sát toàn cảnh trong sự tĩnh lặng", "rationale": "Bình thản đón nhận thử thách, làm chủ rủi ro bằng nhận thức sâu." },
+      "INT": { "score": 2, "evidenceQuote": "nhìn thấu các quy luật vũ trụ và chuyển hóa mọi nghịch cảnh thành tri thức tiến hóa", "rationale": "Trực giác siêu việt và nhận thức nhân quả sâu sắc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm một mình", "rationale": "Có xu hướng đơn độc xử lý mọi gánh nặng mà không chia sẻ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-8",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "8",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 8",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 8 sở hữu nội lực cực kỳ hùng mạnh. Bạn có bản lĩnh kiên cường như thép đã tôi, ý chí sắt đá và khả năng chịu đựng những áp lực khủng khiếp mà người bình thường khó lòng chịu nổi. Bạn sinh ra với bản năng sinh tồn và năng lực vươn lên đỉnh cao trong nghịch cảnh.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chiến đấu đến cùng để giành lại quyền kiểm soát, ngọn lửa chiến binh bên trong bùng cháy", "rationale": "Bản năng chiến đấu ngoan cường và hành động quyết liệt." },
+      "EMO": { "score": 0, "evidenceQuote": "nuôi dưỡng lòng biết ơn để làm mềm bớt sự gai góc", "rationale": "Cân bằng ý chí sắt đá với lòng biết ơn và sự nhu hòa." },
+      "STR": { "score": 2, "evidenceQuote": "tái cơ cấu nguồn lực, tập chia sẻ quyền hạn, giao phó công việc quan trọng", "rationale": "Năng lực tái cấu trúc nguồn lực và quản trị khủng hoảng đỉnh cao." },
+      "RSK": { "score": 2, "evidenceQuote": "bản năng sinh tồn và năng lực vươn lên đỉnh cao trong nghịch cảnh", "rationale": "Dám đối đầu mọi áp lực khủng khiếp và nghịch cảnh hiểm nghèo." },
+      "INT": { "score": 1, "evidenceQuote": "lập tức tìm kiếm giải pháp thực thi, đóng vai trò cố vấn chiến lược", "rationale": "Tư duy chiến lược thực chiến sắc bén." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "kiệt sức do gồng gánh quá mức, sự gai góc của ý chí chiến binh", "rationale": "Căng thẳng tinh thần do tự đặt áp lực gồng gánh quá lớn." },
+      "STR": { "score": -1, "evidenceQuote": "khó buông bỏ bớt sự kiểm soát", "rationale": "Ám ảnh kiểm soát tuyệt đối, khó giao phó quyền lực." },
+      "RSK": { "score": 1, "evidenceQuote": "gồng gánh quá mức", "rationale": "Liều lĩnh chấp nhận rủi ro quá tải đe dọa sức khỏe bản thân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "subconsciousPower-9",
+    "indicatorKey": "subconsciousPower",
+    "indicatorNameVi": "Sức Mạnh Tiềm Thức",
+    "numberValue": "9",
+    "title": "Nội Lực Sinh Tồn Của Sức Mạnh Tiềm Thức Cấp Độ 9",
+    "sourceSnippet": "Người mang Sức mạnh Tiềm thức Cấp độ 9 đạt tới cấp độ nội lực tự thân hoàn hảo và trọn vẹn nhất. Bạn sở hữu niềm tin vững chắc vào bản thân, khả năng thích ứng siêu việt với mọi hoàn cảnh sống và chỉ số chống chịu nghịch cảnh ở mức đỉnh cao tuyệt đối.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "nhanh chóng thích nghi, huy động mọi nguồn lực sẵn có và dẫn dắt tập thể vượt qua sóng gió", "rationale": "Hành động dẫn dắt tự tin, làm chủ mọi tình thế nhẹ nhàng." },
+      "EMO": { "score": 2, "evidenceQuote": "bình thản, ung dung tự tại, đức khiêm nhường, tấm lòng bao dung", "rationale": "Tâm hồn an nhiên, bao dung nâng đỡ và bảo vệ người khác." },
+      "STR": { "score": 2, "evidenceQuote": "trở thành chỗ dựa tinh thần, hướng dẫn, cố vấn và tiếp thêm niềm tin", "rationale": "Điểm tựa tổ chức vững chắc cho cả tập thể." },
+      "RSK": { "score": 2, "evidenceQuote": "chỉ số chống chịu nghịch cảnh ở mức đỉnh cao tuyệt đối, không sợ hãi trước biến cố", "rationale": "Bản lĩnh vững như bàn thạch trước mọi bão táp rủi ro." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác nhạy bén, mọi chuyện rồi sẽ có cách giải quyết tốt đẹp nhất", "rationale": "Trực giác siêu đẳng và niềm tin sâu sắc vào quy luật vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "thiếu sự thấu cảm với những người có nội lực yếu hơn", "rationale": "Khó đồng cảm với nỗi sợ và sự yếu đuối của người khác." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "chủ quan, tự mãn", "rationale": "Quá tự tin vào nội lực dẫn đến chủ quan khinh suất." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  }
+]

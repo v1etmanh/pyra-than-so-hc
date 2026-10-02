@@ -1,0 +1,92 @@
+mindmap
+  root((Luồng Tarot hiện tại))
+    Giao diện và hook
+      NuminaTarotPage dùng useTarotReading
+      Lượt đọc mới
+        Nhận câu hỏi và spreadId người dùng chọn
+        Tạo session rồi lưu IndexedDB tối đa 50 phiên
+        POST api/tarot/reading mode initial
+      Hỏi tiếp
+        Yêu cầu session có spread và lời giải
+        Gửi câu hỏi mới kèm lịch sử đã hoàn tất
+        POST mode follow-up
+      Luận giải lại
+        Giữ nguyên câu hỏi và các lá hiện tại
+        POST mode regenerate
+      Stream SSE
+        Cập nhật trạng thái, bài, quyết định, nội dung
+        Cập nhật session và lưu IndexedDB
+      Hủy hoặc timeout
+        AbortController
+        Timeout phía client 180 giây
+    API dùng chung
+      Đọc JSON giới hạn 256 KB
+      Zod kiểm tra payload theo mode
+      Sai request trả HTTP 400
+      Kiểm tra quyền và hạn mức sử dụng
+      Ghi nhận lượt dùng AI
+      Tạo system prompt theo ngôn ngữ vi hoặc en
+      Stream model qua createStreamingResponse và provider cascade
+    Initial: đọc bài lần đầu
+      Lấy spread theo spreadId
+        single: 1 lá thông điệp
+        three-card: quá khứ, hiện tại, tương lai gần
+        two-options: tình huống, tiến trình A, kết quả A, tiến trình B, kết quả B
+        relationship: hai phía, kết nối, thử thách, tiềm năng
+        timeline: gốc rễ, ảnh hưởng cũ, hiện tại, xu hướng, hành động
+        celtic-cross: 10 vị trí
+      Rút bài ở server
+        Xáo bằng crypto.getRandomValues
+        Không trùng lá trong cùng spread
+        Chọn ngẫu nhiên chiều xuôi hoặc ngược
+      Gửi SSE reading với spread và các lá
+      Dựng prompt lượt đầu
+        Câu hỏi và mô tả spread
+        Tên, từ khóa, ý nghĩa, chiều và vai trò từng vị trí
+        Hồ sơ số học tùy chọn chỉ để cá nhân hóa
+        Yêu cầu 120-180 từ và ba phần
+      LLM stream nội dung rồi SSE done
+    Follow-up: hỏi tiếp
+      Khôi phục bộ bài chuẩn từ cardId
+      Kiểm tra đúng số lá, đúng vị trí, không trùng
+      Gộp lời giải trước và lịch sử hỏi đáp đã hoàn tất
+      Model quyết định direct hoặc draw
+        JSON sai hoặc thiếu thì mặc định direct
+        direct: dùng các lá hiện có
+        draw: rút bổ sung từ 1 đến 3 lá
+          Loại các lá đã dùng trong spread và follow-up trước
+      Dựng prompt trả lời tiếp
+        Câu ban đầu, lời giải trước, câu hỏi mới
+        Lá gốc và lá bổ sung nếu có
+        Yêu cầu 60-100 từ, ba phần, không lặp lại
+      LLM stream lời giải tiếp theo
+    Regenerate: tạo góc nhìn mới
+      Khôi phục cùng spread và cùng lá từ dữ liệu chuẩn
+      Không rút bài mới
+      Prompt yêu cầu diễn đạt mới, cụ thể hơn
+      Dùng cấu trúc và giới hạn của prompt initial
+    Chuẩn dữ liệu bài
+      lib/tarot/cards.ts là nguồn nội dung lá ở server
+      Client chỉ gửi cardId, chiều lá, positionId cho context
+      Server tự hydrate nội dung chuẩn trước khi hỏi model
+      Prompt nhận dữ liệu lá và ngữ cảnh vị trí
+    Quy chuẩn prompt
+      Chỉ luận các lá, chiều và vị trí được cung cấp
+      Tarot là tham khảo, không phải tiên tri chắc chắn
+      Không khẳng định biết suy nghĩ riêng tư của người khác
+      Chủ đề sức khỏe, pháp lý, tài chính, an toàn cần nêu giới hạn
+      Tránh gây sợ hãi, định mệnh hóa và khuyến khích lệ thuộc
+      Câu hỏi hai lựa chọn yêu cầu nêu phương án nghiêng và tỷ lệ tổng 100 phần trăm
+      Tối đa 3 tín hiệu mạnh trừ khi người dùng yêu cầu luận từng lá
+      Đây là chỉ dẫn prompt, chưa có bộ kiểm định đầu ra bảo đảm tuân thủ
+    Phân loại câu hỏi
+      Initial không gọi api/chat/classify
+      Người dùng chọn spreadId trước khi gửi request
+      isTwoChoiceContext chỉ thêm hướng dẫn viết khi thấy dấu hiệu so sánh
+      Follow-up mới dùng model phân định direct hay draw
+    Lỗi và giới hạn
+      Kiểm tra payload hoặc quyền thất bại thì trả lỗi HTTP
+      Lỗi trong lúc stream phát SSE error
+      JSON quyết định follow-up lỗi thì chọn direct
+      Client hiện lỗi và chuyển phase error
+      Dòng chữ AI đang đối chiếu trong ảnh không thấy nguyên văn ở luồng Tarot đã khảo sát

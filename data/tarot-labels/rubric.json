@@ -1,0 +1,47 @@
+{
+  "version": "3.0.0",
+  "scale": [-2, -1, 0, 1, 2],
+  "purpose": "Mã hóa trạng thái được mô tả trong nguồn của đúng lá và đúng chiều; không chứng minh tương tác Tarot–Thần số học.",
+  "aspects": {
+    "core": "Năng lượng/trạng thái chủ đạo được nguồn mô tả, có thể âm hoặc dương. Không chuyển lời khuyên, tiềm năng chữa lành hoặc điều nên làm thành đặc tính đã hiện diện.",
+    "shadow": "Thách thức, điểm mù hoặc biến dạng được nêu trực tiếp trong cùng nguồn trạng thái. Không tự suy ra bóng tối của một đặc tính tích cực, không mượn nguồn của chiều còn lại. Có thể trùng core khi thách thức chính là trạng thái chủ đạo."
+  },
+  "axes": {
+    "ACT": {
+      "nameVi": "Chủ động & Hành động",
+      "definition": "Mức khởi xướng/thực thi của chủ thể, không phải mức biến động hoàn cảnh hoặc thành công kết quả.",
+      "anchors": {"-2": "Mắc kẹt hoặc tê liệt hành động rõ rệt", "-1": "Do dự, trì hoãn, thiếu động lực hoặc tiến trình chủ thể trì trệ", "0": "Chủ động nghỉ/tạm dừng hoặc chưa đủ bằng chứng về hành động", "1": "Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích", "2": "Quyết liệt, quyết đoán hoặc thực thi với tốc độ cao"}
+    },
+    "EMO": {
+      "nameVi": "Cảm xúc & Gắn kết",
+      "definition": "Mức cởi mở, gắn kết và điều tiết cảm xúc. Buồn đau, mất mát, chiến thắng hoặc vật chất tự chúng không chứng minh mất gắn kết hay điều tiết tốt/xấu.",
+      "anchors": {"-2": "Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt", "-1": "Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường", "0": "Không nêu hướng gắn kết/điều tiết; không biến mọi cảm xúc thành điểm âm/dương", "1": "Mở lòng, tương hỗ, hòa giải hoặc kết nối", "2": "Thấu cảm/chăm sóc rõ rệt hoặc gắn kết gia đình/cộng đồng hòa hợp"}
+    },
+    "STR": {
+      "nameVi": "Cấu trúc & Kỷ luật",
+      "definition": "Mức tổ chức, giới hạn và kiểm soát. Cứng nhắc/độc đoán thuộc đầu cấu trúc cao khi xuất hiện như shadow; dấu âm không có nghĩa là xấu. Sáng rõ tư duy không tự chứng minh kỷ luật.",
+      "anchors": {"-2": "Hỗn loạn, cấu trúc sụp đổ hoặc thiếu kỷ luật rõ rệt", "-1": "Phân tán, thiếu chuẩn bị, mất hướng, xao nhãng hoặc thiếu ranh giới", "0": "Không nêu cấu trúc, hoặc nguồn đồng thời nêu quá kiểm soát và thiếu kỷ luật", "1": "Kế hoạch, ưu tiên, chiến lược, ranh giới hoặc trách nhiệm", "2": "Cấu trúc/kỷ luật bền vững hoặc kiểm soát cứng nhắc quá mức"}
+    },
+    "RSK": {
+      "nameVi": "Khẩu vị Rủi ro & Dấn thân",
+      "definition": "Mức sẵn sàng dấn thân của chủ thể. Liều lĩnh là đầu dương cao ở shadow; rủi ro bị áp đặt hoặc khả năng chịu thiệt hại không phải khẩu vị rủi ro.",
+      "anchors": {"-2": "Sợ bước đi/thay đổi/rời bỏ hoặc phòng thủ quá mức rõ rệt", "-1": "Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu", "0": "Không đủ bằng chứng, hoặc có cả liều lĩnh và sợ hành động", "1": "Khám phá, phiêu lưu hoặc dũng khí được nêu", "2": "Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp"}
+    },
+    "INT": {
+      "nameVi": "Trực giác & Tự nhận thức",
+      "definition": "Trực giác, trí tuệ nội tâm, chiêm nghiệm và tự nhận thức. Không đồng nhất với lý trí, học nghề, sự thật khách quan, thành công hoặc lời khuyên nhìn lại dùng chung.",
+      "anchors": {"-2": "Phớt lờ/cản trở trực giác hoặc ảo tưởng rõ rệt", "-1": "Suy diễn, nhận thức bị bóp méo hoặc mất liên hệ với bản thân được nêu", "0": "Không nêu trực giác/tự nhận thức; hoặc nguồn có các hướng đối lập chưa phân giải", "1": "Chiêm nghiệm, nhận thức hoặc góc nhìn mới", "2": "Trực giác/trí tuệ nội tâm hoặc thức tỉnh được nêu rõ"}
+    }
+  },
+  "evidenceRules": [
+    "Mọi score khác 0 phải có ít nhất một evidenceQuote khớp nguyên văn trường keywords hoặc meaning của đúng cardId/state.",
+    "Một từ khóa có thể có nhiều nghĩa; chỉ gán các trục mà nội dung đủ hỗ trợ. Không dùng hình ảnh lá bài, nguồn bên ngoài hay nhãn cũ như bằng chứng.",
+    "Lời khuyên chỉ thị như hãy/cần/đừng không chứng minh chủ thể đã có năng lượng được khuyên. Không dùng câu mẫu Minor Arcana 'điểm cần nhìn lại' để tăng INT.",
+    "Nếu thiếu bằng chứng: score=0, evidenceStatus=insufficient, eligibleForRelations=false. Điểm 0 thiếu dữ liệu không phải trung tính đã xác nhận.",
+    "Nếu người gán không chọn được hướng đối lập: score=0, evidenceStatus=ambiguous, lưu alternatives kèm trích dẫn và không dùng ô này trong luật.",
+    "Khi người dùng yêu cầu dùng phán đoán: có thể chọn hướng dựa trên toàn nghĩa lá, nhưng phải gán evidenceStatus=inferred, lưu trích dẫn làm điểm tựa và ghi rõ lý do đây là suy luận, không phải điều nguồn nói trực tiếp.",
+    "Không hiệu chỉnh confidence bằng cảm giác chắc chắn; confidence=null cho đến khi có phương pháp hiệu chuẩn hoặc lượt gán độc lập.",
+    "Điểm thuộc thang thứ tự; không lấy trung bình các hướng đối lập hoặc suy ra shadow bằng đổi dấu core."
+  ],
+  "validationLimits": "Đây là rubric nội bộ được chỉnh bởi AI từ nguồn dự án. Chưa có xác nhận của người hoặc độ đồng thuận liên mô hình."
+}

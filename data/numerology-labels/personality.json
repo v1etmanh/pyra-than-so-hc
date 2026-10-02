@@ -1,0 +1,255 @@
+[
+  {
+    "id": "personality-1",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "1",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 1",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 1 toát ra ấn tượng đầu tiên vô cùng mạnh mẽ: tự tin, đĩnh đạc, độc lập và mang khí chất của một nhà lãnh đạo bẩm sinh. Bạn có dáng đi nhanh nhẹn, phong thái dứt khoát, ánh mắt kiên định và phong cách ăn mặc chỉnh chu, sang trọng, mang hơi hướng quyền lực và tiên phong. Mọi người khi mới gặp thường cảm nhận bạn là người có năng lực, bản lĩnh và không dễ bị khuất phục.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "dáng đi nhanh nhẹn, phong thái dứt khoát, chủ động đưa ra định hướng, ra quyết định và dẫn dắt tập thể", "rationale": "Thần thái hành động quyết liệt, luôn tiên phong chủ động dẫn dắt." },
+      "EMO": { "score": 0, "evidenceQuote": "thêm sự mềm mỏng vào ngôn ngữ cơ thể, bộc lộ sự ấm áp tự nhiên", "rationale": "Học cách mềm mỏng và chân thành để tạo sự gần gũi trong quan hệ." },
+      "STR": { "score": 1, "evidenceQuote": "ăn mặc chỉnh chu, sang trọng, trực diện, rõ ràng, gãy gọn", "rationale": "Phong cách chỉn chu, giao tiếp mạch lạc và có chuẩn mực lãnh đạo." },
+      "RSK": { "score": 2, "evidenceQuote": "khí chất của một nhà lãnh đạo bẩm sinh, bản lĩnh và không dễ bị khuất phục", "rationale": "Tự tin đối đầu thử thách, không nao núng trước bất kỳ áp lực nào." },
+      "INT": { "score": 1, "evidenceQuote": "đi thẳng vào trọng tâm vấn đề, không thích sự vòng vo", "rationale": "Tư duy trực diện, nắm bắt điểm mấu chốt nhanh chóng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "áp đảo khiến người khác cảm thấy e dè", "rationale": "Hành vi lấn át, dùng uy thế đè bẹp sự đóng góp của người xung quanh." },
+      "EMO": { "score": -2, "evidenceQuote": "kẻ kiêu ngạo, lạnh lùng, gia trưởng và khó gần, thường xuyên cảm thấy cô đơn", "rationale": "Chiếc áo giáp quá cứng rắn triệt tiêu cảm xúc ấm áp, đẩy bản thân vào cô độc." },
+      "STR": { "score": -1, "evidenceQuote": "chiếc áo giáp của sự mạnh mẽ và bất khả xâm phạm", "rationale": "Khuôn mẫu phòng vệ cứng nhắc ngăn cản sự cởi mở linh hoạt." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "từ trường áp đảo, định kiến không cần sự an ủi hay chở che", "rationale": "Cái tôi áp đảo làm sai lệch nhận thức xã hội về nhu cầu tình cảm thực tế." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-2",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "2",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 2",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 2 toát lên ấn tượng đầu tiên vô cùng dịu dàng, nhã nhặn, khiêm nhường và dễ mến. Năng lượng tỏa ra từ bạn mang lại cảm giác bình an, thư thái và an toàn cho người đối diện. Phong cách ăn mặc của bạn thường trang nhã, thanh lịch, màu sắc hài hòa tinh tế và không hề phô trương lòe loẹt. Bạn là người mà bất cứ ai cũng cảm thấy dễ dàng tiếp cận và giãi bày tâm sự.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "chủ động tìm kiếm sự hòa hợp, tránh né những xung đột tranh cãi", "rationale": "Hành động theo xu hướng hòa giải, không đối đầu trực tiếp." },
+      "EMO": { "score": 2, "evidenceQuote": "dịu dàng, nhã nhặn, khiêm nhường và dễ mến, lắng nghe xuất chúng, biết gật đầu đồng cảm", "rationale": "Khí chất thấu cảm tuyệt vời, mang lại cảm giác bình an và an toàn cho người đối diện." },
+      "STR": { "score": 1, "evidenceQuote": "rèn luyện sự hòa nhã có ranh giới, khẳng định ranh giới cá nhân", "rationale": "Thiết lập ranh giới giao tiếp rõ ràng để giữ gìn sự hòa hợp bền vững." },
+      "RSK": { "score": 0, "evidenceQuote": "nói lời từ chối một cách lịch thiệp nhưng dứt khoát", "rationale": "Bản lĩnh bảo vệ chính kiến trong hòa bình." },
+      "INT": { "score": 1, "evidenceQuote": "lắng nghe thấu cảm, nghệ thuật đàm phán ngoại giao khéo léo", "rationale": "Trực giác tinh nhạy trong việc đọc vị tâm lý và cảm xúc con người." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "nhu nhược, thiếu chính kiến, dễ bị lấn át hoặc bắt nạt", "rationale": "Thụ động cam chịu, thiếu dũng khí hành động để bảo vệ quyền lợi." },
+      "EMO": { "score": -1, "evidenceQuote": "sứ giả hòa nhã không tì vết, bức bối vì vẻ ngoài quá hiền lành", "rationale": "Kìm nén uất ức bên trong vì luôn cố gắng làm hài lòng mọi người." },
+      "STR": { "score": -1, "evidenceQuote": "dễ bị người khác thao túng cảm xúc, xin lỗi không cần thiết", "rationale": "Thiếu ranh giới phòng vệ, dễ bị kẻ khác áp đặt và lấn lướt." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ xung đột tranh cãi, không dám bảo vệ chính kiến", "rationale": "Nỗi sợ va chạm khiến bản thân né tránh đối đầu đến mức nhu nhược." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-3",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "3",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 3",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 3 toát ra ấn tượng đầu tiên vô cùng rạng rỡ, hoạt bát, duyên dáng và tràn ngập sinh khí. Nụ cười tươi tắn, ánh mắt lấp lánh và gu thời trang bắt mắt, sành điệu giúp bạn luôn trở thành tâm điểm thu hút sự chú ý trong bất kỳ đám đông nào. Mọi người xung quanh luôn cảm thấy vui vẻ, phấn chấn và hào hứng khi ở bên cạnh bạn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hoạt bát, sinh động, cử chỉ tay và biểu cảm gương mặt phong phú", "rationale": "Năng lượng dồi dào, phản xạ giao tiếp nhanh nhẹn và biểu cảm cuốn hút." },
+      "EMO": { "score": 2, "evidenceQuote": "rạng rỡ, duyên dáng và tràn ngập sinh khí, mang lại tiếng cười và niềm vui", "rationale": "Lan tỏa niềm hân hoan rực rỡ, kết nối mọi người bằng sự ấm áp và hài hước." },
+      "STR": { "score": 0, "evidenceQuote": "chọn lọc trang phục chuyên nghiệp, tiết chế sự hài hước đúng lúc", "rationale": "Học cách kiểm soát ngôn từ và hình ảnh để phù hợp bối cảnh trang trọng." },
+      "RSK": { "score": 1, "evidenceQuote": "tâm điểm thu hút sự chú ý trong bất kỳ đám đông nào", "rationale": "Tự tin tỏa sáng trước công chúng, không sợ ánh nhìn đánh giá." },
+      "INT": { "score": 1, "evidenceQuote": "hoạt ngôn, dí dỏm, biến bất kỳ chủ đề tẻ nhạt nào thành câu chuyện hào hứng", "rationale": "Khả năng ứng biến ngôn từ thông minh và tư duy liên tưởng sắc bén." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "nói nhiều hơn làm, lãng phí tài năng vào những thú vui vô bổ", "rationale": "Nói nhiều nhưng hành động ít, tiêu tán sinh lực vào những việc bề nổi." },
+      "EMO": { "score": -1, "evidenceQuote": "vô cùng kiệt sức khi luôn phải đóng vai người mang lại tiếng cười cho thiên hạ", "rationale": "Mặt nạ tươi cười gượng gạo che giấu sự kiệt quệ cảm xúc bên trong." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu nghiêm túc trong các vấn đề quan trọng", "rationale": "Tác phong thiếu chuẩn mực làm giảm sút uy tín chuyên môn." },
+      "RSK": { "score": 0, "evidenceQuote": "bốc đồng làm việc theo cảm tính", "rationale": "Hành xử tùy tiện theo cảm hứng nhất thời." },
+      "INT": { "score": -1, "evidenceQuote": "bị đánh giá là người bề nổi, nông cạn", "rationale": "Tư duy hời hợt, thiếu chiều sâu nghiên cứu và lắng nghe phản biện." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-4",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "4",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 4",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 4 tạo ra ấn tượng đầu tiên về một con người vô cùng nghiêm túc, đĩnh đạc, chuẩn mực và đáng tin cậy tuyệt đối. Bạn xuất hiện với phong thái đàng hoàng, phong cách ăn mặc truyền thống, gọn gàng, tối giản và lịch sự. Mọi người khi gặp bạn đều cảm nhận được sự vững chãi, an tâm và tính thực tế toát ra từ từng cử chỉ.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "luôn đúng giờ, làm việc theo quy trình bài bản, cam kết giữ trọn lời hứa", "rationale": "Hành động chuẩn xác, thực thi kỷ luật và kiên định tới cùng." },
+      "EMO": { "score": 0, "evidenceQuote": "mỉm cười và thả lỏng cơ mặt, khen ngợi trước góp ý sau", "rationale": "Rèn luyện sự ấm áp và biểu cảm mềm mại để tăng tính kết nối." },
+      "STR": { "score": 2, "evidenceQuote": "nghiêm túc, đĩnh đạc, chuẩn mực và đáng tin cậy tuyệt đối, phong cách ăn mặc truyền thống, gọn gàng", "rationale": "Biểu tượng của tính kỷ luật, trật tự ngăn nắp và sự vững chãi." },
+      "RSK": { "score": 0, "evidenceQuote": "dựa trên dữ liệu/sự thật rõ ràng, tính thực tế toát ra từ từng cử chỉ", "rationale": "Thận trọng, chỉ hành động khi có cơ sở thực tế vững vàng." },
+      "INT": { "score": 1, "evidenceQuote": "giao tiếp rất súc tích, logic, chính xác, không thích những ý tưởng viển vông", "rationale": "Tư duy thực tế, mạch lạc và bám sát các sự thật hiển nhiên." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ngột ngạt trong chính hình ảnh nghiêm trang, khuôn mẫu", "rationale": "Hành động bị đóng khung trong các lề lối bảo thủ, thiếu tính bứt phá." },
+      "EMO": { "score": -2, "evidenceQuote": "khô khan, cứng nhắc, khó tính và thiếu lãng mạn, soi xét các lỗi sai chi tiết", "rationale": "Khó tính khắt khe, lạnh lùng dập tắt cảm xúc của người xung quanh." },
+      "STR": { "score": -2, "evidenceQuote": "mặt nạ người bảo thủ nghiêm khắc, giáo điều máy móc", "rationale": "Kỷ luật biến chất thành sự cứng nhắc độc đoán, triệt tiêu sự linh hoạt." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ rủi ro, không dám thử nghiệm cái mới", "rationale": "Bám víu vào sự an toàn cũ kỹ, e ngại mọi sự thay đổi." },
+      "INT": { "score": -1, "evidenceQuote": "nhìn đời bằng con mắt vật chất khô khan", "rationale": "Tư duy định kiến, coi thường những giá trị tinh thần hay sáng tạo phi truyền thống." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-5",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "5",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 5",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 5 toát lên ấn tượng đầu tiên cực kỳ trẻ trung, hiện đại, phóng khoáng và tràn đầy năng lượng phiêu lưu. Bạn sở hữu gu thời trang độc đáo, phá cách, thần thái tự do và sự cuốn hút bí ẩn khiến người khác tò mò muốn khám phá. Bạn bước vào một căn phòng với phong thái tự tin, linh hoạt và không bao giờ chịu lẫn vào đám đông.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "nhanh nhẹn, tự tin, linh hoạt và không bao giờ chịu lẫn vào đám đông", "rationale": "Phong thái cơ động, tràn đầy năng lượng dấn thân khám phá." },
+      "EMO": { "score": 1, "evidenceQuote": "vô cùng cởi mở, tự nhiên, hào hứng, nhanh chóng hòa nhập vào mọi môi trường", "rationale": "Tạo cảm giác thân thiện, dễ gần và kích thích tinh thần giao lưu." },
+      "STR": { "score": 0, "evidenceQuote": "thể hiện sự cam kết nhất quán, cân bằng phong cách thời trang", "rationale": "Học cách giữ cam kết và xây dựng tính ổn định cá nhân." },
+      "RSK": { "score": 2, "evidenceQuote": "trẻ trung, hiện đại, phóng khoáng và tràn đầy năng lượng phiêu lưu, phá cách", "rationale": "Khí chất dũng cảm bứt phá, sẵn sàng trải nghiệm những điều mới lạ." },
+      "INT": { "score": 1, "evidenceQuote": "mang đến những chủ đề mới lạ, cấp tiến và hấp dẫn", "rationale": "Tư duy cởi mở, nhanh nhạy nắm bắt các xu hướng thời đại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bốc đồng, lông bông, khó cam kết lâu dài và thiếu sự ổn định", "rationale": "Hành động thất thường, thiếu kiên trì và dễ bỏ dở cam kết giữa chừng." },
+      "EMO": { "score": -1, "evidenceQuote": "vẻ ngoài quá xáo động khiến người khác e ngại gắn bó sâu sắc", "rationale": "Sự bất định khiến người xung quanh mất lòng tin và e ngại trao gửi tình cảm." },
+      "STR": { "score": -2, "evidenceQuote": "mặt nạ kẻ phiêu lưu bất định, thiếu kỷ luật tự giác", "rationale": "Sự tự do vô lối phá vỡ mọi quy chuẩn và cam kết trách nhiệm." },
+      "RSK": { "score": 1, "evidenceQuote": "sa đà vào những thói quen kích thích buông thả", "rationale": "Mạo hiểm thiếu kiểm soát, chạy theo cảm giác mạnh liều lĩnh." },
+      "INT": { "score": -1, "evidenceQuote": "đưa ra phản hồi quá nhanh, đứng núi này trông núi nọ", "rationale": "Tư duy bồn chồn, nông nổi và thiếu sự tập trung đào sâu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-6",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "6",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 6",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 6 toát lên ấn tượng đầu tiên vô cùng ấm áp, phúc hậu, chu đáo và đáng tin cậy như một người anh, người chị hoặc người cha, người mẹ mẫu mực. Bạn xuất hiện với phong cách ăn mặc thanh lịch, hài hòa, toát lên vẻ đẹp thẩm mỹ tinh tế và sự chăm chút cẩn thận. Mọi người khi gặp bạn đều cảm nhận được sự che chở, an tâm và muốn tìm đến bạn để nương tựa.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chủ động hỏi thăm sức khỏe, chăm chút từng ly từng tí", "rationale": "Hành động ân cần, luôn đi đầu trong việc chăm sóc và hỗ trợ mọi người." },
+      "EMO": { "score": 2, "evidenceQuote": "ấm áp, phúc hậu, chu đáo và đáng tin cậy, tạo dựng bầu không khí thân thiện, ấm cúng", "rationale": "Năng lượng bao bọc chở che tự nhiên, mang lại sự an lành và tin cậy tuyệt đối." },
+      "STR": { "score": 1, "evidenceQuote": "phong cách ăn mặc thanh lịch, hài hòa, thiết lập ranh giới giúp đỡ", "rationale": "Gu thẩm mỹ tao nhã và rèn luyện ranh giới hỗ trợ đúng mực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "vẻ đẹp thẩm mỹ tinh tế và sự thấu hiểu tình cảm sâu sắc", "rationale": "Trực giác nghệ thuật và khả năng cảm nhận sâu sắc nhu cầu tâm lý của người khác." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "thói quen luôn chủ động nhận phần việc chăm sóc tạo thói quen ỷ lại cho người khác", "rationale": "Hành động ôm đồm thái quá cản trở sự tự lập của người thân." },
+      "EMO": { "score": -2, "evidenceQuote": "bao bọc kiểm soát ngột ngạt, hay cằn nhằn áp đặt, tự biến mình thành nạn nhân hy sinh đau khổ", "rationale": "Tình thương biến chất thành sự kiểm soát độc tài, gây tổn thương cảm xúc lẫn nhau." },
+      "STR": { "score": -1, "evidenceQuote": "can thiệp quá sâu vào đời tư của người khác", "rationale": "Xâm phạm ranh giới cá nhân của người khác dưới danh nghĩa yêu thương." },
+      "RSK": { "score": -1, "evidenceQuote": "nhắc nhở lo âu, thêu dệt kịch bản xấu", "rationale": "Nỗi sợ rủi ro mơ hồ sinh ra trạng thái lo âu hoảng loạn thái quá." },
+      "INT": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực thêu dệt kịch bản lo âu", "rationale": "Tâm trí bị bủa vây bởi các suy diễn bi quan, đánh mất cái nhìn khách quan." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-7",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "7",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 7",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 7 toát ra ấn tượng đầu tiên vô cùng trầm tĩnh, kín đáo, sâu sắc và toát lên vẻ uyên bác của một bậc trí giả. Ánh mắt của bạn sắc sảo như thấu suốt tâm can người đối diện, phong thái độc lập, nhã nhặn và mang một nét bí ẩn cuốn hút. Bạn không bao giờ vội vã, luôn toát lên vẻ đĩnh đạc của một người nắm giữ nhiều tri thức sâu xa.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "không bao giờ vội vã, đĩnh đạc của một người nắm giữ nhiều tri thức", "rationale": "Tác phong điềm đạm, suy xét kỹ lưỡng trước khi hành động." },
+      "EMO": { "score": 0, "evidenceQuote": "sử dụng sự ấm áp của ánh mắt và nụ cười chân thành, mời một tách trà", "rationale": "Bộc lộ sự quan tâm ấm áp thông qua những hành động giản dị, chân thành." },
+      "STR": { "score": 1, "evidenceQuote": "phong thái độc lập, nhã nhặn, suy nghĩ cực kỳ thấu đáo trước khi phát ngôn", "rationale": "Chuẩn mực trí tuệ nghiêm túc, phong thái tự chủ và chừng mực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "trầm tĩnh, kín đáo, sâu sắc và toát lên vẻ uyên bác của một bậc trí giả, nói ít nhưng câu từ đắt giá", "rationale": "Khí chất trí tuệ uyên thâm, khả năng quan sát thấu thị và đúc kết bản chất vấn đề." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "sống ẩn dật cô độc, xa rời thực tế đời sống", "rationale": "Thu mình thụ động, thoái lui khỏi các tương tác hành động xã hội thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "lạnh lùng, xa cách, kiêu ngạo trí tuệ hoặc lập dị khó gần, đẩy những người yêu thương ra xa", "rationale": "Thái độ băng giá làm đóng băng các mối quan hệ, khiến bản thân rơi vào cô lập đau đớn." },
+      "STR": { "score": -1, "evidenceQuote": "mặt nạ tòa tháp ngà tri thức cô độc", "rationale": "Tự giam cầm mình trong những chuẩn mực khắt khe, khó hòa nhập." },
+      "RSK": { "score": -1, "evidenceQuote": "hoài nghi cay đắng, sợ bị tổn thương tâm lý", "rationale": "Nghi kỵ mọi thứ xung quanh, không dám mở lòng đón nhận tình cảm mới." },
+      "INT": { "score": -1, "evidenceQuote": "kiêu ngạo trí tuệ coi thường người khác", "rationale": "Ngạo mạn kiến thức, nhìn đời với ánh mắt phán xét khinh khi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-8",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "8",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 8",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 8 toát lên ấn tượng đầu tiên vô cùng quyền uy, đĩnh đạc, sang trọng và toát ra thần thái của một nhà lãnh đạo hoặc doanh nhân thành đạt. Bạn xuất hiện với phong thái đỉnh đạc, trang phục cao cấp chỉn chu, tác phong chuyên nghiệp và toát lên sức mạnh của người làm chủ cuộc chơi. Người đối diện ngay lập tức cảm nhận được sự uy quyền và năng lực giải quyết việc lớn từ bạn.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự tin, mạnh mẽ, trọng tâm, dứt khoát và hướng thẳng tới kết quả, năng lực giải quyết việc lớn", "rationale": "Tác phong hành động dũng mãnh, quyết liệt chinh phục các mục tiêu lớn." },
+      "EMO": { "score": 0, "evidenceQuote": "thêm sự ấm áp vào phong cách điều hành, dành lời khen ngợi và động viên chân thành", "rationale": "Rèn luyện nghệ thuật lắng nghe và động viên để kết nối đội ngũ." },
+      "STR": { "score": 2, "evidenceQuote": "quyền uy, đĩnh đạc, sang trọng, trang phục cao cấp chỉn chu, tác phong chuyên nghiệp", "rationale": "Phong thái đĩnh đạc của bậc lãnh đạo, chuẩn mực cao cấp và kiểm soát tình hình hoàn hảo." },
+      "RSK": { "score": 2, "evidenceQuote": "sức mạnh của người làm chủ cuộc chơi, kiểm soát toàn bộ tình hình, đàm phán sắc sảo", "rationale": "Bản lĩnh kiên cường, dám chịu trách nhiệm trên các thương vụ tầm cỡ." },
+      "INT": { "score": 1, "evidenceQuote": "khí chất của người điều hành chiến lược, kiểm soát toàn bộ tình hình", "rationale": "Tư duy điều hành sắc sảo, khả năng bao quát và chi phối toàn cục diện." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "áp đặt, lạm dụng quyền lực thao túng người khác", "rationale": "Dùng quyền lực áp đặt thô bạo, đè nén cấp dưới vì kết quả trước mắt." },
+      "EMO": { "score": -2, "evidenceQuote": "thực dụng, lạnh lùng, coi trọng địa vị hơn tình cảm, gây cảm giác sợ hãi cho người yếu thế", "rationale": "Vẻ ngoài tàn nhẫn vô cảm dập tắt lòng trắc ẩn, khiến người khác xa lánh vì sợ hãi." },
+      "STR": { "score": -1, "evidenceQuote": "chiếc áo giáp quyền lực và tiền bạc", "rationale": "Bị mắc kẹt trong vẻ hào nhoáng và sự kiểm soát áp đặt." },
+      "RSK": { "score": 1, "evidenceQuote": "sử dụng đòn bẩy quá mức liều lĩnh vì tham vọng quyền lực", "rationale": "Mạo hiểm quá trớn do cái tôi ngạo nghễ coi thường rủi ro." },
+      "INT": { "score": -1, "evidenceQuote": "độc tài chèn ép, coi thường đạo đức", "rationale": "Tư duy thực dụng mù quáng làm mờ đi các giá trị đạo đức cốt lõi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-9",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "9",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 9",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 9 tạo ra ấn tượng đầu tiên vô cùng đàng hoàng, độ lượng, quý phái và toát lên khí chất hào hiệp của bậc quân tử vị tha. Bạn có phong thái ung dung tự tại, ánh mắt bao dung, cử chỉ hào phóng và phong cách ăn mặc đĩnh đạc, sang trọng một cách tự nhiên. Mọi người khi gặp bạn đều cảm thấy an tâm, kính trọng và dễ dàng trao gửi niềm tin tuyệt đối.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "sẵn sàng đứng ra bảo vệ kẻ yếu và đấu tranh cho sự công bằng, là tấm gương sáng", "rationale": "Hành động hào hiệp, tiên phong bảo vệ lẽ phải và lợi ích cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "đàng hoàng, độ lượng, quý phái và toát lên khí chất hào hiệp của bậc quân tử vị tha, ánh mắt bao dung", "rationale": "Tỏa ra trường năng lượng vị tha cao thượng, mang lại sự tin cậy và kính trọng sâu sắc." },
+      "STR": { "score": 1, "evidenceQuote": "phong cách ăn mặc đĩnh đạc, sang trọng một cách tự nhiên, đưa ra các giải pháp hành động cụ thể", "rationale": "Tác phong quân tử chuẩn mực, kết hợp lý tưởng với tính khả thi thực tế." },
+      "RSK": { "score": 1, "evidenceQuote": "đấu tranh cho sự công bằng, bảo vệ kẻ yếu", "rationale": "Dũng cảm lên tiếng trước sự bất công, không sợ đối đầu với cường quyền." },
+      "INT": { "score": 2, "evidenceQuote": "hướng các cuộc trò chuyện về những giá trị tốt đẹp, tinh thần đoàn kết và lợi ích chung", "rationale": "Tầm nhìn nhân văn sâu sắc, nâng tầm nhận thức cho tập thể." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm việc bao đồng ngoài xã hội mà bỏ bê gia đình nhỏ", "rationale": "Hành động thiếu trọng tâm, phân tán nguồn lực vào những việc viển vông." },
+      "EMO": { "score": -1, "evidenceQuote": "bị kẻ xấu lợi dụng vẻ ngoài tốt bụng, hào phóng để trục lợi, dằn vặt nội tâm", "rationale": "Lòng tốt thiếu tỉnh thức dẫn đến bị lợi dụng và sinh ra tổn thương, ức chế." },
+      "STR": { "score": -1, "evidenceQuote": "khó từ chối những đòi hỏi vô lý của người khác", "rationale": "Thiếu ranh giới từ chối kiên quyết, khiến bản thân bị gánh nặng bao đồng." },
+      "RSK": { "score": 0, "evidenceQuote": "cho đi thiếu chọn lọc", "rationale": "Mạo hiểm trao gửi niềm tin sai đối tượng." },
+      "INT": { "score": -1, "evidenceQuote": "lý tưởng hóa viển vông, xa rời thực tế", "rationale": "Tư duy thiếu cơ sở thực tiễn, bay bổng trong những ảo tưởng đạo đức phi thực tế." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-11",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "11",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 11",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 11 toát lên một ấn tượng đầu tiên vô cùng đặc biệt: thanh thoát, tinh tế, thánh thiện và mang một trường năng lượng an lành, thuần khiết lạ thường. Ánh mắt của bạn sáng ngời, nhạy cảm và toát lên vẻ huyền bí của một người có trực giác siêu phàm. Mọi người khi tiếp xúc với bạn đều cảm thấy tâm trí được dịu lại và được truyền cảm hứng mạnh mẽ.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thực hành hiện diện trọn vẹn, tập trung hoàn toàn vào giây phút hiện tại", "rationale": "Hành động tỉnh thức, bình thản và hiện diện sâu sắc trong từng khoảnh khắc." },
+      "EMO": { "score": 2, "evidenceQuote": "thanh thoát, tinh tế, thánh thiện và mang một trường năng lượng an lành, thuần khiết lạ thường", "rationale": "Khí chất thánh thiện dịu dàng, xoa dịu tâm trí và truyền cảm hứng chữa lành tự nhiên." },
+      "STR": { "score": 1, "evidenceQuote": "ăn mặc lịch sự, thanh nhã, chọn trang phục màu sắc tươi sáng", "rationale": "Phong thái tao nhã, thanh thoát toát lên sự trong sáng và chuẩn mực." },
+      "RSK": { "score": 1, "evidenceQuote": "chân thành mộc mạc nhưng lời nói lại có sức lay động sâu sắc tới tâm can", "rationale": "Dũng cảm thức tỉnh và chạm vào những nỗi đau sâu kín nhất của người nghe." },
+      "INT": { "score": 2, "evidenceQuote": "ánh mắt sáng ngời, nhạy cảm và toát lên vẻ huyền bí của một người có trực giác siêu phàm", "rationale": "Trực giác siêu giác quan thấu suốt, khả năng dẫn dắt tâm thức phi thường." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lập dị, ở trên mây, xa rời thực tế đời thường", "rationale": "Thiếu tính hành động thực tiễn, bay bổng xa rời công việc đời thường." },
+      "EMO": { "score": -2, "evidenceQuote": "cảm thấy lạc lõng giữa môi trường xã hội ồn ào xô bồ, quá nhạy cảm", "rationale": "Tâm hồn quá mỏng manh, dễ bị tổn thương và kiệt quệ trước năng lượng tiêu cực." },
+      "STR": { "score": -1, "evidenceQuote": "mặt nạ sứ giả tâm linh tách biệt, khó hòa nhập", "rationale": "Thiếu kỹ năng thích ứng xã hội, khép kín trong vỏ bọc thanh cao." },
+      "RSK": { "score": -1, "evidenceQuote": "tự ti nghi ngờ trực giác của mình", "rationale": "Hoang mang lo sợ khi linh cảm không được số đông công nhận." },
+      "INT": { "score": -1, "evidenceQuote": "sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng", "rationale": "Nhận thức bị bóp méo bởi ảo tưởng tinh thần, thiếu sự kiểm chứng khoa học." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "personality-22",
+    "indicatorKey": "personality",
+    "indicatorNameVi": "Nhân Cách",
+    "numberValue": "22",
+    "title": "Hình Ảnh Thể Hiện Xã Hội Của Con Số Nhân Cách 22",
+    "sourceSnippet": "Người mang Chỉ số Nhân cách 22 toát ra ấn tượng đầu tiên cực kỳ choáng ngợp: vừa có tầm nhìn vĩ mô của một nhà lãnh đạo thế giới, vừa có sự vững chãi, thực tế của một tổng công trình sư vĩ đại. Bạn xuất hiện với phong thái uy dũng, quyền năng, đĩnh đạc và toát lên năng lực kiến tạo những điều phi thường. Mọi người khi gặp bạn đều cảm nhận được tầm vóc khổng lồ và sự tin cậy tuyệt đối.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "phong thái uy dũng, quyền năng, đĩnh đạc và toát lên năng lực kiến tạo những điều phi thường", "rationale": "Tầm vóc hành động vĩ đại, năng lực hiện thực hóa các đại dự án thế kỷ." },
+      "EMO": { "score": 1, "evidenceQuote": "ghi nhận và động viên từng bước tiến nhỏ, kiên nhẫn và bao dung", "rationale": "Lãnh đạo bằng sự nâng đỡ nhân văn, kiên nhẫn bồi dưỡng cộng sự cùng tiến bộ." },
+      "STR": { "score": 2, "evidenceQuote": "vững chãi, thực tế của một tổng công trình sư vĩ đại, giải pháp thực thi chi tiết, chính xác", "rationale": "Đỉnh cao của tư duy hệ thống và kỷ luật thực thi hoàn hảo." },
+      "RSK": { "score": 2, "evidenceQuote": "nắm giữ chìa khóa thành công của các đại dự án, quy tụ nguồn lực khổng lồ", "rationale": "Bản lĩnh phi thường, dám gánh vác trách nhiệm quốc gia và các công trình tầm cỡ." },
+      "INT": { "score": 2, "evidenceQuote": "kết hợp hoàn hảo giữa tầm nhìn chiến lược dài hạn và các giải pháp thực thi", "rationale": "Trí tuệ bậc thầy, bao quát toàn diện từ vi mô đến vĩ mô." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tiêu chuẩn và kỳ vọng quá cao gây áp lực nghẹt thở cho những người xung quanh", "rationale": "Thúc ép tiến độ khốc liệt khiến cấp dưới kiệt sức và choáng ngợp." },
+      "EMO": { "score": -2, "evidenceQuote": "người khác cảm thấy mình quá nhỏ bé hoặc e ngại tiếp cận, độc tài tàn nhẫn", "rationale": "Khoảng cách uy quyền quá lớn gây cảm giác cô độc và áp chế cảm xúc người khác." },
+      "STR": { "score": -1, "evidenceQuote": "mặt nạ người khổng lồ không tì vết, cầu toàn cực đoan", "rationale": "Ám ảnh bởi sự hoàn hảo của các đại công trình, khó chấp nhận sai sót nhỏ." },
+      "RSK": { "score": 1, "evidenceQuote": "tham vọng quyền lực mù quáng", "rationale": "Mạo hiểm quá mức vì tham vọng để lại di sản khổng lồ." },
+      "INT": { "score": -1, "evidenceQuote": "thất vọng và cáu gắt khi thực tế tiến độ chậm hơn kỳ vọng", "rationale": "Căng thẳng tâm trí do áp lực kỳ vọng quá lớn vào thế giới xung quanh." }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -306,6 +306,12 @@ export function getProviderCascade(
       ).concat(parseIndexedKeys('GEMINI_API_KEY'), parseIndexedKeys('GOOGLE_API_KEY'))
     },
     {
+      name: 'DeepSeek',
+      baseUrl: (process.env.DEEPSEEK_API_BASE_URL?.trim() || 'https://api.deepseek.com').replace(/\/+$/, ''),
+      models: parseModels(['DEEPSEEK_CHAT_MODELS', 'DEEPSEEK_CHAT_MODEL', 'DEEPSEEK_MODEL'], ['deepseek-flash']),
+      apiKeys: parseKeys('DEEPSEEK_API_KEYS', 'DEEPSEEK_API_KEY')
+    },
+    {
       name: 'NVIDIA NIM',
       baseUrl: 'https://integrate.api.nvidia.com/v1',
       models: parseModels(['NVIDIA_CHAT_MODELS', 'NVIDIA_CHAT_MODEL'], [

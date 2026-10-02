@@ -182,6 +182,7 @@ export function createStreamingResponse(
             const decoder = new TextDecoder();
             let buffer = '';
             let providerSentDone = false;
+            let finishReason: string | undefined;
             const firstContentDeadline = Date.now() + firstContentTimeoutMs;
 
             try {
@@ -215,6 +216,8 @@ export function createStreamingResponse(
 
                   try {
                     const parsed = JSON.parse(data);
+                    const reportedFinishReason = parsed.choices?.[0]?.finish_reason;
+                    if (typeof reportedFinishReason === 'string') finishReason = reportedFinishReason;
                     const content = parsed.choices?.[0]?.delta?.content;
                     if (content) {
                       emittedContent = true;
@@ -235,6 +238,9 @@ export function createStreamingResponse(
             if (!providerSentDone) {
               throw new Error('LLM stream ended before completion');
             }
+            if (finishReason && finishReason !== 'stop') {
+              throw new Error(`LLM stream ended with finish_reason=${finishReason}`);
+            }
             if (!emittedContent) {
               throw new Error('LLM stream completed without response content');
             }
@@ -254,7 +260,8 @@ export function createStreamingResponse(
               controller.enqueue(
                 encoder.encode(
                   `data: ${JSON.stringify({
-                    content: `\n\n⚠️ Luồng AI bị gián đoạn: ${lastError}`
+                    content: `\n\n⚠️ Luồng AI bị gián đoạn: ${lastError}`,
+                    error: lastError
                   })}\n\n`
                 )
               );
@@ -275,7 +282,8 @@ export function createStreamingResponse(
         controller.enqueue(
           encoder.encode(
             `data: ${JSON.stringify({
-              content: `\n\n⚠️ Không thể kết nối các nhà cung cấp AI. ${lastError}`
+              content: `\n\n⚠️ Không thể kết nối các nhà cung cấp AI. ${lastError}`,
+              error: lastError
             })}\n\n`
           )
         );

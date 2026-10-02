@@ -1,0 +1,278 @@
+[
+  {
+    "id": "soul-1",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "1",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 1",
+    "sourceSnippet": "Chỉ số Linh hồn 1 đại diện cho tiếng gọi sâu kín nhất của bản ngã: khao khát mãnh liệt được làm chủ hoàn toàn cuộc đời mình, tự do đưa ra quyết định độc lập và được thế giới công nhận như một cá nhân xuất chúng, độc bản và dẫn đầu. Động lực thúc đẩy sâu thẳm trong bạn là tinh thần tự lực cánh sinh, không muốn dựa dẫm hay chịu sự chi phối của bất kỳ ai.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "làm chủ hoàn toàn cuộc đời mình, tự lực cánh sinh, không muốn dựa dẫm", "rationale": "Động lực hành động tự chủ mãnh liệt, luôn khát khao tiên phong." },
+      "EMO": { "score": 0, "evidenceQuote": "tập chia sẻ điểm yếu, mở lòng tâm sự cảm xúc yếu đuối với người bạn đời", "rationale": "Học cách thừa nhận tổn thương và mở lòng đón nhận tình cảm chân thành." },
+      "STR": { "score": 1, "evidenceQuote": "tự công nhận bản thân, độc lập tự chủ và tin tưởng lẫn nhau", "rationale": "Xây dựng cấu trúc giá trị bản thân độc lập, không phụ thuộc ngoại cảnh." },
+      "RSK": { "score": 2, "evidenceQuote": "quyền tự quyết cá nhân, dẫn đầu, dũng cảm kiến tạo con đường riêng", "rationale": "Bản lĩnh độc lập, không sợ đối đầu để bảo vệ con đường riêng." },
+      "INT": { "score": 1, "evidenceQuote": "ý thức sâu sắc về cá nhân xuất chúng độc bản, tư duy tự chủ", "rationale": "Nhận thức sắc bén về bản sắc cá nhân và quyền tự quyết tối cao." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hung hăng gia trưởng áp đặt để che giấu sự tự ti", "rationale": "Hành động đàn áp người khác để khỏa lấp nỗi bất an sâu kín." },
+      "EMO": { "score": -2, "evidenceQuote": "thu mình cay đắng, ấm ức, cảm thấy cô độc giữa đám đông, sợ thừa nhận sự bất lực yếu đuối", "rationale": "Kìm nén tổn thương, tự cô lập mình trong đau khổ và xa cách." },
+      "STR": { "score": -1, "evidenceQuote": "chiếc mặt nạ bất khả chiến bại", "rationale": "Chiếc áo giáp phòng thủ quá cứng nhắc ngăn cản sự nâng đỡ từ người khác." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "vô thức đồng nhất giá trị bản thân với sự thành công và quyền lực", "rationale": "Nhận thức lệch lạc, nhầm lẫn giá trị tâm hồn với địa vị xã hội." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-2",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "2",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 2",
+    "sourceSnippet": "Chỉ số Linh hồn 2 đại diện cho tiếng gọi tha thiết của một trái tim thuần khiết: khao khát được yêu thương chân thành, được sống trong hòa bình, an yên và tìm thấy một tâm hồn đồng điệu (Soulmate) để sẻ chia mọi cung bậc cảm xúc. Động lực sâu thẳm bên trong bạn là sự hòa giải, kết nối và mang lại sự dịu êm cho thế giới xung quanh.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thiết lập ranh giới cảm xúc lành mạnh, từ chối nhẹ nhàng những yêu cầu không thoải mái", "rationale": "Rèn luyện hành động dứt khoát và tự bảo vệ sự an yên của bản thân." },
+      "EMO": { "score": 2, "evidenceQuote": "khao khát được yêu thương chân thành, sống trong hòa bình an yên, tâm hồn đồng điệu Soulmate", "rationale": "Trái tim thuần khiết, rung động dạt dào tình yêu thương và sự hòa ái." },
+      "STR": { "score": 1, "evidenceQuote": "thực hành ôm ấp đứa trẻ bên trong, yêu thương và trân trọng chính mình trước", "rationale": "Xây dựng nền tảng nội tâm vững vàng, không phụ thuộc vào phản hồi bên ngoài." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "lắng nghe nhau mà không cần dùng lời, trực giác thấu cảm tinh tế", "rationale": "Trực giác giao cảm tâm hồn siêu việt, thấu hiểu không cần ngôn ngữ." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "đánh mất chính mình để làm hài lòng đối phương people-pleaser, kìm nén uất ức", "rationale": "Thụ động nhu nhược, hy sinh mù quáng dẫn đến đánh mất bản sắc cá nhân." },
+      "EMO": { "score": -2, "evidenceQuote": "lụy tình, nỗi sợ bị từ chối bị bỏ rơi, cảm giác cô đơn lạnh lẽo, trầm cảm", "rationale": "Lụy tình, đau khổ tột cùng vì nỗi sợ bị ruồng bỏ và cô lập." },
+      "STR": { "score": -1, "evidenceQuote": "lệ thuộc cảm xúc hoàn toàn vào phản hồi của đối phương", "rationale": "Mất cấu trúc cân bằng nội tại, trao quyền quyết định hạnh phúc cho người khác." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ xung đột cãi vã, sợ bị từ chối", "rationale": "Nỗi sợ va chạm tê liệt bản lĩnh dám sống thật với cảm xúc." },
+      "INT": { "score": -1, "evidenceQuote": "nghi ngờ cả nghĩ và suy diễn quá mức", "rationale": "Tâm trí bị bủa vây bởi các suy diễn tiêu cực, tự dằn vặt chính mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-3",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "3",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 3",
+    "sourceSnippet": "Chỉ số Linh hồn 3 đại diện cho tiếng reo vui của tâm hồn nghệ sĩ: khao khát mãnh liệt được tự do bộc lộ cảm xúc, tỏa sáng bằng năng khiếu sáng tạo, truyền cảm hứng và mang lại tiếng cười, niềm lạc quan cho cuộc đời. Động lực thúc đẩy sâu thẳm trong bạn là niềm vui sống đích thực và sự tôn vinh vẻ đẹp của ngôn từ, nghệ thuật.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tự do bộc lộ cảm xúc, tỏa sáng bằng năng khiếu sáng tạo, mang lại tiếng cười", "rationale": "Hành động biểu đạt hào hứng, lan tỏa năng lượng tích cực cho mọi người." },
+      "EMO": { "score": 2, "evidenceQuote": "tiếng reo vui của tâm hồn nghệ sĩ, niềm vui sống đích thực, lãng mạn tràn ngập tiếng cười", "rationale": "Trái tim hân hoan rực rỡ, khát khao gắn kết bằng tiếng cười và sự ấm áp." },
+      "STR": { "score": 0, "evidenceQuote": "viết nhật ký xả cảm xúc, nuôi dưỡng kỷ luật sáng tạo đều đặn", "rationale": "Học cách neo giữ cảm xúc và duy trì thói quen sáng tác có trật tự." },
+      "RSK": { "score": 1, "evidenceQuote": "dám bộc lộ cá tính độc bản, sẵn sàng trải nghiệm những điều mới lạ", "rationale": "Tự tin bước ra khỏi khuôn khổ, thể hiện cái tôi sáng tạo trước thế giới." },
+      "INT": { "score": 2, "evidenceQuote": "tôn vinh vẻ đẹp của ngôn từ và nghệ thuật, truyền cảm hứng sáng tạo", "rationale": "Trực giác nghệ thuật và trí tuệ sáng tạo ngôn từ phong phú bất tận." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "phân tán năng lượng, làm việc theo cảm hứng tùy tiện bỏ dở giữa chừng", "rationale": "Hành động thiếu kiên định, dễ chán nản khi hết hưng phấn ban đầu." },
+      "EMO": { "score": -1, "evidenceQuote": "sợ sự tẻ nhạt đơn điệu, sợ bị phớt lờ chê bai là kẻ vô duyên nông cạn", "rationale": "Bất an sâu sắc khi không nhận được sự chú ý và tán thưởng từ người khác." },
+      "STR": { "score": -2, "evidenceQuote": "tiêu xài hoang phí để khỏa lấp nỗi buồn, sống bề nổi vô kỷ luật", "rationale": "Mất kiểm soát hành vi và tài chính do cố gắng xua tan cảm giác trống rỗng." },
+      "RSK": { "score": 0, "evidenceQuote": "bốc đồng chạy theo những thú vui giải trí nhất thời", "rationale": "Hành động nông nổi theo cảm xúc bốc đồng." },
+      "INT": { "score": -1, "evidenceQuote": "trốn tránh chiều sâu nội tâm bằng sự ồn ào giả tạo", "rationale": "Tư duy hời hợt, dùng tiếng cười gượng gạo để che đậy nỗi cô đơn thực sự." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-4",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "4",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 4",
+    "sourceSnippet": "Linh hồn 4 khao khát sâu sắc sự an toàn, ổn định, trật tự và rõ ràng trong mọi khía cạnh cuộc sống. Tiếng gọi nội tâm của bạn là xây dựng một nền móng vững chắc bằng kỷ luật, sự chuẩn mực và sự thật có thể kiểm chứng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động bền bỉ, kiên định thực hiện từng bước kế hoạch đề ra", "rationale": "Hành động có phương pháp, kiên trì xây dựng từng viên gạch nền móng." },
+      "EMO": { "score": 0, "evidenceQuote": "mở lòng đón nhận sự bất toàn, chia sẻ cảm xúc ấm áp với người thân", "rationale": "Học cách bộc lộ cảm xúc mềm mại thay vì chỉ tập trung vào bổn phận." },
+      "STR": { "score": 2, "evidenceQuote": "khao khát sâu sắc sự an toàn ổn định trật tự và rõ ràng, xây dựng nền móng vững chắc", "rationale": "Nhu cầu tối cao về trật tự, kỷ luật, minh bạch và an toàn tuyệt đối." },
+      "RSK": { "score": 0, "evidenceQuote": "thận trọng quản trị rủi ro, bám sát các sự thật hiển nhiên", "rationale": "Bảo toàn nguồn lực an toàn, tránh xa mọi cạm bẫy bất định." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy logic thực tế, kiểm chứng tính khả thi trước khi hành động", "rationale": "Trí tuệ thực tế sắc bén, xem trọng tính khả thi và bằng chứng khoa học." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ngột ngạt trong sự trì hoãn vì đòi hỏi mọi thứ phải hoàn hảo tuyệt đối", "rationale": "Hành động bị tê liệt do nỗi sợ sai sót và cầu toàn bệnh hoạn." },
+      "EMO": { "score": -2, "evidenceQuote": "khô khan, lạnh lùng, khó tính, kìm nén cảm xúc khiến người thân xa cách", "rationale": "Đóng băng cảm xúc trong bổn phận cứng nhắc, gây ngột ngạt cho tổ ấm." },
+      "STR": { "score": -2, "evidenceQuote": "mắc kẹt trong sự cứng nhắc bảo thủ, nỗi sợ hỗn loạn đến ám ảnh", "rationale": "Kỷ luật biến thành sự giam cầm cực đoan, không chịu thay đổi." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi tột cùng trước sự thay đổi và bất định của tương lai", "rationale": "Nỗi sợ rủi ro khiến bản thân từ chối mọi cơ hội phát triển mới." },
+      "INT": { "score": -1, "evidenceQuote": "nghi ngờ phán xét những điều mới mẻ không thuộc quy chuẩn cũ", "rationale": "Tư duy hẹp hòi, phủ nhận những giá trị tinh thần hay sáng tạo phi truyền thống." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-5",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "5",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 5",
+    "sourceSnippet": "Linh hồn 5 mang khao khát cháy bỏng về tự do tuyệt đối, phiêu lưu khám phá và trải nghiệm đa dạng mọi sắc màu của cuộc sống. Tiếng gọi nội tâm thúc đẩy bạn phá vỡ mọi lồng son gò bó để tung cánh bay trong bầu trời rộng mở.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "xách ba lô lên đường trải nghiệm, nhanh nhẹn đón nhận cơ hội mới", "rationale": "Hành động cơ động, luôn chuyển động tìm kiếm những chân trời mới." },
+      "EMO": { "score": 1, "evidenceQuote": "lan tỏa năng lượng tích cực tự do, kết nối cởi mở chân thành", "rationale": "Tâm hồn phóng khoáng, mang lại sinh khí tươi mới cho các mối quan hệ." },
+      "STR": { "score": 1, "evidenceQuote": "tự do đích thực đến từ sự làm chủ bản thân, thiết lập mỏ neo kỷ luật", "rationale": "Nhận thức sâu sắc rằng kỷ luật tự thân là điều kiện tiên quyết để tự do." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm bứt phá giới hạn, chấp nhận rủi ro để trưởng thành", "rationale": "Bản lĩnh dấn thân phi thường, không ngại đối mặt với sóng gió để tự do." },
+      "INT": { "score": 2, "evidenceQuote": "trí tò mò phong phú, tư duy cấp tiến vượt thời đại, nhạy bén", "rationale": "Tâm trí rộng mở, luôn háo hức tiếp thu những luồng tư tưởng mới." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thiếu kiên trì, trốn chạy trách nhiệm cam kết, lông bông vô định", "rationale": "Hành động đứt gãy, né tránh mọi bổn phận gắn bó lâu dài." },
+      "EMO": { "score": -1, "evidenceQuote": "sợ bị ràng buộc đến mức không dám mở lòng yêu thương sâu sắc", "rationale": "Nỗi sợ mất tự do khiến bản thân luôn giữ khoảng cách hời hợt với bạn đời." },
+      "STR": { "score": -2, "evidenceQuote": "sa đà vào những thói quen buông thả nghiện ngập cờ bạc bốc đồng", "rationale": "Tự do thoái hóa thành sự hỗn loạn trụy lạc, hủy hoại trật tự sống." },
+      "RSK": { "score": 2, "evidenceQuote": "mạo hiểm liều lĩnh ngu muội, tìm kiếm cảm giác mạnh bất chấp", "rationale": "Đánh bạc với cuộc đời vì những thú vui kích thích nhất thời." },
+      "INT": { "score": -1, "evidenceQuote": "tâm trí bồn chồn đứng núi này trông núi nọ, mất phương hướng", "rationale": "Mất khả năng định tâm, luôn cảm thấy bất an và trống rỗng nội tại." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-6",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "6",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 6",
+    "sourceSnippet": "Linh hồn 6 là hiện thân của tình mẫu tử và lòng trắc ẩn bao la: khao khát sâu kín nhất là được yêu thương, chăm sóc, chở che cho gia đình và kiến tạo một mái ấm an bình, ấm cúng và tràn ngập sự hài hòa thẩm mỹ.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tận tâm chăm sóc chu toàn từng bữa ăn giấc ngủ cho người thân", "rationale": "Hành động chăm lo tỉ mỉ, luôn chủ động gánh vác việc tổ ấm." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương vô điều kiện, lòng trắc ẩn bao la, rung động trước nỗi đau của người khác", "rationale": "Trái tim từ ái dạt dào, suối nguồn chở che và vỗ về cho những tâm hồn tổn thương." },
+      "STR": { "score": 1, "evidenceQuote": "kiến tạo không gian sống ngăn nắp ấm cúng, thiết lập ranh giới yêu thương", "rationale": "Tạo dựng trật tự thẩm mỹ và rèn luyện ranh giới tình cảm lành mạnh." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "gu thẩm mỹ tinh tế, trực giác thấu hiểu tâm lý tình cảm sâu sắc", "rationale": "Khả năng cảm thụ cái đẹp và trực giác tâm lý con người tuyệt vời." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "ôm đồm việc chăm sóc quá mức khiến người khác mất quyền tự lập", "rationale": "Hành vi can thiệp bao bọc quá trớn tạo thói quen dựa dẫm." },
+      "EMO": { "score": -2, "evidenceQuote": "yêu thương kiểm soát ngột ngạt, hay cằn nhằn áp đặt, cay đắng đóng vai nạn nhân", "rationale": "Tình thương trở thành áp bức, dày vò người khác bằng sự hy sinh của mình." },
+      "STR": { "score": -1, "evidenceQuote": "xâm phạm không gian riêng tư của người thân dưới danh nghĩa tình thương", "rationale": "Xóa nhòa ranh giới cá nhân, can thiệp thô bạo vào quyết định của người khác." },
+      "RSK": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực lo âu thái quá thêu dệt kịch bản xấu", "rationale": "Nỗi sợ mất mát người thân sinh ra trạng thái hoảng loạn tưởng tượng." },
+      "INT": { "score": -1, "evidenceQuote": "suy diễn bi quan, luôn nhìn thấy nguy cơ rình rập gia đình", "rationale": "Tâm trí bị bủa vây bởi các nỗi lo sợ thêu dệt thiếu thực tế." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-7",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "7",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 7",
+    "sourceSnippet": "Linh hồn 7 khao khát sâu thẳm sự tĩnh lặng, minh triết và không gian riêng để chiêm nghiệm, nghiên cứu giải mã những bí mật của vũ trụ và bản thể con người. Tiếng gọi nội tâm của bạn là tìm kiếm chân lý tối thượng đằng sau tấm màn vật chất.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "dành thời gian tĩnh lặng mỗi ngày, hòa mình vào thiên nhiên thanh lọc tâm trí", "rationale": "Hành động tĩnh lặng để dưỡng tâm, không để ngoại cảnh xáo động." },
+      "EMO": { "score": 0, "evidenceQuote": "chia sẻ tri thức đã kiểm chứng, mở lòng đón nhận tình cảm chân thành", "rationale": "Học cách kết nối ấm áp và chia sẻ ánh sáng tri thức cho cuộc đời." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật tự học phi thường, kiên định nghiên cứu độc lập", "rationale": "Kỷ luật tư duy khoa học sâu sắc, phương pháp khảo cứu nghiêm cẩn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "khao khát tìm kiếm chân lý tối thượng, trực giác triết học thấu suốt, minh triết nội tại", "rationale": "Đỉnh cao minh triết tâm linh, khả năng thấu thị các quy luật vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sống ẩn dật cô độc, xa lánh xã hội, tê liệt hành động đời thường", "rationale": "Thu mình thụ động trong ốc đảo tri thức, từ chối hành động thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "lạnh lùng, hoài nghi cay độc, kiêu ngạo trí tuệ, sợ nhìn vào góc tối tâm hồn", "rationale": "Băng giá khép kín, tự cô lập mình trong nỗi cô đơn cay đắng." },
+      "STR": { "score": -1, "evidenceQuote": "tự giam mình trong tháp ngà tri thức lý thuyết", "rationale": "Mất kết nối với nhịp đập thực tế của cuộc sống đời thường." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi mở lòng vì sợ bị phán xét là kẻ dị biệt", "rationale": "Thiếu dũng khí bộc lộ sự yếu đuối thật bên trong tâm can." },
+      "INT": { "score": -1, "evidenceQuote": "bệnh hoài nghi triệt để, kiêu ngạo coi thường người khác", "rationale": "Ngạo mạn kiến thức làm che mờ đi lòng từ bi và sự thấu cảm." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-8",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "8",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 8",
+    "sourceSnippet": "Linh hồn 8 mang khao khát mãnh liệt về sự độc lập tài chính, quyền lực điều hành và khả năng làm chủ thế giới vật chất. Động lực sâu kín của bạn là đạt được sự thịnh vượng bền vững và dùng sức mạnh kinh tế để tái thiết, che chở cho cộng đồng.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hành động quyết đoán, kiên cường vượt qua khủng hoảng, hiện thực hóa mục tiêu lớn", "rationale": "Ý chí hành động sắt đá, không bao giờ lùi bước trước thử thách thương trường." },
+      "EMO": { "score": 1, "evidenceQuote": "kinh doanh phụng sự và đạo đức, nâng đỡ cấp dưới, trích quỹ phúc lợi giúp người", "rationale": "Gắn kết quyền lực với tâm thế phụng sự, dùng tài sản làm phương tiện nâng đỡ đời." },
+      "STR": { "score": 2, "evidenceQuote": "quản trị dòng tiền minh bạch, thiết lập kỷ luật tài chính nghiêm ngặt, tư duy hệ thống", "rationale": "Bậc thầy về xây dựng cấu trúc tài chính và kiểm soát nguồn lực quy mô lớn." },
+      "RSK": { "score": 2, "evidenceQuote": "bản lĩnh thương trường sắc bén, dám đưa ra quyết định lớn rủi ro cao", "rationale": "Dũng cảm trên các thương vụ tầm cỡ, làm chủ cuộc chơi tài chính." },
+      "INT": { "score": 1, "evidenceQuote": "nhạy bén nắm bắt quy luật vật chất, tư duy chiến lược thịnh vượng", "rationale": "Tư duy kinh tế sắc sảo, nắm vững cơ chế tạo ra thịnh vượng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lạm dụng quyền lực chèn ép thao túng người khác", "rationale": "Hành động độc tài áp bức, vắt kiệt sức người khác vì tham vọng bản thân." },
+      "EMO": { "score": -2, "evidenceQuote": "thực dụng tàn nhẫn, coi nhẹ tình cảm gia đình, nỗi sợ nghèo túng thất bại ám ảnh", "rationale": "Lạnh lùng vô cảm, để nỗi sợ thiếu thốn biến mình thành kẻ tham lam tàn nhẫn." },
+      "STR": { "score": -1, "evidenceQuote": "nợ nần hỗn loạn do đầu cơ mạo hiểm khi bị lòng tham che mờ", "rationale": "Mất kiểm soát hệ thống tài chính do sử dụng đòn bẩy quá đà." },
+      "RSK": { "score": 2, "evidenceQuote": "đầu cơ tham lam, sử dụng đòn bẩy tài chính quá mức liều lĩnh", "rationale": "Mạo hiểm liều mạng vì danh vọng và tiền bạc trước mắt." },
+      "INT": { "score": -1, "evidenceQuote": "coi tiền bạc và địa vị là thước đo duy nhất của giá trị con người", "rationale": "Nhận thức lệch lạc, tha hóa tâm hồn trong cạm bẫy vật chất." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-9",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "9",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn 9",
+    "sourceSnippet": "Linh hồn 9 là hiện thân của tâm hồn Bồ Tát vị tha: khao khát cống hiến trọn vẹn cho nhân loại, bảo vệ công lý xã hội, truyền cảm hứng nhân văn và nâng đỡ những số phận nghèo khó, đau khổ trên thế giới.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dấn thân vào các hoạt động cứu trợ nhân đạo, bảo vệ môi trường, sống phụng sự", "rationale": "Hành động hào hiệp vị tha, không quản ngại khó khăn vì sự tiến bộ xã hội." },
+      "EMO": { "score": 2, "evidenceQuote": "tấm lòng vị tha trắc ẩn không biên giới, tình yêu nhân loại thuần khiết, bao dung", "rationale": "Tình thương bao la vô bờ bến, suối nguồn bác ái sưởi ấm muôn loài." },
+      "STR": { "score": 1, "evidenceQuote": "giúp đỡ có chọn lọc và trí tuệ, xây dựng nền tảng tài chính ổn định để cống hiến", "rationale": "Hệ thống hóa hành động phụng sự bằng trí tuệ và phương pháp bền vững." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm đấu tranh cho công lý xã hội, sẵn sàng hy sinh quyền lợi riêng", "rationale": "Bản lĩnh đứng lên bảo vệ chân lý và kẻ yếu trước cường quyền." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn vĩ mô bao quát toàn cầu, khai sáng nhận thức nhân loại", "rationale": "Trí tuệ nhân đạo khai phóng, thấu hiểu sâu sắc quy luật tiến hóa của nhân loại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm việc bao đồng ngoài xã hội mà bỏ bê gia đình nhỏ của mình", "rationale": "Phân tán hành động sai chỗ, nhiệt tình ngoài đường nhưng vô tâm trong nhà." },
+      "EMO": { "score": -1, "evidenceQuote": "thất vọng cay đắng khi lòng tốt bị lợi dụng, ôm giữ hận thù khó tha thứ", "rationale": "Chấp niệm đau đớn, thất vọng về nhân tình thế thái dẫn đến oán giận ngầm." },
+      "STR": { "score": -2, "evidenceQuote": "cho đi thiếu tính toán làm kiệt quệ tài chính bản thân và gia đình", "rationale": "Hệ thống tài chính cá nhân sụp đổ vì sự hào phóng mù quáng." },
+      "RSK": { "score": 0, "evidenceQuote": "cho đi thiếu kiểm chứng, dễ bị kẻ xấu lợi dụng", "rationale": "Mạo hiểm trao gửi niềm tin sai lầm vào những đối tượng giả tạo." },
+      "INT": { "score": -2, "evidenceQuote": "lý tưởng hóa viển vông xa rời thực tế, ảo tưởng cứu thế", "rationale": "Tư duy không tưởng, ngộ nhận mình có thể gánh vác toàn bộ nỗi đau thế gian." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-11",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "11",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn Master 11",
+    "sourceSnippet": "Linh hồn Master 11 mang khao khát tối thượng về sự thức tỉnh tâm linh, kết nối với tần số rung động thuần khiết của cõi tinh thần và trở thành ngọn đuốc soi sáng tâm thức cho nhân loại bằng trực giác siêu phàm.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thực hành nối đất Grounding, thiền định kết nối thực tại, hiện diện tỉnh thức", "rationale": "Hành động trong sự điềm tĩnh và cân bằng vững vàng giữa thể chất và tinh thần." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương thuần khiết, năng lượng chữa lành tâm thức tự nhiên, đức khiêm nhường", "rationale": "Trái tim thánh thiện dịu dàng, nguồn năng lượng an lành xoa dịu tổn thương tâm thức." },
+      "STR": { "score": 1, "evidenceQuote": "giữ cho không gian sống thanh tịnh, kỷ luật bảo dưỡng hệ thần kinh nhạy cảm", "rationale": "Chuẩn hóa chế độ sinh hoạt và môi trường để bảo vệ từ trường thanh sạch." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm truyền cảm hứng thức tỉnh tinh thần cho muôn người", "rationale": "Bản lĩnh cất lên tiếng nói chân lý bất chấp sự nghi ngờ của xã hội." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác siêu giác quan thấu suốt năng lượng, thông tuệ tinh thần, dự báo xuất thần", "rationale": "Trực giác siêu giác quan, khả năng thấu thị tâm linh phi thường." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chông chênh trước áp lực thực tế, tê liệt hành động đời thường", "rationale": "Mất thăng bằng hành động, dễ bị choáng ngợp trước guồng quay vật chất." },
+      "EMO": { "score": -2, "evidenceQuote": "hệ thần kinh quá tải lo âu, tự ti nghi ngờ trực giác, lạc lõng xô bồ", "rationale": "Căng thẳng tinh thần cực độ, dễ rơi vào trạng thái suy kiệt thần kinh." },
+      "STR": { "score": -1, "evidenceQuote": "mất kết nối với đất mẹ Grounding, cuộc sống mất thăng bằng", "rationale": "Mất nền tảng thể chất, tâm trí bay bổng thiếu điểm tựa an toàn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi sứ mệnh lớn, hoang mang khi bị đám đông hiểu lầm", "rationale": "Thiếu dũng khí đối mặt với sự cô độc của người đi trước thời đại." },
+      "INT": { "score": -1, "evidenceQuote": "sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng tâm linh", "rationale": "Tâm trí bị u mê dẫn dụ bởi những ảo ảnh dị đoan phi lý trí." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-22",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "22",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn Master 22",
+    "sourceSnippet": "Linh hồn Master 22 mang khao khát vĩ đại của Bậc Thầy Kiến Thiết: biến những giấc mơ và lý tưởng tâm linh lớn lao thành các đại công trình, định chế xã hội vững bền để lại di sản trường tồn phụng sự hàng triệu con người.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chuyển hóa tầm nhìn vĩ mô thành đại công trình thực tế, quy tụ nguồn lực khổng lồ", "rationale": "Năng lực kiến thiết phi thường, hiện thực hóa các đại dự án mang tính lịch sử." },
+      "EMO": { "score": 1, "evidenceQuote": "quy tụ nhân tài bằng sự chính trực, nâng đỡ và đào tạo cộng sự cùng chí hướng", "rationale": "Dẫn dắt tập thể bằng tinh thần phụng sự cao cả, trao quyền cho nhân tài." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực thực thi kỷ luật thép, quy chuẩn hóa hệ thống, lập bản đồ chiến lược", "rationale": "Đỉnh cao tuyệt đối của tư duy hệ thống và kỷ luật vận hành quy mô lớn." },
+      "RSK": { "score": 2, "evidenceQuote": "bản lĩnh điều phối nguồn lực hàng triệu USD, dám gánh vác đại nghiệp", "rationale": "Dũng cảm đương đầu với các bài toán quy mô quốc tế và rủi ro khổng lồ." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn chiến lược vĩ mô xuyên thế kỷ kết hợp tư duy hệ thống sắc sảo", "rationale": "Trí tuệ tổng công trình sư vĩ đại, làm chủ toàn bộ quy luật kiến tạo thực tại." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "độc tài tàn nhẫn thao túng người khác, thúc ép tiến độ khốc liệt", "rationale": "Dùng quyền lực áp bức thô bạo, biến người khác thành công cụ phục vụ đại nghiệp." },
+      "EMO": { "score": -2, "evidenceQuote": "tham vọng quyền lực mù quáng, cô độc trên đỉnh cao danh vọng", "rationale": "Tham vọng ngút trời làm đóng băng trái tim, đánh mất hạnh phúc gia đình." },
+      "STR": { "score": -1, "evidenceQuote": "hoang mang sợ hãi, chôn vùi tiềm năng trong sự an phận bảo thủ tầm thường", "rationale": "Rơi xuống cực đoan bảo thủ của số 4 thấp, tự giam mình trong nỗi sợ thất bại." },
+      "RSK": { "score": 1, "evidenceQuote": "mạo hiểm nguồn lực khổng lồ vì tham vọng để đời", "rationale": "Mạo hiểm quá mức quy mô tài chính, tiềm ẩn nguy cơ đổ vỡ dây chuyền." },
+      "INT": { "score": -1, "evidenceQuote": "thất vọng cay đắng khi thực tế không hoàn hảo như bản thiết kế", "rationale": "Căng thẳng trí não tột độ do áp lực cầu toàn vĩ mô." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "soul-33",
+    "indicatorKey": "soul",
+    "indicatorNameVi": "Linh Hồn",
+    "numberValue": "33",
+    "title": "Khát Khao Nội Tâm Của Con Số Linh Hồn Master 33",
+    "sourceSnippet": "Linh hồn Master 33 mang tiếng gọi thiêng liêng nhất của Trái Tim Vũ Trụ: khao khát phụng sự và chữa lành toàn diện cho muôn loài thông qua tình yêu thương thuần khiết vô điều kiện và trí tuệ giáo dưỡng tâm hồn đỉnh cao.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "lan tỏa tình thương qua từng cử chỉ lời nói hành động bình dị, làm gương sáng", "rationale": "Hành động từ bi phụng sự, dẫn dắt bằng chính sự thánh thiện mẫu mực." },
+      "EMO": { "score": 2, "evidenceQuote": "trái tim từ bi bác ái vô biên, tình yêu thương thuần khiết vô điều kiện, chữa lành", "rationale": "Đỉnh cao tuyệt đối của lòng trắc ẩn, tình yêu bao la nâng đỡ muôn linh hồn." },
+      "STR": { "score": 1, "evidenceQuote": "từ bi đi đôi với trí tuệ, tự chữa lành và bảo dưỡng thân tâm điều độ", "rationale": "Kỷ luật dưỡng tâm và bảo toàn sinh lực để phụng sự dài lâu." },
+      "RSK": { "score": 1, "evidenceQuote": "đức hy sinh cao cả, cống hiến trọn vẹn cho sự tiến hóa tâm thức nhân loại", "rationale": "Dũng cảm dấn thân phụng sự tha nhân mà không màng tư lợi hay danh vọng." },
+      "INT": { "score": 2, "evidenceQuote": "truyền thụ chân lý vũ trụ giản dị sâu sắc, thấu cảm tuyệt đối", "rationale": "Minh triết bậc thầy tâm linh, khả năng đúc kết đạo lý sâu xa thành bài học bình dị." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm gánh vác nỗi đau của thiên hạ đến mức kiệt quệ thể xác và tâm thần", "rationale": "Gánh vác quá tải làm suy sụp năng lượng hành động thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "tự biến mình thành nạn nhân tuẫn đạo u uất, ấm ức khi sự hy sinh không được trân trọng", "rationale": "Hội chứng tuẫn đạo (Martyr complex), u uất vì hy sinh mù quáng thiếu trí tuệ." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới bảo vệ bản thân, để người khác lợi dụng lòng từ bi", "rationale": "Mất ranh giới tự bảo vệ, dung túng cho sự ỷ lại xấu xa của người khác." },
+      "RSK": { "score": 0, "evidenceQuote": "gánh nghiệp thay cho người khác", "rationale": "Can thiệp sai lầm vào tiến trình trả nghiệp và học hỏi của tha nhân." },
+      "INT": { "score": -1, "evidenceQuote": "áp đặt tiêu chuẩn đạo đức khắt khe phán xét người khác", "rationale": "Định kiến tâm linh, lấy tiêu chuẩn thánh nhân để phán xét người phàm." }
+    },
+    "overallConfidence": 0.95
+  }
+]

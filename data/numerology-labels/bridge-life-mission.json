@@ -1,0 +1,209 @@
+[
+  {
+    "id": "bridgeLifeMission-0",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "0",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 0",
+    "sourceSnippet": "Khi Cầu nối giữa Đường đời và Sứ mệnh mang giá trị 0 (|Đường đời - Sứ mệnh| = 0), bạn sở hữu mức độ đồng thuận tuyệt đối và sự hợp nhất năng lượng hoàn hảo nhất. Con người tự nhiên của bạn và đích đến tối thượng cùng chung một tần số rung động. Bạn không hề có sự lệch pha hay giằng xé nội tâm về định hướng cuộc đời.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tập trung vào 1 định hướng chuyên môn mũi nhọn, trở thành bậc thầy xuất chúng", "rationale": "Hành động tập trung cao độ, phát triển chuyên sâu mũi nhọn." },
+      "EMO": { "score": 1, "evidenceQuote": "cống hiến tài năng vì cộng đồng, phụng sự và nâng đỡ những người xung quanh", "rationale": "Cảm xúc an định, phụng sự cộng đồng với tâm thế hoan hỷ." },
+      "STR": { "score": 2, "evidenceQuote": "sở hữu mức độ đồng thuận tuyệt đối và sự hợp nhất năng lượng hoàn hảo nhất", "rationale": "Đồng nhất hoàn hảo giữa lộ trình hành động và mục tiêu cuộc đời." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "biết rất rõ mình là ai và mình cần đi về đâu từ rất sớm", "rationale": "Trực giác định hướng cực kỳ thấu suốt, không mâu thuẫn nội tâm." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "cái bẫy của sự phiến diện (Tunnel Vision), thiếu sự đa dạng trong góc nhìn", "rationale": "Tầm nhìn hạn hẹp, phiến diện và bảo thủ trước góc nhìn khác biệt." },
+      "RSK": { "score": -1, "evidenceQuote": "bị cuốn đi rất nhanh mà thiếu lực cản cân bằng", "rationale": "Thiếu sự tự điều chỉnh, dễ trượt dốc khi lệch hướng." },
+      "INT": { "score": -1, "evidenceQuote": "phóng đại cả điểm mạnh lẫn vùng tối của con số đó", "rationale": "Nhận thức cực đoan, tự huyễn hoặc bản thân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-1",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "1",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 1",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 1 (|Đường đời - Sứ mệnh| = 1), mức độ tương thích giữa con đường bạn đi và đích đến của bạn khá gần gũi. Tuy nhiên, giữa con người hiện tại và sứ mệnh cần đạt có một khoảng cách nhỏ đòi hỏi bạn phải bổ sung năng lượng của Số 1: Sự tự tin, tính độc lập tự chủ và lòng can đảm tiên phong đứng lên làm chủ cuộc đời.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự đưa ra quyết định độc lập, dũng cảm nhận vai trò người mở đường", "rationale": "Chủ động tiên phong khởi xướng hành động độc lập." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "chịu trách nhiệm 100% về kế hoạch phát triển cá nhân", "rationale": "Tính tự chịu trách nhiệm và kỷ luật cá nhân cao." },
+      "RSK": { "score": 2, "evidenceQuote": "dám dấn thân chính là chiếc cầu duy nhất đưa bạn đến đỉnh cao sứ mệnh", "rationale": "Dũng cảm vượt qua nỗi sợ để dấn thân hành động." },
+      "INT": { "score": 1, "evidenceQuote": "thực hành tự khẳng định nội tâm, khẳng định giá trị độc bản của mình", "rationale": "Ý thức sâu sắc về giá trị và năng lực cá nhân." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chần chừ, thiếu tự tin khi bắt đầu bước đi đầu tiên", "rationale": "Do dự chần chừ, trì hoãn bước khởi đầu." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "chờ đợi người khác cho phép/dẫn đường trước khi dám hành động", "rationale": "Thụ động phụ thuộc, thiếu bản lĩnh tự chủ." },
+      "RSK": { "score": -1, "evidenceQuote": "tìm kiếm sự đồng thuận hoặc chờ đợi người khác", "rationale": "Sợ rủi ro bị từ chối hoặc sai lầm khi tự quyết định." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-2",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "2",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 2",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 2 (|Đường đời - Sứ mệnh| = 2), khoảng cách giữa trải nghiệm thực tế và sứ mệnh tối thượng đòi hỏi bạn phải bổ sung năng lượng của Số 2: Nghệ thuật ngoại giao, sự lắng nghe thấu cảm, đức kiên nhẫn và khả năng hợp tác hòa ái cùng đồng đội.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 2, "evidenceQuote": "lắng nghe tích cực không ngắt lời, thấu hiểu tâm tư của cộng sự và đối tác", "rationale": "Lắng nghe thấu cảm, tạo sự gắn kết và ấm áp trong tập thể." },
+      "STR": { "score": 1, "evidenceQuote": "xây dựng mạng lưới đồng chí hướng, kiến tạo giải pháp đôi bên cùng có lợi (Win-Win)", "rationale": "Tổ chức mạng lưới hợp tác dựa trên giải pháp win-win." },
+      "RSK": { "score": -1, "evidenceQuote": "lùi lại một bước để lắng nghe, giải quyết mọi mâu thuẫn bằng sự đối thoại bình tĩnh", "rationale": "Ưu tiên đàm phán hòa bình, tránh xung đột mạo hiểm." },
+      "INT": { "score": 2, "evidenceQuote": "năng lực kết nối và hòa giải, học cách tin tưởng và đồng hành", "rationale": "Trực giác ngoại giao tinh tế và trí tuệ thấu suốt lòng người." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "hành động đơn độc, nóng vội muốn tự làm một mình", "rationale": "Hành động bốc đồng đơn độc, tách rời tập thể." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm thấy khó khăn trong việc tìm kiếm những người cộng sự thấu hiểu", "rationale": "Cảm giác cô độc, bất lực trong kết nối cảm xúc." },
+      "STR": { "score": -1, "evidenceQuote": "gặp phải các chướng ngại vật đòi hỏi phải có sự đồng thuận", "rationale": "Bế tắc vì thiếu sự phối hợp và chia sẻ quyền hạn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-3",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "3",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 3",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 3 (|Đường đời - Sứ mệnh| = 3), bạn cần bắc một nhịp cầu bằng năng lượng của Số 3: Sự tự do biểu đạt ngôn từ, tư duy sáng tạo nghệ thuật, sự lạc quan vui sống và khả năng truyền cảm hứng cho cộng đồng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "rèn luyện kỹ năng thuyết trình, kể chuyện hoặc sáng tạo nội dung", "rationale": "Chủ động sáng tạo nội dung và diễn đạt ý tưởng ra công chúng." },
+      "EMO": { "score": 2, "evidenceQuote": "lan tỏa năng lượng tích cực và biến hành trình cuộc đời thành bản nhạc tràn đầy cảm hứng", "rationale": "Lan tỏa niềm vui sống, truyền cảm hứng ấm áp cho mọi người." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "chia sẻ câu chuyện của bạn, viết lách và chia sẻ thông điệp tích cực", "rationale": "Tự tin bộc lộ tư tưởng và tiếng nói cá nhân trước xã hội." },
+      "INT": { "score": 2, "evidenceQuote": "sức mạnh của ngôn từ, truyền thông, nghệ thuật và sự dí dỏm", "rationale": "Trực giác thẩm mỹ và năng lực ngôn từ truyền cảm hứng." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "quá nghiêm túc khiến hành trình trở nên nặng nề, áp lực", "rationale": "Áp lực tâm lý, đánh mất niềm vui và tiếng cười tự nhiên." },
+      "STR": { "score": -1, "evidenceQuote": "con đường đời có phần khô khan, gò bó và khó diễn đạt lý tưởng", "rationale": "Bế tắc trong việc kết nối lý tưởng với đời thực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "khó diễn đạt những lý tưởng cao đẹp ra bên ngoài cho mọi người hiểu", "rationale": "Bất lực trong truyền đạt nhận thức và tầm nhìn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-4",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "4",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 4",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 4 (|Đường đời - Sứ mệnh| = 4), khoảng cách giữa hiện thực và lý tưởng đòi hỏi bạn phải xây dựng một nhịp cầu vững như bàn thạch bằng năng lượng của Số 4: Tính kỷ luật tự giác, sự kiên nhẫn làm việc tỉ mỉ, óc tổ chức khoa học và các kế hoạch tài chính/vận hành thực tế.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "kiên trì đặt từng viên gạch nền móng, tuân thủ kỷ luật hoàn thành từng ngày", "rationale": "Lao động kiên trì, bền bỉ hoàn thành mục tiêu từng ngày." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "lập kế hoạch hành động chi tiết (Action Plan), rèn luyện thói quen kỷ luật sắt, quản trị tài chính minh bạch", "rationale": "Hệ thống hóa kế hoạch, kỷ luật thép và quản trị nguồn lực tài chính chặt chẽ." },
+      "RSK": { "score": -1, "evidenceQuote": "chia nhỏ sứ mệnh thành các mục tiêu 5 năm, 1 năm, 1 tháng", "rationale": "Thận trọng, kiểm soát lộ trình từng bước giảm thiểu rủi ro." },
+      "INT": { "score": 1, "evidenceQuote": "biến những ước mơ bay bổng thành các bản kế hoạch hành động chi tiết có đo lường rõ ràng", "rationale": "Tư duy thực tế, chuyển hóa lý tưởng thành giải pháp đo lường được." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "làm việc tùy hứng, bốc đồng và nhanh chóng chán nản", "rationale": "Hành động tùy hứng, thiếu kiên nhẫn khi gặp việc chi tiết." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu phương pháp thực hiện cụ thể, dễ bỏ dở giữa chừng", "rationale": "Vô kỷ luật, thiếu quy trình dẫn đến đứt gãy giữa đường." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng", "rationale": "Hành động bốc đồng thiếu cơ sở kế hoạch thực tế." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-5",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "5",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 5",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 5 (|Đường đời - Sứ mệnh| = 5), sự khác biệt giữa con người hiện tại và mục tiêu tương lai đòi hỏi bạn phải có một bước nhảy vọt bằng năng lượng của Số 5: Khả năng thích ứng linh hoạt, tư duy phóng khoáng, lòng dũng cảm bước ra khỏi vùng an toàn và tinh thần phiêu lưu đổi mới.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thử nghiệm một phương pháp làm việc hoặc hướng đi mới chưa từng có tiền lệ, đi du lịch khám phá", "rationale": "Hành động tiên phong đổi mới, trải nghiệm thực tế không tiền lệ." },
+      "EMO": { "score": 1, "evidenceQuote": "đón nhận biến động với sự tò mò", "rationale": "Tinh thần cởi mở, háo hức trước mọi biến đổi cuộc sống." },
+      "STR": { "score": 1, "evidenceQuote": "linh hoạt xoay chuyển chiến lược, mở rộng mạng lưới", "rationale": "Tổ chức chiến lược linh hoạt, thích ứng tức thì với thời cuộc." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm bước ra khỏi vùng an toàn và tinh thần phiêu lưu đổi mới", "rationale": "Dám chấp nhận mạo hiểm và rủi ro để tạo đột phá." },
+      "INT": { "score": 2, "evidenceQuote": "mở rộng tầm nhìn đa văn hóa, xem mọi biến động là cơ hội quý giá để giải phóng tiềm năng", "rationale": "Trực giác tiến bộ, phá vỡ định kiến để giải phóng tiềm năng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bị mắc kẹt trong những thói quen cũ kỹ", "rationale": "Trì trệ, lặp lại lối mòn hành vi cũ." },
+      "EMO": { "score": -1, "evidenceQuote": "e ngại sự thay đổi", "rationale": "Lo âu, e sợ khi phải đối mặt với hoàn cảnh mới lạ." },
+      "STR": { "score": -1, "evidenceQuote": "sự bám víu vào vùng an toàn chính là rào cản lớn nhất", "rationale": "Cố thủ vùng an toàn làm cản trở tiến trình đạt sứ mệnh." },
+      "RSK": { "score": -2, "evidenceQuote": "e ngại sự thay đổi, không dám đổi mới và mạo hiểm dấn thân", "rationale": "Sợ rủi ro thay đổi, đánh mất cơ hội tiến bộ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-6",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "6",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 6",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 6 (|Đường đời - Sứ mệnh| = 6), khoảng cách năng lượng đòi hỏi bạn phải bắc nhịp cầu bằng trái tim của Số 6: Tình yêu thương vô điều kiện, tinh thần trách nhiệm phụng sự gia đình, sự thấu cảm nhân văn và năng lực chăm sóc, chữa lành cho cộng đồng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dành thời gian chất lượng chăm sóc, lắng nghe và vun đắp hạnh phúc gia đình", "rationale": "Hành động thực tế chăm sóc người thân và tổ ấm." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương vô điều kiện, tinh thần trách nhiệm phụng sự gia đình, sự thấu cảm nhân văn", "rationale": "Tình thương bao la, lòng trắc ẩn ấm áp hướng về con người." },
+      "STR": { "score": 1, "evidenceQuote": "xây dựng tổ ấm bình an làm hậu phương vững chắc, đưa yếu tố nhân văn vào sự nghiệp", "rationale": "Thiết lập hậu phương an lành và chuẩn hóa mục tiêu đạo đức." },
+      "RSK": { "score": -1, "evidenceQuote": "xây dựng tổ ấm bình an", "rationale": "Ưu tiên bình yên gia đình, tránh mạo hiểm phá vỡ tổ ấm." },
+      "INT": { "score": 1, "evidenceQuote": "lấy tình yêu thương và sự gắn kết gia đình làm động lực cốt lõi", "rationale": "Nhận thức sâu sắc về giá trị nền tảng của tình yêu thương." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "sự giằng xé sâu sắc giữa tham vọng danh vọng và trách nhiệm gia đình, cảm giác cô độc", "rationale": "Giằng xé cảm xúc dữ dội, cảm giác cô độc và trống rỗng." },
+      "STR": { "score": -1, "evidenceQuote": "hành trình sự nghiệp trở nên vô nghĩa nếu thiếu sự ấm áp yêu thương", "rationale": "Mất cân bằng giữa công việc và đời sống riêng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-7",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "7",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 7",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 7 (|Đường đời - Sứ mệnh| = 7), khoảng cách giữa trải nghiệm đường đời và sứ mệnh cuộc đời là rất lớn và sâu sắc. Bạn cần bắc một cây cầu tâm thức bằng năng lượng của Số 7: Sự tĩnh lặng nội tâm, tư duy triết học sâu sắc, quá trình tự học đào sâu tri thức và sự thức tỉnh tâm linh.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "rút lui khỏi những cuộc đua tranh phù phiếm, dành thời gian tĩnh lặng", "rationale": "Tạm dừng hoạt động ồn ào để thu mình chiêm nghiệm sâu sắc." },
+      "EMO": { "score": 1, "evidenceQuote": "duy trì thói quen thiền định mỗi ngày để làm sạch tâm trí", "rationale": "Cảm xúc an định, thanh lọc tâm trí qua thiền định." },
+      "STR": { "score": 1, "evidenceQuote": "đào sâu nghiên cứu tri thức chuyên sâu, ghi chép nhật ký triết học", "rationale": "Hệ thống hóa bài học và tri thức có kỷ luật học thuật." },
+      "RSK": { "score": -1, "evidenceQuote": "rút lui khỏi những cuộc đua tranh phù phiếm", "rationale": "Tránh xa cạm bẫy danh lợi mạo hiểm trần tục." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy triết học sâu sắc, quá trình tự học đào sâu tri thức và sự thức tỉnh tâm linh", "rationale": "Trực giác giác ngộ tâm linh và năng lực triết học uyên bác." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "hoang mang, lạc lõng và trăn trở về ý nghĩa thực sự của sự tồn tại", "rationale": "Khủng hoảng hiện sinh, cảm giác lạc lõng mất phương hướng." },
+      "STR": { "score": -1, "evidenceQuote": "các thành công vật chất bề nổi không mang lại sự thỏa mãn", "rationale": "Khó tìm thấy động lực trong các quy trình vật chất thông thường." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "thiếu chiều sâu trí tuệ để gánh vác sứ mệnh lớn", "rationale": "Hoài nghi về năng lực nhận thức và sự thấu thị của bản thân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeLifeMission-8",
+    "indicatorKey": "bridgeLifeMission",
+    "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+    "numberValue": "8",
+    "title": "Giải Mã Cầu Nối Đường Đời Và Sứ Mệnh Mang Giá Trị 8",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 8 (|Đường đời - Sứ mệnh| = 8), đây là khoảng cách phân kỳ tối đa giữa hai thái cực năng lượng hoàn toàn trái ngược nhau: Một bên là sự thực tế, vật chất, quyền lực cá nhân; một bên là lý tưởng nhân đạo, vị tha vô điều kiện.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "dùng sức mạnh vật chất để phụng sự đạo đức, làm đòn bẩy hiện thực hóa các sứ mệnh nhân văn", "rationale": "Hành động quyết đoán, dùng nguồn lực tài chính phụng sự xã hội." },
+      "EMO": { "score": 1, "evidenceQuote": "vừa giàu có thịnh vượng vừa đức độ nhân văn, rèn luyện sự cân bằng Thân - Tâm - Trí", "rationale": "Hòa hợp tấm lòng nhân đạo với bản lĩnh thực tế." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực quản trị điều hành sắc bén, làm chủ tài chính và quản trị dòng tiền", "rationale": "Kiểm soát tài chính chuyên nghiệp, quản trị hệ thống sắc bén." },
+      "RSK": { "score": 1, "evidenceQuote": "kinh doanh với tâm thế phụng sự, tái đầu tư vào các dự án xã hội", "rationale": "Dám đầu tư nguồn lực lớn vào các dự án nhân đạo dài hạn." },
+      "INT": { "score": 2, "evidenceQuote": "cân bằng giữa thế giới vật chất và thế giới tinh thần", "rationale": "Trực giác chiến lược dung hòa đỉnh cao giữa thực tế và lý tưởng." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "mâu thuẫn giữa Lợi ích cá nhân và Lợi ích cộng đồng, giằng xé nội tâm", "rationale": "Xung đột nội tâm dữ dội giữa khát vọng cá nhân và lý tưởng." },
+      "STR": { "score": -2, "evidenceQuote": "hoặc quá thực dụng lạnh lùng, hoặc quá lý tưởng hóa viển vông dẫn đến kiệt quệ tài chính", "rationale": "Mất cân bằng nghiêm trọng: hoặc kiệt quệ tiền của hoặc cực đoan thực dụng." },
+      "RSK": { "score": -1, "evidenceQuote": "lý tưởng hóa viển vông dẫn đến kiệt quệ tài chính", "rationale": "Rủi ro mất trắng tài chính vì lý tưởng mù quáng thiếu kiểm soát." },
+      "INT": { "score": -1, "evidenceQuote": "dễ rơi vào trạng thái cực đoan", "rationale": "Tư duy nhị nguyên cực đoan làm méo mó quyết định." }
+    },
+    "overallConfidence": 0.95
+  }
+]

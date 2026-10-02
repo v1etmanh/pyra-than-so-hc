@@ -1,0 +1,25 @@
+{
+  "datasetVersion": "3.0.0",
+  "validationScope": "schema, all 156 states, exact source fields/spans, inference provenance, hashes, manifest, eligibility and review queue; semantic scoring and confidence are not human validated",
+  "passed": true,
+  "stats": {
+    "records": 156,
+    "cards": 78,
+    "cells": 1560,
+    "nonzero": 327,
+    "evidenceStatusCounts": {
+      "supported": 289,
+      "inferred": 41,
+      "insufficient": 1230,
+      "ambiguous": 0
+    },
+    "noUsableAxisStates": 0,
+    "ambiguousStates": 0,
+    "usableCoreStates": 155,
+    "usableShadowStates": 76,
+    "positiveReversedInt": 4,
+    "exactEvidenceExcerpts": 330,
+    "inferredNonzero": 41
+  },
+  "errors": []
+}

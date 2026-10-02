@@ -1,0 +1,695 @@
+[
+  {
+    "id": "way-1",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "1",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 1",
+    "sourceSnippet": "Khi bước lên Đỉnh cao Kim tự tháp mang Số 1 (Pinnacle 1), bạn bước vào giai đoạn 9 năm được vũ trụ thúc đẩy mạnh mẽ về Tính tự lập, Bản lĩnh tiên phong và Khát vọng khởi nghiệp. Đây là chu kỳ bạn buộc phải rời khỏi chiếc tổ an toàn, tách khỏi sự bảo bọc hoặc lệ thuộc vào người khác để tự mình đứng lên xây dựng sự nghiệp độc lập mang tên mình.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Tự tin khởi nghiệp mở công ty/cửa hàng riêng; đảm nhận vị trí trưởng nhóm/quản lý độc lập; dám đưa ra các quyết định táo bạo",
+        "rationale": "Hành động tiên phong, bứt phá khởi nghiệp và tự chủ dẫn dắt công việc."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tự chủ 100% về tài chính cũng như hướng đi cuộc đời",
+        "rationale": "Cảm giác tự tin, kiêu hãnh và phấn chấn khi làm chủ vận mệnh."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Dám chịu trách nhiệm tuyệt đối: Xem mọi kết quả đều do mình quyết định, không đổ lỗi cho hoàn cảnh",
+        "rationale": "Thiết lập cấu trúc trách nhiệm cá nhân tuyệt đối và kỷ luật tự thân."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "dũng cảm cắt đứt mọi sự dựa dẫm, xây dựng thương hiệu cá nhân và tự tin bắt tay vào thực hiện dự án độc lập",
+        "rationale": "Dám chấp nhận rủi ro rời bỏ vùng an toàn để khai phá con đường riêng."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Rèn luyện năng lực chuyên môn và kỹ năng lãnh đạo bản thân",
+        "rationale": "Tư duy lãnh đạo tự thân và nâng cao năng lực định hướng chiến lược."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "sợ hãi thất bại mà chần chừ bỏ lỡ cơ hội vàng vươn lên làm chủ",
+        "rationale": "Chần chừ, do dự bỏ lỡ cơ hội bứt phá làm chủ."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Rơi vào trạng thái cô độc, cố chấp không nghe lời khuyên; cái tôi quá lớn coi thường cộng sự",
+        "rationale": "Cái tôi kiêu ngạo, độc đoán coi thường cộng sự và rơi vào cô lập."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "sợ hãi thất bại",
+        "rationale": "Nỗi sợ thất bại kìm hãm bước tiến tự lập."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "cố chấp không nghe lời khuyên",
+        "rationale": "Cố chấp, bảo thủ không tiếp thu lời khuyên xác đáng."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-2",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "2",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 2",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 2 (Pinnacle 2) mở ra chu kỳ 9 năm của Sự hợp tác, Nghệ thuật ngoại giao, Lắng nghe thấu cảm và Đánh thức trực giác. Sau những giai đoạn hành động đơn độc, vũ trụ đưa bạn đến đỉnh số 2 để học bài học đồng hành cùng người khác và xây dựng các liên minh bền vững.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "học bài học đồng hành cùng người khác và xây dựng các liên minh bền vững",
+        "rationale": "Chủ động kết nối và xây dựng các liên minh đối tác cùng hành động."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Sự hợp tác, Nghệ thuật ngoại giao, Lắng nghe thấu cảm... đời sống tình cảm gia đình hòa thuận, viên mãn",
+        "rationale": "Năng lượng tình cảm thấu cảm sâu sắc, chan hòa và hướng tới sự hòa hợp nhân tâm."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Lựa chọn đối tác cẩn trọng: Hợp tác với những người có cùng nền tảng đạo đức và giá trị cốt lõi",
+        "rationale": "Thiết lập cấu trúc liên minh hợp tác Win-Win dựa trên giá trị đạo đức chung."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Thành tựu lớn nhất trong giai đoạn này không đến từ sự tranh đấu thô bạo mà đến từ nghệ thuật kết nối",
+        "rationale": "Ưu tiên phương pháp hòa bình, tránh xung đột đối đầu mạo hiểm."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "trực giác phát triển nhạy bén giúp nhận định đúng thời thế... Lắng nghe tiếng nói trực giác",
+        "rationale": "Trực giác nhạy bén xuất chúng giúp nhận định đúng thời cơ và con người."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "nhu nhược không dám nói lên chính kiến vì sợ mất lòng",
+        "rationale": "Hành động thiếu quyết đoán, do dự nhu nhược không dám lên tiếng."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Trở nên quá nhạy cảm, dễ bị tổn thương... để người khác lợi dụng sự cả nể và lòng tốt",
+        "rationale": "Cả nể, quá nhạy cảm dễ tổn thương và bị người khác lợi dụng cảm xúc."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "sợ mất lòng",
+        "rationale": "Quá sợ rủi ro va chạm làm tổn hại đến lợi ích chính đáng."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-3",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "3",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 3",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 3 (Pinnacle 3) là thời kỳ Bùng nổ sáng tạo, Phát triển trí tuệ, Thăng hoa ngôn từ và Mở rộng tầm ảnh hưởng truyền thông. Đây là chu kỳ bạn được vũ trụ trao tặng cơ hội tỏa sáng rực rỡ trước công chúng, xuất bản tác phẩm hoặc trở thành người truyền cảm hứng cho xã hội.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "xuất bản tác phẩm hoặc trở thành người truyền cảm hứng cho xã hội... trở thành diễn giả, giảng viên",
+        "rationale": "Hành động tích cực xuất bản, thuyết trình và lan tỏa giá trị đến công chúng."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "cuộc sống tràn ngập niềm vui, tiếng cười và sự kết nối bạn bè rộng khắp... nuôi dưỡng tâm hồn",
+        "rationale": "Cảm xúc thăng hoa, niềm vui sống dạt dào và truyền cảm hứng hạnh phúc cho người khác."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Thiên về cảm hứng sáng tạo tự do và mở rộng tầm ảnh hưởng."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "cơ hội tỏa sáng rực rỡ trước công chúng... đón nhận nồng nhiệt",
+        "rationale": "Tự tin bước ra ánh đèn sân khấu trước đám đông."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Phát triển trí tuệ, Thăng hoa ngôn từ... mở khóa suối nguồn sáng tạo và khiếu hài hước tự nhiên",
+        "rationale": "Trí tuệ ngôn từ và nghệ thuật sáng tạo đạt độ chín muồi xuất sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Bị phân tán năng lượng vào quá nhiều dự án nửa vời",
+        "rationale": "Làm nhiều việc dở dang, phân tán năng lượng không tập trung dứt điểm."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "kiêu ngạo tự phụ trước những lời tán dương bề nổi... sa đà vào những cuộc tranh cãi thị phi",
+        "rationale": "Kiêu ngạo vì tán dương bề nổi, dễ dính líu vào thị phi điều tiếng."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "chi tiêu phung phí vào lối sống hưởng thụ",
+        "rationale": "Chi tiêu phung phí, thiếu kiểm soát kỷ luật tài chính cá nhân."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-4",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "4",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 4",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 4 (Pinnacle 4) là giai đoạn Xây dựng nền móng cơ đồ, Lao động thực tế, Thiết lập trật tự và Tích lũy tài sản vững chắc. Đây không phải là chu kỳ của sự bay bổng viển vông; vũ trụ yêu cầu bạn phải xắn tay áo làm việc chăm chỉ, chuẩn hóa quy trình và tích lũy của cải bằng mồ hôi và trí tuệ chân chính.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "xắn tay áo làm việc chăm chỉ, chuẩn hóa quy trình và tích lũy của cải bằng mồ hôi và trí tuệ",
+        "rationale": "Lao động chăm chỉ, miệt mài thực thi công việc thực tế bền bỉ."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Đây không phải là chu kỳ của sự bay bổng viển vông",
+        "rationale": "Thực tế, kỷ luật, giảm bớt bay bổng để tập trung kết quả thực tế."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Thiết lập trật tự và Tích lũy tài sản vững chắc... doanh nghiệp đi vào vận hành bài bản, có quy trình chuẩn mực",
+        "rationale": "Thiết lập quy trình chuẩn mực, xây dựng nền móng tổ chức và tích lũy tài sản bài bản."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Kiên trì tích lũy tài sản an toàn: Đầu tư vào đất đai, nhà ở, vàng hoặc các kênh tài sản thực tế",
+        "rationale": "Tuyệt đối an toàn, kiên trì đầu tư vào tài sản bền vững, tránh mạo hiểm."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "uy tín chuyên môn được công nhận như một chuyên gia đầu ngành",
+        "rationale": "Trí tuệ chuyên môn thực chứng, đúc kết kinh nghiệm vững vàng."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Làm việc quá sức dẫn đến kiệt quệ thể chất",
+        "rationale": "Lao lực quá đà làm tổn hại sức khỏe thể chất."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "trở nên quá bảo thủ, khô khan, cứng nhắc và khó tính... bỏ quên tình cảm gia đình",
+        "rationale": "Khô khan cứng nhắc, quá thực dụng mà bỏ bê tình cảm tinh thần."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "quá tôn sùng tiền tài vật chất",
+        "rationale": "Giáo điều, quá sùng bái vật chất làm xơ cứng các mối liên kết."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối phiêu lưu cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-5",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "5",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 5",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 5 (Pinnacle 5) mang đến một cuộc cách mạng về Tự do cá nhân, Đổi mới tư duy, Phiêu lưu khám phá và Thích ứng linh hoạt. Năng lượng của Đỉnh 5 phá tan mọi sự trì trệ cũ kỹ, đưa bạn vào những chuyến đi xa, mở rộng giao lưu quốc tế và đón nhận những cơ hội phát triển đột phá.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Chuyển đổi mô hình kinh doanh hoặc nghề nghiệp thành công rực rỡ... đi du lịch/công tác nhiều nơi trên thế giới",
+        "rationale": "Hành động bứt phá, chuyển đổi mô hình và mở rộng địa bàn hoạt động."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Đạt được sự tự do về tài chính và thời gian... trải nghiệm cuộc sống ở mức độ phong phú, đa sắc màu",
+        "rationale": "Hân hoan tận hưởng tự do, phóng khoáng và tràn đầy nhiệt huyết sống."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "phá tan mọi sự trì trệ cũ kỹ... Thích ứng linh hoạt",
+        "rationale": "Phá bỏ khuôn khổ cũ kỹ để thích nghi linh hoạt với thời cuộc."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Phiêu lưu khám phá... trở thành người tiên phong đón đầu xu hướng thời đại",
+        "rationale": "Dám mạo hiểm đón đầu xu hướng mới, phiêu lưu bứt phá."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Đổi mới tư duy... mở rộng dung lượng tư duy qua các chuyến đi thực tế",
+        "rationale": "Tư duy đổi mới cách mạng, tầm nhìn khoáng đạt toàn cầu."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Sa đà vào lối sống buông thả, tiệc tùng, cờ bạc hoặc tình dục bốc đồng",
+        "rationale": "Hành động buông thả bản năng, sa đọa vào các thú vui tiêu khiển."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "mất phương hướng vì có quá nhiều lựa chọn",
+        "rationale": "Bồn chồn, mất phương hướng cảm xúc trước quá nhiều cám dỗ."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "vội vã phá vỡ các cam kết hôn nhân hoặc hợp đồng quan trọng vì cảm giác thèm muốn tự do nhất thời",
+        "rationale": "Tùy tiện phá vỡ cam kết hợp đồng và hôn nhân vì sự tự do bốc đồng."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "tình dục bốc đồng... buông thả",
+        "rationale": "Mạo hiểm thiếu kiểm soát, đánh cược hạnh phúc vào những thú vui nhất thời."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-6",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "6",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 6",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 6 (Pinnacle 6) là giai đoạn thăng hoa của Hạnh phúc gia đình, Tình yêu thương vị tha, Trách nhiệm xã hội và Năng lực làm đẹp cuộc sống. Đây là chu kỳ trái tim bạn được sưởi ấm, hướng về việc xây dựng tổ ấm bình an, chăm sóc người thân và phụng sự cộng đồng.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "cơ sở kinh doanh phát triển mạnh trong các lĩnh vực giáo dục, y tế, làm đẹp, dịch vụ gia đình... phụng sự cộng đồng",
+        "rationale": "Hành động phụng sự cộng đồng, xây dựng doanh nghiệp nhân văn và chăm sóc gia đình."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Hạnh phúc gia đình, Tình yêu thương vị tha... Hôn nhân hòa thuận, con cái ngoan ngoãn thành đạt",
+        "rationale": "Trái tim chan chứa yêu thương nhân ái, hạnh phúc gia đình đầm ấm viên mãn."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "xây dựng tổ ấm bình an... Vun đắp hạnh phúc gia đình làm gốc",
+        "rationale": "Thiết lập nền móng tổ ấm bình an làm bệ đỡ vững chắc cho cuộc sống."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "chăm sóc tổ ấm chu đáo, phúc lộc sẽ tự nhiên đong đầy",
+        "rationale": "Ưu tiên an toàn, hướng thiện và bảo vệ sự bình an của tổ ấm."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Yêu thương bằng sự thấu hiểu và tin tưởng, không kiểm soát",
+        "rationale": "Trí tuệ thấu hiểu tâm lý, tình yêu thương vị tha không chiếm hữu."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "rơi vào trạng thái ấm ức, tủi thân khi sự hy sinh không được ghi nhận... lo lắng thái quá",
+        "rationale": "Lo lắng thái quá, ấm ức tủi thân khi thấy sự hy sinh không được đền đáp."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "bao bọc kiểm soát con cái hoặc người thân quá mức; ôm đồm mọi trách nhiệm",
+        "rationale": "Bao bọc kiểm soát độc đoán, can thiệp quá mức vào đời tư người thân."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-7",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "7",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 7",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 7 (Pinnacle 7) là chu kỳ đặc biệt mang tính Khai sáng trí tuệ, Nghiên cứu chuyên sâu, Rèn luyện trong thử thách và Thức tỉnh tâm linh. Đây là giai đoạn vũ trụ đưa bạn qua những trải nghiệm thực tế sâu sắc để bạn tôi luyện bản lĩnh, đúc kết tri thức tinh hoa và trở thành người thầy soi đường.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "xuất bản các công trình nghiên cứu, sách triết học hoặc phương pháp trị liệu... tư vấn, chữa lành",
+        "rationale": "Hành động viết sách, công bố nghiên cứu và tư vấn chữa lành tinh thần."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "buông bỏ sự bám chấp vào danh lợi vật chất bề nổi để quay về nuôi dưỡng chiều sâu tâm thức",
+        "rationale": "Tâm hồn trầm tĩnh, buông bỏ cảm xúc danh lợi trần tục để đạt an tịnh."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "đúc kết tri thức tinh hoa và trở thành người thầy soi đường",
+        "rationale": "Hệ thống hóa bài học cuộc đời thành học thuyết tri thức tinh hoa soi đường."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Phần thưởng của Đỉnh 7 là sự thông tuệ và bình an nội tâm vô giá",
+        "rationale": "Né tránh phiêu lưu vật chất bên ngoài, tập trung giữ gìn an bình nội tâm."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Khai sáng trí tuệ, Nghiên cứu chuyên sâu... giác ngộ quy luật vũ trụ... vàng ròng trí tuệ",
+        "rationale": "Đỉnh cao giác ngộ quy luật vũ trụ, trí tuệ uyên bác và thấu triệt chân lý."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "sống khép kín cực đoan",
+        "rationale": "Trì trệ, thu mình sống khép kín cực đoan với thế giới bên ngoài."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Rơi vào hoang mang, cô độc, u uất khi trải qua một vài biến cố thử thách ban đầu; hoài nghi mọi người",
+        "rationale": "U uất, hoang mang, cô độc và hoài nghi người khác sau các biến cố."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "kiêu ngạo trí tuệ coi thường người khác",
+        "rationale": "Kiêu ngạo trí thức, xem thường nhận thức của người bình thường."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-8",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "8",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 8",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 8 (Pinnacle 8) là thời kỳ rực rỡ nhất về Thành công tài chính, Quyền lực lãnh đạo, Quy mô doanh nghiệp lớn và Khẳng định vị thế xã hội. Đây là chu kỳ bạn được trao quyền lực và nguồn lực vật chất khổng lồ để điều hành các công trình lớn và kiến tạo sự thịnh vượng.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Doanh thu bứt phá ngoạn mục; sở hữu hệ thống kinh doanh quy mô lớn; nắm giữ các vị trí điều hành cấp cao",
+        "rationale": "Hành động điều hành quyết đoán quy mô lớn, tạo công ăn việc làm cho hàng trăm người."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "sử dụng tiền bạc và quyền lực để phụng sự xã hội, sự giàu có của bạn sẽ trường tồn",
+        "rationale": "Tâm thế tự tin, lý trí sắc bén và bản lĩnh kiểm soát cảm xúc đỉnh cao."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Chuẩn hóa bộ máy điều hành và quản trị dòng tiền chặt chẽ... Quản trị quy mô lớn",
+        "rationale": "Cấu trúc quản trị tập đoàn chặt chẽ, tối ưu hóa bộ máy và dòng tiền lớn."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "được trao quyền lực và nguồn lực vật chất khổng lồ để điều hành các công trình lớn",
+        "rationale": "Dám chịu trách nhiệm lãnh đạo quy mô lớn và điều phối nguồn vốn khổng lồ."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Kinh doanh trên nền tảng đạo đức: Đảm bảo sự minh bạch, công bằng trong mọi giao dịch kinh tế",
+        "rationale": "Trí tuệ kinh doanh bậc thầy kết hợp với nhận thức sâu sắc đạo đức kinh tế."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "mải mê kiếm tiền mà đánh mất sức khỏe và hạnh phúc gia đình",
+        "rationale": "Cuồng công việc quá mức làm suy kiệt sức khỏe và đổ vỡ hạnh phúc."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "độc đoán, hách dịch, chèn ép cấp dưới",
+        "rationale": "Lạnh lùng, độc đoán và chèn ép người dưới quyền."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Lòng tham vô đáy, làm ăn gian lận hoặc bất chấp đạo đức dẫn đến sự sụp đổ nhân quả",
+        "rationale": "Lòng tham làm mục ruỗng cấu trúc doanh nghiệp, dẫn tới sụp đổ nhân quả."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "bất chấp đạo đức",
+        "rationale": "Mạo hiểm liều lĩnh bất chấp luật pháp và đạo đức vì lòng tham."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-9",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "9",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 9",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 9 (Pinnacle 9) mở ra chu kỳ của Lòng bao dung vĩ đại, Lý tưởng nhân văn cao cả và Sứ mệnh phụng sự cộng đồng. Năng lượng của Đỉnh 9 đưa bạn vượt ra khỏi những toan tính cá nhân nhỏ hẹp để cống hiến tài năng cho các dự án văn hóa, giáo dục, môi trường và nhân đạo mang tầm vóc xã hội.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Khởi xướng hoặc lãnh đạo các tổ chức phi lợi nhuận, dự án giáo dục cộng đồng có sức lan tỏa rộng khắp",
+        "rationale": "Hành động cống hiến lãnh đạo các dự án giáo dục, môi trường và nhân đạo xã hội."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Lòng bao dung vĩ đại, Lý tưởng nhân văn cao cả... tâm hồn rộng mở, thanh thản và đạt được sự mãn nguyện tinh thần tối thượng",
+        "rationale": "Xúc cảm bao la, tình yêu thương nhân loại và sự mãn nguyện tinh thần tối thượng."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "xây dựng mô hình doanh nghiệp xã hội hoặc quỹ thiện nguyện có cơ chế quản trị tài chính minh bạch",
+        "rationale": "Thiết lập cấu trúc doanh nghiệp xã hội và quỹ thiện nguyện minh bạch bền vững."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Giữ gìn nền tảng kinh tế gia đình vững vàng trước khi gánh vác việc xã hội",
+        "rationale": "Bảo đảm an toàn nền tảng kinh tế gia đình trước khi mạo hiểm việc xã hội."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "kết hợp 'Trái tim ấm áp' với 'Cái đầu lạnh thực tế'... đỉnh cao của sự hoàn thiện nhân cách",
+        "rationale": "Trí tuệ nhân cách hoàn thiện, tư duy thực tế kết hợp lý tưởng nhân văn cao cả."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "cho đi thiếu trí tuệ dẫn đến kiệt quệ tài chính cá nhân",
+        "rationale": "Hành động cho đi mù quáng làm kiệt quệ tài chính bản thân."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "rơi vào cảm giác ấm ức, cay đắng khi sự hy sinh bị kẻ xấu lợi dụng",
+        "rationale": "Ấm ức cay đắng khi lòng tốt và sự hy sinh bị lợi dụng."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "kiệt quệ tài chính cá nhân",
+        "rationale": "Mạo hiểm hy sinh tài chính cá nhân mà thiếu phương án dự phòng."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Quá lý tưởng hóa viển vông, xa rời thực tế",
+        "rationale": "Tư duy không tưởng viển vông, thiếu tính khả thi trong đời sống thực tế."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-10",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "10",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 10",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Số 10 (Pinnacle 10 - Số 1 kết hợp sức mạnh vô hạn của Số 0) là đỉnh cao đặc biệt của Sự độc lập toàn diện, Năng lực thích ứng siêu việt và Khẳng định vị thế đẳng cấp. Bạn bước lên đỉnh cao này với phong thái ung dung tự tại, tự làm chủ 100% số phận và có khả năng xoay chuyển mọi tình thế bất lợi thành cơ hội rực rỡ.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "xoay chuyển mọi tình thế bất lợi thành cơ hội rực rỡ... tự làm chủ 100% số phận",
+        "rationale": "Hành động đĩnh đạc, xoay chuyển tình thế ngoạn mục và dẫn đầu xu thế thời đại."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "phong thái ung dung tự tại... sự tự tin tuyệt đối và sức mạnh phục hồi vô hạn",
+        "rationale": "Tâm thế ung dung tự tại, tự tin tuyệt đối và không hề dao động."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Đạt được sự tự chủ hoàn toàn về tài chính, tư duy và phong cách sống",
+        "rationale": "Thiết lập trật tự tự chủ hoàn hảo, độc lập tài chính và phong cách sống đĩnh đạc."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "linh hoạt chuyển hóa trong mọi hoàn cảnh khủng hoảng",
+        "rationale": "Bản lĩnh đối diện khủng hoảng, biến nguy cơ thành cơ hội lớn."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Năng lực thích ứng siêu việt... Số 10 là số hoàn hảo của sự tiến hóa trong hệ thống Pythagoras",
+        "rationale": "Trí tuệ tiến hóa siêu việt, linh hoạt thích ứng không giới hạn với thời đại."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "ngủ quên trên chiến thắng mà đánh mất tinh thần học hỏi",
+        "rationale": "Tự mãn, ngủ quên trên chiến thắng và ngưng hành động đổi mới."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "cô lập bản thân trên đỉnh cao danh vọng",
+        "rationale": "Cô độc, xa cách quần chúng trên đỉnh cao quyền lực."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Rơi vào sự tự cao tự đại, xem thường người khác",
+        "rationale": "Tự cao tự đại, khinh thường trí tuệ và nỗ lực của người khác."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "way-11",
+    "indicatorKey": "way",
+    "indicatorNameVi": "Đỉnh cao Kim tự tháp",
+    "numberValue": "11",
+    "title": "Giải Mã Cơ Hội Đột Phá Trên Đỉnh Cao Kim Tự Tháp Số 11",
+    "sourceSnippet": "Đỉnh cao Kim tự tháp mang Master Số 11 (Pinnacle 11) là đỉnh cao thiêng liêng và quyền năng nhất về mặt tâm thức (thường xuất hiện ở Đỉnh 3 hoặc Đỉnh 4). Đây là giai đoạn Thức tỉnh tâm linh cực đại, Đánh thức trực giác siêu nhiên và Sứ mệnh trở thành ngọn hải đăng soi sáng tinh thần cho nhân loại.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "trở thành nhà khai vấn (Master Coach), nhà lãnh đạo tinh thần hoặc nhà trị liệu tâm lý xuất chúng",
+        "rationale": "Hành động khai vấn, giảng dạy tâm linh và trị liệu tâm lý chuyển hóa con người."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "kênh dẫn truyền ánh sáng và tình yêu của vũ trụ... Phụng sự bằng tình yêu vô điều kiện",
+        "rationale": "Tình yêu thương vô điều kiện, rung động thuần khiết thiêng liêng."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Thực hành tiếp đất (Grounding) mỗi ngày: Đi chân trần trên cỏ, hòa mình vào thiên nhiên để cân bằng",
+        "rationale": "Thiết lập kỷ luật thực hành tiếp đất hàng ngày để bảo vệ cấu trúc năng lượng."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Tránh xa những môi trường độc hại, tiêu cực và thị phi",
+        "rationale": "Cẩn trọng thanh lọc môi trường sống, né tránh rủi ro ô nhiễm năng lượng."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Thức tỉnh tâm linh cực đại, Đánh thức trực giác siêu nhiên... Trực giác nhạy bén nhìn thấu bản chất sự việc",
+        "rationale": "Đỉnh cao trực giác siêu nhiên, thấu suốt tâm can và giác ngộ tâm linh sâu sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "rơi vào trầm cảm, hoảng loạn nếu không thực hành tiếp đất (Grounding) tốt",
+        "rationale": "Hoảng loạn, tê liệt hành động do mất cân bằng tiếp đất."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Căng thẳng thần kinh cực độ (Hyper-sensitivity) do tiếp nhận quá nhiều sóng năng lượng",
+        "rationale": "Căng thẳng thần kinh cực độ, quá nhạy cảm trước năng lượng tiêu cực xung quanh."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -2,
+        "evidenceQuote": "ảo tưởng tâm linh, tự phong mình là đấng cứu thế",
+        "rationale": "Ảo tưởng tâm linh tự phong, hoang tưởng quyền năng và ngạo mạn tâm thức."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

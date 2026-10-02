@@ -1,0 +1,209 @@
+[
+  {
+    "id": "passion-1",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "1",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 1",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 1 đạt trạng thái dòng chảy (Flow) thăng hoa nhất khi được tự mình khởi xướng một dự án mới, tự do đưa ra các quyết định chiến lược độc lập, tham gia các môn thể thao đối kháng cá nhân hoặc sáng tạo những giải pháp tiên phong chưa từng có tiền lệ. Bạn quên hết thời gian khi được đứng ở vị trí dẫn đầu và tự mình làm chủ toàn bộ cuộc chơi.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự mình khởi xướng một dự án mới, tự do đưa ra các quyết định chiến lược độc lập", "rationale": "Cháy bỏng ngọn lửa tiên phong, luôn muốn tự mình khởi sự và dẫn đầu cuộc chơi." },
+      "EMO": { "score": 0, "evidenceQuote": "lãnh đạo bằng sự trao quyền, rèn luyện sự khiêm nhường", "rationale": "Học cách khiêm nhường và lắng nghe đồng đội cùng phát triển." },
+      "STR": { "score": 1, "evidenceQuote": "cạnh tranh với chính mình, vượt qua giới hạn của bản thân", "rationale": "Thiết lập kỷ luật tự thân để liên tục chinh phục các đỉnh cao mới." },
+      "RSK": { "score": 2, "evidenceQuote": "sáng tạo những giải pháp tiên phong chưa từng có tiền lệ, làm chủ toàn bộ cuộc chơi", "rationale": "Dũng cảm khai phá những con đường chưa ai từng đi, dám chịu trách nhiệm tối cao." },
+      "INT": { "score": 1, "evidenceQuote": "ngọn lửa được thắp sáng bởi sự tự chủ và tính tiên phong", "rationale": "Ý thức sâu sắc về thiên bẩm dẫn đường và kiến tạo con đường riêng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hiếu thắng bằng mọi giá, đàn áp ý kiến", "rationale": "Hành động cực đoan, lấn át người khác vì tham vọng vị trí số 1." },
+      "EMO": { "score": -2, "evidenceQuote": "độc đoán, gia trưởng, đàn áp ý kiến đóng góp của đồng đội", "rationale": "Cái tôi áp bức, coi nhẹ tình cảm và sự đóng góp của tập thể." },
+      "STR": { "score": -1, "evidenceQuote": "khó lòng chấp nhận bất kỳ thất bại nào", "rationale": "Cố chấp, cay cú khi gặp thất bại làm xáo trộn tiến trình công việc." },
+      "RSK": { "score": 1, "evidenceQuote": "hiếu thắng bằng mọi giá", "rationale": "Mạo hiểm liều lĩnh vì không chấp nhận thua cuộc trước bất kỳ ai." },
+      "INT": { "score": -1, "evidenceQuote": "rơi vào cái bẫy của sự kiêu ngạo cá nhân", "rationale": "Tự mãn, ngạo mạn làm che khuất các điểm mù chết người." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-2",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "2",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 2",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 2 đạt trạng thái dòng chảy (Flow) tuyệt đối khi được đắm chìm trong việc lắng nghe, thấu cảm, xoa dịu nỗi đau tâm lý của người khác, kiến tạo sự hòa hợp cho các mối quan hệ, hoặc khi thưởng thức và sáng tạo các loại hình nghệ thuật tinh tế như âm nhạc, hội họa, thơ ca.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "lắng nghe với tâm thế của một người quan sát thông thái", "rationale": "Điềm tĩnh lắng nghe, hòa giải xung đột bằng sự nhẹ nhàng tĩnh lặng." },
+      "EMO": { "score": 2, "evidenceQuote": "lắng nghe, thấu cảm, xoa dịu nỗi đau tâm lý, kiến tạo sự hòa hợp cho các mối quan hệ", "rationale": "Dạt dào lòng trắc ẩn, tìm thấy hạnh phúc thuần khiết khi chữa lành cảm xúc cho người khác." },
+      "STR": { "score": 1, "evidenceQuote": "xây dựng ranh giới lành mạnh của lòng trắc ẩn, đàm phán Win-Win", "rationale": "Thiết lập ranh giới cảm xúc rõ ràng và nguyên tắc bảo vệ năng lượng cá nhân." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "sáng tạo nghệ thuật tinh tế như âm nhạc, hội họa, thơ ca", "rationale": "Trực giác nghệ thuật và khả năng cảm thụ cái đẹp vô cùng sâu sắc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "né tránh xung đột một cách nhu nhược khiến quyền lợi bản thân bị xâm phạm", "rationale": "Thoái lui nhu nhược, không dám đứng lên bảo vệ quyền lợi chính đáng." },
+      "EMO": { "score": -2, "evidenceQuote": "nhạy cảm quá mức, dễ bị tổn thương tâm lý, rơi vào trạng thái lụy tình", "rationale": "Tâm lý yếu đuối, lụy tình và quá lệ thuộc vào sự công nhận của người khác." },
+      "STR": { "score": -1, "evidenceQuote": "tự biến mình thành bãi rác cảm xúc cho người khác", "rationale": "Mất ranh giới bảo vệ, để cảm xúc tiêu cực của ngoại cảnh xâm thực." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị từ chối, né tránh xung đột", "rationale": "Nỗi sợ làm mất lòng khiến bản thân cam chịu thiệt thòi bất công." },
+      "INT": { "score": -1, "evidenceQuote": "kiệt quệ cảm xúc bởi nỗi buồn của người khác", "rationale": "Trực giác bị ô nhiễm bởi năng lượng u uất hấp thụ từ người xung quanh." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-3",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "3",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 3",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 3 đạt trạng thái dòng chảy (Flow) ngập tràn hưng phấn khi được viết lách, kể chuyện, thuyết trình trên sân khấu, diễn xuất, sáng tạo nội dung truyền thông, thiết kế mỹ thuật hoặc tổ chức các sự kiện mang lại tiếng cười và niềm vui cho cộng đồng. Bạn như được tiếp thêm sinh lực khi thấy người khác cười rạng rỡ vì mình.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cam kết kỷ luật sáng tạo, viết lách hoặc sáng tác ít nhất 45 phút mỗi ngày", "rationale": "Chủ động nuôi dưỡng năng khiếu sáng tác và duy trì nhịp độ làm việc nghiêm túc." },
+      "EMO": { "score": 2, "evidenceQuote": "mang lại tiếng cười và niềm vui cho cộng đồng, định hướng ngôn từ nâng đỡ tâm hồn", "rationale": "Hào hứng sẻ chia, dùng năng lượng tươi vui và khiếu hài hước để sưởi ấm người khác." },
+      "STR": { "score": 1, "evidenceQuote": "kiên trì hoàn thiện từng dự án sáng tạo trước khi bắt đầu ý tưởng mới", "rationale": "Rèn luyện tính kỷ luật để đóng gói trọn vẹn từng tác phẩm nghệ thuật." },
+      "RSK": { "score": 1, "evidenceQuote": "thuyết trình trên sân khấu, diễn xuất, biểu diễn trước công chúng", "rationale": "Tự tin bước ra ánh đèn sân khấu, bản lĩnh cuốn hút đám đông bằng tài năng." },
+      "INT": { "score": 2, "evidenceQuote": "kênh kết nối trực tiếp với suối nguồn sáng tạo và niềm vui sống của vũ trụ", "rationale": "Khả năng thấu thị vẻ đẹp và nguồn cảm hứng nghệ thuật bất tận." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "nói nhiều hơn làm, lãng phí tài năng sáng tạo", "rationale": "Ba hoa khoác lác, nói nhiều nhưng hành động thực tế không có bao nhiêu." },
+      "EMO": { "score": -1, "evidenceQuote": "nói chuyện thị phi, sa đà vào lối sống bề nổi", "rationale": "Dùng sự hoạt ngôn vào việc đưa chuyện, làm giảm sút uy tín cá nhân." },
+      "STR": { "score": -2, "evidenceQuote": "chi tiêu phung phí vào mua sắm tiệc tùng, bốc đồng làm việc theo cảm tính", "rationale": "Vung tay quá trán, hỗn loạn tài chính và thiếu kỷ luật làm việc nghiêm túc." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng làm việc theo cảm tính", "rationale": "Hành xử bột phát theo hứng nhất thời dẫn đến những rủi ro đáng tiếc." },
+      "INT": { "score": -1, "evidenceQuote": "lãng phí tài năng vào những thú vui vô bổ", "rationale": "Trí tuệ bị phân tán, lãng quên mục đích sáng tạo cao cả ban đầu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-4",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "4",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 4",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 4 đạt trạng thái dòng chảy (Flow) sâu sắc khi được sắp xếp dữ liệu ngăn nắp, lập kế hoạch chi tiết, sửa chữa đồ đạc, tối ưu hóa quy trình vận hành, xây dựng hệ thống quản lý chuẩn mực hoặc nghiên cứu các cấu trúc kỹ thuật, kiến trúc phức tạp.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "sửa chữa đồ đạc, tối ưu hóa quy trình vận hành, thực thi chi tiết", "rationale": "Tỉ mỉ, cần mẫn bắt tay vào giải quyết và chuẩn hóa từng công việc cụ thể." },
+      "EMO": { "score": 0, "evidenceQuote": "tập buông lỏng kiểm soát, dành thời gian thư giãn cùng gia đình", "rationale": "Học cách mở lòng sẻ chia và kết nối cảm xúc với người thân." },
+      "STR": { "score": 2, "evidenceQuote": "sắp xếp dữ liệu ngăn nắp, lập kế hoạch chi tiết, xây dựng hệ thống quản lý chuẩn mực", "rationale": "Say mê trật tự, chuẩn hóa cấu trúc tổ chức và tối ưu hóa hệ thống vận hành." },
+      "RSK": { "score": -1, "evidenceQuote": "khuôn khổ an toàn, hiệu quả thực tế", "rationale": "Ưu tiên độ tin cậy và sự bền vững, hạn chế tối đa các rủi ro không cần thiết." },
+      "INT": { "score": 1, "evidenceQuote": "nghiên cứu các cấu trúc kỹ thuật, kiến trúc phức tạp", "rationale": "Tư duy logic kỹ thuật sâu sắc, nắm vững bản chất cấu trúc cơ khí/hệ thống." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "soi xét tiểu tiết làm chậm tiến độ chung", "rationale": "Quá sa đà vào chi tiết vụn vặt làm nghẽn tiến độ dự án lớn." },
+      "EMO": { "score": -1, "evidenceQuote": "khó tính soi mói lỗi nhỏ của người khác, áp lực cho đồng nghiệp", "rationale": "Khắc nghiệt, hay săm soi khiến các mối quan hệ xung quanh bị căng thẳng." },
+      "STR": { "score": 2, "evidenceQuote": "cứng nhắc, bảo thủ, ám ảnh cưỡng chế về sự hoàn hảo (Perfectionism)", "rationale": "Kỷ luật biến chất thành sự hà khắc giáo điều, bóp nghẹt tính linh hoạt." },
+      "RSK": { "score": -1, "evidenceQuote": "bảo thủ bám víu vào lề lối cũ", "rationale": "Sợ hãi cái mới, cố chấp duy trì những quy tắc lỗi thời." },
+      "INT": { "score": -1, "evidenceQuote": "bủn xỉn bám víu vào vật chất, biến mình thành nô lệ của công việc (workaholic)", "rationale": "Cuồng công việc, để tư duy vật chất che mờ đời sống tâm hồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-5",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "5",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 5",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 5 đạt trạng thái dòng chảy (Flow) mãnh liệt khi được xách ba lô lên đường du lịch khám phá, trải nghiệm các nền văn hóa mới lạ, thử nghiệm các công nghệ tiên phong, tham gia thể thao mạo hiểm hoặc kết nối mạng lưới giao lưu quốc tế đa dạng.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "xách ba lô du lịch khám phá, thử nghiệm công nghệ tiên phong, đổi mới có định hướng", "rationale": "Năng động chuyển dịch, không ngừng tìm tòi và thử nghiệm những giải pháp mới." },
+      "EMO": { "score": 1, "evidenceQuote": "kết nối mạng lưới giao lưu quốc tế đa dạng, trải nghiệm văn hóa", "rationale": "Cởi mở, thân thiện, dễ dàng hòa nhập vào mọi môi trường đa văn hóa." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật tự thân làm bệ đỡ cho tự do, thói quen cốt lõi bất biến", "rationale": "Thiết lập nền tảng kỷ luật vững chắc để tự do trải nghiệm an toàn." },
+      "RSK": { "score": 2, "evidenceQuote": "tham gia thể thao mạo hiểm, năng lượng phiêu lưu dấn thân", "rationale": "Thích thú trước cảm giác chinh phục mạo hiểm và vượt qua giới hạn bản thân." },
+      "INT": { "score": 1, "evidenceQuote": "biến trải nghiệm thành tri thức, chia sẻ bài học văn hóa", "rationale": "Đúc kết vốn sống thực tiễn phong phú thành tri thức và góc nhìn độc đáo." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cả thèm chóng chán, trốn chạy trách nhiệm", "rationale": "Đứng núi này trông núi nọ, bỏ dở công việc khi vừa qua cơn hào hứng ban đầu." },
+      "EMO": { "score": -1, "evidenceQuote": "thiếu sự cam kết lâu dài", "rationale": "Hời hợt trong tình cảm, e ngại sự gắn bó sâu sắc và bền lâu." },
+      "STR": { "score": -2, "evidenceQuote": "thói quen kích thích buông thả (nghiện ngập, cờ bạc, bốc đồng)", "rationale": "Sụp đổ hoàn toàn kỷ luật sống vì buông thả theo những cám dỗ độc hại." },
+      "RSK": { "score": 2, "evidenceQuote": "sa đà mạo hiểm buông thả vô lối", "rationale": "Liều lĩnh mù quáng, đánh đổi sức khỏe và an toàn vì cảm giác mạnh." },
+      "INT": { "score": -1, "evidenceQuote": "sống trong sự bấp bênh vô định", "rationale": "Tâm trí xáo động, không tìm thấy điểm tựa ý nghĩa thực sự của cuộc sống." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-6",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "6",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 6",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 6 đạt trạng thái dòng chảy (Flow) an lành nhất khi được tự tay nấu những bữa ăn ấm cúng, trang hoàng nhà cửa đẹp đẽ, chăm sóc hoa cỏ, cố vấn tâm lý cho bạn bè, hoặc tổ chức các hoạt động bảo trợ, thiện nguyện chăm lo cho trẻ em và người già yếu thế.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tự tay nấu bữa ăn ấm cúng, trang hoàng nhà cửa, thực hành tự chăm sóc", "rationale": "Tận tụy chăm chút từng chi tiết để kiến tạo không gian sống yêu thương." },
+      "EMO": { "score": 2, "evidenceQuote": "cố vấn tâm lý cho bạn bè, thiện nguyện chăm lo cho trẻ em và người già, dòng chảy an lành", "rationale": "Suối nguồn yêu thương ấm áp, luôn tìm thấy niềm an lạc khi phụng sự người khác." },
+      "STR": { "score": 1, "evidenceQuote": "thương mại hóa năng khiếu thẩm mỹ tinh tế chuyên nghiệp", "rationale": "Đưa gu thẩm mỹ tinh tế vào quy trình thiết kế và dịch vụ khách hàng chuẩn mực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "yêu thương như một món quà tự nhiên không kèm điều kiện", "rationale": "Trực giác thấu cảm và bài học yêu thương chân chính vô điều kiện." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "can thiệp quá sâu vào đời tư của người khác", "rationale": "Bao đồng, xâm phạm ranh giới cá nhân của người thân dưới danh nghĩa lo lắng." },
+      "EMO": { "score": -2, "evidenceQuote": "bao bọc kiểm soát ngột ngạt, cằn nhằn áp đặt, ấm ức đóng vai nạn nhân", "rationale": "Yêu thương độc hại, dùng sự hy sinh để thao túng và trách móc người khác." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm soát ngột ngạt", "rationale": "Áp đặt trật tự và quy chuẩn sinh hoạt cá nhân lên mọi người xung quanh." },
+      "RSK": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực thêu dệt kịch bản lo âu", "rationale": "Tâm trí thường trực nỗi sợ hãi viển vông về sự an nguy của người thân." },
+      "INT": { "score": -1, "evidenceQuote": "ấm ức khi sự hy sinh không được đền đáp", "rationale": "Bị sự ích kỷ ngầm che mờ, không nhận ra lỗi sai trong cách yêu thương." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-7",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "7",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 7",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 7 đạt trạng thái dòng chảy (Flow) sâu thẳm nhất khi được một mình đọc những cuốn sách chuyên khảo uyên bác, nghiên cứu khoa học, chiêm nghiệm các quy luật vũ trụ/tâm linh, phân tích thuật toán dữ liệu phức tạp hoặc hòa mình vào không gian tĩnh lặng của thiên nhiên.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "đưa tri thức vào ứng dụng thực tế, chuyển hóa nghiên cứu thành giải pháp", "rationale": "Chủ động chuyển hóa những phát kiến khoa học vào phục vụ đời sống." },
+      "EMO": { "score": 0, "evidenceQuote": "rèn luyện sự ấm áp trong giao tiếp đời thường", "rationale": "Học cách mở lòng gắn kết với những câu chuyện đời thường giản dị." },
+      "STR": { "score": 1, "evidenceQuote": "phân tích thuật toán dữ liệu phức tạp, nghiên cứu chuyên khảo", "rationale": "Kỷ luật tư duy logic cao độ, phân tích dữ liệu bài bản và có hệ thống." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "chiều sâu trí tuệ vô biên, chiêm nghiệm quy luật vũ trụ/tâm linh, tìm kiếm chân lý", "rationale": "Đỉnh cao minh triết, say mê giải mã các bí ẩn vũ trụ và quy luật nhân sinh." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "sống ẩn dật cô độc", "rationale": "Thu mình tách biệt khỏi xã hội, không chịu hành động tương tác với thực tại." },
+      "EMO": { "score": -2, "evidenceQuote": "hoài nghi cay đắng, kiêu ngạo trí tuệ coi thường người khác, khó kết nối tình cảm", "rationale": "Lạnh lùng, khinh bạc người đời khiến các mối quan hệ bị đóng băng hoàn toàn." },
+      "STR": { "score": -1, "evidenceQuote": "xa rời thực tế đời sống", "rationale": "Mất kết nối với các quy chuẩn sinh hoạt và công việc thực tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "kiêu ngạo trí tuệ coi thường người khác", "rationale": "Trí tuệ biến chất thành sự ngạo mạn, bế tắc trong chính sự cô độc của mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-8",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "8",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 8",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 8 đạt trạng thái dòng chảy (Flow) mạnh mẽ nhất khi được lập chiến lược kinh doanh, đàm phán những thương vụ lớn hàng tỷ đồng, đầu tư tài chính, điều hành tổ chức quy mô lớn, mở rộng quy mô thị trường và chinh phục những đỉnh cao thành công vật chất.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lập chiến lược kinh doanh, đàm phán thương vụ lớn hàng tỷ đồng, điều hành quy mô lớn", "rationale": "Quyết đoán, bản lĩnh thương trường đỉnh cao, làm chủ các cuộc đàm phán lớn." },
+      "EMO": { "score": 1, "evidenceQuote": "tâm thế phụng sự và kinh doanh đạo đức, trích quỹ phúc lợi thiện nguyện", "rationale": "Dung hòa tham vọng kinh tế với đạo đức và tinh thần trách nhiệm xã hội." },
+      "STR": { "score": 2, "evidenceQuote": "quản trị tài sản quy mô lớn, kinh doanh trên nền tảng chính trực", "rationale": "Tổ chức đế chế kinh tài bài bản, minh bạch và quản trị rủi ro dòng vốn xuất sắc." },
+      "RSK": { "score": 2, "evidenceQuote": "chinh phục những đỉnh cao thành công vật chất, thương vụ lớn", "rationale": "Dám nghĩ lớn, bản lĩnh đứng trước những cơ hội đầu tư tài chính tầm cỡ." },
+      "INT": { "score": 1, "evidenceQuote": "tiền bạc và quyền lực là công cụ để tạo ra giá trị cho xã hội", "rationale": "Nhận thức sáng suốt về bản chất dòng chảy vật chất là để phụng sự nhân sinh." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lạm dụng quyền lực thao túng người khác", "rationale": "Độc đoán cưỡng ép, dùng sức mạnh kinh tế để đàn áp đối tác và cấp dưới." },
+      "EMO": { "score": -2, "evidenceQuote": "tham lam vô độ, thực dụng tàn nhẫn, coi nhẹ tình cảm gia đình", "rationale": "Máu lạnh, coi thường giá trị đạo đức và tình thân trước lợi ích tiền bạc." },
+      "STR": { "score": -1, "evidenceQuote": "biến thành người nghiện công việc", "rationale": "Lệch lạc lối sống, để công việc chiếm đoạt toàn bộ thời gian và sức khỏe." },
+      "RSK": { "score": 2, "evidenceQuote": "sử dụng đòn bẩy tài chính quá mức liều lĩnh", "rationale": "Đánh bạc kinh tế với tham vọng ngông cuồng, dễ dẫn tới nguy cơ phá sản." },
+      "INT": { "score": -2, "evidenceQuote": "tham lam vô độ làm tha hóa tâm can", "rationale": "Mất hết sự thanh liêm và tỉnh thức, biến thành tù nhân của lòng tham." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "passion-9",
+    "indicatorKey": "passion",
+    "indicatorNameVi": "Đam Mê Ẩn Giấu",
+    "numberValue": "9",
+    "title": "Ngọn Lửa Sáng Tạo Của Con Số Đam Mê Ẩn Giấu 9",
+    "sourceSnippet": "Người mang Con số Đam mê Ẩn giấu 9 đạt trạng thái dòng chảy (Flow) cao cả nhất khi được dấn thân vào các dự án cứu trợ nhân đạo, bảo vệ môi trường toàn cầu, giảng dạy khai phóng nhận thức, tổ chức các hoạt động nghệ thuật vì cộng đồng hoặc đứng lên đấu tranh cho lẽ phải và công lý xã hội.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "dấn thân vào các dự án cứu trợ nhân đạo, bảo vệ môi trường, đấu tranh cho lẽ phải", "rationale": "Hăng say hành động quả cảm vì cộng đồng, bảo vệ công lý và kẻ yếu thế." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu nhân loại không biên giới, ngọn hải đăng của lòng vị tha", "rationale": "Trái tim nhân ái bao la, tìm thấy hạnh phúc tối thượng khi nâng đỡ cuộc đời." },
+      "STR": { "score": 1, "evidenceQuote": "xây dựng nền tảng tài chính cá nhân ổn định, bắt đầu phụng sự từ gia đình nhỏ", "rationale": "Thiết lập hậu phương vững chắc và kỷ luật thực tế để phụng sự bền lâu." },
+      "RSK": { "score": 1, "evidenceQuote": "đứng lên đấu tranh cho lẽ phải và công lý xã hội", "rationale": "Không ngần ngại đương đầu với cường quyền để bảo vệ công lý nhân văn." },
+      "INT": { "score": 2, "evidenceQuote": "giảng dạy khai phóng nhận thức, giúp đỡ có chọn lọc và trí tuệ", "rationale": "Trí tuệ nhân đạo khai sáng, hướng dẫn phương pháp giúp tha nhân tự lập." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm việc bao đồng ngoài xã hội mà bỏ bê gia đình nhỏ", "rationale": "Hành động thiếu cân bằng, lo việc thiên hạ nhưng xao nhãng người thân." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm giác thất vọng cay đắng khi lòng tốt bị lợi dụng", "rationale": "Ấm ức dằn vặt khi lòng tốt trao đi không được trân trọng đúng mực." },
+      "STR": { "score": -1, "evidenceQuote": "bỏ bê gia đình nhỏ, thiếu nền tảng tài chính ổn định", "rationale": "Bất ổn cuộc sống gia đình vì lý tưởng hóa việc công ích." },
+      "RSK": { "score": -1, "evidenceQuote": "lý tưởng hóa viển vông xa rời thực tế", "rationale": "Mộng mơ không có cơ sở thực tế, dễ gặp thất bại trong khâu triển khai." },
+      "INT": { "score": -1, "evidenceQuote": "giúp đỡ thiếu trí tuệ nuông chiều sự ỷ lại", "rationale": "Lòng tốt mù quáng vô tình tiếp tay cho thói dựa dẫm của người khác." }
+    },
+    "overallConfidence": 0.95
+  }
+]

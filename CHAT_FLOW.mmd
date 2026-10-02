@@ -1,0 +1,99 @@
+mindmap
+  root((Luồng Chat hiện tại))
+    Hiện trạng nối UI
+      API classify và agent đã tồn tại
+      Chưa tìm thấy lời gọi hai API trong app hoặc components
+      Smoke test minh họa chuỗi classify rồi agent
+      Smoke test tự tính chỉ số và gửi sample Tarot cards
+      Agent không tự rút Tarot cards
+    Bước 1: POST api/chat/classify
+      Đầu vào
+        message
+        profiles
+      Bộ lọc nhanh
+        Câu vô nghĩa hoặc spam
+          intent trash
+          Không Tarot, không chỉ số
+          Trả replyText hướng dẫn đặt câu hỏi
+      Nhánh hai hồ sơ
+        intent love_match
+        mode compatibility
+        Không gọi model phân loại
+        Không Tarot
+      Nhánh một hồ sơ
+        Model phân loại ý định và chọn tối đa 5 chỉ số
+        Provider ưu tiên Groq với gpt-oss-20b
+        Nếu thiếu Groq dùng provider cascade
+        JSON lỗi hoặc model lỗi chuyển sang phân loại keyword
+      Taxonomy và spread
+        two_choices -> two-options
+        relationship -> relationship
+        timing_trajectory -> timeline khi cần đào sâu, nếu không three-card
+        holistic_analysis -> celtic-cross
+        core_personality -> không Tarot
+        daily_guidance -> single
+        where_to_go -> single
+        general -> single
+        trash -> không Tarot
+        love_match -> gán tự động cho hai hồ sơ
+      Chuẩn hóa quyết định
+        Intent không hợp lệ thành general
+        Spread và cardCount được suy ra từ cấu hình server
+        Chỉ nhận indicator keys hỗ trợ, bỏ trùng, tối đa 5
+        Fallback chọn intent theo từ khóa và indicator mặc định
+      Phản hồi decision
+        mode, intent, spreadId, cardCount
+        needsTarot, targetIndicators, thoughtProcess
+    Bước 2: Phía gọi chuẩn bị dữ liệu
+      Tính hoặc lấy indicator theo targetIndicators
+      Chuẩn bị tarotCards nếu decision cần Tarot
+      Chuẩn bị placeContext nếu tìm địa điểm
+      Gửi message, decision, profiles, indicators, tarotCards, placeContext cho agent
+      Trong source hiện tại bước này chỉ thấy rõ ở smoke test
+    Bước 3: POST api/chat/agent
+      Kiểm tra trash lần nữa
+        Nếu trash trả lời ngay, không gọi LLM
+      Chọn hồ sơ và dữ liệu đầu vào
+        Chuẩn hóa indicator nhận từ request
+        resolveTargetIndicators từ hồ sơ
+        Lấy knowledge docs theo indicator được chọn
+        Không có tài liệu thì cấm tự luận số học
+      Nhánh where_to_go
+        Cần placeContext hợp lệ
+        DeepSeek tạo truy vấn và xếp hạng
+        VietMap là nguồn tên và địa chỉ thực tế
+        Thiếu vị trí hoặc kết quả thì báo không đủ dữ liệu
+        Trả kết quả xác định, không gọi LLM trả lời chung
+      Nhánh hai hồ sơ
+        Chạy Bazi compatibility engine
+        Xóa drawnCards, không dùng Tarot
+        Tạo kết luận và gửi cho LLM diễn đạt
+      Nhánh two_choices
+        Tạo nội dung so sánh theo vị trí trải bài
+        Không tự tạo tỷ lệ phần trăm
+        Gửi nội dung và ngữ cảnh cho LLM
+      Nhánh không Tarot
+        core_personality hoặc needsTarot false
+        Dựa trên tư liệu knowledge đã truy xuất
+        Thiếu tư liệu thì nói chưa đủ cơ sở
+        Gửi nội dung và dữ liệu cho LLM
+      Nhánh còn lại
+        Gồm relationship, timing, daily, holistic, general
+        Tạo bản mẫu dựa trên cards và vị trí spread
+        Từ khóa ăn uống có mẫu gợi ý bữa ăn
+        Gửi bản mẫu và ngữ cảnh cho LLM
+    Prompt trả lời Chat
+      Ghép câu hỏi, spread, vị trí và lá đã gửi
+      Ghép tài liệu thần số học có căn cứ
+      Couple chỉ dùng Bát Tự và Tử Vi
+      Một hồ sơ dùng Tarot làm lớp diễn giải chính
+      Không khẳng định suy nghĩ riêng tư của người khác
+      Không bịa địa điểm ngoài dữ liệu VietMap
+      Không tự suy luận chỉ số khi thiếu knowledge
+      Yêu cầu tiếng Việt và ba tiêu đề cố định
+      Model lỗi thì dùng fallback đã chuẩn hóa
+    Ranh giới và lưu ý
+      Classifier chọn spread nhưng agent không tự rút bài
+      Chat pipeline khác api/tarot/reading
+      Tarot cards do bên gọi truyền vào agent
+      UI production chưa thấy nối vào hai API này

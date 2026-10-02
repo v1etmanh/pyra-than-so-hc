@@ -1,0 +1,209 @@
+[
+  {
+    "id": "missingNumbers-1",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "1",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 1",
+    "sourceSnippet": "Khi họ tên hoàn toàn thiếu vắng các chữ cái mang giá trị số 1 (A, J, S), bạn mang Bài học Số thiếu 1. Bạn bị thiếu hụt sự tự tin bẩm sinh vào giá trị bản thân, tính quyết đoán độc lập và bản lĩnh tiên phong dám chịu trách nhiệm cá nhân. Nỗi sợ: sợ bị từ chối, sợ bị cô lập khi bày tỏ chính kiến, sợ phải chịu trách nhiệm khi thất bại.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tập ra quyết định độc lập mỗi ngày, đảm nhận 1 đầu việc độc lập", "rationale": "Chủ động rèn luyện tính độc lập tự chủ và dũng cảm chịu trách nhiệm." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "cam kết tự hoàn thành từ A đến Z", "rationale": "Thiết lập tính kỷ luật tự giác trong việc hoàn thành trách nhiệm cá nhân." },
+      "RSK": { "score": 1, "evidenceQuote": "sự tự tin đến từ hành động", "rationale": "Dám bước ra khỏi vỏ ốc rụt rè để tự đứng mũi chịu sào." },
+      "INT": { "score": 1, "evidenceQuote": "tin tưởng tuyệt đối vào trí tuệ và năng lực của chính tôi", "rationale": "Thức tỉnh niềm tin vào giá trị và năng lực nội tại của bản thân." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "dựa dẫm, ỷ lại, e ngại việc phải đứng mũi chịu sào", "rationale": "Tê liệt tính tự chủ, thụ động chờ đợi người khác quyết định thay." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu bản lĩnh dám chịu trách nhiệm", "rationale": "Thoái thác trách nhiệm cá nhân khi đối mặt với thử thách khó khăn." },
+      "RSK": { "score": -2, "evidenceQuote": "nỗi sợ bị từ chối, sợ chịu trách nhiệm khi thất bại", "rationale": "Co cụm sợ hãi, không dám bày tỏ chính kiến trước tập thể." },
+      "INT": { "score": -1, "evidenceQuote": "sợ sâu kín rằng mình không đủ năng lực", "rationale": "Mất niềm tin vào chính mình, tự ti về giá trị bản thân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-2",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "2",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 2",
+    "sourceSnippet": "Khi khuyết con số 2 trong họ tên (thiếu các chữ cái B, K, T), bạn bị thiếu hụt sự kiên nhẫn khi lắng nghe, năng khiếu ngoại giao khéo léo và khả năng thấu hiểu cảm xúc tinh tế của người khác. Bạn có thể vô tình tỏ ra thô lỗ, bốc đồng, cứng nhắc trong ứng xử hoặc gặp rất nhiều khó khăn trong việc làm việc nhóm và giữ gìn các mối quan hệ lâu dài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 2, "evidenceQuote": "thực hành lắng nghe không ngắt lời, nghệ thuật khen ngợi và cảm ơn", "rationale": "Rèn luyện sự thấu cảm tinh tế, học cách kết nối và tôn trọng cảm xúc người khác." },
+      "STR": { "score": 1, "evidenceQuote": "nguyên tắc khoảng dừng 3 giây", "rationale": "Thiết lập quy tắc kiểm soát bản thân để lắng nghe trước khi phản hồi." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "lắng nghe để thấu hiểu chứ không phải tranh luận", "rationale": "Phát triển trực giác cảm nhận tâm tư và nhu cầu của đối phương." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "thô lỗ, bốc đồng, cứng nhắc trong ứng xử, tranh cãi không đáng có", "rationale": "Làm tổn thương các mối quan hệ vì sự thiếu tế nhị và lạnh lùng." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu kiên nhẫn khi lắng nghe", "rationale": "Mất kiểm soát cảm xúc, phá vỡ sự hài hòa trong giao tiếp nhóm." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị xem là yếu đuối nếu nhún nhường, sợ phụ thuộc", "rationale": "Phòng thủ tiêu cực, e ngại việc mở lòng gắn kết chân thành." },
+      "INT": { "score": -1, "evidenceQuote": "khó khăn trong việc giữ gìn mối quan hệ lâu dài", "rationale": "Kém nhạy bén về tâm lý, không nhận ra các rạn nứt tình cảm." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-3",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "3",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 3",
+    "sourceSnippet": "Khi khuyết con số 3 trong họ tên (thiếu các chữ cái C, L, U), bạn bị thiếu hụt khả năng tự do bộc lộ cảm xúc, óc sáng tạo linh hoạt và niềm vui sống lạc quan hồn nhiên. Bạn thường kìm nén tâm tư bên trong, quá khắt khe nghiêm túc với bản thân, khó diễn đạt ý tưởng thành lời nói sinh động và khiến cuộc sống trở nên tẻ nhạt, căng thẳng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tham gia một môn nghệ thuật giải trí, luyện kỹ năng kể chuyện", "rationale": "Chủ động bước ra ngoài để học cách biểu đạt cảm xúc và ý tưởng sáng tạo." },
+      "EMO": { "score": 1, "evidenceQuote": "viết nhật ký xả cảm xúc tự do, đón nhận niềm vui", "rationale": "Giải phóng những cảm xúc đè nén, đón nhận sự hồn nhiên vui tươi." },
+      "STR": { "score": -1, "evidenceQuote": "tháo bỏ chiếc mặt nạ nghiêm trang, không cần tác phẩm phải hoàn hảo", "rationale": "Thả lỏng sự khắt khe cầu toàn để mở đường cho sự ngẫu hứng sáng tạo." },
+      "RSK": { "score": 1, "evidenceQuote": "cho phép bản thân được sống ngây ngô", "rationale": "Dũng cảm thể hiện khía cạnh ngây thơ tự nhiên mà không sợ bị phán xét." },
+      "INT": { "score": 1, "evidenceQuote": "mở lòng đón nhận niềm vui và nghệ thuật", "rationale": "Khơi nguồn trực giác thẩm mỹ và khả năng cảm thụ cái đẹp." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "kìm nén tâm tư bên trong", "rationale": "Ngại giao tiếp, không dám cất lên tiếng nói sáng tạo của mình." },
+      "EMO": { "score": -2, "evidenceQuote": "quá khắt khe nghiêm túc, trải qua giai đoạn u uất, trầm cảm", "rationale": "Đóng băng cảm xúc, biến cuộc sống thành sự ngột ngạt buồn tẻ." },
+      "STR": { "score": 1, "evidenceQuote": "quá khắt khe nghiêm túc với bản thân", "rationale": "Cứng nhắc đến mức tự bóp nghẹt niềm vui và sự ngẫu hứng." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ bị chê bai là kẻ ngớ ngẩn, sợ đứng trên sân khấu", "rationale": "Nỗi sợ đám đông và sợ phán xét khiến bản thân co cụm thu mình." },
+      "INT": { "score": -1, "evidenceQuote": "khiến cuộc sống trở nên tẻ nhạt, căng thẳng", "rationale": "Tâm trí cạn kiệt cảm hứng, mất kết nối với dòng chảy sáng tạo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-4",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "4",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 4",
+    "sourceSnippet": "Khi khuyết con số 4 trong họ tên (thiếu các chữ cái D, M, V), bạn bị thiếu hụt tính kỷ luật tự giác, óc tổ chức ngăn nắp, sự kiên nhẫn làm việc tỉ mỉ và khả năng quản lý tài chính/thời gian thực tế. Bạn thường làm việc theo cảm hứng tùy tiện, ghét sự gò bó của quy trình và gặp khó khăn lớn trong việc duy trì sự ổn định dài hạn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thiết lập kỷ luật từ những thói quen vi mô", "rationale": "Tập trung hành động kiên trì từ những việc nhỏ mỗi ngày." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "quản lý chi tiêu và công việc, quy tắc dọn dẹp, cam kết kỷ luật 21 ngày", "rationale": "Xây dựng nền móng kỷ luật thép, trật tự tổ chức và quản lý ngân sách chuẩn mực." },
+      "RSK": { "score": -1, "evidenceQuote": "ghi chép chính xác 100% dòng tiền", "rationale": "Hạn chế tối đa các rủi ro thất thoát tài chính nhờ sự kiểm soát chặt chẽ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "làm việc theo cảm hứng tùy tiện, khó khăn duy trì dài hạn", "rationale": "Đầu voi đuôi chuột, thiếu sự kiên định để theo đuổi mục tiêu đến cùng." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "thất thoát tiền bạc vì không ghi chép, công việc đổ bể phút chót vì bỏ sót chi tiết", "rationale": "Hỗn loạn hoàn toàn trong quy trình, cẩu thả làm phá vỡ sự nghiệp." },
+      "RSK": { "score": 1, "evidenceQuote": "làm việc tùy tiện, bỏ sót chi tiết", "rationale": "Hành xử vô nguyên tắc làm gia tăng rủi ro và đánh mất uy tín." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-5",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "5",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 5",
+    "sourceSnippet": "Khi khuyết con số 5 trong họ tên (thiếu các chữ cái E, N, W), bạn bị thiếu hụt khả năng thích ứng linh hoạt, tư duy phóng khoáng và lòng dũng cảm bước ra khỏi vùng an toàn. Bạn thường bám víu tuyệt đối vào những thói quen cũ kỹ, sợ hãi sự thay đổi và dễ bị hoảng loạn, bế tắc khi cuộc sống có biến động bất ngờ.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thực hiện 1 điều mới mẻ mỗi tuần, thay đổi thói quen cố hữu", "rationale": "Chủ động làm mới cuộc sống và rèn luyện cơ bắp thích nghi của não bộ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "học cách buông lỏng kiểm soát tương lai", "rationale": "Giảm bớt sự cố chấp cứng nhắc để thích ứng uyển chuyển với hoàn cảnh." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng cảm bước ra khỏi vùng an toàn, đón nhận biến động bất ngờ", "rationale": "Can đảm đối mặt với sự bất định và xem biến cố là cơ hội học hỏi." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy phóng khoáng, từ bỏ lối mòn tư duy cũ", "rationale": "Mở rộng tầm nhìn, thức tỉnh trước quy luật biến dịch không ngừng của vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bám víu tuyệt đối vào những thói quen cũ kỹ", "rationale": "Bảo thủ trì trệ, không chịu chuyển động thích ứng với thời cuộc." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ bị hoảng loạn, bế tắc khi có biến động", "rationale": "Bất an lo sợ trước những tình huống bất ngờ nằm ngoài dự kiến." },
+      "STR": { "score": 1, "evidenceQuote": "bám víu thói quen cũ", "rationale": "Kẹt chặt trong các khuôn mẫu cũ kỹ không còn phù hợp." },
+      "RSK": { "score": -2, "evidenceQuote": "nỗi sợ sự bất định của tương lai, sợ mất mát sự an toàn quen thuộc", "rationale": "Sợ hãi tê liệt, co cụm tuyệt đối trong vùng an toàn hạn hẹp." },
+      "INT": { "score": -1, "evidenceQuote": "sợ bị mất phương hướng khi không có chỉ dẫn cũ", "rationale": "Mất phương hướng khi đối mặt với môi trường mới mẻ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-6",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "6",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 6",
+    "sourceSnippet": "Khi khuyết con số 6 trong họ tên (thiếu các chữ cái F, O, X), bạn bị thiếu hụt tinh thần trách nhiệm đối với tổ ấm gia đình, sự thấu hiểu tình cảm sâu sắc và khả năng chăm sóc, bao bọc người khác một cách chân thành. Bạn có xu hướng trốn tránh các nghĩa vụ hôn nhân, e ngại sự ràng buộc và khó mở rộng tình yêu thương vô điều kiện.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dành thời gian chất lượng cho gia đình, tự tay làm đẹp không gian sống", "rationale": "Hành động phụng sự tổ ấm và thực hiện nghĩa cử chăm sóc thiết thực." },
+      "EMO": { "score": 2, "evidenceQuote": "thấu hiểu tình cảm sâu sắc, chăm sóc bao bọc chân thành, yêu thương hy sinh", "rationale": "Mở rộng trái tim yêu thương vô điều kiện và gắn kết sâu sắc với gia đình." },
+      "STR": { "score": 1, "evidenceQuote": "gác lại cái tôi cá nhân để gánh vác trách nhiệm", "rationale": "Thiết lập ý thức kỷ luật trách nhiệm gia đình và nghĩa vụ hôn nhân." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn nhận trách nhiệm là cơ hội tôi luyện trái tim yêu thương", "rationale": "Thức tỉnh nhận thức về cội nguồn bình an và giá trị thiêng liêng của gia đình." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "trốn tránh các nghĩa vụ hôn nhân", "rationale": "Thoái thác bổn phận chăm lo cho người thân và tổ ấm." },
+      "EMO": { "score": -2, "evidenceQuote": "khó mở rộng tình yêu thương vô điều kiện, vô tâm với gia đình", "rationale": "Lạnh nhạt thờ ơ, gây rạn nứt và đổ vỡ các mối quan hệ ruột thịt." },
+      "STR": { "score": -1, "evidenceQuote": "e ngại sự ràng buộc", "rationale": "Sợ gánh vác trách nhiệm ràng buộc gia đình." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị gánh nặng gia đình đè bẹp sự nghiệp, sợ không đủ khả năng chăm lo", "rationale": "Nỗi sợ cam kết và lo âu không đủ năng lực chu toàn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-7",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "7",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 7",
+    "sourceSnippet": "Khi khuyết con số 7 trong họ tên (thiếu các chữ cái G, P, Y), bạn bị thiếu hụt chiều sâu tư duy triết học, thói quen tự học đào sâu chuyên môn và niềm tin vào các giá trị tâm linh/tinh thần. Bạn có xu hướng sống hời hợt trên bề mặt vật chất, sợ hãi sự cô đơn và ít khi dành thời gian tĩnh lặng để tự soi chiếu tâm thức mình.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "đọc các tác phẩm triết học, tâm lý học ít nhất 30 phút mỗi tuần", "rationale": "Rèn luyện tính kỷ luật tự học và đào sâu nghiên cứu học thuật." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "dành 15 phút tĩnh lặng mỗi ngày, hòa mình vào thiên nhiên, chiêm nghiệm triết học", "rationale": "Đánh thức trực giác sâu sắc, kết nối với suối nguồn trí tuệ và sự bình an nội tại." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "sợ sự cô đơn, luôn phải tìm chỗ ồn ào náo nhiệt để khỏa lấp", "rationale": "Bất an, hoang mang khi phải đối diện với sự tĩnh lặng của chính mình." },
+      "STR": { "score": -1, "evidenceQuote": "lười đọc sách tự học, thiếu chiều sâu chuyên môn", "rationale": "Thiếu sự tập trung kiên trì để tích lũy kiến thức sâu sắc." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ nhìn thẳng vào những góc tối yếu đuối bên trong tâm hồn", "rationale": "Né tránh đối diện với sự thật và sự yếu đuối nội tâm." },
+      "INT": { "score": -2, "evidenceQuote": "sống hời hợt trên bề mặt vật chất, thiếu niềm tin tâm linh/tinh thần", "rationale": "Tư duy thiển cận, mê muội trong thế giới vật chất bề nổi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-8",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "8",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 8",
+    "sourceSnippet": "Khi khuyết con số 8 trong họ tên (thiếu các chữ cái H, Q, Z), bạn bị thiếu hụt tư duy tài chính sắc sảo, sự nhạy bén thương trường và bản lĩnh điều hành quyền lực. Bạn thường e ngại nói về tiền bạc, quản lý dòng tiền yếu kém, sợ hãi địa vị lãnh đạo hoặc ngược lại bị tiền bạc thao túng tiêu cực do thiếu hiểu biết thực tế.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "rèn luyện phong thái đĩnh đạc, giao tiếp dứt khoát, dám đòi hỏi thù lao xứng đáng", "rationale": "Chủ động nâng cao vị thế và bản lĩnh thương thảo quyền lợi kinh tế." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "học tập quản lý tài chính và đầu tư bài bản, kinh doanh trên nền tảng đạo đức, minh bạch sòng phẳng", "rationale": "Thiết lập kỷ luật tài chính cá nhân nghiêm ngặt và quản trị dòng tiền bài bản." },
+      "RSK": { "score": 1, "evidenceQuote": "đưa ra các quyết định kinh doanh lớn có tính rủi ro cao", "rationale": "Dám chịu trách nhiệm lãnh đạo và đối mặt với rủi ro thị trường." },
+      "INT": { "score": 1, "evidenceQuote": "trân trọng tiền bạc như một công cụ phương tiện thiêng liêng", "rationale": "Thấu hiểu bản chất dòng chảy tài chính để làm chủ thế giới vật chất." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "e ngại nói về tiền bạc, sợ đàm phán tài chính", "rationale": "Né tránh các quyết định kinh tế quan trọng, đánh mất cơ hội làm giàu." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "quản lý dòng tiền yếu kém, nợ nần, bị lừa đảo tài chính", "rationale": "Hỗn loạn tài chính, thất thoát của cải vì thiếu kiến thức quản trị." },
+      "RSK": { "score": -2, "evidenceQuote": "nỗi sợ sự nghèo túng thất bại, sợ quyết định kinh doanh lớn", "rationale": "Nhát gan, sợ hãi rủi ro thương trường khiến sự nghiệp đình trệ." },
+      "INT": { "score": -1, "evidenceQuote": "bị tiền bạc thao túng tiêu cực do thiếu hiểu biết thực tế", "rationale": "Mù quáng trong các quan hệ tiền bạc, dễ rơi vào bẫy tài chính." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "missingNumbers-9",
+    "indicatorKey": "missingNumbers",
+    "indicatorNameVi": "Số Thiếu",
+    "numberValue": "9",
+    "title": "Bài Học Hoàn Thiện Khi Mang Con Số Thiếu 9",
+    "sourceSnippet": "Khi khuyết con số 9 trong họ tên (thiếu các chữ cái I, R), bạn bị thiếu hụt lòng bao dung vị tha, tầm nhìn nhân văn vĩ mô và tinh thần phụng sự vô tư vì cộng đồng. Bạn có xu hướng có cái nhìn hẹp hòi, hay ôm giữ hận thù ghen ghét trong lòng, khó tha thứ cho lỗi lầm của người khác và thờ ơ trước nỗi khổ của xã hội.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cho đi vô tư không toan tính, tham gia bảo vệ môi trường cộng đồng", "rationale": "Chủ động cống hiến và hành động vì lợi ích nhân văn chung của xã hội." },
+      "EMO": { "score": 2, "evidenceQuote": "thực hành bài thiền Ho'oponopono tha thứ, buông xả để trái tim được tự do và bình an", "rationale": "Nuôi dưỡng lòng vị tha, bao dung độ lượng và tình thương không biên giới." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "cho đi mà không cần ai ghi nhận", "rationale": "Can đảm buông bỏ lợi ích cá nhân để phụng sự đại nghĩa." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn nhân văn vĩ mô, hiểu rằng tha thứ là giải thoát đau khổ cho linh hồn mình", "rationale": "Đạt tới nhận thức tâm linh cao thượng về sự kết nối giữa người với người." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thờ ơ trước nỗi khổ của xã hội", "rationale": "Vô cảm, không chịu hành động giúp đỡ những hoàn cảnh ngặt nghèo." },
+      "EMO": { "score": -2, "evidenceQuote": "ôm giữ hận thù ghen ghét trong lòng, khó tha thứ cho lỗi lầm", "rationale": "Cay đắng, ôm giữ oán giận làm tổn hại tâm can của chính mình." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "nỗi sợ bị mất mát tài sản cá nhân nếu cho đi, sợ bị lợi dụng lòng tốt", "rationale": "Ích kỷ co cụm, tiếc của và nghi ngờ sự tử tế." },
+      "INT": { "score": -2, "evidenceQuote": "cái nhìn hẹp hòi, sợ buông bỏ những chấp niệm quá khứ", "rationale": "Tâm trí hẹp hòi, chấp nhất vào những định kiến và tổn thương cũ." }
+    },
+    "overallConfidence": 0.95
+  }
+]

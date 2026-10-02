@@ -1,0 +1,255 @@
+[
+  {
+    "id": "rationalThinking-1",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "1",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 1",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 1 sở hữu cơ chế xử lý thông tin nhanh, dứt khoát và tập trung thẳng vào mục tiêu cốt lõi. Bạn có xu hướng tự mình phân tích, lọc bỏ các chi tiết rườm rà và ra quyết định độc lập mà không cần tham khảo quá nhiều ý kiến xung quanh. Não bộ của bạn phản ứng với vấn đề bằng câu hỏi: 'Mục tiêu là gì và hành động nào giúp đạt kết quả nhanh nhất?'.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "xử lý thông tin nhanh, dứt khoát và tập trung thẳng vào mục tiêu cốt lõi, ra quyết định chớp nhoáng trong khủng hoảng", "rationale": "Phản xạ hành động cực nhanh, quyết đoán giải quyết khủng hoảng." },
+      "EMO": { "score": 0, "evidenceQuote": "lắng nghe hết ý kiến phản biện, kiên nhẫn nghe hết góc nhìn trái chiều", "rationale": "Rèn luyện đức tính kiên nhẫn lắng nghe cộng sự để hoàn thiện quyết sách." },
+      "STR": { "score": 1, "evidenceQuote": "áp dụng ma trận SWOT độc lập, viết rõ Điểm mạnh Điểm yếu Cơ hội Thách thức", "rationale": "Áp dụng khung phân tích chiến lược bài bản trước khi rót vốn đầu tư." },
+      "RSK": { "score": 2, "evidenceQuote": "tư duy đột phá mở lối đi riêng, dám chấp nhận rủi ro có tính toán", "rationale": "Dũng cảm khai phá hướng đi mới, chấp nhận rủi ro một cách tỉnh táo." },
+      "INT": { "score": 1, "evidenceQuote": "lọc bỏ các chi tiết rườm rà, tinh thần chịu trách nhiệm cao", "rationale": "Tư duy trọng tâm sắc bén, phân biệt rõ bản chất mục tiêu." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "vội vã đưa ra kết luận trước khi có đủ dữ liệu", "rationale": "Hành động hấp tấp, thiếu kiên nhẫn chờ đợi dữ liệu đầy đủ." },
+      "EMO": { "score": -2, "evidenceQuote": "tính chủ quan, độc đoán, gạt phăng ý kiến của người khác", "rationale": "Độc đoán áp đặt, chối bỏ sự đóng góp của cộng sự xung quanh." },
+      "STR": { "score": -1, "evidenceQuote": "đánh giá thấp độ phức tạp của khâu thực thi chi tiết", "rationale": "Chủ quan xem nhẹ các quy trình vận hành vi mô, dễ vấp ngã ở khâu triển khai." },
+      "RSK": { "score": 1, "evidenceQuote": "quá tự tin và nóng vội", "rationale": "Mạo hiểm bốc đồng do cái tôi tự tin thái quá." },
+      "INT": { "score": -1, "evidenceQuote": "dễ bỏ qua những cảnh báo chuyên môn của cộng sự", "rationale": "Điểm mù trí tuệ do chủ quan, phớt lờ cảnh báo rủi ro chuyên môn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-2",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "2",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 2",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 2 tiếp nhận và xử lý thông tin thông qua lăng kính trực giác và sự thấu cảm con người. Khi đứng trước một bài toán, bạn không chỉ nhìn vào các con số khô khan mà còn phân tích sâu sắc tác động của quyết định đó đến tâm lý, cảm xúc và mối quan hệ giữa các bên liên quan.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đặt thời hạn chót Deadline bắt buộc, không để việc do dự kéo dài quá 48 giờ", "rationale": "Rèn luyện tính dứt khoát và tuân thủ thời hạn chốt việc." },
+      "EMO": { "score": 2, "evidenceQuote": "thấu cảm con người, tài năng đàm phán ngoại giao kiến tạo giải pháp đôi bên cùng có lợi Win-Win", "rationale": "Thấu hiểu lòng người sâu sắc, luôn hướng tới sự công bằng và hòa hợp trong các thỏa thuận." },
+      "STR": { "score": 1, "evidenceQuote": "sử dụng bảng chấm điểm tiêu chí logic, lập bảng tính Excel với các tiêu chí định lượng", "rationale": "Hệ thống hóa quyết định bằng các chỉ số định lượng khách quan." },
+      "RSK": { "score": 0, "evidenceQuote": "nhìn thấy những thỏa thuận ngầm và góc khuất mà số liệu không thể hiện", "rationale": "Nhạy cảm phát hiện rủi ro tiềm ẩn trong các mối quan hệ." },
+      "INT": { "score": 2, "evidenceQuote": "khả năng đọc vị tâm lý đối tác xuất sắc, tiếp nhận và xử lý thông tin qua trực giác", "rationale": "Trực giác tâm lý tuyệt vời, nhìn thấu động cơ ẩn giấu đằng sau các con số." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sự do dự, thiếu dứt khoát, trì hoãn việc đưa ra các quyết định cứng rắn", "rationale": "Tê liệt hành động, không dám ra quyết định dứt khoát vì sợ mất lòng." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ bị cảm xúc chi phối hoặc bị người khác thao túng tâm lý", "rationale": "Cả nể, để cảm xúc cá nhân làm sai lệch tính khách quan của bài toán." },
+      "STR": { "score": -1, "evidenceQuote": "sợ làm mất lòng đối phương nên trì hoãn", "rationale": "Thiếu nguyên tắc ranh giới nghiêm minh trong quản trị và đầu tư." },
+      "RSK": { "score": -2, "evidenceQuote": "không dám cắt lỗ đầu tư hoặc sa thải nhân sự không phù hợp", "rationale": "Nỗi sợ đối đầu khiến thiệt hại tài chính và hệ thống ngày càng trầm trọng." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-3",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "3",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 3",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 3 xử lý thông tin bằng hình ảnh, sự liên tưởng phong phú và tư duy phản xạ nhanh nhạy. Bạn tiếp nhận dữ liệu rất nhanh và ngay lập tức nảy ra hàng loạt ý tưởng mới lạ, độc đáo. Não bộ của bạn luôn tìm kiếm những cách tiếp cận khác biệt, sinh động và tràn đầy cảm hứng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tiếp nhận dữ liệu rất nhanh và ngay lập tức nảy ra hàng loạt ý tưởng, triển khai đến cùng", "rationale": "Tốc độ phản xạ tức thì, nhanh chóng chuyển hóa ý tưởng thành kế hoạch." },
+      "EMO": { "score": 1, "evidenceQuote": "thuyết phục người khác đồng thuận với tầm nhìn sáng tạo, tràn đầy cảm hứng", "rationale": "Khả năng truyền lửa và thu hút sự đồng thuận của tập thể bằng sự lôi cuốn." },
+      "STR": { "score": 1, "evidenceQuote": "hệ thống hóa ý tưởng bằng sơ đồ Mindmap, lập bản nghiên cứu tính khả thi", "rationale": "Đưa các ý tưởng sáng tạo vào khung thẩm định khả thi có cấu trúc rõ ràng." },
+      "RSK": { "score": 1, "evidenceQuote": "tư duy ngoài chiếc hộp Out of the box, tìm ra các giải pháp marketing đột phá", "rationale": "Dám thử nghiệm các ý tưởng mới lạ, phá vỡ lối mòn tư duy truyền thống." },
+      "INT": { "score": 2, "evidenceQuote": "sự liên tưởng phong phú và tư duy phản xạ nhanh nhạy, ý tưởng mới lạ độc đáo", "rationale": "Trí tưởng tượng sáng tạo xuất chúng và khả năng liên kết thông tin đa chiều." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "dễ bỏ dở dự án khi đối mặt với các quy trình kỹ thuật khô khan", "rationale": "Cả thèm chóng chán, thiếu sự bền bỉ thực thi đến chặng đường cuối." },
+      "EMO": { "score": 0, "evidenceQuote": "dễ bị hưng phấn nhất thời cuốn theo các ý tưởng bay bổng", "rationale": "Hưng phấn nhất thời làm mờ mắt trước thực tế khốc liệt." },
+      "STR": { "score": -2, "evidenceQuote": "lạc quan tếu bỏ qua các rủi ro pháp lý/tài chính thực tế, thiếu sự kiên định", "rationale": "Thiếu kỷ luật rà soát, xem nhẹ các quy định pháp lý và dự toán ngân sách." },
+      "RSK": { "score": 1, "evidenceQuote": "ý tưởng bay bổng thiếu tính khả thi, rót vốn theo cảm hứng", "rationale": "Mạo hiểm tùy tiện theo cảm hứng, dẫn đến lãng phí nguồn lực đầu tư." },
+      "INT": { "score": -1, "evidenceQuote": "phân tán vào quá nhiều ý tưởng không có trọng tâm cốt lõi", "rationale": "Tư duy lan man, thiếu chọn lọc và mất định hướng chiến lược." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-4",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "4",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 4",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 4 tiếp nhận và xử lý thông tin theo chuỗi logic tuần tự, chặt chẽ và dựa trên bằng chứng thực tế/số liệu khoa học đã kiểm chứng. Bạn không bao giờ tin vào những lời hứa suông hay linh cảm mơ hồ; mọi vấn đề đều phải được mổ xẻ, phân loại và đưa vào quy trình rõ ràng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "ra quyết định và hành động ngay khi có từ 40% đến 70% dữ liệu, thử nghiệm A/B Testing", "rationale": "Thực thi chuẩn xác, áp dụng nguyên tắc kiểm chứng thực nghiệm thực tế." },
+      "EMO": { "score": 0, "evidenceQuote": "mở lòng đón nhận góc nhìn mới, lắng nghe ý tưởng từ thế hệ trẻ", "rationale": "Học cách cởi mở và tôn trọng các góc nhìn đổi mới sáng tạo." },
+      "STR": { "score": 2, "evidenceQuote": "tư duy hệ thống xuất sắc, phân tích chi tiết đến từng milimet, quy trình vận hành chuẩn mực có độ bền vững cao", "rationale": "Bậc thầy về tư duy logic, xây dựng quy chuẩn chặt chẽ và cấu trúc bền vững." },
+      "RSK": { "score": 0, "evidenceQuote": "khả năng quản trị rủi ro hàng đầu, kiểm soát yếu tố rủi ro cốt lõi", "rationale": "Thận trọng tối đa, bảo toàn nguồn lực an toàn tuyệt đối." },
+      "INT": { "score": 2, "evidenceQuote": "chuỗi logic tuần tự chặt chẽ, dựa trên bằng chứng thực tế và số liệu khoa học", "rationale": "Tư duy duy lý nghiêm ngặt, chỉ tin vào các dữ liệu đã được kiểm chứng." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "tê liệt vì phân tích Analysis Paralysis, bỏ lỡ những cơ hội vàng", "rationale": "Đòi hỏi dữ liệu hoàn hảo tuyệt đối dẫn đến do dự, để lỡ thời cơ hành động quý giá." },
+      "EMO": { "score": -1, "evidenceQuote": "sự cứng nhắc, bảo thủ, coi thường trực giác", "rationale": "Khô khan lạnh lùng, dập tắt các sáng kiến mang tính cảm xúc hay trực giác." },
+      "STR": { "score": -2, "evidenceQuote": "quá bảo thủ giáo điều, máy móc trong quy trình", "rationale": "Quy trình biến thành xiềng xích cản trở sự đổi mới và tính linh hoạt." },
+      "RSK": { "score": -2, "evidenceQuote": "e ngại những ý tưởng đột phá chưa có tiền lệ, sợ rủi ro tuyệt đối", "rationale": "Nỗi sợ sai sót khiến bản thân co cụm, từ chối mọi cơ hội phát triển đột phá." },
+      "INT": { "score": -1, "evidenceQuote": "đòi hỏi 100% dữ liệu hoàn hảo mới chịu tin", "rationale": "Điểm mù tư duy do quá phụ thuộc vào dữ liệu quá khứ, không thấy được tiềm năng tương lai." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-5",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "5",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 5",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 5 sở hữu bộ não cực kỳ nhanh nhạy, tiếp nhận thông tin đa nguồn trong chớp mắt và có khả năng liên kết các xu hướng mới lạ của xã hội. Bạn xử lý vấn đề dựa trên khả năng thích ứng linh hoạt, không thích bị gò bó vào các khuôn mẫu cũ và luôn tìm kiếm các giải pháp cơ động, cấp tiến.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "phản xạ chiến lược siêu nhanh trong biến động, xoay chuyển tình thế ngoạn mục khi gặp khủng hoảng", "rationale": "Hành động cơ động, khả năng ứng biến chớp nhoáng trước mọi biến cố." },
+      "EMO": { "score": 0, "evidenceQuote": "kết nối thông tin đa nguồn, lắng nghe xu hướng xã hội", "rationale": "Nhạy cảm nắm bắt tâm lý thị trường và thị hiếu cộng đồng." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập giới hạn cắt lỗ Stop-loss, cam kết khung thời gian chiến lược", "rationale": "Thiết lập mỏ neo kỷ luật và ranh giới quản trị rủi ro an toàn." },
+      "RSK": { "score": 2, "evidenceQuote": "tư duy đổi mới mô hình kinh doanh, năng khiếu nắm bắt các cơ hội thị trường mới nổi", "rationale": "Dám dấn thân vào các thị trường ngách mới nổi, tiên phong đón đầu làn sóng." },
+      "INT": { "score": 2, "evidenceQuote": "bộ não cực kỳ nhanh nhạy, liên kết các xu hướng mới lạ của xã hội, giải pháp cơ động cấp tiến", "rationale": "Trí tuệ linh hoạt sắc bén, khả năng liên kết các mảnh ghép thông tin rời rạc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "xu hướng bỏ dở các quy trình duy trì đều đặn", "rationale": "Hành động thiếu kiên trì, chán ngấy các công việc bảo trì vận hành hàng ngày." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ thay đổi chiến lược xoành xoạch khiến đội ngũ hoang mang", "rationale": "Sự thất thường gây mất phương hướng và hoang mang cho cấp dưới." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu kiên định, không có mỏ neo chiến lược", "rationale": "Mất phương hướng dài hạn vì chạy theo quá nhiều xu hướng vụn vặt." },
+      "RSK": { "score": 2, "evidenceQuote": "mạo hiểm quá mức vào những trào lưu ngắn hạn chưa được thẩm định", "rationale": "Đầu cơ liều lĩnh, dễ sập bẫy các trào lưu tài chính chớp nhoáng." },
+      "INT": { "score": -1, "evidenceQuote": "bị kích thích bởi sự mới lạ mà quên phân tích dữ liệu lịch sử", "rationale": "Tư duy bốc đồng bị cuốn theo trào lưu, thiếu kiểm chứng dữ liệu nền tảng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-6",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "6",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 6",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 6 tiếp nhận và xử lý thông tin dựa trên các chuẩn mực đạo đức, trách nhiệm đối với con người và sự ổn định của gia đình, tổ chức. Khi phân tích một vấn đề, bạn luôn cân nhắc kỹ lưỡng yếu tố an toàn, tính nhân văn và sự công bằng cho tất cả các bên tham gia.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "xây dựng quy chế minh bạch, bảo vệ lợi ích của toàn thể tổ chức", "rationale": "Hành động vì lợi ích chung, bảo vệ sự an toàn và phát triển của tập thể." },
+      "EMO": { "score": 2, "evidenceQuote": "nuôi dưỡng con người sâu sắc, xây dựng sự gắn kết trung thành tuyệt đối từ đội ngũ, uy tín đạo đức", "rationale": "Lãnh đạo bằng lòng trắc ẩn và đạo đức, tạo dựng lòng tin bền vững." },
+      "STR": { "score": 1, "evidenceQuote": "áp dụng phân tích chi phí - lợi ích Cost-Benefit Analysis định lượng hóa phương án", "rationale": "Kết hợp yếu tố nhân văn với phương pháp thẩm định tài chính khoa học." },
+      "RSK": { "score": 0, "evidenceQuote": "tư duy phát triển bền vững, cân nhắc kỹ lưỡng yếu tố an toàn", "rationale": "Ưu tiên sự ổn định dài hạn, phòng ngừa rủi ro cho tổ chức." },
+      "INT": { "score": 1, "evidenceQuote": "phân định rạch ròi giữa lòng trắc ẩn đích thực và sự dung túng có hại", "rationale": "Sự sáng suốt trong quản trị nhân sự, kết hợp tình thương với kỷ luật." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tự ôm đồm gánh vác rủi ro thay cho người khác, làm chậm tiến độ", "rationale": "Bao che ôm đồm khiến bản thân quá tải và làm đình trệ công việc chung." },
+      "EMO": { "score": -2, "evidenceQuote": "để tình cảm chi phối quá nhiều dẫn đến quyết định thiếu hiệu quả kinh tế, áy náy", "rationale": "Cảm xúc lấn át lý trí, dung túng nhân sự yếu kém gây tổn hại cho tổ chức." },
+      "STR": { "score": -1, "evidenceQuote": "dùng tình cảm cá nhân thay vì nội quy và hợp đồng pháp lý rõ ràng", "rationale": "Xử lý vấn đề theo tình cảm gia đình, làm suy yếu tính nghiêm minh của hệ thống." },
+      "RSK": { "score": -1, "evidenceQuote": "xu hướng lo âu thái quá, thêu dệt nên những kịch bản rủi ro tồi tệ", "rationale": "Nỗi sợ rủi ro tưởng tượng làm tê liệt dũng khí đổi mới." },
+      "INT": { "score": -1, "evidenceQuote": "tâm trí bị bủa vây bởi các kịch bản tồi tệ thêu dệt", "rationale": "Suy diễn tiêu cực thái quá, đánh mất cái nhìn khách quan về thị trường." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-7",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "7",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 7",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 7 xử lý thông tin với sự hoài nghi khoa học nghiêm túc và tinh thần đào sâu bản chất. Bạn không bao giờ tin vào những nhận định bề nổi hay những lời quảng cáo hào nhoáng; bạn tự mình tìm kiếm tài liệu gốc, phân tích dữ liệu chuyên sâu và giải mã các quy luật ngầm chi phối sự việc.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đặt khung thời gian nghiên cứu tối đa Time-boxing, bắt buộc đưa ra kết luận", "rationale": "Thiết lập kỷ luật thời gian để đảm bảo tiến độ ra quyết định." },
+      "EMO": { "score": 0, "evidenceQuote": "thảo luận phương án với những người có kinh nghiệm thực tế", "rationale": "Cởi mở trao đổi chuyên môn với các chuyên gia thực chiến." },
+      "STR": { "score": 1, "evidenceQuote": "tìm kiếm tài liệu gốc, phân tích dữ liệu chuyên sâu và giải mã các quy luật ngầm", "rationale": "Phương pháp nghiên cứu khoa học bài bản, thẩm định nguồn tin gốc rễ." },
+      "RSK": { "score": 0, "evidenceQuote": "nhìn thấu các lỗ hổng chiến lược mà người khác bỏ sót", "rationale": "Phát hiện chính xác các rủi ro chết người tiềm ẩn trong kế hoạch." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy phản biện sắc bén như dao mổ, tầm nhìn dài hạn vượt thời gian, đúc kết tri thức uyên bác", "rationale": "Đỉnh cao của tư duy phản biện và năng lực đúc kết quy luật sâu xa." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "quá trình ra quyết định bị chậm trễ, mất rất nhiều thời gian nghiên cứu", "rationale": "Chần chừ thoái lui hành động, chìm đắm trong nghiên cứu vô tận làm lỡ thời cơ." },
+      "EMO": { "score": -1, "evidenceQuote": "tự cô lập bản thân khi suy nghĩ, khó tin tưởng báo cáo của cấp dưới", "rationale": "Đóng kín tâm lý, thiếu sự tin tưởng và cộng tác với tập thể." },
+      "STR": { "score": -1, "evidenceQuote": "xa rời thực tế thị trường vì quá chìm đắm vào lý thuyết học thuật", "rationale": "Mắc kẹt trong các mô hình lý thuyết sách vở, xa rời thực tiễn sinh động." },
+      "RSK": { "score": -1, "evidenceQuote": "hoài nghi quá mức, sợ những quyết định thiếu hoàn hảo", "rationale": "Sự nghi kỵ cực đoan cản trở bản lĩnh dám chấp nhận rủi ro cần thiết." },
+      "INT": { "score": -1, "evidenceQuote": "hoài nghi quá mức dẫn đến bế tắc tư duy", "rationale": "Bệnh hoài nghi triệt để làm tê liệt khả năng đi đến kết luận dứt khoát." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-8",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "8",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 8",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 8 tiếp nhận và xử lý thông tin thông qua lăng kính định lượng thực dụng: Dòng tiền, biên lợi nhuận, lợi thế cạnh tranh, đòn bẩy nguồn lực và tỷ suất hoàn vốn (ROI). Bạn nhìn nhận mọi vấn đề như một bài toán kinh tế và luôn tìm cách tối ưu hóa hiệu quả thực thi.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khả năng chớp thời cơ lớn, tư duy mở rộng quy mô Scale-up xuất chúng, bản lĩnh đàm phán quyền lực", "rationale": "Hành động quyết đoán chớp thời cơ, thần tốc mở rộng quy mô kinh doanh." },
+      "EMO": { "score": 1, "evidenceQuote": "thực hành tư duy Win-Win trong đàm phán, đảm bảo đối tác cũng có phần lợi ích xứng đáng", "rationale": "Xây dựng sự hợp tác đôi bên cùng có lợi để duy trì mối quan hệ dài hạn." },
+      "STR": { "score": 2, "evidenceQuote": "lăng kính định lượng thực dụng: Dòng tiền, biên lợi nhuận, lợi thế cạnh tranh, ROI, kiểm soát đòn bẩy nợ an toàn", "rationale": "Bậc thầy về phân tích tài chính định lượng, tối ưu hóa nguồn lực và kiểm soát dòng tiền." },
+      "RSK": { "score": 2, "evidenceQuote": "năng lực huy động điều phối nguồn vốn khổng lồ, tầm nhìn thương trường nhạy bén", "rationale": "Bản lĩnh làm chủ cuộc chơi tài chính lớn, quản trị đòn bẩy hiệu quả." },
+      "INT": { "score": 1, "evidenceQuote": "tối ưu hóa hiệu quả thực thi, nhìn nhận mọi vấn đề như một bài toán kinh tế", "rationale": "Tư duy kinh tế sắc bén, nắm chắc các đòn bẩy tạo ra giá trị." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tăng áp lực hiệu suất quá mức", "rationale": "Hành động vắt kiệt sức lao động của cấp dưới vì mục tiêu doanh số." },
+      "EMO": { "score": -2, "evidenceQuote": "quá thực dụng và lạnh lùng, bỏ qua yếu tố tâm lý nhân sự hoặc giá trị đạo đức", "rationale": "Vô cảm trước khó khăn của con người, xem cấp dưới như công cụ cơ học." },
+      "STR": { "score": -1, "evidenceQuote": "chỉ nhìn vào con số tài chính ngắn hạn", "rationale": "Tầm nhìn ngắn hạn vì lợi nhuận tức thì làm phương hại nền móng tổ chức." },
+      "RSK": { "score": 2, "evidenceQuote": "dễ bị lòng tham thúc đẩy dẫn đến việc sử dụng đòn bẩy tài chính quá mức rủi ro", "rationale": "Lòng tham mù quáng đẩy doanh nghiệp vào nguy cơ phá sản do đòn bẩy nợ." },
+      "INT": { "score": -1, "evidenceQuote": "bỏ qua các giá trị đạo đức và văn hóa doanh nghiệp", "rationale": "Tư duy thực dụng thiển cận làm suy thoái văn hóa cốt lõi của tổ chức." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-9",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "9",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 9",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí 9 tiếp nhận và xử lý thông tin dưới góc nhìn vĩ mô toàn cầu. Khi đứng trước một quyết định, bạn luôn nhìn vào bức tranh toàn cảnh và phân tích tác động dài hạn của nó đối với cộng đồng, môi trường và các giá trị nhân văn của xã hội.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chia nhỏ tầm nhìn thành các cột mốc KPI định lượng, lập kế hoạch hành động từng bước", "rationale": "Hành động có lộ trình bài bản để biến lý tưởng xã hội thành hiện thực." },
+      "EMO": { "score": 2, "evidenceQuote": "khả năng quy tụ lòng người bằng sự chính trực, vị tha và văn minh, tác động dài hạn đối với cộng đồng", "rationale": "Thu phục nhân tâm bằng tấm lòng vị tha trong sáng và lý tưởng phụng sự." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm chứng pháp lý và tài chính độc lập, thuê chuyên gia kiểm toán và luật sư rà soát", "rationale": "Thiết lập kỷ luật pháp lý và kiểm toán tài chính chặt chẽ cho các dự án cộng đồng." },
+      "RSK": { "score": 1, "evidenceQuote": "tầm nhìn chiến lược bao quát, giải pháp có tầm ảnh hưởng xã hội rộng lớn", "rationale": "Dũng cảm khởi xướng những đề án lớn mang tầm vóc nhân loại." },
+      "INT": { "score": 2, "evidenceQuote": "tiếp nhận và xử lý thông tin dưới góc nhìn vĩ mô toàn cầu, bức tranh toàn cảnh", "rationale": "Tầm nhìn vĩ mô xuất chúng, thấu hiểu quy luật tiến hóa của xã hội." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thiếu sự quyết liệt, cứng rắn trong các cuộc thương thảo kinh tế khốc liệt", "rationale": "Hành động thiếu quyết đoán khi đàm phán cạnh tranh, dễ bị đối thủ lấn át." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ bị kẻ xấu lợi dụng lòng tốt thông qua những lời hứa hẹn nhân đạo giả tạo", "rationale": "Cả tin ngây thơ, để lòng tốt bị kẻ xấu trục lợi." },
+      "STR": { "score": -2, "evidenceQuote": "xa rời các chi tiết tài chính vi mô, thiếu quản trị ngân sách", "rationale": "Cẩu thả trong khâu dự toán chi tiết, làm thất thoát nguồn lực." },
+      "RSK": { "score": 0, "evidenceQuote": "giúp đỡ và đầu tư thiếu kiểm chứng", "rationale": "Mạo hiểm cam kết nguồn lực vào những dự án thiếu tính tự lập." },
+      "INT": { "score": -2, "evidenceQuote": "quá lý tưởng hóa, xa rời thực tế thị trường", "rationale": "Tư duy không tưởng, ngộ nhận về bản chất khốc liệt của kinh tế thị trường." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-11",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "11",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 11",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí Master 11 sở hữu bộ não kết hợp hoàn hảo giữa năng lực phân tích logic và linh cảm trực giác siêu giác quan. Bạn có khả năng cảm nhận được xu hướng vận động của tương lai và bản chất sâu xa của vấn đề thông qua những tia chớp trực giác xuất thần.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "áp dụng nguyên lý Trực giác định hướng - Logic kiểm chứng, hành động sau khi kiểm tra tính khả thi", "rationale": "Hành động có cơ sở khoa học kiểm chứng, không tùy tiện bốc đồng." },
+      "EMO": { "score": 1, "evidenceQuote": "giải pháp đột phá mang tính thức tỉnh và truyền cảm hứng mạnh mẽ", "rationale": "Thấu hiểu chiều sâu tâm linh con người, truyền cảm hứng nâng đỡ nhận thức." },
+      "STR": { "score": 1, "evidenceQuote": "ghi chép nhật ký trực giác Intuition Journal, diễn đạt linh cảm bằng ngôn ngữ logic", "rationale": "Chuẩn hóa các linh cảm trực giác thành tài liệu và biểu đồ mạch lạc." },
+      "RSK": { "score": 1, "evidenceQuote": "kết nối thế giới tinh thần với đời sống thực tế", "rationale": "Dũng cảm đưa các ý niệm trừu tượng vào ứng dụng thực tiễn." },
+      "INT": { "score": 2, "evidenceQuote": "dự đoán xu hướng tương lai chuẩn xác lạ thường qua những tia chớp trực giác xuất thần", "rationale": "Trực giác dự báo tương lai xuất thần, thấu suốt các quy luật vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chông chênh trước áp lực thực tế, trì hoãn do hoang mang", "rationale": "Mất thăng bằng hành động khi đối mặt với áp lực cạnh tranh khốc liệt." },
+      "EMO": { "score": -2, "evidenceQuote": "hệ thần kinh dễ bị quá tải vì tiếp nhận quá nhiều luồng năng lượng và thông tin", "rationale": "Căng thẳng tinh thần cực độ, dễ rơi vào trạng thái suy kiệt cảm xúc." },
+      "STR": { "score": -1, "evidenceQuote": "hoang mang khi linh cảm trực giác mâu thuẫn với số liệu bề nổi", "rationale": "Mất phương hướng khi các công cụ đo lường logic không khớp với linh cảm." },
+      "RSK": { "score": -1, "evidenceQuote": "lo âu, thiếu tự tin vào năng lực thực thi", "rationale": "Hoài nghi bản thân trước các rủi ro vô hình." },
+      "INT": { "score": -1, "evidenceQuote": "hệ thần kinh quá tải gây nhiễu loạn tư duy", "rationale": "Tâm trí bị nhiễu loạn bởi quá nhiều tín hiệu hỗn tạp cùng lúc." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "rationalThinking-22",
+    "indicatorKey": "rationalThinking",
+    "indicatorNameVi": "Tư Duy Lý Trí",
+    "numberValue": "22",
+    "title": "Mô Thức Ra Quyết Định Của Chỉ Số Tư Duy Lý Trí 22",
+    "sourceSnippet": "Người mang Chỉ số Tư duy Lý trí Master 22 sở hữu bộ óc của một tổng công trình sư vĩ đại. Bạn vừa có khả năng bao quát bức tranh chiến lược tầm cỡ quốc tế của số 11, vừa nắm vững đến từng chi tiết kỹ thuật và quy trình thực thi kỷ luật thép của số 4. Não bộ của bạn tư duy theo mô hình các đại hệ thống phức hợp.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "biến những tầm nhìn khổng lồ thành bản vẽ kỹ thuật chi tiết và kế hoạch hành động thực tế", "rationale": "Năng lực chuyển hóa thực tại vô song, biến bản vẽ thành các đại công trình thực tế." },
+      "EMO": { "score": 1, "evidenceQuote": "phân quyền thông minh và tự động hóa hệ thống, đào tạo đội ngũ quản trị cấp trung", "rationale": "Nuôi dưỡng và trao quyền cho đội ngũ quản trị cùng gánh vác đại nghiệp." },
+      "STR": { "score": 2, "evidenceQuote": "lập sơ đồ cấu trúc phân rã công việc WBS, hệ thống báo cáo Dashboard trực quan, quy trình kỷ luật thép", "rationale": "Đỉnh cao của tư duy quản trị đại hệ thống và kiểm soát KPI thời gian thực." },
+      "RSK": { "score": 2, "evidenceQuote": "quy tụ và điều phối các nguồn lực tài chính công nghệ và nhân lực quy mô lớn hàng triệu USD", "rationale": "Bản lĩnh gánh vác các dự án quy mô toàn cầu với độ phức tạp tối đa." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy theo mô hình các đại hệ thống phức hợp, bao quát bức tranh chiến lược quốc tế", "rationale": "Trí tuệ kiến trúc sư trưởng vĩ đại, làm chủ hoàn toàn các quy luật vật chất và hệ thống." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "ôm đồm cùng lúc quá nhiều đại dự án gây áp lực nghẹt thở", "rationale": "Tham vọng ôm đồm quá sức khiến bộ máy vận hành bị căng thẳng tột độ." },
+      "EMO": { "score": -2, "evidenceQuote": "đặt tiêu chuẩn quá cao gây áp lực nghẹt thở cho cấp dưới, cáu gắt", "rationale": "Cáu gắt độc tài khi cấp dưới không theo kịp kỳ vọng hoàn hảo của mình." },
+      "STR": { "score": -1, "evidenceQuote": "thất vọng khi thực tế tiến độ chậm hơn kỳ vọng", "rationale": "Cứng nhắc về tiến độ, khó thích ứng với các phát sinh khách quan ngoài dự kiến." },
+      "RSK": { "score": 1, "evidenceQuote": "ôm đồm quá nhiều dự án vượt quá năng lực chịu tải", "rationale": "Mạo hiểm quá mức về quy mô nguồn lực, tiềm ẩn rủi ro đổ vỡ hệ thống." },
+      "INT": { "score": -1, "evidenceQuote": "kiệt quệ năng lượng tư duy vì xử lý khối lượng dữ liệu khổng lồ", "rationale": "Não bộ bị kiệt sức do quá tải thông tin chiến lược triền miên." }
+    },
+    "overallConfidence": 0.95
+  }
+]

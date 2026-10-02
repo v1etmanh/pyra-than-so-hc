@@ -1,13 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { randomUUID } from 'node:crypto';
+import { mkdir, rename, rm, writeFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 import { evaluateBaziCompatibility } from '@/lib/bazi-love/engine';
 import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
-import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
+import { getChatResponseBudget, normalizeChatReply, normalizeChatReplyWithDiagnostics } from '@/lib/spiritual-agent/response-length';
 import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { getTarotSpread } from '@/lib/tarot/spreads';
+import { buildAgentSystemPrompt, buildAgentUserPrompt } from '@/lib/spiritual-agent/agent-prompts';
+import { filterPersonalityIndicatorKeys } from '@/lib/spiritual-agent/personality-indicators';
+import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
+import { generateResonanceContext, selectRequestedIndicators } from '@/lib/resonance';
+import type { TarotSelection } from '@/lib/resonance/types';
 
 export const runtime = 'nodejs';
 
@@ -32,6 +40,48 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
+
+async function saveChatPromptSnapshot(
+  systemPrompt: string,
+  userPrompt: string,
+  generationOptions: { maxTokens: number; temperature: number },
+  indicatorSelection: {
+    requestedKeys: string[];
+    suppliedKeys: string[];
+    selectedKeys: string[];
+    knowledgeMatchedKeys: string[];
+  }
+): Promise<void> {
+  const disabled = ['0', 'false', 'off'].includes(
+    (process.env.CHAT_AGENT_PROMPT_SNAPSHOT || '').trim().toLowerCase()
+  );
+  if (process.env.NODE_ENV === 'production' || disabled) return;
+
+  const snapshotPath = join(process.cwd(), 'scratch', 'chat-agent-prompt.json');
+  const temporaryPath = `${snapshotPath}.${randomUUID()}.tmp`;
+  const snapshot = {
+    capturedAt: new Date().toISOString(),
+    endpoint: '/api/chat/agent',
+    indicatorSelection,
+    llmRequest: {
+      systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+      generationOptions,
+    },
+  };
+
+  await mkdir(dirname(snapshotPath), { recursive: true });
+  try {
+    await writeFile(temporaryPath, JSON.stringify(snapshot, null, 2), {
+      encoding: 'utf8',
+      flag: 'wx',
+    });
+    await rename(temporaryPath, snapshotPath);
+  } catch (error) {
+    await rm(temporaryPath, { force: true });
+    throw error;
+  }
+}
 
 const supportedIndicatorKeys = new Set([
   'walksOfLife', 'mission', 'soul', 'personality', 'dateOfBirth', 'mature', 'balance',
@@ -79,41 +129,58 @@ function summarizePlaceContext(value: unknown) {
 async function generateLlmText(
   systemPrompt: string,
   userPrompt: string,
-  maxTokens: number
+  maxTokens: number,
+  indicatorSelection: {
+    requestedKeys: string[];
+    suppliedKeys: string[];
+    selectedKeys: string[];
+    knowledgeMatchedKeys: string[];
+  }
 ): Promise<string> {
+  const generationOptions = { maxTokens: Math.max(1600, maxTokens * 2), temperature: 0.7 };
+  await saveChatPromptSnapshot(systemPrompt, userPrompt, generationOptions, indicatorSelection);
+
   const stream = createStreamingResponse(
     systemPrompt,
     [{ role: 'user', content: userPrompt }],
     undefined,
-    { maxTokens: Math.max(800, maxTokens), temperature: 0.7 }
+    generationOptions
   );
   const reader = stream.getReader();
   const decoder = new TextDecoder();
   let fullText = '';
+  let buffer = '';
+  let completed = false;
+  let streamError: string | undefined;
+
+  const consumeLine = (line: string) => {
+    if (!line.startsWith('data: ')) return;
+    const data = line.slice(6).trim();
+    if (!data || data === '[DONE]') return;
+    const event = JSON.parse(data) as { content?: unknown; done?: unknown; error?: unknown };
+    if (typeof event.error === 'string') streamError = event.error;
+    if (event.done === true) completed = true;
+    if (typeof event.content === 'string' && !streamError) fullText += event.content;
+  };
 
   try {
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
-      const chunk = decoder.decode(value, { stream: true });
-      const lines = chunk.split('\n');
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop() ?? '';
       for (const line of lines) {
-        if (!line.startsWith('data: ')) continue;
-        const data = line.slice(6).trim();
-        if (!data || data === '[DONE]') continue;
-        try {
-          const event = JSON.parse(data) as { content?: unknown };
-          if (typeof event.content === 'string') {
-            fullText += event.content;
-          }
-        } catch {
-          // Ignore non-JSON chunks
-        }
+        consumeLine(line);
       }
     }
+    buffer += decoder.decode();
+    if (buffer.trim()) consumeLine(buffer);
   } finally {
     reader.releaseLock();
   }
+  if (streamError) throw new Error(streamError);
+  if (!completed) throw new Error('LLM stream ended without completion event');
   return fullText.trim();
 }
 
@@ -128,6 +195,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { message, decision, profiles, indicators, tarotCards, placeContext } = body;
+    const timeContext = createCurrentTimeContext(body.timeZone);
 
     // 0. BỘ LỌC TỐC HÀNH: Phát hiện câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (0 token LLM, phản hồi < 0.1ms)
     const trashCheck = isTrashOrMeaninglessPrompt(message);
@@ -167,21 +235,24 @@ export async function POST(request: NextRequest) {
 
     // Giải mã chuyên sâu tối đa 5 chỉ số Thần số học theo quyết định của AI
     const requestedKeys: string[] = Array.isArray(decision?.targetIndicators) && decision.targetIndicators.length > 0
-      ? decision.targetIndicators
-      : (p1Indicators.map((i: any) => i.key).filter(Boolean));
+      ? decision.targetIndicators.filter((key: unknown): key is string => typeof key === 'string')
+      : p1Indicators.map((i: any) => i.key).filter((key: unknown): key is string => typeof key === 'string');
 
     const resolvedP1 = resolveTargetIndicators(p1.fullName, p1.birthDate, requestedKeys);
     const resolvedP2 = (isCouple && p2) ? resolveTargetIndicators(p2.fullName, p2.birthDate, requestedKeys) : [];
     const suppliedP1Indicators = normalizeSuppliedIndicators(p1Indicators);
     const suppliedP2Indicators = normalizeSuppliedIndicators(p2Indicators);
-    const selectedKeys = Array.isArray(decision?.targetIndicators)
-      ? Array.from(new Set(decision.targetIndicators.filter((key: unknown): key is string =>
-        typeof key === 'string' && supportedIndicatorKeys.has(key)
-      ))).slice(0, 5)
-      : [];
+    const selectedKeys = filterPersonalityIndicatorKeys(decision?.targetIndicators);
     const selectedIndicators = isCouple
       ? []
-      : suppliedP1Indicators.filter((indicator) => selectedKeys.includes(indicator.key));
+      : selectRequestedIndicators(suppliedP1Indicators, selectedKeys);
+    if (!isCouple && selectedKeys.some((key) => !selectedIndicators.some((indicator) => indicator.key === key))) {
+      console.warn('[Chat Agent Route] Mobile indicator selection mismatch:', {
+        requestedKeys,
+        suppliedKeys: suppliedP1Indicators.map((indicator) => indicator.key),
+        missingKeys: selectedKeys.filter((key) => !selectedIndicators.some((indicator) => indicator.key === key))
+      });
+    }
     const knowledgeDocs = await Promise.all(selectedIndicators.map(async (indicator) => ({
       indicator,
       record: await getKnowledgeByIndicator(indicator.key, indicator.value)
@@ -194,6 +265,24 @@ export async function POST(request: NextRequest) {
         `[TƯ LIỆU THẦN SỐ HỌC: ${indicator.name} (${indicator.key} = ${indicator.value}) | ${record!.title}]\n${record!.content}`
       ).join('\n\n')
       : 'Không tìm thấy tài liệu gốc khớp với các chỉ số đã chọn. Không tự diễn giải Thần số học chỉ từ tên hoặc giá trị số; hãy tập trung vào Tarot và các dữ liệu khác được cung cấp.';
+
+    const resonance = !isCouple && decision?.needsTarot && cards.length > 0 && selectedIndicators.length > 0
+      ? generateResonanceContext(cards as TarotSelection[], selectedIndicators)
+      : null;
+    const resonanceContext = resonance?.matchedTarotCount && resonance.matchedNumerologyCount
+      ? resonance.formattedAiPromptForm
+      : '';
+    if (resonance?.diagnostics.length) {
+      const diagnosticCounts = resonance.diagnostics.reduce<Record<string, number>>((counts, item) => {
+        counts[item.reason] = (counts[item.reason] ?? 0) + 1;
+        return counts;
+      }, {});
+      console.warn('[Chat Agent Route] Resonance label lookup diagnostics:', {
+        tarotMatches: resonance.matchedTarotCount,
+        numerologyMatches: resonance.matchedNumerologyCount,
+        diagnosticCounts
+      });
+    }
 
     let replyText = '';
     let baziScore = 85;
@@ -226,6 +315,7 @@ export async function POST(request: NextRequest) {
       } else {
         try {
           const vietMapResult = await findVietMapPlaces({
+            timeContext,
             message: typeof message === 'string' ? message : '',
             context: placeContext as VietMapSearchContext,
             spiritualContext: {
@@ -389,7 +479,7 @@ export async function POST(request: NextRequest) {
     if (decision?.intent === 'where_to_go') {
       return NextResponse.json({
         ok: true,
-        data: { replyText: fallbackReply, cardPayload }
+        data: { replyText, cardPayload }
       }, { headers: corsHeaders });
     }
 
@@ -400,42 +490,50 @@ export async function POST(request: NextRequest) {
         ? `Trải bài được chọn: ${spread.name.vi} (${spread.id}), ${spread.positions.length} lá.\n${spread.positions.map((position, index) => `${index + 1}. ${position.name.vi}: ${position.description.vi}`).join('\n')}`
         : 'Không có trải bài Tarot trong chế độ này.';
 
-      const systemPrompt = `Bạn là Tiểu Linh Miêu — linh miêu hộ mệnh thông thái, tinh tế và ấm áp của NUMELYRA.
-Bạn tư vấn dựa trên các lá Tarot Rider-Waite theo vị trí, tài liệu Thần số học đã tra cứu và Tử Vi Đẩu Số/Bát Tự nếu được cung cấp.
+      const retrievedKnowledgeKeys = new Set(retrievedKnowledge.map(({ indicator: found }) => found.key));
 
-QUY TẮC BẮT BUỘC:
-1. Với ghép đôi hai người: chỉ dùng Tử Vi Đẩu Số và Bát Tự Tứ Trụ; tuyệt đối không nhắc Tarot.
-2. Với một người: Tarot là lớp diễn giải chính. Chỉ dùng nội dung Thần số học có trong tài liệu được cung cấp; nếu không có tài liệu cho chỉ số, không tự suy luận từ giá trị số.
-3. Với trải bài nhiều lá: tổng hợp tín hiệu theo tên và vai trò vị trí; không chỉ dựa vào lá đầu tiên, không cần diễn giải máy móc từng lá.
-4. Với câu hỏi tình cảm: không khẳng định biết suy nghĩ, ý định hoặc hành động riêng tư của đối phương.
-5. Với hai lựa chọn: nêu hướng mà các lá bài nghiêng về nếu có đủ tín hiệu; không tự tạo tỷ lệ phần trăm hoặc xác suất.
-6. Với "where_to_go": chỉ nêu các địa điểm đã có trong dữ liệu VietMap được cung cấp. Không tự tạo rating, địa chỉ, giờ mở cửa, khoảng cách, giá hoặc tên địa điểm. Tarot chỉ là lớp diễn giải vibe, không thay thế điều kiện thực tế.
-7. Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
-✦ KẾT LUẬN NHANH:
-[Tối đa 2 câu ngắn, trả lời thẳng vào câu hỏi]
+      const systemPrompt = buildAgentSystemPrompt({
+        intent: decision?.intent,
+        isCouple,
+        complexity: responseBudget.complexity,
+        needsTarot: decision?.needsTarot,
+      });
 
-✦ VÌ SAO:
-[Tối đa ${responseBudget.complexity === 'complex' ? '4' : '3'} bullet; mỗi bullet chỉ một câu ngắn và kết thúc bằng dấu chấm. Với trải bài nhiều lá, gộp các lá cùng ý thay vì diễn giải từng lá thành đoạn dài.]
+      const userPrompt = buildAgentUserPrompt({
+        timeContext,
+        message,
+        p1,
+        p2,
+        isCouple,
+        spreadContext,
+        cards,
+        numerologyKnowledgeContext,
+        resonanceContext,
+        selectedIndicators,
+        retrievedKnowledgeKeys,
+        resolvedP2,
+        baziSummary,
+        baziScore,
+        placeRecommendations,
+      });
 
-✦ NÊN LÀM GÌ:
-[1-2 bullet là hành động cụ thể, làm được ngay; mỗi bullet kết thúc bằng dấu chấm]
-
-8. BẮT BUỘC chỉ trả lời bằng tiếng Việt. Bắt đầu ngay lập tức bằng dòng "✦ KẾT LUẬN NHANH:", tuyệt đối không viết lời chào hỏi, không viết suy nghĩ nội tâm tiếng Anh hay ghi chú đếm từ. Giọng điệu thân thiện, thông thái, ấm áp. Tarot là công cụ tự soi chiếu, không phải tiên tri chắc chắn; với khủng hoảng sức khỏe/an toàn, khuyến khích tìm hỗ trợ chuyên môn. Kết thúc ngay sau phần “NÊN LÀM GÌ”.`;
-
-      const userPrompt = `Câu hỏi của người dùng: "${message}"
-Hồ sơ người hỏi: ${p1.fullName} (Ngày sinh: ${p1.birthDate}) ${p2 ? `\nHồ sơ người thứ 2: ${p2.fullName} (Ngày sinh: ${p2.birthDate})` : ''}
-${isCouple ? 'CHẾ ĐỘ GHÉP ĐÔI 2 NGƯỜI: 100% THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (KHÔNG CÓ LÁ BÀI TAROT).' : `${spreadContext}\n${cards.length > 0 ? `Các lá bài Tarot đã rút:\n${cards.map((c: any, i: number) => `• Vị trí ${i+1} [${c.position?.nameVi || i+1}]: ${c.card?.nameVi} (${c.isReversed ? 'Lá Ngược' : 'Lá Xuôi'}) - Ý nghĩa: ${c.isReversed ? c.card?.meaningReversed : c.card?.meaningUpright}`).join('\n')}` : 'Không có lá Tarot được cung cấp.'}`}
-
-DỮ LIỆU THẦN SỐ HỌC PYTHAGORAS BẢN MỆNH (${p1.fullName}):
-${numerologyKnowledgeContext}
-${selectedIndicators.length ? `\nCÁC CHỈ SỐ ĐÃ CHỌN VÀ GIÁ TRỊ HỒ SƠ:\n${selectedIndicators.map((indicator) => `• ${indicator.name} (${indicator.key}): ${indicator.value}${retrievedKnowledge.some(({ indicator: found }) => found.key === indicator.key) ? '' : ' — không có tài liệu khớp, không diễn giải chỉ số này.'}`).join('\n')}` : ''}
-${resolvedP2.length > 0 ? `\nDỮ LIỆU THẦN SỐ HỌC ĐỐI PHƯƠNG (tham khảo):\n${formatIndicatorsForPrompt(resolvedP2)}` : ''}
-${baziSummary ? `\nLuận giải Bát Tự & Cung Phu Thê (Điểm hòa hợp: ${baziScore}%):\n${baziSummary}` : ''}
-${placeRecommendations ? `\nDỮ LIỆU ĐỊA ĐIỂM ĐÃ XÁC THỰC TỪ VIETMAP (chỉ dùng đúng các tên này):\n${placeRecommendations.places.map((place) => `• ${place.name}`).join('\n')}` : ''}`;
-
-      const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens));
-      replyText = normalizeChatReply(aiText, fallbackReply, responseBudget.complexity);
-      console.log('[Chat Agent Route] Generated reply successfully, using AI text:', replyText !== fallbackReply);
+      const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens), {
+        requestedKeys,
+        suppliedKeys: suppliedP1Indicators.map((indicator) => indicator.key),
+        selectedKeys: selectedIndicators.map((indicator) => indicator.key),
+        knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key)
+      });
+      const normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
+      replyText = normalized.replyText;
+      if (normalized.usedAI) {
+        console.log('[Chat Agent Route] Generated reply successfully, using AI text: true');
+      } else {
+        console.warn('[Chat Agent Route] AI reply rejected; using template:', {
+          reason: normalized.rejectionReason,
+          responseChars: aiText.length,
+          complexity: responseBudget.complexity,
+        });
+      }
     } catch (llmError) {
       console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
       replyText = fallbackReply;

@@ -1,0 +1,569 @@
+[
+  {
+    "id": "dayIndividual-1",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "1",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 1",
+    "sourceSnippet": "Trong 24 giờ của Ngày Cá Nhân Số 1 (Personal Day 1 = Tháng cá nhân + Ngày dương lịch), tâm trạng của bạn tràn ngập sự tự tin, hứng khởi và nguồn sinh lực dồi dào. Bạn có thôi thúc muốn đứng lên dẫn dắt, tự mình ra quyết định và không muốn bị phụ thuộc vào bất kỳ ai. Đây là ngày của hành động tiên phong.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Khởi động một nhiệm vụ mới: Bắt tay vào một dự án, thói quen hoặc kế hoạch bạn đã ấp ủ... Tự đưa ra quyết định dứt khoát",
+        "rationale": "Hành động quyết đoán, tiên phong khởi sự dự án mới và tự mình giải quyết việc khó."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tâm trạng của bạn tràn ngập sự tự tin, hứng khởi và nguồn sinh lực dồi dào",
+        "rationale": "Cảm xúc hưng phấn, tự tin và tràn trề năng lượng sinh lực."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "viết ra 3 việc quan trọng nhất cần hoàn thành và chủ động giải quyết ngay việc khó nhất đầu tiên",
+        "rationale": "Thiết lập cấu trúc thứ tự ưu tiên rõ ràng trong ngày."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Gửi đề xuất/Email quan trọng: Chủ động liên hệ đối tác hoặc trình bày ý tưởng mới với cấp trên",
+        "rationale": "Chủ động dấn thân, không ngại rủi ro khi đề xuất ý tưởng mới."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Tự mình ra quyết định và không muốn bị phụ thuộc vào bất kỳ ai",
+        "rationale": "Tư duy độc lập, tự chủ nhận định tình huống."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "hành động bốc đồng mà thiếu sự quan sát xung quanh",
+        "rationale": "Hành động vội vã, bốc đồng thiếu suy xét thấu đáo."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Nóng nảy gắt gỏng khi người khác làm việc chậm chạp; tranh cãi hơn thua để chứng tỏ cái tôi",
+        "rationale": "Nóng giận, hiếu thắng và dễ cáu kỉnh làm tổn thương hòa khí."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "hành động bốc đồng",
+        "rationale": "Mạo hiểm bốc đồng không lường trước hậu quả."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-2",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "2",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 2",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 2 mang tính lắng đọng, êm dịu, nhạy cảm và giàu tình cảm. Bạn muốn tìm kiếm sự bình yên, thích làm việc cùng người khác và nhạy bén cảm nhận được tâm tư, cảm xúc của những người xung quanh.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "Làm việc nhóm và hỗ trợ đồng nghiệp: Đóng góp vào thành công chung của tập thể",
+        "rationale": "Hành động hợp tác hỗ trợ hòa nhã trong tập thể."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "lắng đọng, êm dịu, nhạy cảm và giàu tình cảm... Hẹn hò lãng mạn hoặc ăn trưa cùng cộng sự: Tăng cường sự gắn kết tình cảm",
+        "rationale": "Cảm xúc tinh tế, nhạy cảm sâu sắc và sự gắn kết ấm áp chân tình."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Lắng nghe và hòa giải hiểu lầm: Giải quyết mâu thuẫn bằng sự nhẹ nhàng, tinh tế và thấu cảm",
+        "rationale": "Thiết lập lại trật tự và cân bằng trong các mối quan hệ."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "tìm kiếm sự bình yên... giữ tâm thế bình thản trước các biến động",
+        "rationale": "Xu hướng an toàn, tránh mạo hiểm va chạm."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "nhạy bén cảm nhận được tâm tư, cảm xúc của những người xung quanh... kích hoạt trực giác",
+        "rationale": "Trực giác nhạy bén thấu suốt tâm lý người khác."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "e ngại không dám bày tỏ quan điểm dẫn đến ức chế ngấm ngầm",
+        "rationale": "Thiếu quyết đoán hành động, nhút nhát không dám nói lên chính kiến."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Tự ái, suy diễn quá mức trước lời nói vô tình của người khác... ôm đồm cảm xúc tiêu cực",
+        "rationale": "Dễ tự ái tổn thương, suy diễn tiêu cực và ôm đồm ức chế."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "e ngại không dám bày tỏ",
+        "rationale": "Quá sợ hãi rủi ro xung đột khiến bản thân chịu thiệt thòi."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-3",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "3",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 3",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 3 ngập tràn sự vui tươi, lạc quan, hài hước và phóng khoáng. Bạn cảm thấy tràn đầy ý tưởng sáng tạo, muốn nói chuyện, chia sẻ và kết nối với mọi người xung quanh bằng nguồn năng lượng tích cực.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Thuyết trình, bán hàng hoặc đàm phán trực tiếp... Sáng tạo nội dung và viết lách: Đăng bài chia sẻ, viết blog, làm video",
+        "rationale": "Chủ động diễn thuyết, sản xuất nội dung sáng tạo và giao lưu xã hội."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "vui tươi, lạc quan, hài hước và phóng khoáng... kết nối với mọi người xung quanh bằng nguồn năng lượng tích cực",
+        "rationale": "Năng lượng cảm xúc ngập tràn niềm vui, tiếng cười và sự lạc quan."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Thiên về tính ngẫu hứng và tự do biểu đạt xã hội."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Gặp gỡ bạn bè, mở rộng giao lưu: Tham gia các buổi tiệc, sự kiện giao lưu vui vẻ",
+        "rationale": "Tự tin bước vào các không gian xã hội mới để giao lưu."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "tràn đầy ý tưởng sáng tạo... Tận dụng sự hoạt ngôn và duyên dáng tự nhiên",
+        "rationale": "Trí tuệ ngôn từ hoạt bát, linh hoạt và giàu ý tưởng sáng tạo đột phá."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "phân tán năng lượng làm việc nửa vời",
+        "rationale": "Hành động thiếu tập trung, việc gì cũng làm dở dang."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "sa đà vào buôn chuyện thị phi",
+        "rationale": "Phù phiếm buôn chuyện ngồi lê đôi mách làm tiêu hao năng lượng."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "chi tiêu mua sắm bốc đồng vào những món đồ không thực sự cần thiết",
+        "rationale": "Thiếu kiểm soát kỷ luật tài chính, tiêu xài tùy hứng."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "mua sắm bốc đồng",
+        "rationale": "Bốc đồng cảm xúc gây lãng phí nguồn lực."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Nói quá nhiều lấn át người khác",
+        "rationale": "Nói nhiều thiếu lắng nghe, thao thao bất tuyệt lấn át đối phương."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-4",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "4",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 4",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 4 chuyển sang trạng thái nghiêm túc, thực tế, tập trung cao độ và có xu hướng cầu toàn. Bạn muốn thấy mọi thứ ngăn nắp, có trật tự và muốn tập trung giải quyết dứt điểm các công việc chi tiết.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Dọn dẹp bàn làm việc và nhà cửa: Sắp xếp lại đồ đạc, lau chùi không gian sống ngăn nắp... tập trung giải quyết dứt điểm các công việc chi tiết",
+        "rationale": "Chăm chỉ dọn dẹp, xử lý chi tiết và hoàn tất dứt điểm công việc."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "nghiêm túc, thực tế, tập trung cao độ và có xu hướng cầu toàn",
+        "rationale": "Nghiêm cẩn, kiềm chế cảm xúc để dồn sức cho công việc thực tế."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Lập kế hoạch và rà soát sổ sách: Kiểm tra thu chi, đối chiếu số liệu tài chính và lên lịch trình... ngăn nắp, có trật tự",
+        "rationale": "Thiết lập cấu trúc trật tự kỷ luật, kiểm toán số liệu và quản lý thời gian chuẩn mực."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "muốn thấy mọi thứ ngăn nắp, có trật tự... Chuẩn hóa quy trình",
+        "rationale": "Cẩn trọng tuyệt đối, né tránh mọi rủi ro sai sót trong chi tiết."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Hoàn thiện các chi tiết kỹ thuật/pháp lý: Đọc kỹ hợp đồng, sửa lỗi tài liệu và chuẩn hóa quy trình",
+        "rationale": "Trí tuệ tỉ mỉ, kiểm tra logic pháp lý và rà soát lỗi chi tiết."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "quá khắt khe với bản thân dẫn đến căng thẳng, đau nửa đầu",
+        "rationale": "Hành động chậm chạp do cầu toàn thái quá, tự gây áp lực cho bản thân."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "cằn nhằn về sự bừa bãi xung quanh... căng thẳng, đau nửa đầu",
+        "rationale": "Cáu kỉnh, bực bội và cằn nhằn khi ngoại cảnh không như ý."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Cứng nhắc bắt bẻ lỗi nhỏ của người khác",
+        "rationale": "Cứng nhắc giáo điều, bắt bẻ vụn vặt gây khó chịu cho đồng nghiệp."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối mạo hiểm cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-5",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "5",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 5",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 5 rất hào hứng, thích phiêu lưu, tò mò và ghét sự gò bó đơn điệu. Bạn cảm thấy bồn chồn nếu phải ngồi yên một chỗ và luôn sẵn sàng đón nhận những điều mới lạ, bất ngờ diễn ra trong ngày.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Thay đổi không khí làm việc: Ra quán cafe làm việc, đổi cung đường đi làm hoặc thử một món ăn mới lạ... Đi công tác, dạo phố",
+        "rationale": "Hành động linh hoạt, chủ động thay đổi môi trường và di chuyển."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "hào hứng, thích phiêu lưu, tò mò và ghét sự gò bó đơn điệu",
+        "rationale": "Tâm trạng phấn chấn, tò mò và yêu thích sự tự do bất ngờ."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Xử lý linh hoạt các tình huống phát sinh: Ứng biến nhanh nhạy trước các thay đổi lịch trình đột xuất",
+        "rationale": "Linh hoạt phá vỡ lịch trình cố định để thích ứng với tình huống mới."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "đón nhận những điều mới lạ, bất ngờ... đón nhận sự thay đổi như một gia vị thú vị",
+        "rationale": "Sẵn sàng đón nhận bất ngờ và chấp nhận rủi ro thay đổi."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Tìm hiểu công nghệ hoặc xu hướng mới: Nâng cấp kiến thức về những điều mới nổi",
+        "rationale": "Tư duy nhạy bén nắm bắt xu hướng công nghệ mới nổi."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "lái xe phóng nhanh vượt ẩu do tâm lý vội vàng",
+        "rationale": "Hành động vội vàng, bất cẩn gây nguy hiểm cho bản thân."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "bồn chồn nếu phải ngồi yên một chỗ",
+        "rationale": "Tâm trạng bồn chồn, đứng ngồi không yên và dễ phân tâm."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Bốc đồng hủy bỏ hẹn quan trọng vì cảm xúc nhất thời",
+        "rationale": "Phá vỡ kế hoạch và cam kết hẹn gặp một cách tùy tiện."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "vội vã đưa ra quyết định khi chưa cân nhắc kỹ",
+        "rationale": "Ra quyết định liều lĩnh khi chưa xem xét hậu quả."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-6",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "6",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 6",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 6 ngập tràn sự ấm áp, chu đáo, tinh thần trách nhiệm và lòng trắc ẩn. Tâm trí bạn hướng về gia đình, người thương, bạn bè thân thiết và mong muốn mang lại niềm vui, sự an lành cho những người xung quanh.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Nấu bữa tối sum họp gia đình: Tự tay chuẩn bị một bữa ăn ngon... Thăm hỏi cha mẹ, bạn bè hoặc người ốm... Làm một việc tử tế",
+        "rationale": "Hành động chăm sóc người thân, nấu ăn, thăm hỏi và làm việc thiện."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "ngập tràn sự ấm áp, chu đáo, tinh thần trách nhiệm và lòng trắc ẩn... niềm vui, sự an lành",
+        "rationale": "Tình yêu thương ấm áp, sự ân cần chu đáo và lòng trắc ẩn tha thiết."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "trở về nhà với nụ cười tươi, cùng người thân chuẩn bị bữa tối và lắng nghe họ chia sẻ",
+        "rationale": "Tạo dựng không gian sinh hoạt gia đình ngăn nắp và ấm cúng."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "mong muốn mang lại niềm vui, sự an lành cho những người xung quanh",
+        "rationale": "Ưu tiên sự an toàn, bảo bọc và bình yên cho người thân."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "lắng nghe họ chia sẻ về một ngày của mình với sự hiện diện trọn vẹn 100%",
+        "rationale": "Trí tuệ lắng nghe trọn vẹn và thấu cảm tâm sự người khác."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "hy sinh quá mức dẫn đến tủi thân, trách móc",
+        "rationale": "Hy sinh thái quá dẫn đến tủi thân, hờn dỗi và oán trách."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Bao đồng can thiệp vào chuyện riêng của người khác; cằn nhằn áp đặt ý muốn của mình lên người thân",
+        "rationale": "Bao đồng, áp đặt ý chí và can thiệp thô bạo vào ranh giới cá nhân người khác."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-7",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "7",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 7",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 7 có xu hướng lắng sâu, trầm mặc, hướng nội và thích sự yên tĩnh. Bạn cảm thấy mệt mỏi với những nơi ồn ào, xô bồ và có nhu cầu mạnh mẽ được ở một mình để suy ngẫm, đọc sách và phục hồi năng lượng.",
+    "core": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "nhu cầu mạnh mẽ được ở một mình để suy ngẫm, đọc sách và phục hồi năng lượng",
+        "rationale": "Chủ động tĩnh lặng, hạn chế hoạt động ồn ào bên ngoài để dưỡng sức."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "lắng sâu, trầm mặc, hướng nội và thích sự yên tĩnh... mệt mỏi với những nơi ồn ào",
+        "rationale": "Trầm tĩnh, hướng nội và giữ lòng thanh thản trước mọi ồn ào."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Viết nhật ký và chiêm nghiệm: Đúc kết những bài học cuộc sống và lắng nghe trực giác mách bảo",
+        "rationale": "Đúc kết bài học có trật tự qua nhật ký và chiêm nghiệm nội tâm."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Tránh các quyết định tài chính mạo hiểm: Giữ an toàn nguồn vốn trong ngày hôm nay",
+        "rationale": "Cực kỳ cẩn trọng, tuyệt đối không ra quyết định tài chính mạo hiểm."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Đọc sách chuyên môn hoặc triết học: Nạp thêm tri thức tinh hoa trong không gian yên tĩnh... lắng nghe trực giác và tái tạo trí tuệ",
+        "rationale": "Trí tuệ uyên thâm, hấp thu tri thức chuyên sâu và tái tạo trực giác sâu sắc."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "gượng ép bản thân tham gia các cuộc vui ồn ào khiến bản thân kiệt sức",
+        "rationale": "Gượng ép giao tiếp ngoài ý muốn dẫn đến kiệt quệ năng lượng hành động."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "suy nghĩ quá nhiều dẫn đến hoài nghi tiêu cực",
+        "rationale": "Nghĩ ngợi quá nhiều dẫn đến hoài nghi, u uất và cô độc tâm lý."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối mạo hiểm cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Tranh luận triết lý thắng thua vô ích",
+        "rationale": "Tranh cãi giáo điều, chấp nhặt lý lẽ triết học làm lãng phí thời gian."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-8",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "8",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 8",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 8 cực kỳ mạnh mẽ, sắc bén, thực tế và hướng thẳng tới kết quả tài chính, công việc. Bạn cảm thấy tự tin, có uy quyền lãnh đạo và muốn xử lý những việc lớn có giá trị kinh tế cao.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Đàm phán thương mại và chốt đơn hàng lớn... Xử lý các giao dịch tài chính quan trọng... Họp điều hành và giao việc",
+        "rationale": "Hành động điều hành quyết liệt, xử lý giao dịch kinh tế lớn và chốt đơn hàng."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "mạnh mẽ, sắc bén, thực tế và hướng thẳng tới kết quả tài chính",
+        "rationale": "Tâm thế lý trí, vững vàng và tập trung tối đa vào hiệu quả công việc."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Họp điều hành và giao việc cho đội ngũ: Khẳng định vai trò lãnh đạo và đôn đốc tiến độ dứt khoát",
+        "rationale": "Tổ chức điều hành chuyên nghiệp, phân công nhiệm vụ và kiểm soát tiến độ dứt khoát."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Tận dụng sự quyết đoán và nhạy bén để ký kết hợp đồng... xử lý những việc lớn có giá trị kinh tế cao",
+        "rationale": "Quyết đoán dám chốt thương vụ lớn và chịu trách nhiệm tài chính cao."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Năng lượng thực tế và quyền uy của Ngày 8 sẽ hỗ trợ bạn làm chủ cuộc đàm phán, bảo vệ quyền lợi chính đáng",
+        "rationale": "Trí tuệ đàm phán sắc bén, nhạy bén tính toán tài chính và quyền lợi."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "nổi nóng khi cấp dưới làm việc chậm trễ",
+        "rationale": "Nóng giận thúc ép cấp dưới quá mức, gây căng thẳng nơi làm việc."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Hách dịch, áp đặt thô bạo lên người khác",
+        "rationale": "Áp đặt độc đoán, thiếu tôn trọng cảm xúc của cộng sự."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "tham lam tính toán chi li làm mất lòng cộng sự",
+        "rationale": "Chi li tính toán quá mức làm xói mòn lòng tin và cấu trúc hợp tác."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối mạo hiểm cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dayIndividual-9",
+    "indicatorKey": "dayIndividual",
+    "indicatorNameVi": "Ngày cá nhân",
+    "numberValue": "9",
+    "title": "Năng Lượng Vi Mô Của Ngày Cá Nhân Số 9",
+    "sourceSnippet": "Tâm trạng trong 24 giờ của Ngày Cá Nhân Số 9 mang sự nhẹ nhõm, bao dung, hướng thiện và muốn kết thúc trọn vẹn những việc cũ. Bạn cảm thấy sẵn sàng buông bỏ những điều không còn phù hợp để giải phóng không gian cho những điều mới mẻ sắp tới.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Hoàn thành nốt các công việc còn dang dở: Đóng gói tài liệu, gửi báo cáo tổng kết và trả nợ... Dọn dẹp bàn làm việc và thanh lý đồ cũ",
+        "rationale": "Chủ động hoàn thành dứt điểm hồ sơ, dọn dẹp không gian và thanh toán nợ cũ."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "nhẹ nhõm, bao dung, hướng thiện và muốn kết thúc trọn vẹn... Thực hành tha thứ và buông xả: Bỏ qua những bực bội cũ",
+        "rationale": "Tâm hồn nhẹ nhõm, bao dung tha thứ và ngập tràn lòng hướng thiện."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "dọn sạch bàn làm việc trước khi đi ngủ, viết ra những điều bạn biết ơn trong ngày",
+        "rationale": "Dọn dẹp trật tự không gian sống và hệ thống hóa sự biết ơn."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Bắt đầu một dự án lớn mới toanh ngay trong hôm nay (hãy để sang Ngày 1)",
+        "rationale": "Tránh mạo hiểm mở dự án mới toanh trong ngày buông xả."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Làm một việc thiện nguyện nhỏ: Ủng hộ tiền lẻ, nhường đường hoặc giúp đỡ người yếu thế... sẵn sàng đón nhận bình minh",
+        "rationale": "Trí tuệ nhân đạo sâu sắc và thấu suốt sự vận hành của chu kỳ mới."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "bắt đầu một dự án lớn mới toanh ngay trong hôm nay",
+        "rationale": "Hấp tấp khởi sự mới không đúng nhịp năng lượng ngày."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "ôm giữ sự ấm ức trong lòng; níu kéo những mối quan hệ không còn lành mạnh",
+        "rationale": "Ấm ức ngấm ngầm, bi lụy níu kéo những điều đã hết duyên."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "níu kéo những mối quan hệ không còn lành mạnh",
+        "rationale": "Mạo hiểm bám víu vào quan hệ độc hại gây tổn thương tinh thần."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

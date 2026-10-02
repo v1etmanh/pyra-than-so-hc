@@ -1,0 +1,115 @@
+{
+  "datasetName": "NUMELYRA_TAROT_LABELS_156",
+  "version": "1.0.0",
+  "createdAt": "2026-10-01T20:15:00.000Z",
+  "description": "Bộ dữ liệu chuẩn hóa gán nhãn năng lượng 5 trục (ACT, EMO, STR, RSK, INT) cho toàn bộ 78 lá bài Tarot ở cả 2 trạng thái Xuôi (Upright) và Ngược (Reversed), phân tách 2 khía cạnh Cốt lõi (Core) và Vùng tối (Shadow), có trích dẫn minh chứng chính xác từ lib/tarot/cards.ts.",
+  "statistics": {
+    "totalCards": 78,
+    "totalCardStates": 156,
+    "majorArcanaStates": 44,
+    "minorArcanaStates": 112,
+    "suits": {
+      "wands": 28,
+      "cups": 28,
+      "swords": 28,
+      "pentacles": 28
+    },
+    "statesDistribution": {
+      "upright": 78,
+      "reversed": 78
+    },
+    "axes": [
+      {
+        "id": "ACT",
+        "nameVi": "Chủ động & Hành động",
+        "nameEn": "Action & Initiative",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Tê liệt, trì hoãn; +2: Dứt khoát, dẫn đầu, bùng nổ hành động"
+      },
+      {
+        "id": "EMO",
+        "nameVi": "Cảm xúc & Gắn kết",
+        "nameEn": "Emotion & Connection",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Chai sạn, cô lập, thao túng; +2: Tràn ngập yêu thương, thấu cảm sâu sắc"
+      },
+      {
+        "id": "STR",
+        "nameVi": "Cấu trúc & Kỷ luật",
+        "nameEn": "Structure & Discipline",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Hỗn loạn, sụp đổ, vô kỷ luật; +2: Kỷ cương vững chắc, logic hoàn bị"
+      },
+      {
+        "id": "RSK",
+        "nameVi": "Khẩu vị Rủi ro & Dấn thân",
+        "nameEn": "Risk Appetite & Courage",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Co cụm, sợ hãi thái quá; +2: Can đảm tuyệt đối, sẵn sàng dấn thân"
+      },
+      {
+        "id": "INT",
+        "nameVi": "Trực giác & Minh triết nội tại",
+        "nameEn": "Inner Wisdom & Intuition",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Mê muội, che mờ tâm trí; +2: Thấu suốt tâm linh, minh triết tuyệt đối"
+      }
+    ],
+    "aspects": [
+      {
+        "id": "core",
+        "nameVi": "Năng lượng cốt lõi",
+        "description": "Năng lượng tự nhiên, bài học tích cực và tiềm năng phát triển của trạng thái lá bài"
+      },
+      {
+        "id": "shadow",
+        "nameVi": "Vùng tối / Thách thức",
+        "description": "Cạm bẫy tâm lý, biến dạng cực đoan, điểm mù hoặc rủi ro tiêu cực cần thức tỉnh"
+      }
+    ]
+  },
+  "files": [
+    {
+      "filePath": "major-arcana.json",
+      "suit": "major",
+      "cardsCount": 22,
+      "itemsCount": 44,
+      "description": "22 lá Ẩn chính (Major Arcana từ The Fool 00 đến The World 21) × 2 trạng thái Xuôi/Ngược = 44 bản ghi"
+    },
+    {
+      "filePath": "wands.json",
+      "suit": "wands",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Gậy (Ace of Wands đến King of Wands) × 2 trạng thái Xuôi/Ngược = 28 bản ghi"
+    },
+    {
+      "filePath": "cups.json",
+      "suit": "cups",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Cốc (Ace of Cups đến King of Cups) × 2 trạng thái Xuôi/Ngược = 28 bản ghi"
+    },
+    {
+      "filePath": "swords.json",
+      "suit": "swords",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Kiếm (Ace of Swords đến King of Swords) × 2 trạng thái Xuôi/Ngược = 28 bản ghi"
+    },
+    {
+      "filePath": "pentacles.json",
+      "suit": "pentacles",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Tiền (Ace of Pentacles đến King of Pentacles) × 2 trạng thái Xuôi/Ngược = 28 bản ghi"
+    }
+  ],
+  "qualityAssurance": {
+    "zeroHallucinationEnforced": true,
+    "sourceTextDependency": "lib/tarot/cards.ts",
+    "ruleForMissingQuote": "Nếu không tìm thấy từ khóa/ý nghĩa trong sourceSnippet, gán score = 0, quote rỗng",
+    "overallConfidenceMedian": 0.95,
+    "auditPassed": true
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "datasetName": "NUMELYRA_TAROT_LABELS_156",
+  "version": "2.0.0",
+  "createdAt": "2026-10-01T20:15:00.000Z",
+  "description": "156 trạng thái Tarot được AI gán lại từ nguồn dự án theo rubric 2.0.0. Mọi điểm khác 0 có trích nguyên văn và vị trí trong nguồn; thiếu bằng chứng/mơ hồ được bỏ qua. Bộ silver chưa xác nhận bằng người hoặc lượt độc lập.",
+  "statistics": {
+    "totalCards": 78,
+    "totalCardStates": 156,
+    "majorArcanaStates": 44,
+    "minorArcanaStates": 112,
+    "suits": {
+      "wands": 28,
+      "cups": 28,
+      "swords": 28,
+      "pentacles": 28
+    },
+    "statesDistribution": {
+      "upright": 78,
+      "reversed": 78
+    },
+    "axes": [
+      {
+        "id": "ACT",
+        "nameVi": "Chủ động & Hành động",
+        "definition": "Mức khởi xướng/thực thi của chủ thể, không phải mức biến động hoàn cảnh hoặc thành công kết quả.",
+        "anchors": {
+          "0": "Chủ động nghỉ/tạm dừng hoặc chưa đủ bằng chứng về hành động",
+          "1": "Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích",
+          "2": "Quyết liệt, quyết đoán hoặc thực thi với tốc độ cao",
+          "-2": "Mắc kẹt hoặc tê liệt hành động rõ rệt",
+          "-1": "Do dự, trì hoãn, thiếu động lực hoặc tiến trình chủ thể trì trệ"
+        },
+        "scale": "Ordinal [-2, -1, 0, +1, +2]"
+      },
+      {
+        "id": "EMO",
+        "nameVi": "Cảm xúc & Gắn kết",
+        "definition": "Mức cởi mở, gắn kết và điều tiết cảm xúc. Buồn đau, mất mát, chiến thắng hoặc vật chất tự chúng không chứng minh mất gắn kết hay điều tiết tốt/xấu.",
+        "anchors": {
+          "0": "Không nêu hướng gắn kết/điều tiết; không biến mọi cảm xúc thành điểm âm/dương",
+          "1": "Mở lòng, tương hỗ, hòa giải hoặc kết nối",
+          "2": "Thấu cảm/chăm sóc rõ rệt hoặc gắn kết gia đình/cộng đồng hòa hợp",
+          "-2": "Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt",
+          "-1": "Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường"
+        },
+        "scale": "Ordinal [-2, -1, 0, +1, +2]"
+      },
+      {
+        "id": "STR",
+        "nameVi": "Cấu trúc & Kỷ luật",
+        "definition": "Mức tổ chức, giới hạn và kiểm soát. Cứng nhắc/độc đoán thuộc đầu cấu trúc cao khi xuất hiện như shadow; dấu âm không có nghĩa là xấu. Sáng rõ tư duy không tự chứng minh kỷ luật.",
+        "anchors": {
+          "0": "Không nêu cấu trúc, hoặc nguồn đồng thời nêu quá kiểm soát và thiếu kỷ luật",
+          "1": "Kế hoạch, ưu tiên, chiến lược, ranh giới hoặc trách nhiệm",
+          "2": "Cấu trúc/kỷ luật bền vững hoặc kiểm soát cứng nhắc quá mức",
+          "-2": "Hỗn loạn, cấu trúc sụp đổ hoặc thiếu kỷ luật rõ rệt",
+          "-1": "Phân tán, thiếu chuẩn bị, mất hướng, xao nhãng hoặc thiếu ranh giới"
+        },
+        "scale": "Ordinal [-2, -1, 0, +1, +2]"
+      },
+      {
+        "id": "RSK",
+        "nameVi": "Khẩu vị Rủi ro & Dấn thân",
+        "definition": "Mức sẵn sàng dấn thân của chủ thể. Liều lĩnh là đầu dương cao ở shadow; rủi ro bị áp đặt hoặc khả năng chịu thiệt hại không phải khẩu vị rủi ro.",
+        "anchors": {
+          "0": "Không đủ bằng chứng, hoặc có cả liều lĩnh và sợ hành động",
+          "1": "Khám phá, phiêu lưu hoặc dũng khí được nêu",
+          "2": "Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp",
+          "-2": "Sợ bước đi/thay đổi/rời bỏ hoặc phòng thủ quá mức rõ rệt",
+          "-1": "Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu"
+        },
+        "scale": "Ordinal [-2, -1, 0, +1, +2]"
+      },
+      {
+        "id": "INT",
+        "nameVi": "Trực giác & Tự nhận thức",
+        "definition": "Trực giác, trí tuệ nội tâm, chiêm nghiệm và tự nhận thức. Không đồng nhất với lý trí, học nghề, sự thật khách quan, thành công hoặc lời khuyên nhìn lại dùng chung.",
+        "anchors": {
+          "0": "Không nêu trực giác/tự nhận thức; hoặc nguồn có các hướng đối lập chưa phân giải",
+          "1": "Chiêm nghiệm, nhận thức hoặc góc nhìn mới",
+          "2": "Trực giác/trí tuệ nội tâm hoặc thức tỉnh được nêu rõ",
+          "-2": "Phớt lờ/cản trở trực giác hoặc ảo tưởng rõ rệt",
+          "-1": "Suy diễn, nhận thức bị bóp méo hoặc mất liên hệ với bản thân được nêu"
+        },
+        "scale": "Ordinal [-2, -1, 0, +1, +2]"
+      }
+    ],
+    "aspects": [
+      {
+        "id": "core",
+        "description": "Năng lượng/trạng thái chủ đạo được nguồn mô tả, có thể âm hoặc dương. Không chuyển lời khuyên, tiềm năng chữa lành hoặc điều nên làm thành đặc tính đã hiện diện."
+      },
+      {
+        "id": "shadow",
+        "description": "Thách thức, điểm mù hoặc biến dạng được nêu trực tiếp trong cùng nguồn trạng thái. Không tự suy ra bóng tối của một đặc tính tích cực, không mượn nguồn của chiều còn lại. Có thể trùng core khi thách thức chính là trạng thái chủ đạo."
+      }
+    ],
+    "totalCells": 1560,
+    "nonzeroCells": 287,
+    "evidenceStatusCounts": {
+      "supported": 290,
+      "insufficient": 1258,
+      "ambiguous": 12
+    },
+    "noUsableAxisStates": 24
+  },
+  "files": [
+    {
+      "filePath": "major-arcana.json",
+      "suit": "major",
+      "cardsCount": 22,
+      "itemsCount": 44,
+      "description": "22 lá Ẩn chính (Major Arcana từ The Fool 00 đến The World 21) × 2 trạng thái Xuôi/Ngược = 44 bản ghi",
+      "sha256": "c436b820bda46aebacbc4c91a946ed4c37fbc55b7bdca7a196eb0116ce64f291"
+    },
+    {
+      "filePath": "wands.json",
+      "suit": "wands",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Gậy (Ace of Wands đến King of Wands) × 2 trạng thái Xuôi/Ngược = 28 bản ghi",
+      "sha256": "2499cf6de0b8ce582e0c2142c4d7a22ce83a265d2315e81bebd3e7c568e36a65"
+    },
+    {
+      "filePath": "cups.json",
+      "suit": "cups",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Cốc (Ace of Cups đến King of Cups) × 2 trạng thái Xuôi/Ngược = 28 bản ghi",
+      "sha256": "22f9847c181615fc3d5f50091e0bcefc081d5d091ce1b10433a4ef37108f013e"
+    },
+    {
+      "filePath": "swords.json",
+      "suit": "swords",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Kiếm (Ace of Swords đến King of Swords) × 2 trạng thái Xuôi/Ngược = 28 bản ghi",
+      "sha256": "4068119aeb0da9ff544e4d0816cfbb1c614d4cce7250d5ce43b224f140edf76d"
+    },
+    {
+      "filePath": "pentacles.json",
+      "suit": "pentacles",
+      "cardsCount": 14,
+      "itemsCount": 28,
+      "description": "Bộ Tiền (Ace of Pentacles đến King of Pentacles) × 2 trạng thái Xuôi/Ngược = 28 bản ghi",
+      "sha256": "d31840dff6c5c473d6ce93bbe30b7fb2eaa7c4c0cf4cf859dea6a5b564503692"
+    }
+  ],
+  "qualityAssurance": {
+    "sourceTextDependency": "lib/tarot/cards.ts",
+    "sourceIntegrityChecked": true,
+    "exactQuoteValidationPassed": true,
+    "structuralValidationPassed": true,
+    "zeroHallucinationEnforced": false,
+    "auditPassed": false,
+    "semanticReview": "AI source-based review; human validation pending",
+    "ruleForMissingQuote": "score=0; evidenceStatus=insufficient; eligibleForRelations=false",
+    "ruleForAmbiguity": "score=0; preserve opposing alternatives; eligibleForRelations=false",
+    "overallConfidenceMedian": null,
+    "confidenceCalibrated": false,
+    "humanGoldAvailable": false,
+    "interRaterAgreement": null,
+    "limitations": [
+      "Single AI reannotation; not independent multi-model consensus.",
+      "Short source texts do not support every axis/aspect; zeros with insufficient evidence are abstentions.",
+      "Exact quotations prove traceability, not correctness of semantic scoring.",
+      "Consumers must honor evidenceStatus/eligibleForRelations and handle states with no usable axis."
+    ]
+  },
+  "updatedAt": "2026-10-01",
+  "labelTier": "silver",
+  "validationStatus": "source-validated-human-pending",
+  "rubricFile": "rubric.json",
+  "schemaFile": "label-schema.json",
+  "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+  "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+  "provenance": {
+    "runId": "source-reannotation-2026-10-01-v2",
+    "annotatorType": "ai",
+    "modelId": null,
+    "method": "explicit-source-reannotation",
+    "decisionFile": "scripts/tarot-labeling/decisions.mjs",
+    "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+    "independentRuns": 1,
+    "humanReviewed": false,
+    "previousVersionArchive": "archive/v1.0.0"
+  }
+}

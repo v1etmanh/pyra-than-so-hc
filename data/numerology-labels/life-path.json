@@ -1,0 +1,301 @@
+[
+  {
+    "id": "walksOfLife-1",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "1",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 1 Chuẩn Pythagoras",
+    "sourceSnippet": "Trong hệ thống Nhân số học Pythagoras, số 1 là con số khởi nguyên của vạn vật, đại diện cho năng lượng nguyên thủy, sự khai mở và quyền năng lãnh đạo tự chủ. Người mang Số Đường Đời 1 mang trong mình sứ mệnh trở thành Người Tiên Phong (The Pioneer / Leader) – người dũng cảm rẽ lối mở đường, biến những ý tưởng sơ khởi thành hành động thực tế.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "ý chí độc lập kiên cường, tư duy tiên phong đột phá, năng lực ra quyết định dứt khoát trong khủng hoảng", "rationale": "Khí chất tiên phong mở đường, hành động dũng mãnh và quyết đoán." },
+      "EMO": { "score": 0, "evidenceQuote": "thực hành lắng nghe sâu, học cách ủy quyền và nhờ giúp đỡ", "rationale": "Rèn luyện sự khiêm nhường và kết nối chân thành với tập thể." },
+      "STR": { "score": 1, "evidenceQuote": "tinh thần trách nhiệm cao, quản trị rủi ro kỷ luật dài hạn", "rationale": "Ý thức trách nhiệm và rèn luyện tính kỷ luật để bảo toàn thành quả." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm, dũng cảm rẽ lối mở đường, biến ý tưởng sơ khởi thành hành động thực tế", "rationale": "Sẵn sàng dấn thân vào vùng đất mới, dám chịu trách nhiệm tối cao." },
+      "INT": { "score": 1, "evidenceQuote": "tự lực cánh sinh, tự tin vào giá trị bản thân và kiến tạo con đường độc lập", "rationale": "Tư duy độc lập, nhận thức rõ mục tiêu và con đường riêng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tính thích chỉ huy và áp đặt quan điểm, gồng mình gánh vác mọi việc", "rationale": "Hành động độc đoán lấn át, không chia sẻ quyền hạn cho người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "cái tôi cá nhân quá lớn Ego trap, tính độc đoán gia trưởng và thiếu kiên nhẫn, dễ tự cô lập mình", "rationale": "Cái tôi áp đảo triệt tiêu sự thấu cảm, rơi vào cô độc và áp lực nặng nề." },
+      "STR": { "score": -1, "evidenceQuote": "ngại chia sẻ điểm yếu, sợ thừa nhận sự yếu đuối", "rationale": "Vỏ bọc phòng vệ cứng nhắc làm rạn nứt các mối quan hệ hợp tác." },
+      "RSK": { "score": 1, "evidenceQuote": "kiếm tiền rất quyết đoán nhưng thiếu kỷ luật dài hạn", "rationale": "Mạo hiểm quá trớn do cái tôi tự tin thái quá." },
+      "INT": { "score": -1, "evidenceQuote": "quyết định xuất phát từ cái tôi cá nhân thay vì lợi ích chung", "rationale": "Điểm mù nhận thức do bản ngã chi phối." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-2",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "2",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 2 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 2 là con số độc đáo và hiếm gặp nhất trong hệ thống Pythagore. Mục đích sống cốt lõi của người Số 2 là trở thành biểu tượng của sự hòa giải, tình yêu thương vị tha và năng lực thấu cảm tâm linh sâu sắc. Năng lực nổi trội nhất của họ là trực giác nhạy bén bẩm sinh, khả năng lắng nghe tinh tế và sự nhẫn nại phi thường.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thiết lập ranh giới cảm xúc, tập từ chối yêu cầu không chính đáng", "rationale": "Rèn luyện hành động dứt khoát và độc lập bảo vệ bản thân." },
+      "EMO": { "score": 2, "evidenceQuote": "hòa giải, tình yêu thương vị tha và năng lực thấu cảm tâm linh sâu sắc, lắng nghe tinh tế", "rationale": "Trái tim nhân hậu dịu dàng, nguồn năng lượng hàn gắn mọi rạn nứt." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập ranh giới cảm xúc rõ ràng, rèn luyện sự tự lập độc lập tự chủ", "rationale": "Xây dựng ranh giới lành mạnh để bảo vệ sự hòa hợp bền vững." },
+      "RSK": { "score": 0, "evidenceQuote": "dũng cảm nói lời từ chối khi cần thiết mà không cảm thấy tội lỗi", "rationale": "Bản lĩnh nội tâm giữ vững lập trường mà vẫn giữ hòa khí." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác tâm linh cực kỳ nhạy bén, khả năng đọc vị cảm xúc và hòa giải xung đột", "rationale": "Trực giác siêu nhạy bén trong việc thấu suốt tâm can người khác." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "kìm nén nhu cầu của bản thân để làm hài lòng mọi người, ấm ức ngầm", "rationale": "Thụ động cam chịu, tê liệt dũng khí hành động vì sợ mất lòng." },
+      "EMO": { "score": -2, "evidenceQuote": "sự nhạy cảm thái quá và nỗi sợ xung đột, phụ thuộc cảm xúc vào người khác, tự biến mình thành nạn nhân", "rationale": "Lụy tình, yếu đuối, để cảm xúc phụ thuộc hoàn toàn vào ngoại cảnh." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới rõ ràng, dễ bị tổn thương lo âu trầm cảm", "rationale": "Mất cấu trúc phòng vệ cảm xúc, dễ bị cuốn vào năng lượng tiêu cực." },
+      "RSK": { "score": -2, "evidenceQuote": "nỗi sợ xung đột bẩm sinh, sợ bị từ chối", "rationale": "Nỗi sợ va chạm khiến bản thân đánh mất chính kiến." },
+      "INT": { "score": -1, "evidenceQuote": "tính cả nghĩ, nghi ngờ khi thiếu sự quan tâm", "rationale": "Tâm trí suy diễn tiêu cực, bế tắc trong những nỗi lo mơ hồ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-3",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "3",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 3 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 3 nằm ở điểm khởi đầu của Trục ngang Trí não (Mental Plane). Mục đích sống cốt lõi của người Số 3 là biểu đạt sự sáng tạo trí tuệ, khả năng truyền cảm hứng và lan tỏa niềm vui sống thông qua sức mạnh của ngôn từ và tư duy sắc bén. Họ là những ngọn đuốc thắp sáng không gian bằng sự lạc quan và trí thông minh hoạt bát.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "trực tiếp bắt tay vào thực hiện, cam kết hoàn thành trọn vẹn từng mục tiêu", "rationale": "Chủ động hiện thực hóa các ý tưởng và duy trì hành động kiên trì." },
+      "EMO": { "score": 2, "evidenceQuote": "lan tỏa niềm vui sống, thắp sáng không gian bằng sự lạc quan, truyền cảm hứng", "rationale": "Năng lượng rực rỡ ấm áp, thắp sáng hy vọng và tiếng cười cho cộng đồng." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp sự sáng tạo với kỷ luật thực thi, lập kế hoạch chi tiết", "rationale": "Rèn luyện tính kỷ luật để neo giữ năng lượng sáng tạo bay bổng." },
+      "RSK": { "score": 1, "evidenceQuote": "thu hút sự chú ý của đám đông một cách tự nhiên, biểu diễn trước công chúng", "rationale": "Tự tin tỏa sáng trên sân khấu, không ngại thể hiện cái tôi nghệ thuật." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy logic nhanh nhạy, óc quan sát tinh tường, tư duy phản biện sắc sảo, hoạt ngôn", "rationale": "Trí tuệ phản xạ xuất chúng, khả năng biểu đạt ngôn từ bậc thầy." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cả thèm chóng chán, thiếu sự kiên trì bỏ dở công việc giữa chừng", "rationale": "Hành động tùy hứng, phân tán năng lượng và để lại nhiều dự án dang dở." },
+      "EMO": { "score": -1, "evidenceQuote": "dùng ngôn từ cay độc mỉa mai chỉ trích hạ thấp người khác, buôn chuyện thị phi", "rationale": "Lạm dụng ngôn từ làm tổn thương người khác, gây chia rẽ." },
+      "STR": { "score": -2, "evidenceQuote": "vô kỷ luật, tiêu xài hoang phí, làm việc theo cảm hứng tùy tiện", "rationale": "Mất kiểm soát tài chính và thời gian vì thói quen bốc đồng." },
+      "RSK": { "score": 0, "evidenceQuote": "nông nổi bốc đồng theo cảm xúc nhất thời", "rationale": "Mạo hiểm bốc đồng thiếu suy xét chín chắn." },
+      "INT": { "score": -1, "evidenceQuote": "hời hợt trên bề mặt, trốn tránh chiều sâu nội tâm", "rationale": "Tư duy nông cạn, dùng sự hời hợt để che đậy nỗi sợ cô đơn bên trong." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-4",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "4",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 4 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 4 là trụ cột vững chắc của Trục ngang Thể chất. Mục đích sống cốt lõi của người Số 4 là đặt nền móng kiên cố, chuẩn hóa quy trình, thiết lập trật tự kỷ luật và kiến tạo sự an toàn, thịnh vượng bền vững cho xã hội bằng sự cần cù, trung thực và tinh thần trách nhiệm tuyệt đối.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lao động bền bỉ, kiên trì nhẫn nại phi thường, biến ý tưởng trừu tượng thành hiện thực", "rationale": "Ý chí thực thi thép, hành động kiên định và bền bỉ tới cùng." },
+      "EMO": { "score": 0, "evidenceQuote": "tập mỉm cười thả lỏng cơ mặt, dành thời gian thư giãn kết nối cảm xúc gia đình", "rationale": "Học cách thả lỏng để vun đắp sự ấm áp trong các mối quan hệ." },
+      "STR": { "score": 2, "evidenceQuote": "kỷ luật tự giác thép, tư duy tổ chức logic khoa học, chuẩn hóa quy trình, thiết lập trật tự", "rationale": "Bậc thầy về xây dựng nền móng, quy chuẩn hóa và quản trị hệ thống." },
+      "RSK": { "score": 0, "evidenceQuote": "quản trị rủi ro vượt trội, cẩn trọng kiểm chứng thực tế", "rationale": "Bảo toàn an toàn nguồn lực tối đa, phòng ngừa mọi rủi ro tiềm ẩn." },
+      "INT": { "score": 1, "evidenceQuote": "óc thực tế tỉ mỉ, khả năng phân tích chi tiết dữ liệu thực tế", "rationale": "Tư duy duy lý chuẩn xác, bám sát các sự thật hiển nhiên." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tê liệt vì phân tích, trì hoãn cơ hội vì đòi hỏi quy trình hoàn hảo tuyệt đối", "rationale": "Cứng nhắc về quy trình làm chậm trễ tiến độ hành động." },
+      "EMO": { "score": -2, "evidenceQuote": "khô khan, cứng nhắc, khó tính soi mói, phán xét người khác bằng thước đo năng suất lạnh lùng", "rationale": "Lạnh lùng triệt tiêu cảm xúc, biến môi trường xung quanh thành ngột ngạt." },
+      "STR": { "score": -2, "evidenceQuote": "quá bảo thủ giáo điều máy móc, cuồng công việc workaholic", "rationale": "Kỷ luật biến chất thành sự giam cầm độc đoán, tự vắt kiệt sinh lực." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi rủi ro tuyệt đối, bám víu an toàn cũ kỹ, e ngại cái mới", "rationale": "Nỗi sợ thay đổi khiến bản thân bỏ lỡ những bước nhảy vọt quan trọng." },
+      "INT": { "score": -1, "evidenceQuote": "nhìn đời bằng con mắt vật chất khô khan, không tin vào trực giác", "rationale": "Tư duy vật chất thiển cận, chối bỏ các giá trị tinh thần." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-5",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "5",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 5 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 5 ngự trị ở trung tâm điểm của Biểu đồ Ngày sinh. Mang năng lượng của sự tự do, thích ứng và phiêu lưu, mục đích sống cốt lõi của người Số 5 là phá vỡ những rào cản giáo điều cũ kỹ, thúc đẩy đổi mới xã hội và truyền cảm hứng cho mọi người dám sống can đảm, tự do trải nghiệm trọn vẹn từng khoảnh khắc cuộc đời.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thích ứng siêu phàm với mọi hoàn cảnh, năng động dấn thân, xoay chuyển tình thế", "rationale": "Hành động linh hoạt phi thường, luôn chuyển động đón đầu cơ hội mới." },
+      "EMO": { "score": 1, "evidenceQuote": "truyền cảm hứng sống can đảm tự do, kết nối đa văn hóa", "rationale": "Cởi mở, phóng khoáng, lan tỏa tinh thần tự do và lạc quan." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật chính là hình thức cao nhất của tự do, thiết lập mỏ neo kỷ luật", "rationale": "Dùng kỷ luật tự thân làm bệ đỡ vững chắc cho các trải nghiệm khám phá." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm phiêu lưu dấn thân, không ngại rủi ro đổi mới", "rationale": "Dũng cảm bước ra khỏi vùng an toàn, tiên phong khai phá miền đất mới." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy phóng khoáng không định kiến, nhạy bén nắm bắt xu hướng thời đại", "rationale": "Trí tuệ khai phóng nhạy bén, tiếp thu nhanh các tư tưởng tiến bộ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thiếu kiên trì bỏ dở mọi việc giữa chừng, lông bông vô định", "rationale": "Hành động đứt quãng, thiếu sự bền bỉ cam kết dài hạn." },
+      "EMO": { "score": -1, "evidenceQuote": "trốn chạy thực tế và trách nhiệm gia đình", "rationale": "Ích kỷ coi trọng khoái lạc cá nhân hơn tình cảm gắn kết sâu sắc." },
+      "STR": { "score": -2, "evidenceQuote": "sa đà vào những thói quen buông thả hủy hoại sức khỏe nghiện ngập cờ bạc bốc đồng", "rationale": "Sự tự do biến chất thành thói trụy lạc buông thả, phá hủy trật tự sống." },
+      "RSK": { "score": 2, "evidenceQuote": "mạo hiểm liều lĩnh ngu muội, đánh bạc với số phận", "rationale": "Đầu cơ liều lĩnh, tìm kiếm cảm giác mạnh bất chấp hậu quả." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng, đứng núi này trông núi nọ", "rationale": "Tâm trí bồn chồn hỗn loạn, mất khả năng tập trung sâu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-6",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "6",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 6 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 6 mang trọng trách của Người Nuôi Dưỡng & Chữa Lành. Nằm trên Trục ngang Trí não nhưng hướng về tình cảm gia đình, mục đích sống cốt lõi của người Số 6 là nuôi dưỡng tình yêu thương vô điều kiện, xây dựng tổ ấm bình an, chăm sóc người yếu thế và mang lại vẻ đẹp hài hòa thẩm mỹ nhân văn cho cuộc đời.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tận tụy chăm sóc, chu toàn trách nhiệm gia đình và tổ chức", "rationale": "Hành động chăm sóc ân cần, gánh vác việc chung một cách gương mẫu." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương vô điều kiện, lòng trắc ẩn bao la, che chở chữa lành tâm hồn", "rationale": "Trái tim nhân hậu bao la, suối nguồn bình an và ấm áp cho gia đình." },
+      "STR": { "score": 1, "evidenceQuote": "tạo dựng trật tự thẩm mỹ ấm cúng, thiết lập ranh giới yêu thương lành mạnh", "rationale": "Khéo léo kết hợp tình cảm với tính tổ chức và trật tự gia đình." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "năng khiếu thẩm mỹ tinh tế, trực giác nhạy cảm trong chăm sóc sức khỏe và tâm lý", "rationale": "Trực giác nghệ thuật và khả năng thấu hiểu tâm lý sâu sắc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "bao bọc quá mức tạo thói quen ỷ lại cho người khác", "rationale": "Hành động can thiệp bao đồng cản trở sự trưởng thành của người thân." },
+      "EMO": { "score": -2, "evidenceQuote": "yêu thương đi kèm kiểm soát ngột ngạt, cằn nhằn áp đặt, đóng vai nạn nhân oán trách", "rationale": "Tình thương biến chất thành ngục tù kiểm soát, gây ức chế đau đớn." },
+      "STR": { "score": -1, "evidenceQuote": "can thiệp quá sâu vào tự do cá nhân của người khác", "rationale": "Xâm phạm không gian riêng tư của người thân dưới danh nghĩa lo lắng." },
+      "RSK": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực lo âu thái quá thêu dệt kịch bản xấu", "rationale": "Nỗi sợ rủi ro hoang tưởng gây căng thẳng thần kinh triền miên." },
+      "INT": { "score": -1, "evidenceQuote": "tâm trí bị bủa vây bởi các kịch bản tồi tệ thêu dệt", "rationale": "Suy diễn tiêu cực làm sai lệch cái nhìn sáng suốt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-7",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "7",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 7 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 7 là con số của Nhà Tìm Kiếm Chân Lý & Khai Sáng Tri Thức. Nằm ở giao điểm của trải nghiệm thực tế và trí tuệ tâm linh, mục đích sống cốt lõi của người Số 7 là đào sâu nghiên cứu bản chất các quy luật vũ trụ, đúc kết những trải nghiệm xương máu thành tri thức uyên bác để nâng cao nhận thức cho nhân loại.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đưa tri thức nghiên cứu vào ứng dụng thực tế, viết sách giảng dạy", "rationale": "Chuyển hóa tri thức uyên bác thành giải pháp phục vụ cộng đồng." },
+      "EMO": { "score": 0, "evidenceQuote": "mở lòng đón nhận góc nhìn mới, cởi mở trò chuyện đời thường giản dị", "rationale": "Học cách kết nối ấm áp với cuộc sống đời thường." },
+      "STR": { "score": 1, "evidenceQuote": "năng lực tự học và nghiên cứu độc lập phi thường, kiên định", "rationale": "Kỷ luật nghiên cứu khoa học bền bỉ, phương pháp tiếp cận chuẩn mực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy phân tích sắc sảo mổ xẻ bản chất vấn đề, trực giác triết học thấu suốt, đúc kết chân lý", "rationale": "Đỉnh cao minh triết, khả năng giải mã các quy luật vũ trụ sâu xa." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sống ẩn dật xa lánh thực tế, cô lập bản thân làm chậm tiến độ", "rationale": "Thoái lui khỏi đời sống thực tiễn, tê liệt khả năng hành động xã hội." },
+      "EMO": { "score": -2, "evidenceQuote": "hoài nghi cay độc, khép kín cực đoan, kiêu ngạo trí tuệ coi thường người khác", "rationale": "Băng giá xa cách, nhìn đời bằng con mắt nghi kỵ coi khinh." },
+      "STR": { "score": -1, "evidenceQuote": "chìm đắm vào thế giới sách vở lý thuyết viển vông", "rationale": "Mất kết nối với quy luật vận hành thực tế của thị trường." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi sự cô đơn nhưng lại sợ mở lòng tổn thương", "rationale": "Bế tắc tâm lý, không dám chấp nhận rủi ro tình cảm." },
+      "INT": { "score": -1, "evidenceQuote": "bệnh hoài nghi triệt để làm tê liệt niềm tin", "rationale": "Hoài nghi quá mức dẫn đến bế tắc và bi quan u uất." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-8",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "8",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 8 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 8 là biểu tượng của Nhà Kiến Tạo Thịnh Vượng & Bậc Thầy Điều Hành. Nằm ở trung tâm Trục ngang Thể chất, mục đích sống cốt lõi của người Số 8 là làm chủ các quy luật vật chất và tài chính, tổ chức và điều phối các nguồn lực quy mô lớn, tạo dựng công ăn việc làm và nâng tầm thịnh vượng xã hội một cách chính trực.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "ý chí sắt đá vượt qua mọi khủng hoảng, hiện thực hóa các mục tiêu lớn, bản lĩnh lãnh đạo", "rationale": "Hành động dũng mãnh, quyết liệt dẫn dắt và chinh phục đỉnh cao vật chất." },
+      "EMO": { "score": 1, "evidenceQuote": "kinh doanh phụng sự, đối xử công bằng với nhân viên đối tác, nâng đỡ cấp dưới", "rationale": "Lãnh đạo bằng sự chính trực, dùng thành công tài chính để phụng sự xã hội." },
+      "STR": { "score": 2, "evidenceQuote": "quản trị tài chính và dòng tiền tài tình, điều phối nguồn lực quy mô lớn, kỷ luật", "rationale": "Bậc thầy về tư duy hệ thống tài chính và điều phối nguồn lực khổng lồ." },
+      "RSK": { "score": 2, "evidenceQuote": "tư duy chiến lược thương trường sắc bén, dám ra quyết định lớn rủi ro cao", "rationale": "Bản lĩnh kiên cường trên thương trường khốc liệt, dám chơi lớn." },
+      "INT": { "score": 1, "evidenceQuote": "làm chủ các quy luật vật chất và tài chính, nhạy bén thương trường", "rationale": "Tư duy kinh tế sắc bén, nắm vững các quy luật giá trị và đòn bẩy." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lạm quyền chèn ép cấp dưới, áp đặt độc tài", "rationale": "Dùng quyền lực áp bức thô bạo, vắt kiệt sức lao động của người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "thực dụng tàn nhẫn, tham lam bất chấp đạo đức, coi nhẹ tình cảm gia đình", "rationale": "Mất nhân tính vì tiền bạc, lạnh lùng chà đạp lên đạo đức và tình thân." },
+      "STR": { "score": -1, "evidenceQuote": "nợ nần hỗn loạn do quản lý yếu kém khi bị lòng tham chi phối", "rationale": "Mất cân đối dòng tiền do đòn bẩy tài chính quá trớn." },
+      "RSK": { "score": 2, "evidenceQuote": "đầu cơ tham lam, sử dụng đòn bẩy tài chính quá mức liều lĩnh", "rationale": "Lòng tham làm mờ mắt, dẫn tới các quyết định đầu tư liều mạng." },
+      "INT": { "score": -1, "evidenceQuote": "coi tiền bạc và quyền lực là mục đích tối thượng duy nhất", "rationale": "Nhận thức lệch lạc, đánh đồng giá trị sống với khối lượng tài sản." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-9",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "9",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 9 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 9 là con số đỉnh cao của Trục ngang Tâm hồn. Đại diện cho lòng nhân ái, lý tưởng và trách nhiệm nhân loại, mục đích sống cốt lõi của người Số 9 là cống hiến trọn vẹn trí tuệ và trái tim cho sự tiến bộ xã hội, bảo vệ công lý, truyền cảm hứng sống vị tha và dìu dắt cộng đồng hướng tới các giá trị nhân văn văn minh.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cống hiến trọn vẹn trí tuệ và trái tim, bảo vệ công lý xã hội, truyền cảm hứng", "rationale": "Hành động vị tha hào hiệp, dấn thân vì sự tiến bộ của cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng vị tha trắc ẩn không phân biệt ranh giới, uy tín đạo đức thu hút lòng người, hào hiệp vô tư", "rationale": "Tình thương nhân loại bao la, tấm lòng bác ái thuần khiết." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp lý tưởng với tính khả thi, phân kỳ kế hoạch hành động cụ thể", "rationale": "Hệ thống hóa các dự án thiện nguyện và nhân đạo bài bản." },
+      "RSK": { "score": 1, "evidenceQuote": "đấu tranh cho công lý xã hội, không màng danh lợi cá nhân", "rationale": "Dũng cảm đối mặt với áp lực để bảo vệ những giá trị nhân văn cao đẹp." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn vĩ mô bao quát nhân loại, ngọn hải đăng khai sáng dìu dắt cộng đồng", "rationale": "Trí tuệ nhân đạo khai phóng, thấu suốt sứ mệnh tiến hóa của xã hội." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bao đồng việc xã hội nhưng lại vô tâm bỏ bê gia đình nhỏ của mình", "rationale": "Hành động thiếu cân bằng, nhiệt tình bên ngoài mà lạnh nhạt với người thân." },
+      "EMO": { "score": -1, "evidenceQuote": "ôm giữ hận thù và dằn vặt quá khứ, thất vọng cay đắng khi lòng tốt bị lợi dụng", "rationale": "Chấp niệm u uất, khó buông bỏ oán kết cũ làm vẩn đục tâm trí." },
+      "STR": { "score": -2, "evidenceQuote": "quản lý tài chính cá nhân yếu kém, cho đi bừa bãi thiếu kiểm chứng", "rationale": "Hệ thống tài chính cá nhân sụp đổ vì sự hào phóng thiếu tỉnh thức." },
+      "RSK": { "score": 0, "evidenceQuote": "dễ bị kẻ xấu lợi dụng lòng trắc ẩn", "rationale": "Mạo hiểm trao gửi niềm tin sai lầm dẫn đến mất mát." },
+      "INT": { "score": -2, "evidenceQuote": "rơi vào ảo tưởng viển vông xa rời thực tế", "rationale": "Tư duy không tưởng, xa rời các quy luật thực tế khốc liệt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-10",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "10",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời 10 Chuẩn Pythagoras",
+    "sourceSnippet": "Theo trường phái Pythagoras phương Tây của TS. David A. Phillips, Số Chủ đạo 10 là con số đặc biệt của sự linh hoạt, cơ động và tiềm năng vô hạn. Mang trong mình phẩm chất tự chủ của số 1 kết hợp với chiều sâu vô lượng của số 0, người Số 10 có khả năng thích ứng xuất chúng và dễ dàng thành công trong mọi môi trường.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khả năng thích ứng siêu phàm, tính linh hoạt đa tài, tiên phong khởi nghiệp", "rationale": "Hành động nhanh nhạy cơ động, năng lực xoay chuyển tình thế xuất chúng." },
+      "EMO": { "score": 1, "evidenceQuote": "được số đông yêu mến nhờ tính cách hòa đồng vui vẻ, năng lượng tích cực", "rationale": "Tạo dựng mối quan hệ tự nhiên, cuốn hút bằng sự tươi vui và cởi mở." },
+      "STR": { "score": 1, "evidenceQuote": "xác lập mục tiêu kiên định, kỷ luật tự thân để không bị phân tán", "rationale": "Học cách giữ vững mục tiêu cốt lõi giữa muôn vàn cơ hội." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng cảm nắm bắt vận hội mới, tự tin dấn thân vào các lĩnh vực đa dạng", "rationale": "Bản lĩnh chấp nhận rủi ro, linh hoạt biến nguy cơ thành cơ hội lớn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận thức sắc sảo về cơ hội, trực giác kinh doanh nhạy bén", "rationale": "Khả năng đọc vị xu thế thị trường và thích nghi chớp nhoáng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cả thèm chóng chán, dễ phân tán năng lượng vào quá nhiều việc cùng lúc", "rationale": "Hành động lan man, thiếu chiều sâu và dễ bỏ dở giữa chừng." },
+      "EMO": { "score": -1, "evidenceQuote": "tự mãn kiêu ngạo khi đạt chút thành công ban đầu", "rationale": "Cái tôi bốc đồng khiến bản thân xem thường sự hỗ trợ của người khác." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu sự kiên định, sống bấp bênh vì nhảy việc liên tục", "rationale": "Thiếu kỷ luật bền bỉ, dễ bị trôi dạt vô định khi mất phương hướng." },
+      "RSK": { "score": 1, "evidenceQuote": "quá tự tin vào vận may dẫn đến đầu tư liều lĩnh", "rationale": "Chủ quan ỷ lại vào may mắn, thiếu sự thẩm định cẩn trọng." },
+      "INT": { "score": -1, "evidenceQuote": "nông cạn hời hợt, không chịu đào sâu chuyên môn", "rationale": "Tư duy bề nổi, biết nhiều thứ nhưng không tinh thông việc gì." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-11",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "11",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời Master 11 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 11 là Con Số Master mang trọng trách của Bậc Thầy Khai Sáng Tâm Thức & Sứ Giả Trực Giác. Người mang Số 11 là cây cầu kết nối giữa cõi trần và cõi tinh thần, đánh thức nhận thức tâm linh, lan tỏa tình yêu thương thuần khiết và soi sáng cho những tâm hồn đang lạc lối.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thực hành nối đất Grounding nghiêm ngặt, thiền định kết nối thực tế", "rationale": "Hành động trong sự tỉnh thức, giữ vững cân bằng giữa tinh thần và đời sống." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương thuần khiết, năng lượng chữa lành tâm thức tự nhiên, đức khiêm nhường", "rationale": "Trái tim thánh thiện dịu dàng, nguồn năng lượng xoa dịu nỗi đau tinh thần muôn người." },
+      "STR": { "score": 1, "evidenceQuote": "lối sống lành mạnh thanh khiết, kỷ luật bảo vệ năng lượng hệ thần kinh", "rationale": "Chuẩn hóa chế độ sinh hoạt để giữ cho thể chất và thần kinh vững vàng." },
+      "RSK": { "score": 1, "evidenceQuote": "truyền cảm hứng thức tỉnh mạnh mẽ, soi sáng cho những tâm hồn lạc lối", "rationale": "Dũng cảm đón nhận sứ mệnh tâm linh khai sáng bất chấp sự nghi ngại của đời." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác siêu giác quan thấu suốt năng lượng, thông tuệ tinh thần, dự báo xuất thần", "rationale": "Trực giác siêu phàm, cây cầu kết nối giữa cõi trần và cõi tinh thần tối cao." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chông chênh, tê liệt hành động trước áp lực vật chất đời thường", "rationale": "Thiếu tính thực tiễn, dễ bị ngợp trước các bài toán cơm áo gạo tiền." },
+      "EMO": { "score": -2, "evidenceQuote": "thần kinh căng thẳng kiệt quệ vì lo âu, tự ti nghi ngờ trực giác của mình", "rationale": "Quá tải cảm xúc, hệ thần kinh suy nhược rơi vào hoảng loạn lo âu." },
+      "STR": { "score": -1, "evidenceQuote": "mất kết nối với đất mẹ Grounding, cuộc sống mất thăng bằng", "rationale": "Mất nền tảng thể chất, tâm trí bay bổng thiếu điểm tựa an toàn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi sứ mệnh lớn, hoang mang khi bị đám đông hiểu lầm", "rationale": "Thiếu dũng khí đối mặt với sự cô độc của người đi trước thời đại." },
+      "INT": { "score": -1, "evidenceQuote": "sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng tâm linh", "rationale": "Tâm trí bị u mê dẫn dụ bởi những ảo ảnh dị đoan phi lý trí." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-22",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "22",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời Master 22 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 22/4 là Con Số Master quyền năng nhất – Bậc Thầy Kiến Thiết Vĩ Đại (The Master Builder). Sứ mệnh tối thượng của người Số 22 là chuyển hóa những tầm nhìn tâm linh vĩ mô thành những đại công trình, hệ thống thể chế hoặc giải pháp thực tế quy mô lớn, để lại di sản trường tồn phụng sự nhân loại.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chuyển hóa những tầm nhìn tâm linh vĩ mô thành những đại công trình hệ thống thực tế", "rationale": "Năng lực kiến thiết phi thường, hiện thực hóa các đại dự án để lại di sản trường tồn." },
+      "EMO": { "score": 1, "evidenceQuote": "lãnh đạo bằng sự trao quyền, đào tạo cộng sự tài đức cùng chung tay gánh vác", "rationale": "Quy tụ nhân tài và dẫn dắt tập thể bằng tinh thần phụng sự nhân loại cao cả." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực thực thi kỷ luật thép của số 4, tầm nhìn chiến lược vĩ mô xuyên thế kỷ, quy chuẩn", "rationale": "Đỉnh cao tuyệt đối của tư duy hệ thống và kỷ luật vận hành chuẩn mực." },
+      "RSK": { "score": 2, "evidenceQuote": "tài năng điều phối và quy tụ nguồn lực khổng lồ, ý chí sắt đá phi thường", "rationale": "Bản lĩnh làm chủ các cuộc chơi tầm cỡ thế giới, dám gánh vác trách nhiệm lịch sử." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn chiến lược vĩ mô kết hợp bản lĩnh chuyển hóa thực tại vượt bậc", "rationale": "Trí tuệ tổng công trình sư vĩ đại, làm chủ cả thế giới tinh thần lẫn vật chất." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "độc tài tàn nhẫn thao túng người khác, thúc ép tiến độ khốc liệt", "rationale": "Dùng quyền lực chèn ép thô bạo, biến người khác thành công cụ phục vụ đại nghiệp." },
+      "EMO": { "score": -2, "evidenceQuote": "tham vọng quyền lực mù quáng, cô độc trên đỉnh cao danh vọng", "rationale": "Tham vọng ngút trời làm đóng băng trái tim, đánh mất hạnh phúc gia đình." },
+      "STR": { "score": -1, "evidenceQuote": "hoang mang sợ hãi, chôn vùi tiềm năng trong sự an phận bảo thủ tầm thường", "rationale": "Rơi xuống cực đoan bảo thủ của số 4 thấp, tự giam mình trong nỗi sợ thất bại." },
+      "RSK": { "score": 1, "evidenceQuote": "mạo hiểm nguồn lực khổng lồ vì tham vọng để đời", "rationale": "Mạo hiểm quá mức quy mô tài chính, tiềm ẩn nguy cơ đổ vỡ dây chuyền." },
+      "INT": { "score": -1, "evidenceQuote": "thất vọng cay đắng khi thực tế không hoàn hảo như bản thiết kế", "rationale": "Căng thẳng trí não tột độ do áp lực cầu toàn vĩ mô." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "walksOfLife-33",
+    "indicatorKey": "walksOfLife",
+    "indicatorNameVi": "Đường Đời",
+    "numberValue": "33",
+    "title": "Luận Giải Chuyên Sâu Số Đường Đời Master 33 Chuẩn Pythagoras",
+    "sourceSnippet": "Số Chủ đạo 33/6 là Con Số Master tối cao của Tình Yêu Thương Phổ Quát & Bậc Thầy Giáo Dưỡng Tâm Hồn (The Master Teacher). Sứ mệnh thiêng liêng nhất là nâng tầm rung động tâm thức của nhân loại thông qua tình yêu thương thuần khiết vô điều kiện, đức hy sinh cao cả và sự chữa lành toàn diện.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "sống làm gương sáng Lead by Example, lan tỏa tình yêu thương qua từng cử chỉ hành động", "rationale": "Hành động phụng sự vị tha, dẫn dắt bằng chính lối sống nhân hậu mẫu mực." },
+      "EMO": { "score": 2, "evidenceQuote": "trái tim từ bi bác ái vô biên, tình yêu thương thuần khiết vô điều kiện, hào quang chữa lành", "rationale": "Đỉnh cao từ bi, tình yêu thương bao la sưởi ấm và chữa lành toàn diện cho muôn loài." },
+      "STR": { "score": 1, "evidenceQuote": "từ bi đi đôi với trí tuệ, giữ gìn sức khỏe bằng lối sống điều độ", "rationale": "Ý thức bảo dưỡng thân tâm để duy trì năng lượng phụng sự bền vững dài lâu." },
+      "RSK": { "score": 1, "evidenceQuote": "đức hy sinh quên mình, cống hiến trọn vẹn cho sự tiến hóa tâm thức nhân loại", "rationale": "Dũng cảm dấn thân nâng đỡ các số phận đau khổ mà không màng tư lợi." },
+      "INT": { "score": 2, "evidenceQuote": "năng lực truyền thụ chân lý vũ trụ giản dị sâu sắc, thấu cảm tuyệt đối", "rationale": "Minh triết bậc thầy tâm linh, truyền tải đạo lý vũ trụ bằng ngôn ngữ mộc mạc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm gánh vác nỗi đau của thiên hạ đến mức kiệt quệ thể xác và tâm thần", "rationale": "Gánh vác quá tải làm suy sụp năng lượng hành động thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "tự biến mình thành nạn nhân tuẫn đạo u uất, ấm ức khi sự hy sinh không được trân trọng", "rationale": "Hội chứng tuẫn đạo (Martyr complex), u uất vì hy sinh mù quáng thiếu trí tuệ." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới bảo vệ bản thân, để người khác lợi dụng lòng từ bi", "rationale": "Mất ranh giới tự bảo vệ, dung túng cho sự ỷ lại xấu xa của người khác." },
+      "RSK": { "score": 0, "evidenceQuote": "gánh nghiệp thay cho người khác", "rationale": "Can thiệp sai lầm vào tiến trình trả nghiệp và học hỏi của tha nhân." },
+      "INT": { "score": -1, "evidenceQuote": "áp đặt tiêu chuẩn đạo đức khắt khe phán xét người khác", "rationale": "Định kiến tâm linh, lấy tiêu chuẩn thánh nhân để phán xét người phàm." }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "id": "balance-1",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "1",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 1",
+    "sourceSnippet": "Khi đối mặt với các tình huống khủng hoảng, xung đột hoặc áp lực bất ngờ, phản ứng tự vệ vô thức của người mang Con số Cân bằng 1 là lập tức gạt bỏ sự phụ thuộc, thu mình vào trạng thái tự lực cánh sinh và tự xông lên gánh vác toàn bộ trách nhiệm. Bạn có xu hướng muốn tự mình giải quyết vấn đề một cách nhanh chóng mà không cần bất kỳ sự trợ giúp nào từ người xung quanh.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự lực cánh sinh và tự xông lên gánh vác toàn bộ trách nhiệm, liệt kê 3 phương án hành động khách quan", "rationale": "Chủ động hành động quyết liệt và tự mình giải quyết khủng hoảng." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "nguyên tắc khoảng dừng 10 giây, liệt kê 3 phương án hành động khách quan ra giấy", "rationale": "Tự chủ, thiết lập kỷ luật khoảng dừng và phương án rõ ràng." },
+      "RSK": { "score": 1, "evidenceQuote": "bản lĩnh và trí tuệ để vượt qua thử thách này", "rationale": "Tự tin đối mặt khó khăn bằng bản lĩnh tự chủ." },
+      "INT": { "score": 1, "evidenceQuote": "sự tự chủ nội tâm vững vàng, trí tuệ tập thể", "rationale": "Nhận thức tỉnh táo về năng lực và định hướng giải quyết vấn đề." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "hung hăng, nóng nảy, vội vã đưa ra các quyết định liều lĩnh, bốc đồng", "rationale": "Hành động bốc đồng, độc đoán chỉ để thể hiện quyền kiểm soát." },
+      "EMO": { "score": -1, "evidenceQuote": "đổ lỗi cho sự chậm trễ của tập thể, cơn nóng giận", "rationale": "Mất bình tĩnh, bực bội trút giận lên người khác." },
+      "STR": { "score": -1, "evidenceQuote": "áp đặt độc đoán lên người khác", "rationale": "Phá vỡ sự phối hợp tập thể vì thói quen áp đặt." },
+      "RSK": { "score": -1, "evidenceQuote": "quyết định liều lĩnh, bốc đồng chỉ để chứng minh quyền kiểm soát", "rationale": "Mạo hiểm bốc đồng không có tính toán trong lúc hoảng loạn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-2",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "2",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 2",
+    "sourceSnippet": "Khi gặp phải xung đột gay gắt hoặc biến cố bất ngờ, phản ứng tự vệ vô thức của người mang Con số Cân bằng 2 là co cụm, nhạy cảm quá mức, né tránh va chạm hoặc tìm kiếm sự chở che, an ủi từ một người thân tín. Bạn rất sợ những cuộc cãi vã lớn tiếng và dễ cảm thấy hoang mang, mất phương hướng khi bầu không khí bị xáo trộn.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 2, "evidenceQuote": "đặt tay lên luân xa tim, bình an nội tâm tự thân, dùng sự dịu dàng kiên định để làm dịu tình hình", "rationale": "Xoa dịu cảm xúc, giữ tâm an lành và dùng sự dịu dàng hóa giải xung đột." },
+      "STR": { "score": 1, "evidenceQuote": "tách mình khỏi dòng sông cảm xúc, tạm lùi lại khỏi không gian xung đột", "rationale": "Thiết lập khoảng lùi và ranh giới tâm lý lành mạnh." },
+      "RSK": { "score": -1, "evidenceQuote": "né tránh va chạm, sợ những cuộc cãi vã lớn tiếng", "rationale": "Tránh né đối đầu trực diện, ưu tiên sự yên tĩnh." },
+      "INT": { "score": 2, "evidenceQuote": "nhận thức rõ ràng cảm xúc và hành vi tiêu cực của người khác là bài học của họ", "rationale": "Trực giác thấu suốt và tách bạch ranh giới trách nhiệm cảm xúc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "co cụm, hoang mang, mất phương hướng", "rationale": "Thụ động đóng băng, mất khả năng xử lý tình huống." },
+      "EMO": { "score": -2, "evidenceQuote": "tự biến mình thành nạn nhân yếu đuối, kìm nén uất ức dẫn đến suy sụp tinh thần, suy diễn tiêu cực", "rationale": "Khủng hoảng tâm lý, uất ức và suy sụp cảm xúc." },
+      "STR": { "score": -1, "evidenceQuote": "nhượng bộ mù quáng từ bỏ quyền lợi chính đáng", "rationale": "Thiếu nguyên tắc bảo vệ quyền lợi cá nhân vì muốn hòa giải tạm thời." },
+      "RSK": { "score": -2, "evidenceQuote": "dễ cảm thấy hoang mang, mất phương hướng khi bầu không khí bị xáo trộn", "rationale": "Sợ hãi xung đột cực độ, không dám đối diện sự thật." },
+      "INT": { "score": -1, "evidenceQuote": "suy diễn tiêu cực về thái độ của đối phương", "rationale": "Tâm trí bị bủa vây bởi các suy diễn tiêu cực không có thật." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-3",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "3",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 3",
+    "sourceSnippet": "Khi đối diện với khủng hoảng hoặc căng thẳng, phản ứng tự vệ vô thức của người mang Con số Cân bằng 3 là nói nhiều hơn bình thường, tìm cách giãi bày cảm xúc liên tục với bất kỳ ai xung quanh, hoặc dùng sự hài hước, đùa cợt tếu táo để né tránh nhìn thẳng vào mức độ nghiêm trọng của vấn đề.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "đi bộ nhanh ngoài trời 10 phút để giải phóng năng lượng ức chế", "rationale": "Hành động vận động cơ thể để giải phóng ức chế tiêu cực." },
+      "EMO": { "score": 1, "evidenceQuote": "sự lạc quan tỉnh thức, thực hành ái ngữ trước khi đối thoại", "rationale": "Giữ tinh thần lạc quan, dùng lời hay ý đẹp để giải tỏa căng thẳng." },
+      "STR": { "score": 1, "evidenceQuote": "viết xả cảm xúc tự do (Freewriting), xả van cảm xúc bằng việc viết lách", "rationale": "Thiết lập quy trình giải tỏa cảm xúc có phương pháp." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "niềm tin vào sức mạnh sáng tạo, mọi nút thắt đều có giải pháp sáng tạo để tháo gỡ", "rationale": "Trực giác linh hoạt và óc sáng tạo giải quyết nút thắt." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "nói năng bốc đồng thiếu suy nghĩ, buôn chuyện thị phi", "rationale": "Hành động thiếu kiểm soát, phát ngôn bừa bãi khi stress." },
+      "EMO": { "score": -2, "evidenceQuote": "buông lời mỉa mai cay độc làm tổn thương người khác, chìm đắm vào kịch tính cảm xúc (drama)", "rationale": "Gây tổn thương bằng lời châm chọc và tạo thêm drama căng thẳng." },
+      "STR": { "score": -1, "evidenceQuote": "dùng sự hài hước tếu táo để né tránh nhìn thẳng vào mức độ nghiêm trọng", "rationale": "Thiếu nghiêm túc, làm loãng giải pháp có cấu trúc." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-4",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "4",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 4",
+    "sourceSnippet": "Khi gặp phải biến cố bất ngờ hoặc sự hỗn loạn, phản ứng tự vệ vô thức của người mang Con số Cân bằng 4 là bám víu vào các quy tắc cứng nhắc, xem xét lại từng chi tiết nhỏ, đòi hỏi mọi thứ phải có số liệu và bằng chứng rõ ràng. Bạn có xu hướng muốn kiểm soát chặt chẽ quy trình để khôi phục lại cảm giác trật tự và an toàn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động nhỏ để phá vỡ sự bế tắc, chọn ra một việc nhỏ nhất rõ ràng nhất có thể làm ngay", "rationale": "Bắt tay hành động cụ thể để khôi phục đà chuyển động." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "lập Checklist 3 bước khẩn cấp, chia nhỏ vấn đề và lập kế hoạch thực hiện từng bước", "rationale": "Tính tổ chức cao độ, hệ thống hóa giải pháp bằng checklist và trật tự." },
+      "RSK": { "score": -2, "evidenceQuote": "khôi phục lại cảm giác trật tự và an toàn, kế hoạch dự phòng", "rationale": "Cực kỳ thận trọng, kiểm soát tối đa để loại trừ rủi ro." },
+      "INT": { "score": 1, "evidenceQuote": "sự thật và các giải pháp thực tế từng bước một", "rationale": "Tư duy logic thực chứng, bám sát sự thật khách quan." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "đóng băng hành động vì sợ mắc sai lầm (tê liệt vì phân tích)", "rationale": "Tê liệt hành động, không dám ra quyết định vì quá sợ sai." },
+      "EMO": { "score": -1, "evidenceQuote": "kìm nén cảm xúc dẫn đến chứng đau nửa đầu và mất ngủ", "rationale": "Căng thẳng thể chất và tâm lý do dồn nén ức chế." },
+      "STR": { "score": -2, "evidenceQuote": "trở nên khó tính, bảo thủ, bám víu vào các quy tắc cứng nhắc, cay nghiệt soi mói", "rationale": "Cứng nhắc độc đoán, soi mói tiểu tiết làm tắc nghẽn công việc." },
+      "RSK": { "score": -2, "evidenceQuote": "tê liệt vì phân tích khi khủng hoảng xảy ra đột ngột", "rationale": "Sợ rủi ro đến mức không dám thích ứng linh hoạt." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-5",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "5",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 5",
+    "sourceSnippet": "Khi đối mặt với khủng hoảng, sự bế tắc hoặc áp lực gò bó, phản ứng tự vệ vô thức của người mang Con số Cân bằng 5 là tìm cách trốn chạy khỏi hiện trường căng thẳng, muốn thay đổi ngay lập tức mọi thứ xung quanh hoặc tìm đến các thú vui kích thích giác quan để giải tỏa sự ngột ngạt.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tập một bài thể dục cường độ cao 10 phút, sử dụng trí thông minh linh hoạt để xoay chuyển tình thế", "rationale": "Hành động thể chất mạnh mẽ và phản xạ xoay chuyển tình thế nhanh." },
+      "EMO": { "score": 1, "evidenceQuote": "xem biến cố này là một trò chơi thử thách thú vị", "rationale": "Chuyển hóa căng thẳng thành sự hứng khởi trải nghiệm." },
+      "STR": { "score": 1, "evidenceQuote": "kỹ thuật thở 4-7-8 để hạ nhịp tim cấp tốc", "rationale": "Kiểm soát sinh lý và nhịp thở để lấy lại sự chủ động." },
+      "RSK": { "score": 2, "evidenceQuote": "mọi biến đổi đều là cơ hội để khai mở những chân trời mới tốt đẹp hơn", "rationale": "Dám đối diện thử thách và xem rủi ro là cơ hội đổi mới." },
+      "INT": { "score": 2, "evidenceQuote": "khả năng thích ứng linh hoạt, thay đổi góc nhìn", "rationale": "Trực giác thích ứng cao và khả năng tái định hình vấn đề sáng tạo." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tìm cách trốn chạy khỏi hiện trường, bỏ cuộc hoặc đi du lịch thật xa để trốn tránh", "rationale": "Đào tẩu, bỏ rơi nhiệm vụ khi áp lực gia tăng." },
+      "EMO": { "score": -1, "evidenceQuote": "ngột ngạt, nổi loạn vô cớ phá vỡ các mối quan hệ tốt đẹp chỉ vì cảm xúc nhất thời", "rationale": "Nổi loạn vô căn cứ làm tổn thương người xung quanh." },
+      "STR": { "score": -2, "evidenceQuote": "bốc đồng hủy hoại các cam kết quan trọng", "rationale": "Phá vỡ mọi cam kết và kỷ luật vì sự tùy tiện nhất thời." },
+      "RSK": { "score": -2, "evidenceQuote": "lạm dụng chất kích thích, mua sắm quá tay, lái xe liều lĩnh", "rationale": "Tìm kiếm cảm giác mạnh vô trách nhiệm gây nguy hiểm." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-6",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "6",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 6",
+    "sourceSnippet": "Khi xảy ra biến cố trong gia đình hoặc tổ chức, phản ứng tự vệ vô thức của người mang Con số Cân bằng 6 là tự động gánh hết mọi trách nhiệm về phía mình, cố gắng bao bọc che chở cho tất cả mọi người và đóng vai người cứu rỗi toàn năng để khôi phục lại sự hòa thuận.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm sóc bản thân trước, hỗ trợ người khác", "rationale": "Hành động chăm sóc có thứ tự ưu tiên hợp lý." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương chân thành bắt đầu từ chính mình, yêu thương và chúc phúc", "rationale": "Nuôi dưỡng tình thương tự thân và lòng từ bi lành mạnh." },
+      "STR": { "score": 1, "evidenceQuote": "phân định rõ ràng giữa trách nhiệm yêu thương và trách nhiệm kiểm soát", "rationale": "Thiết lập ranh giới trách nhiệm rành mạch." },
+      "RSK": { "score": -1, "evidenceQuote": "khôi phục lại sự hòa thuận", "rationale": "Tìm kiếm giải pháp an toàn để bảo vệ bình yên gia đình." },
+      "INT": { "score": 1, "evidenceQuote": "mỗi người đều có bài học trưởng thành riêng", "rationale": "Thấu hiểu quy luật phát triển độc lập của mỗi cá nhân." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "sáng tạo tiêu cực lo âu thêu dệt kịch bản tồi tệ nhất, tự dằn vặt bản thân bằng cảm giác tội lỗi vô lý", "rationale": "Khủng hoảng âu lo, tự dằn vặt và nhận lỗi thay người khác." },
+      "STR": { "score": -2, "evidenceQuote": "cằn nhằn áp đặt, kiểm soát người thân thái quá, đóng vai người cứu rỗi toàn năng", "rationale": "Kiểm soát độc đoán, can thiệp thô bạo vào đời sống người thân." },
+      "RSK": { "score": -1, "evidenceQuote": "lo âu thêu dệt nên những kịch bản tồi tệ nhất", "rationale": "Bị chi phối bởi nỗi sợ rủi ro tiêu cực hoang tưởng." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-7",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "7",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 7",
+    "sourceSnippet": "Khi đối mặt với khủng hoảng hoặc sự căng thẳng, phản ứng tự vệ vô thức của người mang Con số Cân bằng 7 là lập tức rút lui hoàn toàn vào không gian riêng, cắt đứt liên lạc, giữ im lặng tuyệt đối và tự mình đào sâu suy ngẫm để tìm ra nguyên nhân gốc rễ và bản chất của vấn đề.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "rút lui hoàn toàn vào không gian riêng, giữ im lặng tuyệt đối", "rationale": "Lùi lại, tạm dừng tương tác bên ngoài để tái tạo năng lượng." },
+      "EMO": { "score": 1, "evidenceQuote": "thiền định tĩnh lặng 15 phút, tập trung vào hơi thở vào - ra tự nhiên", "rationale": "Tĩnh tâm, lắng đọng cảm xúc bằng hơi thở thiền định." },
+      "STR": { "score": 1, "evidenceQuote": "đặt ra giới hạn thời gian tĩnh tâm rồi chủ động kết nối lại, ghi chép đúc kết bài học", "rationale": "Quy trình chiêm nghiệm và tái kết nối có kỷ luật." },
+      "RSK": { "score": -1, "evidenceQuote": "cần sự tĩnh lặng tuyệt đối để tái tạo trường năng lượng", "rationale": "Thận trọng, chọn khoảng lặng an toàn trước biến cố." },
+      "INT": { "score": 2, "evidenceQuote": "trí tuệ chiêm nghiệm và niềm tin vào quy luật nhân quả tiến hóa, nhìn thấu bản chất", "rationale": "Trực giác triết học thấu thị gốc rễ và bài học vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cắt đứt liên lạc, sống cô độc lãnh đạm kéo dài", "rationale": "Bế quan tỏa cảng, đóng băng giao tiếp thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "trở nên hoài nghi cay đắng, chìm đắm vào cảm giác bất mãn trước sự bất toàn của thế gian", "rationale": "Cay đắng bất mãn, lạnh nhạt và mất niềm tin vào cuộc đời." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "coi thường ý kiến đóng góp của người khác", "rationale": "Thu mình phòng thủ tiêu cực, từ chối hợp tác." },
+      "INT": { "score": -1, "evidenceQuote": "suy diễn tiêu cực", "rationale": "Trí tuệ biến thành công cụ suy diễn bi quan, u ám." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-8",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "8",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 8",
+    "sourceSnippet": "Khi đối mặt với khủng hoảng, mất mát hoặc sự đe dọa về tài chính/quyền hạn, phản ứng tự vệ vô thức của người mang Con số Cân bằng 8 là siết chặt quyền kiểm soát, tỏ ra cực kỳ cứng rắn, tập trung vào giải quyết bài toán vật chất/dòng tiền và tìm cách chi phối toàn bộ tình hình bằng sức mạnh điều hành.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tập trung vào giải pháp hành động, hành động cụ thể nào cần làm ngay để giảm thiểu tổn thất", "rationale": "Hành động quyết liệt, tập trung xử lý hậu quả thực tế." },
+      "EMO": { "score": 0, "evidenceQuote": "giữ cái đầu lạnh và trái tim ấm", "rationale": "Cân bằng lý trí lạnh lùng với sự tỉnh táo nhân văn." },
+      "STR": { "score": 2, "evidenceQuote": "kỹ thuật khoảng dừng chiến lược, bản lĩnh kiên cường và tư duy giải quyết vấn đề dựa trên hiệu quả thực tế", "rationale": "Kiểm soát khủng hoảng chặt chẽ, tối ưu hóa quy trình xử lý." },
+      "RSK": { "score": 1, "evidenceQuote": "quyết định chế tài, siết chặt quyền kiểm soát", "rationale": "Dám đứng mũi chịu sào, ra quyết định mạnh mẽ bảo vệ tổ chức." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy giải quyết vấn đề dựa trên hiệu quả thực tế và sự công bằng chính trực", "rationale": "Tư duy thực tế sắc bén, nắm bắt nhanh bài toán cốt lõi." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "dùng tiền bạc/quyền lực để trừng phạt hoặc thao túng người khác", "rationale": "Hành vi lạm quyền trừng phạt thô bạo." },
+      "EMO": { "score": -2, "evidenceQuote": "cơn thịnh nộ lôi đình, áp đặt độc tài tàn nhẫn, mất bình tĩnh là mất tất cả", "rationale": "Giận dữ bùng nổ, phá hủy quan hệ bằng thái độ hung hăng." },
+      "STR": { "score": -1, "evidenceQuote": "sự cố chấp bảo thủ không chịu thừa nhận tổn thất", "rationale": "Cố chấp bám giữ vị thế, không chấp nhận sự thật thất bại." },
+      "RSK": { "score": -1, "evidenceQuote": "siết chặt quyền kiểm soát", "rationale": "Hoảng loạn siết quyền kiểm soát vì sợ mất mát tài sản." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "balance-9",
+    "indicatorKey": "balance",
+    "indicatorNameVi": "Số Cân Bằng",
+    "numberValue": "9",
+    "title": "Chiến Lược Lấy Lại Cân Bằng Của Con Số Cân Bằng 9",
+    "sourceSnippet": "Khi đối mặt với khủng hoảng, sự bất công hoặc hiểu lầm, phản ứng tự vệ vô thức của người mang Con số Cân bằng 9 là lùi lại một bước để quan sát bức tranh toàn cảnh, cố gắng tìm kiếm giải pháp nhân đạo nhất và có xu hướng dễ dàng tha thứ, bỏ qua lỗi lầm cho người khác.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tập trung vào hành động phụng sự nhỏ, làm một việc tốt giản dị", "rationale": "Hành động thiện nguyện cụ thể để chuyển hóa năng lượng tiêu cực." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng trắc ẩn bao la và tâm thế buông xả vô thường, tha thứ triệt để từ sâu thẳm trái tim", "rationale": "Tha thứ bao dung, xoa dịu vết thương bằng tình thương thuần khiết." },
+      "STR": { "score": 1, "evidenceQuote": "thực hành nghi thức Ho'oponopono, thiền buông xả", "rationale": "Quy trình thanh tẩy và xả bỏ cảm xúc tiêu cực có hệ thống." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "lùi lại một bước để quan sát bức tranh toàn cảnh, thấu hiểu quy luật vô thường", "rationale": "Trực giác đại cục, nhận thức thấu suốt về lẽ nhân quả vô thường." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "buông xuôi, bất cần đời", "rationale": "Thụ động bỏ mặc mọi việc trôi nổi do mất phương hướng." },
+      "EMO": { "score": -2, "evidenceQuote": "bi kịch hóa vấn đề, ôm giữ nỗi buồn trăn trở nhân thế, thất vọng cay đắng", "rationale": "U uất cay đắng, đau đáu tổn thương không nguôi." },
+      "STR": { "score": -1, "evidenceQuote": "hy sinh mù quáng gánh chịu thiệt hại thay người khác", "rationale": "Tự hủy hoại ranh giới cá nhân bằng sự hy sinh thiếu tỉnh táo." },
+      "RSK": { "score": -1, "evidenceQuote": "buông xuôi, bất cần đời", "rationale": "Rơi vào tuyệt vọng yếm thế, né tránh đương đầu hiện thực." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  }
+]

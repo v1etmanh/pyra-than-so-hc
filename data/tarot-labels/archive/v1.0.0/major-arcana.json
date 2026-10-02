@@ -1,0 +1,1102 @@
+[
+  {
+    "cardId": "major-00",
+    "cardNameVi": "Kẻ Khờ",
+    "cardNameEn": "The Fool",
+    "type": "major",
+    "suit": null,
+    "number": 0,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: khởi đầu, tự do, niềm tin. Ý nghĩa: Một hành trình mới đang mở ra; hãy tiến bước với sự cởi mở nhưng vẫn giữ nhận thức.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khởi đầu, hãy tiến bước", "rationale": "Chủ động bước vào hành trình mới với tinh thần khởi xướng cao độ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "tự do, cởi mở", "rationale": "Thả lỏng khuôn khổ để đón nhận điều mới mẻ." },
+      "RSK": { "score": 2, "evidenceQuote": "niềm tin, tiến bước với sự cởi mở", "rationale": "Can đảm tuyệt đối bước vào điều chưa biết với niềm tin trọn vẹn." },
+      "INT": { "score": 1, "evidenceQuote": "giữ nhận thức", "rationale": "Duy trì sự tỉnh thức trong hành trình tự do." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tiến bước", "rationale": "Hành động có thể thiếu kiềm chế nếu quá hưng phấn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "tự do", "rationale": "Nguy cơ buông lỏng hoàn toàn cấu trúc dẫn tới vô kỷ luật." },
+      "RSK": { "score": 2, "evidenceQuote": "cởi mở", "rationale": "Mạo hiểm quá mức mà không chuẩn bị kỹ lưỡng." },
+      "INT": { "score": -1, "evidenceQuote": "vẫn giữ nhận thức", "rationale": "Có thể lơ là nhận thức khi bị cuốn theo cảm giác tự do." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-00",
+    "cardNameVi": "Kẻ Khờ",
+    "cardNameEn": "The Fool",
+    "type": "major",
+    "suit": null,
+    "number": 0,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bốc đồng, thiếu chuẩn bị, sợ bước đi. Ý nghĩa: Sự do dự hoặc liều lĩnh đang che khuất cơ hội; hãy kiểm tra lại nền tảng trước khi bước tiếp.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "kiểm tra lại nền tảng trước khi bước tiếp", "rationale": "Biết chậm lại để kiểm tra trước khi lao vào hành động." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm tra lại nền tảng", "rationale": "Bắt đầu chú trọng nền tảng và kỷ luật thực tế." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh liều lĩnh", "rationale": "Nhận ra mối nguy hiểm từ sự bất cẩn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra cơ hội bị che khuất", "rationale": "Thức tỉnh trước những điểm mù." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sợ bước đi, do dự", "rationale": "Tê liệt hành vi vì lo âu, chần chừ không dám tiến lên." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu chuẩn bị, bốc đồng", "rationale": "Hỗn loạn do hành động bột phát không có phương pháp." },
+      "RSK": { "score": -2, "evidenceQuote": "bốc đồng hoặc do dự", "rationale": "Cực đoan giữa sợ hãi co cụm và liều lĩnh mù quáng." },
+      "INT": { "score": -1, "evidenceQuote": "che khuất cơ hội", "rationale": "Trực giác bị che mờ bởi nỗi sợ và thiếu chuẩn bị." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-01",
+    "cardNameVi": "Nhà Ảo Thuật",
+    "cardNameEn": "The Magician",
+    "type": "major",
+    "suit": null,
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: ý chí, năng lực, hành động. Ý nghĩa: Bạn đã có những nguồn lực cần thiết để biến ý tưởng thành hành động có chủ đích.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hành động có chủ đích, ý chí", "rationale": "Hành động quyết liệt, tập trung chuyển hóa ý chí thành hiện thực." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "nguồn lực cần thiết, có chủ đích", "rationale": "Tổ chức nguồn lực có mục tiêu rõ ràng." },
+      "RSK": { "score": 1, "evidenceQuote": "biến ý tưởng thành hành động", "rationale": "Tự tin đối mặt thách thức bằng năng lực có sẵn." },
+      "INT": { "score": 1, "evidenceQuote": "ý chí, ý tưởng", "rationale": "Kết nối ý tưởng sâu sắc với ý thức thực thi." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động", "rationale": "Dễ tự tin thái quá vào hành động của bản thân." },
+      "EMO": { "score": -1, "evidenceQuote": "", "rationale": "Có thể quá duy ý chí mà phớt lờ cảm xúc xung quanh." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "năng lực", "rationale": "Có nguy cơ kiêu ngạo về năng lực cá nhân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-01",
+    "cardNameVi": "Nhà Ảo Thuật",
+    "cardNameEn": "The Magician",
+    "type": "major",
+    "suit": null,
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thao túng, phân tán, tiềm năng lãng phí. Ý nghĩa: Năng lực đang bị phân tán hoặc dùng sai hướng; cần làm rõ động cơ và ưu tiên.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần làm rõ động cơ và ưu tiên", "rationale": "Tạm dừng hành động bừa bãi để định hình lại hướng đi." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "làm rõ ưu tiên", "rationale": "Bắt đầu thiết lập lại trật tự và danh sách ưu tiên." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "làm rõ động cơ", "rationale": "Tự vấn lại động cơ nội tâm chân thật." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tiềm năng lãng phí", "rationale": "Không hành động đúng mức dẫn tới lãng phí tài năng." },
+      "EMO": { "score": -2, "evidenceQuote": "thao túng", "rationale": "Dùng năng lực để lừa dối, thao túng người khác vì tư lợi." },
+      "STR": { "score": -2, "evidenceQuote": "phân tán, dùng sai hướng", "rationale": "Mất trật tự, năng lượng bị phân mảnh hỗn loạn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "dùng sai hướng", "rationale": "Động cơ lệch lạc, đánh mất la bàn đạo đức nội tâm." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-02",
+    "cardNameVi": "Nữ Tư Tế",
+    "cardNameEn": "The High Priestess",
+    "type": "major",
+    "suit": null,
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: trực giác, bí ẩn, trí tuệ nội tâm. Ý nghĩa: Câu trả lời cần sự tĩnh lặng và lắng nghe điều bạn đã biết ở tầng sâu.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "sự tĩnh lặng", "rationale": "Không vội hành động bên ngoài, ưu tiên tĩnh tại bên trong." },
+      "EMO": { "score": 1, "evidenceQuote": "lắng nghe", "rationale": "Cảm nhận tinh tế và thấu cảm sâu sắc không lời." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "bí ẩn", "rationale": "Bình thản đón nhận điều chưa hiển lộ mà không nôn nóng." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác, trí tuệ nội tâm, tầng sâu", "rationale": "Đỉnh cao của trực giác và trí tuệ tâm linh thâm sâu." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tĩnh lặng", "rationale": "Nguy cơ thụ động quá mức, giam mình trong im lặng." },
+      "EMO": { "score": -1, "evidenceQuote": "bí ẩn", "rationale": "Xa cách, khó gần, che giấu cảm xúc thực." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "chờ đợi", "rationale": "Ngại va chạm với thực tế trần tục." },
+      "INT": { "score": 1, "evidenceQuote": "tầng sâu", "rationale": "Có thể quá chìm đắm vào thế giới suy tưởng trừu tượng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-02",
+    "cardNameVi": "Nữ Tư Tế",
+    "cardNameEn": "The High Priestess",
+    "type": "major",
+    "suit": null,
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: phớt lờ trực giác, bí mật, nhiễu loạn. Ý nghĩa: Tiếng ồn hoặc điều chưa được nói ra đang cản trở trực giác; đừng vội kết luận.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đừng vội kết luận", "rationale": "Biết kìm hãm phán xét hấp tấp khi thông tin chưa rõ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "đừng vội kết luận", "rationale": "Cần thêm kỷ luật phân tích để sàng lọc thông tin nhiễu." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "lấy lại trực giác", "rationale": "Ý thức được tiếng ồn để quay về với tiếng nói nội tâm." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "bí mật, điều chưa được nói ra", "rationale": "Thiếu minh bạch, tạo ra sự nghi kỵ và ngột ngạt." },
+      "STR": { "score": -1, "evidenceQuote": "nhiễu loạn", "rationale": "Tâm trí bị xáo trộn bởi thông tin rác bên ngoài." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -2, "evidenceQuote": "phớt lờ trực giác, cản trở trực giác", "rationale": "Cắt đứt hoàn toàn liên kết với linh cảm và sự thật bên trong." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-03",
+    "cardNameVi": "Hoàng Hậu",
+    "cardNameEn": "The Empress",
+    "type": "major",
+    "suit": null,
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: nuôi dưỡng, phong phú, sáng tạo. Ý nghĩa: Điều đang hình thành cần được nuôi dưỡng bằng sự kiên nhẫn, cảm nhận và chăm sóc.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm sóc, nuôi dưỡng", "rationale": "Hành động chăm sóc tỉ mỉ, kiên trì nuôi nấng tiến trình." },
+      "EMO": { "score": 2, "evidenceQuote": "cảm nhận, nuôi dưỡng, chăm sóc", "rationale": "Tình yêu thương dạt dào, đồng cảm và bao dung tuyệt đối." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Phát triển thuận theo quy luật tự nhiên, không gò bó." },
+      "RSK": { "score": 0, "evidenceQuote": "kiên nhẫn", "rationale": "Bình tĩnh để vạn vật chín muồi theo thời gian." },
+      "INT": { "score": 1, "evidenceQuote": "sáng tạo, cảm nhận", "rationale": "Nhạy bén với vẻ đẹp và năng lượng sinh sôi." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "nuôi dưỡng", "rationale": "Có thể bao bọc quá mức gây cản trở người khác trưởng thành." },
+      "STR": { "score": -1, "evidenceQuote": "phong phú", "rationale": "Quá nuông chiều cảm xúc, dễ thiếu nguyên tắc." },
+      "RSK": { "score": -1, "evidenceQuote": "an toàn", "rationale": "Bám lấy sự tiện nghi mà ngại thay đổi." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-03",
+    "cardNameVi": "Hoàng Hậu",
+    "cardNameEn": "The Empress",
+    "type": "major",
+    "suit": null,
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: cạn kiệt, phụ thuộc, bỏ quên bản thân. Ý nghĩa: Bạn có thể đang trao quá nhiều hoặc xa rời nhu cầu của mình; hãy phục hồi trước khi tiếp tục.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "hãy phục hồi trước khi tiếp tục", "rationale": "Chủ động dừng lại để hồi sức và chăm sóc bản thân." },
+      "EMO": { "score": 1, "evidenceQuote": "quay về nhu cầu của mình", "rationale": "Nhận ra giá trị tình thương dành cho chính mình." },
+      "STR": { "score": 1, "evidenceQuote": "đặt lại ranh giới", "rationale": "Thiết lập lại ranh giới cho - nhận lành mạnh." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "lắng nghe nhu cầu bản thân", "rationale": "Thấu suốt tình trạng kiệt quệ để tự chữa lành." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cạn kiệt", "rationale": "Hụt hơi, mất khả năng duy trì các hoạt động hàng ngày." },
+      "EMO": { "score": -2, "evidenceQuote": "phụ thuộc, bỏ quên bản thân, trao quá nhiều", "rationale": "Bỏ quên bản thân, lệ thuộc cảm xúc hoặc thao túng bằng sự hy sinh." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới", "rationale": "Để người khác xâm lấn không gian sống và năng lượng." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất mát", "rationale": "Dung túng sự phụ thuộc vì sợ bị bỏ rơi." },
+      "INT": { "score": -1, "evidenceQuote": "xa rời nhu cầu", "rationale": "Mất kết nối với cơ thể và mong muốn chân thật của mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-04",
+    "cardNameVi": "Hoàng Đế",
+    "cardNameEn": "The Emperor",
+    "type": "major",
+    "suit": null,
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cấu trúc, ổn định, lãnh đạo. Ý nghĩa: Tiến triển đến từ ranh giới rõ ràng, trách nhiệm và một kế hoạch có cấu trúc.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tiến triển, lãnh đạo", "rationale": "Hành động quyết đoán với tư cách người dẫn đầu chịu trách nhiệm." },
+      "EMO": { "score": 0, "evidenceQuote": "ranh giới rõ ràng", "rationale": "Công bằng, lý tính, không để cảm xúc lấn át nhiệm vụ." },
+      "STR": { "score": 2, "evidenceQuote": "cấu trúc, ổn định, ranh giới rõ ràng, kế hoạch", "rationale": "Đỉnh cao của trật tự, kỷ luật, khuôn khổ và sự kiên cố." },
+      "RSK": { "score": 1, "evidenceQuote": "trách nhiệm", "rationale": "Sẵn sàng gánh vác rủi ro để bảo vệ trật tự chung." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lãnh đạo", "rationale": "Áp đặt hành động lên cấp dưới." },
+      "EMO": { "score": -2, "evidenceQuote": "khô cứng", "rationale": "Thiếu thấu cảm, cư xử sắt đá và lạnh lùng." },
+      "STR": { "score": 2, "evidenceQuote": "cấu trúc", "rationale": "Có thể trở nên bảo thủ, quá khuôn mẫu." },
+      "RSK": { "score": -1, "evidenceQuote": "duy trì ổn định", "rationale": "Ngại thay đổi vì sợ làm lung lay trật tự hiện hữu." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-04",
+    "cardNameVi": "Hoàng Đế",
+    "cardNameEn": "The Emperor",
+    "type": "major",
+    "suit": null,
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kiểm soát, cứng nhắc, thiếu kỷ luật. Ý nghĩa: Kiểm soát quá mức hoặc thiếu nền nếp đang tạo lực cản; cần cân bằng quyền lực với linh hoạt.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cân bằng quyền lực với linh hoạt", "rationale": "Điều chỉnh hành vi, giảm bớt sự can thiệp thô bạo." },
+      "EMO": { "score": 1, "evidenceQuote": "linh hoạt", "rationale": "Bắt đầu biết lắng nghe và mềm mỏng hơn với xung quanh." },
+      "STR": { "score": 1, "evidenceQuote": "cần cân bằng, nền nếp", "rationale": "Nhận ra nhu cầu tái thiết trật tự một cách hợp lý." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra lực cản", "rationale": "Chiêm nghiệm để tháo gỡ điểm nghẽn do cái tôi độc đoán." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "kiểm soát quá mức", "rationale": "Cưỡng ép người khác làm theo ý mình bằng bạo lực hành vi." },
+      "EMO": { "score": -2, "evidenceQuote": "cứng nhắc", "rationale": "Bóp nghẹt mọi cảm xúc và ý kiến trái chiều." },
+      "STR": { "score": -2, "evidenceQuote": "kiểm soát quá mức hoặc thiếu nền nếp", "rationale": "Cực đoan giữa độc tài bóp nghẹt và buông lơi vô kỷ luật." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất kiểm soát", "rationale": "Hoảng loạn khi mọi việc không diễn ra đúng ý muốn." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng quyền lực", "rationale": "Mất sáng suốt do say men quyền lực hoặc sự bất lực." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-05",
+    "cardNameVi": "Giáo Hoàng",
+    "cardNameEn": "The Hierophant",
+    "type": "major",
+    "suit": null,
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: truyền thống, học hỏi, chỉ dẫn. Ý nghĩa: Một hệ thống đáng tin, người hướng dẫn hoặc giá trị lâu bền có thể giúp bạn tiến lên.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tiến lên, học hỏi", "rationale": "Tiến lên bằng cách noi theo sự dẫn dắt có phương pháp." },
+      "EMO": { "score": 1, "evidenceQuote": "chỉ dẫn, người hướng dẫn", "rationale": "Gắn kết dựa trên giá trị đạo đức và sự tôn trọng người thầy." },
+      "STR": { "score": 2, "evidenceQuote": "truyền thống, hệ thống đáng tin, giá trị lâu bền", "rationale": "Tôn trọng tuyệt đối chuẩn mực, quy chuẩn và giá trị truyền thống." },
+      "RSK": { "score": -1, "evidenceQuote": "hệ thống đáng tin", "rationale": "Chọn đi theo lối mòn an toàn đã được chứng minh qua thời gian." },
+      "INT": { "score": 1, "evidenceQuote": "học hỏi, giá trị lâu bền", "rationale": "Tiếp thu tri thức và minh triết từ các bậc tiền bối." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "truyền thống", "rationale": "Dễ rập khuôn máy móc, sợ bước ra ngoài giáo điều." },
+      "RSK": { "score": -2, "evidenceQuote": "bám truyền thống", "rationale": "Bảo thủ, cự tuyệt hoàn toàn những cách làm mới." },
+      "INT": { "score": -1, "evidenceQuote": "tuân thủ thụ động", "rationale": "Tin theo người khác mà thiếu tư duy phản biện cá nhân." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-05",
+    "cardNameVi": "Giáo Hoàng",
+    "cardNameEn": "The Hierophant",
+    "type": "major",
+    "suit": null,
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: phá khuôn, giáo điều, niềm tin cá nhân. Ý nghĩa: Đã đến lúc xem lại điều bạn làm chỉ vì thói quen và chọn niềm tin thực sự thuộc về mình.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "phá khuôn, chọn niềm tin thực sự", "rationale": "Hành động giải phóng bản thân khỏi các lề thói cũ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "phá khuôn", "rationale": "Sẵn sàng vượt qua khuôn khổ gò bó để tìm tự do sáng tạo." },
+      "RSK": { "score": 2, "evidenceQuote": "chọn niềm tin thực sự thuộc về mình", "rationale": "Dũng cảm đi ngược số đông để trung thành với chân lý cá nhân." },
+      "INT": { "score": 2, "evidenceQuote": "xem lại thói quen, niềm tin thực sự", "rationale": "Thức tỉnh nhận thức, tự xây dựng hệ giá trị cho chính mình." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "giáo điều", "rationale": "Áp đặt niềm tin cá nhân lên người khác, gây mâu thuẫn." },
+      "STR": { "score": -2, "evidenceQuote": "phá vỡ vô lối", "rationale": "Nổi loạn mù quáng, phá hủy cấu trúc lành mạnh." },
+      "RSK": { "score": 1, "evidenceQuote": "nổi loạn", "rationale": "Thích đối đầu chỉ để chứng tỏ sự khác biệt." },
+      "INT": { "score": -1, "evidenceQuote": "giáo điều cực đoan", "rationale": "Chống đối mù quáng thay vì lắng nghe sự thật." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-06",
+    "cardNameVi": "Tình Nhân",
+    "cardNameEn": "The Lovers",
+    "type": "major",
+    "suit": null,
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kết nối, lựa chọn, hòa hợp. Ý nghĩa: Sự hòa hợp chỉ bền khi lựa chọn phản ánh đúng giá trị và sự thành thật của bạn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "lựa chọn", "rationale": "Chủ động đưa ra quyết định có cam kết lâu dài." },
+      "EMO": { "score": 2, "evidenceQuote": "kết nối, hòa hợp, thành thật", "rationale": "Hòa hợp tuyệt đối về cảm xúc, chân thành và gắn bó." },
+      "STR": { "score": 1, "evidenceQuote": "đúng giá trị, sự thành thật", "rationale": "Tuân thủ các nguyên tắc đạo đức và giá trị cốt lõi." },
+      "RSK": { "score": 1, "evidenceQuote": "lựa chọn", "rationale": "Dám cam kết dấn thân vào một mối quan hệ/quyết định quan trọng." },
+      "INT": { "score": 1, "evidenceQuote": "phản ánh đúng giá trị", "rationale": "Lắng nghe sự mách bảo của trái tim và lương tâm." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lựa chọn khó", "rationale": "Do dự giữa các ngã rẽ tình cảm hoặc nghĩa vụ." },
+      "EMO": { "score": 1, "evidenceQuote": "say đắm", "rationale": "Dễ bị cảm xúc lấn át lý trí trong việc ra quyết định." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ cam kết", "rationale": "Ngại đối mặt với hệ quả của sự lựa chọn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-06",
+    "cardNameVi": "Tình Nhân",
+    "cardNameEn": "The Lovers",
+    "type": "major",
+    "suit": null,
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lệch giá trị, bất hòa, lựa chọn khó. Ý nghĩa: Sự hấp dẫn không che được khác biệt cốt lõi; cần đối thoại về giá trị và trách nhiệm.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cần đối thoại", "rationale": "Chủ động mở lời đối thoại để làm rõ xung đột." },
+      "EMO": { "score": 1, "evidenceQuote": "đối thoại chân thành", "rationale": "Dũng cảm đối mặt với khác biệt để tìm lại sự cảm thông." },
+      "STR": { "score": 1, "evidenceQuote": "giá trị và trách nhiệm", "rationale": "Đặt trách nhiệm và nguyên tắc rõ ràng lên bàn thương lượng." },
+      "RSK": { "score": 1, "evidenceQuote": "đối mặt sự thật", "rationale": "Dám thừa nhận vết nứt để sửa chữa hoặc buông tay." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn ra khác biệt cốt lõi", "rationale": "Nhìn nhận khách quan, không tự lừa dối bản thân." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lựa chọn khó, trốn tránh", "rationale": "Né tránh quyết định, kéo dài tình trạng dùng dằng." },
+      "EMO": { "score": -2, "evidenceQuote": "bất hòa, lệch giá trị", "rationale": "Xung đột tình cảm sâu sắc, cảm giác phản bội hoặc xa cách." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu trách nhiệm", "rationale": "Đổ lỗi cho đối phương thay vì chịu trách nhiệm." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ đổ vỡ", "rationale": "Bám lấy vẻ ngoài hấp dẫn dù bên trong đã mục rỗng." },
+      "INT": { "score": -1, "evidenceQuote": "tự huyễn hoặc", "rationale": "Để cảm xúc nhất thời làm mờ mắt trước những khác biệt cốt lõi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-07",
+    "cardNameVi": "Cỗ Xe",
+    "cardNameEn": "The Chariot",
+    "type": "major",
+    "suit": null,
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: quyết tâm, tiến lên, tự chủ. Ý nghĩa: Bạn có thể tiến nhanh khi thống nhất mục tiêu và điều khiển những lực kéo trái chiều.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tiến nhanh, quyết tâm, tiến lên", "rationale": "Hành động thần tốc, tiến công dũng mãnh hướng về mục tiêu." },
+      "EMO": { "score": 0, "evidenceQuote": "tự chủ", "rationale": "Kiểm soát cảm xúc để tập trung năng lượng vào chiến thắng." },
+      "STR": { "score": 2, "evidenceQuote": "thống nhất mục tiêu, điều khiển những lực kéo", "rationale": "Làm chủ kỷ luật bản thân, điều hòa mâu thuẫn dưới một mệnh lệnh thống nhất." },
+      "RSK": { "score": 2, "evidenceQuote": "quyết tâm tiến nhanh", "rationale": "Không ngại chướng ngại vật, sẵn sàng vượt qua mọi trở lực." },
+      "INT": { "score": 1, "evidenceQuote": "tự chủ", "rationale": "Ý thức sâu sắc về đích đến và kiểm soát bản thân." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "tiến quá nhanh", "rationale": "Hành động hiếu thắng, có thể giẫm đạp lên giới hạn khác." },
+      "EMO": { "score": -1, "evidenceQuote": "khắc nghiệt", "rationale": "Quá cứng rắn, đàn áp cảm xúc mềm yếu của bản thân và người khác." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm soát", "rationale": "Căng thẳng tột độ vì luôn phải gồng mình nắm giữ dây cương." },
+      "RSK": { "score": 1, "evidenceQuote": "lao về phía trước", "rationale": "Bỏ qua các cảnh báo an toàn trên đường đi." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-07",
+    "cardNameVi": "Cỗ Xe",
+    "cardNameEn": "The Chariot",
+    "type": "major",
+    "suit": null,
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: mất hướng, cưỡng ép, thiếu kiểm soát. Ý nghĩa: Ý chí đang bị kéo theo nhiều hướng; giảm tốc và xác định điều thực sự cần đạt.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "giảm tốc", "rationale": "Chủ động hãm phanh lại để tránh tai nạn do mất kiểm soát." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "xác định điều thực sự cần đạt", "rationale": "Thiết lập lại mục tiêu và định hình lại kỷ luật." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh lao dốc", "rationale": "Ý thức được nguy cơ sụp đổ nếu tiếp tục mù quáng." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự kéo xé nội tâm", "rationale": "Tự soi rọi lại xung đột ý chí nội bộ." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "cưỡng ép", "rationale": "Cố đấm ăn xôi, dùng bạo lực hoặc áp lực để thúc ép vô vọng." },
+      "EMO": { "score": -1, "evidenceQuote": "bất an, giận dữ", "rationale": "Bực bội, mất bình tĩnh khi mất quyền điều khiển." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu kiểm soát, mất hướng", "rationale": "Cỗ xe chệch đường ray, cấu trúc điều hành sụp đổ." },
+      "RSK": { "score": -2, "evidenceQuote": "bị kéo theo nhiều hướng", "rationale": "Mất phương hướng hoàn toàn, hoảng loạn trước áp lực." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng", "rationale": "Đui mù trước các dấu hiệu cảnh báo của trực giác." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-08",
+    "cardNameVi": "Sức Mạnh",
+    "cardNameEn": "Strength",
+    "type": "major",
+    "suit": null,
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: dũng khí, dịu dàng, nội lực. Ý nghĩa: Sức mạnh hiệu quả nhất lúc này là bình tĩnh, kiên nhẫn và làm chủ phản ứng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "làm chủ phản ứng", "rationale": "Hành động có kiểm soát, thuần hóa bản năng bằng sự điềm đạm." },
+      "EMO": { "score": 2, "evidenceQuote": "dịu dàng, kiên nhẫn", "rationale": "Tình thương và lòng trắc ẩn chế ngự được sự hung dữ." },
+      "STR": { "score": 1, "evidenceQuote": "làm chủ, bình tĩnh", "rationale": "Kỷ luật nội tâm cao độ, kiểm soát cơn bốc đồng." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng khí, nội lực", "rationale": "Can trường đối mặt với nỗi sợ và hiểm nguy mà không cần vũ lực thô thiển." },
+      "INT": { "score": 1, "evidenceQuote": "nội lực", "rationale": "Tin tưởng vào sức mạnh của tinh thần và tâm hồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "nhẫn nhịn", "rationale": "Có thể nén nhịn quá mức dẫn đến uất ức ngầm." },
+      "STR": { "score": 1, "evidenceQuote": "kiềm chế", "rationale": "Gồng gánh kiểm soát bản thân tới mức căng thẳng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-08",
+    "cardNameVi": "Sức Mạnh",
+    "cardNameEn": "Strength",
+    "type": "major",
+    "suit": null,
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: tự nghi ngờ, kiệt sức, phản ứng mạnh. Ý nghĩa: Tự nghi ngờ hoặc cạn năng lượng đang phóng đại khó khăn; hãy đối xử tử tế với chính mình.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "hãy đối xử tử tế với chính mình", "rationale": "Dừng việc tự tra tấn bản thân bằng áp lực thành tích." },
+      "EMO": { "score": 1, "evidenceQuote": "tử tế với chính mình", "rationale": "Bắt đầu học cách tha thứ và thấu cảm cho chính vết thương của mình." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự phóng đại khó khăn", "rationale": "Nhìn thấu tâm lý bất an đang phóng đại vấn đề." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "phản ứng mạnh, cạn kiệt", "rationale": "Bộc phát cảm xúc giận dữ vô cớ hoặc buông xuôi kiệt sức." },
+      "EMO": { "score": -2, "evidenceQuote": "tự nghi ngờ, cay đắng", "rationale": "Mất niềm tin vào bản thân, tự dằn vặt độc hại." },
+      "STR": { "score": -1, "evidenceQuote": "mất kiểm soát phản ứng", "rationale": "Không còn giữ được kỷ luật kiểm soát cảm xúc." },
+      "RSK": { "score": -2, "evidenceQuote": "tự nghi ngờ, sợ hãi", "rationale": "Hèn nhát, tự ti, đầu hàng trước nghịch cảnh vì nghĩ mình yếu đuối." },
+      "INT": { "score": -1, "evidenceQuote": "phóng đại khó khăn", "rationale": "Tâm trí bị bủa vây bởi ảo tưởng sợ hãi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-09",
+    "cardNameVi": "Ẩn Sĩ",
+    "cardNameEn": "The Hermit",
+    "type": "major",
+    "suit": null,
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chiêm nghiệm, đơn độc, tìm kiếm. Ý nghĩa: Lùi lại khỏi tiếng ồn sẽ giúp bạn nhận ra câu trả lời dựa trên trải nghiệm thật.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "lùi lại khỏi tiếng ồn", "rationale": "Chủ động rút lui khỏi hoạt động bề nổi để quay vào trong." },
+      "EMO": { "score": 0, "evidenceQuote": "đơn độc", "rationale": "Bình yên trong sự cô đơn tĩnh lặng, độc lập cảm xúc." },
+      "STR": { "score": 1, "evidenceQuote": "trải nghiệm thật", "rationale": "Chắt lọc những giá trị có cơ sở thực tế qua thời gian." },
+      "RSK": { "score": 0, "evidenceQuote": "chiêm nghiệm", "rationale": "Cẩn trọng, soi xét từng bước đi bằng ngọn đèn chân lý." },
+      "INT": { "score": 2, "evidenceQuote": "chiêm nghiệm, tìm kiếm, câu trả lời", "rationale": "Đỉnh cao của sự tự vấn và thắp sáng trí tuệ nội tâm." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "ẩn dật", "rationale": "Thu mình quá lâu, né tránh thế giới thực." },
+      "EMO": { "score": -1, "evidenceQuote": "đơn độc", "rationale": "Lạnh nhạt, khó sẻ chia với người thân cận." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại tiếng ồn", "rationale": "Sợ va chạm với sự ồn ào của đời thường." },
+      "INT": { "score": 1, "evidenceQuote": "triết lý", "rationale": "Có thể rơi vào bẫy tự cô lập trong tháp ngà lý thuyết." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-09",
+    "cardNameVi": "Ẩn Sĩ",
+    "cardNameEn": "The Hermit",
+    "type": "major",
+    "suit": null,
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: cô lập, trốn tránh, mất kết nối. Ý nghĩa: Khoảng lặng đã trở thành cô lập; hãy tìm một điểm tựa đáng tin thay vì tự gánh mọi thứ.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tìm điểm tựa, bước ra", "rationale": "Mở lời tìm kiếm sự giúp đỡ từ người khác." },
+      "EMO": { "score": 1, "evidenceQuote": "kết nối lại", "rationale": "Sẵn sàng đón nhận tình thương và sự hỗ trợ." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "dám chia sẻ gánh nặng", "rationale": "Can đảm vượt qua sự kiêu hãnh để nhờ cậy người khác." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự cô lập", "rationale": "Thức tỉnh rằng sự cô đơn đang trở thành ngục tù." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trốn tránh", "rationale": "Trốn chạy hiện thực và trách nhiệm xã hội." },
+      "EMO": { "score": -2, "evidenceQuote": "cô lập, mất kết nối", "rationale": "Cắt đứt liên lạc, chìm trong cảm giác cô đơn cay đắng." },
+      "STR": { "score": -1, "evidenceQuote": "tự gánh mọi thứ", "rationale": "Ôm đồm bảo thủ dẫn đến quá tải." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ kết nối", "rationale": "Khép chặt cánh cửa lòng vì sợ bị tổn thương." },
+      "INT": { "score": -1, "evidenceQuote": "quẩn quanh trong suy nghĩ", "rationale": "Trực giác bị bóp nghẹt bởi suy nghĩ luẩn quẩn tiêu cực." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-10",
+    "cardNameVi": "Bánh Xe Số Phận",
+    "cardNameEn": "Wheel of Fortune",
+    "type": "major",
+    "suit": null,
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chu kỳ, thay đổi, cơ hội. Ý nghĩa: Một chu kỳ đang chuyển; khả năng thích nghi sẽ quyết định cách bạn đón cơ hội.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "đón cơ hội", "rationale": "Nhanh nhạy nắm bắt thời cơ khi vận thế xoay chuyển." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "thích nghi, chu kỳ chuyển", "rationale": "Linh hoạt uyển chuyển, không bám chấp cứng nhắc vào trật tự cũ." },
+      "RSK": { "score": 2, "evidenceQuote": "thay đổi, cơ hội", "rationale": "Sẵn sàng đón nhận bất định và biến động như một món quà." },
+      "INT": { "score": 2, "evidenceQuote": "chu kỳ, nhận biết thời thế", "rationale": "Nhận thức sâu sắc về quy luật nhân quả và dòng chảy số phận." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "chờ thời", "rationale": "Có thể ỷ lại vào số phận mà thiếu nỗ lực cá nhân." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "biến động", "rationale": "Khó duy trì sự ổn định dài hạn trước các luồng gió mới." },
+      "RSK": { "score": 1, "evidenceQuote": "liều lĩnh theo vận may", "rationale": "Đánh bạc với số phận thay vì hành động cẩn trọng." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-10",
+    "cardNameVi": "Bánh Xe Số Phận",
+    "cardNameEn": "Wheel of Fortune",
+    "type": "major",
+    "suit": null,
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: chậm trễ, chống thay đổi, lặp lại. Ý nghĩa: Mẫu cũ có thể đang lặp lại vì bạn chống lại thay đổi cần thiết.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra sự lặp lại", "rationale": "Ý thức được vòng lặp vô bổ để ngừng hành động sai lầm." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "thay đổi cần thiết", "rationale": "Bắt đầu chấp nhận sửa đổi kế hoạch để thích nghi." },
+      "RSK": { "score": 1, "evidenceQuote": "dám thay đổi", "rationale": "Buông bỏ sự chống cự vô ích để thuận dòng." },
+      "INT": { "score": 2, "evidenceQuote": "nhận ra mẫu cũ lặp lại", "rationale": "Trực giác sáng tỏ phát hiện ra các bẫy nghiệp quả lặp lại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chậm trễ", "rationale": "Trì trệ, lỡ nhịp cơ hội vì ngần ngại hành động." },
+      "EMO": { "score": -1, "evidenceQuote": "thất vọng", "rationale": "Oán trách hoàn cảnh khi mọi việc không như ý." },
+      "STR": { "score": -1, "evidenceQuote": "mẫu cũ lặp lại", "rationale": "Mắc kẹt trong lối mòn tư duy xơ cứng." },
+      "RSK": { "score": -2, "evidenceQuote": "chống thay đổi", "rationale": "Cố chấp bám vào chiếc phao cũ đã mục rỗng vì sợ đổi mới." },
+      "INT": { "score": -1, "evidenceQuote": "mù mờ nhân quả", "rationale": "Không nhận ra bài học số phận đang muốn dạy mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-11",
+    "cardNameVi": "Công Lý",
+    "cardNameEn": "Justice",
+    "type": "major",
+    "suit": null,
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: sự thật, cân bằng, trách nhiệm. Ý nghĩa: Hãy nhìn dữ kiện rõ ràng và nhận trách nhiệm cho phần bạn có thể kiểm soát.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "nhận trách nhiệm", "rationale": "Hành động chịu trách nhiệm sòng phẳng trước các việc mình làm." },
+      "EMO": { "score": 0, "evidenceQuote": "cân bằng", "rationale": "Công tâm, không để tình cảm thiên lệch bóp méo cán cân." },
+      "STR": { "score": 2, "evidenceQuote": "sự thật, cân bằng, trách nhiệm, dữ kiện", "rationale": "Đỉnh cao của sự chuẩn xác, luật lệ, tính minh bạch và công bằng." },
+      "RSK": { "score": 0, "evidenceQuote": "nhìn dữ kiện rõ ràng", "rationale": "Dựa trên chứng cứ xác thực, không mạo hiểm vô căn cứ." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn ra sự thật", "rationale": "Sáng suốt phân định đúng sai không bị ảo tưởng che mờ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "khắt khe", "rationale": "Có thể trở nên quá phán xét, thiếu tình người." },
+      "STR": { "score": 2, "evidenceQuote": "nguyên tắc", "rationale": "Rập khuôn nguyên tắc mà thiếu đi sự linh hoạt xót thương." },
+      "RSK": { "score": -1, "evidenceQuote": "chờ đủ dữ kiện", "rationale": "Ngần ngại quyết định nếu chưa có sự chắc chắn 100%." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-11",
+    "cardNameVi": "Công Lý",
+    "cardNameEn": "Justice",
+    "type": "major",
+    "suit": null,
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thiên lệch, né tránh, bất công. Ý nghĩa: Thiên lệch hoặc né tránh hậu quả đang làm tình hình mất cân bằng.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đối diện hậu quả", "rationale": "Dừng hành vi né tránh để chuẩn bị chịu trách nhiệm." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "lấy lại cân bằng", "rationale": "Nhận ra sự sai lệch để từng bước lập lại trật tự." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận sự thật", "rationale": "Dũng cảm thừa nhận sai lầm cá nhân." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thấy sự thiên vị", "rationale": "Tự phản tỉnh về định kiến của chính mình." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "né tránh", "rationale": "Chối bỏ hành động của mình, trốn tránh trách nhiệm." },
+      "EMO": { "score": -1, "evidenceQuote": "thiên lệch, bất công", "rationale": "Bênh vực mù quáng, gây tổn thương cho người vô tội." },
+      "STR": { "score": -2, "evidenceQuote": "mất cân bằng, bất công", "rationale": "Bẻ cong quy tắc, gian lận hoặc phá vỡ tính chính trực." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ đối diện hậu quả", "rationale": "Hèn nhát bao biện để trốn tội." },
+      "INT": { "score": -2, "evidenceQuote": "định kiến che mờ sự thật", "rationale": "Tự lừa dối mình và bóp méo sự thật trắng đen." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-12",
+    "cardNameVi": "Người Treo Ngược",
+    "cardNameEn": "The Hanged Man",
+    "type": "major",
+    "suit": null,
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tạm dừng, buông bỏ, góc nhìn mới. Ý nghĩa: Tạm dừng không phải thất bại; một góc nhìn khác có thể mở nút thắt.",
+    "core": {
+      "ACT": { "score": -2, "evidenceQuote": "tạm dừng, buông bỏ", "rationale": "Chủ động đình chỉ toàn bộ hành động bên ngoài để tĩnh lặng." },
+      "EMO": { "score": 1, "evidenceQuote": "buông bỏ", "rationale": "Thanh thản chấp nhận hy sinh tạm thời vì mục đích cao cả." },
+      "STR": { "score": -1, "evidenceQuote": "đảo ngược góc nhìn", "rationale": "Phá bỏ các khuôn khổ cũ kỹ để nhìn thế giới ngược lại." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận treo ngược", "rationale": "Dám chịu đựng cảm giác bất tiện để đạt giác ngộ." },
+      "INT": { "score": 2, "evidenceQuote": "góc nhìn mới, mở nút thắt", "rationale": "Đột phá nhận thức sâu sắc nhờ nhìn nhận từ góc độ hoàn toàn khác." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "treo lơ lửng", "rationale": "Bất động kéo dài thành tê liệt thụ động." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "trì trệ kế hoạch", "rationale": "Kế hoạch thực tế bị đình trệ vô thời hạn." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại hành động", "rationale": "Lấy cớ chiêm nghiệm để né tránh quyết định thực tế." },
+      "INT": { "score": 1, "evidenceQuote": "suy tư quá độ", "rationale": "Kẹt trong suy tưởng mà không đem lại giải pháp thực tiễn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-12",
+    "cardNameVi": "Người Treo Ngược",
+    "cardNameEn": "The Hanged Man",
+    "type": "major",
+    "suit": null,
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: trì hoãn, mắc kẹt, hy sinh vô ích. Ý nghĩa: Sự chờ đợi không còn tạo ra hiểu biết; cần thay đổi cách tiếp cận hoặc đặt giới hạn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thay đổi cách tiếp cận, đặt giới hạn", "rationale": "Bắt đầu cử động lại, bước xuống khỏi sợi dây treo để hành động." },
+      "EMO": { "score": 1, "evidenceQuote": "chấm dứt hy sinh vô ích", "rationale": "Ngừng chịu đựng vô nghĩa, biết yêu thương quyền lợi bản thân." },
+      "STR": { "score": 1, "evidenceQuote": "đặt giới hạn", "rationale": "Thiết lập ranh giới bảo vệ thời gian và công sức." },
+      "RSK": { "score": 1, "evidenceQuote": "chấm dứt sự mắc kẹt", "rationale": "Dũng cảm từ bỏ vai trò nạn nhân để bước tiếp." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự vô ích", "rationale": "Nhận ra sự chờ đợi thụ động không còn đem lại giá trị." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trì hoãn, mắc kẹt", "rationale": "Bế tắc, dậm chân tại chỗ không lối thoát." },
+      "EMO": { "score": -2, "evidenceQuote": "hy sinh vô ích", "rationale": "Tự đóng vai kẻ tử vì đạo vô nghĩa, oán hận thầm lặng." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới", "rationale": "Để bản thân bị lợi dụng kéo dài." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ cắt dây", "rationale": "Sợ thay đổi tới mức cam chịu sự bế tắc quen thuộc." },
+      "INT": { "score": -1, "evidenceQuote": "mê muội trong đau khổ", "rationale": "Không nhìn thấy lối ra dù dây trói vốn đã lỏng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-13",
+    "cardNameVi": "Cái Chết",
+    "cardNameEn": "Death",
+    "type": "major",
+    "suit": null,
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kết thúc, chuyển hóa, tái sinh. Ý nghĩa: Một giai đoạn cần khép lại để tạo chỗ cho điều mới; đây là chuyển hóa, không phải cái chết theo nghĩa đen.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chuyển hóa, khép lại", "rationale": "Chủ động dọn dẹp cái cũ để dọn đường cho mầm sống mới." },
+      "EMO": { "score": 0, "evidenceQuote": "khép lại tự nhiên", "rationale": "Điềm tĩnh chấp nhận quy luật chia ly tự nhiên." },
+      "STR": { "score": -1, "evidenceQuote": "kết thúc giai đoạn cũ", "rationale": "Phá bỏ cấu trúc đã hết hạn sử dụng để tái thiết." },
+      "RSK": { "score": 2, "evidenceQuote": "tái sinh, chuyển hóa", "rationale": "Dũng khí phi thường để buông bỏ hoàn toàn vùng an toàn." },
+      "INT": { "score": 2, "evidenceQuote": "chuyển hóa, nhận thức quy luật", "rationale": "Thấu suốt quy luật tuần hoàn sinh - diệt của vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "tiếc nuối", "rationale": "Nỗi buồn sâu sắc khi phải vĩnh biệt những điều thân thuộc." },
+      "STR": { "score": -2, "evidenceQuote": "sụp đổ cái cũ", "rationale": "Giai đoạn chuyển tiếp có thể gây hỗn loạn tạm thời." },
+      "RSK": { "score": 1, "evidenceQuote": "cắt bỏ dứt khoát", "rationale": "Có thể quá lạnh lùng và tàn nhẫn khi rũ bỏ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-13",
+    "cardNameVi": "Cái Chết",
+    "cardNameEn": "Death",
+    "type": "major",
+    "suit": null,
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bám giữ, trì trệ, sợ thay đổi. Ý nghĩa: Việc bám vào điều đã hết vai trò đang kéo dài sự trì trệ.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra sự trì trệ", "rationale": "Ý thức được cái chết của mối quan hệ/công việc cũ." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "cần khép lại", "rationale": "Bắt đầu thu dọn hành lý để chuẩn bị ra đi." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua nỗi sợ thay đổi", "rationale": "Chớm hình thành dũng khí buông tay." },
+      "INT": { "score": 1, "evidenceQuote": "thấy điều đã hết vai trò", "rationale": "Nhận thức rõ ràng sự vô nghĩa của việc níu kéo." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trì trệ", "rationale": "Bất động hoàn toàn, thà chịu đựng sự mòn mỏi còn hơn thay đổi." },
+      "EMO": { "score": -2, "evidenceQuote": "bám giữ tuyệt vọng", "rationale": "Níu kéo đau khổ, sống chung với cái xác của quá khứ." },
+      "STR": { "score": -1, "evidenceQuote": "duy trì hình thức rỗng", "rationale": "Giữ lại một cấu trúc đã chết chỉ vì sợ khoảng trống." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ thay đổi", "rationale": "Nỗi khiếp sợ tột độ trước điều mới mẻ." },
+      "INT": { "score": -1, "evidenceQuote": "ngoan cố từ chối sự thật", "rationale": "Bịt tai che mắt trước thực tế rằng mọi thứ đã kết thúc." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-14",
+    "cardNameVi": "Tiết Chế",
+    "cardNameEn": "Temperance",
+    "type": "major",
+    "suit": null,
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: điều hòa, kiên nhẫn, cân bằng. Ý nghĩa: Giải pháp nằm ở sự điều chỉnh từ tốn và kết hợp các phần tưởng như đối lập.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "điều chỉnh từ tốn", "rationale": "Hành động chậm rãi, cân nhắc từng giọt nước, không hấp tấp." },
+      "EMO": { "score": 1, "evidenceQuote": "điều hòa, kiên nhẫn", "rationale": "Tâm thế an hòa, chữa lành vết thương bằng sự kiên nhẫn." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp các phần đối lập, cân bằng", "rationale": "Hài hòa cấu trúc, dung hợp các mặt mâu thuẫn thành thể thống nhất." },
+      "RSK": { "score": 0, "evidenceQuote": "cân bằng, từ tốn", "rationale": "Điểm giữa hoàn hảo, không liều mạng mạo hiểm cũng không co cụm." },
+      "INT": { "score": 2, "evidenceQuote": "điều hòa, thuật giả kim nội tâm", "rationale": "Trí tuệ dung hợp đỉnh cao, chuyển hóa năng lượng thô thành thanh khiết." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "quá từ tốn", "rationale": "Có thể chậm trễ trong các tình huống đòi hỏi quyết sách hỏa tốc." },
+      "EMO": { "score": 0, "evidenceQuote": "dĩ hòa vi quý", "rationale": "Cố làm hài lòng mọi bên dẫn tới mất đi cá tính riêng." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "né xung đột", "rationale": "Tránh né đối đầu trực diện khiến vấn đề kéo dài." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-14",
+    "cardNameVi": "Tiết Chế",
+    "cardNameEn": "Temperance",
+    "type": "major",
+    "suit": null,
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: quá mức, xung đột, mất nhịp. Ý nghĩa: Quá mức hoặc thiếu nhất quán đang làm hao hụt năng lượng; hãy đưa mọi thứ về nhịp bền vững.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đưa về nhịp bền vững", "rationale": "Bắt đầu điều tiết lại tốc độ và nhịp sinh hoạt." },
+      "EMO": { "score": 1, "evidenceQuote": "hàn gắn xung đột", "rationale": "Nhận ra tổn thương từ việc thái quá để tìm lại sự hòa hợp." },
+      "STR": { "score": 1, "evidenceQuote": "tái lập tính nhất quán", "rationale": "Thiết lập lại thói quen điều độ và nề nếp." },
+      "RSK": { "score": 0, "evidenceQuote": "tránh thái quá", "rationale": "Kiểm soát các thôi thúc cực đoan." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự hao hụt năng lượng", "rationale": "Lắng nghe tín hiệu cảnh báo của cơ thể và tâm trí." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "quá mức, mất nhịp", "rationale": "Hành vi hấp tấp, đảo lộn trật tự sinh học và công việc." },
+      "EMO": { "score": -2, "evidenceQuote": "xung đột, mất nhịp", "rationale": "Cảm xúc thất thường, bốc đồng gây xích mích với môi trường." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu nhất quán, quá mức", "rationale": "Vô độ, mất kiểm soát trong chi tiêu, ăn uống hoặc cảm xúc." },
+      "RSK": { "score": 1, "evidenceQuote": "bất cẩn", "rationale": "Hành động thiếu suy nghĩ dẫn tới hậu quả hao tổn." },
+      "INT": { "score": -1, "evidenceQuote": "mất kết nối nhịp sống", "rationale": "Không còn cảm nhận được sự hài hòa tự nhiên." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-15",
+    "cardNameVi": "Ác Quỷ",
+    "cardNameEn": "The Devil",
+    "type": "major",
+    "suit": null,
+    "number": 15,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: ràng buộc, cám dỗ, bóng tối. Ý nghĩa: Hãy gọi tên điều đang trói buộc bạn; nhận thức là bước đầu để lấy lại quyền lựa chọn.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "gọi tên điều trói buộc", "rationale": "Nhìn thẳng vào sự thật thay vì tiếp tục mê muội." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "lấy lại quyền lựa chọn", "rationale": "Bắt đầu ý thức về việc khôi phục quyền tự chủ." },
+      "RSK": { "score": 1, "evidenceQuote": "nhìn vào bóng tối", "rationale": "Can đảm đối diện với phần tối tăm nhất trong tâm hồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận thức là bước đầu", "rationale": "Ánh sáng thức tỉnh bắt đầu rọi vào những góc khuất dục vọng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bị trói buộc", "rationale": "Mất quyền tự chủ hành vi, hành động như con rối của thói quen xấu." },
+      "EMO": { "score": -2, "evidenceQuote": "ràng buộc, cám dỗ", "rationale": "Mối quan hệ độc hại, lệ thuộc tình dục hoặc thao túng cảm xúc." },
+      "STR": { "score": -2, "evidenceQuote": "bóng tối", "rationale": "Bị giam cầm trong xiềng xích của lòng tham và dục vọng." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi không dám phá xiềng", "rationale": "Cam chịu nô lệ vì sợ mất đi sự thỏa mãn tức thời." },
+      "INT": { "score": -2, "evidenceQuote": "bóng tối, mê muội", "rationale": "Tâm trí hoàn toàn bị che khuất bởi ảo tưởng vật chất." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-15",
+    "cardNameVi": "Ác Quỷ",
+    "cardNameEn": "The Devil",
+    "type": "major",
+    "suit": null,
+    "number": 15,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: giải phóng, nhận thức, phá vòng lặp. Ý nghĩa: Bạn đang nhìn thấy vòng lặp và có khả năng thoát khỏi nó bằng hành động cụ thể.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thoát khỏi nó bằng hành động cụ thể, phá vòng lặp", "rationale": "Hành động quyết liệt cắt đứt xiềng xích trói buộc." },
+      "EMO": { "score": 1, "evidenceQuote": "giải phóng", "rationale": "Cảm giác nhẹ nhõm, tự do khi thoát khỏi mối quan hệ độc hại." },
+      "STR": { "score": 1, "evidenceQuote": "phá vòng lặp", "rationale": "Tái lập quyền kiểm soát cuộc đời bằng các thói quen lành mạnh." },
+      "RSK": { "score": 2, "evidenceQuote": "giải phóng, bứt phá", "rationale": "Dũng cảm bước ra khỏi vùng nghiện ngập/cám dỗ." },
+      "INT": { "score": 2, "evidenceQuote": "nhận thức, nhìn thấy vòng lặp", "rationale": "Trực giác sáng rõ, thấu thị ảo ảnh của sự trói buộc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "dư chấn", "rationale": "Vẫn còn vết thương và sự ám ảnh từ quá khứ ràng buộc." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "tái nghiện", "rationale": "Nguy cơ trượt chân nếu không cảnh giác cao độ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-16",
+    "cardNameVi": "Tòa Tháp",
+    "cardNameEn": "The Tower",
+    "type": "major",
+    "suit": null,
+    "number": 16,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: đột biến, thức tỉnh, cấu trúc sụp đổ. Ý nghĩa: Một cấu trúc không còn đúng có thể thay đổi đột ngột, buộc sự thật phải được nhìn thấy.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thay đổi đột ngột", "rationale": "Buộc phải phản ứng tức thì trước biến cố lớn." },
+      "EMO": { "score": -1, "evidenceQuote": "sốc trước biến cố", "rationale": "Bàng hoàng, chấn động trước sự sụp đổ của niềm tin cũ." },
+      "STR": { "score": -2, "evidenceQuote": "cấu trúc sụp đổ", "rationale": "Tòa tháp ảo tưởng bị sét đánh tan tành, xóa sổ hoàn toàn nền tảng cũ." },
+      "RSK": { "score": 2, "evidenceQuote": "đối diện thực tế trần trụi", "rationale": "Bị đẩy vào tình thế bắt buộc phải đón nhận rủi ro lớn nhất." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh, buộc sự thật phải được nhìn thấy", "rationale": "Tia chớp chân lý xé toạc màn sương dối trá, giác ngộ chấn động." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "hoảng loạn", "rationale": "Choáng váng, mất phương hướng hành động trong đống đổ nát." },
+      "EMO": { "score": -2, "evidenceQuote": "chấn thương tâm lý", "rationale": "Đau đớn tột cùng khi mất mát đột ngột." },
+      "STR": { "score": -2, "evidenceQuote": "tan hoang", "rationale": "Hỗn loạn hoàn toàn, mất an toàn nền tảng." },
+      "RSK": { "score": -1, "evidenceQuote": "khiếp sợ", "rationale": "Ám ảnh sợ hãi trước những tai họa bất ngờ." },
+      "INT": { "score": -1, "evidenceQuote": "phủ nhận sự thật", "rationale": "Cố bám vào tàn tích vì không chịu nổi sự thật phũ phàng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-16",
+    "cardNameVi": "Tòa Tháp",
+    "cardNameEn": "The Tower",
+    "type": "major",
+    "suit": null,
+    "number": 16,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: né khủng hoảng, trì hoãn, thay đổi bên trong. Ý nghĩa: Bạn đang cố trì hoãn thay đổi hoặc trải qua một cuộc tái cấu trúc âm thầm bên trong.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thay đổi bên trong", "rationale": "Âm thầm điều chỉnh từ gốc rễ nội tâm thay vì để nổ tung ra ngoài." },
+      "EMO": { "score": 0, "evidenceQuote": "xử lý cảm xúc nội bộ", "rationale": "Bình tâm tiêu hóa cú sốc để chữa lành từ bên trong." },
+      "STR": { "score": 1, "evidenceQuote": "tái cấu trúc âm thầm", "rationale": "Chủ động dỡ bỏ từng viên gạch hỏng để xây lại nền móng." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận thay đổi êm đềm", "rationale": "Dám thay đổi mà không cần đợi tới thảm họa thúc bách." },
+      "INT": { "score": 2, "evidenceQuote": "thay đổi bên trong, nhận thức", "rationale": "Giác ngộ sâu sắc, giải tỏa xung đột mà không cần phá hủy vật lý." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "trì hoãn", "rationale": "Lần lữa kéo dài thời gian, trốn tránh giải quyết dứt điểm." },
+      "EMO": { "score": -1, "evidenceQuote": "ngột ngạt", "rationale": "Căng thẳng âm ỉ như quả bom nổ chậm trong lòng." },
+      "STR": { "score": -1, "evidenceQuote": "sống trong cấu trúc rạn nứt", "rationale": "Cố chấp chống đỡ một tòa nhà sắp sập." },
+      "RSK": { "score": -2, "evidenceQuote": "né khủng hoảng", "rationale": "Hèn nhát, sợ hãi đối mặt với cuộc phẫu thuật cần thiết." },
+      "INT": { "score": -1, "evidenceQuote": "tự huyễn hoặc an toàn", "rationale": "Đóng kịch bình yên giả tạo trong khi nền móng đã rỗng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-17",
+    "cardNameVi": "Ngôi Sao",
+    "cardNameEn": "The Star",
+    "type": "major",
+    "suit": null,
+    "number": 17,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hy vọng, chữa lành, cảm hứng. Ý nghĩa: Sau khó khăn, sự sáng rõ và khả năng chữa lành đang trở lại từng bước.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "trở lại từng bước", "rationale": "Bắt đầu những hành động phục hồi nhẹ nhàng và kiên trì." },
+      "EMO": { "score": 2, "evidenceQuote": "chữa lành, cảm hứng", "rationale": "Cảm xúc được xoa dịu, an lạc, tràn đầy niềm tin và lòng biết ơn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "hy vọng", "rationale": "Lạc quan tin tưởng vào tương lai tươi sáng phía trước." },
+      "INT": { "score": 2, "evidenceQuote": "sự sáng rõ, cảm hứng", "rationale": "Kênh dẫn linh thiêng, trực giác được thanh lọc trong trẻo tuyệt đối." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "mơ mộng", "rationale": "Có thể quá lý tưởng hóa thực tại." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu thực tế", "rationale": "Dễ lơ là việc lên kế hoạch thực thi chi tiết." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "cảm hứng bay bổng", "rationale": "Dễ chìm trong mộng mơ mà quên mất thực tại trần gian." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-17",
+    "cardNameVi": "Ngôi Sao",
+    "cardNameEn": "The Star",
+    "type": "major",
+    "suit": null,
+    "number": 17,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: mất niềm tin, nản lòng, xa bản thân. Ý nghĩa: Hy vọng đang bị che mờ; hãy bắt đầu từ một hành động nhỏ có thể kiểm chứng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "bắt đầu từ một hành động nhỏ có thể kiểm chứng", "rationale": "Kéo mình lại bằng một hành động thực tế vi mô, làm được ngay." },
+      "EMO": { "score": 1, "evidenceQuote": "nuôi lại hy vọng", "rationale": "Gieo lại mầm tin yêu từng chút một." },
+      "STR": { "score": 1, "evidenceQuote": "hành động có thể kiểm chứng", "rationale": "Bám vào dữ kiện thực tế để chống lại sự bi quan." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tìm lại bản thân", "rationale": "Bắt đầu kết nối lại với tiếng nói bên trong sau bão tố." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "nản lòng, buông xuôi", "rationale": "Bất động vì tuyệt vọng, không còn động lực hành động." },
+      "EMO": { "score": -2, "evidenceQuote": "mất niềm tin, xa bản thân", "rationale": "Bi quan cùng cực, thấy tương lai đen tối, mất kết nối tâm hồn." },
+      "STR": { "score": -1, "evidenceQuote": "mất phương hướng", "rationale": "Kế hoạch sụp đổ trong sự hoài nghi vô vọng." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ thất vọng", "rationale": "Không dám hy vọng vì sợ lại phải nếm mùi đau đớn." },
+      "INT": { "score": -2, "evidenceQuote": "hy vọng bị che mờ, xa bản thân", "rationale": "Mất hoàn toàn niềm tin vào sự bảo trợ thiêng liêng và linh tính." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-18",
+    "cardNameVi": "Mặt Trăng",
+    "cardNameEn": "The Moon",
+    "type": "major",
+    "suit": null,
+    "number": 18,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: mơ hồ, tiềm thức, trực giác. Ý nghĩa: Không phải mọi thứ đều rõ; hãy phân biệt trực giác với nỗi sợ và chờ thêm dữ kiện.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "chờ thêm dữ kiện", "rationale": "Không vội vàng hành động khi đường đi còn mờ mịt trong sương mù." },
+      "EMO": { "score": 1, "evidenceQuote": "tiềm thức", "rationale": "Cảm nhận những tầng sóng cảm xúc ngầm sâu sắc." },
+      "STR": { "score": 0, "evidenceQuote": "chờ dữ kiện", "rationale": "Tạm dừng phán đoán cho đến khi ánh sáng soi rọi." },
+      "RSK": { "score": 0, "evidenceQuote": "thận trọng trong bóng tối", "rationale": "Thận trọng dò dẫm, không liều mạng nhưng không hoảng hốt." },
+      "INT": { "score": 2, "evidenceQuote": "tiềm thức, trực giác, phân biệt với nỗi sợ", "rationale": "Khai phá giấc mơ, tiềm thức và lắng nghe linh cảm ẩn giấu." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "mơ hồ, lạc lối", "rationale": "Hành động mò mẫm, dễ vấp ngã do thiếu tầm nhìn." },
+      "EMO": { "score": -2, "evidenceQuote": "nỗi sợ, lo âu", "rationale": "Bị nỗi sợ hãi từ tiềm thức và bóng ma quá khứ ám ảnh." },
+      "STR": { "score": -2, "evidenceQuote": "mơ hồ, nhầm lẫn", "rationale": "Mất kiểm soát lý trí, bị ảo giác dẫn dắt." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi bóng tối", "rationale": "Hoang mang, nhìn gà hóa cuốc vì bóng ma tâm lý." },
+      "INT": { "score": -1, "evidenceQuote": "lẫn lộn trực giác với ảo giác", "rationale": "Để nỗi sợ hãi đội lốt linh cảm bóp méo nhận thức." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-18",
+    "cardNameVi": "Mặt Trăng",
+    "cardNameEn": "The Moon",
+    "type": "major",
+    "suit": null,
+    "number": 18,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: sự thật lộ ra, nhầm lẫn giảm, sợ hãi. Ý nghĩa: Màn sương đang tan nhưng cảm xúc cũ vẫn có thể bóp méo cách bạn nhìn sự việc.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "màn sương đang tan, sự thật lộ ra", "rationale": "Bắt đầu nhìn rõ con đường để từng bước bước ra khỏi bóng tối." },
+      "EMO": { "score": 1, "evidenceQuote": "nhầm lẫn giảm", "rationale": "Tâm trí dần bình ổn, gạt bỏ những nghi kỵ hoang đường." },
+      "STR": { "score": 1, "evidenceQuote": "sự thật lộ ra", "rationale": "Các sự kiện thực tế hiển lộ giúp lập lại trật tự tư duy." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua sợ hãi", "rationale": "Dũng cảm đối diện với sự thật đằng sau bức rèm bí mật." },
+      "INT": { "score": 2, "evidenceQuote": "sự thật lộ ra, thanh lọc nhận thức", "rationale": "Phân biệt rạch ròi giữa nỗi sợ giả tạo và sự thật khách quan." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm xúc cũ bóp méo", "rationale": "Vẫn còn vương vấn ám ảnh tâm lý cũ chưa buông bỏ được." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi tàn dư", "rationale": "Vẫn còn ngập ngừng e sợ trước ánh sáng ban ngày." },
+      "INT": { "score": -1, "evidenceQuote": "bóp méo cách nhìn", "rationale": "Định kiến cũ vẫn cố níu giữ sự nghi ngờ vô cớ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-19",
+    "cardNameVi": "Mặt Trời",
+    "cardNameEn": "The Sun",
+    "type": "major",
+    "suit": null,
+    "number": 19,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: niềm vui, rõ ràng, sinh lực. Ý nghĩa: Sự rõ ràng và sức sống hỗ trợ một kết quả tích cực khi bạn xuất hiện chân thật.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "sinh lực, xuất hiện chân thật", "rationale": "Hành động tràn đầy năng lượng, nhiệt huyết và tự tin rạng rỡ." },
+      "EMO": { "score": 2, "evidenceQuote": "niềm vui, tích cực", "rationale": "Hạnh phúc ngập tràn, trong sáng, ấm áp và lan tỏa tình yêu đời." },
+      "STR": { "score": 1, "evidenceQuote": "rõ ràng", "rationale": "Mọi việc minh bạch, không còn góc khuất hay sự lừa dối." },
+      "RSK": { "score": 2, "evidenceQuote": "tự tin, xuất hiện chân thật", "rationale": "Tỏa sáng rực rỡ không chút ngần ngại hay sợ hãi phán xét." },
+      "INT": { "score": 2, "evidenceQuote": "sự rõ ràng, thức tỉnh ánh sáng", "rationale": "Trí tuệ minh mẫn, nhận thức thuần khiết và thấu suốt mọi điều." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "quá nhiều năng lượng", "rationale": "Có thể quá hăng hái dẫn đến kiệt sức hoặc áp đảo người khác." },
+      "EMO": { "score": 1, "evidenceQuote": "quá ngây thơ", "rationale": "Lạc quan tếu, nhìn đời quá màu hồng." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "quá tự tin", "rationale": "Chủ quan, xem nhẹ những chướng ngại vật thực tế." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-19",
+    "cardNameVi": "Mặt Trời",
+    "cardNameEn": "The Sun",
+    "type": "major",
+    "suit": null,
+    "number": 19,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: niềm vui bị trì hoãn, quá tự tin, mệt mỏi. Ý nghĩa: Điều tốt vẫn hiện diện nhưng kỳ vọng hoặc kiệt sức khiến bạn khó cảm nhận trọn vẹn.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nghỉ ngơi hồi sức", "rationale": "Chủ động dưỡng sức để phục hồi năng lượng sống." },
+      "EMO": { "score": 1, "evidenceQuote": "điều tốt vẫn hiện diện", "rationale": "Nuôi dưỡng lòng biết ơn ngay cả khi tâm trạng chưa hoàn hảo." },
+      "STR": { "score": 1, "evidenceQuote": "hạ bớt kỳ vọng", "rationale": "Điều chỉnh lại mục tiêu cho thực tế và vừa sức hơn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự kiệt sức", "rationale": "Thấu hiểu giới hạn của cơ thể và giảm bớt áp lực tỏa sáng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "mệt mỏi, trì hoãn", "rationale": "Thiếu sức sống, uể oải, mất đi nhiệt huyết vốn có." },
+      "EMO": { "score": -1, "evidenceQuote": "khó cảm nhận trọn vẹn", "rationale": "Buồn bã, ủ rũ, không tận hưởng được niềm vui quanh mình." },
+      "STR": { "score": -1, "evidenceQuote": "quá tự tin sinh bất cẩn", "rationale": "Kiêu ngạo mù quáng dẫn đến thất bại đáng tiếc." },
+      "RSK": { "score": -1, "evidenceQuote": "nản lòng trước kỳ vọng", "rationale": "Sụp đổ tinh thần vì đặt kỳ vọng quá cao không đạt được." },
+      "INT": { "score": -1, "evidenceQuote": "bị che mờ bởi cái tôi", "rationale": "Cái tôi tự cao làm mờ đi lòng khiêm nhường." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-20",
+    "cardNameVi": "Phán Xét",
+    "cardNameEn": "Judgement",
+    "type": "major",
+    "suit": null,
+    "number": 20,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: thức tỉnh, tổng kết, tiếng gọi. Ý nghĩa: Đã đến lúc tổng kết bài học và trả lời một tiếng gọi trưởng thành hơn.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "trả lời tiếng gọi, bước sang giai đoạn mới", "rationale": "Hành động dứt khoát đáp lại tiếng gọi của lương tri và sứ mệnh." },
+      "EMO": { "score": 1, "evidenceQuote": "tha thứ, giải thoát", "rationale": "Trút bỏ mọi mặc cảm quá khứ để bước vào đời sống mới." },
+      "STR": { "score": 2, "evidenceQuote": "tổng kết bài học, thức tỉnh", "rationale": "Đánh giá, tổng kết toàn bộ chặng đường đã qua một cách công minh." },
+      "RSK": { "score": 2, "evidenceQuote": "trả lời tiếng gọi trưởng thành hơn", "rationale": "Dũng cảm lột xác, sẵn sàng đón nhận trách nhiệm lớn lao hơn." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh, tiếng gọi thiêng liêng", "rationale": "Đỉnh cao của sự giác ngộ tâm linh và sứ mệnh cuộc đời." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "nghiêm khắc", "rationale": "Có thể quá khắt khe với bản thân trong quá trình tổng kết." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-20",
+    "cardNameVi": "Phán Xét",
+    "cardNameEn": "Judgement",
+    "type": "major",
+    "suit": null,
+    "number": 20,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: tự phán xét, chần chừ, không nghe lời gọi. Ý nghĩa: Sự tự phán xét hoặc chần chừ đang giữ bạn khỏi quyết định đã khá rõ.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra sự chần chừ", "rationale": "Ý thức được sự trì hoãn vô bổ để chuẩn bị ra quyết định." },
+      "EMO": { "score": 1, "evidenceQuote": "ngừng tự phán xét", "rationale": "Học cách tự tha thứ cho lỗi lầm quá khứ." },
+      "STR": { "score": 1, "evidenceQuote": "quyết định đã khá rõ", "rationale": "Chốt lại các tiêu chí để chấm dứt sự dùng dằng." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua sợ hãi phán xét", "rationale": "Can đảm đón nhận tiếng gọi dù còn nhiều băn khoăn." },
+      "INT": { "score": 1, "evidenceQuote": "lắng nghe lại tiếng gọi", "rationale": "Mở lại cánh cửa tâm hồn để tiếp nhận thông điệp vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "chần chừ, không chịu bước", "rationale": "Tê liệt hành vi, trì hoãn quyết định sinh tử đã rõ ràng." },
+      "EMO": { "score": -2, "evidenceQuote": "tự phán xét, dằn vặt", "rationale": "Tự kết án bản thân cay nghiệt, chìm trong mặc cảm tội lỗi." },
+      "STR": { "score": -1, "evidenceQuote": "bế tắc quyết định", "rationale": "Không thể đưa ra kết luận dứt khoát." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi tiếng gọi", "rationale": "Trốn chạy trách nhiệm và tiếng gọi trưởng thành." },
+      "INT": { "score": -2, "evidenceQuote": "không nghe lời gọi", "rationale": "Cố tình bịt tai trước chân lý và lương tâm mách bảo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-21",
+    "cardNameVi": "Thế Giới",
+    "cardNameEn": "The World",
+    "type": "major",
+    "suit": null,
+    "number": 21,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hoàn thành, hội nhập, thành tựu. Ý nghĩa: Một chu kỳ đạt độ chín; hãy ghi nhận thành quả và chuẩn bị bước sang vòng mới.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hoàn thành, bước sang vòng mới", "rationale": "Về đích viên mãn và sẵn sàng cho một khởi đầu vĩ đại mới." },
+      "EMO": { "score": 2, "evidenceQuote": "hội nhập, thành tựu, mãn nguyện", "rationale": "Hạnh phúc trọn vẹn, hòa quyện tuyệt đối với vũ trụ và cộng đồng." },
+      "STR": { "score": 2, "evidenceQuote": "đạt độ chín, hoàn tất chu kỳ", "rationale": "Cấu trúc hoàn mỹ, mọi mắt xích đều đã được đặt đúng vị trí." },
+      "RSK": { "score": 2, "evidenceQuote": "bước sang vòng mới", "rationale": "Tự tin bước ra thế giới rộng lớn với tư thế người chiến thắng." },
+      "INT": { "score": 2, "evidenceQuote": "hội nhập, hợp nhất tâm linh", "rationale": "Đỉnh cao của sự giác ngộ toàn diện, hợp nhất ý thức và vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "ngủ quên trên chiến thắng", "rationale": "Dễ tự mãn với thành quả đã đạt được." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại bắt đầu lại từ đầu", "rationale": "Ngại quay lại vị trí con số 0 của Kẻ Khờ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "major-21",
+    "cardNameVi": "Thế Giới",
+    "cardNameEn": "The World",
+    "type": "major",
+    "suit": null,
+    "number": 21,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: dở dang, chậm hoàn tất, thiếu khép lại. Ý nghĩa: Một chi tiết hoặc bài học chưa hoàn tất đang ngăn cảm giác khép lại.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hoàn tất chi tiết cuối cùng", "rationale": "Tập trung giải quyết nốt mắt xích dở dang còn sót lại." },
+      "EMO": { "score": 1, "evidenceQuote": "tìm cảm giác khép lại", "rationale": "Chủ động đóng lại cánh cửa cũ trong hòa bình." },
+      "STR": { "score": 1, "evidenceQuote": "bài học cần hoàn tất", "rationale": "Rà soát kiểm tra lại những khuyết thiếu để lấp đầy." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua bước cản cuối", "rationale": "Kiên trì đi hết đoạn đường cuối cùng." },
+      "INT": { "score": 2, "evidenceQuote": "nhận ra bài học chưa hoàn tất", "rationale": "Trực giác sáng tỏ chỉ ra chính xác nút thắt còn tồn đọng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chậm hoàn tất", "rationale": "Đầu voi đuôi chuột, buông xuôi khi chỉ còn cách đích một bước." },
+      "EMO": { "score": -1, "evidenceQuote": "thiếu khép lại, hụt hẫng", "rationale": "Day dứt, bứt rứt vì những chuyện dang dở không tròn vẹn." },
+      "STR": { "score": -1, "evidenceQuote": "dở dang", "rationale": "Kế hoạch bị đình trệ ở phút chót vì thiếu sót chi tiết." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ vạch đích", "rationale": "Tâm lý sợ thành công hoặc sợ bước tiếp sang giai đoạn mới." },
+      "INT": { "score": -1, "evidenceQuote": "mất kiên nhẫn học bài", "rationale": "Cố tình bỏ qua bài học cốt lõi để vội vã kết thúc." }
+    },
+    "overallConfidence": 0.95
+  }
+]

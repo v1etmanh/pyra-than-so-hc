@@ -1,0 +1,209 @@
+[
+  {
+    "id": "monthIndividual-1",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "1",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 1",
+    "sourceSnippet": "Tháng Cá Nhân Số 1 mang nguồn năng lượng dồi dào, thúc đẩy hành động mạnh mẽ và mở ra những khởi đầu mới. Đây là thời điểm tuyệt vời để bạn gạt bỏ sự chần chừ, chủ động nắm quyền kiểm soát công việc và bắt tay vào hiện thực hóa các kế hoạch mới. Thời điểm thích hợp cho: Khởi động dự án mới, khai trương kinh doanh, đưa ra các quyết định quan trọng mang tính độc lập.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khởi động dự án mới, đưa ra quyết định độc lập, hành động ngay lập tức", "rationale": "Chủ động bùng nổ hành động, tiên phong mở màn cho chu kỳ vận trình mới." },
+      "EMO": { "score": 0, "evidenceQuote": "lắng nghe phản hồi thực tế", "rationale": "Giữ thái độ cầu thị, không bị cái tôi cá nhân che mờ." },
+      "STR": { "score": 1, "evidenceQuote": "đặt ra mục tiêu trọng tâm của tháng và bắt tay vào làm ngay", "rationale": "Thiết lập kế hoạch hành động rõ ràng và định hướng dứt khoát." },
+      "RSK": { "score": 2, "evidenceQuote": "bước đi đầu tiên mạnh mẽ, tự đưa ra quyết định độc lập", "rationale": "Dũng cảm dấn thân vào vùng đất mới mà không phụ thuộc vào người khác." },
+      "INT": { "score": 1, "evidenceQuote": "điều chỉnh kế hoạch mở màn một cách thông minh", "rationale": "Nhận thức nhạy bén về thời điểm vàng để xuất kích." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động nóng vội", "rationale": "Hấp tấp đốt cháy giai đoạn do hưng phấn quá mức." },
+      "EMO": { "score": -1, "evidenceQuote": "thái độ nóng nảy, hiếu thắng hoặc áp đặt người khác", "rationale": "Gây căng thẳng quan hệ xung quanh vì thói độc đoán hiếu thắng." },
+      "STR": { "score": -1, "evidenceQuote": "chờ đợi sự hoàn hảo hoặc bốc đồng", "rationale": "Lỡ nhịp do do dự hoặc làm việc bột phát thiếu kỷ luật." },
+      "RSK": { "score": 1, "evidenceQuote": "hiếu thắng", "rationale": "Liều lĩnh lao vào dự án mới mà chưa kiểm tra kỹ rủi ro." },
+      "INT": { "score": -1, "evidenceQuote": "không chịu lắng nghe phản hồi thực tế", "rationale": "Chủ quan duy ý chí, bỏ qua những cảnh báo khách quan." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-2",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "2",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 2",
+    "sourceSnippet": "Tháng Cá Nhân Số 2 mang nhịp điệu êm dịu, lắng đọng và kết nối tình cảm. Năng lượng tháng này kêu gọi bạn đi chậm lại, kiên nhẫn quan sát, chăm sóc các mối quan hệ và tìm kiếm sự đồng thuận từ tập thể thay vì hành động đơn độc. Thời điểm thích hợp cho: Đàm phán ngoại giao, ký kết hợp tác, hòa giải mâu thuẫn, làm việc nhóm.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đi chậm lại, kiên nhẫn quan sát", "rationale": "Biết lùi một bước để quan sát toàn cục và tích lũy nội lực." },
+      "EMO": { "score": 2, "evidenceQuote": "chăm sóc các mối quan hệ, hòa giải mâu thuẫn, đàm phán ngoại giao, thấu hiểu lòng người", "rationale": "Gắn kết tình cảm sâu sắc, kiến tạo môi trường hòa hợp và thấu cảm." },
+      "STR": { "score": 1, "evidenceQuote": "hợp tác làm việc nhóm hiệu quả, tìm kiếm sự đồng thuận", "rationale": "Tổ chức hoạt động phối hợp nhịp nhàng giữa các thành viên tập thể." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thực hành nuôi dưỡng trực giác, dành 10 phút lắng nghe tiếng nói bên trong", "rationale": "Đánh thức trực giác tĩnh lặng, thấu hiểu tâm lý và cảm xúc vi tế." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "do dự, chần chừ hành động", "rationale": "Thiếu quyết đoán, để cơ hội trôi qua vì e ngại va chạm." },
+      "EMO": { "score": -2, "evidenceQuote": "nhạy cảm quá mức, dễ bị tổn thương hoặc suy diễn tiêu cực trước lời nói", "rationale": "Tâm lý mong manh, tự ái và suy diễn tiêu cực gây rạn nứt lòng tin." },
+      "STR": { "score": -1, "evidenceQuote": "bị cảm xúc chi phối phá vỡ kế hoạch", "rationale": "Kế hoạch công việc bị đình trệ do tâm trạng thất thường." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ xung đột, né tránh đối thoại sòng phẳng", "rationale": "Hèn nhát trốn tránh vấn đề cốt lõi cần giải quyết." },
+      "INT": { "score": -1, "evidenceQuote": "suy diễn tiêu cực che mờ trực giác", "rationale": "Trực giác bị bóp méo bởi những nghi ngờ và tưởng tượng tiêu cực." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-3",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "3",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 3",
+    "sourceSnippet": "Tháng Cá Nhân Số 3 mang tần số rung động rực rỡ, lạc quan và tràn đầy cảm hứng sáng tạo. Đây là tháng để bạn mở rộng giao tiếp xã hội, chia sẻ ý tưởng, tỏa sáng trước công chúng và đón nhận những cơ hội kết nối tuyệt vời. Thuận lợi cho: Quảng bá marketing, thuyết trình, tổ chức sự kiện, ra mắt sản phẩm sáng tạo, giao lưu cộng đồng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "đẩy mạnh truyền thông marketing, xuất bản bài viết video, hoàn thành ý tưởng sáng tạo", "rationale": "Chủ động xuất hiện, quảng bá hình ảnh và hiện thực hóa các ý tưởng." },
+      "EMO": { "score": 2, "evidenceQuote": "mở rộng mạng lưới quan hệ, chia sẻ giá trị, tần số rực rỡ lạc quan", "rationale": "Lan tỏa năng lượng tích cực, kết nối cộng đồng bằng sự duyên dáng và hào hứng." },
+      "STR": { "score": 0, "evidenceQuote": "hoàn thành 1 ý tưởng cụ thể", "rationale": "Cố gắng đóng gói ý tưởng thành tác phẩm cụ thể thay vì chỉ nói suông." },
+      "RSK": { "score": 1, "evidenceQuote": "tỏa sáng trước công chúng, tổ chức sự kiện", "rationale": "Tự tin bước lên sân khấu khẳng định thương hiệu cá nhân." },
+      "INT": { "score": 1, "evidenceQuote": "tràn đầy cảm hứng sáng tạo, ý tưởng mới lạ", "rationale": "Trực giác sáng tạo dồi dào, tìm ra những góc nhìn truyền thông độc đáo." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "năng lượng bị phân tán vào quá nhiều cuộc vui", "rationale": "Mất tập trung, bỏ bê mục tiêu chính vì mải mê vui chơi bề nổi." },
+      "EMO": { "score": -1, "evidenceQuote": "buôn chuyện thị phi làm ảnh hưởng đến uy tín cá nhân", "rationale": "Nói năng thiếu cẩn trọng, làm tổn hại thanh danh và mối quan hệ." },
+      "STR": { "score": -2, "evidenceQuote": "kiểm soát chi tiêu mua sắm bốc đồng, cuộc vui vô bổ", "rationale": "Lãng phí ngân sách và thời gian vào những cám dỗ tiêu khiển nhất thời." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng mua sắm", "rationale": "Hành động thiếu tính toán thực tế, dễ gặp rủi ro tài chính cá nhân." },
+      "INT": { "score": -1, "evidenceQuote": "sống bề nổi, thiếu chiều sâu chiêm nghiệm", "rationale": "Tâm trí lơ đãng, trôi nổi trên bề mặt của những lời tán dương ảo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-4",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "4",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 4",
+    "sourceSnippet": "Tháng Cá Nhân Số 4 mang nhịp điệu chắc chắn, nghiêm túc và thực tế. Sau một tháng 3 bay bổng, Tháng 4 đòi hỏi bạn phải quay về với kỷ luật, sắp xếp lại trật tự công việc, rà soát số liệu tài chính và củng cố nền tảng vận hành. Thích hợp cho: Lập kế hoạch chi tiết, kiểm toán sổ sách tài chính, hoàn thiện quy trình kỹ thuật, rà soát pháp lý hợp đồng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chia nhỏ công việc và kiên trì hoàn thành từng mục, dọn dẹp tổ chức lại", "rationale": "Hành động cẩn trọng, kiên nhẫn xử lý dứt điểm từng khâu công việc thực tế." },
+      "EMO": { "score": 0, "evidenceQuote": "chăm sóc sức khỏe thể chất", "rationale": "Tập trung vào sự ổn định thân thể và lối sống lành mạnh." },
+      "STR": { "score": 2, "evidenceQuote": "quay về với kỷ luật, sắp xếp lại trật tự công việc, rà soát số liệu tài chính, hoàn thiện quy trình kỹ thuật", "rationale": "Đỉnh cao của việc củng cố cấu trúc nền móng, chuẩn hóa kỷ luật và quản trị ngân sách." },
+      "RSK": { "score": -1, "evidenceQuote": "thiết lập quỹ dự phòng an toàn, không tìm kiếm đường tắt mạo hiểm", "rationale": "Quản trị rủi ro chặt chẽ, kiên quyết bài trừ các phương án đầu cơ phiêu lưu." },
+      "INT": { "score": 1, "evidenceQuote": "móng có chắc thì nhà mới cao", "rationale": "Thấu suốt nguyên lý thực tiễn để xây dựng sự nghiệp trường tồn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cảm giác chán nản, mệt mỏi trước khối lượng công việc chi tiết", "rationale": "Uể oải, nản lòng trước những công việc lặp đi lặp lại tẻ nhạt." },
+      "EMO": { "score": -1, "evidenceQuote": "công việc khô khan và nặng nề", "rationale": "Tâm trạng nặng nề, thiếu đi sự mềm mại và niềm vui sống." },
+      "STR": { "score": -1, "evidenceQuote": "nóng vội muốn đốt cháy giai đoạn", "rationale": "Thiếu kiên nhẫn làm lung lay nền móng quy trình chuẩn." },
+      "RSK": { "score": 1, "evidenceQuote": "tìm kiếm những con đường tắt mạo hiểm", "rationale": "Vì sốt ruột mà liều lĩnh đi đường tắt dẫn đến rủi ro sụp đổ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-5",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "5",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 5",
+    "sourceSnippet": "Tháng Cá Nhân Số 5 mang năng lượng chuyển dịch, tự do và kích thích khám phá. Nhịp điệu cuộc sống tháng này diễn ra rất nhanh với nhiều biến động, sự kiện bất ngờ và cơ hội mới đòi hỏi bạn phải thích ứng linh hoạt. Thích hợp cho: Đi công tác xa, du lịch trải nghiệm, thử nghiệm mô hình kinh doanh mới, chuyển đổi số, đầu tư đột phá.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thực hiện chuyến đi trải nghiệm, thử nghiệm phương pháp làm việc mới, nắm bắt cơ hội mới", "rationale": "Năng động chuyển dịch, chủ động thử nghiệm các phương pháp đột phá mới mẻ." },
+      "EMO": { "score": 1, "evidenceQuote": "mở lòng đón nhận sự thay đổi với tinh thần tò mò và phiêu lưu", "rationale": "Tâm thế cởi mở, hào hứng đón nhận những nhân duyên và trải nghiệm mới." },
+      "STR": { "score": 0, "evidenceQuote": "sàng lọc cơ hội linh hoạt có biện pháp quản trị rủi ro", "rationale": "Cân bằng giữa sự linh hoạt và các giới hạn an toàn thực tế." },
+      "RSK": { "score": 2, "evidenceQuote": "lướt trên những ngọn sóng biến động, đón nhận cơ hội đầu tư đột phá", "rationale": "Can trường đối mặt biến động, sẵn sàng nắm bắt các cơ hội tăng trưởng bất ngờ." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy linh hoạt và sự nhạy bén", "rationale": "Nhạy bén nhận diện xu hướng biến dịch của thị trường và môi trường." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cảm giác bồn chồn, mất phương hướng", "rationale": "Nôn nóng, hành động phân tán lung tung không có tiêu điểm." },
+      "EMO": { "score": -1, "evidenceQuote": "buông thả theo những thú vui kích thích nhất thời", "rationale": "Chạy theo khoái lạc ngắn hạn, gây hao tổn nguyên khí và cảm xúc." },
+      "STR": { "score": -2, "evidenceQuote": "buông thả phá vỡ cam kết đạo đức cốt lõi", "rationale": "Đánh mất kỷ luật tự thân, sa vào sự bấp bênh vô định." },
+      "RSK": { "score": 2, "evidenceQuote": "sa đà bốc đồng liều lĩnh", "rationale": "Phiêu lưu mạo hiểm quá mức gây nguy hiểm cho tài chính và sự nghiệp." },
+      "INT": { "score": -1, "evidenceQuote": "choáng ngợp trước những thay đổi dồn dập", "rationale": "Mất phương hướng phán đoán khi dòng xoáy biến cố ập đến quá nhanh." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-6",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "6",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 6",
+    "sourceSnippet": "Tháng Cá Nhân Số 6 mang nhịp điệu ấm áp, yêu thương và trách nhiệm gia đình. Năng lượng tháng này hướng tâm trí bạn về với tổ ấm, chăm sóc cha mẹ, vợ chồng, con cái và làm đẹp môi trường sống xung quanh. Tuyệt vời cho: Sửa sang trang trí nhà cửa, sum họp gia đình, kỷ niệm tình cảm, chăm sóc sức khỏe người thân, từ thiện phụng sự.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dành 1 bữa tối chất lượng, dọn dẹp trang trí lại nhà cửa, thực hiện 1 nghĩa cử tử tế", "rationale": "Hành động phụng sự tổ ấm và thực hiện các nghĩa cử chăm sóc cụ thể." },
+      "EMO": { "score": 2, "evidenceQuote": "nhịp điệu ấm áp, yêu thương và trách nhiệm gia đình, tình yêu thương vô điều kiện", "rationale": "Nuôi dưỡng tình cảm gia đình, sưởi ấm các mối quan hệ ruột thịt bằng sự chân thành." },
+      "STR": { "score": 1, "evidenceQuote": "đặt gia đình và bình an nội tâm lên ưu tiên hàng đầu, hậu phương ấm áp", "rationale": "Thiết lập trật tự ưu tiên đúng đắn, xây dựng nền tảng hậu phương kiên cố." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tôn trọng tự do của đối phương, yêu thương vô điều kiện", "rationale": "Thấu suốt bài học yêu thương tôn trọng sự tự lập của người thân." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "sự bao đồng ôm đồm việc của người khác", "rationale": "Can thiệp quá sâu vào việc riêng của người khác khiến bản thân kiệt sức." },
+      "EMO": { "score": -2, "evidenceQuote": "cằn nhằn lo lắng thái quá hoặc áp đặt kỳ vọng lên người thân", "rationale": "Biến tình thương thành sự ngột ngạt, gây căng thẳng không khí gia đình." },
+      "STR": { "score": 1, "evidenceQuote": "áp đặt kỳ vọng kiểm soát", "rationale": "Bảo thủ áp đặt các khuôn mẫu cá nhân lên bạn đời và con cái." },
+      "RSK": { "score": -1, "evidenceQuote": "lo lắng thái quá thêu dệt kịch bản xấu", "rationale": "Nỗi sợ vô cớ làm bất an tinh thần người thân trong gia đình." },
+      "INT": { "score": -1, "evidenceQuote": "ấm ức khi người khác không làm theo ý mình", "rationale": "Vị kỷ hẹp hòi, mất đi sự bao dung sáng suốt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-7",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "7",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 7",
+    "sourceSnippet": "Tháng Cá Nhân Số 7 mang nhịp điệu lắng sâu, hướng nội và khai sáng trí tuệ. Đây là tháng của sự tĩnh lặng, nghiên cứu chuyên sâu, đọc sách, thiền định và tự soi chiếu lại chặng đường đã qua để tìm ra chân lý. Thích hợp cho: Học tập nâng cao chuyên môn, nghiên cứu khoa học/triết học, thiền định tĩnh tâm, đi nghỉ dưỡng một mình, chữa lành cảm xúc. Tránh đầu tư mạo hiểm.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "dành thời gian tĩnh tâm mỗi ngày, thiền định hoặc đi dạo hòa mình thiên nhiên", "rationale": "Tĩnh lặng nghỉ ngơi, nạp lại năng lượng thay vì lao ra hành động bên ngoài." },
+      "EMO": { "score": 0, "evidenceQuote": "chữa lành các tổn thương cảm xúc, nạp lại năng lượng tâm hồn", "rationale": "Tự chữa lành và nuôi dưỡng sự bình an trong tâm hồn mình." },
+      "STR": { "score": 1, "evidenceQuote": "đọc trọn vẹn 1 cuốn sách chuyên sâu, viết nhật ký chiêm nghiệm", "rationale": "Thiết lập kỷ luật học tập nghiên cứu bài bản và định hình giá trị sống." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh đầu tư tài chính mạo hiểm trong tháng này", "rationale": "Bảo vệ vốn liếng an toàn, kiên quyết không tham gia vào các thương vụ rủi ro." },
+      "INT": { "score": 2, "evidenceQuote": "khai sáng trí tuệ, tự soi chiếu chặng đường đã qua để tìm ra chân lý, khai mở trực giác", "rationale": "Đỉnh cao của sự chiêm nghiệm triết học, đúc kết bài học và khai mở trí tuệ trực giác." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ít muốn giao tiếp xã hội, xa lánh thực tế", "rationale": "Thu mình quá mức, từ chối kết nối với nhịp sống xã hội." },
+      "EMO": { "score": -1, "evidenceQuote": "cảm giác cô đơn, lạc lõng hay suy nghĩ tiêu cực, hoài nghi", "rationale": "Rơi vào trạng thái cô độc u uất và nghi ngờ thế giới xung quanh." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "hoài nghi suy nghĩ tiêu cực", "rationale": "Sợ hãi rụt rè, nhìn đâu cũng thấy rủi ro và cạm bẫy." },
+      "INT": { "score": -1, "evidenceQuote": "suy nghĩ tiêu cực bế tắc", "rationale": "Tâm trí bị giam cầm trong những nghi ngờ triết học luẩn quẩn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-8",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "8",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 8",
+    "sourceSnippet": "Tháng Cá Nhân Số 8 mang năng lượng quyền lực, dũng mãnh và thành tựu vật chất đỉnh cao. Đây là tháng để bạn bung toàn lực đẩy mạnh kinh doanh, chốt các hợp đồng lớn, thu hồi công nợ và gặt hái thành quả tài chính. Thời điểm vàng cho: Đàm phán thương mại, chốt sale quy mô lớn, tái cấu trúc dòng tiền, ký kết hợp đồng kinh tế, thu hồi nợ cũ.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bung toàn lực đẩy mạnh kinh doanh, hành động quyết đoán, đàm phán chốt hợp đồng trọng điểm", "rationale": "Bùng nổ hành động dũng mãnh, quyết liệt dẫn dắt thương vụ đến thắng lợi." },
+      "EMO": { "score": 1, "evidenceQuote": "chia sẻ thành quả công bằng để bảo toàn phúc lộc lâu dài", "rationale": "Hào phóng, công tâm với cộng sự để giữ gìn mối quan hệ làm ăn bền vững." },
+      "STR": { "score": 2, "evidenceQuote": "quản trị dòng tiền minh bạch, thu hồi các khoản công nợ tồn đọng, tối ưu hóa nguồn vốn đầu tư", "rationale": "Thiết lập cấu trúc tài chính lành mạnh, quản trị dòng tiền và đầu tư bài bản." },
+      "RSK": { "score": 2, "evidenceQuote": "tự tin đàm phán, chốt hợp đồng lớn, khẳng định vị thế lãnh đạo", "rationale": "Can trường đứng trước các thương vụ lớn, làm chủ tình thế kinh doanh áp lực." },
+      "INT": { "score": 1, "evidenceQuote": "giữ vững sự chính trực và chia sẻ thành quả", "rationale": "Minh triết trong ứng xử kinh tế, hiểu rõ đạo đức kinh doanh tạo ra tài lộc lâu dài." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "áp đặt độc đoán với cộng sự", "rationale": "Dùng quyền lực chèn ép, đòi hỏi tiến độ quá gắt gao làm tổn hại nhân sự." },
+      "EMO": { "score": -2, "evidenceQuote": "tham lam, đối xử bất công với cộng sự", "rationale": "Thực dụng tàn nhẫn, tham lợi nhuận mà cắt giảm quyền lợi chính đáng của người khác." },
+      "STR": { "score": -1, "evidenceQuote": "quản trị dòng tiền thiếu minh bạch do tham lợi", "rationale": "Dễ bị cám dỗ vào các giao dịch mờ ám làm rối loạn dòng vốn." },
+      "RSK": { "score": 2, "evidenceQuote": "tham lam đầu cơ liều lĩnh", "rationale": "Mạo hiểm quá mức do say máu kiếm tiền, dễ dẫn tới thua lỗ nặng nề." },
+      "INT": { "score": -1, "evidenceQuote": "mờ mắt trước thành tựu vật chất", "rationale": "Lòng tham làm lu mờ lương tri và sự sáng suốt của người lãnh đạo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "monthIndividual-9",
+    "indicatorKey": "monthIndividual",
+    "indicatorNameVi": "Tháng Cá Nhân",
+    "numberValue": "9",
+    "title": "Hướng Dẫn Ứng Dụng Năng Lượng Tháng Cá Nhân Số 9",
+    "sourceSnippet": "Tháng Cá Nhân Số 9 là tháng kết thúc của một chu kỳ ngắn. Năng lượng tháng này hướng tới sự hoàn tất, thanh lọc, buông bỏ những điều cũ kỹ, tha thứ cho quá khứ và dọn dẹp không gian để chuẩn bị đón nhận chu kỳ mới. Thích hợp cho: Nghiệm thu hoàn thành dự án cũ, thanh toán hết hóa đơn/nợ nần, thanh lý đồ đạc cũ, chấm dứt quan hệ độc hại, làm từ thiện. Tránh khởi động dự án dài hạn.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hoàn thành dứt điểm các công việc tồn đọng, dọn dẹp thanh lý đồ đạc cũ, làm từ thiện", "rationale": "Chủ động dọn sạch nợ nần, hoàn tất các cam kết cũ để chuẩn bị chu kỳ mới." },
+      "EMO": { "score": 2, "evidenceQuote": "thực hành tha thứ và làm việc thiện, gửi lời chúc bình an, buông xả với lòng biết ơn", "rationale": "Trái tim vị tha mở rộng, buông xả mọi oán hận để đạt tới sự nhẹ nhõm thanh thản." },
+      "STR": { "score": 1, "evidenceQuote": "đóng gói, nghiệm thu và kết thúc các cam kết cũ, thanh toán hết hóa đơn nợ nần", "rationale": "Thiết lập sự ngăn nắp, làm sạch các nghĩa vụ tài chính và công việc tồn đọng." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh khởi động dự án dài hạn mới trong tháng này", "rationale": "Thận trọng chờ thời cơ, tránh mạo hiểm bắt đầu cái mới khi chu kỳ cũ chưa khép lại." },
+      "INT": { "score": 2, "evidenceQuote": "tâm thế nhẹ nhõm, thanh thản, hiểu quy luật hoàn tất để đón nhận vận khí hanh thông", "rationale": "Đạt tới nhận thức minh triết về quy luật chu kỳ luân chuyển tự nhiên của vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "dây dưa công việc cũ không dứt điểm", "rationale": "Trì hoãn khép lại việc cũ khiến năng lượng bị kéo lê trì trệ." },
+      "EMO": { "score": -2, "evidenceQuote": "ôm giữ hận thù, tiếc nuối hoặc bám víu vào những điều đã qua", "rationale": "Cay đắng, dằn vặt bản thân và không chịu buông tha cho những tổn thương cũ." },
+      "STR": { "score": -1, "evidenceQuote": "để lại sự bừa bãi và nợ nần tồn đọng", "rationale": "Thiếu dứt khoát làm tài chính và giấy tờ rơi vào cảnh lộn xộn." },
+      "RSK": { "score": 1, "evidenceQuote": "nôn nóng khởi động dự án dài hạn mới sai thời điểm", "rationale": "Hấp tấp bắt đầu khi chưa dọn sạch nền móng cũ dẫn tới thất bại." },
+      "INT": { "score": -1, "evidenceQuote": "tiếc nuối bám chấp quá khứ", "rationale": "Tâm trí u mê bám víu vào những ảo ảnh đã qua không còn giá trị." }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -1,0 +1,569 @@
+[
+  {
+    "id": "bridgeMaturityPassion-0",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "0",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 0",
+    "sourceSnippet": "Khi Cầu nối giữa Trưởng thành và Đam mê mang giá trị 0 (|Trưởng thành - Đam mê| = 0, tức Con số Trưởng thành và Con số Đam mê ẩn giấu có cùng một con số), bạn sở hữu sự đồng nhất và cộng hưởng năng lượng hoàn hảo nhất. Ngọn lửa đam mê, sở thích làm bạn đạt trạng thái dòng chảy (Flow) từ thời trẻ chính là lĩnh vực bạn sẽ gặt hái thành tựu rực rỡ nhất sau tuổi 35. Bạn không cần phải chọn lựa giữa 'làm việc mình thích' và 'làm việc kiếm ra tiền'; cả hai hòa làm một thể thống nhất.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Ngọn lửa đam mê, sở thích làm bạn đạt trạng thái dòng chảy (Flow) từ thời trẻ chính là lĩnh vực bạn sẽ gặt hái thành tựu rực rỡ nhất sau tuổi 35",
+        "rationale": "Trạng thái dòng chảy và hành động bền bỉ, gặt hái thành tựu rực rỡ từ đam mê nguyên bản."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "công việc tạo ra thành tựu lớn nhất cuộc đời cũng chính là niềm vui sống mỗi ngày của bạn",
+        "rationale": "Sự thỏa mãn và hân hoan cảm xúc khi niềm vui sống gắn liền trọn vẹn với sự nghiệp."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Nâng cấp đam mê lên tầm nghệ thuật/chuyên nghiệp: Học tập và chuẩn hóa kiến thức để đam mê trở thành thương hiệu uy tín",
+        "rationale": "Cấu trúc hóa và chuẩn hóa kiến thức bài bản, xây dựng thương hiệu uy tín dài hạn."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Định vị bản thân là người dẫn đầu trong lĩnh vực sở trường và xây dựng doanh nghiệp/sự nghiệp",
+        "rationale": "Tự tin dấn thân định vị vị thế dẫn đầu trong thị trường ngách."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Đào sâu phát triển kỹ năng đam mê thành chuyên môn đẳng cấp chuyên gia",
+        "rationale": "Tập trung trí tuệ chuyên sâu để vươn tới đẳng cấp chuyên gia tinh hoa."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Không để những trào lưu kiếm tiền ngắn hạn làm lung lay sở trường đích thực của bạn",
+        "rationale": "Nguy cơ bị phân tâm bởi các cơ hội ngắn hạn làm xao lãng hành động cốt lõi."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Tài liệu không ghi nhận thiên lệch cảm xúc tiêu cực cụ thể ở giá trị 0."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Không để những trào lưu kiếm tiền ngắn hạn làm lung lay",
+        "rationale": "Dễ phá vỡ cấu trúc và định hướng dài hạn nếu chạy theo thị trường hỗn loạn."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận xu hướng rủi ro cực đoan."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối tư duy nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-1",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "1",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 1",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 1 (|Trưởng thành - Đam mê| = 1), đam mê nguyên thủy và mục tiêu thành tựu sau tuổi 35 của bạn chỉ cách nhau một khoảng cách rất nhỏ. Bạn cần bổ sung năng lượng của Số 1: Tính độc lập, bản lĩnh tiên phong và sự tự tin dám đứng ra khởi xướng một hướng đi riêng dựa trên sở thích của mình.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Dũng cảm bước ra khỏi vị trí làm thuê hoặc phụ thuộc để tự mình làm chủ dự án sáng tạo",
+        "rationale": "Hành động quyết đoán, tự chủ khởi sự và tiên phong làm chủ dự án."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tin tưởng tuyệt đối vào giá trị độc đáo mà đam mê của bạn mang lại",
+        "rationale": "Niềm tin nội tại vững vàng và tinh thần hăng hái đối với giá trị riêng."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Hãy lập kế hoạch kinh doanh cá nhân, tự mình chịu trách nhiệm từ bước đầu tiên",
+        "rationale": "Tự lập kế hoạch kinh doanh cá nhân bài bản và có trách nhiệm giải trình."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Tự tin ra quyết định kinh doanh: Dám thử nghiệm những mô hình dịch vụ/sản phẩm mới chưa ai làm",
+        "rationale": "Dám chấp nhận rủi ro khai phá những mô hình kinh doanh chưa ai từng thử nghiệm."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Biến đam mê thành sản phẩm độc bản và khẳng định thương hiệu cá nhân uy tín trên thị trường",
+        "rationale": "Tư duy sáng tạo sản phẩm độc bản và định vị thương hiệu riêng biệt."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "không chờ đợi sự bảo lãnh của ai",
+        "rationale": "Nguy cơ độc đoán, làm việc đơn độc và từ chối sự trợ lực cần thiết."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Cân bằng giữa tự chủ và hợp tác: Giữ quyền tự quyết nhưng biết lắng nghe phản hồi",
+        "rationale": "Dễ tự cao hoặc phòng thủ cảm xúc trước ý kiến góp ý của người khác."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Dám thử nghiệm những mô hình dịch vụ/sản phẩm mới chưa ai làm",
+        "rationale": "Nguy cơ bốc đồng lao vào thị trường mới mà thiếu nghiên cứu kiểm chứng."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-2",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "2",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 2",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 2 (|Trưởng thành - Đam mê| = 2), ngọn lửa đam mê cá nhân của bạn cần được bắc nhịp cầu bằng năng lượng của Số 2: Kỹ năng ngoại giao, nghệ thuật lắng nghe thấu cảm và năng lực hợp tác đồng đội để biến nó thành thành tựu tuổi trung niên vững chắc.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Tìm kiếm những người cộng sự có năng lực quản trị hoặc tài chính để cùng hiện thực hóa đam mê",
+        "rationale": "Chủ động kết nối và tìm kiếm đồng đội để cùng nhau hành động thực thi."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Kỹ năng ngoại giao, nghệ thuật lắng nghe thấu cảm và năng lực hợp tác đồng đội",
+        "rationale": "Năng lượng cảm xúc thấu cảm cao độ, lắng nghe và gắn kết quan hệ chân thành."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Thực hành đàm phán hài hòa (Win-Win): Đảm bảo tất cả các bên tham gia đều cảm nhận được lợi ích và sự tôn trọng",
+        "rationale": "Thiết lập cấu trúc thỏa thuận đối tác công bằng, minh bạch và đôi bên cùng có lợi."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Xây dựng mối quan hệ đối tác tin cậy: Lựa chọn những người cộng sự có cùng giá trị đạo đức",
+        "rationale": "Thận trọng lựa chọn đối tác phù hợp đạo đức, tránh phiêu lưu liều lĩnh."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Sử dụng sự tinh tế và thấu hiểu tâm lý khách hàng để biến sản phẩm đam mê thành giải pháp được nhiều người yêu mến",
+        "rationale": "Trí tuệ tâm lý và sự nhạy bén nắm bắt sâu sắc nhu cầu người dùng."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "không thể một mình phát triển đam mê thành công trình lớn ở tuổi trung niên mà luôn cần đối tác",
+        "rationale": "Nguy cơ ỷ lại, thiếu tính độc lập hành động khi không có đối tác bên cạnh."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Đảm bảo tất cả các bên tham gia đều cảm nhận được lợi ích",
+        "rationale": "Dễ bị áp lực làm hài lòng tất cả mọi người, dẫn đến kiệt quệ cảm xúc."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối tổ chức cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "luôn cần đối tác",
+        "rationale": "Ngại đối mặt với rủi ro tự thân, do dự và chần chừ khi phải quyết định độc lập."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-3",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "3",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 3",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 3 (|Trưởng thành - Đam mê| = 3), bạn cần dùng năng lượng của Số 3: Sự tự do biểu đạt ngôn từ, nghệ thuật truyền thông, sự lạc quan và sức sáng tạo đổi mới để đưa đam mê cá nhân thành đỉnh cao sự nghiệp sau tuổi 35.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Sử dụng mạng xã hội, viết sách, thuyết trình hoặc sáng tạo nội dung đa phương tiện để kể câu chuyện đam mê của mình",
+        "rationale": "Hành động liên tục sáng tạo nội dung, xuất bản và truyền bá đam mê tới công chúng."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Biến năng khiếu thành những tác phẩm mang lại tiếng cười, cảm hứng và động lực tích cực cho hàng triệu người",
+        "rationale": "Năng lượng cảm xúc lạc quan, lan tỏa niềm vui và cảm hứng tích cực mạnh mẽ."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Tập trung vào tính tự do ngẫu hứng và sáng tạo biểu đạt, không nhấn mạnh cấu trúc khắt khe."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Liên tục đổi mới hình thức thể hiện: Thử nghiệm các phương thức tiếp cận thị trường mới lạ và hấp dẫn",
+        "rationale": "Sẵn sàng đón nhận rủi ro thử nghiệm các cách thức biểu đạt và truyền thông mới mẻ."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "kể câu chuyện đam mê của mình... biết cách truyền thông lôi cuốn và lan tỏa nó bằng ngôn từ tràn đầy năng lượng",
+        "rationale": "Trí tuệ ngôn từ và nghệ thuật dẫn dắt truyền thông lôi cuốn."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Một đam mê tuyệt vời nếu chỉ giữ trong bóng tối sẽ không thể tạo ra thành tựu",
+        "rationale": "Nguy cơ hành động lan man, nói nhiều hơn làm hoặc thiếu tập trung dứt điểm."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "ngôn từ tràn đầy năng lượng",
+        "rationale": "Dễ bị dao động cảm xúc theo sự tung hô của đám đông hoặc mạng xã hội."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Sự tự do biểu đạt ngôn từ",
+        "rationale": "Thiếu kỷ luật tổ chức, ngẫu hứng bốc đồng và dễ bỏ dở dở dang."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-4",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "4",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 4",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 4 (|Trưởng thành - Đam mê| = 4), có một khoảng cách giữa sự ngẫu hứng của đam mê và tính thực tiễn của sự nghiệp trung niên. Bạn cần năng lượng của Số 4: Tính kỷ luật sắt, sự tỉ mỉ, cấu trúc tổ chức và kế hoạch tài chính thực tế để xây dựng nền móng.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "quản lý chi phí chặt chẽ và kiên trì rèn luyện tay nghề mỗi ngày",
+        "rationale": "Kiên trì thực thi hành động tỉ mỉ và chăm chỉ rèn luyện kỹ năng mỗi ngày."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Tính kỷ luật sắt, sự tỉ mỉ, cấu trúc tổ chức",
+        "rationale": "Cảm xúc bị kiểm soát nghiêm ngặt bởi tính kỷ luật và thực tế."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Biến đam mê thành một hệ thống quy trình chuẩn (SOP), quản lý chi phí chặt chẽ... doanh nghiệp vận hành bài bản, sinh lời bền vững",
+        "rationale": "Thiết lập quy trình chuẩn SOP, quản trị ngân sách và cấu trúc vận hành hoàn hảo."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Không nóng vội tìm kiếm thành công chớp nhoáng; tập trung xây dựng nền móng vững bền",
+        "rationale": "Hết sức cẩn trọng, né tránh đầu cơ mạo hiểm, chỉ tin vào nền móng vững chắc."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "học cách lập kế hoạch kinh doanh chi tiết, theo dõi thu chi minh bạch",
+        "rationale": "Trí tuệ phân tích tài chính logic, chi tiết và tổ chức công việc khoa học."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "đam mê của tôi không bị 'chết yểu' vì sự thiếu kỷ luật hoặc quản lý kém",
+        "rationale": "Nguy cơ cứng nhắc, hành động chậm chạp vì phụ thuộc thái quá vào quy trình."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "khoảng cách giữa sự ngẫu hứng của đam mê và tính thực tiễn",
+        "rationale": "Khô khan cảm xúc, dễ bóp nghẹt nguồn cảm hứng và ngọn lửa đam mê ban đầu."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "chuẩn hóa quy trình làm việc",
+        "rationale": "Bảo thủ, giáo điều và khó chấp nhận những thay đổi linh hoạt ngoài khuôn mẫu."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Không nóng vội tìm kiếm thành công",
+        "rationale": "Quá cầu toàn và sợ rủi ro dẫn đến bỏ lỡ các cơ hội đột phá trên thị trường."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-5",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "5",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 5",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 5 (|Trưởng thành - Đam mê| = 5), sự khác biệt đòi hỏi bạn phải có một bước chuyển mình phóng khoáng bằng năng lượng của Số 5: Khả năng thích ứng linh hoạt, tư duy đổi mới cấp tiến và tinh thần phiêu lưu đón nhận xu hướng mới của thời đại.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Đưa đam mê của bạn ứng dụng vào các nền tảng công nghệ số hiện đại, mở rộng giao lưu quốc tế hoặc liên tục cải tiến dịch vụ",
+        "rationale": "Hành động nhanh nhẹn, ứng dụng chuyển đổi số và chủ động cải tiến dịch vụ."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tinh thần phiêu lưu đón nhận xu hướng mới của thời đại",
+        "rationale": "Hào hứng, nhiệt huyết khám phá và tận hưởng sự đổi mới."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Sẵn sàng từ bỏ những phương pháp không còn hiệu quả để thử nghiệm cái mới",
+        "rationale": "Linh hoạt phá vỡ cấu trúc truyền thống để thích ứng với biến động nhanh."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Xem sự thay đổi là người bạn đồng hành... thử nghiệm những ý tưởng đột phá",
+        "rationale": "Dám mạo hiểm đón đầu xu hướng công nghệ và thử nghiệm ý tưởng đột phá."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "tư duy đổi mới cấp tiến... ứng dụng AI, chuyển đổi số vào lĩnh vực đam mê",
+        "rationale": "Tư duy cấp tiến, nhanh nhạy với công nghệ mới và tầm nhìn toàn cầu."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "liên tục cải tiến dịch vụ để phù hợp với thị hiếu luôn thay đổi",
+        "rationale": "Dễ cả thèm chóng chán, thay đổi hướng đi liên tục làm mất đi tính bền vững."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "thị hiếu luôn thay đổi của xã hội hiện đại",
+        "rationale": "Bồn chồn, bất an trước tốc độ thay đổi nhanh của ngoại cảnh."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Đừng bám víu vào những cách làm truyền thống cũ kỹ",
+        "rationale": "Thiếu tính ổn định và kỷ luật nền tảng, dễ dẫn tới xáo trộn cấu trúc."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "thử nghiệm những ý tưởng đột phá",
+        "rationale": "Phiêu lưu mạo hiểm quá đà trước khi mô hình cũ kịp sinh lời ổn định."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-6",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "6",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 6",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 6 (|Trưởng thành - Đam mê| = 6), đam mê cá nhân của bạn cần được nâng tầm bằng trái tim của Số 6: Tình yêu thương vị tha, tinh thần trách nhiệm gia đình, sự chăm sóc nhân văn và sứ mệnh làm đẹp cho cuộc đời.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Hướng các sản phẩm và dịch vụ từ đam mê của bạn vào việc chăm sóc sức khỏe, cải thiện đời sống gia đình, giáo dục",
+        "rationale": "Hành động phụng sự cộng đồng, chăm sóc gia đình và cải thiện môi trường sống."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Tình yêu thương vị tha, tinh thần trách nhiệm gia đình, sự chăm sóc nhân văn và sứ mệnh làm đẹp cho cuộc đời",
+        "rationale": "Tình yêu thương nhân ái bao la, lòng trắc ẩn và xúc cảm vị tha sâu sắc."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Cân bằng giữa sự nghiệp và gia đình: Giữ gìn tổ ấm làm bệ phóng tinh thần bình an",
+        "rationale": "Thiết lập trật tự hài hòa giữa trách nhiệm gia đình và sự nghiệp xã hội."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Đảm bảo mọi giải pháp bạn tạo ra đều an lành và mang lại hạnh phúc cho người dùng",
+        "rationale": "Ưu tiên hàng đầu cho sự an toàn, bảo bọc và bền vững của con người."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "gắn đam mê của mình với mục đích phụng sự con người và giải quyết nỗi đau của xã hội",
+        "rationale": "Trí tuệ thấu cảm các vấn đề nhân sinh và tìm kiếm giải pháp phụng sự xã hội."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "giải quyết nỗi đau của xã hội... bệ phóng tinh thần bình an",
+        "rationale": "Gánh nặng trách nhiệm quá lớn gây lo lắng thái quá, áy náy và kiệt sức cảm xúc."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "đều an lành và mang lại hạnh phúc",
+        "rationale": "Bảo thủ vì tâm lý bảo bọc quá mức, sợ va chạm và né tránh rủi ro cần thiết."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-7",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "7",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 7",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 7 (|Trưởng thành - Đam mê| = 7), có một khoảng cách tri thức sâu sắc đòi hỏi bạn phải dùng năng lượng của Số 7: Sự đào sâu nghiên cứu chuyên môn, tư duy triết học uyên bác, thời gian chiêm nghiệm tĩnh lặng và sự thức tỉnh tâm linh.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Nâng tầm đam mê từ một sở thích đơn thuần thành một công trình nghiên cứu khoa học, một hệ thống lý thuyết chuẩn mực hoặc viết sách",
+        "rationale": "Kiên trì thực hiện các nghiên cứu khoa học, biên soạn tài liệu và xuất bản sách chuyên sâu."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "thời gian chiêm nghiệm tĩnh lặng và sự thức tỉnh tâm linh",
+        "rationale": "Khuynh hướng thu mình vào thế giới nội tâm tĩnh lặng, tránh xa ồn ào cảm xúc thế tục."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "một hệ thống lý thuyết chuẩn mực hoặc viết sách truyền dạy tri thức chuyên sâu",
+        "rationale": "Hệ thống hóa lý thuyết tri thức bài bản và chặt chẽ theo chuẩn mực học thuật."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Đào sâu nghiên cứu gốc rễ: Không hài lòng với kiến thức bề nổi; tìm hiểu thấu đáo nguyên lý",
+        "rationale": "Thận trọng, chỉ hành động khi đã nghiên cứu thấu đáo mọi nguyên lý vận hành."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Sự đào sâu nghiên cứu chuyên môn, tư duy triết học uyên bác, thời gian chiêm nghiệm tĩnh lặng và sự thức tỉnh tâm linh",
+        "rationale": "Trí tuệ uyên bác, tư duy phân tích triết học sâu sắc và giác ngộ chân lý."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "cần phải dành nhiều thời gian nghiên cứu và tĩnh lặng một mình trước khi công bố",
+        "rationale": "Trì hoãn hành động thực tế vì mải mê nghiên cứu trong tháp ngà lý thuyết."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "tránh xa những ồn ào xã giao không cần thiết",
+        "rationale": "Cô lập bản thân, xa cách cộng đồng và khó khăn trong việc sẻ chia cảm xúc."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Sự tĩnh lặng nghiên cứu chính là lò luyện kim",
+        "rationale": "Né tránh thương mại hóa và sợ hãi thất bại khi đưa ý tưởng ra thị trường thực."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Không hài lòng với kiến thức bề nổi",
+        "rationale": "Hoài nghi thái quá, hay phán xét kiến thức người khác và dễ sa vào chủ nghĩa hoàn hảo."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "bridgeMaturityPassion-8",
+    "indicatorKey": "bridgeMaturityPassion",
+    "indicatorNameVi": "Cầu nối Trưởng thành & Đam mê",
+    "numberValue": "8",
+    "title": "Giải Mã Cầu Nối Trưởng Thành Và Đam Mê Mang Giá Trị 8",
+    "sourceSnippet": "Khi Cầu nối mang giá trị 8 (|Trưởng thành - Đam mê| = 8, ví dụ Trưởng thành 1 - Đam mê 9 hoặc ngược lại), đây là khoảng cách phân kỳ tối đa giữa một bên là ngọn lửa cảm xúc/lý tưởng và một bên là quy mô điều hành thực tế, quyền lực và dòng tiền.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Xây dựng một đế chế kinh doanh vững mạnh hoặc một tổ chức quy mô lớn dựa trên nền tảng đam mê",
+        "rationale": "Hành động quy mô lớn, kiến tạo tổ chức và điều hành guồng máy kinh doanh mạnh mẽ."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "tiền bạc và quyền lực điều hành là công cụ khuếch đại đam mê của bạn đến với thế giới",
+        "rationale": "Lý trí và thực dụng, biến cảm xúc đam mê thành công cụ phụng sự mục tiêu vĩ đại."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Tư duy quy mô và hệ thống hóa: Xây dựng đội ngũ nhân sự chuyên nghiệp để vận hành thay vì tự làm mọi việc",
+        "rationale": "Quy mô hóa bài bản, quản trị nhân sự chuyên nghiệp và hệ thống hóa điều hành tối ưu."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "đòn bẩy nguồn lực để nhân bản giá trị đam mê lên gấp hàng trăm lần",
+        "rationale": "Dám nắm giữ quyền lực và sử dụng đòn bẩy tài chính quy mô lớn."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Làm chủ kỹ năng quản trị và tài chính: Nâng cao tư duy kinh doanh và quản trị dòng tiền doanh nghiệp bài bản",
+        "rationale": "Trí tuệ sắc bén về tài chính, kinh doanh chiến lược và điều hành doanh nghiệp."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "áp lực kiếm tiền và điều hành quy mô lớn sau tuổi 35",
+        "rationale": "Áp lực quá tải công việc điều hành, dễ thúc ép người khác quá mức."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "khoảng cách phân kỳ tối đa giữa một bên là ngọn lửa cảm xúc/lý tưởng và một bên là quy mô điều hành",
+        "rationale": "Thực dụng thái quá, xem nhẹ tình cảm con người và dễ đánh mất ngọn lửa đam mê sơ tâm."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Giữ vững sự chính trực và đạo đức: Luôn bảo đảm sự minh bạch",
+        "rationale": "Nguy cơ lạm dụng quyền lực hoặc kiểm soát độc đoán hệ thống."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "đòn bẩy nguồn lực",
+        "rationale": "Lạm dụng đòn bẩy tài chính quá đà dẫn đến rủi ro sụp đổ hệ thống kinh doanh."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -1,0 +1,532 @@
+{
+  "version": "3.0.0",
+  "description": "Trạng thái có phán đoán, trục mơ hồ còn lại, hoặc bằng chứng chưa đủ. Nhãn suy luận được chủ đích bật; mơ hồ chưa giải quyết thì bỏ qua.",
+  "items": [
+    {
+      "cardId": "major-00",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Câu nghĩa đặt do dự ở đầu tiên và khuyên kiểm tra nền tảng trước khi bước tiếp; chọn trì hoãn vừa làm trạng thái chính, giữ liều lĩnh như khả năng nhưng không chọn vì luật cần một điểm duy nhất. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "core",
+          "axis": "RSK",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Trong hai cực sợ bước đi hoặc liều lĩnh, chọn co cụm vừa vì lời khuyên kiểm tra nền tảng hợp với thận trọng hơn là khuyến khích dấn thân; đây vẫn là phán đoán. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Lấy do dự làm rủi ro hành động thấp vừa, không coi cùng lúc cả tê liệt và bốc đồng là một hướng. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "RSK",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn sợ bước đi là xu hướng né rủi ro vừa; giữ liều lĩnh dưới ACT/RSK alternatives của v1 như lịch sử, nhưng v2 chọn một hướng thận trọng. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-04",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "STR",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn thiếu nền nếp thay cho đầu kia của thế lưỡng nan: câu giải thích nhấn lực cản và yêu cầu cân bằng quyền lực; trong core, mất kỷ luật là trạng thái phổ quát hơn việc đoán người đọc đang độc đoán. Mức -1 là suy luận vừa phải. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "STR",
+          "score": 2,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn quá kiểm soát làm bóng tối cụ thể của Hoàng Đế ngược: giữ quyền lực quá chặt biến năng lực lập trật tự thành áp chế. Đây là cách đọc biểu tượng, không phải nguồn xác quyết người rút bài đang độc đoán. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-05",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "STR",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn phá khuôn làm trạng thái chủ đạo của việc tự chọn niềm tin thay vì vâng theo thói quen; -1 chỉ sự nới lỏng khuôn phép, không phải hỗn loạn. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "STR",
+          "score": 2,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Giáo điều là bóng tối của cùng trục cấu trúc: biến hệ thống và truyền thống thành quy tắc bất di bất dịch. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-10",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Xem chu kỳ chuyển động là hoạt động vừa phải của tiến trình; cơ hội đang mở chứ chưa chứng minh một hành động quyết liệt của chủ thể. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-13",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Xem việc khép chu kỳ và chuyển hóa như bước chuyển có chủ đích ở mức vừa; không đồng nhất nó với một hành động bùng nổ. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-14",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Đọc điều hòa và cân bằng như khả năng điều tiết cảm xúc ở mức vừa; đây là cách chiếu trục vào chủ đề lá, vì nguồn không nêu quan hệ cụ thể. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "core",
+          "axis": "STR",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Một tiến trình được điều chỉnh và kết hợp có trình tự thể hiện cấu trúc vừa phải; câu nguồn đưa đây như giải pháp nên nhãn vẫn là suy luận, chưa chắc là trạng thái người rút bài. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-17",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chữa lành hàm ý phục hồi sự ổn định cảm xúc ở mức vừa, không có căn cứ để nâng lên trạng thái yêu thương hoặc gắn kết sâu. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-18",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "INT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Dù mơ hồ và tiềm thức tạo bất định, trực giác là từ khóa đích danh và là chủ đề chính của Mặt Trăng; chọn trực giác vừa thay vì mơ hồ che phủ toàn bộ nội tâm. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-19",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Sinh lực gợi khả năng tham gia hoạt động ở mức vừa; kết quả tích cực phụ thuộc điều kiện xuất hiện chân thật, không chứng minh dứt khoát. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Niềm vui là dấu hiệu cảm xúc tích cực vừa phải; không suy thành kết nối sâu khi nguồn không nói về người khác. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-19",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Niềm vui bị trì hoãn làm sắc thái cảm xúc hiện tại kém tích cực; chọn -1 thay vì kết luận chai sạn hoặc cô lập. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Mệt mỏi làm suy giảm khả năng hành động vừa phải. Không nâng thành tê liệt vì nguồn không nói chủ thể hoàn toàn mất khả năng hoạt động. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "major-21",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "STR",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Hoàn thành một chu kỳ cho thấy cấu trúc đã được khép lại ở mức vừa; thành tựu không tự chứng minh kỷ luật hoàn hảo. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-05",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Lấy hòa giải làm hướng cảm xúc chủ đạo sau va chạm; điểm dương vừa thể hiện hướng hàn gắn trong nghĩa ngược, không xóa khả năng dồn nén. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn dồn nén làm rủi ro cảm xúc của hòa giải bề mặt; chọn âm vừa thay vì suy ra thao túng hoặc chai sạn. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-06",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "RSK",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Tự tin làm tăng mức sẵn sàng tiến ra và đón nhận thử thách ở mức vừa; chiến thắng tự nó chỉ là kết quả. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-06",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Thiếu công nhận có thể làm suy yếu cảm giác được kết nối/đáp lại ở mức vừa; không mặc định thất bại là cô lập hoàn toàn. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Kiêu hãnh có thể gây ma sát trong quan hệ. Chọn âm vừa phải vì nguồn không mô tả thao túng hay cô lập. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-08",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Lấy trì hoãn làm trạng thái chính theo nghĩa ngược; vội vàng là cách phản ứng thay thế nhưng nguồn không cho biết nhánh nào đang xảy ra. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "ACT",
+          "score": 2,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chọn vội vàng làm bóng tối hành động: tốc độ không kiểm soát biến trì hoãn thành cú lao quá nhanh. Đây là cách nối toàn bộ ý nghĩa lá và được đánh dấu suy luận. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-10",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Sụp sức làm giảm khả năng khởi xướng và duy trì hành động; -1 giữ mức vừa vì nguồn còn nêu khả năng buông gánh. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "wands-13",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "RSK",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Tự tin và độc lập gợi độ sẵn sàng tự chủ ở mức vừa; nguồn không mô tả hành vi liều lĩnh. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "cups-05",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Buồn đau là trạng thái cảm xúc khó khăn ở mức vừa; điểm này không đồng nghĩa thiếu khả năng yêu thương hoặc gắn bó. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "cups-06",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Ký ức/hoài niệm thường giữ kết nối tình cảm với người hoặc thời điểm; chọn +1 thận trọng, không suy ra thấu cảm sâu. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "cups-07",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "INT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Tưởng tượng cho thấy hoạt động nội tâm nhưng không nhất thiết trực giác đúng; chọn +1 vừa, không dùng neo +2. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "cups-09",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Mãn nguyện là sắc thái cảm xúc tích cực vừa phải, không khẳng định sự kết nối hoặc lòng vị tha. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "swords-01",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Đọc đột phá như khởi động một bước tiến, nhưng giữ ở +1 vì nguồn nêu sáng rõ trí tuệ, chưa nói hành động cụ thể. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "swords-04",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Bồn chồn gợi chuyển động không yên, không chứng minh tiến triển hiệu quả; +1 là suy luận về mức hoạt động. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "ACT",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Kiệt sức làm suy giảm khả năng duy trì hành động ở mức vừa; nguồn không khẳng định tê liệt tuyệt đối. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "swords-10",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": -2,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Chạm đáy biểu thị rất ít năng lực khởi động bước tiếp theo trong cách đọc này; -2 là suy luận từ đáy cuộc khủng hoảng, không phải hành động bị cản trực tiếp trong nghĩa lá. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "swords-10",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Bắt đầu phục hồi là sự quay lại hoạt động ở mức vừa; “bắt đầu” không đủ để gán +2. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "pentacles-05",
+      "state": "upright",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Bất an phản ánh cảm xúc thiếu an tâm ở mức vừa; điểm không chẩn đoán cô lập hay mất gắn kết. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "pentacles-06",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "EMO",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Mất quyền trong trao đổi làm quan hệ có thể kém tương hỗ; đây là suy luận vừa phải vì nguồn không gọi tên cảm xúc. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    },
+    {
+      "cardId": "pentacles-07",
+      "state": "reversed",
+      "reviewFlags": [
+        "judgement-inference"
+      ],
+      "inferredCells": [
+        {
+          "aspect": "core",
+          "axis": "ACT",
+          "score": 1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Nóng vội gợi xu hướng lao vào sớm ở mức vừa; nguồn không nói hành động quyết đoán hay thành công. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        },
+        {
+          "aspect": "shadow",
+          "axis": "STR",
+          "score": -1,
+          "rationale": "AI phán đoán (chưa được người xác nhận): Lãng phí cho thấy việc phân bổ/duy trì nguồn lực kém hiệu quả; -1 là rối cấu trúc vừa phải, không phải hỗn loạn hoàn toàn. Trích dẫn là căn cứ diễn giải, không chứng minh trực tiếp chiều/điểm."
+        }
+      ],
+      "ambiguousAxes": []
+    }
+  ]
+}

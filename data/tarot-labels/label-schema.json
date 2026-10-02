@@ -1,0 +1,487 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NUMELYRA Tarot annotation v3",
+  "description": "Schema distinguishes direct evidence from user-authorized AI judgment. Exact citations do not prove semantic correctness; human gold remains pending.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cardId",
+    "cardNameVi",
+    "cardNameEn",
+    "type",
+    "suit",
+    "number",
+    "state",
+    "sourceSnippet",
+    "core",
+    "shadow",
+    "overallConfidence",
+    "confidenceMethod",
+    "evidenceCoverage",
+    "annotationVersion",
+    "rubricVersion",
+    "sourceSha256",
+    "rubricSha256",
+    "provenance",
+    "reviewStatus",
+    "reviewFlags"
+  ],
+  "properties": {
+    "cardId": {
+      "type": "string"
+    },
+    "cardNameVi": {
+      "type": "string"
+    },
+    "cardNameEn": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "major",
+        "minor"
+      ]
+    },
+    "suit": {
+      "enum": [
+        "wands",
+        "cups",
+        "swords",
+        "pentacles",
+        null
+      ]
+    },
+    "number": {
+      "type": "integer"
+    },
+    "state": {
+      "enum": [
+        "upright",
+        "reversed"
+      ]
+    },
+    "sourceSnippet": {
+      "type": "string"
+    },
+    "core": {
+      "$ref": "#/$defs/aspect"
+    },
+    "shadow": {
+      "$ref": "#/$defs/aspect"
+    },
+    "overallConfidence": {
+      "type": "null"
+    },
+    "confidenceMethod": {
+      "const": "uncalibrated"
+    },
+    "evidenceCoverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "annotationVersion": {
+      "const": "3.0.0"
+    },
+    "rubricVersion": {
+      "const": "3.0.0"
+    },
+    "sourceSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "rubricSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "reviewStatus": {
+      "const": "silver-inferred-human-unvalidated"
+    },
+    "reviewFlags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ambiguous-axis",
+          "judgement-inference",
+          "no-usable-axis"
+        ]
+      },
+      "minItems": 0
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quote",
+        "sourceField",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceField": {
+          "type": "string",
+          "pattern": "^(keywords\\.(upright|reversed)\\.[0-2]\\.vi|meaning\\.(upright|reversed)\\.vi)$"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "evidenceQuotes"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "evidenceQuotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "evidenceQuote",
+        "evidenceQuotes",
+        "evidenceStatus",
+        "rationale",
+        "confidence",
+        "eligibleForRelations",
+        "alternatives"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "evidenceQuote": {
+          "type": "string"
+        },
+        "evidenceQuotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 0
+        },
+        "evidenceStatus": {
+          "enum": [
+            "supported",
+            "inferred",
+            "insufficient",
+            "ambiguous"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "null"
+        },
+        "eligibleForRelations": {
+          "type": "boolean"
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alternative"
+          },
+          "minItems": 0
+        },
+        "inferenceMethod": {
+          "const": "holistic-card-interpretation"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "supported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidenceQuote": {
+                "minLength": 1
+              },
+              "evidenceQuotes": {
+                "minItems": 1
+              },
+              "alternatives": {
+                "maxItems": 0
+              }
+            },
+            "not": {
+              "required": [
+                "inferenceMethod"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "inferred"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "score": {
+                "not": {
+                  "const": 0
+                }
+              },
+              "evidenceQuote": {
+                "minLength": 1
+              },
+              "evidenceQuotes": {
+                "minItems": 1
+              },
+              "eligibleForRelations": {
+                "const": true
+              },
+              "alternatives": {
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "inferenceMethod"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "insufficient"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "score": {
+                "const": 0
+              },
+              "evidenceQuote": {
+                "const": ""
+              },
+              "evidenceQuotes": {
+                "maxItems": 0
+              },
+              "eligibleForRelations": {
+                "const": false
+              },
+              "alternatives": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "ambiguous"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "score": {
+                "const": 0
+              },
+              "evidenceQuote": {
+                "const": ""
+              },
+              "evidenceQuotes": {
+                "minItems": 2
+              },
+              "eligibleForRelations": {
+                "const": false
+              },
+              "alternatives": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "const": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "eligibleForRelations": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "not": {
+                  "const": 0
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidenceStatus": {
+                "enum": [
+                  "supported",
+                  "inferred"
+                ]
+              },
+              "eligibleForRelations": {
+                "const": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "insufficient"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "inferenceMethod"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidenceStatus": {
+                "const": "ambiguous"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "inferenceMethod"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "aspect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ACT",
+        "EMO",
+        "STR",
+        "RSK",
+        "INT"
+      ],
+      "properties": {
+        "ACT": {
+          "$ref": "#/$defs/cell"
+        },
+        "EMO": {
+          "$ref": "#/$defs/cell"
+        },
+        "STR": {
+          "$ref": "#/$defs/cell"
+        },
+        "RSK": {
+          "$ref": "#/$defs/cell"
+        },
+        "INT": {
+          "$ref": "#/$defs/cell"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runId",
+        "annotatorType",
+        "method",
+        "modelId",
+        "decisionSha256",
+        "inferenceSha256",
+        "independentRuns",
+        "humanReviewed"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "annotatorType": {
+          "const": "ai"
+        },
+        "method": {
+          "const": "explicit-source-reannotation"
+        },
+        "modelId": {
+          "type": "null"
+        },
+        "decisionSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "inferenceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "independentRuns": {
+          "const": 1
+        },
+        "humanReviewed": {
+          "const": false
+        }
+      }
+    }
+  }
+}

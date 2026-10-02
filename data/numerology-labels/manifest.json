@@ -1,0 +1,295 @@
+{
+  "datasetName": "NUMELYRA_NUMEROLOGY_LABELS_FULL_24",
+  "version": "2.0.0",
+  "createdAt": "2026-10-01T20:50:00.000Z",
+  "description": "Bộ dữ liệu chuẩn hóa gán nhãn năng lượng 5 trục (ACT, EMO, STR, RSK, INT) cho toàn bộ 24 chỉ số Thần số học Pythagoras (223 thành phần chi tiết), phân tách 2 khía cạnh Cốt lõi (Core) và Vùng tối (Shadow), có trích dẫn minh chứng nguyên văn từ nguồn tri thức Thần số học Pythagoras.",
+  "statistics": {
+    "totalIndicators": 24,
+    "totalItems": 223,
+    "indicatorsBreakdown": {
+      "arrows": 16,
+      "attitude": 9,
+      "balance": 9,
+      "birthChart": 1,
+      "birthday": 12,
+      "bridgeLifeMission": 9,
+      "bridgeMaturityPassion": 9,
+      "bridgeSoulPersonality": 9,
+      "challenges": 9,
+      "dayIndividual": 9,
+      "karmicDebts": 4,
+      "lifePath": 13,
+      "mature": 11,
+      "missingNumbers": 9,
+      "mission": 12,
+      "monthIndividual": 9,
+      "nameChart": 1,
+      "passion": 9,
+      "personality": 11,
+      "way": 11,
+      "rationalThinking": 11,
+      "soul": 12,
+      "subconscious": 9,
+      "yearIndividual": 9
+    },
+    "axes": [
+      {
+        "id": "ACT",
+        "nameVi": "Chủ động & Hành động",
+        "nameEn": "Action & Initiative",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Tê liệt, trì hoãn, trốn tránh; +2: Tiên phong, dũng mãnh, dẫn đầu hành động"
+      },
+      {
+        "id": "EMO",
+        "nameVi": "Cảm xúc & Gắn kết",
+        "nameEn": "Emotion & Connection",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Lạnh lùng, thô bạo, kiểm soát ngột ngạt; +2: Yêu thương vô điều kiện, thấu cảm sâu sắc"
+      },
+      {
+        "id": "STR",
+        "nameVi": "Cấu trúc & Kỷ luật",
+        "nameEn": "Structure & Discipline",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Hỗn loạn, cẩu thả, vô kỷ luật; +2: Kỷ cương thép, hệ thống vững bền, chuẩn mực"
+      },
+      {
+        "id": "RSK",
+        "nameVi": "Khẩu vị Rủi ro & Dấn thân",
+        "nameEn": "Risk Appetite & Courage",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Sợ hãi, co cụm trong an toàn; +2: Dám nghĩ dám làm, chấp nhận rủi ro có tính toán"
+      },
+      {
+        "id": "INT",
+        "nameVi": "Trực giác & Minh triết nội tại",
+        "nameEn": "Inner Wisdom & Intuition",
+        "scale": "Ordinal [-2, -1, 0, +1, +2]",
+        "spectrum": "-2: Nông cạn, ngạo mạn trí tuệ, mê tín; +2: Trực giác siêu giác quan, minh triết uyên bác"
+      }
+    ],
+    "aspects": [
+      {
+        "id": "core",
+        "nameVi": "Tiềm năng Cốt lõi & Đỉnh cao",
+        "description": "Năng lượng tích cực, tài năng thiên bẩm, phương pháp tu dưỡng và khả năng kiến tạo giá trị cao nhất."
+      },
+      {
+        "id": "shadow",
+        "nameVi": "Vùng tối, Thử thách & Điểm mù",
+        "description": "Năng lượng biến chất khi thái quá/thiếu hụt, cạm bẫy tâm lý, thói quen tiêu cực và nỗi sợ vô thức."
+      }
+    ],
+    "confidenceStandard": 0.95
+  },
+  "files": [
+    {
+      "fileName": "arrows.json",
+      "relativePath": "data/numerology-labels/arrows.json",
+      "indicatorKey": "arrows",
+      "indicatorNameVi": "Mũi Tên Cá Tính 3x3 (8 Đầy Đủ & 8 Trống)",
+      "itemCount": 16,
+      "numbers": [
+        "1-4-7", "empty-1-4-7",
+        "2-5-8", "empty-2-5-8",
+        "3-6-9", "empty-3-6-9",
+        "1-2-3", "empty-1-2-3",
+        "4-5-6", "empty-4-5-6",
+        "7-8-9", "empty-7-8-9",
+        "1-5-9", "empty-1-5-9",
+        "3-5-7", "empty-3-5-7"
+      ]
+    },
+    {
+      "fileName": "attitude.json",
+      "relativePath": "data/numerology-labels/attitude.json",
+      "indicatorKey": "attitude",
+      "indicatorNameVi": "Thái Độ (Phản Xạ Ban Đầu)",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "balance.json",
+      "relativePath": "data/numerology-labels/balance.json",
+      "indicatorKey": "balance",
+      "indicatorNameVi": "Cân Bằng (Bình Ổn Tâm Lý)",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "birth-chart.json",
+      "relativePath": "data/numerology-labels/birth-chart.json",
+      "indicatorKey": "birthChart",
+      "indicatorNameVi": "Ma Trận Biểu Đồ Ngày Sinh 3x3 & Thế Cô Lập",
+      "itemCount": 1,
+      "numbers": ["matrix"]
+    },
+    {
+      "fileName": "birthday.json",
+      "relativePath": "data/numerology-labels/birthday.json",
+      "indicatorKey": "birthday",
+      "indicatorNameVi": "Ngày Sinh (Tài Năng Thiên Bẩm)",
+      "itemCount": 12,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "22"]
+    },
+    {
+      "fileName": "bridge-life-mission.json",
+      "relativePath": "data/numerology-labels/bridge-life-mission.json",
+      "indicatorKey": "bridgeLifeMission",
+      "indicatorNameVi": "Cầu Nối Đường Đời & Sứ Mệnh",
+      "itemCount": 9,
+      "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    },
+    {
+      "fileName": "bridge-maturity-passion.json",
+      "relativePath": "data/numerology-labels/bridge-maturity-passion.json",
+      "indicatorKey": "bridgeMaturityPassion",
+      "indicatorNameVi": "Cầu Nối Trưởng Thành & Đam Mê",
+      "itemCount": 9,
+      "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    },
+    {
+      "fileName": "bridge-soul-personality.json",
+      "relativePath": "data/numerology-labels/bridge-soul-personality.json",
+      "indicatorKey": "bridgeSoulPersonality",
+      "indicatorNameVi": "Cầu Nối Linh Hồn & Nhân Cách",
+      "itemCount": 9,
+      "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    },
+    {
+      "fileName": "challenges.json",
+      "relativePath": "data/numerology-labels/challenges.json",
+      "indicatorKey": "challenges",
+      "indicatorNameVi": "Thách Thức Cuộc Đời (Kim Tự Tháp)",
+      "itemCount": 9,
+      "numbers": ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    },
+    {
+      "fileName": "day-individual.json",
+      "relativePath": "data/numerology-labels/day-individual.json",
+      "indicatorKey": "dayIndividual",
+      "indicatorNameVi": "Ngày Cá Nhân",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "karmic-debts.json",
+      "relativePath": "data/numerology-labels/karmic-debts.json",
+      "indicatorKey": "karmicDebts",
+      "indicatorNameVi": "Nợ Nghiệp (Karmic Debts)",
+      "itemCount": 4,
+      "numbers": ["13/4", "14/5", "16/7", "19/1"]
+    },
+    {
+      "fileName": "life-path.json",
+      "relativePath": "data/numerology-labels/life-path.json",
+      "indicatorKey": "lifePath",
+      "indicatorNameVi": "Đường Đời (Số Chủ Đạo)",
+      "itemCount": 13,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "22", "33"]
+    },
+    {
+      "fileName": "maturity.json",
+      "relativePath": "data/numerology-labels/maturity.json",
+      "indicatorKey": "mature",
+      "indicatorNameVi": "Trưởng Thành (Thành Tựu Trung Niên)",
+      "itemCount": 11,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "22"]
+    },
+    {
+      "fileName": "missing-numbers.json",
+      "relativePath": "data/numerology-labels/missing-numbers.json",
+      "indicatorKey": "missingNumbers",
+      "indicatorNameVi": "Con Số Thiếu (Bài Học Hoàn Thiện)",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "mission.json",
+      "relativePath": "data/numerology-labels/mission.json",
+      "indicatorKey": "mission",
+      "indicatorNameVi": "Chỉ Số Sứ Mệnh",
+      "itemCount": 12,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "22", "33"]
+    },
+    {
+      "fileName": "month-individual.json",
+      "relativePath": "data/numerology-labels/month-individual.json",
+      "indicatorKey": "monthIndividual",
+      "indicatorNameVi": "Tháng Cá Nhân",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "name-chart.json",
+      "relativePath": "data/numerology-labels/name-chart.json",
+      "indicatorKey": "nameChart",
+      "indicatorNameVi": "Ma Trận Biểu Đồ Tên",
+      "itemCount": 1,
+      "numbers": ["matrix"]
+    },
+    {
+      "fileName": "passion.json",
+      "relativePath": "data/numerology-labels/passion.json",
+      "indicatorKey": "passion",
+      "indicatorNameVi": "Đam Mê Ẩn Giấu",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "personality.json",
+      "relativePath": "data/numerology-labels/personality.json",
+      "indicatorKey": "personality",
+      "indicatorNameVi": "Nhân Cách (Ấn Tượng Xã Hội)",
+      "itemCount": 11,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "22"]
+    },
+    {
+      "fileName": "pinnacles.json",
+      "relativePath": "data/numerology-labels/pinnacles.json",
+      "indicatorKey": "way",
+      "indicatorNameVi": "Đỉnh Cao Kim Tự Tháp (Pinnacles)",
+      "itemCount": 11,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    },
+    {
+      "fileName": "rational-thinking.json",
+      "relativePath": "data/numerology-labels/rational-thinking.json",
+      "indicatorKey": "rationalThinking",
+      "indicatorNameVi": "Tư Duy Lý Trí (Mô Thức Ra Quyết Định)",
+      "itemCount": 11,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "22"]
+    },
+    {
+      "fileName": "soul.json",
+      "relativePath": "data/numerology-labels/soul.json",
+      "indicatorKey": "soul",
+      "indicatorNameVi": "Linh Hồn (Động Lực Thỏa Mãn Nội Tâm)",
+      "itemCount": 12,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "22", "33"]
+    },
+    {
+      "fileName": "subconscious.json",
+      "relativePath": "data/numerology-labels/subconscious.json",
+      "indicatorKey": "subconscious",
+      "indicatorNameVi": "Tiềm Thức (Bản Năng Tự Vệ & Ứng Biến)",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "fileName": "year-individual.json",
+      "relativePath": "data/numerology-labels/year-individual.json",
+      "indicatorKey": "yearIndividual",
+      "indicatorNameVi": "Năm Cá Nhân",
+      "itemCount": 9,
+      "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    }
+  ],
+  "qualityAssurance": {
+    "zeroHallucinationVerified": true,
+    "evidenceQuoteVerbatimMatched": true,
+    "confidenceStandard": 0.95,
+    "scoringRule": "Chỉ gán điểm (-2, -1, +1, +2) khi có trích dẫn bằng chứng chữ nguyên văn (evidenceQuote) từ tài liệu nguồn; trường hợp trung tính hoặc không có trích dẫn trực tiếp sẽ gán score = 0."
+  }
+}

@@ -1,0 +1,5350 @@
+{
+  "purpose": "Blinded human review worksheet, NOT gold until filled and signed by a human reviewer.",
+  "status": "pending-human-labels",
+  "version": "3.0.0",
+  "rubricVersion": "3.0.0",
+  "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+  "rubricSha256": "8a88c52305c5ac09045f42032411317c26c874b98c4703075ce131b461b3dee0",
+  "seed": "NUMELYRA-TAROT-V3-HUMAN-SAMPLE-2026-10-01",
+  "samplingMethod": "Stratified pseudo-random sample by suit and orientation; additional source ambiguity/insufficiency cases.",
+  "freezeStage": "after-v3-source-and-judgment-annotation-before-human-review",
+  "randomSampleSize": 50,
+  "additionalFlaggedItems": 24,
+  "totalItems": 74,
+  "instructions": [
+    "Read the rubric and source without viewing AI score files.",
+    "Fill every cell with your ordinal score and source evidence, or an explicit insufficient/ambiguous status.",
+    "Do not treat unfilled null fields as zeros. Record reviewer identity and date.",
+    "After labels are complete, compare the random sample separately from added flagged cases."
+  ],
+  "items": [
+    {
+      "cardId": "major-03",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: nuôi dưỡng, phong phú, sáng tạo. Ý nghĩa: Điều đang hình thành cần được nuôi dưỡng bằng sự kiên nhẫn, cảm nhận và chăm sóc.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-00",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: khởi đầu, tự do, niềm tin. Ý nghĩa: Một hành trình mới đang mở ra; hãy tiến bước với sự cởi mở nhưng vẫn giữ nhận thức.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-08",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: dũng khí, dịu dàng, nội lực. Ý nghĩa: Sức mạnh hiệu quả nhất lúc này là bình tĩnh, kiên nhẫn và làm chủ phản ứng.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-01",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: ý chí, năng lực, hành động. Ý nghĩa: Bạn đã có những nguồn lực cần thiết để biến ý tưởng thành hành động có chủ đích.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-12",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: tạm dừng, buông bỏ, góc nhìn mới. Ý nghĩa: Tạm dừng không phải thất bại; một góc nhìn khác có thể mở nút thắt.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-16",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: đột biến, thức tỉnh, cấu trúc sụp đổ. Ý nghĩa: Một cấu trúc không còn đúng có thể thay đổi đột ngột, buộc sự thật phải được nhìn thấy.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-21",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: hoàn thành, hội nhập, thành tựu. Ý nghĩa: Một chu kỳ đạt độ chín; hãy ghi nhận thành quả và chuẩn bị bước sang vòng mới.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-19",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: niềm vui bị trì hoãn, quá tự tin, mệt mỏi. Ý nghĩa: Điều tốt vẫn hiện diện nhưng kỳ vọng hoặc kiệt sức khiến bạn khó cảm nhận trọn vẹn.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-13",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: bám giữ, trì trệ, sợ thay đổi. Ý nghĩa: Việc bám vào điều đã hết vai trò đang kéo dài sự trì trệ.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-16",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: né khủng hoảng, trì hoãn, thay đổi bên trong. Ý nghĩa: Bạn đang cố trì hoãn thay đổi hoặc trải qua một cuộc tái cấu trúc âm thầm bên trong.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-10",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: chậm trễ, chống thay đổi, lặp lại. Ý nghĩa: Mẫu cũ có thể đang lặp lại vì bạn chống lại thay đổi cần thiết.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-01",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: thao túng, phân tán, tiềm năng lãng phí. Ý nghĩa: Năng lực đang bị phân tán hoặc dùng sai hướng; cần làm rõ động cơ và ưu tiên.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-12",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: trì hoãn, mắc kẹt, hy sinh vô ích. Ý nghĩa: Sự chờ đợi không còn tạo ra hiểu biết; cần thay đổi cách tiếp cận hoặc đặt giới hạn.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-04",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: kiểm soát, cứng nhắc, thiếu kỷ luật. Ý nghĩa: Kiểm soát quá mức hoặc thiếu nền nếp đang tạo lực cản; cần cân bằng quyền lực với linh hoạt.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-01",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: cảm hứng, khởi động, tiềm năng. Ý nghĩa: Át Gậy xuôi nhấn mạnh cảm hứng, khởi động, tiềm năng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-02",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: kế hoạch, tầm nhìn, lựa chọn. Ý nghĩa: 2 Gậy xuôi nhấn mạnh kế hoạch, tầm nhìn, lựa chọn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-05",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: cạnh tranh, va chạm, thử thách. Ý nghĩa: 5 Gậy xuôi nhấn mạnh cạnh tranh, va chạm, thử thách; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-10",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: gánh nặng, trách nhiệm, hoàn tất. Ý nghĩa: 10 Gậy xuôi nhấn mạnh gánh nặng, trách nhiệm, hoàn tất; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-03",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: mở rộng, tiến triển, hợp tác. Ý nghĩa: 3 Gậy xuôi nhấn mạnh mở rộng, tiến triển, hợp tác; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-03",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: trở ngại, chậm trễ, thất vọng. Ý nghĩa: 3 Gậy ngược gợi ý trở ngại, chậm trễ, thất vọng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-02",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: do dự, sợ thay đổi, hạn chế. Ý nghĩa: 2 Gậy ngược gợi ý do dự, sợ thay đổi, hạn chế; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-07",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: quá tải, bỏ cuộc, phòng thủ quá mức. Ý nghĩa: 7 Gậy ngược gợi ý quá tải, bỏ cuộc, phòng thủ quá mức; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-12",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: bốc đồng, giận dữ, bất ổn. Ý nghĩa: Kỵ Sĩ Gậy ngược gợi ý bốc đồng, giận dữ, bất ổn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-10",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: hạnh phúc, gia đình, hòa hợp. Ý nghĩa: 10 Cốc xuôi nhấn mạnh hạnh phúc, gia đình, hòa hợp; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-11",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: nhạy cảm, trực giác, thông điệp. Ý nghĩa: Tiểu Đồng Cốc xuôi nhấn mạnh nhạy cảm, trực giác, thông điệp; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-03",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: bạn bè, niềm vui, cộng đồng. Ý nghĩa: 3 Cốc xuôi nhấn mạnh bạn bè, niềm vui, cộng đồng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-04",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: chiêm nghiệm, thờ ơ, đánh giá lại. Ý nghĩa: 4 Cốc xuôi nhấn mạnh chiêm nghiệm, thờ ơ, đánh giá lại; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-08",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: sợ rời bỏ, né tránh, mắc kẹt. Ý nghĩa: 8 Cốc ngược gợi ý sợ rời bỏ, né tránh, mắc kẹt; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-03",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: quá đà, lời đồn, cô lập. Ý nghĩa: 3 Cốc ngược gợi ý quá đà, lời đồn, cô lập; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-09",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: tham cầu, chưa đủ, trống rỗng. Ý nghĩa: 9 Cốc ngược gợi ý tham cầu, chưa đủ, trống rỗng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-07",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: ảo tưởng tan, rõ chọn lựa, thực tế. Ý nghĩa: 7 Cốc ngược gợi ý ảo tưởng tan, rõ chọn lựa, thực tế; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-05",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: chấp nhận, hồi phục, bước tiếp. Ý nghĩa: 5 Cốc ngược gợi ý chấp nhận, hồi phục, bước tiếp; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-13",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: độc lập, ranh giới, thành thật. Ý nghĩa: Nữ Hoàng Kiếm xuôi nhấn mạnh độc lập, ranh giới, thành thật; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-04",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: nghỉ ngơi, hồi phục, tĩnh tâm. Ý nghĩa: 4 Kiếm xuôi nhấn mạnh nghỉ ngơi, hồi phục, tĩnh tâm; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-14",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: lý trí, quyền uy, công bằng. Ý nghĩa: Nhà Vua Kiếm xuôi nhấn mạnh lý trí, quyền uy, công bằng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-02",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: bế tắc, cân nhắc, quyết định khó. Ý nghĩa: 2 Kiếm xuôi nhấn mạnh bế tắc, cân nhắc, quyết định khó; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-06",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: chuyển tiếp, rời khó khăn, chữa lành. Ý nghĩa: 6 Kiếm xuôi nhấn mạnh chuyển tiếp, rời khó khăn, chữa lành; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-09",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: hy vọng, tìm hỗ trợ, hồi phục. Ý nghĩa: 9 Kiếm ngược gợi ý hy vọng, tìm hỗ trợ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-04",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: bồn chồn, kiệt sức, áp lực. Ý nghĩa: 4 Kiếm ngược gợi ý bồn chồn, kiệt sức, áp lực; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-01",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: nhầm lẫn, lời sắc, thiếu rõ ràng. Ý nghĩa: Át Kiếm ngược gợi ý nhầm lẫn, lời sắc, thiếu rõ ràng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-03",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: chữa lành, tha thứ, hồi phục. Ý nghĩa: 3 Kiếm ngược gợi ý chữa lành, tha thứ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-12",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: bền bỉ, trách nhiệm, tiến chậm. Ý nghĩa: Kỵ Sĩ Tiền xuôi nhấn mạnh bền bỉ, trách nhiệm, tiến chậm; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-11",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: học nghề, cơ hội, thực tế. Ý nghĩa: Tiểu Đồng Tiền xuôi nhấn mạnh học nghề, cơ hội, thực tế; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-03",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: hợp tác, kỹ năng, xây dựng. Ý nghĩa: 3 Tiền xuôi nhấn mạnh hợp tác, kỹ năng, xây dựng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-07",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: kiên nhẫn, đánh giá, đầu tư dài hạn. Ý nghĩa: 7 Tiền xuôi nhấn mạnh kiên nhẫn, đánh giá, đầu tư dài hạn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-05",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: hồi phục, nhận giúp đỡ, cải thiện. Ý nghĩa: 5 Tiền ngược gợi ý hồi phục, nhận giúp đỡ, cải thiện; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-04",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: tham giữ, sợ mất, cứng nhắc. Ý nghĩa: 4 Tiền ngược gợi ý tham giữ, sợ mất, cứng nhắc; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-10",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: bất ổn, mất mát, xung đột gia đình. Ý nghĩa: 10 Tiền ngược gợi ý bất ổn, mất mát, xung đột gia đình; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-01",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: lỡ cơ hội, đầu tư kém, trì hoãn. Ý nghĩa: Át Tiền ngược gợi ý lỡ cơ hội, đầu tư kém, trì hoãn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-14",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: tham lam, bảo thủ, tha hóa. Ý nghĩa: Nhà Vua Tiền ngược gợi ý tham lam, bảo thủ, tha hóa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "random-stratified",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-00",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: bốc đồng, thiếu chuẩn bị, sợ bước đi. Ý nghĩa: Sự do dự hoặc liều lĩnh đang che khuất cơ hội; hãy kiểm tra lại nền tảng trước khi bước tiếp.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-05",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: phá khuôn, giáo điều, niềm tin cá nhân. Ý nghĩa: Đã đến lúc xem lại điều bạn làm chỉ vì thói quen và chọn niềm tin thực sự thuộc về mình.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-10",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: chu kỳ, thay đổi, cơ hội. Ý nghĩa: Một chu kỳ đang chuyển; khả năng thích nghi sẽ quyết định cách bạn đón cơ hội.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-13",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: kết thúc, chuyển hóa, tái sinh. Ý nghĩa: Một giai đoạn cần khép lại để tạo chỗ cho điều mới; đây là chuyển hóa, không phải cái chết theo nghĩa đen.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-14",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: điều hòa, kiên nhẫn, cân bằng. Ý nghĩa: Giải pháp nằm ở sự điều chỉnh từ tốn và kết hợp các phần tưởng như đối lập.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-17",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: hy vọng, chữa lành, cảm hứng. Ý nghĩa: Sau khó khăn, sự sáng rõ và khả năng chữa lành đang trở lại từng bước.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-18",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: mơ hồ, tiềm thức, trực giác. Ý nghĩa: Không phải mọi thứ đều rõ; hãy phân biệt trực giác với nỗi sợ và chờ thêm dữ kiện.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "major-19",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: niềm vui, rõ ràng, sinh lực. Ý nghĩa: Sự rõ ràng và sức sống hỗ trợ một kết quả tích cực khi bạn xuất hiện chân thật.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-05",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: né xung đột, hòa giải, dồn nén. Ý nghĩa: 5 Gậy ngược gợi ý né xung đột, hòa giải, dồn nén; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-06",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: chiến thắng, công nhận, tự tin. Ý nghĩa: 6 Gậy xuôi nhấn mạnh chiến thắng, công nhận, tự tin; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-06",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: kiêu hãnh, thiếu công nhận, thất bại. Ý nghĩa: 6 Gậy ngược gợi ý kiêu hãnh, thiếu công nhận, thất bại; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-08",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: trì hoãn, hỗn loạn, vội vàng. Ý nghĩa: 8 Gậy ngược gợi ý trì hoãn, hỗn loạn, vội vàng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-10",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: sụp sức, ôm đồm, buông gánh. Ý nghĩa: 10 Gậy ngược gợi ý sụp sức, ôm đồm, buông gánh; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "wands-13",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: tự tin, hấp dẫn, độc lập. Ý nghĩa: Nữ Hoàng Gậy xuôi nhấn mạnh tự tin, hấp dẫn, độc lập; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-05",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: mất mát, tiếc nuối, buồn đau. Ý nghĩa: 5 Cốc xuôi nhấn mạnh mất mát, tiếc nuối, buồn đau; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-06",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: hoài niệm, ngây thơ, ký ức. Ý nghĩa: 6 Cốc xuôi nhấn mạnh hoài niệm, ngây thơ, ký ức; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-07",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: nhiều lựa chọn, tưởng tượng, cám dỗ. Ý nghĩa: 7 Cốc xuôi nhấn mạnh nhiều lựa chọn, tưởng tượng, cám dỗ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "cups-09",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: mãn nguyện, ước muốn, đủ đầy. Ý nghĩa: 9 Cốc xuôi nhấn mạnh mãn nguyện, ước muốn, đủ đầy; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-01",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: đột phá, sự thật, sáng rõ. Ý nghĩa: Át Kiếm xuôi nhấn mạnh đột phá, sự thật, sáng rõ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-10",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: kết thúc đau, thất bại, chạm đáy. Ý nghĩa: 10 Kiếm xuôi nhấn mạnh kết thúc đau, thất bại, chạm đáy; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "swords-10",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: sống lại, qua cơn, bắt đầu phục hồi. Ý nghĩa: 10 Kiếm ngược gợi ý sống lại, qua cơn, bắt đầu phục hồi; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-05",
+      "state": "upright",
+      "sourceSnippet": "Từ khóa: thiếu thốn, khó khăn, bất an. Ý nghĩa: 5 Tiền xuôi nhấn mạnh thiếu thốn, khó khăn, bất an; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-06",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: điều kiện, nợ nần, mất quyền. Ý nghĩa: 6 Tiền ngược gợi ý điều kiện, nợ nần, mất quyền; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "cardId": "pentacles-07",
+      "state": "reversed",
+      "sourceSnippet": "Từ khóa: nóng vội, ít kết quả, lãng phí. Ý nghĩa: 7 Tiền ngược gợi ý nóng vội, ít kết quả, lãng phí; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+      "selectionReason": "additional-source-review",
+      "core": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "shadow": {
+        "ACT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "EMO": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "STR": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "RSK": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        },
+        "INT": {
+          "score": null,
+          "evidenceStatus": null,
+          "evidenceQuote": null,
+          "rationale": null
+        }
+      },
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  ]
+}

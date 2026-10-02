@@ -686,3 +686,27 @@ test('an empty completed provider stream becomes a visible failure instead of a 
     globalThis.fetch = originalFetch;
   }
 });
+
+test('a provider token limit is reported as an error even after emitting text', async () => {
+  const originalFetch = globalThis.fetch;
+
+  try {
+    globalThis.fetch = async () => new Response(
+      'data: {"choices":[{"delta":{"content":"✦ VÌ SAO: incomplete"}}]}\n\n' +
+      'data: {"choices":[{"delta":{},"finish_reason":"length"}]}\n\n' +
+      'data: [DONE]\n\n',
+      { headers: { 'Content-Type': 'text/event-stream' } }
+    );
+
+    const output = await readStream(createStreamingResponse(
+      'system',
+      [{ role: 'user', content: 'hello' }],
+      { type: 'custom', baseUrl: 'https://provider.example/v1', apiKeys: ['test-key'], model: 'test-model' }
+    ));
+
+    assert.match(output, /finish_reason=length/);
+    assert.match(output, /"error":"LLM stream ended with finish_reason=length"/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

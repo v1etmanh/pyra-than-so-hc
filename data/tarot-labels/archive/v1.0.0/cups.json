@@ -1,0 +1,702 @@
+[
+  {
+    "cardId": "cups-01",
+    "cardNameVi": "Át Cốc",
+    "cardNameEn": "Ace of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tình cảm mới, trực giác, mở lòng. Ý nghĩa: Át Cốc xuôi nhấn mạnh tình cảm mới, trực giác, mở lòng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "mở lòng", "rationale": "Chủ động mở cửa trái tim để đón nhận dòng chảy tình cảm." },
+      "EMO": { "score": 2, "evidenceQuote": "tình cảm mới, mở lòng", "rationale": "Suối nguồn cảm xúc thuần khiết, tình yêu thương dạt dào tuôn chảy." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "dám mở lòng đón nhận", "rationale": "Sẵn sàng đón nhận rung động mới mẻ mà không sợ bị tổn thương." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác", "rationale": "Trực giác tâm linh và thấu cảm sâu sắc như mạch nước ngầm." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "quá nhiều cảm xúc", "rationale": "Có thể bị cảm xúc lấn át lý trí trong giai đoạn đầu." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới", "rationale": "Dễ để cảm xúc tràn ly làm mờ nhạt các nguyên tắc thực tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-01",
+    "cardNameVi": "Át Cốc",
+    "cardNameEn": "Ace of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: cảm xúc nghẽn, trống rỗng, thu mình. Ý nghĩa: Át Cốc ngược gợi ý cảm xúc nghẽn, trống rỗng, thu mình; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Tạm dừng để khai thông dòng cảm xúc bị ứ tắc." },
+      "EMO": { "score": 1, "evidenceQuote": "tự yêu thương bản thân", "rationale": "Đổ đầy chiếc cốc của chính mình trước khi san sẻ cho người khác." },
+      "STR": { "score": 1, "evidenceQuote": "bảo vệ ranh giới tâm lý", "rationale": "Thiết lập lại không gian riêng để chữa lành tổn thương." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự trống rỗng", "rationale": "Thấu suốt nguyên nhân khiến tâm hồn bị chai sạn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thu mình", "rationale": "Rút lui khỏi tương tác xã hội, đóng chặt cửa lòng." },
+      "EMO": { "score": -2, "evidenceQuote": "cảm xúc nghẽn, trống rỗng", "rationale": "Khô hạn tình cảm, chai lì cảm xúc, không còn khả năng rung động." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ bị tổn thương", "rationale": "Kinh hãi trước sự gắn kết vì sợ lại nếm mùi đau đớn." },
+      "INT": { "score": -1, "evidenceQuote": "nghẽn trực giác", "rationale": "Tâm trí bị u uất che mờ tiếng nói trực giác nội tâm." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-02",
+    "cardNameVi": "2 Cốc",
+    "cardNameEn": "Two of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kết nối, hòa hợp, tương hỗ. Ý nghĩa: 2 Cốc xuôi nhấn mạnh kết nối, hòa hợp, tương hỗ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "kết nối, tương hỗ", "rationale": "Chủ động bắt tay, đối thoại và xây dựng mối quan hệ song phương." },
+      "EMO": { "score": 2, "evidenceQuote": "hòa hợp, tương hỗ, kết nối", "rationale": "Tình cảm đôi lứa/đối tác hòa quyện, tôn trọng và yêu thương nhau chân thành." },
+      "STR": { "score": 1, "evidenceQuote": "tương hỗ, bình đẳng", "rationale": "Thiết lập mối quan hệ trên nền tảng bình đẳng và cam kết hai chiều." },
+      "RSK": { "score": 1, "evidenceQuote": "dám cam kết gắn bó", "rationale": "Sẵn sàng chia sẻ cuộc đời và không gian riêng với người khác." },
+      "INT": { "score": 1, "evidenceQuote": "hòa hợp linh hồn", "rationale": "Linh cảm mãnh liệt về sự đồng điệu giữa hai tâm hồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "quấn quýt", "rationale": "Có thể quấn quýt quá mức dẫn tới mất đi sự độc lập cá nhân." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-02",
+    "cardNameVi": "2 Cốc",
+    "cardNameEn": "Two of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: mất cân bằng, xa cách, căng thẳng. Ý nghĩa: 2 Cốc ngược gợi ý mất cân bằng, xa cách, căng thẳng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cần nhìn lại để hàn gắn", "rationale": "Chủ động ngồi lại đối thoại để tìm ra khúc mắc." },
+      "EMO": { "score": 1, "evidenceQuote": "lấy lại sự thấu hiểu", "rationale": "Học cách hạ cái tôi để lắng nghe nỗi niềm của đối phương." },
+      "STR": { "score": 1, "evidenceQuote": "tái lập cân bằng", "rationale": "Chỉnh sửa lại cán cân cho - nhận trong mối quan hệ." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thấy sự xa cách", "rationale": "Nhận ra vết nứt trước khi nó trở thành vực thẳm chia cắt." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "xa cách", "rationale": "Chiến tranh lạnh, né tránh đối thoại trực tiếp." },
+      "EMO": { "score": -2, "evidenceQuote": "mất cân bằng, căng thẳng", "rationale": "Bất đồng sâu sắc, oán hận, cảm giác không được tôn trọng hoặc bị lợi dụng." },
+      "STR": { "score": -1, "evidenceQuote": "mất cân bằng cho nhận", "rationale": "Mối quan hệ lệch pha, một bên cho quá nhiều còn bên kia hời hợt." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ đổ vỡ", "rationale": "Không dám nói thật cảm xúc khiến mâu thuẫn âm ỉ kéo dài." },
+      "INT": { "score": -1, "evidenceQuote": "hiểu lầm nhau", "rationale": "Tâm trí suy diễn ác ý, bóp méo ý tốt của đối phương." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-03",
+    "cardNameVi": "3 Cốc",
+    "cardNameEn": "Three of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: bạn bè, niềm vui, cộng đồng. Ý nghĩa: 3 Cốc xuôi nhấn mạnh bạn bè, niềm vui, cộng đồng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "niềm vui hội ngộ", "rationale": "Tụ họp, gặp gỡ, nâng ly chúc mừng thành quả chung." },
+      "EMO": { "score": 2, "evidenceQuote": "bạn bè, niềm vui, cộng đồng", "rationale": "Tình bạn thắm thiết, không khí hân hoan, sẻ chia chân thành giữa tri kỷ." },
+      "STR": { "score": 1, "evidenceQuote": "cộng đồng hòa thuận", "rationale": "Mạng lưới hỗ trợ xã hội gắn kết và hỗ trợ lẫn nhau." },
+      "RSK": { "score": 0, "evidenceQuote": "an toàn trong vòng tay bè bạn", "rationale": "Tìm thấy sự nâng đỡ và chở che trong tình bạn ấm áp." },
+      "INT": { "score": 1, "evidenceQuote": "đồng điệu cảm xúc", "rationale": "Cảm nhận sự thiêng liêng của tình chị em/anh em tâm giao." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "vui chơi", "rationale": "Có thể mải mê tiệc tùng bù khú lơ là công việc chính." },
+      "STR": { "score": -1, "evidenceQuote": "buông thả", "rationale": "Dễ phá vỡ thói quen kỷ luật vì vui chơi quá đà." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-03",
+    "cardNameVi": "3 Cốc",
+    "cardNameEn": "Three of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: quá đà, lời đồn, cô lập. Ý nghĩa: 3 Cốc ngược gợi ý quá đà, lời đồn, cô lập; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "rút lui khỏi đám đông ồn ào", "rationale": "Chủ động tách mình khỏi những hội nhóm vô bổ." },
+      "EMO": { "score": 1, "evidenceQuote": "chắt lọc bạn bè", "rationale": "Tìm về những mối quan hệ thực chất thay vì số lượng bề nổi." },
+      "STR": { "score": 1, "evidenceQuote": "đặt lại ranh giới xã giao", "rationale": "Tránh xa những buổi nhậu nhẹt và lời đồn đại thị phi." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn rõ sự giả tạo", "rationale": "Thấu suốt những gương mặt bằng mặt không bằng lòng." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "cô lập, lời đồn, thị phi", "rationale": "Bị nhóm bạn cô lập, trở thành nạn nhân của thói buôn chuyện gièm pha." },
+      "STR": { "score": -2, "evidenceQuote": "quá đà", "rationale": "Lối sống trác táng, buông thả, đánh mất chuẩn mực đạo đức." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị tẩy chay", "rationale": "Cố ép mình hòa nhập vào nhóm độc hại vì sợ đơn độc." },
+      "INT": { "score": -1, "evidenceQuote": "bị lừa gạt bởi vẻ hào nhoáng", "rationale": "Mất cảnh giác trước những kẻ cơ hội đội lốt bạn bè." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-04",
+    "cardNameVi": "4 Cốc",
+    "cardNameEn": "Four of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chiêm nghiệm, thờ ơ, đánh giá lại. Ý nghĩa: 4 Cốc xuôi nhấn mạnh chiêm nghiệm, thờ ơ, đánh giá lại; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "ngồi dưới gốc cây, tĩnh lặng", "rationale": "Tạm từ chối các cơ hội bên ngoài để lắng đọng nội tâm." },
+      "EMO": { "score": 0, "evidenceQuote": "đánh giá lại", "rationale": "Không vội đón nhận tình cảm mới khi lòng chưa thật sự sẵn sàng." },
+      "STR": { "score": 1, "evidenceQuote": "xem xét kỹ", "rationale": "Thận trọng đánh giá giá trị thực chất của những lời mời mọc." },
+      "RSK": { "score": -1, "evidenceQuote": "chưa nhận chiếc cốc mới", "rationale": "Thận trọng, không hấp tấp nhận quà khi chưa rõ mục đích." },
+      "INT": { "score": 2, "evidenceQuote": "chiêm nghiệm, tự vấn", "rationale": "Thời gian quý giá để tự hỏi điều gì thực sự đem lại hạnh phúc." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "thờ ơ, bất động", "rationale": "Khoanh tay ngồi ủ rũ, từ chối mọi sự giúp đỡ." },
+      "EMO": { "score": -2, "evidenceQuote": "chán chường, thờ ơ", "rationale": "Lãnh cảm, mất hứng thú với cuộc sống, ngậm ngùi bất mãn." },
+      "STR": { "score": -1, "evidenceQuote": "bế tắc", "rationale": "Kẹt trong tâm trạng ủ dột, bỏ bê nhiệm vụ hàng ngày." },
+      "RSK": { "score": -1, "evidenceQuote": "mù quáng từ chối cơ hội", "rationale": "Không nhìn thấy chiếc cốc vũ trụ đang chìa ra ngay trước mặt." },
+      "INT": { "score": -1, "evidenceQuote": "quẩn quanh trong nỗi chán nản", "rationale": "Để sự uể oải che mờ mắt trước những phép màu cuộc sống." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-04",
+    "cardNameVi": "4 Cốc",
+    "cardNameEn": "Four of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thức tỉnh, cơ hội mới, tiếp nhận. Ý nghĩa: 4 Cốc ngược gợi ý thức tỉnh, cơ hội mới, tiếp nhận; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "đứng dậy, tiếp nhận cơ hội mới", "rationale": "Đứng dậy khỏi gốc cây u ám, chủ động với tay đón lấy chiếc cốc mới." },
+      "EMO": { "score": 2, "evidenceQuote": "thức tỉnh, mở lòng tiếp nhận", "rationale": "Thoát khỏi cơn trầm cảm, tìm lại niềm vui và cảm hứng sống." },
+      "STR": { "score": 1, "evidenceQuote": "tái hòa nhập", "rationale": "Bắt đầu sắp xếp lại cuộc sống để đón luồng sinh khí mới." },
+      "RSK": { "score": 2, "evidenceQuote": "dám đón nhận cơ hội mới", "rationale": "Can đảm bước ra khỏi sự tự thương hại để nắm bắt vận may." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh tâm trí", "rationale": "Bừng tỉnh ngộ, nhận ra cuộc đời còn vô vàn điều đáng sống." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "hấp tấp sau thời gian dài bị kìm nén", "rationale": "Có thể vồ vập lấy cơ hội mới quá nhanh mà chưa kịp sàng lọc." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-05",
+    "cardNameVi": "5 Cốc",
+    "cardNameEn": "Five of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: mất mát, tiếc nuối, buồn đau. Ý nghĩa: 5 Cốc xuôi nhấn mạnh mất mát, tiếc nuối, buồn đau; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "dành thời gian tiếc thương", "rationale": "Tôn trọng tiến trình đau buồn tự nhiên sau mất mát." },
+      "EMO": { "score": -1, "evidenceQuote": "tiếc nuối, buồn đau", "rationale": "Cảm nhận nỗi đau chân thật để thanh lọc tâm hồn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "vẫn còn 2 chiếc cốc sau lưng", "rationale": "Bắt đầu le lói nhận thức rằng không phải mọi thứ đều mất hết." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "chìm đắm trong đau buồn", "rationale": "Tê liệt hành vi, cúi đầu than khóc không thể nhúc nhích." },
+      "EMO": { "score": -2, "evidenceQuote": "mất mát, buồn đau, tuyệt vọng", "rationale": "Đau khổ tột cùng, ám ảnh bởi sự đổ vỡ và thất bại quá khứ." },
+      "STR": { "score": -1, "evidenceQuote": "đổ vỡ hoàn toàn", "rationale": "Cấu trúc cuộc sống bị xáo trộn nặng nề sau biến cố." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi tương lai", "rationale": "Bi quan cùng cực, tin rằng mình sẽ không bao giờ hạnh phúc nữa." },
+      "INT": { "score": -2, "evidenceQuote": "chỉ nhìn vào 3 chiếc cốc đổ", "rationale": "Mù quáng trước hy vọng, không thèm quay đầu nhìn 2 chiếc cốc còn nguyên." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-05",
+    "cardNameVi": "5 Cốc",
+    "cardNameEn": "Five of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: chấp nhận, hồi phục, bước tiếp. Ý nghĩa: 5 Cốc ngược gợi ý chấp nhận, hồi phục, bước tiếp; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bước tiếp, qua cầu", "rationale": "Quay lưng lại với đống đổ vỡ, bước qua cây cầu tiến về lâu đài phía trước." },
+      "EMO": { "score": 2, "evidenceQuote": "chấp nhận, hồi phục", "rationale": "Chữa lành vết thương lòng, tha thứ cho quá khứ và tìm lại bình yên." },
+      "STR": { "score": 1, "evidenceQuote": "bảo tồn 2 chiếc cốc còn lại", "rationale": "Trân trọng những nguồn lực và mối quan hệ còn sót lại." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng khí bước tiếp", "rationale": "Can trường đứng dậy sau cú ngã để làm lại cuộc đời." },
+      "INT": { "score": 2, "evidenceQuote": "thấu suốt bài học mất mát", "rationale": "Giác ngộ sâu sắc rằng mất mát là một phần tất yếu của sự trưởng thành." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "vết sẹo còn âm ỉ", "rationale": "Đôi khi vẫn chạnh lòng nhớ về người cũ/chuyện xưa." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-06",
+    "cardNameVi": "6 Cốc",
+    "cardNameEn": "Six of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hoài niệm, ngây thơ, ký ức. Ý nghĩa: 6 Cốc xuôi nhấn mạnh hoài niệm, ngây thơ, ký ức; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "trao tặng hoa, kết nối lại", "rationale": "Hành động tặng quà hồn nhiên, kết nối lại với bạn cũ thời thơ ấu." },
+      "EMO": { "score": 2, "evidenceQuote": "ngây thơ, ngọt ngào, hoài niệm", "rationale": "Tình cảm trong sáng, vô tư lự, ấm áp như tình yêu thời thơ ấu." },
+      "STR": { "score": 1, "evidenceQuote": "gắn kết cội nguồn", "rationale": "Tôn vinh cội nguồn và những giá trị truyền thống gia đình tốt đẹp." },
+      "RSK": { "score": 0, "evidenceQuote": "an toàn trong ký ức", "rationale": "Tìm về chốn bình yên quen thuộc để nạp lại năng lượng tinh thần." },
+      "INT": { "score": 1, "evidenceQuote": "ký ức chữa lành", "rationale": "Đánh thức đứa trẻ bên trong để tìm lại bản ngã thuần khiết." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "mơ màng về quá khứ", "rationale": "Có thể mãi ngắm nhìn hoa quá khứ mà quên đi nhiệm vụ hiện tại." },
+      "EMO": { "score": 1, "evidenceQuote": "quá hoài niệm", "rationale": "Lãng mạn hóa quá khứ một cách phi thực tế." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ thế giới người lớn", "rationale": "Muốn trốn tránh trách nhiệm của người trưởng thành." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-06",
+    "cardNameVi": "6 Cốc",
+    "cardNameEn": "Six of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kẹt trong quá khứ, trưởng thành, độc lập. Ý nghĩa: 6 Cốc ngược gợi ý kẹt trong quá khứ, trưởng thành, độc lập; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bước ra đời thực, trưởng thành", "rationale": "Chủ động rời khỏi sân chơi trẻ thơ để bước vào thế giới người lớn độc lập." },
+      "EMO": { "score": 1, "evidenceQuote": "độc lập tình cảm", "rationale": "Cắt đứt sự phụ thuộc tâm lý vào gia đình hoặc tình cũ." },
+      "STR": { "score": 2, "evidenceQuote": "trách nhiệm trưởng thành", "rationale": "Thiết lập cấu trúc cuộc sống tự chủ, chịu trách nhiệm cho tương lai." },
+      "RSK": { "score": 2, "evidenceQuote": "dám rời bỏ quá khứ êm ấm", "rationale": "Can đảm bước vào cuộc cạnh tranh thực tế mà không cần bao bọc." },
+      "INT": { "score": 2, "evidenceQuote": "tỉnh thức trước thực tại", "rationale": "Nhận ra rằng quá khứ đã qua và hiện tại mới là nơi tạo ra số phận." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "kẹt lại", "rationale": "Bị giam cầm trong những hoài niệm vàng son không thể dứt ra." },
+      "EMO": { "score": -2, "evidenceQuote": "kẹt trong quá khứ, bi lụy", "rationale": "Sống mòn mỏi bằng hồi ức, từ chối đón nhận tình cảm hiện tại." },
+      "STR": { "score": -1, "evidenceQuote": "tâm lý trẻ con", "rationale": "Nũng nịu, từ chối lớn lên và trốn tránh nghĩa vụ công dân." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ tương lai", "rationale": "Khiếp sợ trước tuổi già và trách nhiệm cuộc sống." },
+      "INT": { "score": -1, "evidenceQuote": "mơ mộng hão huyền", "rationale": "So sánh khập khiễng hiện tại với một quá khứ được tô vẽ quá đà." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-07",
+    "cardNameVi": "7 Cốc",
+    "cardNameEn": "Seven of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: nhiều lựa chọn, tưởng tượng, cám dỗ. Ý nghĩa: 7 Cốc xuôi nhấn mạnh nhiều lựa chọn, tưởng tượng, cám dỗ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đứng cân nhắc giữa các đám mây", "rationale": "Chưa hành động vội, mở rộng trí tưởng tượng và các kịch bản." },
+      "EMO": { "score": 1, "evidenceQuote": "tưởng tượng phong phú", "rationale": "Trí tưởng tượng bay bổng, ấp ủ nhiều ước mơ rực rỡ." },
+      "STR": { "score": -1, "evidenceQuote": "nhiều lựa chọn trên mây", "rationale": "Chưa có cấu trúc ưu tiên cụ thể, mọi thứ còn ở dạng tiềm năng." },
+      "RSK": { "score": 1, "evidenceQuote": "dám mơ lớn", "rationale": "Cởi mở với nhiều khả năng phi thường khác nhau." },
+      "INT": { "score": 1, "evidenceQuote": "khám phá khát vọng nội tâm", "rationale": "Soi chiếu xem linh hồn mình thực sự khao khát điều gì nhất." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "xây lâu đài trên cát", "rationale": "Chỉ biết mơ mà không chịu làm, ảo tưởng sức mạnh." },
+      "EMO": { "score": -1, "evidenceQuote": "bị cám dỗ", "rationale": "Bị lòng tham và dục vọng lung lạc trước những hứa hẹn hão huyền." },
+      "STR": { "score": -2, "evidenceQuote": "hỗn loạn lựa chọn", "rationale": "Bội thực phương án, đẽo cày giữa đường không biết đi đâu." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -2, "evidenceQuote": "ảo giác che mờ thực tế", "rationale": "Chìm sâu vào hoang tưởng, không phân biệt nổi thực và hư." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-07",
+    "cardNameVi": "7 Cốc",
+    "cardNameEn": "Seven of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: ảo tưởng tan, rõ chọn lựa, thực tế. Ý nghĩa: 7 Cốc ngược gợi ý ảo tưởng tan, rõ chọn lựa, thực tế; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "rõ chọn lựa, hành động thực tế", "rationale": "Hạ cánh xuống mặt đất, chọn đúng một mục tiêu và tập trung thực thi." },
+      "EMO": { "score": 1, "evidenceQuote": "thanh thản thoát khỏi cám dỗ", "rationale": "Lòng nhẹ nhõm khi không còn bị hoa mắt bởi những thứ phù phiếm." },
+      "STR": { "score": 2, "evidenceQuote": "thực tế, rõ chọn lựa", "rationale": "Thiết lập kế hoạch khả thi dựa trên các dữ kiện đo đếm được." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận hy sinh các lựa chọn phụ", "rationale": "Can đảm gạt bỏ những cám dỗ phù phiếm để theo đuổi mục tiêu cốt lõi." },
+      "INT": { "score": 2, "evidenceQuote": "ảo tưởng tan biến, trí tuệ sáng tỏ", "rationale": "Màn sương tan biến, trực giác chỉ thẳng vào điều có giá trị thật." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "hụt hẫng sau vỡ mộng", "rationale": "Hơi buồn khi nhận ra các giấc mơ kỳ vĩ chỉ là bánh vẽ." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-08",
+    "cardNameVi": "8 Cốc",
+    "cardNameEn": "Eight of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: rời đi, tìm kiếm, vỡ mộng. Ý nghĩa: 8 Cốc xuôi nhấn mạnh rời đi, tìm kiếm, vỡ mộng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "rời đi, cất bước", "rationale": "Quay lưng cất bước lên núi trong đêm trăng, dứt khoát ra đi." },
+      "EMO": { "score": 0, "evidenceQuote": "vỡ mộng nhưng chấp nhận", "rationale": "Biết rằng những chiếc cốc xếp đẹp đẽ này không còn mang lại sự trọn vẹn." },
+      "STR": { "score": -1, "evidenceQuote": "bỏ lại cấu trúc cũ", "rationale": "Để lại sau lưng những thành quả vật chất để đi tìm chân lý tinh thần." },
+      "RSK": { "score": 2, "evidenceQuote": "tìm kiếm chân trời cao hơn", "rationale": "Dũng cảm bước vào đêm tối vô định để tìm ý nghĩa cuộc đời." },
+      "INT": { "score": 2, "evidenceQuote": "tìm kiếm ý nghĩa tinh thần", "rationale": "Hành trình tìm về chiều sâu tâm linh đích thực vượt trên vật chất." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "bỏ đi", "rationale": "Có thể là hành vi trốn chạy vấn đề thay vì đối diện tháo gỡ." },
+      "EMO": { "score": -1, "evidenceQuote": "vỡ mộng, cay đắng", "rationale": "Nỗi cô đơn và thất vọng về những gì mình từng dày công xây đắp." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "phiêu bạt", "rationale": "Nguy cơ trở thành kẻ lang bạt vô định không bến đỗ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-08",
+    "cardNameVi": "8 Cốc",
+    "cardNameEn": "Eight of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: sợ rời bỏ, né tránh, mắc kẹt. Ý nghĩa: 8 Cốc ngược gợi ý sợ rời bỏ, né tránh, mắc kẹt; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra sự mắc kẹt", "rationale": "Ý thức được đôi chân đang bị níu giữ để chuẩn bị bứt phá." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "chuẩn bị hành trang kỹ hơn", "rationale": "Lên kế hoạch rời đi chu đáo thay vì bốc đồng bỏ chạy." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua nỗi sợ rời bỏ", "rationale": "Từng bước rèn luyện dũng khí để buông tay những thứ đã hỏng." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thẳng vào sự né tránh", "rationale": "Thành thật thừa nhận rằng mình đang sợ bóng đêm và sự cô đơn." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "mắc kẹt, không dám đi", "rationale": "Chân chôn chặt một chỗ, cam chịu sống mòn trong sự vô nghĩa." },
+      "EMO": { "score": -2, "evidenceQuote": "sợ rời bỏ, bất an", "rationale": "Bám víu tuyệt vọng vào chiếc cốc rỗng vì sợ sự trống trải." },
+      "STR": { "score": -1, "evidenceQuote": "mắc kẹt trong lối mòn", "rationale": "Không thể tái thiết cuộc sống vì thiếu quyết đoán." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ bóng đêm vô định", "rationale": "Hèn nhát, thà chịu đựng sự đau khổ quen thuộc còn hơn mạo hiểm tìm hạnh phúc mới." },
+      "INT": { "score": -1, "evidenceQuote": "lừa dối lương tâm", "rationale": "Cố tự thuyết phục mình rằng chiếc cốc rỗng vẫn còn nước ngọt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-09",
+    "cardNameVi": "9 Cốc",
+    "cardNameEn": "Nine of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: mãn nguyện, ước muốn, đủ đầy. Ý nghĩa: 9 Cốc xuôi nhấn mạnh mãn nguyện, ước muốn, đủ đầy; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "khoanh tay tận hưởng thành quả", "rationale": "Ngồi vững vàng tận hưởng điều ước đã trở thành hiện thực." },
+      "EMO": { "score": 2, "evidenceQuote": "mãn nguyện, đủ đầy", "rationale": "Hạnh phúc trọn vẹn, thỏa mãn tâm nguyện, an nhiên tự tại." },
+      "STR": { "score": 2, "evidenceQuote": "chín chiếc cốc xếp ngay ngắn", "rationale": "Thành tựu được trưng bày hoàn hảo, vững chãi và trật tự." },
+      "RSK": { "score": 0, "evidenceQuote": "an nhiên sung túc", "rationale": "Độ an toàn cao độ, không còn mối lo thiếu thốn rình rập." },
+      "INT": { "score": 1, "evidenceQuote": "ước muốn thành tựu", "rationale": "Hiểu rõ sức mạnh của luật hấp dẫn và tâm tưởng sự thành." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "tự mãn", "rationale": "Có thể thỏa mãn một mình mà quên chia sẻ với xung quanh." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "ngủ quên trong tiện nghi", "rationale": "Ngại vận động thêm vì đang quá ấm êm." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-09",
+    "cardNameVi": "9 Cốc",
+    "cardNameEn": "Nine of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: tham cầu, chưa đủ, trống rỗng. Ý nghĩa: 9 Cốc ngược gợi ý tham cầu, chưa đủ, trống rỗng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói tham cầu", "rationale": "Dừng lại việc tích trữ lòng tham vô đáy." },
+      "EMO": { "score": 1, "evidenceQuote": "học cách biết đủ", "rationale": "Tìm kiếm sự đủ đầy từ bên trong tâm hồn thay vì đồ chơi vật chất." },
+      "STR": { "score": 1, "evidenceQuote": "điều độ lại thói quen", "rationale": "Cắt giảm sự nuông chiều bản thân quá mức." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "nhận ra sự trống rỗng sau khi đạt được", "rationale": "Giác ngộ rằng tiền bạc hay danh vọng không lấp đầy được lỗ hổng tâm linh." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "vơ vét hưởng thụ", "rationale": "Chạy theo khoái lạc giác quan tầm thường vô độ." },
+      "EMO": { "score": -2, "evidenceQuote": "trống rỗng, chưa đủ, tham cầu", "rationale": "Hố sâu bất mãn, càng vơ vét càng cảm thấy cô đơn lạnh lẽo." },
+      "STR": { "score": -2, "evidenceQuote": "buông thả khoái lạc", "rationale": "Mất kiểm soát thói ăn uống, chi tiêu hoặc dục vọng cá nhân." },
+      "RSK": { "score": 1, "evidenceQuote": "đánh đổi giá trị lấy vui thú", "rationale": "Sẵn sàng làm điều sai trái để thỏa mãn lòng tham nhất thời." },
+      "INT": { "score": -2, "evidenceQuote": "mê muội trong chủ nghĩa hưởng lạc", "rationale": "Mất sạch nhận thức tâm linh vì mải mê say sưa chén rượu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-10",
+    "cardNameVi": "10 Cốc",
+    "cardNameEn": "Ten of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hạnh phúc, gia đình, hòa hợp. Ý nghĩa: 10 Cốc xuôi nhấn mạnh hạnh phúc, gia đình, hòa hợp; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dang tay đón cầu vồng hạnh phúc", "rationale": "Hành động chia sẻ và vun đắp hạnh phúc cùng người thân." },
+      "EMO": { "score": 2, "evidenceQuote": "hạnh phúc, gia đình, hòa hợp", "rationale": "Đỉnh cao của sự viên mãn cảm xúc, gia đạo bình an, tình yêu trường tồn." },
+      "STR": { "score": 2, "evidenceQuote": "mái ấm gia đình vững chãi", "rationale": "Cấu trúc gia đình và cộng đồng gắn kết bền chặt, nề nếp yêu thương." },
+      "RSK": { "score": 0, "evidenceQuote": "bến đỗ an lành", "rationale": "Sự an toàn tuyệt đối dưới vòm cầu vồng phước lành." },
+      "INT": { "score": 2, "evidenceQuote": "phước lành vũ trụ", "rationale": "Lòng biết ơn sâu sắc trước ân huệ trọn vẹn của cuộc đời." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "lý tưởng hóa gia đình", "rationale": "Có thể đòi hỏi gia đình phải hoàn hảo như tranh vẽ." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất hạnh phúc", "rationale": "Lo lắng mơ hồ rằng cầu vồng rồi sẽ tan biến." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-10",
+    "cardNameVi": "10 Cốc",
+    "cardNameEn": "Ten of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: rạn nứt, kỳ vọng vỡ, bất hòa. Ý nghĩa: 10 Cốc ngược gợi ý rạn nứt, kỳ vọng vỡ, bất hòa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hàn gắn rạn nứt", "rationale": "Chủ động bước tới để đối thoại và làm lành với gia đình." },
+      "EMO": { "score": 1, "evidenceQuote": "chữa lành bất hòa", "rationale": "Hạ thấp kỳ vọng ảo để yêu thương con người thật của nhau." },
+      "STR": { "score": 1, "evidenceQuote": "tái thiết hòa khí gia đình", "rationale": "Đặt lại các quy ước chung nhằm duy trì tôn trọng lẫn nhau." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn ra nguyên nhân bất hòa", "rationale": "Thấu suốt những xung đột ngầm và gỡ bỏ định kiến gia tộc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "trốn tránh gia đình", "rationale": "Bỏ nhà đi hoặc chiến tranh lạnh không thèm nhìn mặt nhau." },
+      "EMO": { "score": -2, "evidenceQuote": "rạn nứt, bất hòa, kỳ vọng vỡ", "rationale": "Tan nát hạnh phúc, cãi vã triền miên, thất vọng nặng nề về tổ ấm." },
+      "STR": { "score": -2, "evidenceQuote": "gia đình rạn nứt", "rationale": "Nền móng gia đạo lung lay, nguy cơ ly tán đổ vỡ." },
+      "RSK": { "score": -1, "evidenceQuote": "mất niềm tin vào tình thân", "rationale": "Bi quan, cay đắng, nghĩ rằng không có gì gọi là tình yêu vĩnh cửu." },
+      "INT": { "score": -1, "evidenceQuote": "đổ lỗi lẫn nhau", "rationale": "Mù quáng chỉ trích người thân thay vì tự soi rọi lỗi lầm của mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-11",
+    "cardNameVi": "Tiểu Đồng Cốc",
+    "cardNameEn": "Page of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: nhạy cảm, trực giác, thông điệp. Ý nghĩa: Tiểu Đồng Cốc xuôi nhấn mạnh nhạy cảm, trực giác, thông điệp; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "mang thông điệp tình cảm", "rationale": "Bày tỏ cảm xúc chân thành, đưa ra những lời ngỏ dễ thương." },
+      "EMO": { "score": 2, "evidenceQuote": "nhạy cảm, ngọt ngào", "rationale": "Trái tim nhân hậu, đồng cảm tinh tế, dịu dàng và trong sáng." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "mở lòng trước điều kỳ diệu", "rationale": "Sẵn sàng lắng nghe chú cá nhỏ cất tiếng nói diệu kỳ từ trong cốc." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác, thông điệp tâm linh", "rationale": "Khả năng ngoại cảm, giấc mơ báo mộng và linh tính nhạy bén tuyệt vời." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "quá nhạy cảm", "rationale": "Dễ bị tổn thương bởi những lời nói đùa vô tình." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu thực tế", "rationale": "Sống trong thế giới cổ tích, lơ mơ với việc đời thực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-11",
+    "cardNameVi": "Tiểu Đồng Cốc",
+    "cardNameEn": "Page of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: non nớt, thất thường, bất an. Ý nghĩa: Tiểu Đồng Cốc ngược gợi ý non nớt, thất thường, bất an; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "học cách làm chủ cảm xúc", "rationale": "Tập kiềm chế những phản ứng trẻ con bột phát." },
+      "EMO": { "score": 1, "evidenceQuote": "chữa lành sự bất an", "rationale": "Xây dựng lại niềm tin vào bản thân từ gốc rễ." },
+      "STR": { "score": 1, "evidenceQuote": "rèn luyện tính kỷ luật", "rationale": "Cần sự nâng đỡ để trưởng thành về mặt cảm xúc." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "phân biệt cảm xúc thật", "rationale": "Gạn lọc những cơn giông bão cảm xúc ảo tưởng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "hành động thất thường", "rationale": "Sáng nắng chiều mưa, làm việc tùy hứng theo tâm trạng." },
+      "EMO": { "score": -2, "evidenceQuote": "non nớt, bất an, dỗi hờn", "rationale": "Tâm lý yếu đuối, thao túng người khác bằng sự hờn dỗi hoặc khóc lóc." },
+      "STR": { "score": -2, "evidenceQuote": "mất kiểm soát tâm lý", "rationale": "Bất ổn định tâm trạng, dễ sa ngã vào thói quen nghiện ngập để trốn thực tế." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi không đâu", "rationale": "Nhìn gà hóa cuốc vì tâm lý bất an ám ảnh." },
+      "INT": { "score": -1, "evidenceQuote": "ảo tưởng tình cảm", "rationale": "Tự dựng lên những kịch bản tình cảm lâm ly bi đát để tự làm khổ mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-12",
+    "cardNameVi": "Kỵ Sĩ Cốc",
+    "cardNameEn": "Knight of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lãng mạn, đề nghị, theo trái tim. Ý nghĩa: Kỵ Sĩ Cốc xuôi nhấn mạnh lãng mạn, đề nghị, theo trái tim; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tiến bước nhẹ nhàng, đưa ra lời đề nghị", "rationale": "Hành động lịch thiệp, mang chiếc cốc tình yêu và hòa bình đến muôn nơi." },
+      "EMO": { "score": 2, "evidenceQuote": "lãng mạn, theo trái tim", "rationale": "Tâm hồn nghệ sĩ đắm say, ngọt ngào, tinh tế và chung thủy." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "dám theo đuổi lý tưởng", "rationale": "Lên đường vì tiếng gọi của tình yêu và cái đẹp." },
+      "INT": { "score": 2, "evidenceQuote": "theo trái tim, trực giác thi ca", "rationale": "Lắng nghe sâu sắc nguồn cảm hứng và tiếng lòng mách bảo." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "chậm rãi", "rationale": "Có thể tiến bước quá chậm vì mải mê ngắm cảnh ven đường." },
+      "EMO": { "score": 1, "evidenceQuote": "quá lãng mạn", "rationale": "Dễ chìm đắm trong thế giới ngôn tình xa rời thực tế." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu thực tế", "rationale": "Giỏi nói lời đường mật hơn là thực thi các công việc cụ thể." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-12",
+    "cardNameVi": "Kỵ Sĩ Cốc",
+    "cardNameEn": "Knight of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: ảo tưởng, thất vọng, thay đổi thất thường. Ý nghĩa: Kỵ Sĩ Cốc ngược gợi ý ảo tưởng, thất vọng, thay đổi thất thường; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Chậm lại để kiểm tra xem lời hứa của mình có khả thi không." },
+      "EMO": { "score": 1, "evidenceQuote": "trung thực trong tình cảm", "rationale": "Học cách yêu thương thực tế thay vì vẽ ra lâu đài ảo tưởng." },
+      "STR": { "score": 1, "evidenceQuote": "rèn luyện tính kiên định", "rationale": "Giữ đúng cam kết và chấm dứt thói hứa lèo." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tỉnh ngộ khỏi ảo vọng", "rationale": "Phân biệt được đâu là tình yêu đích thực và đâu là sự si tình mù quáng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thay đổi thất thường", "rationale": "Hành vi trăng hoa, hứa thật nhiều rồi thất hứa thật nhiều." },
+      "EMO": { "score": -2, "evidenceQuote": "ảo tưởng, thao túng tình cảm", "rationale": "Đóng vai chàng bạch mã hoàng tử giả tạo để lừa gạt lòng tin." },
+      "STR": { "score": -2, "evidenceQuote": "bất nhất", "rationale": "Không có lập trường, cảm xúc thay đổi như chong chóng." },
+      "RSK": { "score": -1, "evidenceQuote": "thất vọng trốn chạy", "rationale": "Vỡ mộng rồi quay ngoắt 180 độ bỏ chạy khi gặp khó khăn thực tế." },
+      "INT": { "score": -2, "evidenceQuote": "ảo tưởng che mờ mắt", "rationale": "Chìm trong mộng mị, tự lừa dối mình và lừa dối cả người khác." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-13",
+    "cardNameVi": "Nữ Hoàng Cốc",
+    "cardNameEn": "Queen of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: thấu cảm, chăm sóc, trưởng thành. Ý nghĩa: Nữ Hoàng Cốc xuôi nhấn mạnh thấu cảm, chăm sóc, trưởng thành; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm sóc tận tình", "rationale": "Hành động chăm sóc, xoa dịu và nâng đỡ tâm hồn người khác." },
+      "EMO": { "score": 2, "evidenceQuote": "thấu cảm, chăm sóc, trưởng thành", "rationale": "Đại dương thấu cảm vô bờ, trái tim từ bi, dịu dàng và yêu thương vô điều kiện." },
+      "STR": { "score": 1, "evidenceQuote": "chiếc cốc đóng kín thiêng liêng", "rationale": "Giữ gìn ranh giới nội tâm thanh khiết, làm chủ thế giới cảm xúc." },
+      "RSK": { "score": 1, "evidenceQuote": "sức mạnh của sự mềm mại", "rationale": "Can đảm dùng sự nhu hòa để cảm hóa mọi thô bạo." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác tâm linh thấu thị", "rationale": "Trực giác siêu phàm, thấu suốt tâm can người khác chỉ qua một ánh nhìn." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "quá bao bọc", "rationale": "Có thể gánh hết nỗi đau của người khác vào thân mình." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-13",
+    "cardNameVi": "Nữ Hoàng Cốc",
+    "cardNameEn": "Queen of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: phụ thuộc, quá nhạy, thiếu ranh giới. Ý nghĩa: Nữ Hoàng Cốc ngược gợi ý phụ thuộc, quá nhạy, thiếu ranh giới; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Dừng lại việc gánh hộ cảm xúc tiêu cực của thiên hạ." },
+      "EMO": { "score": 1, "evidenceQuote": "xây lại ranh giới", "rationale": "Học cách tự chữa lành và phân biệt cảm xúc của mình với người khác." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập ranh giới", "rationale": "Kéo lại tấm rèm bảo vệ không gian năng lượng cá nhân." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thanh lọc trực giác", "rationale": "Loại bỏ những nhiễu loạn cảm xúc để trực giác trong trẻo trở lại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "hành động theo cảm tính", "rationale": "Hành vi mất kiểm soát khi bị cảm xúc nhấn chìm." },
+      "EMO": { "score": -2, "evidenceQuote": "phụ thuộc, quá nhạy, trầm cảm", "rationale": "Lệ thuộc tình cảm độc hại, ngạt thở trong sự nhạy cảm thái quá." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu ranh giới", "rationale": "Để người khác mặc sức thao túng và bòn rút kiệt quệ năng lượng." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ bị bỏ rơi", "rationale": "Sống trong âu lo nơm nớp sợ đối phương ngừng yêu mình." },
+      "INT": { "score": -1, "evidenceQuote": "trực giác bị bóp méo", "rationale": "Trực giác bị vẩn đục biến thành sự suy diễn đa sầu đa cảm." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-14",
+    "cardNameVi": "Vua Cốc",
+    "cardNameEn": "King of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cân bằng cảm xúc, khôn ngoan, điềm tĩnh. Ý nghĩa: Vua Cốc xuôi nhấn mạnh cân bằng cảm xúc, khôn ngoan, điềm tĩnh; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "điềm đạm giải quyết vấn đề", "rationale": "Hành động có chừng mực, xử lý khủng hoảng bằng sự bình tâm tuyệt đối." },
+      "EMO": { "score": 2, "evidenceQuote": "cân bằng cảm xúc, khôn ngoan, điềm tĩnh", "rationale": "Bậc thầy làm chủ cảm xúc, ngự trên ngai vàng giữa biển cả bão bùng." },
+      "STR": { "score": 2, "evidenceQuote": "làm chủ đại dương, nguyên tắc thấu cảm", "rationale": "Cấu trúc tâm lý vững vàng, dung hòa hoàn hảo giữa trí tuệ và tình thương." },
+      "RSK": { "score": 1, "evidenceQuote": "bình thản trước sóng gió", "rationale": "Không hề nao núng trước những biến cố tình cảm hay sóng gió cuộc đời." },
+      "INT": { "score": 2, "evidenceQuote": "khôn ngoan sâu sắc", "rationale": "Trí tuệ minh triết thấu suốt mọi ngóc ngách tâm lý con người." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "kín đáo", "rationale": "Có thể quá kín kẽ khiến người khác khó chạm tới đáy lòng." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm soát", "rationale": "Đôi khi quá kiểm soát cảm xúc để giữ vỏ bọc đạo mạo." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "cups-14",
+    "cardNameVi": "Vua Cốc",
+    "cardNameEn": "King of Cups",
+    "type": "minor",
+    "suit": "cups",
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kìm nén, thao túng, lạnh nhạt. Ý nghĩa: Vua Cốc ngược gợi ý kìm nén, thao túng, lạnh nhạt; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói kìm nén", "rationale": "Dừng lại việc dùng mặt nạ lạnh lùng để trốn tránh cảm xúc." },
+      "EMO": { "score": 1, "evidenceQuote": "chân thành bộc lộ", "rationale": "Học cách nói thật cảm xúc thay vì âm thầm thao túng." },
+      "STR": { "score": 1, "evidenceQuote": "khôi phục sự chính trực", "rationale": "Chấm dứt việc dùng điểm yếu tâm lý của người khác để trục lợi." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tự soi rọi mưu mô", "rationale": "Nhận ra sự cay đắng đằng sau vỏ bọc đạo mạo giả dối." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "thao túng ngầm", "rationale": "Giật dây cảm xúc, thao túng tâm lý (gaslighting) người thân." },
+      "EMO": { "score": -2, "evidenceQuote": "lạnh nhạt, kìm nén, tàn nhẫn", "rationale": "Đóng băng cảm xúc, trả đũa bằng sự ghẻ lạnh tàn nhẫn." },
+      "STR": { "score": -2, "evidenceQuote": "mất kiểm soát nội tâm", "rationale": "Sóng ngầm cuộn trào bên trong có thể bùng nổ bất cứ lúc nào." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ lộ mặt thật", "rationale": "Hèn nhát không dám đối thoại sòng phẳng, chỉ thích đánh lén." },
+      "INT": { "score": -2, "evidenceQuote": "dùng trí tuệ vào tà thuật", "rationale": "Dùng sự hiểu biết tâm lý để bẫy và bóp nghẹt tự do của người khác." }
+    },
+    "overallConfidence": 0.95
+  }
+]

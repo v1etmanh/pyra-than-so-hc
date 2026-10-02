@@ -1,0 +1,1093 @@
+{
+  "benchmarkSummary": {
+    "totalCases": 40,
+    "totalDurationMs": 22,
+    "avgDurationMs": 0.55,
+    "totalSynergies": 55,
+    "totalCompensations": 48,
+    "totalTensions": 5,
+    "totalVortexes": 4
+  },
+  "cases": [
+    {
+      "id": 1,
+      "title": "Khởi nghiệp công nghệ: Tiên phong dẫn đầu",
+      "category": "Sự nghiệp",
+      "durationMs": 19.88,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 0,
+        "STR": 1,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Nhà Ảo Thuật (Xuôi) ⨁ Sứ Mệnh 1 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Nhà Ảo Thuật (Xuôi) 🛡️ Sứ Mệnh 1 (ACT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Nhà Ảo Thuật (Xuôi)] ⨁ [Sứ Mệnh 1]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"hành động\"\n   - *Minh chứng Số học*: \"rẽ lối mở đường, ra quyết định dứt khoát, dẫn dắt tập thể\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Nhà Ảo Thuật (Xuôi)] 🛡️ [Sứ Mệnh 1]** (Trục: *Hành động & Tiên phong*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 1 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hành động\"\n   - *Vùng tối cần vá của số học*: \"trở nên ỷ lại, né tránh trách nhiệm lãnh đạo\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 2,
+      "title": "Hàn gắn quan hệ vợ chồng sau rạn nứt",
+      "category": "Tình cảm",
+      "durationMs": 0.2,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 3,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "2 Cốc (Xuôi) ⨁ Linh Hồn 2 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "2 Cốc (Xuôi) 🛡️ Linh Hồn 2 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[2 Cốc (Xuôi)] ⨁ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"kết nối\"\n   - *Minh chứng Số học*: \"khao khát được yêu thương chân thành, sống trong hòa bình an yên, tâm hồn đồng điệu Soulmate\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[2 Cốc (Xuôi)] 🛡️ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 2 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"kết nối\"\n   - *Vùng tối cần vá của số học*: \"lụy tình, nỗi sợ bị từ chối bị bỏ rơi, cảm giác cô đơn lạnh lẽo, trầm cảm\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 3,
+      "title": "Sáng tạo nội dung nghệ thuật truyền cảm hứng",
+      "category": "Sáng tạo",
+      "durationMs": 0.05,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 4,
+        "STR": 1,
+        "RSK": 1,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 4,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "Hoàng Hậu (Xuôi) ⨁ Đam Mê Ẩn Giấu 3 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "Hoàng Hậu (Xuôi) 🛡️ Đam Mê Ẩn Giấu 3 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +4 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Hoàng Hậu (Xuôi)] ⨁ [Đam Mê Ẩn Giấu 3]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"nuôi dưỡng\"\n   - *Minh chứng Số học*: \"mang lại tiếng cười và niềm vui cho cộng đồng, định hướng ngôn từ nâng đỡ tâm hồn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Hoàng Hậu (Xuôi)] 🛡️ [Đam Mê Ẩn Giấu 3]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Đam Mê Ẩn Giấu 3 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"nuôi dưỡng\"\n   - *Vùng tối cần vá của số học*: \"nói chuyện thị phi, sa đà vào lối sống bề nổi\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 4,
+      "title": "Xung đột tâm lý: Thôi thúc mạo hiểm vs Nhu cầu an toàn",
+      "category": "Nội tâm",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 0,
+        "STR": 2,
+        "RSK": -2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 2,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Kẻ Khờ (Xuôi) ⨁ Số Thái Độ 4 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -2 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Kẻ Khờ (Xuôi)] ⨁ [Số Thái Độ 4]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"khởi đầu\"\n   - *Minh chứng Số học*: \"kiên nhẫn sửa đổi từng bước để đạt được kết quả chuẩn xác\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 5,
+      "title": "Bù đắp điểm mù: Đưa kỷ luật vào cuộc sống tự do",
+      "category": "Phát triển bản thân",
+      "durationMs": 0.11,
+      "netVector": {
+        "ACT": 3,
+        "EMO": -1,
+        "STR": 4,
+        "RSK": -2,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 4,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Hoàng Đế (Xuôi) ⨁ Thách thức cuộc đời 4 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "Hoàng Đế (Xuôi) 🛡️ Thách thức cuộc đời 4 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: -1 — *Nội tâm khép kín, cô lập*\n- **[STR] Cấu trúc & Kỷ luật**: +4 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -2 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Hoàng Đế (Xuôi)] ⨁ [Thách thức cuộc đời 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"cấu trúc\"\n   - *Minh chứng Số học*: \"Lập thời gian biểu và To-do list mỗi ngày: Tuân thủ nghiêm ngặt lịch làm việc... Ghi chép chi tiêu và quản lý tài chính\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[Hoàng Đế (Xuôi)] ⨁ [Thách thức cuộc đời 4]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"lãnh đạo\"\n   - *Minh chứng Số học*: \"Kiên trì hoàn thiện chi tiết kỹ thuật: Làm việc tỉ mỉ, đặt chất lượng và chữ tín lên hàng đầu... kiên trì làm việc trung thực\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Hoàng Đế (Xuôi)] 🛡️ [Thách thức cuộc đời 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Thách thức cuộc đời 4 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"cấu trúc\"\n   - *Vùng tối cần vá của số học*: \"ghét sự gò bó... nôn nóng muốn giàu nhanh mà không chịu đặt nền móng, dẫn đến thất thoát tiền bạc\"\n2. **[Hoàng Đế (Xuôi)] 🛡️ [Thách thức cuộc đời 4]** (Trục: *Hành động & Tiên phong*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Thách thức cuộc đời 4 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"lãnh đạo\"\n   - *Vùng tối cần vá của số học*: \"làm việc tùy hứng, cẩu thả... công việc đổ bể\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 6,
+      "title": "Xây dựng gia đình thuận hòa và cơ nghiệp gia tộc",
+      "category": "Gia đình",
+      "durationMs": 0.04,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 3,
+        "STR": 2,
+        "RSK": -1,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "10 Tiền (Xuôi) ⨁ Số Trưởng Thành 6 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "10 Tiền (Xuôi) 🛡️ Số Trưởng Thành 6 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[10 Tiền (Xuôi)] ⨁ [Số Trưởng Thành 6]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"gia đình\"\n   - *Minh chứng Số học*: \"tình yêu thương bao la dành cho gia đình, tình yêu thương vô điều kiện\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[10 Tiền (Xuôi)] ⨁ [Số Trưởng Thành 6]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"ổn định lâu dài\"\n   - *Minh chứng Số học*: \"người giữ lửa ấm gia tộc, quản trị tổ chức bảo trợ xã hội\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[10 Tiền (Xuôi)] 🛡️ [Số Trưởng Thành 6]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Trưởng Thành 6 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"gia đình\"\n   - *Vùng tối cần vá của số học*: \"cảm giác ấm ức khi sự hy sinh của mình bị xem nhẹ, lo âu thái quá\"\n2. **[10 Tiền (Xuôi)] 🛡️ [Số Trưởng Thành 6]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Trưởng Thành 6 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"ổn định lâu dài\"\n   - *Vùng tối cần vá của số học*: \"khó buông lỏng kiểm soát\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 7,
+      "title": "Nghiên cứu triết học và khai phóng nhận thức",
+      "category": "Trí tuệ",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 0,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 3
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 3,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Ẩn Sĩ (Xuôi) ⨁ Linh Hồn 7 (INT)",
+      "topTension": "Không có",
+      "topCompensation": "Ẩn Sĩ (Xuôi) 🛡️ Linh Hồn 7 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +3 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Ẩn Sĩ (Xuôi)] ⨁ [Linh Hồn 7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"chiêm nghiệm\"\n   - *Minh chứng Số học*: \"khao khát tìm kiếm chân lý tối thượng, trực giác triết học thấu suốt, minh triết nội tại\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Ẩn Sĩ (Xuôi)] 🛡️ [Linh Hồn 7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 7 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"chiêm nghiệm\"\n   - *Vùng tối cần vá của số học*: \"bệnh hoài nghi triệt để, kiêu ngạo coi thường người khác\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 8,
+      "title": "Quản trị dòng tiền doanh nghiệp và mở rộng kinh doanh",
+      "category": "Tài chính",
+      "durationMs": 0.04,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 1,
+        "STR": 3,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "8 Tiền (Xuôi) ⨁ Sứ Mệnh 8 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "8 Tiền (Xuôi) 🛡️ Sứ Mệnh 8 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +3 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[8 Tiền (Xuôi)] ⨁ [Sứ Mệnh 8]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"chăm chỉ\"\n   - *Minh chứng Số học*: \"quản trị tài chính minh bạch, lãnh đạo nâng đỡ, hiện thực hóa các mục tiêu lớn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[8 Tiền (Xuôi)] ⨁ [Sứ Mệnh 8]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"rèn nghề\"\n   - *Minh chứng Số học*: \"quản trị tài chính và dòng tiền tài tình, tư duy chiến lược thương trường sắc bén\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[8 Tiền (Xuôi)] 🛡️ [Sứ Mệnh 8]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 8 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"rèn nghề\"\n   - *Vùng tối cần vá của số học*: \"kinh doanh phi pháp\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 9,
+      "title": "Dự án thiện nguyện phụng sự cộng đồng phi lợi nhuận",
+      "category": "Cộng đồng",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 3,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "6 Tiền (Xuôi) ⨁ Số Trưởng Thành 9 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "6 Tiền (Xuôi) 🛡️ Số Trưởng Thành 9 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[6 Tiền (Xuôi)] ⨁ [Số Trưởng Thành 9]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"hào phóng\"\n   - *Minh chứng Số học*: \"tình yêu nhân loại bao la và những giá trị tinh thần bất hủ, lối sống vị tha, khiêm nhường\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[6 Tiền (Xuôi)] 🛡️ [Số Trưởng Thành 9]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Trưởng Thành 9 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hào phóng\"\n   - *Vùng tối cần vá của số học*: \"nỗi trăn trở đau đáu trước những bất công xã hội, sự thất vọng khi lòng tốt bị lợi dụng\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 10,
+      "title": "Thức tỉnh trực giác tâm linh cao cấp",
+      "category": "Tâm linh",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 2,
+        "STR": 1,
+        "RSK": 1,
+        "INT": 4
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 4,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Nữ Tư Tế (Xuôi) ⨁ Linh Hồn 11 (INT)",
+      "topTension": "Không có",
+      "topCompensation": "Nữ Tư Tế (Xuôi) 🛡️ Linh Hồn 11 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +4 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Nữ Tư Tế (Xuôi)] ⨁ [Linh Hồn 11]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"trực giác\"\n   - *Minh chứng Số học*: \"trực giác siêu giác quan thấu suốt năng lượng, thông tuệ tinh thần, dự báo xuất thần\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Nữ Tư Tế (Xuôi)] 🛡️ [Linh Hồn 11]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 11 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"trực giác\"\n   - *Vùng tối cần vá của số học*: \"sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng tâm linh\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 11,
+      "title": "Triển khai đại dự án kiến trúc thế kỷ",
+      "category": "Kiến tạo",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 1,
+        "STR": 3,
+        "RSK": 2,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 3,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Thế Giới (Xuôi) ⨁ Số Trưởng Thành 22 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "Thế Giới (Xuôi) 🛡️ Số Trưởng Thành 22 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +3 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Thế Giới (Xuôi)] ⨁ [Số Trưởng Thành 22]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"hoàn thành\"\n   - *Minh chứng Số học*: \"năng lực thực thi kỷ luật thép, lập kế hoạch chiến lược dài hạn, quy tụ cộng sự tài đức\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Thế Giới (Xuôi)] 🛡️ [Số Trưởng Thành 22]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Trưởng Thành 22 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hoàn thành\"\n   - *Vùng tối cần vá của số học*: \"cám dỗ thao túng quyền lực nếu cái tôi lấn át\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 12,
+      "title": "Chữa lành vết thương tinh thần diện rộng",
+      "category": "Chữa lành",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 3,
+        "STR": 1,
+        "RSK": 1,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "Ngôi Sao (Xuôi) ⨁ Sứ Mệnh 33 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "Ngôi Sao (Xuôi) 🛡️ Sứ Mệnh 33 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Ngôi Sao (Xuôi)] ⨁ [Sứ Mệnh 33]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"chữa lành\"\n   - *Minh chứng Số học*: \"trái tim từ bi bác ái vô biên, tình yêu thương thuần khiết vô điều kiện, thấu cảm tuyệt đối\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Ngôi Sao (Xuôi)] 🛡️ [Sứ Mệnh 33]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 33 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"chữa lành\"\n   - *Vùng tối cần vá của số học*: \"tự biến mình thành nạn nhân tuẫn đạo u uất\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 13,
+      "title": "Nợ nghiệp 13/4: Thử thách sức ì và chậm trễ",
+      "category": "Nợ nghiệp",
+      "durationMs": 0.07,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 1,
+        "STR": 2,
+        "RSK": -2,
+        "INT": 1
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 1,
+      "vortexCount": 2,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 2,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Bánh Xe Số Phận (Ngược) ⚡ Nợ Nghiệp 13/4 (ACT)",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -2 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 4. Điểm Nghẽn Tương Khắc & Thách Thức (Top Tensions):\n1. **[Bánh Xe Số Phận (Ngược)] ⚡ [Nợ Nghiệp 13/4]** (Trục: *Hành động & Tiên phong*)\n   - *Xung đột cốt lõi*: Va chạm năng lượng trên trục Hành động & Tiên phong (-1 vs +2). Xu hướng thôi thúc của lá bài đối kháng với bản năng tự nhiên của số học, tạo ra sự giằng xé nội tâm.\n   - *Thôi thúc từ lá bài*: \"chậm trễ\"\n   - *Bản năng từ số học*: \"học cách lao động trung thực, kiên trì bền bỉ, làm việc hết mình tỉ mỉ\"\n\n#### 5. Cảnh Báo Vùng Tối Khuếch Đại (Shadow Vortex Alert):\n- **Cảnh báo [Hành động & Tiên phong]**: Cả lá bài [Bánh Xe Số Phận (Ngược)] và chỉ số [Nợ Nghiệp 13/4] cùng có xu hướng rơi vào vùng tối tiêu cực.\n  - *Nguy cơ*: Cảnh báo Vùng tối khuếch đại trên trục Hành động & Tiên phong (-1 & -2). Nguy cơ rơi vào bẫy tâm lý tiêu cực chung nếu mất cảnh giác.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 14,
+      "title": "Nợ nghiệp 14/5: Tìm lại sự điều độ và tiết chế",
+      "category": "Nợ nghiệp",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 2,
+        "STR": 3,
+        "RSK": -1,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 3,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Tiết Chế (Xuôi) ⨁ Nợ Nghiệp 14/5 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "Tiết Chế (Xuôi) 🛡️ Nợ Nghiệp 14/5 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +3 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Tiết Chế (Xuôi)] ⨁ [Nợ Nghiệp 14/5]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"sự điều chỉnh từ tốn\"\n   - *Minh chứng Số học*: \"thiết lập kỷ luật tự thân, giữ trọn lời hứa và cam kết dài hạn, thực hành lối sống tối giản\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[Tiết Chế (Xuôi)] ⨁ [Nợ Nghiệp 14/5]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"điều hòa\"\n   - *Minh chứng Số học*: \"thực hành lối sống thanh tịnh, điều độ, thiền định định tâm mỗi ngày\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Tiết Chế (Xuôi)] 🛡️ [Nợ Nghiệp 14/5]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Nợ Nghiệp 14/5 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"sự điều chỉnh từ tốn\"\n   - *Vùng tối cần vá của số học*: \"sống bốc đồng vô kỷ luật, phá vỡ các cam kết hôn nhân hoặc hợp đồng kinh doanh\"\n2. **[Tiết Chế (Xuôi)] 🛡️ [Nợ Nghiệp 14/5]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Nợ Nghiệp 14/5 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"điều hòa\"\n   - *Vùng tối cần vá của số học*: \"thôi thúc bồn chồn trong tâm trí, sống theo cảm xúc bốc đồng thích gì làm nấy\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 15,
+      "title": "Nợ nghiệp 16/7: Sụp đổ ảo tưởng bản ngã",
+      "category": "Nợ nghiệp",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 2,
+        "STR": -1,
+        "RSK": 0,
+        "INT": 4
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 1,
+      "vortexCount": 1,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 4,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Tòa Tháp (Xuôi) ⨁ Nợ Nghiệp 16/7 (INT)",
+      "topTension": "Tòa Tháp (Xuôi) ⚡ Nợ Nghiệp 16/7 (STR)",
+      "topCompensation": "Tòa Tháp (Xuôi) 🛡️ Nợ Nghiệp 16/7 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: -1 — *Hỗn loạn, thiếu kỷ luật*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +4 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Tòa Tháp (Xuôi)] ⨁ [Nợ Nghiệp 16/7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"thức tỉnh\"\n   - *Minh chứng Số học*: \"buông bỏ cái tôi kiêu ngạo, tu dưỡng tâm linh và đạo đức, sống theo các quy luật nhân quả\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Tòa Tháp (Xuôi)] 🛡️ [Nợ Nghiệp 16/7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Nợ Nghiệp 16/7 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"thức tỉnh\"\n   - *Vùng tối cần vá của số học*: \"kiêu ngạo, tự phụ tột cùng, đặt bản ngã cái tôi lên trên đạo đức tâm linh\"\n\n#### 4. Điểm Nghẽn Tương Khắc & Thách Thức (Top Tensions):\n1. **[Tòa Tháp (Xuôi)] ⚡ [Nợ Nghiệp 16/7]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Xung đột cốt lõi*: Va chạm năng lượng trên trục Cấu trúc & Kỷ luật (-2 vs +1). Xu hướng thôi thúc của lá bài đối kháng với bản năng tự nhiên của số học, tạo ra sự giằng xé nội tâm.\n   - *Thôi thúc từ lá bài*: \"cấu trúc sụp đổ\"\n   - *Bản năng từ số học*: \"đối diện với sự thật dù đau đớn, không xây dựng hình ảnh hào nhoáng giả tạo\"\n\n#### 5. Cảnh Báo Vùng Tối Khuếch Đại (Shadow Vortex Alert):\n- **Cảnh báo [Cấu trúc & Kỷ luật]**: Cả lá bài [Tòa Tháp (Xuôi)] và chỉ số [Nợ Nghiệp 16/7] cùng có xu hướng rơi vào vùng tối tiêu cực.\n  - *Nguy cơ*: Cảnh báo Vùng tối khuếch đại trên trục Cấu trúc & Kỷ luật (-2 & -2). Nguy cơ rơi vào bẫy tâm lý tiêu cực chung nếu mất cảnh giác.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 16,
+      "title": "Nợ nghiệp 19/1: Bài học công bằng và chia sẻ quyền lực",
+      "category": "Nợ nghiệp",
+      "durationMs": 0.46,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 1,
+        "STR": 2,
+        "RSK": 1,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 2,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Công Lý (Xuôi) ⨁ Nợ Nghiệp 19/1 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "Công Lý (Xuôi) 🛡️ Nợ Nghiệp 19/1 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Công Lý (Xuôi)] ⨁ [Nợ Nghiệp 19/1]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"trách nhiệm\"\n   - *Minh chứng Số học*: \"chia sẻ quyền lợi và hào quang, công nhận và tôn vinh đóng góp của người khác\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Công Lý (Xuôi)] 🛡️ [Nợ Nghiệp 19/1]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Nợ Nghiệp 19/1 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"trách nhiệm\"\n   - *Vùng tối cần vá của số học*: \"ích kỷ chỉ mưu cầu lợi ích cá nhân, từ chối giúp đỡ người yếu thế\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 17,
+      "title": "Khủng hoảng thay đổi cơ chế bất ngờ trong tổ chức",
+      "category": "Khủng hoảng",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 0,
+        "STR": 0,
+        "RSK": 0,
+        "INT": 3
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 1,
+      "vortexCount": 1,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 3,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Tòa Tháp (Xuôi) ⨁ Nhân Cách 4 (INT)",
+      "topTension": "Tòa Tháp (Xuôi) ⚡ Nhân Cách 4 (STR)",
+      "topCompensation": "Tòa Tháp (Xuôi) 🛡️ Nhân Cách 4 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: 0 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +3 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Tòa Tháp (Xuôi)] ⨁ [Nhân Cách 4]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"thức tỉnh\"\n   - *Minh chứng Số học*: \"giao tiếp rất súc tích, logic, chính xác, không thích những ý tưởng viển vông\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+2 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Tòa Tháp (Xuôi)] 🛡️ [Nhân Cách 4]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Nhân Cách 4 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"thức tỉnh\"\n   - *Vùng tối cần vá của số học*: \"nhìn đời bằng con mắt vật chất khô khan\"\n\n#### 4. Điểm Nghẽn Tương Khắc & Thách Thức (Top Tensions):\n1. **[Tòa Tháp (Xuôi)] ⚡ [Nhân Cách 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Xung đột cốt lõi*: Va chạm năng lượng trên trục Cấu trúc & Kỷ luật (-2 vs +2). Xu hướng thôi thúc của lá bài đối kháng với bản năng tự nhiên của số học, tạo ra sự giằng xé nội tâm.\n   - *Thôi thúc từ lá bài*: \"cấu trúc sụp đổ\"\n   - *Bản năng từ số học*: \"nghiêm túc, đĩnh đạc, chuẩn mực và đáng tin cậy tuyệt đối, phong cách ăn mặc truyền thống, gọn gàng\"\n\n#### 5. Cảnh Báo Vùng Tối Khuếch Đại (Shadow Vortex Alert):\n- **Cảnh báo [Cấu trúc & Kỷ luật]**: Cả lá bài [Tòa Tháp (Xuôi)] và chỉ số [Nhân Cách 4] cùng có xu hướng rơi vào vùng tối tiêu cực.\n  - *Nguy cơ*: Cảnh báo Vùng tối khuếch đại trên trục Cấu trúc & Kỷ luật (-2 & -2). Nguy cơ rơi vào bẫy tâm lý tiêu cực chung nếu mất cảnh giác.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 18,
+      "title": "Vượt qua hoài nghi yếm thế để tìm lại ánh sáng",
+      "category": "Tâm lý",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 1,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 2
+      },
+      "synergyCount": 0,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 2,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Ngôi Sao (Xuôi) 🛡️ Linh Hồn 7 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Ngôi Sao (Xuôi)] 🛡️ [Linh Hồn 7]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 7 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"chữa lành\"\n   - *Vùng tối cần vá của số học*: \"lạnh lùng, hoài nghi cay độc, kiêu ngạo trí tuệ, sợ nhìn vào góc tối tâm hồn\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 19,
+      "title": "Thoát khỏi cạm bẫy tham lam vật chất để làm ăn chính trực",
+      "category": "Đạo đức",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 1,
+        "STR": 2,
+        "RSK": 2,
+        "INT": 2
+      },
+      "synergyCount": 2,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Ác Quỷ (Ngược) ⨁ Sứ Mệnh 8 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Ác Quỷ (Ngược) 🛡️ Sứ Mệnh 8 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Ác Quỷ (Ngược)] ⨁ [Sứ Mệnh 8]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"giải phóng\"\n   - *Minh chứng Số học*: \"quản trị tài chính minh bạch, lãnh đạo nâng đỡ, hiện thực hóa các mục tiêu lớn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[Ác Quỷ (Ngược)] ⨁ [Sứ Mệnh 8]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"nhận thức\"\n   - *Minh chứng Số học*: \"neo giữ sự nghiệp vào tâm thế phụng sự và luật nhân quả\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Ác Quỷ (Ngược)] 🛡️ [Sứ Mệnh 8]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 8 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"nhận thức\"\n   - *Vùng tối cần vá của số học*: \"bị tha hóa bởi quyền lực và tiền bạc\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 20,
+      "title": "Mở rộng thị trường xuất khẩu ra quốc tế",
+      "category": "Kinh doanh",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 2,
+        "STR": 2,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "3 Gậy (Xuôi) ⨁ Sứ Mệnh 8 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "3 Gậy (Xuôi) 🛡️ Sứ Mệnh 8 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[3 Gậy (Xuôi)] ⨁ [Sứ Mệnh 8]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"tiến triển\"\n   - *Minh chứng Số học*: \"quản trị tài chính minh bạch, lãnh đạo nâng đỡ, hiện thực hóa các mục tiêu lớn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[3 Gậy (Xuôi)] ⨁ [Sứ Mệnh 8]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"hợp tác\"\n   - *Minh chứng Số học*: \"kinh doanh để giải quyết vấn đề xã hội, trích quỹ phúc lợi phụng sự\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[3 Gậy (Xuôi)] 🛡️ [Sứ Mệnh 8]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 8 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hợp tác\"\n   - *Vùng tối cần vá của số học*: \"thực dụng tàn nhẫn, tham lam bất chấp đạo đức\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 21,
+      "title": "Trải bài 3 lá: Hồi phục sau tan vỡ tình cảm sâu sắc",
+      "category": "Trải bài 3 lá",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 7,
+        "STR": 2,
+        "RSK": -1,
+        "INT": 3
+      },
+      "synergyCount": 5,
+      "compensationCount": 5,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 7,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "10 Cốc (Xuôi) ⨁ Linh Hồn 2 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "10 Cốc (Xuôi) 🛡️ Linh Hồn 2 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +7 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +3 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[10 Cốc (Xuôi)] ⨁ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"hòa hợp\"\n   - *Minh chứng Số học*: \"khao khát được yêu thương chân thành, sống trong hòa bình an yên, tâm hồn đồng điệu Soulmate\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[10 Cốc (Xuôi)] ⨁ [Số Thái Độ 6]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"hòa hợp\"\n   - *Minh chứng Số học*: \"ân cần, chu đáo, tạo dựng bầu không khí ấm cúng, phúc hậu, ấm áp\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n3. **[3 Kiếm (Ngược)] ⨁ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"tha thứ\"\n   - *Minh chứng Số học*: \"khao khát được yêu thương chân thành, sống trong hòa bình an yên, tâm hồn đồng điệu Soulmate\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[10 Cốc (Xuôi)] 🛡️ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 2 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hòa hợp\"\n   - *Vùng tối cần vá của số học*: \"lụy tình, nỗi sợ bị từ chối bị bỏ rơi, cảm giác cô đơn lạnh lẽo, trầm cảm\"\n2. **[3 Kiếm (Ngược)] 🛡️ [Linh Hồn 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 2 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"tha thứ\"\n   - *Vùng tối cần vá của số học*: \"lụy tình, nỗi sợ bị từ chối bị bỏ rơi, cảm giác cô đơn lạnh lẽo, trầm cảm\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +7)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 22,
+      "title": "Trải bài 3 lá: Cơ hội đầu tư dự án bất động sản lớn",
+      "category": "Trải bài 3 lá",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 4,
+        "EMO": 0,
+        "STR": 6,
+        "RSK": -1,
+        "INT": 2
+      },
+      "synergyCount": 6,
+      "compensationCount": 5,
+      "tensionCount": 1,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 6,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Át Tiền (Xuôi) ⨁ Số Trưởng Thành 8 (ACT)",
+      "topTension": "4 Tiền (Xuôi) ⚡ Số Trưởng Thành 8 (RSK)",
+      "topCompensation": "2 Gậy (Xuôi) 🛡️ Sứ Mệnh 4 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +4 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +6 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Át Tiền (Xuôi)] ⨁ [Số Trưởng Thành 8]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"khởi đầu\"\n   - *Minh chứng Số học*: \"tự tin đứng ra làm chủ doanh nghiệp, kiến tạo dòng tiền vững mạnh, bứt phá tài chính\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[2 Gậy (Xuôi)] ⨁ [Sứ Mệnh 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"kế hoạch\"\n   - *Minh chứng Số học*: \"kỷ luật tự giác thép, tư duy tổ chức logic và khoa học, chuẩn hóa quy trình, thiết lập trật tự kỷ luật\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n3. **[2 Gậy (Xuôi)] ⨁ [Số Trưởng Thành 8]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"kế hoạch\"\n   - *Minh chứng Số học*: \"năng lực điều hành, quản trị nguồn lực và tư duy tài chính, quản lý tài sản quy mô lớn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[2 Gậy (Xuôi)] 🛡️ [Sứ Mệnh 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 4 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"kế hoạch\"\n   - *Vùng tối cần vá của số học*: \"sống vô kỷ luật, cẩu thả\"\n2. **[4 Tiền (Xuôi)] 🛡️ [Sứ Mệnh 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 4 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"tiết kiệm\"\n   - *Vùng tối cần vá của số học*: \"sống vô kỷ luật, cẩu thả\"\n\n#### 4. Điểm Nghẽn Tương Khắc & Thách Thức (Top Tensions):\n1. **[4 Tiền (Xuôi)] ⚡ [Số Trưởng Thành 8]** (Trục: *Dấn thân & Chấp nhận rủi ro*)\n   - *Xung đột cốt lõi*: Va chạm năng lượng trên trục Dấn thân & Chấp nhận rủi ro (-1 vs +1). Xu hướng thôi thúc của lá bài đối kháng với bản năng tự nhiên của số học, tạo ra sự giằng xé nội tâm.\n   - *Thôi thúc từ lá bài*: \"an toàn\"\n   - *Bản năng từ số học*: \"quản trị rủi ro dòng tiền một cách chuyên nghiệp, thu hút các cơ hội kinh doanh lớn\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +6)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 23,
+      "title": "Trải bài 3 lá: Bước qua tổn thất tinh thần để tỏa sáng",
+      "category": "Trải bài 3 lá",
+      "durationMs": 0.02,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 4,
+        "STR": 1,
+        "RSK": 2,
+        "INT": 2
+      },
+      "synergyCount": 5,
+      "compensationCount": 4,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 4,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "Sức Mạnh (Xuôi) ⨁ Linh Hồn 9 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "5 Cốc (Ngược) 🛡️ Linh Hồn 9 (ACT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +4 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Sức Mạnh (Xuôi)] ⨁ [Linh Hồn 9]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"dịu dàng\"\n   - *Minh chứng Số học*: \"tấm lòng vị tha trắc ẩn không biên giới, tình yêu nhân loại thuần khiết, bao dung\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[Mặt Trời (Xuôi)] ⨁ [Linh Hồn 9]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"niềm vui\"\n   - *Minh chứng Số học*: \"tấm lòng vị tha trắc ẩn không biên giới, tình yêu nhân loại thuần khiết, bao dung\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n3. **[5 Cốc (Ngược)] ⨁ [Linh Hồn 9]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"bước tiếp\"\n   - *Minh chứng Số học*: \"dấn thân vào các hoạt động cứu trợ nhân đạo, bảo vệ môi trường, sống phụng sự\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[5 Cốc (Ngược)] 🛡️ [Linh Hồn 9]** (Trục: *Hành động & Tiên phong*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 9 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"bước tiếp\"\n   - *Vùng tối cần vá của số học*: \"ôm đồm việc bao đồng ngoài xã hội mà bỏ bê gia đình nhỏ của mình\"\n2. **[Sức Mạnh (Xuôi)] 🛡️ [Linh Hồn 9]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 9 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"dịu dàng\"\n   - *Vùng tối cần vá của số học*: \"thất vọng cay đắng khi lòng tốt bị lợi dụng, ôm giữ hận thù khó tha thứ\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 24,
+      "title": "Trải bài 2 lựa chọn: Nhảy việc bứt phá hay kiên nhẫn tích lũy",
+      "category": "Lựa chọn nghề nghiệp",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 4,
+        "EMO": 1,
+        "STR": 1,
+        "RSK": 2,
+        "INT": 2
+      },
+      "synergyCount": 2,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 4,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Cỗ Xe (Xuôi) ⨁ Số Thái Độ 5 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Cỗ Xe (Xuôi) 🛡️ Số Thái Độ 5 (ACT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +4 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Cỗ Xe (Xuôi)] ⨁ [Số Thái Độ 5]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"quyết tâm\"\n   - *Minh chứng Số học*: \"nhanh chóng bắt nhịp với mọi nhóm người, không ngại thử nghiệm những điều mới lạ\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[Người Treo Ngược (Xuôi)] ⨁ [Số Thái Độ 5]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"góc nhìn mới\"\n   - *Minh chứng Số học*: \"tò mò khám phá và khả năng thích ứng linh hoạt siêu việt, nhạy bén xu hướng\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Cỗ Xe (Xuôi)] 🛡️ [Số Thái Độ 5]** (Trục: *Hành động & Tiên phong*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Số Thái Độ 5 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"quyết tâm\"\n   - *Vùng tối cần vá của số học*: \"bốc đồng, khó lường, thiếu kiên định\"\n2. **[Cỗ Xe (Xuôi)] 🛡️ [Số Thái Độ 5]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Thái Độ 5 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"tự chủ\"\n   - *Vùng tối cần vá của số học*: \"khó cam kết gắn bó lâu dài, nhanh chán khi mọi thứ bắt đầu đi vào ổn định\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 25,
+      "title": "Trải bài 2 lựa chọn: Hợp tác theo cảm xúc hay hợp đồng pháp lý chặt",
+      "category": "Lựa chọn đối tác",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 1,
+        "STR": 2,
+        "RSK": 0,
+        "INT": 2
+      },
+      "synergyCount": 1,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 2,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Nhà Vua Kiếm (Xuôi) ⨁ Tư Duy Lý Trí 7 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "Nhà Vua Cốc (Xuôi) 🛡️ Tư Duy Lý Trí 7 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +1 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Nhà Vua Kiếm (Xuôi)] ⨁ [Tư Duy Lý Trí 7]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"quyền uy\"\n   - *Minh chứng Số học*: \"tìm kiếm tài liệu gốc, phân tích dữ liệu chuyên sâu và giải mã các quy luật ngầm\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Nhà Vua Cốc (Xuôi)] 🛡️ [Tư Duy Lý Trí 7]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Tư Duy Lý Trí 7 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"cân bằng cảm xúc\"\n   - *Vùng tối cần vá của số học*: \"tự cô lập bản thân khi suy nghĩ, khó tin tưởng báo cáo của cấp dưới\"\n2. **[Nhà Vua Kiếm (Xuôi)] 🛡️ [Tư Duy Lý Trí 7]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Tư Duy Lý Trí 7 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"quyền uy\"\n   - *Vùng tối cần vá của số học*: \"xa rời thực tế thị trường vì quá chìm đắm vào lý thuyết học thuật\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 26,
+      "title": "Nghỉ ngơi tĩnh dưỡng sau chu kỳ di chuyển liên tục",
+      "category": "Sức khỏe",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": -1,
+        "EMO": -1,
+        "STR": 1,
+        "RSK": -2,
+        "INT": 3
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 3,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "4 Kiếm (Xuôi) ⨁ Năm cá nhân 7 (INT)",
+      "topTension": "Không có",
+      "topCompensation": "4 Kiếm (Xuôi) 🛡️ Năm cá nhân 7 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: -1 — *Trì trệ, thiếu động lực*\n- **[EMO] Cảm xúc & Gắn kết**: -1 — *Nội tâm khép kín, cô lập*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -2 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +3 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[4 Kiếm (Xuôi)] ⨁ [Năm cá nhân 7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"tĩnh tâm\"\n   - *Minh chứng Số học*: \"Đầu tư vào học tập chuyên sâu: Đọc sách, nghiên cứu triết học, tham gia các khóa đào tạo nâng cao chuyên môn... nâng cao hàm lượng chất xám\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[4 Kiếm (Xuôi)] 🛡️ [Năm cá nhân 7]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Năm cá nhân 7 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"tĩnh tâm\"\n   - *Vùng tối cần vá của số học*: \"Chạy theo các cuộc vui ồn ào vô bổ: Làm tiêu hao năng lượng tinh thần\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 27,
+      "title": "Buông bỏ tranh cãi hơn thua để giữ gìn hòa khí",
+      "category": "Giao tiếp",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 3,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "5 Kiếm (Ngược) ⨁ Thách thức cuộc đời 2 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "5 Kiếm (Ngược) 🛡️ Thách thức cuộc đời 2 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[5 Kiếm (Ngược)] ⨁ [Thách thức cuộc đời 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"hòa giải\"\n   - *Minh chứng Số học*: \"Chuyển hóa sự nhạy cảm thành năng lực thấu cảm tinh tế... tập trung vào sự bình an nội tâm\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[5 Kiếm (Ngược)] 🛡️ [Thách thức cuộc đời 2]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Thách thức cuộc đời 2 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"hòa giải\"\n   - *Vùng tối cần vá của số học*: \"sự nhạy cảm quá mức, tính tự ái cao, dễ bị tổn thương trước lời nói... dễ bị tủi thân\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 28,
+      "title": "Vượt qua đáy khủng hoảng tài chính cá nhân",
+      "category": "Tài chính",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 2,
+        "STR": 2,
+        "RSK": -1,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 2,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "5 Tiền (Ngược) ⨁ Nợ Nghiệp 14/5 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "5 Tiền (Ngược) 🛡️ Nợ Nghiệp 14/5 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[5 Tiền (Ngược)] ⨁ [Nợ Nghiệp 14/5]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"nhận giúp đỡ\"\n   - *Minh chứng Số học*: \"thực hành lối sống thanh tịnh, điều độ, thiền định định tâm mỗi ngày\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[5 Tiền (Ngược)] 🛡️ [Nợ Nghiệp 14/5]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Nợ Nghiệp 14/5 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"nhận giúp đỡ\"\n   - *Vùng tối cần vá của số học*: \"thôi thúc bồn chồn trong tâm trí, sống theo cảm xúc bốc đồng thích gì làm nấy\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 29,
+      "title": "Tỉnh mộng ảo tưởng để tập trung vào 1 mục tiêu duy nhất",
+      "category": "Định hướng",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 0,
+        "STR": 2,
+        "RSK": -1,
+        "INT": 1
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 2,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 30,
+      "title": "Giữ vững phòng tuyến trước sự công kích cạnh tranh",
+      "category": "Bản lĩnh",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 0,
+        "STR": 3,
+        "RSK": 1,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 1,
+      "tensionCount": 1,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "9 Gậy (Xuôi) ⨁ Nhân Cách 8 (ACT)",
+      "topTension": "9 Gậy (Xuôi) ⚡ Nhân Cách 8 (RSK)",
+      "topCompensation": "9 Gậy (Xuôi) 🛡️ Nhân Cách 8 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +3 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[9 Gậy (Xuôi)] ⨁ [Nhân Cách 8]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"bền bỉ\"\n   - *Minh chứng Số học*: \"tự tin, mạnh mẽ, trọng tâm, dứt khoát và hướng thẳng tới kết quả, năng lực giải quyết việc lớn\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[9 Gậy (Xuôi)] ⨁ [Nhân Cách 8]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"ranh giới\"\n   - *Minh chứng Số học*: \"quyền uy, đĩnh đạc, sang trọng, trang phục cao cấp chỉn chu, tác phong chuyên nghiệp\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[9 Gậy (Xuôi)] 🛡️ [Nhân Cách 8]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Nhân Cách 8 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"ranh giới\"\n   - *Vùng tối cần vá của số học*: \"chiếc áo giáp quyền lực và tiền bạc\"\n\n#### 4. Điểm Nghẽn Tương Khắc & Thách Thức (Top Tensions):\n1. **[9 Gậy (Xuôi)] ⚡ [Nhân Cách 8]** (Trục: *Dấn thân & Chấp nhận rủi ro*)\n   - *Xung đột cốt lõi*: Va chạm năng lượng trên trục Dấn thân & Chấp nhận rủi ro (-1 vs +2). Xu hướng thôi thúc của lá bài đối kháng với bản năng tự nhiên của số học, tạo ra sự giằng xé nội tâm.\n   - *Thôi thúc từ lá bài*: \"cảnh giác\"\n   - *Bản năng từ số học*: \"sức mạnh của người làm chủ cuộc chơi, kiểm soát toàn bộ tình hình, đàm phán sắc sảo\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 31,
+      "title": "Lao động bền bỉ, từng bước tích lũy của cải vững bền",
+      "category": "Tích lũy",
+      "durationMs": 0,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 0,
+        "STR": 1,
+        "RSK": 0,
+        "INT": 0
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 1,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: 0 — *Trực giác bình ổn*\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +1)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 32,
+      "title": "Đột phá nhận thức, nhìn thấu bản chất sự việc",
+      "category": "Minh triết",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 0,
+        "STR": 1,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Át Kiếm (Xuôi) ⨁ Tư Duy Lý Trí 1 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Át Kiếm (Xuôi)] ⨁ [Tư Duy Lý Trí 1]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"đột phá\"\n   - *Minh chứng Số học*: \"xử lý thông tin nhanh, dứt khoát và tập trung thẳng vào mục tiêu cốt lõi, ra quyết định chớp nhoáng trong khủng hoảng\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 33,
+      "title": "Tiếng gọi thức tỉnh lương tri, bước sang một chương mới",
+      "category": "Chuyển hóa",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 2,
+        "STR": 1,
+        "RSK": 1,
+        "INT": 4
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 4,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Phán Xét (Xuôi) ⨁ Sứ Mệnh 9 (INT)",
+      "topTension": "Không có",
+      "topCompensation": "Phán Xét (Xuôi) 🛡️ Sứ Mệnh 9 (INT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +1 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +4 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Phán Xét (Xuôi)] ⨁ [Sứ Mệnh 9]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Minh chứng Tarot*: \"thức tỉnh\"\n   - *Minh chứng Số học*: \"tầm nhìn vĩ mô bao quát nhân loại, ngọn hải đăng khai sáng\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Trực giác & Minh triết nội tại (+2 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Phán Xét (Xuôi)] 🛡️ [Sứ Mệnh 9]** (Trục: *Trực giác & Minh triết nội tại*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+2) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 9 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"thức tỉnh\"\n   - *Vùng tối cần vá của số học*: \"dằn vặt quá khứ, ảo tưởng viển vông\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +4)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 34,
+      "title": "Ăn mừng thành tựu, xây dựng tổ ấm hạnh phúc viên mãn",
+      "category": "Hôn nhân",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 3,
+        "STR": 2,
+        "RSK": 0,
+        "INT": 1
+      },
+      "synergyCount": 2,
+      "compensationCount": 2,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "EMO",
+        "axisNameVi": "Cảm xúc & Gắn kết",
+        "netScore": 3,
+        "adviceVi": "Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+      },
+      "topSynergy": "4 Gậy (Xuôi) ⨁ Linh Hồn 6 (EMO)",
+      "topTension": "Không có",
+      "topCompensation": "4 Gậy (Xuôi) 🛡️ Linh Hồn 6 (EMO)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: +3 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: +2 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[4 Gậy (Xuôi)] ⨁ [Linh Hồn 6]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Minh chứng Tarot*: \"thuộc về\"\n   - *Minh chứng Số học*: \"tình yêu thương vô điều kiện, lòng trắc ẩn bao la, rung động trước nỗi đau của người khác\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cảm xúc & Gắn kết (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n2. **[4 Gậy (Xuôi)] ⨁ [Linh Hồn 6]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"ổn định\"\n   - *Minh chứng Số học*: \"kiến tạo không gian sống ngăn nắp ấm cúng, thiết lập ranh giới yêu thương\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[4 Gậy (Xuôi)] 🛡️ [Linh Hồn 6]** (Trục: *Cảm xúc & Gắn kết*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 6 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"thuộc về\"\n   - *Vùng tối cần vá của số học*: \"yêu thương kiểm soát ngột ngạt, hay cằn nhằn áp đặt, cay đắng đóng vai nạn nhân\"\n2. **[4 Gậy (Xuôi)] 🛡️ [Linh Hồn 6]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Linh Hồn 6 (-1), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"ổn định\"\n   - *Vùng tối cần vá của số học*: \"xâm phạm không gian riêng tư của người thân dưới danh nghĩa tình thương\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[EMO] Cảm xúc & Gắn kết** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Mở rộng lòng trắc ẩn, dùng tình yêu thương và sự thấu cảm chân thành để hóa giải mọi khúc mắc."
+    },
+    {
+      "id": 35,
+      "title": "Bắt đầu hành trình học hỏi hoặc chuyến du hành mới",
+      "category": "Học tập",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 2,
+        "EMO": 2,
+        "STR": 0,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 2,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Tiểu Đồng Gậy (Xuôi) ⨁ Số Thái Độ 3 (RSK)",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +2 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: +2 — *Tình cảm thăng hoa, thấu cảm sâu*\n- **[STR] Cấu trúc & Kỷ luật**: 0 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Tiểu Đồng Gậy (Xuôi)] ⨁ [Số Thái Độ 3]** (Trục: *Dấn thân & Chấp nhận rủi ro*)\n   - *Minh chứng Tarot*: \"khám phá\"\n   - *Minh chứng Số học*: \"phá tan bầu không khí ngại ngùng bằng những câu chuyện sinh động\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Dấn thân & Chấp nhận rủi ro (+1 & +1). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 36,
+      "title": "Dũng cảm khép lại mô hình kinh doanh cũ lỗi thời",
+      "category": "Tái sinh",
+      "durationMs": 0,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 0,
+        "STR": 0,
+        "RSK": 0,
+        "INT": 0
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 1,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: 0 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: 0 — *Trực giác bình ổn*\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +1)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 37,
+      "title": "Đón nhận một thông điệp tình cảm ngọt ngào",
+      "category": "Tình cảm",
+      "durationMs": 0,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 0,
+        "STR": 0,
+        "RSK": 0,
+        "INT": 2
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "INT",
+        "axisNameVi": "Trực giác & Minh triết nội tại",
+        "netScore": 2,
+        "adviceVi": "Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: 0 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: 0 — *Khẩu vị rủi ro vừa phải*\n- **[INT] Trực giác & Minh triết nội tại**: +2 — *Trực giác cực nhạy, minh triết sâu*\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[INT] Trực giác & Minh triết nội tại** (Điểm xung lực: +2)\n- **Chỉ dẫn thực thi**: Lùi lại tĩnh lặng, lắng nghe tiếng nói trực giác và minh triết nội tại để đưa ra quyết định sáng suốt nhất."
+    },
+    {
+      "id": 38,
+      "title": "Đánh lửa nguồn cảm hứng và quyết tâm hành động",
+      "category": "Khởi đầu",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 3,
+        "EMO": 0,
+        "STR": 1,
+        "RSK": 2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 3,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Át Gậy (Xuôi) ⨁ Sứ Mệnh 1 (ACT)",
+      "topTension": "Không có",
+      "topCompensation": "Át Gậy (Xuôi) 🛡️ Sứ Mệnh 1 (ACT)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +3 — *Khát khao hành động bùng nổ*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +1 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: +2 — *Dám dấn thân, mạo hiểm bứt phá*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[Át Gậy (Xuôi)] ⨁ [Sứ Mệnh 1]** (Trục: *Hành động & Tiên phong*)\n   - *Minh chứng Tarot*: \"khởi động\"\n   - *Minh chứng Số học*: \"rẽ lối mở đường, ra quyết định dứt khoát, dẫn dắt tập thể\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Hành động & Tiên phong (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[Át Gậy (Xuôi)] 🛡️ [Sứ Mệnh 1]** (Trục: *Hành động & Tiên phong*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Sứ Mệnh 1 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"khởi động\"\n   - *Vùng tối cần vá của số học*: \"trở nên ỷ lại, né tránh trách nhiệm lãnh đạo\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    },
+    {
+      "id": 39,
+      "title": "Kiên nhẫn quan sát và chờ đợi thành quả đơm hoa kết trái",
+      "category": "Đầu tư",
+      "durationMs": 0.01,
+      "netVector": {
+        "ACT": 1,
+        "EMO": 0,
+        "STR": 3,
+        "RSK": -2,
+        "INT": 1
+      },
+      "synergyCount": 1,
+      "compensationCount": 1,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "STR",
+        "axisNameVi": "Cấu trúc & Kỷ luật",
+        "netScore": 3,
+        "adviceVi": "Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+      },
+      "topSynergy": "7 Tiền (Xuôi) ⨁ Số Trưởng Thành 4 (STR)",
+      "topTension": "Không có",
+      "topCompensation": "7 Tiền (Xuôi) 🛡️ Số Trưởng Thành 4 (STR)",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: +1 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: +3 — *Kỷ luật thép, bài bản, vững chãi*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -2 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: +1 — *Trực giác bình ổn*\n\n#### 2. Các Cặp Năng Lượng Bổ Trợ Sâu Sắc (Top Synergies):\n1. **[7 Tiền (Xuôi)] ⨁ [Số Trưởng Thành 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Minh chứng Tarot*: \"đầu tư dài hạn\"\n   - *Minh chứng Số học*: \"tính kỷ luật, sự chuẩn mực, óc tổ chức khoa học và tinh thần trách nhiệm\"\n   - *Luận giải tương hỗ*: Cộng hưởng thế mạnh trên trục Cấu trúc & Kỷ luật (+1 & +2). Lá bài tiếp thêm sức bật cho thiên phú số học, thời cơ thuận lợi để bứt phá.\n\n#### 3. Điểm Tựa Hóa Giải & Bù Đắp Điểm Mù (Compensatory Supports):\n1. **[7 Tiền (Xuôi)] 🛡️ [Số Trưởng Thành 4]** (Trục: *Cấu trúc & Kỷ luật*)\n   - *Cách hóa giải*: Điểm tựa bù đắp: Năng lượng tích cực từ lá bài (+1) đóng vai trò hóa giải điểm mù vùng tối của Số Trưởng Thành 4 (-2), giúp lấy lại sự cân bằng.\n   - *Năng lượng cứu tinh từ bài*: \"đầu tư dài hạn\"\n   - *Vùng tối cần vá của số học*: \"trở nên cứng nhắc, bảo thủ, khó thích nghi\"\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[STR] Cấu trúc & Kỷ luật** (Điểm xung lực: +3)\n- **Chỉ dẫn thực thi**: Thiết lập kỷ luật vững vàng, tuân thủ kế hoạch và chuẩn mực thực tế để giữ vững con thuyền trước sóng gió."
+    },
+    {
+      "id": 40,
+      "title": "Màn sương tan biến, sự thật ẩn giấu lộ diện rõ ràng",
+      "category": "Làm sáng tỏ",
+      "durationMs": 0,
+      "netVector": {
+        "ACT": 0,
+        "EMO": 0,
+        "STR": 0,
+        "RSK": -1,
+        "INT": -1
+      },
+      "synergyCount": 0,
+      "compensationCount": 0,
+      "tensionCount": 0,
+      "vortexCount": 0,
+      "pivotAxis": {
+        "axis": "ACT",
+        "axisNameVi": "Hành động & Tiên phong",
+        "netScore": 0,
+        "adviceVi": "Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+      },
+      "topSynergy": "Không có",
+      "topTension": "Không có",
+      "topCompensation": "Không có",
+      "sampleAiForm": "### BẢN ĐỒ TƯƠNG TÁC NĂNG LƯỢNG 5 TRỤC (TAROT ⨁ THẦN SỐ HỌC)\n*(Dữ liệu phân tích đa chiều dựa trên 156 nhãn Tarot và 214 nhãn Thần số học chuẩn hóa)*\n\n#### 1. Xung Lực Năng Lượng Ròng 5 Trục (Net Energy Profile):\n- **[ACT] Hành động & Tiên phong**: 0 — *Cân bằng ổn định*\n- **[EMO] Cảm xúc & Gắn kết**: 0 — *Cân bằng cảm xúc*\n- **[STR] Cấu trúc & Kỷ luật**: 0 — *Có trật tự vừa phải*\n- **[RSK] Dấn thân & Chấp nhận rủi ro**: -1 — *Thận trọng cao, sợ mất an toàn*\n- **[INT] Trực giác & Minh triết nội tại**: -1 — *Nghi ngờ, thiếu sáng suốt*\n\n#### 6. Điểm Tựa Chuyển Hóa Hành Động (Pivot Anchor):\n- **Trục điểm tựa mạnh nhất**: **[ACT] Hành động & Tiên phong** (Điểm xung lực: +0)\n- **Chỉ dẫn thực thi**: Huy động ngọn lửa hành động quyết đoán, tiên phong dẫn đầu thay vì chần chừ do dự."
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+[
+  {
+    "id": "challenges-0",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "0",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 0",
+    "sourceSnippet": "Thách thức Số 0 (Challenge 0) là một thử thách vô cùng đặc biệt và mang tính 'tiến hóa bậc cao' trong Thần số học Pythagoras. Bạn không bị áp đặt bởi một chướng ngại vật ngoại cảnh cụ thể nào như các con số khác. Thay vào đó, trở ngại lớn nhất của bạn là Sự vô định của quyền tự do tuyệt đối và sự cám dỗ của việc sống buông thả không mục đích.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Thực hành kỷ luật tự giác cao độ: Tự quản lý thời gian và sức khỏe nghiêm ngặt mà không cần ai giám sát... phụng sự xã hội",
+        "rationale": "Hành động tự giác kỷ luật cao độ, phụng sự xã hội không cần giám sát."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tìm kiếm một lý tưởng sống cao đẹp: Hướng năng lượng và tài năng của mình vào việc giúp đỡ những người yếu thế",
+        "rationale": "Nuôi dưỡng cảm xúc cao thượng, hướng về lý tưởng nhân văn giúp đỡ người khác."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Tự nguyện xác lập bộ quy tắc đạo đức cá nhân: Đặt ra các ranh giới sống liêm chính mà bạn tuyệt đối không vi phạm",
+        "rationale": "Tự thiết lập bộ quy tắc chuẩn mực đạo đức sắt đá và ranh giới liêm chính."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "sử dụng quyền tự do quý giá để phụng sự xã hội",
+        "rationale": "Chủ động kiểm soát quyền tự do ý chí theo hướng tích cực."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "phát triển trí tuệ thay vì phung phí... linh hồn có nội lực và tiềm năng bẩm sinh rất lớn (Old Soul)",
+        "rationale": "Trí tuệ linh hồn già dặn (Old Soul), giác ngộ sâu sắc quyền tự do ý chí."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "trượt dài trong sự lười biếng, hưởng thụ tầm thường mà không có ngoại cảnh nào ép buộc",
+        "rationale": "Lười biếng, buông thả hành động và hưởng thụ tầm thường."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "sự cám dỗ của việc sống buông thả không mục đích... hoang mang, mất phương hướng",
+        "rationale": "Hoang mang vô định, cảm giác trống rỗng khi thiếu mục đích sống."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Sự vô định của quyền tự do tuyệt đối... thiếu kỷ luật tự giác",
+        "rationale": "Vô tổ chức, tan rã cấu trúc kỷ luật do tự do tuyệt đối vô định."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "phung phí vào những thú vui vô bổ",
+        "rationale": "Lãng phí tiềm năng thiên phú vào những cạm bẫy vô bổ."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-1",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "1",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 1",
+    "sourceSnippet": "Thách thức Số 1 (Challenge 1) đưa bạn vào cuộc đấu tranh gay gắt về Cái tôi cá nhân và Lòng tự trọng. Bạn thường rơi vào một trong hai thái cực tiêu cực: Hoặc quá tự ti, nhút nhát, sợ bị từ chối, phụ thuộc vào ý kiến người khác; hoặc ngược lại trở nên quá hung hăng, độc đoán, áp đặt, hiếu thắng để che đậy sự bất an bên trong.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Tự mình ra quyết định độc lập: Bắt đầu từ những việc nhỏ hàng ngày mà không cần hỏi ý kiến xin phép ai... Rèn luyện bản lĩnh tiên phong",
+        "rationale": "Chủ động tự mình quyết định độc lập và rèn luyện bản lĩnh tiên phong."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tôn trọng và khẳng định giá trị độc bản của bản thân một cách đĩnh đạc, không kiêu ngạo cũng không tự ti",
+        "rationale": "Cảm xúc tự tôn đĩnh đạc, tự tin vào giá trị độc bản của bản thân."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "dũng cảm chịu trách nhiệm 100% về cuộc đời mình... đứng vững trên đôi chân của mình",
+        "rationale": "Thiết lập cấu trúc trách nhiệm cá nhân 100% không dựa dẫm."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Dũng cảm nhận trách nhiệm dẫn dắt một phần việc trong công việc",
+        "rationale": "Dám chịu trách nhiệm dấn thân dẫn dắt công việc chung."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "sự công nhận thực sự phải xuất phát từ bên trong bạn",
+        "rationale": "Trí tuệ nhận thức sâu sắc về cội nguồn giá trị nội tại."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "quá tự ti, nhút nhát, sợ bị từ chối, phụ thuộc vào ý kiến người khác",
+        "rationale": "Hành động rụt rè, ỷ lại và sợ hãi không dám tự quyết định."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "quá hung hăng, độc đoán, áp đặt, hiếu thắng để che đậy sự bất an bên trong",
+        "rationale": "Hung hăng hiếu thắng, cái tôi độc đoán áp đặt người khác."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "sợ bị từ chối... bất an bên trong",
+        "rationale": "Bất an sợ rủi ro bị phán xét dẫn đến phòng thủ cực đoan."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "phản ứng gay gắt để bảo vệ sự tự ái",
+        "rationale": "Tự ái mù quáng, cố chấp không chịu tiếp thu quan điểm khách quan."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-2",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "2",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 2",
+    "sourceSnippet": "Thách thức Số 2 (Challenge 2) là bài kiểm tra về Cảm xúc và Nghệ thuật ứng xử xã hội. Bạn thường bị chướng ngại bởi sự nhạy cảm quá mức, tính tự ái cao, dễ bị tổn thương trước lời nói của người khác, luôn lo sợ bị đánh giá, dẫn đến việc e ngại giao tiếp, rụt rè hoặc dễ bị kẻ xấu lợi dụng lòng cả nể.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Thực hành giao tiếp hòa nhã: Giải quyết mọi bất đồng bằng sự lắng nghe chân thành và đối thoại nhẹ nhàng",
+        "rationale": "Chủ động đối thoại nhẹ nhàng, lắng nghe chân thành để hóa giải xung đột."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Chuyển hóa sự nhạy cảm thành năng lực thấu cảm tinh tế... tập trung vào sự bình an nội tâm",
+        "rationale": "Thấu cảm tinh tế, nuôi dưỡng sự bình an và trân trọng cảm xúc thật."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Thiết lập ranh giới cá nhân rõ ràng: Dũng cảm từ chối những yêu cầu vô lý",
+        "rationale": "Thiết lập ranh giới cảm xúc rõ ràng và cấu trúc tự bảo vệ lành mạnh."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "học cách hợp tác hòa ái mà không đánh mất chính mình",
+        "rationale": "Cân bằng giữa hợp tác mềm dẻo và bảo vệ chính kiến bản thân."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "tách biệt giữa lời góp ý mang tính xây dựng và sự công kích cá nhân",
+        "rationale": "Tư duy phân biệt rạch ròi giữa góp ý chân thành và công kích."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "e ngại giao tiếp, rụt rè hoặc dễ bị kẻ xấu lợi dụng lòng cả nể",
+        "rationale": "Rụt rè e ngại giao tiếp, thụ động cả nể làm việc theo ý người khác."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "sự nhạy cảm quá mức, tính tự ái cao, dễ bị tổn thương trước lời nói... dễ bị tủi thân",
+        "rationale": "Quá nhạy cảm tổn thương, tự ái cao, dễ tủi thân và sầu muộn."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "luôn lo sợ bị đánh giá",
+        "rationale": "Sợ bị đánh giá dẫn đến né tránh tương tác xã hội."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Ngừng suy diễn tiêu cực... phán đoán động cơ của người khác qua vẻ bề ngoài",
+        "rationale": "Hay suy diễn tiêu cực, phán đoán sai lầm động cơ của người khác."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-3",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "3",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 3",
+    "sourceSnippet": "Thách thức Số 3 (Challenge 3) thử thách bạn về Năng lực tự biểu đạt ngôn từ và Sự tập trung sáng tạo. Bạn có thể gặp khó khăn trong việc diễn đạt ý nghĩ của mình, rụt rè sợ nói trước đám đông; hoặc rơi vào thái cực ngược lại: nói năng bốc đồng, sa đà vào thị phi, chi tiêu hoang phí và phân tán năng lượng làm việc nửa vời.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Rèn luyện kỹ năng biểu đạt mỗi ngày: Viết lách, thuyết trình hoặc tham gia câu lạc bộ giao tiếp... Tập trung vào 1 dự án sáng tạo duy nhất",
+        "rationale": "Kiên trì thực hành viết lách, thuyết trình và dồn sức hoàn thành dự án."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Học cách sử dụng ngôn từ tích cực để truyền cảm hứng và chữa lành",
+        "rationale": "Lan tỏa cảm xúc tích cực, ấm áp và truyền cảm hứng chữa lành."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Kiên trì hoàn thiện tác phẩm/kế hoạch trước khi bắt đầu ý tưởng mới",
+        "rationale": "Kỷ luật tập trung hoàn tất tác phẩm, chấm dứt tình trạng phân tán."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "tập nói trước gương. Hãy tập trung vào giá trị bạn muốn trao đi",
+        "rationale": "Dám đối diện với nỗi sợ đám đông để chia sẻ giá trị."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "mở khóa tiềm năng truyền thông và nghệ thuật... sử dụng ngôn từ tích cực",
+        "rationale": "Trí tuệ ngôn từ sáng suốt, làm chủ nghệ thuật biểu đạt và truyền thông."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "phân tán năng lượng làm việc nửa vời... rụt rè sợ nói trước đám đông",
+        "rationale": "Làm việc nửa vời dở dang, hoặc rụt rè không dám cất tiếng nói."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "nói năng bốc đồng, sa đà vào thị phi... chỉ trích chê bai người khác",
+        "rationale": "Bốc đồng lời nói, sa đà thị phi chê bai làm tổn thương người khác."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "chi tiêu hoang phí và phân tán năng lượng",
+        "rationale": "Thiếu kỷ luật ngân sách, chi tiêu hoang phí tùy tiện."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-4",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "4",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 4",
+    "sourceSnippet": "Thách thức Số 4 (Challenge 4) là bài kiểm tra khắc nghiệt về Tính kỷ luật, Sự kiên nhẫn, Quản lý tài chính và Năng lực lao động thực tế. Bạn thường ghét sự gò bó của quy trình, làm việc tùy hứng, cẩu thả, nôn nóng muốn giàu nhanh mà không chịu đặt nền móng, dẫn đến thất thoát tiền bạc và công việc đổ bể.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Kiên trì hoàn thiện chi tiết kỹ thuật: Làm việc tỉ mỉ, đặt chất lượng và chữ tín lên hàng đầu... kiên trì làm việc trung thực",
+        "rationale": "Lao động tỉ mỉ, chăm chỉ và kiên trì hoàn thiện từng chi tiết kỹ thuật."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Rèn luyện tính kỷ luật tự giác sắt đá, trân trọng từng công việc chi tiết nhỏ nhất",
+        "rationale": "Tiết chế cảm xúc bốc đồng, hướng tới thái độ làm việc nghiêm cẩn."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Lập thời gian biểu và To-do list mỗi ngày: Tuân thủ nghiêm ngặt lịch làm việc... Ghi chép chi tiêu và quản lý tài chính",
+        "rationale": "Kỷ luật trật tự sắt đá, tuân thủ quy trình và quản trị dòng tiền minh bạch."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "tránh nôn nóng muốn giàu nhanh mà không chịu đặt nền móng",
+        "rationale": "Né tránh đường tắt mạo hiểm, chỉ xây dựng nền móng bền vững."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Kiểm soát 100% dòng tiền ra vào, loại bỏ chi tiêu lãng phí",
+        "rationale": "Tư duy quản trị tài chính thực tế và phân tích chi tiết chi phí."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "làm việc tùy hứng, cẩu thả... công việc đổ bể",
+        "rationale": "Hành động cẩu thả, tùy hứng làm đổ bể công việc."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "ghét sự gò bó của quy trình... cảm thấy mình phải làm việc vất vả hơn người khác",
+        "rationale": "Bất mãn, than vãn vất vả và khó chịu trước khuôn khổ kỷ luật."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "ghét sự gò bó... nôn nóng muốn giàu nhanh mà không chịu đặt nền móng, dẫn đến thất thoát tiền bạc",
+        "rationale": "Phá vỡ quy trình kỷ luật, nóng vội làm thất thoát tài chính."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "muốn giàu nhanh mà không chịu đặt nền móng",
+        "rationale": "Ham làm giàu nhanh dẫn đến sa bẫy mạo hiểm tài chính."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-5",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "5",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 5",
+    "sourceSnippet": "Thách thức Số 5 (Challenge 5) đưa bạn vào ma trận của Sự bốc đồng, Nỗi sợ cam kết lâu dài và Những cám dỗ buông thả. Bạn dễ rơi vào tâm trạng bồn chồn 'đứng núi này trông núi nọ', nhanh chán nản, muốn phá vỡ các hợp đồng/mối quan hệ hôn nhân vì cảm giác thèm muốn tự do nhất thời, hoặc sa đà vào các thói quen nghiện ngập.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Học cách thích nghi linh hoạt với hoàn cảnh nhưng giữ vững các cam kết đạo đức dài hạn",
+        "rationale": "Hành động linh hoạt thích nghi nhưng luôn giữ trọn cam kết hành động."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Thấu hiểu chân lý: 'Kỷ luật chính là hình thức cao nhất của tự do'",
+        "rationale": "Nuôi dưỡng cảm xúc tự do đích thực dựa trên nền tảng an nhiên tự chủ."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Giữ trọn các cam kết dài hạn: Không tự ý hủy bỏ hợp đồng hay phá vỡ mối quan hệ... Thực hành lối sống tối giản",
+        "rationale": "Thiết lập cấu trúc cam kết dài hạn vững chắc, loại bỏ buông thả."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Kiểm soát ngũ quan nghiêm ngặt: Tuyệt đối tránh xa cờ bạc, chất kích thích và các mối quan hệ phóng túng",
+        "rationale": "Tuyệt đối né tránh các rủi ro cám dỗ buông thả và nghiện ngập."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "tìm kiếm sự đổi mới trong phương pháp làm việc thay vì liên tục thay đổi mục tiêu cốt lõi",
+        "rationale": "Tư duy sáng suốt đổi mới phương pháp mà không dao động mục tiêu."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "sa đà vào các thói quen nghiện ngập... phóng túng",
+        "rationale": "Hành động buông thả bản năng, sa đà vào tệ nạn phóng túng."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "tâm trạng bồn chồn 'đứng núi này trông núi nọ', nhanh chán nản",
+        "rationale": "Bồn chồn, chóng chán, thèm muốn kích thích tự do nhất thời."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "muốn phá vỡ các hợp đồng/mối quan hệ hôn nhân vì cảm giác thèm muốn tự do nhất thời",
+        "rationale": "Phá vỡ hợp đồng và cam kết hôn nhân một cách tùy tiện bốc đồng."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "cờ bạc, chất kích thích... chi tiêu bốc đồng",
+        "rationale": "Mạo hiểm liều mạng với cờ bạc, chất kích thích và chi tiêu bốc đồng."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-6",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "6",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 6",
+    "sourceSnippet": "Thách thức Số 6 (Challenge 6) là bài học về Tình yêu thương, Sự kiểm soát và Kỳ vọng gia đình. Bạn có xu hướng đặt kỳ vọng quá cao và phi thực tế lên người thân/cộng sự; muốn kiểm soát mọi người theo ý mình; dễ cằn nhằn chỉ trích và tự biến mình thành 'nạn nhân đau khổ' vì hy sinh quá nhiều mà không được đền đáp.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Yêu thương chính mình trước: Chăm sóc sức khỏe và tinh thần của bản thân",
+        "rationale": "Chủ động hành động chăm sóc sức khỏe và thể chất tinh thần của chính mình."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Học cách yêu thương vô điều kiện bằng sự thấu hiểu và tôn trọng quyền tự do của người khác... Lắng nghe bằng lòng bao dung",
+        "rationale": "Tình yêu thương vô điều kiện, thấu hiểu, bao dung và từ bi tha thứ."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Tôn trọng sự lựa chọn và không gian riêng tư của người thân",
+        "rationale": "Thiết lập trật tự ranh giới tôn trọng không gian riêng của người thân."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "chấp nhận sự không hoàn hảo",
+        "rationale": "Bình thản đón nhận thực tại, không sợ hãi sự khiếm khuyết."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Buông bỏ chiếc kính cầu toàn, chấp nhận sự không hoàn hảo... mỗi người có một hành trình tiến hóa riêng",
+        "rationale": "Trí tuệ nhận thức mỗi người có một lộ trình bài học riêng biệt."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "tự biến mình thành 'nạn nhân đau khổ' vì hy sinh quá nhiều mà không được đền đáp... cảm giác bực bội",
+        "rationale": "Tâm lý nạn nhân, ấm ức oán trách vì hy sinh mà không được đền đáp."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "đặt kỳ vọng quá cao và phi thực tế... muốn kiểm soát mọi người theo ý mình; dễ cằn nhằn chỉ trích",
+        "rationale": "Kiểm soát độc đoán, áp đặt kỳ vọng phi thực tế và cằn nhằn chỉ trích."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "chiếc kính cầu toàn",
+        "rationale": "Tư duy cầu toàn cực đoan, săm soi lỗi lầm của người khác."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-7",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "7",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 7",
+    "sourceSnippet": "Thách thức Số 7 (Challenge 7) đưa bạn vào cuộc thử thách về Niềm tin, Trí tuệ và Sự cô độc nội tâm. Bạn có thể trở nên quá đa nghi, mất niềm tin vào con người và cuộc sống; kiêu ngạo trí tuệ coi thường người khác; hoặc ngược lại rơi vào trạng thái sợ hãi sự cô đơn, trốn chạy vào thế giới ảo.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "Duy trì thói quen thiền định mỗi ngày: Dành 15 phút tĩnh tâm để thanh lọc các suy nghĩ",
+        "rationale": "Thực hành tĩnh tâm thiền định hàng ngày thanh lọc suy nghĩ."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "tìm thấy sự bình an bên trong, bạn sẽ mở lòng tin tưởng cuộc đời... Mở lòng kết nối chân thành",
+        "rationale": "Chữa lành nội tâm, hướng tới sự an tịnh và mở lòng tin tưởng."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "kết hợp tư duy logic sắc bén với niềm tin tâm thức và sự thấu cảm con người",
+        "rationale": "Cấu trúc hóa hài hòa giữa tư duy logic khoa học và niềm tin tâm thức."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Sự cô độc là mảnh đất để trí tuệ nảy mầm",
+        "rationale": "Chấp nhận khoảng lặng cô độc để chiêm nghiệm, không trốn chạy."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Học hỏi tri thức giác ngộ: Đọc các tác phẩm triết học, tâm lý học và khoa học vũ trụ... thấu hiểu các quy luật tự nhiên",
+        "rationale": "Trí tuệ uyên thâm, giác ngộ triết học và thấu suốt các quy luật tự nhiên."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "sợ hãi sự cô đơn, trốn chạy vào thế giới ảo",
+        "rationale": "Trốn chạy thực tế vào thế giới ảo, trì hoãn hành động thực."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "quá đa nghi, mất niềm tin vào con người và cuộc sống... luôn cảm thấy cô đơn",
+        "rationale": "Đa nghi, mất niềm tin vào cuộc đời, u uất và cô độc gặm nhấm."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -2,
+        "evidenceQuote": "kiêu ngạo trí tuệ coi thường người khác... suy nghĩ hoài nghi tiêu cực",
+        "rationale": "Kiêu ngạo trí tuệ, hoài nghi tiêu cực và xem thường hiểu biết của người khác."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "challenges-8",
+    "indicatorKey": "challenges",
+    "indicatorNameVi": "Thách thức cuộc đời",
+    "numberValue": "8",
+    "title": "Hóa Giải Bài Toán Thử Thách Cuộc Đời Số 8",
+    "sourceSnippet": "Thách thức Số 8 (Challenge 8) là bài kiểm tra tối thượng về Tiền bạc, Quyền lực, Danh vọng và Luật Nhân Quả. Bạn dễ bị cuốn vào lòng tham mù quáng, ảo tưởng sức mạnh quyền lực, đánh giá con người thuần túy qua tiền tài; hoặc ngược lại quá sợ hãi tiền bạc, quản lý yếu kém dẫn đến nợ nần, phá sản.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Học quản trị tài chính bài bản: Kiểm soát dòng tiền, lập kế hoạch đầu tư an toàn và minh bạch",
+        "rationale": "Hành động quản trị tài chính chuyên nghiệp, đầu tư minh bạch và an toàn."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "Làm chủ thế giới vật chất trên nền tảng đạo đức, công lý và sự liêm chính tuyệt đối",
+        "rationale": "Tâm thế liêm chính, vững vàng, không bị lòng tham làm lu mờ lương tri."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Kinh doanh trên nền tảng đạo đức: Tuân thủ pháp luật, giữ chữ tín và đối xử công bằng với cộng sự",
+        "rationale": "Thiết lập cấu trúc kinh doanh chuẩn mực, thượng tôn pháp luật và chữ tín."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Thực hành chia sẻ thịnh vượng: Trích một phần lợi nhuận để giúp đỡ cộng đồng",
+        "rationale": "Sử dụng nguồn lực tiền tài có trách nhiệm để tạo phúc lộc cho xã hội."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Sử dụng tiền bạc và quyền lực như phương tiện thiêng liêng để tạo ra giá trị... thấu hiểu Luật Nhân Quả",
+        "rationale": "Trí tuệ sắc bén về kinh tế kết hợp với giác ngộ sâu sắc luật Nhân Quả."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "quản lý yếu kém dẫn đến nợ nần, phá sản",
+        "rationale": "Quản lý yếu kém, hành động sai lầm dẫn đến nợ nần và phá sản."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "cuốn vào lòng tham mù quáng, ảo tưởng sức mạnh quyền lực, đánh giá con người thuần túy qua tiền tài",
+        "rationale": "Lòng tham mù quáng, thực dụng tàn nhẫn và say mê quyền lực hư ảo."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "làm ăn gian lận hay trốn tránh pháp luật",
+        "rationale": "Vi phạm pháp luật, làm ăn gian lận phá vỡ chuẩn mực liêm chính."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "quá sợ hãi tiền bạc... hoặc làm ăn gian lận",
+        "rationale": "Hoặc sợ hãi cực đoan, hoặc mạo hiểm phi pháp dẫn đến vòng lao lý."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

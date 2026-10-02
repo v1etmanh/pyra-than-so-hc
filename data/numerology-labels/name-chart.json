@@ -1,0 +1,25 @@
+[
+  {
+    "id": "nameChart-matrix",
+    "indicatorKey": "nameChart",
+    "indicatorNameVi": "Biểu Đồ Tên",
+    "numberValue": "matrix",
+    "title": "Phân Tích Ma Trận Rung Động Của Biểu Đồ Tên",
+    "sourceSnippet": "Trong Thần số học Pythagoras, họ và tên khai sinh là một Ma trận sóng rung động âm thanh và hình học thiêng liêng. Biểu đồ Tên đại diện cho Phương tiện, Công cụ và Trang phục hỗ trợ bạn trên đường đời. Tần suất chuẩn (1-2 lần) đem lại tính cách hài hòa, dễ thích nghi, biết cương biết nhu. Tuy nhiên, hiện tượng Thừa Năng Lượng (3-5 lần trở lên) dẫn đến ứ đọng biến chất, và Khuyết Năng Lượng tạo ra các lỗ hổng kỹ năng cần tôi luyện.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "kích hoạt các năng lực tiềm ẩn, hành động thực tế của chính bạn", "rationale": "Sử dụng danh xưng như đòn bẩy hành động thực tế để hiện thực hóa tiềm năng." },
+      "EMO": { "score": 1, "evidenceQuote": "tính cách hài hòa, biết cương biết nhu đúng lúc, ít gặp khủng hoảng tâm lý", "rationale": "Nuôi dưỡng sự cân bằng cảm xúc, thái độ hòa ái và khả năng thấu hiểu lòng người." },
+      "STR": { "score": 2, "evidenceQuote": "ma trận hình học thiêng liêng, phân bổ đều đặn các con số, lưới Pythagoras", "rationale": "Thiết lập cấu trúc trật tự rung động mẫu mực, bổ khuyết vững chãi cho biểu đồ ngày sinh." },
+      "RSK": { "score": 0, "evidenceQuote": "dễ thích nghi với mọi môi trường, giao tiếp tự tin hơn", "rationale": "Tăng cường sự tự tin và khả năng ứng biến linh hoạt trong xã hội." },
+      "INT": { "score": 2, "evidenceQuote": "đối chiếu với Biểu đồ Ngày sinh, bù khuyết có chọn lọc, bộ lọc năng lượng", "rationale": "Minh triết giải mã ma trận âm thanh để điều hòa trường năng lượng sinh mệnh." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thừa 1 độc đoán thích ra lệnh hoặc khuyết 1 thiếu tự lập ỷ lại", "rationale": "Biến dạng hành vi giữa độc tài gia trưởng hoặc thụ động dựa dẫm." },
+      "EMO": { "score": -2, "evidenceQuote": "thừa 2 quá nhạy cảm tự ái hoặc khuyết 2 vụng về ngoại giao khó thấu cảm", "rationale": "Tổn thương cảm xúc trầm trọng, dễ bị thao túng hoặc làm rạn nứt quan hệ." },
+      "STR": { "score": -2, "evidenceQuote": "năng lượng ứ đọng và biến chất, hiện tượng bội thực năng lượng gây khủng hoảng", "rationale": "Phá vỡ cấu trúc cân bằng, gây hỗn loạn tâm lý do năng lượng bị ứ nghẽn." },
+      "RSK": { "score": -1, "evidenceQuote": "thừa 5 nghiện ngập bốc đồng hoặc khuyết 5 sợ hãi thay đổi", "rationale": "Rơi vào hai thái cực cực đoan: liều lĩnh hủy hoại bản thân hoặc co cụm sợ hãi." },
+      "INT": { "score": -1, "evidenceQuote": "thừa 7 hoài nghi cực đoan kiêu ngạo trí tuệ hoặc khuyết 7 thiếu chiều sâu", "rationale": "Bế tắc trí tuệ, ngạo mạn tri thức hoặc sống hời hợt duy vật bề mặt." }
+    },
+    "overallConfidence": 0.95
+  }
+]

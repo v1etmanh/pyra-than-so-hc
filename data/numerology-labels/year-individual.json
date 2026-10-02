@@ -1,0 +1,569 @@
+[
+  {
+    "id": "yearIndividual-1",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "1",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 1",
+    "sourceSnippet": "Năm Cá Nhân Số 1 (Personal Year 1) mở đầu cho một chu kỳ 9 năm hoàn toàn mới trong Thần số học Pythagoras. Từ khóa cốt lõi của năm nay là: Khởi đầu mới, Tiên phong, Độc lập, Tự chủ và Gieo hạt giống. Mọi hạt giống hành động, mục tiêu và quyết định bạn gieo trồng trong năm nay sẽ định hình toàn bộ hướng đi và kết quả của 9 năm tiếp theo.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Khởi động các dự án mới: Bắt tay vào các kế hoạch kinh doanh, học tập hoặc công việc mới mà bạn đã ấp ủ từ lâu",
+        "rationale": "Năng lượng hành động tiên phong, bứt phá khởi chạy các dự án nền tảng."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tràn đầy sinh lực và nhiệt huyết; nên duy trì thói quen tập luyện thể thao đều đặn",
+        "rationale": "Cảm xúc nhiệt huyết, phấn chấn và hào hứng đón nhận chu kỳ mới."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Đặt mục tiêu dài hạn 9 năm: Viết ra tầm nhìn rõ ràng cho sự nghiệp và cuộc sống trong một thập kỷ tới",
+        "rationale": "Thiết lập cấu trúc mục tiêu dài hạn và lộ trình chiến lược rõ ràng."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "dũng cảm bước ra khỏi vùng an toàn, xác định một mục tiêu tối thượng duy nhất và tập trung toàn lực gieo trồng hạt giống",
+        "rationale": "Dám chấp nhận rủi ro bước khỏi vùng an toàn để khai phá chân trời mới."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Học tập kỹ năng mới: Nâng cấp bản thân để chuẩn bị cho những bước nhảy vọt",
+        "rationale": "Chủ động nâng cấp tư duy, học hỏi kỹ năng mới đón đầu chu kỳ."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "Chần chừ, do dự và sợ hãi: Bỏ lỡ những cơ hội vàng chỉ vì thiếu tự tin",
+        "rationale": "Bóng tối trì hoãn, do dự không dám hành động làm mất thời cơ gieo hạt."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Bám víu vào những thất bại của chu kỳ cũ: Mang theo gánh nặng tâm lý của quá khứ",
+        "rationale": "Nặng lòng u buồn, tiếc nuối và sợ hãi tàn dư thất bại cũ."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Hành động bốc đồng thiếu kế hoạch: Vội vã mà không chuẩn bị kỹ lưỡng về nguồn lực",
+        "rationale": "Hấp tấp, thiếu cấu trúc chuẩn bị nguồn lực kỹ lưỡng dẫn đến rủi ro."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Dựa dẫm, ỷ lại vào người khác: Trông chờ sự bảo lãnh hoặc quyết định thay",
+        "rationale": "Nhút nhát sợ hãi rủi ro tự chủ, ỷ lại vào người khác."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-2",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "2",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 2",
+    "sourceSnippet": "Năm Cá Nhân Số 2 (Personal Year 2) mang tần số rung động của sự lắng đọng và gắn kết. Từ khóa cốt lõi: Kiên nhẫn, Hợp tác, Ngoại giao, Nuôi dưỡng hạt giống và Cân bằng cảm xúc. Sau một năm số 1 hành động dồn dập, Năm số 2 là lúc bạn cần đi chậm lại, kiên nhẫn chăm sóc hạt giống đã gieo và tìm kiếm những cộng sự đồng hành tin cậy.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "Năm số 2 là lúc bạn cần đi chậm lại, kiên nhẫn chăm sóc hạt giống đã gieo",
+        "rationale": "Hành động chậm rãi, bền bỉ nuôi dưỡng thay vì tấn công dồn dập."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Lắng nghe và thấu hiểu: Sử dụng nghệ thuật ngoại giao khéo léo để hóa giải mọi mâu thuẫn... Chăm sóc đời sống tình cảm",
+        "rationale": "Độ nhạy cảm xúc cao, thấu cảm, gắn kết và vun đắp tình yêu thương sâu sắc."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Tìm kiếm đối tác và làm việc nhóm: Xây dựng các liên minh chiến lược và gắn kết đồng đội",
+        "rationale": "Thiết lập cấu trúc liên minh đối tác và thỏa thuận đồng đội bền vững."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Ổn định, ít biến động lớn; nên tích lũy an toàn và tránh các thương vụ đầu tư mạo hiểm",
+        "rationale": "Thận trọng, tránh phiêu lưu mạo hiểm, ưu tiên an toàn vốn."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "dành thời gian lắng nghe người thân và phát triển trực giác",
+        "rationale": "Khai mở trực giác nhạy bén và trí tuệ thấu cảm tinh tế."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Hành động đơn độc, độc đoán: Cố chấp làm một mình mà từ chối sự trợ giúp từ tập thể",
+        "rationale": "Cố chấp làm một mình, từ chối hợp tác dẫn đến cản trở tiến độ."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Để cảm xúc chi phối: Trở nên quá nhạy cảm, dễ tủi thân hoặc suy diễn tiêu cực",
+        "rationale": "Quá nhạy cảm, dễ tổn thương, sầu muộn và suy diễn tiêu cực."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Gây hấn, tranh chấp công khai: Đối đầu trực diện gây tổn hại đến các mối quan hệ quý giá",
+        "rationale": "Phá vỡ liên kết đối tác do bất hòa và xung đột ngoại giao."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Nóng vội muốn thấy kết quả ngay: Đốt cháy giai đoạn dẫn đến đổ vỡ kế hoạch",
+        "rationale": "Nóng vội đốt cháy giai đoạn gây rủi ro đổ vỡ kế hoạch."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-3",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "3",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 3",
+    "sourceSnippet": "Năm Cá Nhân Số 3 (Personal Year 3) là thời điểm hạt giống của bạn đâm chồi nảy lộc rực rỡ dưới ánh mặt trời. Từ khóa cốt lõi: Sáng tạo, Giao tiếp, Truyền thông, Tỏa sáng cá nhân, Mở rộng mạng lưới và Niềm vui sống. Đây là năm để bạn cất cao tiếng nói, thể hiện tài năng và kết nối với xã hội.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Đẩy mạnh truyền thông và marketing: Quảng bá thương hiệu cá nhân hoặc sản phẩm ra công chúng",
+        "rationale": "Chủ động xúc tiến truyền thông, quảng bá và xuất hiện trước công chúng."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Rực rỡ, lãng mạn, tràn ngập cơ hội hẹn hò và tiếng cười trong các mối quan hệ... Niềm vui sống",
+        "rationale": "Cảm xúc thăng hoa rực rỡ, lạc quan yêu đời và tràn ngập tiếng cười."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Tập trung vào ngẫu hứng sáng tạo và tự do biểu đạt xã hội."
+      },
+      "RSK": {
+        "score": 1,
+        "evidenceQuote": "Tích cực xuất hiện trước công chúng, tham gia các sự kiện lớn và quảng bá sản phẩm mạnh mẽ",
+        "rationale": "Sẵn sàng đón nhận cơ hội bước lên vũ đài lớn trước công chúng."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Tận dụng sức mạnh ngôn từ: Thuyết trình, viết sách, sáng tạo nội dung và chia sẻ thông điệp tích cực",
+        "rationale": "Trí tuệ ngôn từ sắc bén, tư duy sáng tạo nghệ thuật và truyền tải ý tưởng lôi cuốn."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Nói nhiều hơn làm: Tuyên bố hoành tráng nhưng thiếu kỷ luật thực thi",
+        "rationale": "Nói nhiều làm ít, hứa hẹn suông và thiếu kỷ luật hành động thực tế."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Sa đà vào thị phi, ngồi lê đôi mách: Làm tổn hại đến uy tín cá nhân",
+        "rationale": "Phù phiếm, buôn chuyện thị phi làm suy giảm giá trị tinh thần."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Phân tán năng lượng quá đà: Nhận quá nhiều việc cùng lúc dẫn đến việc gì cũng dang dở",
+        "rationale": "Thiếu trật tự tổ chức, phân tán nguồn lực làm mọi việc dở dang."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Chi tiêu phung phí vào tiệc tùng: Tiêu xài bốc đồng vào mua sắm và những thú vui phù phiếm",
+        "rationale": "Bốc đồng tài chính, tiêu xài hoang phí không có quỹ dự phòng."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-4",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "4",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 4",
+    "sourceSnippet": "Năm Cá Nhân Số 4 (Personal Year 4) là năm 'Xây móng nhà' vững chắc cho cả chu kỳ. Từ khóa cốt lõi: Kỷ luật, Trật tự, Lao động chăm chỉ, Quản trị tài chính, Pháp lý và Sức khỏe thể chất. Sau một năm số 3 bay bổng, Năm 4 đòi hỏi bạn phải quay về với thực tế, làm việc nghiêm túc và chuẩn hóa từng quy trình.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Tập trung lao động chăm chỉ, giải quyết các chi tiết kỹ thuật và hoàn thiện quy trình vận hành",
+        "rationale": "Lao động chăm chỉ, miệt mài thực thi từng chi tiết kỹ thuật cụ thể."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "quay về với thực tế, làm việc nghiêm túc và chuẩn hóa từng quy trình",
+        "rationale": "Thực tế, nghiêm cẩn và kiềm chế cảm xúc để tập trung công việc."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Lập kế hoạch và quy trình bài bản: Chuẩn hóa mọi hoạt động công việc và thiết lập thời gian biểu khoa học",
+        "rationale": "Cấu trúc kỷ luật thép, chuẩn hóa quy trình và thiết lập thời gian biểu khoa học."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Đầu tư mạo hiểm, tìm đường tắt: Tham gia các dự án làm giàu nhanh không minh bạch... tránh cho vay mạo hiểm",
+        "rationale": "Tuyệt đối né tránh rủi ro, bài trừ đầu cơ nhanh và chỉ đầu tư an toàn."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Thắt chặt quản lý tài chính: Lập ngân sách tiết kiệm, cắt giảm chi phí thừa và đầu tư vào tài sản an toàn",
+        "rationale": "Tư duy quản trị tài chính thực tế, logic và chặt chẽ."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Lười biếng và làm việc tùy hứng: Trốn tránh những công việc tỉ mỉ đòi hỏi kiên nhẫn",
+        "rationale": "Trốn tránh trách nhiệm tỉ mỉ hoặc bị quá tải công việc dẫn đến trì trệ."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Bỏ bê cơ thể: Làm việc quá sức dẫn đến kiệt quệ thể lực và suy nhược thần kinh",
+        "rationale": "Căng thẳng mệt mỏi, khô khan và áp lực công việc đè nặng tâm lý."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Nhảy việc bốc đồng: Thay đổi định hướng khi chưa chuẩn bị đầy đủ nền tảng",
+        "rationale": "Bốc đồng phá vỡ nền tảng hiện có khi chưa hoàn thiện quy trình."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "tham gia các dự án làm giàu nhanh không minh bạch",
+        "rationale": "Nguy cơ mất tiền vì ham làm giàu nhanh khi nôn nóng vượt qua khó khăn."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-5",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "5",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 5",
+    "sourceSnippet": "Năm Cá Nhân Số 5 (Personal Year 5) là điểm bước ngoặt ở giữa chu kỳ 9 năm. Từ khóa cốt lõi: Đột phá, Thay đổi, Tự do, Phiêu lưu, Mở rộng tầm nhìn và Thích ứng linh hoạt. Năng lượng của Năm 5 mang lại luồng gió mới thổi bay sự đơn điệu, mở ra những cơ hội bất ngờ và thúc đẩy bạn bước ra khỏi vùng an toàn.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Đón nhận sự thay đổi tích cực: Sẵn sàng thay đổi phương pháp làm việc, ứng dụng công nghệ mới hoặc chuyển đổi mô hình",
+        "rationale": "Hành động đổi mới nhanh chóng, chuyển đổi mô hình và thử nghiệm giải pháp mới."
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "Tràn đầy năng lượng phấn chấn... luồng gió mới thổi bay sự đơn điệu",
+        "rationale": "Cảm giác sảng khoái, yêu tự do và hào hứng khám phá chân trời mới."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Rèn luyện sự linh hoạt: Thích ứng nhanh chóng trước mọi biến động của thị trường",
+        "rationale": "Phá bỏ cấu trúc cũ xơ cứng để duy trì sự thích ứng linh hoạt cao độ."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Thử nghiệm những ý tưởng đột phá: Dám mạo hiểm có tính toán để nắm bắt các cơ hội mới nổi",
+        "rationale": "Dám chấp nhận rủi ro có tính toán, phiêu lưu bứt phá khỏi giới hạn cũ."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Đi du lịch và mở rộng mạng lưới: Khám phá những vùng đất mới, tiếp xúc với các nền văn hóa đa dạng",
+        "rationale": "Mở rộng tầm nhìn thế giới quan và học hỏi các nền văn hóa đa dạng."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Hành động thiếu kiểm soát: Mạo hiểm liều lĩnh không có biện pháp phòng ngừa rủi ro",
+        "rationale": "Hành động liều lĩnh, thiếu kiểm soát dẫn đến mất an toàn."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Buông thả theo cám dỗ nhục dục: Sa đà vào cờ bạc, chất kích thích hoặc các thói quen nghiện ngập",
+        "rationale": "Buông thả bản năng, tìm kiếm kích thích nhất thời để trốn tránh thực tại."
+      },
+      "STR": {
+        "score": -2,
+        "evidenceQuote": "Hủy bỏ cam kết quan trọng vì cảm xúc nhất thời: Phá vỡ các hợp đồng dài hạn vì cảm giác chán nản tạm thời",
+        "rationale": "Phá vỡ hợp đồng và cam kết cấu trúc dài hạn do cả thèm chóng chán."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Mạo hiểm liều lĩnh không có biện pháp phòng ngừa",
+        "rationale": "Đánh bạc với số phận, đầu cơ mạo hiểm dẫn đến tổn thất lớn."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-6",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "6",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 6",
+    "sourceSnippet": "Năm Cá Nhân Số 6 (Personal Year 6) mang năng lượng ấm áp của tình mẫu tử và mái ấm. Từ khóa cốt lõi: Gia đình, Trách nhiệm, Tình yêu thương, Chăm sóc, Chữa lành và Làm đẹp cuộc sống. Sau một năm số 5 biến động, Năm 6 kêu gọi bạn quay về với tổ ấm, vun vén hạnh phúc gia đình và gánh vác trách nhiệm xã hội.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Sửa sang, trang trí nhà cửa: Tạo dựng không gian sống và làm việc ấm cúng, thẩm mỹ, hài hòa... Gánh vác trách nhiệm phụng sự",
+        "rationale": "Chủ động sửa sang nhà cửa, chăm sóc người thân và phụng sự xã hội."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Vun vén hạnh phúc gia đình: Dành thời gian chất lượng bên cha mẹ, vợ/chồng, con cái... Đỉnh cao của hạnh phúc hôn nhân",
+        "rationale": "Xúc cảm ấm áp, tình yêu gia đình sâu nặng và năng lượng hàn gắn yêu thương."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Thắt chặt trách nhiệm với khách hàng/đối tác trên nền tảng sự tử tế và tận tâm",
+        "rationale": "Củng cố trách nhiệm cam kết vững chắc với đối tác và người thân."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Gia đình là bệ phóng vững chắc nhất... Giữ gìn tổ ấm bình an",
+        "rationale": "Ưu tiên hàng đầu cho sự bình an, ổn định và an toàn của tổ ấm."
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "Hòa giải các mối quan hệ rạn nứt: Dùng tình thương và sự bao dung để hàn gắn tổn thương cũ",
+        "rationale": "Trí tuệ thấu hiểu tâm lý và nghệ thuật bao dung hòa giải."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối hành động cụ thể."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Hy sinh quên mình đến kiệt quệ: Bỏ bê việc chăm sóc bản thân khiến tinh thần mệt mỏi, oán trách",
+        "rationale": "Hy sinh thái quá dẫn đến kiệt sức, uất ức và oán trách ngấm ngầm."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Bao đồng và kiểm soát thái quá: Can thiệp sâu vào đời tư hoặc áp đặt ý chí lên người thân",
+        "rationale": "Kiểm soát độc đoán, can thiệp thái quá vào cuộc sống người khác dưới danh nghĩa yêu thương."
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối rủi ro cụ thể."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Cằn nhằn, phán xét: Tạo ra bầu không khí ngột ngạt trong gia đình",
+        "rationale": "Tâm lý hay phán xét, cằn nhằn chỉ trích làm ngột ngạt môi trường sống."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-7",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "7",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 7",
+    "sourceSnippet": "Năm Cá Nhân Số 7 (Personal Year 7) là năm của sự lắng đọng tâm thức và nâng cấp trí tuệ. Từ khóa cốt lõi: Tĩnh lặng, Chiêm nghiệm, Tự học đào sâu, Khai sáng tâm linh và Chữa lành nội tâm. Đây là giai đoạn bạn cần 'chững lại' khỏi các hoạt động bề nổi để quay về bên trong, nâng cao hàm lượng chất xám và tìm kiếm ý nghĩa đích thực của cuộc đời.",
+    "core": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "giai đoạn bạn cần 'chững lại' khỏi các hoạt động bề nổi để quay về bên trong",
+        "rationale": "Chủ động giảm tốc độ hành động bên ngoài để tập trung tái tạo nội lực."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Thực hành thiền định và tĩnh tâm: Dành không gian riêng tư để thanh lọc tâm trí và kết nối trực giác",
+        "rationale": "Thanh lọc tâm trí, giữ tâm bình an và tránh xa cảm xúc bốc đồng."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Rà soát lại nhân sinh quan: Đúc kết bài học từ các thăng trầm trong quá khứ để trưởng thành",
+        "rationale": "Tái cấu trúc hệ thống niềm tin và đúc kết triết lý sống chuẩn mực."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Mở rộng kinh doanh ồ ạt: Đầu tư lớn hoặc mạo hiểm tài chính trong năm này dễ gặp rủi ro thất thoát... bảo toàn vốn",
+        "rationale": "Tuyệt đối không đầu tư mạo hiểm, ưu tiên bảo toàn vốn tối đa."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Đầu tư vào học tập chuyên sâu: Đọc sách, nghiên cứu triết học, tham gia các khóa đào tạo nâng cao chuyên môn... nâng cao hàm lượng chất xám",
+        "rationale": "Đỉnh cao phát triển trí tuệ chuyên sâu, đúc kết triết lý và khai mở giác ngộ."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Hoang mang, bi quan khi mọi việc chững lại: Hiểu lầm sự tĩnh lặng là sự bế tắc",
+        "rationale": "Trì trệ, hiểu lầm sự lắng đọng là bế tắc rồi đâm ra bi quan chán nản."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Bỏ bê sức khỏe tinh thần: Kìm nén căng thẳng dẫn đến trầm cảm hoặc suy nhược thần kinh",
+        "rationale": "Thu mình cô độc, kìm nén căng thẳng dẫn đến trầm cảm và u uất."
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối cấu trúc cụ thể trong tài liệu."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Đầu tư lớn hoặc mạo hiểm tài chính trong năm này dễ gặp rủi ro thất thoát",
+        "rationale": "Dễ mất mát tài sản nếu nóng vội đầu tư mạo hiểm trong giai đoạn tích lũy."
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "Chạy theo các cuộc vui ồn ào vô bổ: Làm tiêu hao năng lượng tinh thần",
+        "rationale": "Mất tập trung trí tuệ, để ngoại cảnh ồn ào cuốn trôi sự tỉnh thức."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-8",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "8",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 8",
+    "sourceSnippet": "Năm Cá Nhân Số 8 (Personal Year 8) là năm đỉnh cao về thành tựu vật chất và quyền lực trong chu kỳ 9 năm. Từ khóa cốt lõi: Thịnh vượng tài chính, Quyền lực điều hành, Thành công sự nghiệp, Gặt hái quả ngọt và Cân bằng nhân quả. Sau quá trình tích lũy trí tuệ ở Năm 7, Năm 8 là lúc bạn bung toàn lực để gặt hái những phần thưởng xứng đáng.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "Đẩy mạnh hoạt động kinh doanh: Mở rộng quy mô, đàm phán các hợp đồng lớn và tối ưu hóa doanh thu",
+        "rationale": "Bung toàn lực hành động quyết liệt, mở rộng quy mô và chốt các hợp đồng lớn."
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "hành động quyết đoán, tự tin đàm phán các thương vụ lớn... giữ vững sự chính trực",
+        "rationale": "Bản lĩnh thép, tự tin, lý trí và kiểm soát cảm xúc để điều hành."
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "Tái cơ cấu và quản lý tài chính thông minh: Đầu tư có chiến lược, thu hồi các khoản nợ và tích lũy của cải",
+        "rationale": "Cấu trúc quản trị tài chính chuyên nghiệp, tái cơ cấu doanh nghiệp và thu hồi vốn."
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "Khẳng định vị thế lãnh đạo: Đảm nhận các trọng trách quản trị cấp cao và điều hành đội ngũ quyết đoán",
+        "rationale": "Dám chịu trách nhiệm lớn, chấp nhận rủi ro điều hành quy mô tài chính khủng."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Kinh doanh trên nền tảng đạo đức: Đảm bảo sự chính trực, minh bạch và chia sẻ lợi ích với cộng sự",
+        "rationale": "Trí tuệ kinh doanh sắc bén kết hợp giác ngộ sâu sắc luật nhân quả."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Bỏ quên sức khỏe và gia đình: Mải mê kiếm tiền dẫn đến kiệt sức và đổ vỡ tình cảm",
+        "rationale": "Cuồng công việc quá mức làm kiệt quệ thể chất và rạn nứt quan hệ."
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "Lạm quyền và áp đặt độc đoán: Coi thường thuộc cấp hoặc chèn ép đối tác",
+        "rationale": "Lạnh lùng, độc đoán và thiếu thấu cảm với cấp dưới và đối tác."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Lòng tham vô đáy và đầu cơ bất chính: Làm ăn gian lận sẽ gánh chịu luật nhân quả phản hồi cực nhanh",
+        "rationale": "Lòng tham làm méo mó cấu trúc liêm chính, gian lận dẫn đến sụp đổ."
+      },
+      "RSK": {
+        "score": -2,
+        "evidenceQuote": "Tiêu xài hoang phí phô trương: Mua sắm xa xỉ làm hao hụt nguồn vốn tái đầu tư",
+        "rationale": "Ngạo mạn vung tay quá trán, đầu cơ rủi ro cao gây nguy cơ phá sản."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "yearIndividual-9",
+    "indicatorKey": "yearIndividual",
+    "indicatorNameVi": "Năm cá nhân",
+    "numberValue": "9",
+    "title": "Dự Báo Toàn Diện Về Năm Cá Nhân Số 9",
+    "sourceSnippet": "Năm Cá Nhân Số 9 (Personal Year 9) là năm kết thúc của chu kỳ 9 năm. Từ khóa cốt lõi: Hoàn tất, Buông xả cái cũ, Tha thứ, Tri ân, Phụng sự nhân loại và Dọn dẹp đón chu kỳ mới. Đây là năm để bạn dọn dẹp sạch sẽ mảnh đất tâm hồn và cuộc sống, đóng gói những gì đã qua để chuẩn bị tái sinh trong chu kỳ tiếp theo.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "Hoàn thành dứt điểm các dự án còn dang dở: Đóng gói, nghiệm thu và kết thúc các cam kết cũ",
+        "rationale": "Hành động dứt điểm, đóng gói nghiệm thu và hoàn tất mọi công việc tồn đọng."
+      },
+      "EMO": {
+        "score": 2,
+        "evidenceQuote": "Thực hành tha thứ và biết ơn: Cắt đứt các sợi dây oán hận, tha thứ cho lỗi lầm quá khứ và tri ân những bài học",
+        "rationale": "Trái tim vị tha rộng lớn, buông xả hận thù và ngập tràn lòng biết ơn."
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "Giai đoạn nghiệm thu, tổng kết, tái cơ cấu toàn diện; có sự chia tay những môi trường cũ",
+        "rationale": "Tổng kết chu kỳ, dọn dẹp cấu trúc cũ để chuẩn bị không gian cho chu kỳ mới."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "Khởi động dự án kinh doanh dài hạn mới: Hãy chờ sang Năm Cá Nhân 1... tránh các cam kết đầu tư tài chính dài hạn mới",
+        "rationale": "Tránh rủi ro khởi sự dự án mới dài hạn trong năm buông xả."
+      },
+      "INT": {
+        "score": 2,
+        "evidenceQuote": "Tham gia các hoạt động nhân đạo, thiện nguyện: Cho đi vô tư và phụng sự cộng đồng... Dọn dẹp sạch sẽ không gian sống và tâm trí",
+        "rationale": "Tâm trí sáng tỏ, nhận thức nhân đạo sâu sắc và thấu hiểu quy luật chu kỳ tự nhiên."
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "Chống lại sự kết thúc tự nhiên: Cố chấp duy trì những mô hình không còn hiệu quả",
+        "rationale": "Cố chấp níu kéo mô hình lỗi thời, không chịu dứt điểm công việc cũ."
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "Ôm giữ hận thù và tiếc nuối: Bám víu vào những mất mát hoặc cố níu kéo những điều đã hết duyên",
+        "rationale": "U sầu, tiếc nuối quá khứ và ôm giữ tổn thương u uất."
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "Sống ích kỷ, thu vén cá nhân: Từ chối giúp đỡ những người có hoàn cảnh khó khăn",
+        "rationale": "Thu mình vị kỷ, phá vỡ trách nhiệm với cộng đồng xung quanh."
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "khởi động dự án kinh doanh dài hạn mới",
+        "rationale": "Bốc đồng lao vào dự án mới dài hạn không đúng thời điểm chu kỳ."
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "rationale": "Không ghi nhận bóng tối nhận thức cụ thể trong tài liệu."
+      }
+    },
+    "overallConfidence": 0.95
+  }
+]

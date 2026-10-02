@@ -1,0 +1,278 @@
+[
+  {
+    "id": "dateOfBirth-1",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "1",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 1",
+    "sourceSnippet": "Người mang Con số Ngày sinh 1 (sinh vào các ngày 1, 10, 19, 28) sở hữu món quà thiên bẩm về ý chí tự lập kiên cường, óc sáng tạo độc bản và bản lĩnh tiên phong dũng cảm. Ngay từ nhỏ, bạn đã bộc lộ tính tự chủ cao, không thích dựa dẫm hay bị sai bảo, luôn muốn tự mình tìm ra cách giải quyết vấn đề và dám chịu trách nhiệm về các quyết định cá nhân.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "ý chí tự lập kiên cường, bản lĩnh tiên phong dũng cảm, chủ động biến ý tưởng thành hành động", "rationale": "Năng khiếu hành động độc lập, không ngần ngại đứng mũi chịu sào." },
+      "EMO": { "score": 0, "evidenceQuote": "học cách lắng nghe góp ý, lắng nghe trọn vẹn ý kiến của người đi trước", "rationale": "Rèn luyện đức tính khiêm tốn lắng nghe để hoàn thiện khả năng lãnh đạo." },
+      "STR": { "score": 1, "evidenceQuote": "tự chịu trách nhiệm 100%, không đổ lỗi cho hoàn cảnh", "rationale": "Ý thức tự giác và kỷ luật tự thân cực kỳ nghiêm túc." },
+      "RSK": { "score": 2, "evidenceQuote": "không bao giờ chùn bước trước nghịch cảnh, dám chịu trách nhiệm về các quyết định cá nhân", "rationale": "Lòng can đảm bẩm sinh, tinh thần dấn thân phi thường." },
+      "INT": { "score": 1, "evidenceQuote": "óc sáng tạo độc bản, tự mình tìm ra cách giải quyết vấn đề", "rationale": "Tư duy nguyên bản độc lập, không rập khuôn lối mòn." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lấn át người khác, nóng vội khi làm việc nhóm", "rationale": "Hành động thiếu kiên nhẫn, thích áp đặt cách làm của mình lên người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "tính khí bướng bỉnh, cái tôi quá cao, tự cô lập mình", "rationale": "Cái tôi ngạo mạn đẩy bản thân vào sự cô độc và rạn nứt quan hệ." },
+      "STR": { "score": -1, "evidenceQuote": "nghĩ rằng không ai có thể làm việc tốt bằng chính mình", "rationale": "Cố chấp ôm đồm, không biết phân quyền và tin tưởng đồng đội." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "cái tôi quá cao làm mờ mắt trước những lời khuyên đúng đắn", "rationale": "Điểm mù nhận thức do tính bướng bỉnh chi phối." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-2",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "2",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 2",
+    "sourceSnippet": "Người mang Con số Ngày sinh 2 (sinh vào các ngày 2, 20) được vũ trụ trao tặng món quà bẩm sinh về trực giác tâm linh nhạy cảm, năng khiếu hòa giải và sự thấu cảm tinh tế. Bạn có khả năng cảm nhận chính xác cảm xúc và năng lượng của người khác, biết lắng nghe chân thành, khéo léo xoa dịu những căng thẳng và kết nối con người lại với nhau.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "tập phát biểu ý kiến riêng, chủ động chia sẻ quan điểm của mình", "rationale": "Rèn luyện tính chủ động thể hiện quan điểm cá nhân." },
+      "EMO": { "score": 2, "evidenceQuote": "trực giác tâm linh nhạy cảm, năng khiếu hòa giải và sự thấu cảm tinh tế, kết nối con người", "rationale": "Món quà thấu cảm tuyệt vời, xoa dịu căng thẳng và kết nối nhân tâm." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập ranh giới bảo vệ cảm xúc, học cách nói Không dứt khoát", "rationale": "Xây dựng ranh giới lành mạnh để bảo vệ năng lượng bản thân." },
+      "RSK": { "score": 0, "evidenceQuote": "sự nhạy cảm có bản lĩnh, bảo vệ quyền lợi chính đáng", "rationale": "Bản lĩnh nội tâm giữ vững lập trường công bằng." },
+      "INT": { "score": 2, "evidenceQuote": "cảm nhận chính xác cảm xúc và năng lượng của người khác qua trực giác", "rationale": "Trực giác tâm lý thấu suốt, đọc vị chính xác năng lượng xung quanh." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "không dám đứng lên bảo vệ quyền lợi chính đáng của mình", "rationale": "Thụ động cam chịu, tê liệt dũng khí hành động vì sợ va chạm." },
+      "EMO": { "score": -2, "evidenceQuote": "nhạy cảm thái quá dẫn đến dễ bị tổn thương, lụy tình, phụ thuộc cảm xúc", "rationale": "Lụy tình, yếu đuối, để cảm xúc phụ thuộc vào sự công nhận của người khác." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu ranh giới, không dám từ chối những đòi hỏi bất công", "rationale": "Dễ bị người khác thao túng cảm xúc do thiếu ranh giới phòng vệ." },
+      "RSK": { "score": -2, "evidenceQuote": "nỗi sợ xung đột khiến bản thân né tránh đối đầu", "rationale": "Nỗi sợ làm mất lòng khiến bản thân chịu thiệt thòi bất công." },
+      "INT": { "score": -1, "evidenceQuote": "tự ti, cả nghĩ, tích tụ năng lượng tiêu cực", "rationale": "Tâm trí suy diễn tiêu cực làm hao tổn sinh lực." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-3",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "3",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 3",
+    "sourceSnippet": "Người mang Con số Ngày sinh 3 (sinh vào các ngày 3, 12, 21, 30) sở hữu năng khiếu thiên bẩm về biểu đạt ngôn ngữ, óc hài hước duyên dáng, tư duy sáng tạo nhanh nhạy và khả năng làm chủ sân khấu. Bạn có tài biến những điều phức tạp trở nên dí dỏm, lôi cuốn và luôn mang lại nguồn năng lượng tích cực, tiếng cười cho những người xung quanh.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chủ động biến ý tưởng thành tác phẩm cụ thể, rèn luyện kỹ năng viết và thuyết trình", "rationale": "Hành động sáng tác tích cực, đóng gói tài năng thành sản phẩm thực tế." },
+      "EMO": { "score": 2, "evidenceQuote": "mang lại nguồn năng lượng tích cực, tiếng cười cho những người xung quanh, lôi cuốn", "rationale": "Năng khiếu truyền cảm hứng rực rỡ, kết nối mọi người bằng sự hóm hỉnh duyên dáng." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp tài năng biểu đạt với tính kỷ luật và sự đào sâu chuyên môn", "rationale": "Rèn luyện tính kỷ luật để biến năng khiếu thành thành tựu sự nghiệp." },
+      "RSK": { "score": 1, "evidenceQuote": "khả năng làm chủ sân khấu, tự tin trước công chúng", "rationale": "Bản lĩnh tự tin tỏa sáng trước đám đông, không sợ ánh nhìn đánh giá." },
+      "INT": { "score": 2, "evidenceQuote": "năng khiếu thiên bẩm về biểu đạt ngôn ngữ, tư duy sáng tạo nhanh nhạy", "rationale": "Khả năng ngôn từ thông minh, tư duy liên tưởng sắc bén xuất chúng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "làm việc theo cảm hứng nhất thời, dễ phân tán năng lượng", "rationale": "Hành động tùy hứng, thiếu kiên định và dễ bỏ dở dự án." },
+      "EMO": { "score": -1, "evidenceQuote": "thói quen vô tư buông lời mỉa mai khi tức giận, tính khí thất thường", "rationale": "Lạm dụng ngôn từ làm tổn thương người khác khi mất bình tĩnh." },
+      "STR": { "score": -2, "evidenceQuote": "chi tiêu bốc đồng, phân tán vào quá nhiều thú vui vô bổ", "rationale": "Mất kiểm soát tài chính và thời gian vì thói quen bốc đồng." },
+      "RSK": { "score": 0, "evidenceQuote": "hành động theo cảm xúc nhất thời", "rationale": "Mạo hiểm tùy tiện theo hưng phấn nhất thời." },
+      "INT": { "score": -1, "evidenceQuote": "nông cạn hời hợt, không chịu đào sâu chuyên môn", "rationale": "Tư duy bề nổi, lãng phí năng khiếu vào những trò đùa vô bổ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-4",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "4",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 4",
+    "sourceSnippet": "Người mang Con số Ngày sinh 4 (sinh vào các ngày 4, 13, 22, 31) sở hữu món quà bẩm sinh về tính kỷ luật tự giác, óc tổ chức ngăn nắp, sự kiên nhẫn làm việc tỉ mỉ và năng lực quản lý tài chính/thời gian thực tế. Bạn là người đáng tin cậy, làm việc có phương pháp và luôn nỗ lực xây dựng nền móng kiên cố.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lao động cần cù, làm việc tỉ mỉ kiên trì, biến ý tưởng thành hiện thực", "rationale": "Năng lực thực thi bền bỉ, kiên định hoàn thành trọn vẹn từng mục tiêu." },
+      "EMO": { "score": 0, "evidenceQuote": "thả lỏng cơ mặt, học cách khen ngợi động viên người khác", "rationale": "Học cách thể hiện sự ấm áp mềm mại trong các mối quan hệ." },
+      "STR": { "score": 2, "evidenceQuote": "óc tổ chức ngăn nắp, kỷ luật tự giác, quản lý thời gian tài chính thực tế", "rationale": "Món quà thiên bẩm về tính tổ chức, xây dựng nền tảng trật tự kỷ cương." },
+      "RSK": { "score": 0, "evidenceQuote": "cẩn trọng kiểm chứng số liệu thực tế, quản trị rủi ro vững chắc", "rationale": "Thận trọng tối đa, chỉ hành động khi có cơ sở an toàn rõ ràng." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy logic kỹ thuật, phân tích chi tiết dữ liệu thực tế", "rationale": "Trí tuệ thực tế sắc bén, nắm bắt các chi tiết kỹ thuật phức tạp." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "tê liệt vì đòi hỏi mọi thứ phải hoàn hảo mới chịu hành động", "rationale": "Cầu toàn quá mức làm chậm trễ tiến độ công việc." },
+      "EMO": { "score": -2, "evidenceQuote": "khô khan, cứng nhắc, khó tính soi mói lỗi nhỏ của người khác", "rationale": "Lạnh lùng, khắt khe dập tắt tinh thần sáng tạo của người xung quanh." },
+      "STR": { "score": -2, "evidenceQuote": "bảo thủ giáo điều, biến mình thành nô lệ của công việc workaholic", "rationale": "Kỷ luật biến thành sự giam cầm cực đoan, tự vắt kiệt sinh lực." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi sự thay đổi, bám víu vào lề lối cũ kỹ", "rationale": "Nỗi sợ rủi ro khiến bản thân từ chối các cơ hội đổi mới." },
+      "INT": { "score": -1, "evidenceQuote": "nhìn đời bằng con mắt vật chất khô khan, thiếu linh hoạt", "rationale": "Tư duy đóng khung, bài xích những ý tưởng đột phá phi truyền thống." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-5",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "5",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 5",
+    "sourceSnippet": "Người mang Con số Ngày sinh 5 (sinh vào các ngày 5, 14, 23) sở hữu món quà thiên phú về sự linh hoạt, khả năng thích ứng siêu phàm và óc sáng tạo phóng khoáng. Bạn có phản xạ cơ động nhanh nhạy, tính cách cởi mở và lòng dũng cảm bước ra khỏi vùng an toàn để khám phá thế giới.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khả năng thích ứng siêu phàm, phản xạ cơ động nhanh nhạy trong biến động", "rationale": "Hành động linh hoạt phi thường, luôn chuyển động tìm kiếm cơ hội." },
+      "EMO": { "score": 1, "evidenceQuote": "tính cách cởi mở hòa đồng, kết nối ngoại giao tự nhiên", "rationale": "Phóng khoáng, cuốn hút và dễ dàng hòa nhập vào mọi môi trường." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật tự giác làm bệ đỡ cho tự do, cam kết kiên trì", "rationale": "Biết dùng kỷ luật tự thân để định hình cho sự sáng tạo tự do." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm phiêu lưu mạo hiểm, dám bứt phá khỏi vùng an toàn", "rationale": "Bản lĩnh tiên phong dấn thân, không ngại rủi ro thử thách mới." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy phóng khoáng cấp tiến, trực giác nhạy bén nắm bắt xu thế", "rationale": "Tâm trí cởi mở, nhanh nhạy tiếp thu và ứng dụng các xu hướng thời đại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cả thèm chóng chán, thiếu kiên trì bỏ dở công việc giữa chừng", "rationale": "Hành động đứt quãng, thiếu sự bền bỉ cam kết dài hạn." },
+      "EMO": { "score": -1, "evidenceQuote": "sợ sự ràng buộc gia đình, trốn chạy trách nhiệm gắn kết", "rationale": "Ích kỷ cá nhân, né tránh các bổn phận tình cảm sâu sắc." },
+      "STR": { "score": -2, "evidenceQuote": "sa đà vào những thói quen buông thả nghiện ngập cờ bạc bốc đồng", "rationale": "Tự do thoái hóa thành thói trụy lạc buông thả, phá hủy trật tự sống." },
+      "RSK": { "score": 2, "evidenceQuote": "mạo hiểm liều lĩnh ngu muội, tìm kiếm cảm giác mạnh bất chấp", "rationale": "Đầu cơ liều mạng, đánh bạc với số phận vì kích thích nhất thời." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng, đứng núi này trông núi nọ", "rationale": "Tâm trí bồn chồn hỗn loạn, mất khả năng tập trung sâu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-6",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "6",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 6",
+    "sourceSnippet": "Người mang Con số Ngày sinh 6 (sinh vào các ngày 6, 15, 24) được vũ trụ trao tặng món quà thiên bẩm về lòng trắc ẩn bao la, tinh thần trách nhiệm gia đình và năng khiếu thẩm mỹ nghệ thuật tinh tế. Bạn có bản năng chăm sóc, che chở cho người khác và khả năng kiến tạo không gian sống ấm cúng.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm chút từng ly từng tí, chu toàn trách nhiệm gia đình và cộng đồng", "rationale": "Hành động ân cần tỉ mỉ, luôn đi đầu trong việc chăm sóc người khác." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng trắc ẩn bao la, tình yêu thương ấm áp, khả năng chở che và chữa lành", "rationale": "Trái tim nhân hậu dịu dàng, suối nguồn an lành cho những người xung quanh." },
+      "STR": { "score": 1, "evidenceQuote": "khéo léo tổ chức không gian sống thẩm mỹ ấm cúng, rèn luyện ranh giới", "rationale": "Gu thẩm mỹ tinh tế kết hợp với ý thức trật tự gia đình." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "năng khiếu thẩm mỹ nghệ thuật tinh tế, trực giác tâm lý nhạy cảm", "rationale": "Khả năng cảm thụ cái đẹp và trực giác tâm lý sâu sắc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "ôm đồm việc chăm sóc quá mức tạo thói quen ỷ lại cho người khác", "rationale": "Hành vi bao bọc thái quá tước đoạt sự tự lập của người thân." },
+      "EMO": { "score": -2, "evidenceQuote": "bao bọc kiểm soát ngột ngạt, hay cằn nhằn áp đặt, cay đắng đóng vai nạn nhân", "rationale": "Tình thương trở thành sự kiểm soát độc tài, dày vò người xung quanh." },
+      "STR": { "score": -1, "evidenceQuote": "can thiệp quá sâu vào đời tư và không gian riêng của người khác", "rationale": "Xâm phạm ranh giới cá nhân dưới danh nghĩa yêu thương." },
+      "RSK": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực lo âu thái quá thêu dệt kịch bản xấu", "rationale": "Nỗi sợ rủi ro mơ hồ gây căng thẳng thần kinh triền miên." },
+      "INT": { "score": -1, "evidenceQuote": "suy diễn bi quan, luôn nhìn thấy nguy cơ rình rập người thân", "rationale": "Tâm trí bị bủa vây bởi các kịch bản lo sợ tự thêu dệt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-7",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "7",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 7",
+    "sourceSnippet": "Người mang Con số Ngày sinh 7 (sinh vào các ngày 7, 16, 25) sở hữu món quà đặc biệt về chiều sâu tư duy triết học, óc phân tích sắc bén mổ xẻ bản chất vấn đề và năng lực tự học độc lập phi thường. Bạn sinh ra để tìm kiếm chân lý và giải mã các hiện tượng cuộc sống.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "dành thời gian tĩnh lặng mỗi ngày, chuyển hóa tri thức thành giải pháp thực tế", "rationale": "Hành động điềm tĩnh, suy xét thấu đáo trước khi đưa ra quyết định." },
+      "EMO": { "score": 0, "evidenceQuote": "mở lòng đón nhận sự ấm áp giản dị, chia sẻ tri thức cho đời", "rationale": "Học cách kết nối ấm áp và chia sẻ trí tuệ cho cộng đồng." },
+      "STR": { "score": 1, "evidenceQuote": "năng lực tự học và nghiên cứu chuyên sâu độc lập phi thường", "rationale": "Kỷ luật nghiên cứu khoa học bền bỉ, phương pháp tiếp cận chuẩn mực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "óc phân tích sắc sảo mổ xẻ bản chất vấn đề, trực giác triết học thấu suốt, minh triết", "rationale": "Đỉnh cao minh triết, khả năng giải mã quy luật vũ trụ sâu xa." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "sống ẩn dật cô độc, xa lánh xã hội, tê liệt hành động thực tế", "rationale": "Thu mình thụ động trong tháp ngà tri thức, từ chối hành động đời thường." },
+      "EMO": { "score": -2, "evidenceQuote": "hoài nghi cay độc, khép kín cực đoan, kiêu ngạo trí tuệ coi thường người khác", "rationale": "Băng giá xa cách, nhìn đời bằng con mắt nghi kỵ coi khinh." },
+      "STR": { "score": -1, "evidenceQuote": "chìm đắm vào thế giới sách vở lý thuyết viển vông", "rationale": "Mất kết nối với quy luật vận hành thực tế của thị trường." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi mở lòng vì sợ bị phán xét là kẻ dị biệt", "rationale": "Thiếu dũng khí bộc lộ sự yếu đuối thật bên trong tâm can." },
+      "INT": { "score": -1, "evidenceQuote": "bệnh hoài nghi triệt để làm tê liệt niềm tin", "rationale": "Hoài nghi quá mức dẫn đến bế tắc và bi quan u uất." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-8",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "8",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 8",
+    "sourceSnippet": "Người mang Con số Ngày sinh 8 (sinh vào các ngày 8, 17, 26) sở hữu năng khiếu thiên phú về tư duy tài chính sắc sảo, sự nhạy bén thương trường và bản lĩnh điều hành quyền lực. Bạn có ý chí sắt đá, tư duy kinh doanh thực tế và khả năng hiện thực hóa các mục tiêu lớn.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "ý chí sắt đá kiên cường, hành động dứt khoát quyết liệt, hiện thực hóa mục tiêu", "rationale": "Năng lực hành động dũng mãnh, quyết liệt dẫn dắt và chinh phục đỉnh cao vật chất." },
+      "EMO": { "score": 1, "evidenceQuote": "kinh doanh phụng sự, đối xử công bằng, dùng thành công tài chính nâng đỡ người khác", "rationale": "Lãnh đạo bằng sự chính trực, dùng tài sản làm phương tiện phụng sự đời." },
+      "STR": { "score": 2, "evidenceQuote": "tư duy quản trị tài chính sắc bén, điều hành tổ chức quy mô lớn, kỷ luật", "rationale": "Bậc thầy về tư duy hệ thống tài chính và điều phối nguồn lực khổng lồ." },
+      "RSK": { "score": 2, "evidenceQuote": "bản lĩnh thương trường, dám đưa ra các quyết định lớn rủi ro cao", "rationale": "Bản lĩnh kiên cường trên thương trường khốc liệt, dám chơi lớn." },
+      "INT": { "score": 1, "evidenceQuote": "nhạy bén nắm bắt quy luật vật chất, tư duy chiến lược thịnh vượng", "rationale": "Tư duy kinh tế sắc bén, nắm vững các quy luật giá trị và đòn bẩy." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lạm quyền chèn ép cấp dưới, áp đặt độc tài", "rationale": "Dùng quyền lực áp bức thô bạo, vắt kiệt sức lao động của người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "thực dụng tàn nhẫn, tham lam bất chấp đạo đức, coi nhẹ tình cảm gia đình", "rationale": "Mất nhân tính vì tiền bạc, lạnh lùng chà đạp lên đạo đức và tình thân." },
+      "STR": { "score": -1, "evidenceQuote": "nợ nần hỗn loạn do quản lý yếu kém khi bị lòng tham chi phối", "rationale": "Mất cân đối dòng tiền do đòn bẩy tài chính quá trớn." },
+      "RSK": { "score": 2, "evidenceQuote": "đầu cơ tham lam, sử dụng đòn bẩy tài chính quá mức liều lĩnh", "rationale": "Lòng tham làm mờ mắt, dẫn tới các quyết định đầu tư liều mạng." },
+      "INT": { "score": -1, "evidenceQuote": "coi tiền bạc và quyền lực là mục đích tối thượng duy nhất", "rationale": "Nhận thức lệch lạc, đánh đồng giá trị sống với khối lượng tài sản." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-9",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "9",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 9",
+    "sourceSnippet": "Người mang Con số Ngày sinh 9 (sinh vào các ngày 9, 18, 27) được vũ trụ trao tặng món quà bẩm sinh về lòng bao dung vị tha, tầm nhìn nhân văn vĩ mô và tinh thần phụng sự vô tư vì cộng đồng. Bạn có sức hút đạo đức tự nhiên và khả năng truyền cảm hứng sống đẹp cho người khác.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động cống hiến phụng sự cộng đồng, bảo vệ công lý xã hội, truyền cảm hứng", "rationale": "Hành động vị tha hào hiệp, dấn thân vì sự tiến bộ của cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng vị tha trắc ẩn không phân biệt ranh giới, uy tín đạo đức thu hút lòng người", "rationale": "Tình thương nhân loại bao la, tấm lòng bác ái thuần khiết." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp lý tưởng với tính khả thi, phân kỳ kế hoạch hành động cụ thể", "rationale": "Hệ thống hóa các dự án thiện nguyện và nhân đạo bài bản." },
+      "RSK": { "score": 1, "evidenceQuote": "đấu tranh cho công lý xã hội, không màng danh lợi cá nhân", "rationale": "Dũng cảm đối mặt với áp lực để bảo vệ những giá trị nhân văn cao đẹp." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn vĩ mô bao quát nhân loại, ngọn hải đăng khai sáng dìu dắt cộng đồng", "rationale": "Trí tuệ nhân đạo khai phóng, thấu suốt sứ mệnh tiến hóa của xã hội." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm việc bao đồng ngoài xã hội mà bỏ bê gia đình nhỏ của mình", "rationale": "Hành động thiếu cân bằng, nhiệt tình bên ngoài mà lạnh nhạt với người thân." },
+      "EMO": { "score": -1, "evidenceQuote": "ôm giữ hận thù và dằn vặt quá khứ, thất vọng cay đắng khi lòng tốt bị lợi dụng", "rationale": "Chấp niệm u uất, khó buông bỏ oán kết cũ làm vẩn đục tâm trí." },
+      "STR": { "score": -2, "evidenceQuote": "quản lý tài chính cá nhân yếu kém, cho đi bừa bãi thiếu kiểm chứng", "rationale": "Hệ thống tài chính cá nhân sụp đổ vì sự hào phóng thiếu tỉnh thức." },
+      "RSK": { "score": 0, "evidenceQuote": "dễ bị kẻ xấu lợi dụng lòng trắc ẩn", "rationale": "Mạo hiểm trao gửi niềm tin sai lầm dẫn đến mất mát." },
+      "INT": { "score": -2, "evidenceQuote": "rơi vào ảo tưởng viển vông xa rời thực tế", "rationale": "Tư duy không tưởng, xa rời các quy luật thực tế khốc liệt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-10",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "10",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh 10",
+    "sourceSnippet": "Người mang Con số Ngày sinh 10 (sinh vào ngày 10) sở hữu món quà thiên phú về sự linh hoạt, cơ động cao, tính độc lập tự chủ và khả năng thích ứng tuyệt vời trong mọi hoàn cảnh. Bạn dễ dàng thu hút người khác bằng sự hòa đồng, tự tin và năng lượng tích cực.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "khả năng thích ứng siêu phàm, linh hoạt đa tài, tiên phong nắm bắt cơ hội", "rationale": "Hành động nhanh nhạy cơ động, năng lực xoay chuyển tình thế xuất chúng." },
+      "EMO": { "score": 1, "evidenceQuote": "được số đông yêu mến nhờ tính cách hòa đồng vui vẻ, năng lượng tích cực", "rationale": "Tạo dựng mối quan hệ tự nhiên, cuốn hút bằng sự tươi vui và cởi mở." },
+      "STR": { "score": 1, "evidenceQuote": "xác lập mục tiêu kiên định, kỷ luật tự thân để không bị phân tán", "rationale": "Học cách giữ vững mục tiêu cốt lõi giữa muôn vàn cơ hội." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng cảm nắm bắt vận hội mới, tự tin dấn thân vào các lĩnh vực đa dạng", "rationale": "Bản lĩnh chấp nhận rủi ro, linh hoạt biến nguy cơ thành cơ hội lớn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận thức sắc sảo về cơ hội, trực giác kinh doanh nhạy bén", "rationale": "Khả năng đọc vị xu thế thị trường và thích nghi chớp nhoáng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cả thèm chóng chán, dễ phân tán năng lượng vào quá nhiều việc cùng lúc", "rationale": "Hành động lan man, thiếu chiều sâu và dễ bỏ dở giữa chừng." },
+      "EMO": { "score": -1, "evidenceQuote": "tự mãn kiêu ngạo khi đạt chút thành công ban đầu", "rationale": "Cái tôi bốc đồng khiến bản thân xem thường sự hỗ trợ của người khác." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu sự kiên định, sống bấp bênh vì nhảy việc liên tục", "rationale": "Thiếu kỷ luật bền bỉ, dễ bị trôi dạt vô định khi mất phương hướng." },
+      "RSK": { "score": 1, "evidenceQuote": "quá tự tin vào vận may dẫn đến đầu tư liều lĩnh", "rationale": "Chủ quan ỷ lại vào may mắn, thiếu sự thẩm định cẩn trọng." },
+      "INT": { "score": -1, "evidenceQuote": "nông cạn hời hợt, không chịu đào sâu chuyên môn", "rationale": "Tư duy bề nổi, biết nhiều thứ nhưng không tinh thông việc gì." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-11",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "11",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh Master 11",
+    "sourceSnippet": "Người mang Con số Ngày sinh Master 11 (sinh vào các ngày 11, 29) sở hữu món quà thiên phú về trực giác siêu giác quan thấu suốt, sự tinh tế nhạy cảm tâm linh và năng lực truyền cảm hứng thức tỉnh tinh thần cho muôn người.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "thực hành nối đất Grounding nghiêm ngặt, thiền định kết nối thực tế", "rationale": "Hành động trong sự tỉnh thức, giữ vững cân bằng giữa tinh thần và đời sống." },
+      "EMO": { "score": 2, "evidenceQuote": "tình yêu thương thuần khiết, năng lượng chữa lành tâm thức tự nhiên, đức khiêm nhường", "rationale": "Trái tim thánh thiện dịu dàng, nguồn năng lượng xoa dịu nỗi đau tinh thần muôn người." },
+      "STR": { "score": 1, "evidenceQuote": "lối sống lành mạnh thanh khiết, kỷ luật bảo vệ năng lượng hệ thần kinh", "rationale": "Chuẩn hóa chế độ sinh hoạt để giữ cho thể chất và thần kinh vững vàng." },
+      "RSK": { "score": 1, "evidenceQuote": "truyền cảm hứng thức tỉnh mạnh mẽ, soi sáng cho những tâm hồn lạc lối", "rationale": "Dũng cảm đón nhận sứ mệnh tâm linh khai sáng bất chấp sự nghi ngại của đời." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác siêu giác quan thấu suốt năng lượng, thông tuệ tinh thần, dự báo xuất thần", "rationale": "Trực giác siêu phàm, cây cầu kết nối giữa cõi trần và cõi tinh thần tối cao." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "chông chênh, tê liệt hành động trước áp lực vật chất đời thường", "rationale": "Thiếu tính thực tiễn, dễ bị ngợp trước các bài toán cơm áo gạo tiền." },
+      "EMO": { "score": -2, "evidenceQuote": "thần kinh căng thẳng kiệt quệ vì lo âu, tự ti nghi ngờ trực giác của mình", "rationale": "Quá tải cảm xúc, hệ thần kinh suy nhược rơi vào hoảng loạn lo âu." },
+      "STR": { "score": -1, "evidenceQuote": "mất kết nối với đất mẹ Grounding, cuộc sống mất thăng bằng", "rationale": "Mất nền tảng thể chất, tâm trí bay bổng thiếu điểm tựa an toàn." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi sứ mệnh lớn, hoang mang khi bị đám đông hiểu lầm", "rationale": "Thiếu dũng khí đối mặt với sự cô độc của người đi trước thời đại." },
+      "INT": { "score": -1, "evidenceQuote": "sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng tâm linh", "rationale": "Tâm trí bị u mê dẫn dụ bởi những ảo ảnh dị đoan phi lý trí." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "dateOfBirth-22",
+    "indicatorKey": "dateOfBirth",
+    "indicatorNameVi": "Ngày Sinh",
+    "numberValue": "22",
+    "title": "Món Quà Thiên Bẩm Của Con Số Ngày Sinh Master 22",
+    "sourceSnippet": "Người mang Con số Ngày sinh Master 22 (sinh vào ngày 22) sở hữu món quà thiên phú quyền năng nhất của Bậc Thầy Kiến Thiết: tiềm năng chuyển hóa các ý tưởng vĩ mô thành các đại công trình, hệ thống thể chế vững chắc mang tính di sản phụng sự hàng triệu con người.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chuyển hóa tầm nhìn vĩ mô thành đại công trình thực tế, quy tụ nguồn lực khổng lồ", "rationale": "Năng lực kiến thiết phi thường, hiện thực hóa các đại dự án mang tính lịch sử." },
+      "EMO": { "score": 1, "evidenceQuote": "lãnh đạo bằng sự trao quyền, đào tạo cộng sự tài đức cùng chung tay gánh vác", "rationale": "Quy tụ nhân tài và dẫn dắt tập thể bằng tinh thần phụng sự nhân loại cao cả." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực thực thi kỷ luật thép của số 4, tầm nhìn chiến lược vĩ mô xuyên thế kỷ, quy chuẩn", "rationale": "Đỉnh cao tuyệt đối của tư duy hệ thống và kỷ luật vận hành chuẩn mực." },
+      "RSK": { "score": 2, "evidenceQuote": "tài năng điều phối và quy tụ nguồn lực khổng lồ, ý chí sắt đá phi thường", "rationale": "Bản lĩnh làm chủ các cuộc chơi tầm cỡ thế giới, dám gánh vác trách nhiệm lịch sử." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn chiến lược vĩ mô kết hợp bản lĩnh chuyển hóa thực tại vượt bậc", "rationale": "Trí tuệ tổng công trình sư vĩ đại, làm chủ cả thế giới tinh thần lẫn vật chất." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "độc tài tàn nhẫn thao túng người khác, thúc ép tiến độ khốc liệt", "rationale": "Dùng quyền lực áp bức thô bạo, biến người khác thành công cụ phục vụ đại nghiệp." },
+      "EMO": { "score": -2, "evidenceQuote": "tham vọng quyền lực mù quáng, cô độc trên đỉnh cao danh vọng", "rationale": "Tham vọng ngút trời làm đóng băng trái tim, đánh mất hạnh phúc gia đình." },
+      "STR": { "score": -1, "evidenceQuote": "hoang mang sợ hãi, chôn vùi tiềm năng trong sự an phận bảo thủ tầm thường", "rationale": "Rơi xuống cực đoan bảo thủ của số 4 thấp, tự giam mình trong nỗi sợ thất bại." },
+      "RSK": { "score": 1, "evidenceQuote": "mạo hiểm nguồn lực khổng lồ vì tham vọng để đời", "rationale": "Mạo hiểm quá mức quy mô tài chính, tiềm ẩn nguy cơ đổ vỡ dây chuyền." },
+      "INT": { "score": -1, "evidenceQuote": "thất vọng cay đắng khi thực tế không hoàn hảo như bản thiết kế", "rationale": "Căng thẳng trí não tột độ do áp lực cầu toàn vĩ mô." }
+    },
+    "overallConfidence": 0.95
+  }
+]

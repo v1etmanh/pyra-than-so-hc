@@ -1,0 +1,702 @@
+[
+  {
+    "cardId": "pentacles-01",
+    "cardNameVi": "Át Tiền",
+    "cardNameEn": "Ace of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cơ hội thực tế, thịnh vượng, khởi đầu. Ý nghĩa: Át Tiền xuôi nhấn mạnh cơ hội thực tế, thịnh vượng, khởi đầu; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "nắm bắt cơ hội thực tế", "rationale": "Chủ động đón lấy đồng tiền vàng trên bàn tay vũ trụ." },
+      "EMO": { "score": 1, "evidenceQuote": "thịnh vượng, hoan hỉ", "rationale": "Cảm giác an tâm, no ấm và hạnh phúc trước món quà thực tế." },
+      "STR": { "score": 2, "evidenceQuote": "nền tảng vật chất vững chắc", "rationale": "Đặt viên gạch đầu tiên cho một dự án thực tế sinh lời lâu dài." },
+      "RSK": { "score": 1, "evidenceQuote": "khởi đầu đầu tư", "rationale": "Tự tin gieo hạt giống tiền bạc vào mảnh đất màu mỡ." },
+      "INT": { "score": 1, "evidenceQuote": "nhận diện hạt mầm thịnh vượng", "rationale": "Trực giác nhạy bén phát hiện ra cơ hội kinh doanh sinh lời." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "quá tính toán vật chất", "rationale": "Có thể nhìn mọi thứ qua lăng kính tiền bạc thực dụng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-01",
+    "cardNameVi": "Át Tiền",
+    "cardNameEn": "Ace of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lỡ cơ hội, đầu tư kém, trì hoãn. Ý nghĩa: Át Tiền ngược gợi ý lỡ cơ hội, đầu tư kém, trì hoãn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Dừng lại việc vung tiền vào những kế hoạch bấp bênh." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "tính toán lại tài chính", "rationale": "Kiểm toán lại nguồn vốn để tránh thất thoát thêm." },
+      "RSK": { "score": -1, "evidenceQuote": "thận trọng hơn trong đầu tư", "rationale": "Học bài học cảnh giác sau thương vụ đầu tư kém hiệu quả." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sai lầm đầu tư", "rationale": "Thấu suốt nguyên nhân khiến dòng tiền bị tắc nghẽn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "trì hoãn", "rationale": "Lần lữa không chịu hành động khiến cơ hội làm ăn trôi qua." },
+      "EMO": { "score": -1, "evidenceQuote": "tiếc nuối tiền bạc", "rationale": "Xót xa vì tiền mất tật mang, bực bội với bản thân." },
+      "STR": { "score": -2, "evidenceQuote": "đầu tư kém, quản lý lỏng lẻo", "rationale": "Kế hoạch tài chính vụng về, chi tiêu hoang phí vô tội vạ." },
+      "RSK": { "score": 1, "evidenceQuote": "ném tiền qua cửa sổ", "rationale": "Đánh bạc tài chính vào những dự án ảo không có nền tảng." },
+      "INT": { "score": -1, "evidenceQuote": "lỡ cơ hội", "rationale": "Mù mờ trước dòng chảy thị trường, không nhận diện được giá trị thật." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-02",
+    "cardNameVi": "2 Tiền",
+    "cardNameEn": "Two of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cân bằng, thích nghi, ưu tiên. Ý nghĩa: 2 Tiền xuôi nhấn mạnh cân bằng, thích nghi, ưu tiên; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tung hứng linh hoạt", "rationale": "Xoay sở tài tình giữa nhiều đầu việc cùng một lúc." },
+      "EMO": { "score": 1, "evidenceQuote": "thảnh thơi trong nhịp điệu", "rationale": "Vui vẻ, lạc quan nhảy múa giữa những biến động của dòng đời." },
+      "STR": { "score": 2, "evidenceQuote": "cân bằng, thích nghi, ưu tiên", "rationale": "Bậc thầy về điều phối thời gian, tài chính và phân bổ nguồn lực." },
+      "RSK": { "score": 1, "evidenceQuote": "lướt trên những con sóng lớn", "rationale": "Không sợ sóng gió, uyển chuyển thích ứng với biến động thị trường." },
+      "INT": { "score": 1, "evidenceQuote": "biểu tượng vô cực", "rationale": "Thấu suốt quy luật tuần hoàn bất tận của dòng tiền và năng lượng." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "bận rộn liên tục", "rationale": "Có thể xoay như chong chóng mà chưa tích lũy được giá trị lâu dài." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "giữ thăng bằng tạm thời", "rationale": "Cần tập trung cao độ, chỉ cần lơ là một chút là rơi bóng." },
+      "RSK": { "score": 1, "evidenceQuote": "mạo hiểm xoay vòng vốn", "rationale": "Nguy cơ đứt gánh nếu các mắt xích dòng tiền gặp trục trặc." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-02",
+    "cardNameVi": "2 Tiền",
+    "cardNameEn": "Two of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: quá tải, hỗn loạn, mất cân bằng. Ý nghĩa: 2 Tiền ngược gợi ý quá tải, hỗn loạn, mất cân bằng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "dừng tung hứng lại", "rationale": "Hạ bớt các quả bóng xuống, tập trung giải quyết từng việc một." },
+      "EMO": { "score": 1, "evidenceQuote": "giảm tải áp lực", "rationale": "Hít thở sâu, thừa nhận rằng mình không phải là siêu nhân." },
+      "STR": { "score": 1, "evidenceQuote": "sắp xếp lại ưu tiên", "rationale": "Loại bỏ những việc râu ria để giữ lấy mắt xích sống còn." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh vay mượn thêm", "rationale": "Ngừng việc giật gấu vá vai trong tài chính." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự mất cân bằng", "rationale": "Ý thức được giới hạn chịu tải của bản thân." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "rơi bóng, rối loạn", "rationale": "Làm hỏng việc, đổ vỡ các cam kết vì ôm đồm quá sức." },
+      "EMO": { "score": -2, "evidenceQuote": "quá tải, căng thẳng tột độ", "rationale": "Stress nặng nề, hoảng loạn trước núi nợ nần hoặc công việc ngập đầu." },
+      "STR": { "score": -2, "evidenceQuote": "hỗn loạn, mất cân bằng", "rationale": "Cấu trúc tài chính sụp đổ, nợ nần chồng chất, mất khả năng thanh toán." },
+      "RSK": { "score": 1, "evidenceQuote": "liều mạng xoay xở", "rationale": "Càng xoay càng rối, vay chỗ này đắp chỗ kia tạo vòng xoáy nợ." },
+      "INT": { "score": -1, "evidenceQuote": "mất kiểm soát phương hướng", "rationale": "Đầu óc bấn loạn không còn biết nên bắt đầu từ đâu." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-03",
+    "cardNameVi": "3 Tiền",
+    "cardNameEn": "Three of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: hợp tác, kỹ năng, xây dựng. Ý nghĩa: 3 Tiền xuôi nhấn mạnh hợp tác, kỹ năng, xây dựng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hợp tác, thi công xây dựng", "rationale": "Lao động miệt mài, cùng đồng nghiệp đục đẽo từng viên đá kiệt tác." },
+      "EMO": { "score": 1, "evidenceQuote": "tôn trọng lẫn nhau", "rationale": "Không khí làm việc hòa thuận, lắng nghe và ghi nhận tay nghề của nhau." },
+      "STR": { "score": 2, "evidenceQuote": "kỹ năng, bản vẽ thiết kế, xây dựng", "rationale": "Chuẩn mực nghề nghiệp cao độ, làm việc theo bản vẽ kiến trúc bài bản." },
+      "RSK": { "score": 0, "evidenceQuote": "tiến bước chắc chắn", "rationale": "Đảm bảo chất lượng từng bước, không làm ẩu để chạy tiến độ." },
+      "INT": { "score": 1, "evidenceQuote": "tay nghề điêu luyện", "rationale": "Thổi hồn nghệ thuật và sự tinh hoa vào công trình vật chất." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "quá chú trọng tiểu tiết", "rationale": "Có thể cầu toàn tỉ mẩn từng chi tiết nhỏ làm chậm tiến độ chung." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-03",
+    "cardNameVi": "3 Tiền",
+    "cardNameEn": "Three of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thiếu hợp tác, chất lượng kém, xung đột. Ý nghĩa: 3 Tiền ngược gợi ý thiếu hợp tác, chất lượng kém, xung đột; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại quy trình", "rationale": "Dừng thi công để kiểm định lại chất lượng vật liệu và tay nghề." },
+      "EMO": { "score": 1, "evidenceQuote": "giải quyết bất đồng nội bộ", "rationale": "Hàn gắn mối quan hệ giữa các thành viên trong nhóm dự án." },
+      "STR": { "score": 1, "evidenceQuote": "chỉnh đốn tiêu chuẩn chất lượng", "rationale": "Đưa ra quy chuẩn nghiệm thu khắt khe hơn để sửa sai." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra vết nứt công trình", "rationale": "Phát hiện sớm các lỗi kỹ thuật trước khi công trình sập." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "đình công, trễ hạn", "rationale": "Công việc bị đình trệ do các bên không tìm được tiếng nói chung." },
+      "EMO": { "score": -2, "evidenceQuote": "xung đột, bằng mặt không bằng lòng", "rationale": "Cãi cọ, đùn đẩy trách nhiệm, coi thường chuyên môn của nhau." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu hợp tác, chất lượng kém", "rationale": "Làm ăn cẩu thả, rút ruột công trình, thi công sai bản vẽ kỹ thuật." },
+      "RSK": { "score": -1, "evidenceQuote": "nguy cơ sập công trình", "rationale": "Chất lượng tồi tệ đe dọa sự an toàn của cả dự án." },
+      "INT": { "score": -1, "evidenceQuote": "mất lương tâm nghề nghiệp", "rationale": "Thiếu đạo đức nghề nghiệp, làm bừa để kiếm tiền bất chính." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-04",
+    "cardNameVi": "4 Tiền",
+    "cardNameEn": "Four of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: an toàn, tiết kiệm, kiểm soát. Ý nghĩa: 4 Tiền xuôi nhấn mạnh an toàn, tiết kiệm, kiểm soát; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "ôm chặt đồng tiền, giữ nguyên vị trí", "rationale": "Hành động phòng thủ, bảo toàn vốn liếng, không vội đầu tư mạo hiểm." },
+      "EMO": { "score": 0, "evidenceQuote": "an toàn trong sở hữu", "rationale": "Tìm thấy cảm giác yên tâm khi nắm chắc tài sản trong tay." },
+      "STR": { "score": 2, "evidenceQuote": "tiết kiệm, kiểm soát, ranh giới tài chính", "rationale": "Kỷ luật thép trong chi tiêu, quản lý ngân sách chặt chẽ tuyệt đối." },
+      "RSK": { "score": -2, "evidenceQuote": "bảo toàn tuyệt đối", "rationale": "Nói không với mọi rủi ro, phòng thủ co cụm để bảo vệ thành quả." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "không dám nhúc nhích", "rationale": "Ôm tiền ngồi im một chỗ, khiến dòng tiền bị đóng băng chết dí." },
+      "EMO": { "score": -2, "evidenceQuote": "keo kiệt, sợ mất", "rationale": "Bủn xỉn, keo bẩn với chính mình và người thân vì nỗi sợ nghèo đói." },
+      "STR": { "score": 2, "evidenceQuote": "cứng nhắc kiểm soát", "rationale": "Kiểm soát độc đoán mọi chi tiêu khiến gia đình ngột ngạt." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ mất mát tột độ", "rationale": "Ăn không ngon ngủ không yên vì luôn nơm nớp sợ bị cướp đoạt." },
+      "INT": { "score": -1, "evidenceQuote": "lệ thuộc vào vật chất", "rationale": "Đồng hóa giá trị bản thân với số dư tài khoản ngân hàng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-04",
+    "cardNameVi": "4 Tiền",
+    "cardNameEn": "Four of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: tham giữ, sợ mất, cứng nhắc. Ý nghĩa: 4 Tiền ngược gợi ý tham giữ, sợ mất, cứng nhắc; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "mở tay ra, lưu thông dòng tiền", "rationale": "Chủ động mở rộng hầu bao, đầu tư kinh doanh để tiền đẻ ra tiền." },
+      "EMO": { "score": 1, "evidenceQuote": "hào phóng hơn", "rationale": "Học cách chia sẻ, từ thiện và giúp đỡ người khó khăn." },
+      "STR": { "score": 1, "evidenceQuote": "linh hoạt trong chi tiêu", "rationale": "Cởi bỏ sự kẹp chặt để dòng năng lượng tài chính lưu thông." },
+      "RSK": { "score": 1, "evidenceQuote": "dám chấp nhận rủi ro đầu tư", "rationale": "Can đảm mang tiền ra thị trường thay vì cất dưới gầm giường." },
+      "INT": { "score": 2, "evidenceQuote": "thấu hiểu quy luật dòng chảy", "rationale": "Giác ngộ rằng tiền bạc chỉ có giá trị thực sự khi nó được lưu thông phục vụ cuộc sống." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "vung tay quá trán", "rationale": "Từ keo kiệt chuyển sang tiêu hoang bạt mạng mất kiểm soát." },
+      "EMO": { "score": -1, "evidenceQuote": "bất an vì mất kiểm soát", "rationale": "Lo sợ hoảng loạn khi thấy tiền tài tuột khỏi tầm tay." },
+      "STR": { "score": -2, "evidenceQuote": "thất thoát tài sản", "rationale": "Vỡ két, thất thoát tiền bạc do đầu tư thiếu phòng hộ." },
+      "RSK": { "score": 1, "evidenceQuote": "chi tiêu bốc đồng", "rationale": "Mua sắm vô tội vạ để giải tỏa áp lực tâm lý." },
+      "INT": { "score": -1, "evidenceQuote": "mù mờ giá trị", "rationale": "Không biết quý trọng đồng tiền xương máu đã làm ra." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-05",
+    "cardNameVi": "5 Tiền",
+    "cardNameEn": "Five of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: thiếu thốn, khó khăn, bất an. Ý nghĩa: 5 Tiền xuôi nhấn mạnh thiếu thốn, khó khăn, bất an; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "lê bước trong tuyết lạnh", "rationale": "Gắng gượng duy trì sự sinh tồn giữa nghịch cảnh thiếu thốn." },
+      "EMO": { "score": 1, "evidenceQuote": "đồng cam cộng khổ", "rationale": "Hai người cùng nương tựa vào nhau để vượt qua cơn đói rét." },
+      "STR": { "score": -1, "evidenceQuote": "mất mát tài chính", "rationale": "Khủng hoảng kinh tế, cạn kiệt nguồn thu nhập tạm thời." },
+      "RSK": { "score": 0, "evidenceQuote": "chấp nhận gian nan", "rationale": "Đối diện với thực tế nghèo khó mà không trốn chạy." },
+      "INT": { "score": 1, "evidenceQuote": "cửa sổ nhà thờ sáng đèn", "rationale": "Bắt đầu nhận ra luôn có ánh sáng ấm áp trợ giúp ở ngay gần bên." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "gục ngã vì kiệt sức", "rationale": "Mất sạch sinh lực, tê liệt trong cơn đói lạnh." },
+      "EMO": { "score": -2, "evidenceQuote": "bất an, tự ti, tủi thân", "rationale": "Mặc cảm nghèo hèn, cảm giác bị xã hội hắt hủi và bỏ rơi." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu thốn cùng cực", "rationale": "Phá sản, nợ nần, mất việc, mất nhà cửa nơi nương tựa." },
+      "RSK": { "score": -2, "evidenceQuote": "tuyệt vọng", "rationale": "Mất hết niềm tin vào ngày mai, buông xuôi cho số phận vùi dập." },
+      "INT": { "score": -2, "evidenceQuote": "cúi gầm mặt không thấy cửa sổ sáng đèn", "rationale": "Mù quáng trong đau khổ, đi ngang qua nơi cứu tế mà không chịu ngước nhìn gõ cửa." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-05",
+    "cardNameVi": "5 Tiền",
+    "cardNameEn": "Five of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: hồi phục, nhận giúp đỡ, cải thiện. Ý nghĩa: 5 Tiền ngược gợi ý hồi phục, nhận giúp đỡ, cải thiện; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bước vào cửa ấm, hồi phục", "rationale": "Chủ động gõ cửa nhà thờ, bước vào trong sưởi ấm và đón nhận sự trợ giúp." },
+      "EMO": { "score": 2, "evidenceQuote": "nhận giúp đỡ, ấm áp trở lại", "rationale": "Cảm nhận tình người ấm áp, rũ bỏ sự tủi hờn và mặc cảm nghèo khó." },
+      "STR": { "score": 1, "evidenceQuote": "cải thiện tài chính", "rationale": "Dòng tiền dần hồi phục, tìm được công ăn việc làm mới để ổn định." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm đón nhận ân huệ", "rationale": "Hạ cái tôi xuống để đón nhận bàn tay nâng đỡ của cộng đồng." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh sau cơn bĩ cực", "rationale": "Hiểu rõ giá trị của tình thân và sự tương trợ lúc hoạn nạn." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "vết thương nghèo khó còn ám ảnh", "rationale": "Vẫn còn sợ hãi cảnh thiếu thốn bần hàn trong quá khứ." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-06",
+    "cardNameVi": "6 Tiền",
+    "cardNameEn": "Six of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: cho nhận, hào phóng, công bằng. Ý nghĩa: 6 Tiền xuôi nhấn mạnh cho nhận, hào phóng, công bằng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "ban phát tiền từ thiện", "rationale": "Hành động san sẻ tài nguyên, giúp đỡ người yếu thế hơn mình." },
+      "EMO": { "score": 2, "evidenceQuote": "hào phóng, trắc ẩn", "rationale": "Lòng nhân ái bao la, niềm vui khi đem lại miếng cơm manh áo cho tha nhân." },
+      "STR": { "score": 2, "evidenceQuote": "cán cân công bằng, cân đo chuẩn mực", "rationale": "Phân bổ nguồn lực chuẩn xác, cho đúng người đúng việc một cách công minh." },
+      "RSK": { "score": 0, "evidenceQuote": "chia sẻ trong khả năng", "rationale": "Cho đi có tính toán và cân đối ngân sách bền vững." },
+      "INT": { "score": 2, "evidenceQuote": "quy luật cho nhận của vũ trụ", "rationale": "Thấu hiểu rằng cho đi là nhận lại, tạo phước đức lâu bền." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "thích làm ơn", "rationale": "Có thể thích cảm giác được người khác mang ơn." },
+      "STR": { "score": 1, "evidenceQuote": "vị thế bề trên", "rationale": "Vô tình tạo ra khoảng cách bất bình đẳng giữa người cho và người nhận." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-06",
+    "cardNameVi": "6 Tiền",
+    "cardNameEn": "Six of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: điều kiện, nợ nần, mất quyền. Ý nghĩa: 6 Tiền ngược gợi ý điều kiện, nợ nần, mất quyền; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại các ràng buộc", "rationale": "Dừng lại việc nhận tiền khi đối phương kèm theo các yêu sách vô lý." },
+      "EMO": { "score": 1, "evidenceQuote": "bảo vệ phẩm giá", "rationale": "Thà sống thanh bần còn hơn quỳ gối xin xỏ lòng thương hại giả tạo." },
+      "STR": { "score": 1, "evidenceQuote": "sòng phẳng nợ nần", "rationale": "Lập kế hoạch trả hết các khoản nợ ơn nghĩa để lấy lại tự do." },
+      "RSK": { "score": 1, "evidenceQuote": "dám từ chối của bố thí", "rationale": "Can trường từ chối những đồng tiền kèm bẫy độc hại." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thấu mưu đồ cho nhận", "rationale": "Nhận ra bản chất của những kẻ dùng tiền để mua chuộc và nô dịch người khác." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "mất quyền tự chủ", "rationale": "Bị trói buộc chân tay, phải phục tùng mệnh lệnh của chủ nợ." },
+      "EMO": { "score": -2, "evidenceQuote": "nhục nhã, ấm ức", "rationale": "Bị sỉ nhục, cảm giác rẻ rúng khi phải van xin sự giúp đỡ kèm điều kiện." },
+      "STR": { "score": -2, "evidenceQuote": "nợ nần, mất quyền, bất công", "rationale": "Vòng xoáy nợ nần, lừa đảo tài chính hoặc dùng từ thiện để trốn thuế/rửa tiền." },
+      "RSK": { "score": -1, "evidenceQuote": "mắc kẹt trong bẫy nợ", "rationale": "Không thể thoát ra khỏi sự khống chế của kẻ cho vay nặng lãi." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng nhận quà độc", "rationale": "Ăn phải bả từ thiện giả dối mà không hay biết hậu quả." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-07",
+    "cardNameVi": "7 Tiền",
+    "cardNameEn": "Seven of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kiên nhẫn, đánh giá, đầu tư dài hạn. Ý nghĩa: 7 Tiền xuôi nhấn mạnh kiên nhẫn, đánh giá, đầu tư dài hạn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "chống cuốc đứng nhìn vườn cây", "rationale": "Tạm dừng tay cuốc để quan sát tiến trình quả chín, không can thiệp thô bạo." },
+      "EMO": { "score": 1, "evidenceQuote": "kiên nhẫn, an tâm", "rationale": "Bình tâm chờ đợi hạt giống nảy mầm theo đúng mùa vụ tự nhiên." },
+      "STR": { "score": 2, "evidenceQuote": "đánh giá, đầu tư dài hạn", "rationale": "Tư duy canh tác chiến lược, đo lường năng suất và lập kế hoạch thu hoạch bài bản." },
+      "RSK": { "score": 0, "evidenceQuote": "đầu tư an toàn", "rationale": "Đổ mồ hôi công sức vào mảnh đất thật, tránh xa các trò lừa làm giàu nhanh." },
+      "INT": { "score": 1, "evidenceQuote": "nhận thức chu kỳ tự nhiên", "rationale": "Hiểu rõ quy luật thời gian: muốn cây to bóng mát phải kiên trì chăm bón nhiều năm." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "hơi sốt ruột", "rationale": "Đôi khi thấy sốt ruột khi chờ đợi thành quả quá lâu." },
+      "STR": { "score": 1, "evidenceQuote": "quá tính toán", "rationale": "Cân nhắc quá nhiều về tỷ suất lợi nhuận (ROI)." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất mùa", "rationale": "Lo lắng mơ hồ về sâu bệnh hoặc thời tiết bất lợi." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-07",
+    "cardNameVi": "7 Tiền",
+    "cardNameEn": "Seven of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: nóng vội, ít kết quả, lãng phí. Ý nghĩa: 7 Tiền ngược gợi ý nóng vội, ít kết quả, lãng phí; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thay đổi phương pháp canh tác", "rationale": "Dẹp bỏ luống cây còi cọc để gieo giống mới có năng suất cao hơn." },
+      "EMO": { "score": 1, "evidenceQuote": "chấp nhận cắt lỗ", "rationale": "Học cách cắt lỗ kịp thời mà không dằn vặt tiếc nuối công sức cũ." },
+      "STR": { "score": 1, "evidenceQuote": "tái cơ cấu danh mục đầu tư", "rationale": "Chuyển hướng nguồn lực sang những dự án có tiềm năng thực chất hơn." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm buông bỏ dự án hỏng", "rationale": "Không ngoan cố tưới nước cho cây đã chết." },
+      "INT": { "score": 2, "evidenceQuote": "nhìn ra sự lãng phí vô ích", "rationale": "Thấu suốt sai lầm chiến lược để rút kinh nghiệm sâu sắc cho mùa sau." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "nóng vội hái quả xanh", "rationale": "Hấp tấp ép cây ra trái sớm khiến quả bị chua chát và chết cây." },
+      "EMO": { "score": -2, "evidenceQuote": "nản lòng, bực bội", "rationale": "Cay đắng vì đổ bao công sức nhưng thu lại toàn hạt lép." },
+      "STR": { "score": -2, "evidenceQuote": "lãng phí, ít kết quả", "rationale": "Lãng phí thời gian, tiền bạc vào mảnh đất cằn cỗi không có tương lai." },
+      "RSK": { "score": -1, "evidenceQuote": "mất kiên nhẫn", "rationale": "Đốt cháy giai đoạn dẫn tới hỏng bét toàn bộ quy trình." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng đầu tư", "rationale": "Tiếc của nên tiếp tục ném thêm tiền vào dự án thua lỗ (bẫy chi phí chìm)." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-08",
+    "cardNameVi": "8 Tiền",
+    "cardNameEn": "Eight of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chăm chỉ, rèn nghề, tiến bộ. Ý nghĩa: 8 Tiền xuôi nhấn mạnh chăm chỉ, rèn nghề, tiến bộ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chăm chỉ đục đẽo từng đồng tiền", "rationale": "Lao động tập trung cao độ, kiên trì trau chuốt từng chi tiết sản phẩm." },
+      "EMO": { "score": 1, "evidenceQuote": "tự hào về tay nghề", "rationale": "Tìm thấy niềm vui thuần khiết trong việc sáng tạo sản phẩm tinh xảo." },
+      "STR": { "score": 2, "evidenceQuote": "rèn nghề, kỷ luật tác phong", "rationale": "Tinh thần nghệ nhân (craftsmanship), làm đi làm lại cho tới khi đạt mức hoàn hảo." },
+      "RSK": { "score": 0, "evidenceQuote": "bước đi vững chắc", "rationale": "Nâng cao năng lực cạnh tranh cốt lõi bằng chính kỹ năng thực chất của mình." },
+      "INT": { "score": 1, "evidenceQuote": "tập trung chánh niệm", "rationale": "Đạt trạng thái dòng chảy (flow state) tuyệt đỉnh trong công việc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "cô lập tại xưởng", "rationale": "Mải mê cặm cụi một mình mà quên mất các mối quan hệ xã hội." },
+      "STR": { "score": 1, "evidenceQuote": "quá cầu toàn", "rationale": "Khó tính với từng chi tiết nhỏ khiến tiến độ bị kéo dài." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại bước ra ngoài xưởng", "rationale": "Chỉ quen làm việc kỹ thuật, ngại giao tiếp kinh doanh." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-08",
+    "cardNameVi": "8 Tiền",
+    "cardNameEn": "Eight of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: cẩu thả, thiếu động lực, lặp lại vô thức. Ý nghĩa: 8 Tiền ngược gợi ý cẩu thả, thiếu động lực, lặp lại vô thức; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói quen làm việc", "rationale": "Tạm dừng dây chuyền để tìm lại cảm hứng và niềm đam mê nghề nghiệp." },
+      "EMO": { "score": 1, "evidenceQuote": "tìm lại ngọn lửa nghề", "rationale": "Hiểu rằng làm việc không chỉ để kiếm cơm mà còn là thể hiện bản thân." },
+      "STR": { "score": 1, "evidenceQuote": "nâng cấp tay nghề", "rationale": "Đi học thêm kỹ năng mới thay vì dậm chân tại chỗ với cách làm cũ." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự lặp lại vô thức", "rationale": "Thức tỉnh khỏi cơn mộng du của người thợ máy vô hồn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thiếu động lực", "rationale": "Chán chường, làm việc uể oải, đối phó qua ngày." },
+      "EMO": { "score": -1, "evidenceQuote": "chán ghét công việc", "rationale": "Mất sạch tình yêu với nghề, biến xưởng làm việc thành ngục tù." },
+      "STR": { "score": -2, "evidenceQuote": "cẩu thả, lặp lại vô thức", "rationale": "Làm ăn dối trá, sản phẩm lỗi hỏng hàng loạt, đánh mất uy tín thợ." },
+      "RSK": { "score": 1, "evidenceQuote": "đi đường tắt bất cẩn", "rationale": "Cắt bớt công đoạn kỹ thuật để làm cho nhanh gây nguy hiểm." },
+      "INT": { "score": -2, "evidenceQuote": "máy móc hóa tâm hồn", "rationale": "Đánh mất tính sáng tạo, biến mình thành con ốc vít vô tri." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-09",
+    "cardNameVi": "9 Tiền",
+    "cardNameEn": "Nine of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: độc lập, thành quả, tự chủ. Ý nghĩa: 9 Tiền xuôi nhấn mạnh độc lập, thành quả, tự chủ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dạo chơi trong khu vườn riêng", "rationale": "Tận hưởng cuộc sống thanh tao bằng chính đôi bàn tay và khối óc của mình." },
+      "EMO": { "score": 2, "evidenceQuote": "mãn nguyện, tự chủ", "rationale": "Bình yên, tự tại, kiêu hãnh và thanh lịch trong sự độc lập trọn vẹn." },
+      "STR": { "score": 2, "evidenceQuote": "khu vườn trù phú, thành quả", "rationale": "Cấu trúc tài chính bền vững, quản trị tài sản cá nhân xuất sắc." },
+      "RSK": { "score": 0, "evidenceQuote": "an toàn tuyệt đối trong vườn nho", "rationale": "Đạt tới ngưỡng tự do tài chính, không còn phụ thuộc vào bất kỳ ai." },
+      "INT": { "score": 2, "evidenceQuote": "chim ưng thuần hóa trên tay", "rationale": "Làm chủ hoàn toàn bản năng hoang dã, hòa hợp cao độ với thiên nhiên." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "cô độc trên nhung lụa", "rationale": "Có thể hơi cô đơn vì tường rào khu vườn quá cao khó ai bước vào." },
+      "STR": { "score": 1, "evidenceQuote": "tiêu chuẩn cao", "rationale": "Khó tính trong việc chọn bạn đời hoặc đối tác tương xứng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-09",
+    "cardNameVi": "9 Tiền",
+    "cardNameEn": "Nine of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bất ổn tài chính, cô lập, lệ thuộc hình ảnh. Ý nghĩa: 9 Tiền ngược gợi ý bất ổn tài chính, cô lập, lệ thuộc hình ảnh; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại lối sống", "rationale": "Hạ bớt các chi phí xa xỉ bề nổi để bảo toàn vốn thực chất." },
+      "EMO": { "score": 1, "evidenceQuote": "mở cổng vườn kết nối", "rationale": "Học cách giao lưu chân thành, rũ bỏ vẻ ngoài sang chảnh giả tạo." },
+      "STR": { "score": 1, "evidenceQuote": "chỉnh đốn lại chi tiêu", "rationale": "Lên lại kế hoạch tài chính sát sườn với thu nhập thực tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự phù phiếm", "rationale": "Hiểu rằng giá trị con người không nằm ở thương hiệu túi xách." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "tiêu tiền phô trương", "rationale": "Cố gồng mình sống ảo trên mạng xã hội để che đậy nợ nần." },
+      "EMO": { "score": -2, "evidenceQuote": "cô lập, trống rỗng", "rationale": "Cô đơn cùng cực sau bức màn nhung lụa giả tạo." },
+      "STR": { "score": -2, "evidenceQuote": "bất ổn tài chính, nợ nần", "rationale": "Thủng túi vì thói xài sang quá trớn, nguy cơ vỡ nợ rình rập." },
+      "RSK": { "score": 1, "evidenceQuote": "đánh cược hình ảnh", "rationale": "Dám vay mượn khắp nơi chỉ để duy trì vỏ bọc giàu sang." },
+      "INT": { "score": -2, "evidenceQuote": "lệ thuộc hình ảnh", "rationale": "Đánh mất bản ngã chân thật, biến thành nô lệ cho ánh nhìn của người khác." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-10",
+    "cardNameVi": "10 Tiền",
+    "cardNameEn": "Ten of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: di sản, gia đình, ổn định lâu dài. Ý nghĩa: 10 Tiền xuôi nhấn mạnh di sản, gia đình, ổn định lâu dài; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "xây dựng cơ đồ cho con cháu", "rationale": "Hành động có tầm nhìn thế hệ, tích lũy nền móng cho con cháu mai sau." },
+      "EMO": { "score": 2, "evidenceQuote": "gia đình êm ấm, đoàn viên", "rationale": "Ba thế hệ quây quần hòa thuận dưới mái nhà tổ tiên ấm cúng." },
+      "STR": { "score": 2, "evidenceQuote": "di sản, ổn định lâu dài", "rationale": "Đỉnh cao của sự vững chãi, đế chế gia tộc hưng thịnh lưu truyền ngàn đời." },
+      "RSK": { "score": 0, "evidenceQuote": "an cư muôn đời", "rationale": "Sự an toàn tài chính tuyệt đối, không sóng gió nào làm lung lay nổi." },
+      "INT": { "score": 2, "evidenceQuote": "cây gia phả sự sống (Tree of Life)", "rationale": "Kết nối sâu sắc với cội nguồn tổ tiên và đạo lý uống nước nhớ nguồn." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "gia phong nghiêm ngặt", "rationale": "Có thể gia phong quá khắt khe gò bó sự tự do của thế hệ trẻ." },
+      "RSK": { "score": -1, "evidenceQuote": "bảo thủ gia tộc", "rationale": "Ngại thay đổi vì sợ làm mất đi nếp nhà xưa cũ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-10",
+    "cardNameVi": "10 Tiền",
+    "cardNameEn": "Ten of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bất ổn, mất mát, xung đột gia đình. Ý nghĩa: 10 Tiền ngược gợi ý bất ổn, mất mát, xung đột gia đình; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "hòa giải tranh chấp gia sản", "rationale": "Chủ động ngồi lại bàn bạc minh bạch về việc phân chia tài sản thừa kế." },
+      "EMO": { "score": 1, "evidenceQuote": "hàn gắn tình máu mủ", "rationale": "Đặt tình thân gia đình lên trên những tranh giành vật chất phù phiếm." },
+      "STR": { "score": 1, "evidenceQuote": "tái lập gia phong", "rationale": "Sửa đổi lại các quy ước gia đình cho phù hợp với thời đại mới." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thấy rõ bi kịch vì tiền", "rationale": "Thấu hiểu rằng tiền tài không mua nổi hạnh phúc gia đình." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "kiện cáo tranh giành", "rationale": "Lôi nhau ra tòa vì tranh giành từng mảnh đất, tấc vàng của cha ông." },
+      "EMO": { "score": -2, "evidenceQuote": "xung đột gia đình, bất hòa sâu sắc", "rationale": "Máu mủ tương tàn, anh em mặt lạnh như tiền, con cái bất hiếu." },
+      "STR": { "score": -2, "evidenceQuote": "bất ổn, gia tộc suy vi", "rationale": "Cơ đồ gia tộc sụp đổ, tan đàn xẻ nghé vì tranh chấp nội bộ." },
+      "RSK": { "score": -1, "evidenceQuote": "nguy cơ mất trắng di sản", "rationale": "Phá tán gia tài do cờ bạc, làm ăn bất chính hoặc kiện tụng kéo dài." },
+      "INT": { "score": -2, "evidenceQuote": "mất gốc rễ tổ tiên", "rationale": "Quên ơn sinh thành, chà đạp lên di huấn của tiền nhân vì lòng tham." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-11",
+    "cardNameVi": "Tiểu Đồng Tiền",
+    "cardNameEn": "Page of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: học nghề, cơ hội, thực tế. Ý nghĩa: Tiểu Đồng Tiền xuôi nhấn mạnh học nghề, cơ hội, thực tế; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "học nghề, bắt tay thực hành", "rationale": "Chăm chỉ dùi mài kinh sử, rèn luyện kỹ năng thực tế từng bước." },
+      "EMO": { "score": 1, "evidenceQuote": "yêu thích học hỏi", "rationale": "Tâm thế khiêm tốn, biết ơn người thầy hướng dẫn tận tình." },
+      "STR": { "score": 2, "evidenceQuote": "kỷ luật học tập, cơ hội thực tế", "rationale": "Học hành bài bản, chú trọng tính ứng dụng thực tiễn của kiến thức." },
+      "RSK": { "score": 0, "evidenceQuote": "chậm mà chắc", "rationale": "Xây nền móng tri thức kiên cố trước khi ra đời lập nghiệp." },
+      "INT": { "score": 1, "evidenceQuote": "nâng niu đồng tiền trên tay", "rationale": "Trực giác nhạy bén phát hiện ra cơ hội phát triển sự nghiệp lâu dài." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "hơi mọt sách", "rationale": "Có thể quá chú tâm vào sách vở lý thuyết mà thiếu va chạm thực tế." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại thử thách lớn", "rationale": "Thích ở trong môi trường học thuật được bảo bọc." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-11",
+    "cardNameVi": "Tiểu Đồng Tiền",
+    "cardNameEn": "Page of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lười biếng, thiếu cam kết, bỏ học. Ý nghĩa: Tiểu Đồng Tiền ngược gợi ý lười biếng, thiếu cam kết, bỏ học; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói lười biếng", "rationale": "Dừng lại việc trì hoãn bài vở, lập lại thời gian biểu học tập." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "rèn luyện tính kỷ luật học đường", "rationale": "Cần người giám sát để đưa việc học vào khuôn phép." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra nguyên nhân chán học", "rationale": "Tìm hiểu xem mình thực sự say mê ngành nghề nào để chuyển hướng." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "lười biếng, trốn học", "rationale": "Nằm ườn, lười nhác, buông xuôi việc học hành rèn luyện." },
+      "EMO": { "score": -1, "evidenceQuote": "bất cần đời", "rationale": "Thái độ bất cần, thiếu trách nhiệm với tương lai bản thân." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu cam kết, bỏ học giữa chừng", "rationale": "Bỏ học, phá vỡ mọi cam kết đào tạo, đầu voi đuôi chuột." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "thiếu định hướng nghề nghiệp", "rationale": "Mù mờ về tương lai, sống lông bông qua ngày không nghề ngỗng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-12",
+    "cardNameVi": "Kỵ Sĩ Tiền",
+    "cardNameEn": "Knight of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: bền bỉ, trách nhiệm, tiến chậm. Ý nghĩa: Kỵ Sĩ Tiền xuôi nhấn mạnh bền bỉ, trách nhiệm, tiến chậm; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tiến chậm từng bước chắc chắn", "rationale": "Cưỡi ngựa cày bước đi vững chãi qua cánh đồng, làm việc không mệt mỏi." },
+      "EMO": { "score": 1, "evidenceQuote": "trung thành, tận tụy", "rationale": "Đáng tin cậy tuyệt đối, người bạn đời/đồng nghiệp trung kiên trước sau như một." },
+      "STR": { "score": 2, "evidenceQuote": "trách nhiệm, bền bỉ, kỷ luật phi thường", "rationale": "Người cày cuốc kiên trì nhất, cam kết làm đến nơi đến chốn mọi nhiệm vụ." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh mọi rủi ro không cần thiết", "rationale": "Thận trọng tối đa, chỉ đi trên con đường đã được khảo sát kỹ lưỡng." },
+      "INT": { "score": 1, "evidenceQuote": "thấu hiểu đất đai", "rationale": "Trực giác gắn liền với thực tế cuộc sống và giá trị của lao động chân chính." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "tiến quá chậm", "rationale": "Có thể chậm chạp, bảo thủ bỏ lỡ các cơ hội tốc độ cao." },
+      "EMO": { "score": 0, "evidenceQuote": "khô khan", "rationale": "Ít lãng mạn, chỉ biết cắm đầu làm lụng mà thiếu thi vị." },
+      "STR": { "score": 1, "evidenceQuote": "cứng nhắc theo quy trình", "rationale": "Quá rập khuôn theo quy định cũ." },
+      "RSK": { "score": -2, "evidenceQuote": "ngại thay đổi", "rationale": "Rất sợ phải thay đổi thói quen làm việc hàng ngày." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-12",
+    "cardNameVi": "Kỵ Sĩ Tiền",
+    "cardNameEn": "Knight of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: trì trệ, cứng đầu, nhàm chán. Ý nghĩa: Kỵ Sĩ Tiền ngược gợi ý trì trệ, cứng đầu, nhàm chán; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra sự trì trệ", "rationale": "Ý thức được chiếc xe cày đang bị lún bùn để tìm cách kéo lên." },
+      "EMO": { "score": 1, "evidenceQuote": "thổi luồng gió mới vào tâm hồn", "rationale": "Tìm kiếm niềm vui mới để thoát khỏi cuộc sống tẻ nhạt." },
+      "STR": { "score": 1, "evidenceQuote": "học cách linh hoạt", "rationale": "Tháo bỏ bớt sự bảo thủ để tiếp thu công nghệ và phương pháp mới." },
+      "RSK": { "score": 1, "evidenceQuote": "dám thử nghiệm cái mới", "rationale": "Can đảm bước ra khỏi rãnh cày quen thuộc." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thấu sự xơ cứng", "rationale": "Hiểu rằng làm việc chăm chỉ nhưng sai hướng chỉ dẫn tới kiệt sức." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trì trệ, bất động", "rationale": "Lười vận động, đứng yên một chỗ như khúc gỗ mục." },
+      "EMO": { "score": -1, "evidenceQuote": "nhà chán, vô cảm", "rationale": "Cuộc sống khô khốc như sa mạc, không còn một giọt thi vị hay niềm vui." },
+      "STR": { "score": -2, "evidenceQuote": "cứng đầu, bảo thủ gàn dở", "rationale": "Ngoan cố cãi chày cãi cối, thà chết chứ không chịu thay đổi quan điểm." },
+      "RSK": { "score": -2, "evidenceQuote": "khiếp sợ mọi cải cách", "rationale": "Chống đối kịch liệt mọi ý tưởng đổi mới sáng tạo." },
+      "INT": { "score": -1, "evidenceQuote": "đầu óc xơ cứng", "rationale": "Tâm trí hoàn toàn bị đóng băng trong lối mòn cổ lỗ sĩ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-13",
+    "cardNameVi": "Nữ Hoàng Tiền",
+    "cardNameEn": "Queen of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: thực tế, chăm sóc, sung túc. Ý nghĩa: Nữ Hoàng Tiền xuôi nhấn mạnh thực tế, chăm sóc, sung túc; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chăm sóc gia đình và công việc", "rationale": "Tháo vát, đảm đang, vừa quán xuyến kinh tế vừa chăm sóc tổ ấm chu đáo." },
+      "EMO": { "score": 2, "evidenceQuote": "ấm áp, chăm sóc, bao bọc", "rationale": "Tình mẫu tử ấm áp của Đất Mẹ, nuôi dưỡng vạn vật bằng sự hiền hậu và sung túc." },
+      "STR": { "score": 2, "evidenceQuote": "thực tế, tay hòm chìa khóa", "rationale": "Bậc thầy quản gia, chi tiêu khôn ngoan, tích lũy tài sản vững chãi." },
+      "RSK": { "score": 0, "evidenceQuote": "bảo toàn gia đạo", "rationale": "Giữ gìn sự ấm no bình yên cho gia đình trên hết." },
+      "INT": { "score": 2, "evidenceQuote": "kết nối với thiên nhiên và muông thú", "rationale": "Trực giác nhạy bén với cơ thể, đất đai và các mùa màng cuộc sống." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 1, "evidenceQuote": "quá bao bọc gia đình", "rationale": "Có thể lo toan quá mức làm người khác cảm thấy ngột ngạt." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "ngại mạo hiểm", "rationale": "Thích giữ nguyên nếp nhà ấm êm hơn là xông pha thử thách." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-13",
+    "cardNameVi": "Nữ Hoàng Tiền",
+    "cardNameEn": "Queen of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: ích kỷ, ghen tị, vật chất hóa. Ý nghĩa: Nữ Hoàng Tiền ngược gợi ý ích kỷ, ghen tị, vật chất hóa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói ích kỷ", "rationale": "Dừng lại việc đong đếm tình cảm bằng tiền bạc." },
+      "EMO": { "score": 1, "evidenceQuote": "tìm lại tình thương chân thật", "rationale": "Học cách yêu thương vô điều kiện không màng tới lợi ích vật chất." },
+      "STR": { "score": 1, "evidenceQuote": "cân đối lại sự quản lý", "rationale": "Thả lỏng sự kiểm soát tài chính trong gia đình." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thức tỉnh khỏi bẫy vật chất", "rationale": "Nhận ra sự lạnh lẽo của một ngôi nhà đầy đủ tiện nghi nhưng thiếu vắng tình thương." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "thâu tóm tài sản", "rationale": "Vơ vét của cải về phần mình, bỏ mặc người thân túng thiếu." },
+      "EMO": { "score": -2, "evidenceQuote": "ích kỷ, ghen tị", "rationale": "Đố kỵ với sự giàu sang của người khác, cay nghiệt so đo từng đồng cắc." },
+      "STR": { "score": -1, "evidenceQuote": "kiểm soát độc đoán gia đạo", "rationale": "Dùng kinh tế để thao túng và ép buộc người thân phục tùng." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ mất của", "rationale": "Ám ảnh tiền bạc khiến tâm thần luôn bất an, nghi kỵ." },
+      "INT": { "score": -2, "evidenceQuote": "vật chất hóa toàn bộ cuộc sống", "rationale": "Mất sạch lương tri, quy đổi mọi giá trị đạo đức và tình cảm ra tiền mặt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-14",
+    "cardNameVi": "Vua Tiền",
+    "cardNameEn": "King of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: thành công, tin cậy, quản trị. Ý nghĩa: Vua Tiền xuôi nhấn mạnh thành công, tin cậy, quản trị; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "quản trị vương quốc tài chính", "rationale": "Hành động đỉnh đạc của bậc thầy đế chế kinh doanh, tạo công ăn việc làm cho muôn người." },
+      "EMO": { "score": 1, "evidenceQuote": "tin cậy, hào phóng che chở", "rationale": "Chỗ dựa vững chắc, bao bọc và đem lại sự no ấm thịnh vượng cho mọi người." },
+      "STR": { "score": 2, "evidenceQuote": "thành công, tin cậy, quản trị đỉnh cao", "rationale": "Đỉnh cao của năng lực kinh tài, quản trị dòng tiền, kỷ luật doanh nghiệp thép." },
+      "RSK": { "score": 1, "evidenceQuote": "tính toán chuẩn xác", "rationale": "Mọi khoản đầu tư đều dựa trên nền móng kiên cố và số liệu thực chứng." },
+      "INT": { "score": 2, "evidenceQuote": "chạm tay hóa vàng (bàn tay Midas)", "rationale": "Trực giác kinh doanh thiên tài, nhìn thấy cơ hội sinh lời ở khắp nơi." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 0, "evidenceQuote": "hơi thực dụng", "rationale": "Có thể đánh giá con người qua vị thế xã hội và tài sản." },
+      "STR": { "score": 1, "evidenceQuote": "nguyên tắc kinh doanh", "rationale": "Đôi khi quá chú trọng vào hiệu quả tài chính mà thiếu đi sự ngẫu hứng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "pentacles-14",
+    "cardNameVi": "Vua Tiền",
+    "cardNameEn": "King of Pentacles",
+    "type": "minor",
+    "suit": "pentacles",
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: tham lam, bảo thủ, tha hóa. Ý nghĩa: Vua Tiền ngược gợi ý tham lam, bảo thủ, tha hóa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói tham lam", "rationale": "Dừng lại việc theo đuổi lợi nhuận bằng mọi thủ đoạn phi pháp." },
+      "EMO": { "score": 1, "evidenceQuote": "tìm lại sự thanh liêm", "rationale": "Chữa lành lương tâm, trả lại những gì đã chiếm đoạt bất chính." },
+      "STR": { "score": 1, "evidenceQuote": "chấn chỉnh đạo đức kinh doanh", "rationale": "Thiết lập lại chuẩn mực kế toán minh bạch và tính chính trực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự tha hóa của quyền lực", "rationale": "Thức tỉnh trước cái giá phải trả khi bán linh hồn cho quỷ dữ vì tiền." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lũng đoạn kinh tế", "rationale": "Dùng tiền tài mua chuộc, hối lộ và thao túng thị trường vì tư lợi." },
+      "EMO": { "score": -2, "evidenceQuote": "tha hóa, tàn nhẫn vì tiền", "rationale": "Vắt chanh bỏ vỏ, bóc lột sức lao động của người khác không chút thương xót." },
+      "STR": { "score": -2, "evidenceQuote": "bảo thủ, tha hóa đạo đức", "rationale": "Xây dựng đế chế trên sự bóc lột và gian lận, phá vỡ đạo lý kinh doanh." },
+      "RSK": { "score": 2, "evidenceQuote": "làm ăn bất chính liều lĩnh", "rationale": "Bất chấp pháp luật và đạo đức để làm giàu phi pháp." },
+      "INT": { "score": -2, "evidenceQuote": "tham lam làm mù mắt", "rationale": "Lòng tham vô đáy khiến mắt mờ tai điếc trước mọi lời cảnh báo nhân quả." }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -3,26 +3,8 @@ import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { getProviderCascade } from '@/lib/ai/provider-cascade';
 import type { UserProviderConfig } from '@/lib/ai/types';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
+import { filterPersonalityIndicatorKeys, personalityIndicatorDescriptions, personalityIndicatorFallbacks, personalityIndicatorKeys } from '@/lib/spiritual-agent/personality-indicators';
 import { getTarotSpread, tarotSpreads } from '@/lib/tarot/spreads';
-
-const chatIndicatorKeys = [
-  'walksOfLife', 'mission', 'soul', 'personality', 'dateOfBirth', 'mature', 'balance',
-  'rationalThinking', 'subconsciousPower', 'passion', 'attitude', 'karmicDebts', 'missingNumbers',
-  'bridgeLifeMission', 'bridgeSoulPersonality', 'bridgeMaturityPassion', 'yearIndividual',
-  'monthIndividual', 'dayIndividual', 'way', 'challenges', 'arrows', 'nameChart', 'birthChart'
-] as const;
-
-const indicatorDescriptions: Record<typeof chatIndicatorKeys[number], string> = {
-  walksOfLife: 'bản chất và bài học cốt lõi', mission: 'năng lực, nghề nghiệp và đóng góp', soul: 'nhu cầu nội tâm và cảm xúc',
-  personality: 'hình ảnh xã hội và cách thể hiện', dateOfBirth: 'tài năng thiên phú', mature: 'sự trưởng thành và định hướng dài hạn',
-  balance: 'cách giữ cân bằng khi gặp áp lực', rationalThinking: 'cách phân tích và ra quyết định', subconsciousPower: 'nguồn lực nội tại',
-  passion: 'tài năng/động lực nổi trội', attitude: 'phản ứng ban đầu trước hoàn cảnh', karmicDebts: 'bài học nợ nghiệp',
-  missingNumbers: 'bài học từ những năng lượng còn thiếu', bridgeLifeMission: 'kết nối bản chất với sứ mệnh',
-  bridgeSoulPersonality: 'kết nối nhu cầu nội tâm với biểu hiện', bridgeMaturityPassion: 'kết nối trưởng thành với đam mê',
-  yearIndividual: 'chủ đề năm hiện tại', monthIndividual: 'nhịp năng lượng tháng', dayIndividual: 'nhịp năng lượng ngày',
-  way: 'các đỉnh cao trong chu kỳ đời người', challenges: 'các thử thách trong chu kỳ đời người',
-  arrows: 'mẫu năng lượng trong biểu đồ ngày sinh', nameChart: 'tần suất chữ trong biểu đồ tên', birthChart: 'mẫu số trong biểu đồ ngày sinh'
-};
 
 const intentSpreadDefaults: Record<string, string | null> = {
   two_choices: 'two-options',
@@ -35,17 +17,6 @@ const intentSpreadDefaults: Record<string, string | null> = {
   general: 'single',
   trash: null,
   love_match: null
-};
-
-const fallbackIndicators: Record<string, string[]> = {
-  two_choices: ['rationalThinking', 'attitude', 'yearIndividual'],
-  timing_trajectory: ['yearIndividual', 'way', 'challenges'],
-  relationship: ['soul', 'personality', 'attitude'],
-  holistic_analysis: ['walksOfLife', 'mission', 'mature', 'balance', 'challenges'],
-  core_personality: ['walksOfLife', 'mission', 'soul', 'personality', 'dateOfBirth'],
-  daily_guidance: ['dateOfBirth', 'dayIndividual', 'attitude'],
-  where_to_go: ['dateOfBirth', 'attitude'],
-  general: ['walksOfLife', 'yearIndividual']
 };
 
 function spreadCardCount(spreadId: string | null): number {
@@ -62,18 +33,16 @@ function normalizeDecision(value: Record<string, any>): AgentDecision {
     spreadId = null;
   }
   const needsTarot = Boolean(spreadId);
-  const targetIndicators = Array.isArray(value.targetIndicators)
-    ? Array.from(new Set(value.targetIndicators.filter((key: unknown): key is string =>
-      typeof key === 'string' && chatIndicatorKeys.includes(key as typeof chatIndicatorKeys[number])
-    ))).slice(0, 5)
-    : [];
+  const chosenIndicators = filterPersonalityIndicatorKeys(value.targetIndicators);
+  const targetIndicators = intent === 'trash' ? []
+    : chosenIndicators.length ? chosenIndicators : personalityIndicatorFallbacks[intent] ?? [];
   return {
     mode: value.mode === 'compatibility' ? 'compatibility' : 'single',
     intent,
     needsTarot,
     spreadId,
     cardCount: spreadCardCount(spreadId),
-    targetIndicators: intent === 'trash' ? [] : targetIndicators,
+    targetIndicators,
     thoughtProcess: typeof value.thoughtProcess === 'string' ? value.thoughtProcess.slice(0, 500) : ''
   };
 }
@@ -178,7 +147,7 @@ export async function POST(request: NextRequest) {
 
     // 2. Trường hợp 1 hồ sơ: DÙNG AI LLM TỰ ĐỘNG PHÂN TÍCH VÀ PHÂN LOẠI
     const systemPrompt = `Bạn là bộ não phân tích ý định (Autonomous AI Agent Decision Engine) của hệ thống tâm linh NUMELYRA.
-Nhiệm vụ: Đọc kỹ câu hỏi của người dùng, TỰ ĐỘNG QUYẾT ĐỊNH chiến lược lấy bài Tarot VÀ LỰA CHỌN TỐI ĐA 5 CHỈ SỐ THẦN SỐ HỌC phù hợp nhất để backend trích xuất dữ liệu bản mệnh.
+Nhiệm vụ: Đọc kỹ câu hỏi của người dùng, quyết định trải bài Tarot và chọn những chỉ số Thần số học thực sự hữu ích để cá nhân hóa câu trả lời.
 
 DANH MỤC Ý ĐỊNH (intent):
 1. "two_choices": Phân vân giữa đúng hai lựa chọn cụ thể -> spreadId "two-options".
@@ -196,10 +165,14 @@ ${tarotSpreads.map((spread) => `- ${spread.id}: ${spread.positions.length} lá`)
 Với câu hỏi so sánh, bắt buộc chọn "two-options"; với quan hệ một hồ sơ, chọn "relationship"; với câu hỏi toàn cảnh, chọn "celtic-cross".
 
 CATALOG CÁC CHỈ SỐ THẦN SỐ HỌC ĐỂ CHỌN CHO targetIndicators:
-${chatIndicatorKeys.map((key) => `- "${key}": ${indicatorDescriptions[key]}`).join('\n')}
+${personalityIndicatorKeys.map((key) => `- "${key}": ${personalityIndicatorDescriptions[key]}`).join('\n')}
 
 QUY TẮC BẮT BUỘC VỀ targetIndicators:
-- Bạn phải TỰ ĐỘNG CHỌN từ 1 đến TỐI ĐA 5 chỉ số (1 <= targetIndicators.length <= 5) phù hợp nhất với bản chất câu hỏi của người dùng (nếu intent là "trash" thì để mảng rỗng []).
+- Chỉ chọn trong 6 chỉ số ở catalog trên; thông thường chọn 1–3, tối đa 5 khi người dùng yêu cầu phân tích toàn diện. Không chọn cho đủ số lượng.
+- "mission" chỉ dành cho câu hỏi nói rõ về sứ mệnh, nghề nghiệp hoặc đóng góp; không dùng nó để suy đoán tính cách trong lời khuyên thường ngày.
+- Ưu tiên chỉ số mô tả cách suy nghĩ, cảm xúc hoặc phản ứng liên quan trực tiếp tới câu hỏi. Các chỉ số này là góc nhìn tham khảo, không phải nguyên nhân đã được chứng minh của tính cách.
+- Với câu hỏi về thời điểm hoặc tương lai, Tarot đảm nhiệm diễn tiến; không đưa các chỉ số chu kỳ vào targetIndicators chỉ để dự báo.
+- Nếu intent là "trash", để mảng rỗng [].
 - BẮT ĐẦU NGAY LẬP TỨC BẰNG KÝ TỰ { VÀ KẾT THÚC BẰNG }. TUYỆT ĐỐI KHÔNG SUY NGHĨ, KHÔNG DÙNG THẺ SUY NGHĨ HAY GIẢI THÍCH TRƯỚC KHI XUẤT JSON.
 Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown format, không có bất kỳ văn bản nào ngoài JSON) theo mẫu sau:
 {
@@ -277,6 +250,13 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
       parsedDecision.targetIndicators = [];
       parsedDecision.replyText = TRASH_PROMPT_GUIDANCE;
     }
+    // A concrete "where should I go" request needs factual place lookup.
+    // The classifier sometimes treats this as generic daily guidance, which
+    // bypasses VietMap and lets the chat model invent a default venue.
+    if (classifyFallback(messageForFallback) === 'where_to_go') {
+      parsedDecision.intent = 'where_to_go';
+      parsedDecision.targetIndicators = personalityIndicatorFallbacks.where_to_go;
+    }
     const normalized = normalizeDecision(parsedDecision);
     if (normalized.intent === 'trash') normalized.replyText = TRASH_PROMPT_GUIDANCE;
 
@@ -298,7 +278,9 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
       needsTarot: Boolean(spreadId),
       spreadId: spreadId as AgentDecision['spreadId'],
       cardCount: spreadCardCount(spreadId),
-      targetIndicators: fallbackIndicators[intent] || [],
+      targetIndicators: intent === 'core_personality' && messageForFallback.includes('sứ mệnh')
+        ? ['mission', 'walksOfLife', 'soul']
+        : personalityIndicatorFallbacks[intent] || [],
       thoughtProcess: intent === 'where_to_go'
         ? 'Tiểu Linh Miêu sẽ lọc địa điểm theo nhu cầu thực tế trước, rồi rút một lá Tarot để chọn vibe phù hợp.'
         : 'Tiểu Linh Miêu chọn trải bài phù hợp với chủ đề câu hỏi.'

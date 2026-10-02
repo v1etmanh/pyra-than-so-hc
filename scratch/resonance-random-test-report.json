@@ -1,0 +1,40 @@
+{
+  "seed": 20261001,
+  "randomCases": 1000,
+  "uniqueInputSets": 1000,
+  "dataset": {
+    "tarotEntities": 156,
+    "numerologyEntities": 223,
+    "manifestExpected": {
+      "tarot": 156,
+      "numerology": 223
+    },
+    "tarotRawAudit": {
+      "invalidScores": 0,
+      "missingEvidenceOnNonZero": 0,
+      "unsupportedNonZero": 0,
+      "totalAxes": 1560,
+      "missingEvidenceExamples": []
+    },
+    "numerologyRawAudit": {
+      "invalidScores": 0,
+      "missingEvidenceOnNonZero": 0,
+      "unsupportedNonZero": 0,
+      "totalAxes": 2230,
+      "missingEvidenceExamples": []
+    }
+  },
+  "interactionsFound": {
+    "synergy": 3168,
+    "compensatory": 3039,
+    "tension": 1819,
+    "shadowVortex": 2550
+  },
+  "runtimeChecks": {
+    "syntheticRuleChecks": "passed",
+    "nondeterministicMismatches": 0,
+    "reorderedMismatches": 0,
+    "invalidOutputs": 0
+  },
+  "findings": []
+}

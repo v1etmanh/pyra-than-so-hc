@@ -1,0 +1,702 @@
+[
+  {
+    "cardId": "swords-01",
+    "cardNameVi": "Át Kiếm",
+    "cardNameEn": "Ace of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: đột phá, sự thật, sáng rõ. Ý nghĩa: Át Kiếm xuôi nhấn mạnh đột phá, sự thật, sáng rõ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "đột phá", "rationale": "Chém đứt màn sương mù, hành động dứt khoát và sắc bén." },
+      "EMO": { "score": 0, "evidenceQuote": "sự thật khách quan", "rationale": "Lý tính, không để cảm xúc ủy mị làm cùn đi lưỡi kiếm công lý." },
+      "STR": { "score": 2, "evidenceQuote": "sáng rõ, sự thật", "rationale": "Tư duy logic chuẩn xác tuyệt đối, cắt bỏ mọi mơ hồ và lừa dối." },
+      "RSK": { "score": 2, "evidenceQuote": "dám đối diện sự thật trần trụi", "rationale": "Can trường nhìn thẳng vào sự thật dù nó có đau đớn." },
+      "INT": { "score": 2, "evidenceQuote": "sự sáng rõ, chân lý tối thượng", "rationale": "Tia chớp trí tuệ rọi sáng bản chất cốt lõi của vấn đề." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "ra tay quá nhanh", "rationale": "Có thể vung kiếm quá nhanh gây tổn thương không cần thiết." },
+      "EMO": { "score": -2, "evidenceQuote": "lời sắc lạnh lùng", "rationale": "Quá cứng nhắc, thiếu đi sự nhân từ và bao dung." },
+      "STR": { "score": 1, "evidenceQuote": "sắc bén", "rationale": "Tuyệt đối hóa lý lẽ mà quên đi tình cảnh con người." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-01",
+    "cardNameVi": "Át Kiếm",
+    "cardNameEn": "Ace of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: nhầm lẫn, lời sắc, thiếu rõ ràng. Ý nghĩa: Át Kiếm ngược gợi ý nhầm lẫn, lời sắc, thiếu rõ ràng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại", "rationale": "Tra kiếm vào bao, ngừng phán xét khi đầu óc còn mộng mị." },
+      "EMO": { "score": 1, "evidenceQuote": "uốn lưỡi trước khi nói", "rationale": "Ý thức được sức sát thương của lời nói để tiết chế lại." },
+      "STR": { "score": 1, "evidenceQuote": "làm rõ thông tin", "rationale": "Thu thập thêm dữ kiện để xua tan sự nhầm lẫn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự thiếu rõ ràng", "rationale": "Tự nhận thức được rằng tư duy của mình đang bị nhiễu loạn." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "vung kiếm bừa bãi", "rationale": "Hành động thiếu suy nghĩ làm tổn hại các mối quan hệ." },
+      "EMO": { "score": -2, "evidenceQuote": "lời sắc, cay nghiệt", "rationale": "Dùng lời nói độc địa sát thương lòng tự trọng của người khác." },
+      "STR": { "score": -2, "evidenceQuote": "nhầm lẫn, thiếu rõ ràng", "rationale": "Tư duy rối loạn, phán đoán sai lầm, logic ngụy biện." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -2, "evidenceQuote": "mù mờ chân lý", "rationale": "Bị định kiến và cái tôi hung hãn bịt mắt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-02",
+    "cardNameVi": "2 Kiếm",
+    "cardNameEn": "Two of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: bế tắc, cân nhắc, quyết định khó. Ý nghĩa: 2 Kiếm xuôi nhấn mạnh bế tắc, cân nhắc, quyết định khó; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "ngồi bịt mắt, hai tay bắt chéo kiếm", "rationale": "Tạm dừng hành động bên ngoài để giữ trạng thái cân bằng nội tâm." },
+      "EMO": { "score": 0, "evidenceQuote": "kìm nén cảm xúc để cân nhắc", "rationale": "Không để cảm xúc bộc phát làm lệch cán cân phán đoán." },
+      "STR": { "score": 1, "evidenceQuote": "cân nhắc kỹ lưỡng", "rationale": "Đặt hai phương án ngang bằng nhau để cân đo đong đếm cẩn trọng." },
+      "RSK": { "score": -1, "evidenceQuote": "chưa dám chọn", "rationale": "Thận trọng tối đa vì mỗi lựa chọn đều có cái giá phải trả." },
+      "INT": { "score": 1, "evidenceQuote": "lắng nghe tiếng sóng biển đêm", "rationale": "Tập trung thính giác và cảm nhận bên trong khi mắt bị bịt kín." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "bế tắc", "rationale": "Bất động hoàn toàn, giam mình trong tư thế bế tắc không lối thoát." },
+      "EMO": { "score": -1, "evidenceQuote": "lạnh lùng, trốn tránh", "rationale": "Đóng băng trái tim để né tránh phải đối mặt với nỗi đau lựa chọn." },
+      "STR": { "score": -1, "evidenceQuote": "kẹt giữa ngã ba đường", "rationale": "Không thể đưa ra quyết sách vì sợ trách nhiệm." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ ra quyết định", "rationale": "Tê liệt vì nỗi sợ phải chọn sai phương án." },
+      "INT": { "score": -1, "evidenceQuote": "tự bịt mắt mình", "rationale": "Cố tình không chịu nhìn vào sự thật hiển nhiên trước mắt." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-02",
+    "cardNameVi": "2 Kiếm",
+    "cardNameEn": "Two of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: né quyết định, thiếu tin, quá tải. Ý nghĩa: 2 Kiếm ngược gợi ý né quyết định, thiếu tin, quá tải; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tháo khăn bịt mắt, hạ kiếm xuống", "rationale": "Bắt đầu mở mắt nhìn nhận thực tế để chuẩn bị lựa chọn." },
+      "EMO": { "score": 1, "evidenceQuote": "giải tỏa áp lực", "rationale": "Thả lỏng sự căng cứng tâm lý để hít thở trở lại." },
+      "STR": { "score": 1, "evidenceQuote": "tìm kiếm thêm thông tin", "rationale": "Chủ động bổ sung dữ liệu còn thiếu để có căn cứ quyết định." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận rủi ro để chọn", "rationale": "Dũng cảm phá vỡ thế giằng co dù kết quả có ra sao." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn thẳng vào sự thật", "rationale": "Tháo bỏ bức màn che mắt để đón nhận ánh sáng." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "né quyết định", "rationale": "Đùn đẩy trách nhiệm ra quyết định cho người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "quá tải, hoảng loạn", "rationale": "Bộ não bị quá tải thông tin, căng thẳng cực độ dẫn tới suy nhược." },
+      "STR": { "score": -2, "evidenceQuote": "hỗn loạn thông tin", "rationale": "Tiếp nhận thông tin nhiễu loạn không kiểm chứng." },
+      "RSK": { "score": -2, "evidenceQuote": "thiếu tin tưởng", "rationale": "Mất sạch lòng tin vào bản thân và phán đoán của mình." },
+      "INT": { "score": -1, "evidenceQuote": "mất phương hướng phán đoán", "rationale": "Đầu óc mụ mị không còn biết đâu là đúng đâu là sai." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-03",
+    "cardNameVi": "3 Kiếm",
+    "cardNameEn": "Three of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: đau lòng, chia ly, sự thật đau. Ý nghĩa: 3 Kiếm xuôi nhấn mạnh đau lòng, chia ly, sự thật đau; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "đứng dưới mưa bão", "rationale": "Chấp nhận trải qua cơn giông bão để cơn đau tự rút đi." },
+      "EMO": { "score": -2, "evidenceQuote": "đau lòng, chia ly", "rationale": "Trái tim bị ba thanh kiếm đâm xuyên, nỗi đau xé lòng của sự tan vỡ." },
+      "STR": { "score": 1, "evidenceQuote": "sự thật đau", "rationale": "Sự thật dù phũ phàng nhưng giúp chấm dứt những ảo tưởng dối trá." },
+      "RSK": { "score": 1, "evidenceQuote": "dám đối diện vết thương", "rationale": "Không gây mê trốn tránh, can đảm nếm trải nỗi đau trưởng thành." },
+      "INT": { "score": 1, "evidenceQuote": "thấu hiểu quy luật khổ đau", "rationale": "Nhận ra nỗi đau là chiếc chìa khóa mở rộng lòng trắc ẩn." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "gục ngã trong mưa", "rationale": "Mất sức sống, chìm đắm trong đau khổ không gượng dậy nổi." },
+      "EMO": { "score": -2, "evidenceQuote": "oán hận, cay đắng", "rationale": "Nuôi dưỡng lòng thù hận, dằn vặt bản thân và nguyền rủa kẻ phản bội." },
+      "STR": { "score": -1, "evidenceQuote": "tan nát cõi lòng", "rationale": "Cấu trúc tinh thần bị tàn phá nặng nề." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ yêu thêm lần nữa", "rationale": "Đóng chặt tim lại vì vết thương lòng quá sâu hoắm." },
+      "INT": { "score": -1, "evidenceQuote": "quẩn quanh trong bi kịch", "rationale": "Tự biến mình thành nạn nhân vĩnh viễn của số phận." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-03",
+    "cardNameVi": "3 Kiếm",
+    "cardNameEn": "Three of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: chữa lành, tha thứ, hồi phục. Ý nghĩa: 3 Kiếm ngược gợi ý chữa lành, tha thứ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chủ động rút kiếm ra khỏi tim", "rationale": "Từng bước rút bỏ các thanh kiếm tổn thương để vết thương lên da non." },
+      "EMO": { "score": 2, "evidenceQuote": "chữa lành, tha thứ, hồi phục", "rationale": "Mở lòng tha thứ cho người và cho mình, trút bỏ gánh nặng oán hờn." },
+      "STR": { "score": 1, "evidenceQuote": "tái thiết bình yên", "rationale": "Lập lại trật tự tinh thần lành mạnh sau cơn giông bão." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng khí tha thứ", "rationale": "Can trường buông bỏ thù hận để tìm lại tự do cho tâm hồn." },
+      "INT": { "score": 2, "evidenceQuote": "giác ngộ qua khổ đau", "rationale": "Biến nỗi đau thành sự khôn ngoan và lòng vị tha sâu sắc." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "vết sẹo còn rỉ máu", "rationale": "Đôi khi vết thương cũ vẫn nhói đau khi gặp lại kỷ niệm." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-04",
+    "cardNameVi": "4 Kiếm",
+    "cardNameEn": "Four of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: nghỉ ngơi, hồi phục, tĩnh tâm. Ý nghĩa: 4 Kiếm xuôi nhấn mạnh nghỉ ngơi, hồi phục, tĩnh tâm; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -2, "evidenceQuote": "nghỉ ngơi, nằm trên bệ đá nhà thờ", "rationale": "Chủ động đình chỉ toàn bộ hoạt động để tái tạo sinh lực sau trận chiến." },
+      "EMO": { "score": 1, "evidenceQuote": "tĩnh tâm, an bình", "rationale": "Tâm trí thanh thản, lắng dịu mọi xao động và lo âu." },
+      "STR": { "score": 2, "evidenceQuote": "kỷ luật nghỉ ngơi, quy củ thiền định", "rationale": "Thiết lập ranh giới bất khả xâm phạm để dưỡng sức." },
+      "RSK": { "score": -1, "evidenceQuote": "chốn trú ẩn an toàn", "rationale": "Nằm trong thánh đường an toàn tuyệt đối, tránh xa mọi tranh chấp." },
+      "INT": { "score": 2, "evidenceQuote": "tĩnh tâm, chiêm nghiệm thâm sâu", "rationale": "Thời gian thiền định quý báu để kết nối lại với tâm linh tối thượng." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "nằm quá lâu", "rationale": "Có thể trây ỳ, ngủ quên trên giường bệnh mà ngại trở lại thương trường." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ rời giường bệnh", "rationale": "Ám ảnh chiến trường cũ khiến không dám bước ra ngoài." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-04",
+    "cardNameVi": "4 Kiếm",
+    "cardNameEn": "Four of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bồn chồn, kiệt sức, áp lực. Ý nghĩa: 4 Kiếm ngược gợi ý bồn chồn, kiệt sức, áp lực; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thức dậy tái xuất", "rationale": "Rời khỏi giường bệnh, cầm lại thanh kiếm để chuẩn bị nhập cuộc." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "sắp xếp lại nhịp sinh hoạt", "rationale": "Cân bằng lại thời gian làm việc và nghỉ ngơi hợp lý." },
+      "RSK": { "score": 1, "evidenceQuote": "dám trở lại thương trường", "rationale": "Can đảm tái xuất sau thời gian dưỡng thương." },
+      "INT": { "score": 1, "evidenceQuote": "nhận ra sự bồn chồn vô ích", "rationale": "Ý thức được tâm trí đang bị thúc bách bởi sự lo âu thái quá." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hành động khi chưa khỏe", "rationale": "Hấp tấp lao vào việc khi cơ thể và tâm trí chưa hồi phục hoàn toàn." },
+      "EMO": { "score": -2, "evidenceQuote": "bồn chồn, căng thẳng", "rationale": "Mất ngủ triền miên, tâm thần bất an, áp lực đè nặng." },
+      "STR": { "score": -2, "evidenceQuote": "kiệt sức hoàn toàn (burnout)", "rationale": "Sụp đổ năng lượng vì không chịu nghỉ ngơi tử tế." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -1, "evidenceQuote": "mất bình an nội tâm", "rationale": "Tiếng ồn trong đầu gào thét không cho phép bản thân được yên nghỉ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-05",
+    "cardNameVi": "5 Kiếm",
+    "cardNameEn": "Five of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: xung đột, thắng bằng mọi giá, tổn thất. Ý nghĩa: 5 Kiếm xuôi nhấn mạnh xung đột, thắng bằng mọi giá, tổn thất; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thu hồi chiến lợi phẩm", "rationale": "Hành động quyết liệt bảo vệ lợi ích và thu dọn chiến trường." },
+      "EMO": { "score": -1, "evidenceQuote": "thắng nhưng đơn độc", "rationale": "Chiến thắng trên lý lẽ nhưng tổn thất tình cảm sâu sắc." },
+      "STR": { "score": 1, "evidenceQuote": "chiến thuật tranh đấu", "rationale": "Sử dụng trí thông minh và mưu mẹo để giành phần thắng." },
+      "RSK": { "score": 1, "evidenceQuote": "dám đối đầu", "rationale": "Không ngại va chạm trực diện để khẳng định quyền lợi." },
+      "INT": { "score": 1, "evidenceQuote": "bài học về cái giá của chiến thắng", "rationale": "Nhìn ra cái giá đắt đỏ của việc hơn thua bằng mọi giá." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "chơi xấu, chèn ép", "rationale": "Hành vi tiểu nhân, chà đạp người khác để vơ vét chiến lợi phẩm." },
+      "EMO": { "score": -2, "evidenceQuote": "tổn thất, cay đắng, cô lập", "rationale": "Thắng một trận cãi vã nhưng mất đi một người bạn, đơn độc cay đắng." },
+      "STR": { "score": -1, "evidenceQuote": "thắng bằng mọi giá", "rationale": "Bất chấp đạo lý và luật chơi công bằng để đạt mục đích." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -2, "evidenceQuote": "cái tôi ngạo mạn mù quáng", "rationale": "Say sưa trong nụ cười nhạo báng mà không biết mình vừa mất điều quý giá nhất." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-05",
+    "cardNameVi": "5 Kiếm",
+    "cardNameEn": "Five of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: hối tiếc, hòa giải, sửa chữa. Ý nghĩa: 5 Kiếm ngược gợi ý hối tiếc, hòa giải, sửa chữa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chủ động sửa chữa lỗi lầm", "rationale": "Hành động bồi thường thiệt hại và chìa tay làm lành." },
+      "EMO": { "score": 2, "evidenceQuote": "hối tiếc, hòa giải", "rationale": "Ăn năn chân thành, hạ vũ khí xuống để hàn gắn mối quan hệ." },
+      "STR": { "score": 1, "evidenceQuote": "chấm dứt tranh chấp", "rationale": "Thiết lập lại hòa bình và trật tự công bằng cho đôi bên." },
+      "RSK": { "score": 1, "evidenceQuote": "dám nhận sai", "rationale": "Can đảm thừa nhận lỗi lầm và sự hèn hạ quá khứ của mình." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh lương tâm", "rationale": "Lương tri thức tỉnh, nhận ra tranh giành hơn thua chỉ là ảo ảnh." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "day dứt hối hận", "rationale": "Cảm giác xấu hổ và mặc cảm vì những hành vi đê tiện trong quá khứ." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-06",
+    "cardNameVi": "6 Kiếm",
+    "cardNameEn": "Six of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chuyển tiếp, rời khó khăn, chữa lành. Ý nghĩa: 6 Kiếm xuôi nhấn mạnh chuyển tiếp, rời khó khăn, chữa lành; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chuyển tiếp, chèo thuyền rời đi", "rationale": "Lặng lẽ chèo thuyền đưa người thân rời khỏi vùng nước xoáy sang bờ bên kia." },
+      "EMO": { "score": 1, "evidenceQuote": "chữa lành, nhẹ nhõm dần", "rationale": "Tâm trạng dần lắng dịu, nỗi đau rút lui nhường chỗ cho sự bình yên." },
+      "STR": { "score": 1, "evidenceQuote": "hành trình có định hướng", "rationale": "Vạch lộ trình di chuyển êm ả, bảo toàn tính mạng và tài sản." },
+      "RSK": { "score": 1, "evidenceQuote": "dám rời bỏ vùng giông bão", "rationale": "Can đảm di cư, chấp nhận bắt đầu lại ở một vùng đất mới." },
+      "INT": { "score": 1, "evidenceQuote": "rời khó khăn", "rationale": "Nhận thức rõ ràng rằng ở lại chỉ có diệt vong, ra đi là giải thoát." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "chèo chậm", "rationale": "Tiến trình chuyển tiếp còn chậm chạp vì nặng gánh sáu thanh kiếm cắm trên thuyền." },
+      "EMO": { "score": -1, "evidenceQuote": "buồn man mác", "rationale": "Nỗi buồn chia tay quê hương bản quán chưa nguôi ngoai." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-06",
+    "cardNameVi": "6 Kiếm",
+    "cardNameEn": "Six of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kẹt lại, hành lý cũ, chống chuyển đổi. Ý nghĩa: 6 Kiếm ngược gợi ý kẹt lại, hành lý cũ, chống chuyển đổi; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "nhận ra chiếc thuyền đang chòng chành", "rationale": "Ý thức được nguy cơ lật thuyền để ném bớt hành lý xuống nước." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "giảm tải hành lý", "rationale": "Rà soát lại những đồ đạc thừa thãi và tư duy cũ kỹ cần vứt bỏ." },
+      "RSK": { "score": 1, "evidenceQuote": "chấp nhận chuyển đổi", "rationale": "Dừng việc chống đối tiến trình tất yếu." },
+      "INT": { "score": 1, "evidenceQuote": "thấy rõ gánh nặng hành lý cũ", "rationale": "Hiểu rằng chính những ký ức độc hại đang làm đắm con thuyền." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "kẹt lại giữa dòng", "rationale": "Thuyền đứng bánh giữa dòng nước siết, không tiến cũng chẳng lùi." },
+      "EMO": { "score": -2, "evidenceQuote": "hành lý cũ, dằn vặt", "rationale": "Mang theo toàn bộ sự oán hận và tổn thương quá khứ sang nơi ở mới." },
+      "STR": { "score": -1, "evidenceQuote": "chống chuyển đổi", "rationale": "Bảo thủ cản trở sự đổi mới, làm chậm tiến độ của cả tập thể." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ bến bờ mới", "rationale": "Kinh hãi trước sự thay đổi, thà chìm thuyền còn hơn cập bến lạ." },
+      "INT": { "score": -1, "evidenceQuote": "mù quáng bám giữ", "rationale": "Không nhận ra mình đang tự tay đục thủng đáy thuyền của chính mình." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-07",
+    "cardNameVi": "7 Kiếm",
+    "cardNameEn": "Seven of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chiến lược, bí mật, né tránh. Ý nghĩa: 7 Kiếm xuôi nhấn mạnh chiến lược, bí mật, né tránh; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chiến lược, nhón chân lẻn đi", "rationale": "Hành động mưu lược khôn khéo, dùng trí lừa đối thủ thay vì đối đầu trực diện." },
+      "EMO": { "score": 0, "evidenceQuote": "kín đáo", "rationale": "Giữ kín cảm xúc và ý định để đảm bảo bí mật chiến dịch." },
+      "STR": { "score": 2, "evidenceQuote": "kế sách, chiến lược luồn sâu", "rationale": "Kế hoạch tinh vi, lấy được 5 thanh kiếm cốt lõi trong doanh trại địch." },
+      "RSK": { "score": 2, "evidenceQuote": "đột kích nguy hiểm", "rationale": "Dám một mình lẻn vào hang cọp để hoàn thành nhiệm vụ." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy chiến thuật sắc bén", "rationale": "Nhìn ra kẽ hở phòng thủ của đối phương và tận dụng triệt để." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "né tránh", "rationale": "Né tránh đối thoại thẳng thắn, thiếu sự thành thật." },
+      "STR": { "score": -1, "evidenceQuote": "lươn lẹo", "rationale": "Dễ trượt chân vào thói gian lận, dối trá và luồn lách luật pháp." },
+      "RSK": { "score": 1, "evidenceQuote": "đùa với lửa", "rationale": "Nguy cơ bị bắt quả tang và mất sạch uy tín." },
+      "INT": { "score": -1, "evidenceQuote": "khôn lỏi", "rationale": "Dùng trí thông minh vào trò vặt vãnh ngắn hạn thay vì đạo lý lớn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-07",
+    "cardNameVi": "7 Kiếm",
+    "cardNameEn": "Seven of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thú nhận, bị lộ, sửa sai. Ý nghĩa: 7 Kiếm ngược gợi ý thú nhận, bị lộ, sửa sai; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thú nhận, sửa sai", "rationale": "Chủ động bước ra ánh sáng, trả lại đồ đã lấy và nhận lỗi." },
+      "EMO": { "score": 1, "evidenceQuote": "thanh thản lương tâm", "rationale": "Trút bỏ gánh nặng dối trá, tìm lại sự thanh khiết trong tâm hồn." },
+      "STR": { "score": 2, "evidenceQuote": "khôi phục tính chính trực", "rationale": "Tái lập sự minh bạch và luật chơi sòng phẳng." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng cảm thú nhận", "rationale": "Can đảm đối diện với sự trừng phạt để làm lại từ đầu." },
+      "INT": { "score": 2, "evidenceQuote": "lương tri thức tỉnh", "rationale": "Nhận ra rằng sự gian dối không bao giờ đem lại thành công bền vững." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bị bắt quả tang", "rationale": "Bị vạch mặt tại trận, ê chề nhục nhã." },
+      "EMO": { "score": -2, "evidenceQuote": "bị lộ tẩy, nhục nhã", "rationale": "Mất sạch danh dự, bị cộng đồng lên án và tẩy chay." },
+      "STR": { "score": -1, "evidenceQuote": "kế hoạch đổ bể", "rationale": "Mưu mẹo bị lộ, toàn bộ cấu trúc ngầm bị phá hủy." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ trừng phạt", "rationale": "Run rẩy lo sợ trước sự phán xét của công lý." },
+      "INT": { "score": -1, "evidenceQuote": "hối hận muộn màng", "rationale": "Chỉ nhận lỗi khi không còn đường chối cãi." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-08",
+    "cardNameVi": "8 Kiếm",
+    "cardNameEn": "Eight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tự giới hạn, sợ hãi, mắc kẹt. Ý nghĩa: 8 Kiếm xuôi nhấn mạnh tự giới hạn, sợ hãi, mắc kẹt; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "dò dẫm từng bước", "rationale": "Dù bị trói nhưng chân vẫn không bị cùm, vẫn có thể bước đi." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 0, "evidenceQuote": "dây trói vốn lỏng lẻo", "rationale": "Nhận ra những thanh kiếm xung quanh không hề cắm vào da thịt." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "tiềm năng tự cởi trói", "rationale": "Bắt đầu nhận thức rằng ngục tù này là do chính tâm trí mình tạo dựng." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "mắc kẹt hoàn toàn", "rationale": "Bất động, đứng im trong bãi lầy vì tưởng mình bị xiềng xích kiên cố." },
+      "EMO": { "score": -2, "evidenceQuote": "sợ hãi, bất lực", "rationale": "Tâm lý nạn nhân, cảm giác cô độc tuyệt vọng giữa vòng vây quân thù ảo." },
+      "STR": { "score": -2, "evidenceQuote": "tự giới hạn", "rationale": "Tự dựng lên các rào cản và quy tắc ngặt nghèo bóp nghẹt tự do của mình." },
+      "RSK": { "score": -2, "evidenceQuote": "sợ hãi cử động", "rationale": "Sợ chạm vào lưỡi kiếm đến mức không dám nhúc nhích." },
+      "INT": { "score": -2, "evidenceQuote": "ảo tưởng giam cầm", "rationale": "Mù quáng tin vào những lời dọa dẫm hão huyền, đánh mất hoàn toàn lý trí." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-08",
+    "cardNameVi": "8 Kiếm",
+    "cardNameEn": "Eight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: giải phóng, góc nhìn mới, tự do. Ý nghĩa: 8 Kiếm ngược gợi ý giải phóng, góc nhìn mới, tự do; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tự do, giải phóng", "rationale": "Rũ bỏ dây trói, tháo dải băng bịt mắt, sải bước ra khỏi vòng vây kiếm." },
+      "EMO": { "score": 2, "evidenceQuote": "nhẹ nhõm, tự do", "rationale": "Hạnh phúc vỡ òa khi nhận ra mình hoàn toàn tự do và làm chủ đời mình." },
+      "STR": { "score": 1, "evidenceQuote": "phá bỏ rào cản tự tạo", "rationale": "Đập tan các niềm tin giới hạn cũ để thiết lập tư duy cởi mở." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng khí tự giải thoát", "rationale": "Dám bước qua những lưỡi kiếm hù dọa để giành lấy độc lập." },
+      "INT": { "score": 2, "evidenceQuote": "góc nhìn mới, thức tỉnh nhận thức", "rationale": "Đột phá tư duy, nhìn thấu trò lừa bịp của nỗi sợ tâm lý." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "bỡ ngỡ sau giải phóng", "rationale": "Hơi choáng ngợp trước không gian tự do quá rộng lớn." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-09",
+    "cardNameVi": "9 Kiếm",
+    "cardNameEn": "Nine of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lo âu, ác mộng, suy diễn. Ý nghĩa: 9 Kiếm xuôi nhấn mạnh lo âu, ác mộng, suy diễn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "ngồi ôm mặt trên giường", "rationale": "Dừng lại mọi hoạt động trong đêm để đối mặt với cơn khủng hoảng tinh thần." },
+      "EMO": { "score": -1, "evidenceQuote": "lo âu sâu sắc", "rationale": "Thừa nhận nỗi sợ hãi tột cùng đang hành hạ tâm can." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhận diện bóng ma tâm lý", "rationale": "Bắt đầu hiểu rằng 9 thanh kiếm chỉ treo trên tường chứ không chạm vào cơ thể." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "tê liệt vì lo âu", "rationale": "Mất ngủ, kiệt quệ thần kinh, không còn sức lực để làm bất cứ việc gì." },
+      "EMO": { "score": -2, "evidenceQuote": "lo âu, ác mộng, suy diễn, tuyệt vọng", "rationale": "Trầm cảm, hoảng loạn, chìm sâu vào hố đen mặc cảm và tội lỗi." },
+      "STR": { "score": -2, "evidenceQuote": "suy diễn mất kiểm soát", "rationale": "Tâm trí suy diễn tiêu cực thành cơn cuồng phong xé nát lý trí." },
+      "RSK": { "score": -2, "evidenceQuote": "khiếp sợ màn đêm", "rationale": "Sợ hãi mọi thứ, nhìn đâu cũng thấy thảm họa và sự trừng phạt." },
+      "INT": { "score": -2, "evidenceQuote": "ác mộng che mờ hiện thực", "rationale": "Tự tra tấn mình bằng những kịch bản đen tối hoàn toàn không có thật." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-09",
+    "cardNameVi": "9 Kiếm",
+    "cardNameEn": "Nine of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: hy vọng, tìm hỗ trợ, hồi phục. Ý nghĩa: 9 Kiếm ngược gợi ý hy vọng, tìm hỗ trợ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tìm hỗ trợ, bước xuống giường", "rationale": "Chủ động với tay tìm kiếm sự giúp đỡ từ bạn bè hoặc chuyên gia tâm lý." },
+      "EMO": { "score": 2, "evidenceQuote": "hy vọng, hồi phục, bình an trở lại", "rationale": "Ánh bình minh xua tan ác mộng, lòng nhẹ nhõm khi cơn hoảng loạn đi qua." },
+      "STR": { "score": 1, "evidenceQuote": "lập lại nề nếp nghỉ ngơi", "rationale": "Khôi phục thói quen ngủ nghỉ và chăm sóc sức khỏe tinh thần." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm chia sẻ nỗi sợ", "rationale": "Không giấu giếm nỗi sợ trong bóng tối mà mang ra ánh sáng để giải quyết." },
+      "INT": { "score": 2, "evidenceQuote": "thức tỉnh khỏi cơn ác mộng", "rationale": "Nhận ra rằng những bóng ma chỉ là sản phẩm của trí tưởng tượng lo âu." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "tàn dư lo lắng", "rationale": "Thỉnh thoảng vẫn giật mình thon thót khi đêm xuống." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-10",
+    "cardNameVi": "10 Kiếm",
+    "cardNameEn": "Ten of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kết thúc đau, thất bại, chạm đáy. Ý nghĩa: 10 Kiếm xuôi nhấn mạnh kết thúc đau, thất bại, chạm đáy; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": -2, "evidenceQuote": "chạm đáy, nằm sấp bất động", "rationale": "Mọi việc đã kết thúc hoàn toàn, không còn gì tồi tệ hơn có thể xảy ra." },
+      "EMO": { "score": -1, "evidenceQuote": "chấp nhận kết cục đau đớn", "rationale": "Chấm dứt sự kháng cự vô ích, buông bỏ tất cả để đóng lại chương cũ." },
+      "STR": { "score": -2, "evidenceQuote": "sụp đổ toàn diện", "rationale": "Kế hoạch cũ đã chết hẳn, không còn khả năng cứu vãn." },
+      "RSK": { "score": 0, "evidenceQuote": "không còn gì để mất", "rationale": "Khi đã chạm đáy vực thì con đường duy nhất là đi lên." },
+      "INT": { "score": 2, "evidenceQuote": "ánh bình minh vàng phía chân trời", "rationale": "Nhìn thấy tia sáng bình minh le lói báo hiệu một chu kỳ mới sắp bắt đầu." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "thất bại thảm hại", "rationale": "Gục ngã hoàn toàn, không thể ngẩng đầu lên." },
+      "EMO": { "score": -2, "evidenceQuote": "kết thúc đau, bị đâm sau lưng", "rationale": "Đau đớn tột cùng, cảm giác bị phản bội và ruồng bỏ cay đắng." },
+      "STR": { "score": -2, "evidenceQuote": "thảm bại", "rationale": "Đổ vỡ toàn diện, mất sạch nguồn lực và vị thế." },
+      "RSK": { "score": -2, "evidenceQuote": "chết mòn trong tuyệt vọng", "rationale": "Tâm lý buông xuôi, muốn từ bỏ tất cả." },
+      "INT": { "score": -1, "evidenceQuote": "đắm chìm trong bi kịch thái quá", "rationale": "Kịch tính hóa nỗi đau của mình như nạn nhân xấu số nhất trần gian." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-10",
+    "cardNameVi": "10 Kiếm",
+    "cardNameEn": "Ten of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: sống lại, qua cơn, bắt đầu phục hồi. Ý nghĩa: 10 Kiếm ngược gợi ý sống lại, qua cơn, bắt đầu phục hồi; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "ngồi dậy, sống lại, bắt đầu phục hồi", "rationale": "Cử động lại từng ngón tay, đứng dậy khỏi mặt đất sau cơn bão táp." },
+      "EMO": { "score": 2, "evidenceQuote": "qua cơn, nhẹ nhõm, hồi sinh", "rationale": "Sống sót qua cơn thập tử nhất sinh, trân quý từng hơi thở của cuộc đời." },
+      "STR": { "score": 1, "evidenceQuote": "rút kiếm ra khỏi lưng", "rationale": "Bắt đầu dọn dẹp đống đổ nát để tái thiết từ con số 0." },
+      "RSK": { "score": 2, "evidenceQuote": "sống lại từ cõi chết", "rationale": "Không còn sợ bất cứ điều gì nữa vì điều tồi tệ nhất đã vượt qua." },
+      "INT": { "score": 2, "evidenceQuote": "tái sinh tinh thần", "rationale": "Giác ngộ vĩ đại về sức sống bất diệt của linh hồn con người." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "chưa hoàn toàn hồi phục", "rationale": "Vẫn còn yếu ớt, cần thời gian tịnh dưỡng." },
+      "EMO": { "score": -1, "evidenceQuote": "ám ảnh tàn dư", "rationale": "Vẫn còn giật mình khi nghĩ lại khoảnh khắc bị đâm sau lưng." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-11",
+    "cardNameVi": "Tiểu Đồng Kiếm",
+    "cardNameEn": "Page of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tò mò, cảnh giác, học hỏi. Ý nghĩa: Tiểu Đồng Kiếm xuôi nhấn mạnh tò mò, cảnh giác, học hỏi; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "cầm kiếm cảnh giác, sẵn sàng phản ứng", "rationale": "Nhanh nhẹn, linh hoạt, luôn trong tư thế sẵn sàng bảo vệ ý kiến." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "học hỏi, tư duy phản biện", "rationale": "Não bộ sắc sảo, ham học hỏi, thích đặt câu hỏi lật lại vấn đề." },
+      "RSK": { "score": 1, "evidenceQuote": "tò mò khám phá sự thật", "rationale": "Dám đào sâu tìm kiếm thông tin không ngại điều tiếng." },
+      "INT": { "score": 1, "evidenceQuote": "cảnh giác cao độ", "rationale": "Nhạy bén phát hiện các nguy cơ hoặc điều bất thường từ xa." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lăng xăng", "rationale": "Có thể quá sốt sắng can thiệp vào chuyện người khác." },
+      "EMO": { "score": -1, "evidenceQuote": "săm soi", "rationale": "Thích bới lông tìm vết, hay săm soi lỗi lầm của xung quanh." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-11",
+    "cardNameVi": "Tiểu Đồng Kiếm",
+    "cardNameEn": "Page of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lời đồn, hấp tấp, thiếu chín chắn. Ý nghĩa: Tiểu Đồng Kiếm ngược gợi ý lời đồn, hấp tấp, thiếu chín chắn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "học cách im lặng lắng nghe", "rationale": "Biết khóa miệng lại, ngừng phát ngôn bừa bãi khi chưa hiểu rõ chuyện." },
+      "EMO": { "score": 1, "evidenceQuote": "tránh làm tổn thương người khác", "rationale": "Ý thức được tác hại của những lời đồn thổi ác ý." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm chứng nguồn tin", "rationale": "Tập thói quen xác minh sự thật trước khi lan truyền." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh hấp tấp", "rationale": "Kìm hãm bản tính nóng vội muốn thể hiện bản thân." },
+      "INT": { "score": 1, "evidenceQuote": "rèn luyện sự chín chắn", "rationale": "Trưởng thành hơn trong cách tư duy và tiếp nhận thông tin." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "hấp tấp, phát ngôn bừa", "rationale": "Nói trước nghĩ sau, buôn chuyện thị phi gây họa sát thân." },
+      "EMO": { "score": -2, "evidenceQuote": "lời đồn ác ý", "rationale": "Đâm bị thóc chọc bị gạo, thích thêu dệt tin đồn thất thiệt hại người." },
+      "STR": { "score": -2, "evidenceQuote": "thiếu chín chắn, nông nổi", "rationale": "Trẻ trâu, hiếu thắng, cãi cùn không có căn cứ logic." },
+      "RSK": { "score": 1, "evidenceQuote": "liều lĩnh vô căn cứ", "rationale": "Mang chuyện bí mật của người khác ra rêu rao mua vui." },
+      "INT": { "score": -2, "evidenceQuote": "mất lý trí vì tọc mạch", "rationale": "Tâm trí bị đầu độc bởi những thông tin rác rưởi trên mạng xã hội." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-12",
+    "cardNameVi": "Kỵ Sĩ Kiếm",
+    "cardNameEn": "Knight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: quyết liệt, tham vọng, tốc độ. Ý nghĩa: Kỵ Sĩ Kiếm xuôi nhấn mạnh quyết liệt, tham vọng, tốc độ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "quyết liệt, tốc độ, phi nước đại", "rationale": "Lao thẳng vào mục tiêu với tốc độ cuồng phong và ý chí sắt đá." },
+      "EMO": { "score": 0, "evidenceQuote": "tập trung vào mục tiêu", "rationale": "Gạt bỏ mọi cảm xúc vướng víu để hoàn thành nhiệm vụ tối thượng." },
+      "STR": { "score": 1, "evidenceQuote": "tham vọng rõ ràng", "rationale": "Định hướng mũi kiếm thẳng tắp vào hồng tâm, không chệch hướng." },
+      "RSK": { "score": 2, "evidenceQuote": "dũng mãnh phi vào bão", "rationale": "Không sợ bất cứ kẻ thù nào cản đường, can trường xung trận." },
+      "INT": { "score": 1, "evidenceQuote": "trí tuệ sắc bén", "rationale": "Phản xạ thần tốc, tư duy chiến thuật nhanh như chớp." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "lao quá nhanh", "rationale": "Có thể giẫm đạp lên đồng đội trên đường xung phong." },
+      "EMO": { "score": -2, "evidenceQuote": "tàn nhẫn, lạnh lùng", "rationale": "Xem thường cảm xúc, ăn nói tàn nhẫn làm tổn thương người thân." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 2, "evidenceQuote": "liều lĩnh", "rationale": "Đâm đầu vào bẫy phục kích vì quá khinh địch." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-12",
+    "cardNameVi": "Kỵ Sĩ Kiếm",
+    "cardNameEn": "Knight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: liều lĩnh, công kích, mất hướng. Ý nghĩa: Kỵ Sĩ Kiếm ngược gợi ý liều lĩnh, công kích, mất hướng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "ghìm cương chiến mã", "rationale": "Chủ động hãm phanh lại trước khi lao xuống bờ vực." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "tìm lại phương hướng", "rationale": "Định hình lại la bàn chiến lược thay vì chém giết mù quáng." },
+      "RSK": { "score": -1, "evidenceQuote": "tránh liều lĩnh tự sát", "rationale": "Nhận ra sự điên rồ của việc đâm đầu vào tường đá." },
+      "INT": { "score": 1, "evidenceQuote": "tỉnh ngộ khỏi cơn cuồng sát", "rationale": "Hạ nhiệt cái đầu nóng để nhìn rõ cục diện." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "công kích cuồng loạn", "rationale": "Hung hăng, gây hấn khắp nơi, biến thành cỗ máy phá hoại." },
+      "EMO": { "score": -2, "evidenceQuote": "hung tợn, thù hằn", "rationale": "Bạo lực ngôn từ, công kích cá nhân tàn độc không thương tiếc." },
+      "STR": { "score": -2, "evidenceQuote": "mất hướng hoàn toàn", "rationale": "Mất kiểm soát tay lái, chém loạn xạ cả địch lẫn ta." },
+      "RSK": { "score": 2, "evidenceQuote": "liều lĩnh mù quáng", "rationale": "Thiêu thân lao vào lửa chỉ để thỏa mãn cơn điên cuồng nhất thời." },
+      "INT": { "score": -2, "evidenceQuote": "mất hết lý trí", "rationale": "Cơn cuồng nộ làm tê liệt hoàn toàn trí thông minh." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-13",
+    "cardNameVi": "Nữ Hoàng Kiếm",
+    "cardNameEn": "Queen of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: độc lập, ranh giới, thành thật. Ý nghĩa: Nữ Hoàng Kiếm xuôi nhấn mạnh độc lập, ranh giới, thành thật; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tay giơ kiếm, tay dang rộng công tâm", "rationale": "Hành động chuẩn mực, minh bạch và dứt khoát bảo vệ chân lý." },
+      "EMO": { "score": 0, "evidenceQuote": "thành thật, không giả tạo", "rationale": "Tình cảm chân thành không nịnh bợ, yêu ghét rõ ràng minh bạch." },
+      "STR": { "score": 2, "evidenceQuote": "ranh giới rõ ràng, độc lập", "rationale": "Bậc thầy về thiết lập ranh giới cá nhân và tư duy logic sắc lạnh." },
+      "RSK": { "score": 1, "evidenceQuote": "thành thật nói thẳng", "rationale": "Dám nói thẳng sự thật mất lòng mà không sợ bị ghét bỏ." },
+      "INT": { "score": 2, "evidenceQuote": "thấu thị sự thật, trí tuệ sắc bén", "rationale": "Trực giác lý trí đỉnh cao, nhìn thấu mọi lời dối trá nịnh hót chỉ trong chớp mắt." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "xa cách", "rationale": "Có thể quá nghiêm nghị khiến người khác sợ hãi không dám gần gũi." },
+      "STR": { "score": 1, "evidenceQuote": "nguyên tắc", "rationale": "Rất khó thỏa hiệp nếu đối phương vi phạm tiêu chuẩn chính trực." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-13",
+    "cardNameVi": "Nữ Hoàng Kiếm",
+    "cardNameEn": "Queen of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lạnh lùng, cay nghiệt, oán giận. Ý nghĩa: Nữ Hoàng Kiếm ngược gợi ý lạnh lùng, cay nghiệt, oán giận; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại sự cay nghiệt", "rationale": "Hạ thanh kiếm chỉ trích xuống để tự chữa lành vết thương lòng." },
+      "EMO": { "score": 1, "evidenceQuote": "làm mềm trái tim", "rationale": "Học cách bao dung và xoa dịu nỗi đau bị phụ bạc trong quá khứ." },
+      "STR": { "score": 1, "evidenceQuote": "giảm bớt sự khắt khe", "rationale": "Điều chỉnh lại tiêu chuẩn phán xét bớt độc đoán hơn." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "thấy rõ nỗi đau đằng sau vẻ lạnh lùng", "rationale": "Thừa nhận sự cô đơn cay đắng đằng sau lớp áo giáp sắt đá." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "cắt đứt tàn nhẫn", "rationale": "Hành vi trả đũa cay nghiệt, dùng sự sắc bén để đày đọa người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "lạnh lùng, cay nghiệt, oán giận", "rationale": "Trái tim đóng băng thù hận, mỉa mai châm chọc độc địa không thương xót." },
+      "STR": { "score": -1, "evidenceQuote": "độc đoán giáo điều", "rationale": "Dùng lý lẽ để bóp nghẹt mọi tiếng nói yếu thế hơn." },
+      "RSK": { "score": -1, "evidenceQuote": "đóng chặt lòng mình", "rationale": "Không bao giờ dám tin bất kỳ ai vì ám ảnh phản bội." },
+      "INT": { "score": -2, "evidenceQuote": "trí thông minh độc hại", "rationale": "Dùng sự sắc sảo để soi mói và tiêu diệt lòng tự trọng của đối phương." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-14",
+    "cardNameVi": "Vua Kiếm",
+    "cardNameEn": "King of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lý trí, quyền uy, công bằng. Ý nghĩa: Vua Kiếm xuôi nhấn mạnh lý trí, quyền uy, công bằng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thực thi công lý, quyền uy", "rationale": "Hành động dứt khoát của vị quan tòa tối cao cầm thanh gươm chân lý." },
+      "EMO": { "score": 0, "evidenceQuote": "công tâm vô tư", "rationale": "Đặt luật pháp và sự thật lên trên mọi thiên vị cảm xúc cá nhân." },
+      "STR": { "score": 2, "evidenceQuote": "lý trí, công bằng, kỷ cương", "rationale": "Đỉnh cao của trật tự pháp lý, tư duy logic cấu trúc và chuẩn mực xã hội." },
+      "RSK": { "score": 1, "evidenceQuote": "bảo vệ chân lý", "rationale": "Không khoan nhượng trước sự gian dối, dám đứng ra phán xử đại sự." },
+      "INT": { "score": 2, "evidenceQuote": "trí tuệ uyên bác", "rationale": "Khả năng phân tích siêu việt, phán xét công minh không một tì vết." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "phán xét nghiêm khắc", "rationale": "Có thể quá chuyên quyền trong việc thi hành án phạt." },
+      "EMO": { "score": -2, "evidenceQuote": "máu lạnh", "rationale": "Thiếu đi hơi ấm tình người, cư xử như một cỗ máy vô cảm." },
+      "STR": { "score": 2, "evidenceQuote": "kỷ cương thép", "rationale": "Cứng nhắc đến mức tàn nhẫn, áp dụng luật pháp máy móc." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "cardId": "swords-14",
+    "cardNameVi": "Vua Kiếm",
+    "cardNameEn": "King of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: độc đoán, tàn nhẫn, lạm quyền. Ý nghĩa: Vua Kiếm ngược gợi ý độc đoán, tàn nhẫn, lạm quyền; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "cần nhìn lại thói lạm quyền", "rationale": "Dừng lại việc dùng quyền lực để đàn áp người khác." },
+      "EMO": { "score": 1, "evidenceQuote": "tìm lại tính nhân văn", "rationale": "Học cách đưa lòng trắc ẩn vào trong các quyết định tư pháp." },
+      "STR": { "score": 1, "evidenceQuote": "khôi phục sự công tâm", "rationale": "Chỉnh đốn lại tính chính trực của hệ thống pháp lý." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "nhìn ra sự tàn độc của mình", "rationale": "Thức tỉnh trước thói độc tài đang biến mình thành bạo chúa." }
+    },
+    "shadow": {
+      "ACT": { "score": 2, "evidenceQuote": "lạm quyền, bạo ngược", "rationale": "Lạm dụng chức quyền để bức hại người vô tội, cai trị bằng nỗi sợ hãi." },
+      "EMO": { "score": -2, "evidenceQuote": "tàn nhẫn, vô nhân đạo", "rationale": "Băng giá, độc ác, không màng đến sinh mạng và cảm xúc của đồng loại." },
+      "STR": { "score": -2, "evidenceQuote": "độc đoán, bẻ cong luật pháp", "rationale": "Bẻ cong chân lý, dùng luật pháp làm công cụ thanh trừng đối thủ." },
+      "RSK": { "score": 1, "evidenceQuote": "bất chấp công lý", "rationale": "Dám làm những điều trái với luân thường đạo lý vì say mê quyền lực." },
+      "INT": { "score": -2, "evidenceQuote": "trí tuệ ma quỷ", "rationale": "Sử dụng trí thông minh phi thường để bày mưu tính kế hãm hại người khác." }
+    },
+    "overallConfidence": 0.95
+  }
+]

@@ -1,0 +1,278 @@
+[
+  {
+    "id": "mission-1",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "1",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 1 - Người Tiên Phong",
+    "sourceSnippet": "Chỉ số Sứ mệnh 1 mang trọng trách tối thượng của Người Tiên Phong (The Pioneer / Leader). Sứ mệnh của bạn là trở thành người rẽ lối mở đường, phá vỡ những khuôn mẫu trì trệ lỗi thời, kiến tạo những hướng đi mới và dẫn dắt tập thể bằng ý chí tự lập kiên cường. Năng lực bẩm sinh: Ý chí sắt đá độc lập, ra quyết định dứt khoát, tư duy sáng tạo nguyên bản, lòng dũng cảm đương đầu với rủi ro.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "rẽ lối mở đường, ra quyết định dứt khoát, dẫn dắt tập thể", "rationale": "Tiên phong hành động, nắm giữ thế chủ động và dẫn đường mở lối cho tập thể." },
+      "EMO": { "score": 0, "evidenceQuote": "thực hành lắng nghe và trao quyền", "rationale": "Chuyển hóa từ áp đặt sang trao quyền nâng đỡ cộng sự." },
+      "STR": { "score": 1, "evidenceQuote": "kiến tạo những hướng đi mới có chủ đích", "rationale": "Thiết lập cấu trúc mục tiêu rõ ràng giúp tổ chức tiến lên phía trước." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm đương đầu với rủi ro, ý chí sắt đá độc lập", "rationale": "Bản lĩnh kiên cường, dám chịu trách nhiệm trước mọi sóng gió thử thách." },
+      "INT": { "score": 1, "evidenceQuote": "tư duy sáng tạo nguyên bản không chịu gò bó", "rationale": "Trực giác nhạy bén, phá vỡ lối mòn để nhìn ra các cơ hội tương lai." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trở nên ỷ lại, né tránh trách nhiệm lãnh đạo", "rationale": "Tê liệt tính tự chủ, thụ động để người khác quyết định thay cuộc đời." },
+      "EMO": { "score": -2, "evidenceQuote": "gia trưởng, độc đoán, hiếu thắng, đàn áp ý kiến", "rationale": "Cái tôi áp bức, tàn nhẫn dẫm đạp lên cảm xúc của người khác." },
+      "STR": { "score": -1, "evidenceQuote": "làm việc theo kiểu bất chấp đạo đức", "rationale": "Phá vỡ nguyên tắc vì tham vọng chiến thắng bằng mọi giá." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ hãi thất bại", "rationale": "Nỗi sợ làm tê liệt ý chí tiến lên, biến mình thành kẻ hèn nhát." },
+      "INT": { "score": -1, "evidenceQuote": "rơi vào cực đoan của cái tôi", "rationale": "Mù quáng trong sự ngạo mạn, không chịu lắng nghe cảnh báo." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-2",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "2",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 2 - Sứ Giả Hòa Bình",
+    "sourceSnippet": "Chỉ số Sứ mệnh 2 mang trọng trách thiêng liêng của Sứ Giả Hòa Bình (The Peace Ambassador & Master of Diplomacy). Sứ mệnh cuộc đời của bạn là trở thành chiếc cầu nối hàn gắn những chia rẽ, kiến tạo sự thấu cảm, xoa dịu những nỗi đau tinh thần và nuôi dưỡng tình yêu thương, sự hòa hợp giữa con người với con người. Năng lực bẩm sinh: Trực giác tâm linh nhạy bén xuất chúng, lắng nghe tinh tế và đọc vị cảm xúc, đàm phán ngoại giao khéo léo.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "lùi lại một bước, ôn hòa", "rationale": "Ưu tiên sự tĩnh lặng và đồng thuận thay vì hành động đơn độc tranh giành." },
+      "EMO": { "score": 2, "evidenceQuote": "hàn gắn chia rẽ, kiến tạo sự thấu cảm, xoa dịu nỗi đau, nuôi dưỡng tình yêu thương", "rationale": "Đỉnh cao của tình yêu thương, lòng trắc ẩn vị tha và khả năng kết nối tâm hồn." },
+      "STR": { "score": 1, "evidenceQuote": "nghệ thuật đàm phán ngoại giao, thiết lập ranh giới lành mạnh", "rationale": "Khéo léo dung hòa lợi ích đôi bên trên nền tảng tôn trọng và công bằng." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác tâm linh nhạy bén xuất chúng, đọc vị cảm xúc", "rationale": "Trực giác siêu giác quan thấu suốt tâm lý và những ẩn ức của người khác." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "nhu nhược không dám bảo vệ chính kiến", "rationale": "Bỏ cuộc, né tránh hành động quyết đoán khi cần bảo vệ lẽ phải." },
+      "EMO": { "score": -2, "evidenceQuote": "chia rẽ bè phái, đâm sau lưng, kìm nén cảm xúc sinh oán giận ngầm", "rationale": "Thao túng ngầm, đạo đức giả và tích tụ độc tố tâm lý phá hoại mối quan hệ." },
+      "STR": { "score": -1, "evidenceQuote": "làm hài lòng mọi người vô nguyên tắc", "rationale": "Nhượng bộ tùy tiện, đánh mất ranh giới cá nhân và nguyên tắc đạo đức." },
+      "RSK": { "score": -1, "evidenceQuote": "sợ xung đột, không dám nói Không", "rationale": "Co cụm hèn nhát trước áp lực bất công của người khác." },
+      "INT": { "score": -1, "evidenceQuote": "trầm cảm vì kìm nén cảm xúc", "rationale": "Tâm trí u uất, mất kết nối với nguồn sáng trực giác an lành." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-3",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "3",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 3 - Người Truyền Cảm Hứng",
+    "sourceSnippet": "Chỉ số Sứ mệnh 3 mang trọng trách của Người Truyền Cảm Hứng & Sáng Tạo Ngôn Từ (The Creative Inspirer & Expresser). Sứ mệnh tối thượng của bạn là sử dụng sức mạnh kỳ diệu của ngôn từ, nghệ thuật và trí tuệ để thắp sáng hy vọng, lan tỏa niềm vui sống, xua tan sự u tối và nâng đỡ tinh thần cho nhân loại. Năng lực bẩm sinh: Biểu đạt ngôn ngữ xuất chúng, óc hài hước duyên dáng, tư duy phản biện sắc bén não trái.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thực hành ái ngữ mỗi ngày, cam kết kỷ luật sáng tạo 45 phút", "rationale": "Chủ động sáng tạo và lan tỏa năng lượng tích cực đến cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "thắp sáng hy vọng, lan tỏa niềm vui sống, xua tan sự u tối", "rationale": "Truyền cảm hứng vui tươi, ấm áp, kết nối hàng triệu trái tim bằng tình yêu đời." },
+      "STR": { "score": 1, "evidenceQuote": "kết hợp sáng tạo với kỷ luật thực thi của số 4", "rationale": "Đưa các ý tưởng bay bổng vào khuôn khổ để hoàn tất tác phẩm thực tế." },
+      "RSK": { "score": 1, "evidenceQuote": "sức hút tự nhiên trên sân khấu hoặc trước công chúng", "rationale": "Tự tin tỏa sáng trước đám đông, dám chia sẻ tiếng nói cá nhân." },
+      "INT": { "score": 2, "evidenceQuote": "trí tuệ và trí tưởng tượng phong phú, tư duy phản biện sắc bén", "rationale": "Khả năng liên tưởng xuất chúng, biến những chân lý phức tạp thành điều giản dị." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lãng phí năng lượng vào những thú vui nông cạn, để lại dự án dang dở", "rationale": "Phân tán năng lượng, làm việc nửa vời không có kết quả thực tế." },
+      "EMO": { "score": -2, "evidenceQuote": "ngôn từ cay độc để chỉ trích, phán xét, buôn chuyện thị phi", "rationale": "Dùng lời nói như vũ khí độc hại hạ thấp và bôi nhọ người khác." },
+      "STR": { "score": -2, "evidenceQuote": "để lại nhiều dự án dang dở, vô kỷ luật", "rationale": "Thiếu kiên trì, làm việc tùy hứng làm đổ vỡ các cam kết công việc." },
+      "RSK": { "score": -1, "evidenceQuote": "bi quan, khép kín, tự ti không dám bộc lộ", "rationale": "Sợ bị phán xét, chôn vùi tài năng thiên bẩm trong sự tự ti." },
+      "INT": { "score": -1, "evidenceQuote": "thú vui nông cạn, nói nhiều hơn làm", "rationale": "Mất chiều sâu tư duy, sa vào lối sống bề nổi vô bổ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-4",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "4",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 4 - Người Kiến Tạo Nền Móng",
+    "sourceSnippet": "Chỉ số Sứ mệnh 4 mang trọng trách của Người Kiến Tạo Nền Móng & Bậc Thầy Hệ Thống (The Master Organizer & Builder). Sứ mệnh cuộc đời của bạn là biến những ý tưởng trừu tượng thành các cấu trúc thực tế vững chắc, chuẩn hóa quy trình, thiết lập trật tự kỷ luật và kiến tạo sự an toàn, thịnh vượng bền vững cho xã hội. Năng lực bẩm sinh: Kỷ luật tự giác thép, tư duy tổ chức logic và khoa học, kiên trì nhẫn nại phi thường, quản trị rủi ro vượt trội.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chuẩn hóa 1 quy trình công việc, thực hành chữ tín 100%", "rationale": "Hành động bền bỉ, kiên nhẫn xây dựng từng viên gạch nền móng kiên cố." },
+      "EMO": { "score": 0, "evidenceQuote": "thiết lập giờ nghỉ ngơi kết nối cảm xúc gia đình", "rationale": "Học cách cân bằng tình cảm bên cạnh công việc chuyên môn." },
+      "STR": { "score": 2, "evidenceQuote": "kỷ luật tự giác thép, tư duy tổ chức logic và khoa học, chuẩn hóa quy trình, thiết lập trật tự kỷ luật", "rationale": "Đỉnh cao của cấu trúc tổ chức, chuẩn hóa vận hành và kỷ luật công nghiệp thép." },
+      "RSK": { "score": -1, "evidenceQuote": "quản trị rủi ro vượt trội, an toàn bền vững", "rationale": "Ưu tiên sự chắc chắn, loại bỏ các yếu tố mạo hiểm liều lĩnh." },
+      "INT": { "score": 1, "evidenceQuote": "óc thực tế tỉ mỉ, nghiên cứu quy chuẩn", "rationale": "Tư duy logic sắc sảo, nhìn thấu các mắt xích vận hành của hệ thống." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "cẩu thả, trốn tránh trách nhiệm", "rationale": "Thiếu tinh thần trách nhiệm, làm việc qua quýt vô kỷ luật." },
+      "EMO": { "score": -2, "evidenceQuote": "phán xét người khác bằng thước đo năng suất lạnh lùng, tham công tiếc việc", "rationale": "Biến thành cỗ máy vô cảm, đè nén tình cảm gia đình và người thân." },
+      "STR": { "score": -2, "evidenceQuote": "sống vô kỷ luật, cẩu thả" , "rationale": "Phá vỡ hệ thống; hoặc cực đoan giáo điều biến con người thành nô lệ quy trình." },
+      "RSK": { "score": -2, "evidenceQuote": "cực kỳ cứng nhắc, bảo thủ, giáo điều", "rationale": "Sợ hãi sự đổi mới, khư khư giữ chặt lề thói cũ cản trở sự tiến bộ." },
+      "INT": { "score": -1, "evidenceQuote": "coi con người là nô lệ của quy trình", "rationale": "Thiển cận, mất khả năng nhìn nhận bức tranh nhân văn tổng thể." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-5",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "5",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 5 - Nhà Khai Phóng Đổi Mới",
+    "sourceSnippet": "Chỉ số Sứ mệnh 5 mang trọng trách của Nhà Khai Phóng Đổi Mới & Sứ Giả Của Tự Do (The Catalyst of Change & Freedom Seeker). Sứ mệnh tối cao của bạn là phá vỡ những rào cản giáo điều cũ kỹ, thúc đẩy sự tiến bộ xã hội, kết nối các nền văn hóa đa dạng và truyền cảm hứng cho mọi người dám sống can đảm, tự do. Năng lực bẩm sinh: Thích ứng siêu phàm, tư duy phóng khoáng không định kiến, nhạy bén xu hướng, dũng cảm phiêu lưu.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "thực hiện 1 đổi mới nhỏ mỗi tuần, phá vỡ rào cản giáo điều cũ kỹ", "rationale": "Tiên phong khai phá cái mới, liên tục chuyển động thúc đẩy tiến bộ xã hội." },
+      "EMO": { "score": 1, "evidenceQuote": "kết nối các nền văn hóa đa dạng, truyền cảm hứng sống tự do", "rationale": "Cởi mở, thân thiện, kết nối và lan tỏa năng lượng tự do cho muôn người." },
+      "STR": { "score": 1, "evidenceQuote": "kỷ luật chính là hình thức cao nhất của tự do, rèn luyện thói quen kỷ luật sắt", "rationale": "Làm chủ bản thân thông qua kỷ luật nội tâm để tự do sáng tạo an toàn." },
+      "RSK": { "score": 2, "evidenceQuote": "lòng dũng cảm phiêu lưu dấn thân, sống can đảm", "rationale": "Sẵn sàng chấp nhận rủi ro, dấn thân vào những miền đất và công nghệ mới lạ." },
+      "INT": { "score": 2, "evidenceQuote": "tư duy phóng khoáng không định kiến, trực giác tâm linh phong phú", "rationale": "Nhận thức vượt thời đại, nhạy bén bắt kịp quy luật vận động của tương lai." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thiếu kiên trì bỏ dở mọi việc giữa chừng", "rationale": "Cả thèm chóng chán, thiếu sự kiên định để đi tới vạch đích." },
+      "EMO": { "score": -1, "evidenceQuote": "trốn chạy thực tế", "rationale": "Né tránh trách nhiệm cảm xúc, chạy theo những khoái lạc nhất thời." },
+      "STR": { "score": -2, "evidenceQuote": "sa đà thói quen buông thả hủy hoại sức khỏe, nghiện ngập, cờ bạc, bốc đồng", "rationale": "Mất kiểm soát hoàn toàn, sụp đổ trật tự cuộc sống vì sự buông thả vô độ." },
+      "RSK": { "score": 2, "evidenceQuote": "nghiện ngập, cờ bạc, bốc đồng liều lĩnh", "rationale": "Đánh bạc với số phận, mạo hiểm ngu muội hủy hoại bản thân." },
+      "INT": { "score": -1, "evidenceQuote": "trốn chạy thực tế, bế tắc vô định", "rationale": "Mất phương hướng tinh thần, biến tự do thành sự tha hóa buông thả." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-6",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "6",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 6 - Người Chữa Lành Gia Đình",
+    "sourceSnippet": "Chỉ số Sứ mệnh 6 mang trọng trách của Người Chữa Lành & Phụng Sự Tình Yêu Vô Điều Kiện (The Master of Compassion & Nurturer). Sứ mệnh cuộc đời của bạn là bảo bọc, nuôi dưỡng tình cảm gia đình, tạo dựng không gian an lành ấm cúng, chăm sóc những tâm hồn bị tổn thương và mang lại vẻ đẹp hài hòa thẩm mỹ. Năng lực bẩm sinh: Lòng trắc ẩn bao la, năng khiếu thẩm mỹ nghệ thuật tinh tế, trực giác chăm sóc tâm lý, chữa lành cảm xúc.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tôn trọng quyền tự lập, kiến tạo không gian sống an lành", "rationale": "Chủ động phụng sự tổ ấm và thực hiện các hành động chăm sóc ấm áp." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng trắc ẩn bao la, phụng sự tình yêu vô điều kiện, chữa lành cảm xúc ấm áp chân thành", "rationale": "Biểu tượng tối thượng của tình mẫu tử, lòng bao dung và sự chở che an lành." },
+      "STR": { "score": 1, "evidenceQuote": "tinh thần trách nhiệm gia đình mẫu mực", "rationale": "Gánh vác bổn phận, giữ gìn trật tự và sự bình yên cho mái ấm gia đình." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 1, "evidenceQuote": "yêu thương vô điều kiện bắt đầu từ chính mình, năng khiếu thẩm mỹ tinh tế", "rationale": "Trực giác nghệ thuật và thấu suốt bài học yêu thương không điều kiện." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bỏ bê trách nhiệm gia đình", "rationale": "Thoái thác nghĩa vụ thiêng liêng đối với người thân ruột thịt." },
+      "EMO": { "score": -2, "evidenceQuote": "yêu thương đi kèm kiểm soát ngột ngạt, cằn nhằn áp đặt, đóng vai nạn nhân oán trách", "rationale": "Nhân danh tình thương để bóp nghẹt quyền tự do và thao túng tâm lý người khác." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm soát ngột ngạt", "rationale": "Cố tình áp đặt các chuẩn mực cá nhân lên cuộc đời người khác." },
+      "RSK": { "score": -1, "evidenceQuote": "sáng tạo tiêu cực lo âu thái quá thêu dệt kịch bản xấu", "rationale": "Nỗi sợ vô cớ khiến tâm trí hoảng loạn, sợ hãi những điều chưa xảy ra." },
+      "INT": { "score": -1, "evidenceQuote": "ấm ức khi sự hy sinh không được đền đáp", "rationale": "Mất đi sự sáng suốt, vị kỷ đòi hỏi báo đáp sau lớp vỏ bọc hy sinh." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-7",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "7",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 7 - Nhà Khai Sáng Tri Thức",
+    "sourceSnippet": "Chỉ số Sứ mệnh 7 mang trọng trách tối cao của Nhà Tìm Kiếm Chân Lý & Khai Sáng Tri Thức (The Truth Seeker & Spiritual Philosopher). Sứ mệnh cuộc đời của bạn là đào sâu nghiên cứu các quy luật vũ trụ, giải mã các hiện tượng tâm lý và bản thể con người, đúc kết những trải nghiệm xương máu thành tri thức uyên bác để nâng cao nhận thức cho nhân loại. Năng lực bẩm sinh: Phân tích sắc sảo bản chất vấn đề, tự học độc lập phi thường, trực giác triết học thấu suốt.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chia sẻ tri thức đã kiểm chứng, chuyển hóa nghiên cứu thành giải pháp công nghệ", "rationale": "Chuyển hóa tri thức trừu tượng thành các giải pháp hữu ích phục vụ cuộc đời." },
+      "EMO": { "score": 0, "evidenceQuote": "mở lòng đón nhận góc nhìn mới", "rationale": "Lắng nghe khiêm nhường để hoàn thiện nhận thức học thuật." },
+      "STR": { "score": 1, "evidenceQuote": "tự học và nghiên cứu độc lập phi thường, phân tích dữ liệu thuật toán", "rationale": "Kỷ luật nghiên cứu khoa học nghiêm cẩn, kiểm chứng dữ liệu chặt chẽ." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác triết học thấu suốt, giải mã quy luật vũ trụ, đúc kết chân lý sâu sắc", "rationale": "Đỉnh cao của trí tuệ minh triết, thấu hiểu sâu sắc bản chất quy luật vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "sống ẩn dật xa lánh thực tế", "rationale": "Thu mình vào tháp ngà tri thức, từ chối hành động đóng góp cho xã hội." },
+      "EMO": { "score": -2, "evidenceQuote": "hoài nghi cay độc, kiêu ngạo trí tuệ coi thường người khác", "rationale": "Thái độ ngạo mạn trí thức, xem thường đồng loại và cắt đứt tình người." },
+      "STR": { "score": -1, "evidenceQuote": "khép kín cực đoan", "rationale": "Cố thủ trong định kiến triết học của riêng mình, từ chối đối thoại." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": -2, "evidenceQuote": "mê muội tin vào những điều dị đoan thiếu kiểm chứng khoa học", "rationale": "Lạc lối trong mê tín dị đoan hoặc hoài nghi cực đoan phủ nhận chân lý." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-8",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "8",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 8 - Nhà Lãnh Đạo Thịnh Vượng",
+    "sourceSnippet": "Chỉ số Sứ mệnh 8 mang trọng trách của Nhà Lãnh Đạo Điều Hành & Bậc Thầy Thịnh Vượng (The Executive Leader & Wealth Manifestor). Sứ mệnh cuộc đời của bạn là làm chủ các quy luật vật chất và tài chính, tổ chức và điều phối nguồn lực quy mô lớn, tạo dựng công ăn việc làm và sử dụng sức mạnh kinh tế để tái thiết, nâng tầm thịnh vượng cho xã hội một cách chính trực. Năng lực bẩm sinh: Tư duy chiến lược thương trường sắc bén, quản trị tài chính tài tình, bản lĩnh lãnh đạo uy quyền.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "quản trị tài chính minh bạch, lãnh đạo nâng đỡ, hiện thực hóa các mục tiêu lớn", "rationale": "Hành động quyết đoán đỉnh đạc, tạo dựng việc làm và điều phối đại cuộc." },
+      "EMO": { "score": 1, "evidenceQuote": "kinh doanh để giải quyết vấn đề xã hội, trích quỹ phúc lợi phụng sự", "rationale": "Gắn kết sứ mệnh thịnh vượng với lòng trắc ẩn và phụng sự nhân loại." },
+      "STR": { "score": 2, "evidenceQuote": "quản trị tài chính và dòng tiền tài tình, tư duy chiến lược thương trường sắc bén", "rationale": "Năng lực quản trị kinh tài, thiết lập cấu trúc dòng vốn và tổ chức quy mô lớn." },
+      "RSK": { "score": 2, "evidenceQuote": "ý chí sắt đá vượt qua mọi khủng hoảng, bản lĩnh lãnh đạo uy quyền", "rationale": "Dũng cảm đứng đầu ngọn sóng, chèo lái tập thể vượt qua bão táp kinh tế." },
+      "INT": { "score": 1, "evidenceQuote": "neo giữ sự nghiệp vào tâm thế phụng sự và luật nhân quả", "rationale": "Thấu suốt quy luật nhân quả của dòng chảy tài chính để làm giàu chân chính." }
+    },
+    "shadow": {
+      "ACT": { "score": 1, "evidenceQuote": "lạm quyền chèn ép cấp dưới", "rationale": "Lạm dụng quyền uy hành chính để cưỡng ép và đàn áp người khác." },
+      "EMO": { "score": -2, "evidenceQuote": "thực dụng tàn nhẫn, tham lam bất chấp đạo đức", "rationale": "Băng giá, vô nhân đạo, coi tiền bạc địa vị cao hơn mạng sống và tình người." },
+      "STR": { "score": -2, "evidenceQuote": "kinh doanh phi pháp" , "rationale": "Phá vỡ pháp luật kinh tế hoặc để tài chính rơi vào cảnh nợ nần hỗn loạn." },
+      "RSK": { "score": 2, "evidenceQuote": "tham lam bất chấp rủi ro", "rationale": "Liều lĩnh đầu cơ tài chính vô đạo đức đẩy cả tập thể vào miệng hố." },
+      "INT": { "score": -2, "evidenceQuote": "bị tha hóa bởi quyền lực và tiền bạc", "rationale": "Bán linh hồn cho lòng tham vô đáy, mù quáng trước luật nhân quả." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-9",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "9",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 9 - Nhà Nhân Đạo Khai Sáng",
+    "sourceSnippet": "Chỉ số Sứ mệnh 9 mang trọng trách cao cả của Nhà Nhân Đạo & Ngọn Hải Đăng Khai Sáng (The Universal Humanitarian & Visionary Leader). Sứ mệnh tối thượng của bạn là cống hiến trọn vẹn trí tuệ và trái tim cho sự tiến bộ của nhân loại, bảo vệ công lý xã hội, truyền cảm hứng sống vị tha và dìu dắt cộng đồng. Năng lực bẩm sinh: Tầm nhìn vĩ mô bao quát nhân loại, lòng vị tha trắc ẩn không phân biệt ranh giới, uy tín đạo đức thu hút lòng người.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "tham gia hoạt động cống hiến cụ thể, bảo vệ môi trường, bảo vệ công lý xã hội", "rationale": "Dấn thân hành động quả cảm vì lẽ phải, công lý và hạnh phúc của cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "lòng vị tha trắc ẩn không phân biệt ranh giới, thực hành tha thứ buông bỏ, hào hiệp vô tư", "rationale": "Tình thương nhân loại bao la vô điều kiện, sẵn sàng sẻ chia và tha thứ lỗi lầm." },
+      "STR": { "score": 1, "evidenceQuote": "bắt đầu phụng sự từ gia đình nhỏ, lấy gia đình làm điểm tựa", "rationale": "Thiết lập trật tự phụng sự vững vàng từ tế bào gia đình vươn ra xã hội." },
+      "RSK": { "score": 1, "evidenceQuote": "hào hiệp vô tư, đứng lên đấu tranh cho lẽ phải", "rationale": "Dám hy sinh lợi ích cá nhân để bảo vệ quyền lợi cho người yếu thế." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn vĩ mô bao quát nhân loại, ngọn hải đăng khai sáng", "rationale": "Minh triết cao cả, thấu hiểu quy luật tiến hóa nhân văn của văn minh nhân loại." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm việc bao đồng xã hội nhưng lại vô tâm bỏ bê gia đình nhỏ", "rationale": "Hành động thiếu cân bằng, chạy theo đại nghĩa bên ngoài mà bỏ quên cội nguồn." },
+      "EMO": { "score": -2, "evidenceQuote": "sống ích kỷ hẹp hòi, ôm giữ hận thù và dằn vặt quá khứ", "rationale": "Cay đắng, ôm hận thù ghen ghét làm hoen ố trái tim vị tha." },
+      "STR": { "score": -1, "evidenceQuote": "bỏ bê gia đình, thiếu nền tảng thực tế", "rationale": "Xao lãng các nghĩa vụ thiết thực hàng ngày vì những ảo tưởng xa xôi." },
+      "RSK": { "score": -1, "evidenceQuote": "rơi vào ảo tưởng viển vông xa rời thực tế", "rationale": "Theo đuổi những mục tiêu không tưởng thiếu phương pháp thực thi." },
+      "INT": { "score": -1, "evidenceQuote": "dằn vặt quá khứ, ảo tưởng viển vông", "rationale": "Tâm trí kẹt trong những tổn thương cũ và những giấc mơ không có chân đế." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-11",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "11",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 11 - Sứ Giả Trực Giác Master",
+    "sourceSnippet": "Chỉ số Sứ mệnh 11 là Con Số Master mang trọng trách của Bậc Thầy Khai Sáng Tâm Thức & Sứ Giả Trực Giác (The Spiritual Messenger & Illuminator). Sứ mệnh thiêng liêng của bạn là trở thành cây cầu kết nối giữa cõi trần và cõi tinh thần, đánh thức nhận thức tâm linh, lan tỏa tình yêu thương thuần khiết và dùng sự thông tuệ tinh thần để soi sáng cho những tâm hồn đang lạc lối. Năng lực bẩm sinh: Trực giác siêu giác quan, thánh thiện thuần khiết, năng lượng chữa lành.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "dùng lời nói nâng đỡ tinh thần, thiền định nối đất mỗi sáng", "rationale": "Chủ động lan tỏa thông điệp khai sáng và nâng đỡ tinh thần người khác." },
+      "EMO": { "score": 2, "evidenceQuote": "lan tỏa tình yêu thương thuần khiết, năng lượng chữa lành tâm thức tự nhiên", "rationale": "Trường năng lượng thanh tịnh xoa dịu nỗi đau và mang lại sự bình an thánh thiện." },
+      "STR": { "score": 1, "evidenceQuote": "thực hành nối đất (Grounding) nghiêm ngặt mỗi ngày", "rationale": "Duy trì kỷ luật chăm sóc thể chất để làm giá đỡ vững chắc cho tâm linh." },
+      "RSK": { "score": 1, "evidenceQuote": "vượt qua cám dỗ danh lợi để giữ sứ mệnh phụng sự", "rationale": "Can đảm lựa chọn con đường tâm linh thanh bạch thay vì chạy theo danh lợi." },
+      "INT": { "score": 2, "evidenceQuote": "trực giác siêu giác quan thấu suốt năng lượng, thông tuệ tinh thần", "rationale": "Khả năng thấu thị trực giác siêu phàm kết nối với chân lý vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thần kinh căng thẳng kiệt quệ vì lo âu", "rationale": "Quá tải năng lượng khiến hành động bị tê liệt trong âu lo." },
+      "EMO": { "score": -1, "evidenceQuote": "tự ti nghi ngờ trực giác của mình", "rationale": "Mất niềm tin vào tiếng nói bên trong, cảm thấy cô độc lạc lõng." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu nối đất, xa rời thực tế đời thường", "rationale": "Bay bổng trên mây, không gắn kết được tinh thần với hành động thực tế." },
+      "RSK": { "score": -1, "evidenceQuote": "bị cám dỗ bởi danh lợi vật chất thấp kém mà đánh mất sứ mệnh", "rationale": "Bỏ cuộc trước cám dỗ vật chất, từ bỏ trọng trách thiêng liêng." },
+      "INT": { "score": -2, "evidenceQuote": "sa đà vào mê tín dị đoan hoặc ảo tưởng quyền năng", "rationale": "Cuồng tín, ảo tưởng bản thân là đấng cứu thế dẫn tới tẩu hỏa nhập ma." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-22",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "22",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 22 - Bậc Thầy Kiến Tạo Vĩ Đại",
+    "sourceSnippet": "Chỉ số Sứ mệnh 22 là Con Số Master quyền năng nhất – mang trọng trách của Bậc Thầy Kiến Tạo Vĩ Đại (The Master Builder). Sứ mệnh tối thượng của bạn là chuyển hóa những tầm nhìn tâm linh vĩ mô thành những đại công trình, hệ thống thể chế, tập đoàn hoặc giải pháp thực tế quy mô lớn, để lại di sản trường tồn phụng sự hàng triệu con người. Năng lực bẩm sinh: Tầm nhìn chiến lược vĩ mô xuyên thế kỷ kết hợp kỷ luật thép của số 4, ý chí sắt đá phi thường.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lập bản đồ chiến lược 10 năm, nghĩ lớn - bắt đầu nhỏ - đi nhanh, chuyển hóa thực tại vượt bậc", "rationale": "Năng lực thực thi phi thường, biến những đại kế hoạch triệu đô thành hiện thực." },
+      "EMO": { "score": 1, "evidenceQuote": "vì lợi ích trường tồn của cộng đồng, xây dựng đội ngũ đồng chí hướng", "rationale": "Quy tụ nhân tài và dẫn dắt tập thể bằng sứ mệnh phụng sự cao thượng." },
+      "STR": { "score": 2, "evidenceQuote": "năng lực thực thi kỷ luật thép của số 4, xây dựng từng viên gạch nền móng, hệ thống thể chế", "rationale": "Đỉnh cao tuyệt đối của kiến trúc hệ thống, quản trị quy mô vĩ mô và kỷ cương thép." },
+      "RSK": { "score": 2, "evidenceQuote": "ý chí sắt đá phi thường, bản lĩnh chuyển hóa thực tại quy mô khổng lồ", "rationale": "Bản lĩnh kiến thiết quốc gia, dám đương đầu với những đại thử thách lịch sử." },
+      "INT": { "score": 2, "evidenceQuote": "tầm nhìn chiến lược vĩ mô xuyên thế kỷ, chuyển hóa tầm nhìn tâm linh thành hiện thực", "rationale": "Trí tuệ chiến lược siêu việt kết nối lý tưởng cao cả với hiện thực đời sống." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "chôn vùi tiềm năng vĩ đại trong sự an phận bảo thủ tầm thường vì sợ gánh vác", "rationale": "Tê liệt hoàn toàn tiềm năng vĩ đại vì sự hèn nhát an phận." },
+      "EMO": { "score": -2, "evidenceQuote": "độc tài tàn nhẫn thao túng người khác", "rationale": "Cai trị bằng nỗi sợ hãi, bóc lột sức lực của người khác vì tham vọng cá nhân." },
+      "STR": { "score": -2, "evidenceQuote": "tham vọng quyền lực mù quáng bẻ cong thể chế", "rationale": "Lạm dụng thể chế để mưu đồ bá quyền, gây đổ vỡ hệ thống xã hội." },
+      "RSK": { "score": 2, "evidenceQuote": "tham vọng quyền lực bất chấp đạo đức", "rationale": "Liều lĩnh đánh đổi sinh mệnh của hàng triệu người vì quyền lực cá nhân." },
+      "INT": { "score": -2, "evidenceQuote": "say máu quyền lực, hoang tưởng quyền năng", "rationale": "Mất hoàn toàn sự tỉnh thức, biến thành bạo chúa hoang tưởng." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "mission-33",
+    "indicatorKey": "mission",
+    "indicatorNameVi": "Sứ Mệnh",
+    "numberValue": "33",
+    "title": "Luận Giải Chỉ Số Sứ Mệnh 33 - Bậc Thầy Giáo Dưỡng Tâm Hồn",
+    "sourceSnippet": "Chỉ số Sứ mệnh 33 là Con Số Master tối cao của Tình Yêu Thương Nhân Loại & Bậc Thầy Giáo Dưỡng Tâm Hồn (The Master Teacher of Universal Compassion). Sứ mệnh thiêng liêng nhất của bạn là nâng tầm rung động tâm thức của nhân loại thông qua tình yêu thương thuần khiết vô điều kiện, tinh thần phụng sự hy sinh cao cả và sự chữa lành toàn diện cho muôn loài. Năng lực bẩm sinh: Trái tim từ bi bác ái vô biên, năng lực truyền thụ chân lý vũ trụ giản dị, đức hy sinh quên mình.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "sống làm gương sáng (Lead by Example), lan tỏa tình yêu thương qua từng cử chỉ", "rationale": "Chủ động giáo dưỡng và cảm hóa thế gian bằng chính tấm gương đạo đức sống động." },
+      "EMO": { "score": 2, "evidenceQuote": "trái tim từ bi bác ái vô biên, tình yêu thương thuần khiết vô điều kiện, thấu cảm tuyệt đối", "rationale": "Đỉnh cao tuyệt đối của lòng trắc ẩn vũ trụ, yêu thương muôn loài không phân biệt." },
+      "STR": { "score": 1, "evidenceQuote": "từ bi đi đôi với trí tuệ, tự chữa lành và bảo dưỡng thân tâm", "rationale": "Thấu suốt ranh giới phụng sự có trí tuệ để bảo vệ năng lượng trường tồn." },
+      "RSK": { "score": 1, "evidenceQuote": "đức hy sinh quên mình vì đại nghĩa cứu rỗi", "rationale": "Sẵn sàng dấn thân hy sinh lợi ích cá nhân vì sự tiến hóa của nhân loại." },
+      "INT": { "score": 2, "evidenceQuote": "truyền thụ chân lý vũ trụ một cách giản dị sâu sắc, nâng tầm rung động tâm thức", "rationale": "Bậc thầy tâm linh tối cao thấu suốt bản chất tối hậu của tình yêu và vũ trụ." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "ôm đồm gánh vác nỗi đau của thiên hạ đến mức kiệt quệ thể xác và tâm thần", "rationale": "Gánh nghiệp thay người khác một cách mù quáng khiến bản thân kiệt sức." },
+      "EMO": { "score": -2, "evidenceQuote": "tự biến mình thành nạn nhân tuẫn đạo u uất", "rationale": "Rơi vào bẫy tâm lý tự thương hại, ấm ức trách móc thế gian bất công." },
+      "STR": { "score": -1, "evidenceQuote": "áp đặt tiêu chuẩn đạo đức khắt khe phán xét người khác", "rationale": "Trở nên giáo điều, dùng tiêu chuẩn đạo đức siêu nhiên để ép buộc người thường." },
+      "RSK": { "score": -1, "evidenceQuote": "hao tổn tâm can và sinh lực vì thiếu ranh giới", "rationale": "Tổn hại sinh lực nghiêm trọng do trao đi tình thương thiếu trí tuệ soi đường." },
+      "INT": { "score": -1, "evidenceQuote": "quên rằng mỗi linh hồn cần tự học bài học của chính họ", "rationale": "Can thiệp sai lầm vào tiến trình tiến hóa tự nhiên của người khác." }
+    },
+    "overallConfidence": 0.95
+  }
+]

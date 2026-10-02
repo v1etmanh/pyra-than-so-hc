@@ -1,0 +1,94 @@
+[
+  {
+    "id": "karmicDebts-13_4",
+    "indicatorKey": "karmicDebts",
+    "indicatorNameVi": "Nợ Nghiệp",
+    "numberValue": "13/4",
+    "title": "Giải Mã Và Hóa Giải Con Số Nợ Nghiệp 13/4",
+    "sourceSnippet": "Nợ nghiệp 13/4 bắt nguồn từ tiền kiếp khi linh hồn đã trốn tránh nghĩa vụ lao động, lười biếng, đùn đẩy trách nhiệm cho người khác, hoặc tìm kiếm những con đường tắt thiếu chính trực, đầu cơ trục lợi để đạt được mục đích mà không muốn bỏ công sức chân chính. Bài học linh hồn tối thượng của nợ nghiệp 13/4 là học cách lao động trung thực, kiên trì bền bỉ, tuân thủ kỷ luật sắt đá và tự mình đặt từng viên gạch xây dựng nền móng cuộc đời.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "học cách lao động trung thực, kiên trì bền bỉ, làm việc hết mình tỉ mỉ", "rationale": "Chăm chỉ lao động chân chính, kiên trì đặt từng viên gạch nền móng." },
+      "EMO": { "score": 1, "evidenceQuote": "đón nhận thử thách với tâm thế biết ơn thay vì than vãn", "rationale": "Chấp nhận gian khó với lòng biết ơn và sự nhẫn nại." },
+      "STR": { "score": 2, "evidenceQuote": "tuân thủ kỷ luật sắt đá, kỷ luật thời gian và công việc, duy trì thói quen ngăn nắp", "rationale": "Kỷ luật thép, tổ chức cuộc sống và công việc ngăn nắp chuẩn mực." },
+      "RSK": { "score": -1, "evidenceQuote": "nói không với mọi con đường tắt, tuyệt đối không tham gia làm giàu nhanh", "rationale": "Tuyệt đối tránh đường tắt rủi ro phi pháp, đi từng bước vững chãi." },
+      "INT": { "score": 1, "evidenceQuote": "chuyển hóa nợ nghiệp thành một nền móng vững chắc như bàn thạch", "rationale": "Thấu suốt giá trị của sự chính trực và lao động chân chính." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "trốn tránh nghĩa vụ lao động, lười biếng, đùn đẩy trách nhiệm cho người khác, bỏ cuộc giữa chừng", "rationale": "Lười biếng, đùn đẩy trách nhiệm và dễ bỏ cuộc khi gặp khó." },
+      "EMO": { "score": -2, "evidenceQuote": "tâm lý nạn nhân than thân trách phận, oán trách số phận bất công", "rationale": "Rơi vào tâm lý nạn nhân, bi lụy và oán thán hoàn cảnh." },
+      "STR": { "score": -2, "evidenceQuote": "dự án dễ bị đổ bể ở phút 89 nếu có chút lơ là cẩu thả", "rationale": "Lơ là cẩu thả làm phá hủy thành quả công sức." },
+      "RSK": { "score": -2, "evidenceQuote": "tìm kiếm những con đường tắt thiếu chính trực, đầu cơ trục lợi, làm ăn gian dối", "rationale": "Liều lĩnh làm ăn gian dối, tìm đường tắt dẫn đến sụp đổ." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "karmicDebts-14_5",
+    "indicatorKey": "karmicDebts",
+    "indicatorNameVi": "Nợ Nghiệp",
+    "numberValue": "14/5",
+    "title": "Giải Mã Và Hóa Giải Con Số Nợ Nghiệp 14/5",
+    "sourceSnippet": "Nợ nghiệp 14/5 xuất phát từ tiền kiếp khi linh hồn đã lạm dụng tự do cá nhân, buông thả theo các thú vui nhục dục bản năng (rượu chè, cờ bạc, sắc dục, thói quen nghiện ngập), sống bốc đồng vô kỷ luật và gây tổn hại nghiêm trọng đến tự do, tài sản hoặc hạnh phúc của những người xung quanh. Bài học linh hồn tối thượng của nợ nghiệp 14/5 là học cách làm chủ dục vọng bản năng, thiết lập kỷ luật tự thân và thấu hiểu chân lý: Kỷ luật chính là hình thức cao nhất của tự do.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "thiết lập thời gian biểu sinh hoạt cố định, thức dậy tập thể dục và làm việc đúng giờ", "rationale": "Hành động sinh hoạt điều độ, duy trì thói quen rèn luyện thân thể." },
+      "EMO": { "score": 1, "evidenceQuote": "thực hành lối sống thanh tịnh, điều độ, thiền định định tâm mỗi ngày", "rationale": "Giữ tâm thanh tịnh, làm dịu những thôi thúc bồn chồn dục vọng." },
+      "STR": { "score": 2, "evidenceQuote": "thiết lập kỷ luật tự thân, giữ trọn lời hứa và cam kết dài hạn, thực hành lối sống tối giản", "rationale": "Kỷ luật tự thân cao độ, kiểm soát ham muốn và giữ vững cam kết dài hạn." },
+      "RSK": { "score": -1, "evidenceQuote": "kiểm soát ngũ quan nghiêm ngặt, tuyệt đối tránh xa chất kích thích cờ bạc", "rationale": "Tránh xa mọi rủi ro cám dỗ độc hại và hành vi bốc đồng." },
+      "INT": { "score": 1, "evidenceQuote": "thấu hiểu chân lý: Kỷ luật chính là hình thức cao nhất của tự do", "rationale": "Giác ngộ ý nghĩa sâu sắc của sự tự do nội tại qua kỷ luật." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "buông thả theo các thú vui nhục dục bản năng (rượu chè, cờ bạc, sắc dục, thói quen nghiện ngập)", "rationale": "Sa đà nghiện ngập, buông thả bản năng tự hủy hoại bản thân." },
+      "EMO": { "score": -1, "evidenceQuote": "thôi thúc bồn chồn trong tâm trí, sống theo cảm xúc bốc đồng thích gì làm nấy", "rationale": "Bồn chồn, bất an và lệ thuộc vào cảm giác khoái lạc tức thời." },
+      "STR": { "score": -2, "evidenceQuote": "sống bốc đồng vô kỷ luật, phá vỡ các cam kết hôn nhân hoặc hợp đồng kinh doanh", "rationale": "Vô kỷ luật, phá vỡ các cam kết và hợp đồng quan trọng." },
+      "RSK": { "score": -2, "evidenceQuote": "cờ bạc, cá độ, mua sắm bốc đồng, quan hệ phóng túng", "rationale": "Mạo hiểm dại dột, ném tiền bạc và hạnh phúc vào các cuộc chơi nguy hiểm." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "karmicDebts-16_7",
+    "indicatorKey": "karmicDebts",
+    "indicatorNameVi": "Nợ Nghiệp",
+    "numberValue": "16/7",
+    "title": "Giải Mã Và Hóa Giải Con Số Nợ Nghiệp 16/7",
+    "sourceSnippet": "Nợ nghiệp 16/7 là con số nợ nghiệp nặng nề và sâu sắc nhất, phát sinh từ tiền kiếp khi linh hồn đã lạm dụng tình cảm, phản bội lòng tin của người yêu thương, tham gia vào các mối quan hệ bất chính, hoặc sống trong sự kiêu ngạo, tự phụ tột cùng, đặt bản ngã cái tôi lên trên đạo đức, tâm linh và luân thường đạo lý. Bài học linh hồn của số 16/7 là đập tan bản ngã ảo tưởng để xây dựng ngôi đền tâm linh chân thật và tình yêu thuần khiết.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "tìm về con đường tu tập tâm linh, sống chân thành, thủy chung tuyệt đối trong tình cảm", "rationale": "Hành động chính trực, chung thủy và tu dưỡng đạo đức." },
+      "EMO": { "score": 2, "evidenceQuote": "thực hành tha thứ triệt để cho người phản bội mình và tha thứ cho chính mình, cầu chúc bình an", "rationale": "Tha thứ vô điều kiện, chuyển hóa hận thù thành tình yêu thuần khiết." },
+      "STR": { "score": 1, "evidenceQuote": "đối diện với sự thật dù đau đớn, không xây dựng hình ảnh hào nhoáng giả tạo", "rationale": "Thiết lập lối sống chân thật, minh bạch và khiêm nhường." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "buông bỏ cái tôi kiêu ngạo, tu dưỡng tâm linh và đạo đức, sống theo các quy luật nhân quả", "rationale": "Trực giác giác ngộ tâm linh sâu sắc, nhìn thấu sự vô thường của bản ngã." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "lạm dụng tình cảm, phản bội lòng tin, tham gia vào các mối quan hệ bất chính", "rationale": "Phản bội lòng tin, lừa dối trong tình cảm gây nghiệp quả nặng nề." },
+      "EMO": { "score": -2, "evidenceQuote": "trở nên cay đắng, hoài nghi toàn bộ nhân loại, nuôi dưỡng lòng oán hận trả thù, sống khép kín tuyệt vọng", "rationale": "Oán hận trả thù, tuyệt vọng và hoài nghi cay đắng loài người." },
+      "STR": { "score": -2, "evidenceQuote": "sự nghiệp hoặc danh vọng bỗng chốc sụp đổ hoàn toàn trong tích tắc, mất trắng tiền tài", "rationale": "Sự sụp đổ toàn diện của các cấu trúc danh vọng và tài chính ảo tưởng." },
+      "RSK": { "score": -2, "evidenceQuote": "tiếp tục bám víu vào những mối quan hệ bất chính/danh vọng ảo tưởng", "rationale": "Cố chấp đâm đầu vào hiểm họa hủy diệt bản thân." },
+      "INT": { "score": -2, "evidenceQuote": "kiêu ngạo, tự phụ tột cùng, đặt bản ngã cái tôi lên trên đạo đức tâm linh", "rationale": "Ảo tưởng bản ngã kiêu ngạo làm mù quáng trí tuệ." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "karmicDebts-19_1",
+    "indicatorKey": "karmicDebts",
+    "indicatorNameVi": "Nợ Nghiệp",
+    "numberValue": "19/1",
+    "title": "Giải Mã Và Hóa Giải Con Số Nợ Nghiệp 19/1",
+    "sourceSnippet": "Nợ nghiệp 19/1 bắt nguồn từ tiền kiếp khi linh hồn nắm giữ quyền lực lãnh đạo nhưng đã lạm quyền, độc đoán, chuyên quyền, ích kỷ chỉ mưu cầu lợi ích cá nhân mà chèn ép, bóc lột, coi thường thuộc cấp hoặc từ chối giúp đỡ những người yếu thế. Bài học linh hồn của nợ nghiệp 19/1 là học cách cúi mình khiêm nhường, chia sẻ quyền lực, biết mở lòng đón nhận sự giúp đỡ và chuyển hóa phong cách lãnh đạo thành Lãnh Đạo Phụng Sự.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "lãnh đạo bằng tinh thần phụng sự, âm thầm giúp đỡ những người yếu thế mà không cần danh xưng", "rationale": "Hành động phụng sự vị tha, nâng đỡ và bảo vệ người yếu thế." },
+      "EMO": { "score": 1, "evidenceQuote": "nói lời cảm ơn chân thành mỗi ngày, thể hiện lòng biết ơn sâu sắc", "rationale": "Nuôi dưỡng lòng biết ơn và sự kết nối ấm áp với mọi người." },
+      "STR": { "score": 1, "evidenceQuote": "chia sẻ quyền lợi và hào quang, công nhận và tôn vinh đóng góp của người khác", "rationale": "Tổ chức và phân quyền dân chủ, chia sẻ quyền lợi công bằng." },
+      "RSK": { "score": 1, "evidenceQuote": "dũng cảm nói lời nhờ cậy sự trợ giúp từ đồng đội với thái độ khiêm tốn", "rationale": "Dám gạt bỏ áo giáp kiêu hãnh để mở lòng kết nối cộng đồng." },
+      "INT": { "score": 1, "evidenceQuote": "chuyển hóa phong cách lãnh đạo thành Lãnh Đạo Phụng Sự", "rationale": "Thấu hiểu triết lý lãnh đạo phụng sự chân chính." }
+    },
+    "shadow": {
+      "ACT": { "score": -2, "evidenceQuote": "lạm quyền, độc đoán, chuyên quyền, chèn ép, bóc lột, coi thường thuộc cấp", "rationale": "Chuyên quyền bạo ngược, lạm dụng quyền hạn đàn áp cấp dưới." },
+      "EMO": { "score": -2, "evidenceQuote": "cô độc cùng cực, gồng mình chịu đựng trong cay đắng, oán trách mọi người xung quanh là vô ơn", "rationale": "Cay đắng, cô độc cùng cực và oán trách người đời." },
+      "STR": { "score": -1, "evidenceQuote": "ích kỷ chỉ mưu cầu lợi ích cá nhân, từ chối giúp đỡ người yếu thế", "rationale": "Phá vỡ tính tương trợ tập thể vì sự ích kỷ cá nhân." },
+      "RSK": { "score": -1, "evidenceQuote": "ôm giữ chiếc mặt nạ kiêu hãnh 'Tôi không cần ai hết', dễ bị cô lập", "rationale": "Cô lập bản thân vì kiêu hãnh ảo tưởng." },
+      "INT": { "score": -1, "evidenceQuote": "độc đoán gia trưởng hơn để che đậy sự bất lực", "rationale": "Mất sáng suốt, dùng bạo quyền che giấu sự bất lực." }
+    },
+    "overallConfidence": 0.95
+  }
+]

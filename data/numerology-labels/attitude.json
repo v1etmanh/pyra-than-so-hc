@@ -1,0 +1,209 @@
+[
+  {
+    "id": "attitude-1",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "1",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 1",
+    "sourceSnippet": "Khi bước vào một môi trường mới, một cuộc họp lạ hoặc đứng trước một cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 1 là sự tự tin, đĩnh đạc và chủ động tuyệt đối. Bạn bước vào với tư thế ngẩng cao đầu, ánh mắt kiên định, không hề e dè đám đông và sẵn sàng đứng ra nhận trách nhiệm dẫn dắt hoặc nêu ý kiến đầu tiên.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "chủ động tuyệt đối, sẵn sàng đứng ra nhận trách nhiệm dẫn dắt, quyết tâm làm lại bằng một chiến lược mới", "rationale": "Phản xạ hành động tiên phong, chủ động lãnh đạo và xốc vác công việc." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 1, "evidenceQuote": "phân tích nguyên nhân và quyết tâm làm lại bằng một chiến lược mới", "rationale": "Tư duy chiến lược, phân tích nguyên nhân để tái cơ cấu hành động." },
+      "RSK": { "score": 2, "evidenceQuote": "bước vào với tư thế ngẩng cao đầu, không hề e dè đám đông, dám đứng ra nhận trách nhiệm", "rationale": "Dũng cảm, tự tin đối đầu áp lực và thử thách mới mà không do dự." },
+      "INT": { "score": 1, "evidenceQuote": "chứng minh năng lực vượt trội của mình, bản lĩnh tiên phong", "rationale": "Ý thức bản ngã mạnh mẽ và tầm nhìn quyết đoán." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "hiếu thắng, gia trưởng, áp đặt, tạo cảm giác khó gần", "rationale": "Thái độ áp đặt độc đoán, tạo khoảng cách căng thẳng với người khác." },
+      "STR": { "score": -1, "evidenceQuote": "không thích chia sẻ quyền lực", "rationale": "Độc tài, khước từ sự phối hợp tổ chức và chia sẻ quyền hạn." },
+      "RSK": { "score": 1, "evidenceQuote": "kích thích lòng tự ái và ý chí kiên cường", "rationale": "Bị kích động bởi lòng tự ái dẫn đến cố chấp hơn thua." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-2",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "2",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 2",
+    "sourceSnippet": "Khi bước vào môi trường mới hoặc tiếp cận một cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 2 là sự từ tốn, khiêm nhường, nhẹ nhàng và quan sát tinh tế. Bạn không tìm cách gây ồn ào hay phô trương bản thân; bạn mỉm cười thân thiện, cảm nhận bầu không khí xung quanh và tìm cách hòa nhập êm dịu, mang lại cảm giác an toàn và dễ chịu cho mọi người.",
+    "core": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": 2, "evidenceQuote": "mỉm cười thân thiện, kiên nhẫn, lòng thấu cảm và kỹ năng giao tiếp hòa nhã", "rationale": "Thái độ hòa nhã, tạo bầu không khí an toàn và ấm áp cho mọi người." },
+      "STR": { "score": 1, "evidenceQuote": "thiết lập ranh giới lịch thiệp, chuẩn bị sẵn 1 - 2 ý kiến đóng góp sâu sắc", "rationale": "Thiết lập ranh giới tế nhị và chuẩn bị ý kiến chu đáo." },
+      "RSK": { "score": -1, "evidenceQuote": "từ tốn, khiêm nhường, nhẹ nhàng và quan sát tinh tế", "rationale": "Tiếp cận thận trọng, quan sát trước khi hòa nhập, tránh rủi ro va chạm." },
+      "INT": { "score": 2, "evidenceQuote": "quan sát tinh tế, sự mềm mại và thấu cảm chính là vũ khí ngoại giao quyền năng nhất", "rationale": "Trực giác nhạy cảm đọc vị bầu không khí và tâm lý người đối diện." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "thụ động hoặc dễ bị người khác lấn át trong môi trường cạnh tranh", "rationale": "Thiếu tính chủ động hành động, dễ bị chèn ép." },
+      "EMO": { "score": -1, "evidenceQuote": "hụt hẫng, nhạy cảm tự trách bản thân", "rationale": "Dễ bị tổn thương tâm lý, tự dằn vặt khi gặp lời từ chối." },
+      "STR": { "score": -1, "evidenceQuote": "thiếu quyết đoán", "rationale": "Do dự chần chừ, khó đưa ra quyết định dứt khoát." },
+      "RSK": { "score": -2, "evidenceQuote": "rụt rè, thiếu quyết đoán", "rationale": "E sợ rủi ro xung đột, ngần ngại không dám khẳng định bản thân." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-3",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "3",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 3",
+    "sourceSnippet": "Khi bước vào môi trường mới hoặc đón nhận cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 3 là sự hào hứng rạng rỡ, năng lượng vui tươi và khiếu hài hước duyên dáng. Bạn có khả năng bắt chuyện nhanh như chớp, phá tan bầu không khí ngại ngùng bằng những câu chuyện sinh động và ngay lập tức làm cho mọi người cảm thấy thoải mái, phấn chấn.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "bắt chuyện nhanh như chớp, phá tan bầu không khí ngại ngùng, nhanh chóng tìm kiếm niềm vui mới", "rationale": "Phản xạ giao tiếp nhanh nhạy, chủ động kết nối tức thì." },
+      "EMO": { "score": 2, "evidenceQuote": "hào hứng rạng rỡ, năng lượng vui tươi và khiếu hài hước duyên dáng, tinh thần lạc quan tự nhiên", "rationale": "Lan tỏa niềm vui sống, truyền năng lượng tích cực và sự ấm áp." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 1, "evidenceQuote": "phá tan bầu không khí ngại ngùng bằng những câu chuyện sinh động", "rationale": "Tự tin mở lời trong đám đông xa lạ mà không e ngại." },
+      "INT": { "score": 1, "evidenceQuote": "khiếu hài hước duyên dáng, nguồn cảm hứng tích cực", "rationale": "Trực giác ngôn từ và sự nhạy bén trong biểu đạt cảm xúc." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "nói nhiều hơn làm", "rationale": "Nói nhiều nhưng hành động thực tế thiếu cam kết." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -1, "evidenceQuote": "hơi bốc đồng, thiếu nghiêm túc hoặc hời hợt trong các bối cảnh trang trọng", "rationale": "Thiếu tính kỷ luật và chuẩn mực trong môi trường nghiêm túc." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng", "rationale": "Phản xạ bốc đồng, chưa cân nhắc kỹ rủi ro dài hạn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-4",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "4",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 4",
+    "sourceSnippet": "Khi bước vào một môi trường mới hoặc tiếp cận một công việc mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 4 là sự cẩn trọng, đúng giờ tuyệt đối, trang phục chỉn chu và quan sát tỉ mỉ các quy tắc, quy trình vận hành. Bạn không bao giờ hành động vội vã; bạn cần nắm rõ cơ cấu và dữ liệu thực tế trước khi bắt tay vào việc.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "kiên nhẫn sửa đổi từng bước để đạt được kết quả chuẩn xác", "rationale": "Lao động kiên nhẫn, sửa đổi thực tế từng bước để đạt mục tiêu." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": 2, "evidenceQuote": "cẩn trọng, đúng giờ tuyệt đối, trang phục chỉn chu và quan sát tỉ mỉ các quy tắc, quy trình vận hành", "rationale": "Tác phong kỷ luật chuẩn mực, tuân thủ quy trình nghiêm ngặt." },
+      "RSK": { "score": -2, "evidenceQuote": "không bao giờ hành động vội vã, cần nắm rõ cơ cấu và dữ liệu thực tế", "rationale": "Cực kỳ thận trọng, kiểm soát rủi ro dựa trên dữ liệu thực chứng." },
+      "INT": { "score": 1, "evidenceQuote": "giữ sự bình tĩnh logic, tìm kiếm lỗ hổng kỹ thuật hoặc nguyên nhân số liệu", "rationale": "Tư duy phân tích logic, khách quan và thực tế." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "khô khan, khó tính, thiếu sự linh hoạt, lãng mạn", "rationale": "Khô cứng cảm xúc, khắt khe khiến người khác ngột ngạt." },
+      "STR": { "score": -1, "evidenceQuote": "bảo thủ, cứng nhắc", "rationale": "Bám chấp quy tắc cũ một cách cứng nhắc, cản trở sự đổi mới." },
+      "RSK": { "score": -1, "evidenceQuote": "thiếu sự linh hoạt", "rationale": "Sợ rủi ro thay đổi, ngần ngại thử nghiệm cách làm mới." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-5",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "5",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 5",
+    "sourceSnippet": "Khi bước vào một môi trường mới hoặc đứng trước một cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 5 là sự hào hứng, tò mò khám phá và khả năng thích ứng linh hoạt siêu việt. Bạn nhanh chóng bắt nhịp với mọi nhóm người, không ngại thử nghiệm những điều mới lạ và mang đến một làn gió tươi trẻ, cấp tiến và tràn đầy sức sống.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "nhanh chóng bắt nhịp với mọi nhóm người, không ngại thử nghiệm những điều mới lạ", "rationale": "Hành động năng động, nhanh nhạy bắt nhịp và dấn thân thử nghiệm." },
+      "EMO": { "score": 1, "evidenceQuote": "làn gió tươi trẻ, cấp tiến và tràn đầy sức sống", "rationale": "Năng lượng vui vẻ, tươi mới và tạo cảm hứng tự do." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": 2, "evidenceQuote": "coi thất bại chỉ là một trải nghiệm phiêu lưu thú vị, dũng cảm dấn thân", "rationale": "Sẵn sàng đón nhận rủi ro, coi thách thức là cuộc phiêu lưu lý thú." },
+      "INT": { "score": 1, "evidenceQuote": "tò mò khám phá và khả năng thích ứng linh hoạt siêu việt, nhạy bén xu hướng", "rationale": "Trực giác nhạy bén đón đầu xu hướng và khả năng thích ứng tuyệt vời." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "bốc đồng, khó lường, thiếu kiên định", "rationale": "Hành động tùy hứng, thiếu kiên định và khó đoán trước." },
+      "EMO": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "STR": { "score": -2, "evidenceQuote": "khó cam kết gắn bó lâu dài, nhanh chán khi mọi thứ bắt đầu đi vào ổn định", "rationale": "Thiếu cam kết kỷ luật, dễ bỏ dở công việc giữa chừng." },
+      "RSK": { "score": 1, "evidenceQuote": "bốc đồng, khó lường", "rationale": "Dấn thân bốc đồng thiếu tính toán hậu quả." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-6",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "6",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 6",
+    "sourceSnippet": "Khi bước vào môi trường mới hoặc đón nhận một nhiệm vụ mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 6 là sự ân cần, chu đáo, quan tâm đến từng nhu cầu của người khác và tạo dựng bầu không khí ấm cúng, thân thiện như trong gia đình. Bạn chủ động hỗ trợ, chăm chút không gian và mong muốn mọi người đều cảm thấy thoải mái, an lành.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "chủ động hỗ trợ, chăm chút không gian, nỗ lực bù đắp bằng sự tận tâm", "rationale": "Hành động săn sóc, phụng sự và chủ động hỗ trợ người xung quanh." },
+      "EMO": { "score": 2, "evidenceQuote": "ân cần, chu đáo, tạo dựng bầu không khí ấm cúng, phúc hậu, ấm áp", "rationale": "Tình thương ấm áp, chu đáo mang lại cảm giác được chở che an tâm." },
+      "STR": { "score": 1, "evidenceQuote": "tạo dựng bầu không khí ấm cúng, thân thiện như trong gia đình", "rationale": "Thiết lập môi trường gắn kết, trật tự và ấm cúng." },
+      "RSK": { "score": -1, "evidenceQuote": "tạo cảm giác an lành, an tâm", "rationale": "Thích sự yên bình che chở, tránh xung đột bất an." },
+      "INT": { "score": 1, "evidenceQuote": "quan tâm đến từng nhu cầu của người khác, thấu hiểu đối phương", "rationale": "Trực giác nhạy cảm cảm nhận nhu cầu và tâm tư người khác." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "buồn lòng, trăn trở và lo lắng, tự hỏi mình đã làm sai điều gì", "rationale": "Dễ rơi vào cảm xúc âu lo, tự dằn vặt và mặc cảm tội lỗi." },
+      "STR": { "score": -2, "evidenceQuote": "hay lo chuyện bao đồng, can thiệp sâu vào đời tư hoặc có xu hướng kiểm soát người khác", "rationale": "Can thiệp thái quá, kiểm soát người khác làm mất tự do cá nhân." },
+      "RSK": { "score": -1, "evidenceQuote": "nhắc nhở lo lắng, buông bỏ sự cằn nhằn lo âu", "rationale": "Ám ảnh sợ rủi ro xảy đến cho người khác dẫn đến cằn nhằn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-7",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "7",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 7",
+    "sourceSnippet": "Khi bước vào một môi trường mới hoặc tiếp cận cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 7 là sự điềm đạm, kín đáo, giữ khoảng cách an toàn và quan sát sâu sắc từ xa. Bạn không vội vã kết bạn hay phát biểu; bạn âm thầm phân tích tính cách từng người, tìm hiểu bản chất tình huống và toát lên vẻ uyên bác, bí ẩn.",
+    "core": {
+      "ACT": { "score": -1, "evidenceQuote": "không vội vã kết bạn hay phát biểu, giữ khoảng cách an toàn", "rationale": "Lùi lại quan sát, tránh hành động vội vàng bộc lộ bản thân." },
+      "EMO": { "score": 0, "evidenceQuote": "điềm đạm, kín đáo, không bao giờ để lộ sự bối rối", "rationale": "Kiểm soát cảm xúc kín kẽ, giữ sự điềm tĩnh và độc lập." },
+      "STR": { "score": 1, "evidenceQuote": "lặng lẽ rút lui vào thế giới nội tâm để tự mình mổ xẻ nguyên nhân, chiêm nghiệm bài học triết lý", "rationale": "Tự nghiên cứu, phân tích nguyên nhân có chiều sâu phương pháp." },
+      "RSK": { "score": -1, "evidenceQuote": "giữ khoảng cách an toàn và quan sát sâu sắc từ xa", "rationale": "Cẩn trọng tối đa, phòng thủ an toàn trước môi trường mới." },
+      "INT": { "score": 2, "evidenceQuote": "âm thầm phân tích tính cách từng người, tìm hiểu bản chất tình huống, toát lên vẻ uyên bác", "rationale": "Trực giác thấu suốt và óc phân tích sắc sảo bản chất con người." }
+    },
+    "shadow": {
+      "ACT": { "score": -1, "evidenceQuote": "lặng lẽ rút lui, dựng lên một bức tường bảo vệ vô hình", "rationale": "Thu mình cách ly, tạo bức tường ngăn cách tương tác xã hội." },
+      "EMO": { "score": -1, "evidenceQuote": "lạnh lùng, xa cách", "rationale": "Thái độ lạnh nhạt, xa cách khiến đối phương e ngại." },
+      "STR": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "RSK": { "score": -1, "evidenceQuote": "dựng lên một bức tường bảo vệ vô hình để quan sát an toàn", "rationale": "Thủ thế tiêu cực, e ngại rủi ro bị tổn thương hay phán xét." },
+      "INT": { "score": -1, "evidenceQuote": "kiêu ngạo trí tuệ hoặc lập dị khó gần", "rationale": "Trí tuệ biến thành rào cản kiêu ngạo, coi thường người khác." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-8",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "8",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 8",
+    "sourceSnippet": "Khi bước vào một môi trường mới hoặc tiếp cận một cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 8 là phong thái đĩnh đạc, sang trọng, tự tin và hướng thẳng tới kết quả thực tế. Bạn xuất hiện với tác phong chuyên nghiệp, quan sát nhanh cục diện quyền lực và chủ động tìm kiếm những đối tác có thể cùng hợp tác tạo ra giá trị kinh tế cụ thể.",
+    "core": {
+      "ACT": { "score": 2, "evidenceQuote": "hướng thẳng tới kết quả thực tế, quyết liệt tìm kiếm các phương án thay thế tốt hơn", "rationale": "Hành động quyết liệt, tập trung tối đa vào mục tiêu và hiệu quả." },
+      "EMO": { "score": 0, "evidenceQuote": "giữ cái đầu lạnh và tư duy thực tế", "rationale": "Không để cảm xúc cá nhân chi phối, giữ thái độ chuyên nghiệp." },
+      "STR": { "score": 2, "evidenceQuote": "tác phong chuyên nghiệp, quan sát nhanh cục diện quyền lực, năng lực làm chủ tình hình", "rationale": "Khả năng tổ chức, điều phối và kiểm soát cuộc diện xuất sắc." },
+      "RSK": { "score": 1, "evidenceQuote": "bản lĩnh, uy quyền, quyết đoán và toát lên năng lực làm chủ tình hình", "rationale": "Tự tin gánh vác rủi ro để theo đuổi cơ hội kinh tế lớn." },
+      "INT": { "score": 1, "evidenceQuote": "quan sát nhanh cục diện quyền lực, xem đó là một bài toán kinh tế cần điều chỉnh chiến lược", "rationale": "Độ nhạy bén chiến lược và nhận thức sâu về quan hệ quyền lực." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "thực dụng, lạnh lùng, gây cảm giác áp lực cho người khác", "rationale": "Thái độ thực dụng, lạnh lùng tạo áp lực căng thẳng cho cộng sự." },
+      "STR": { "score": -1, "evidenceQuote": "áp đặt, coi trọng lợi ích vật chất", "rationale": "Áp đặt quan điểm thực dụng, xem nhẹ giá trị tinh thần." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  },
+  {
+    "id": "attitude-9",
+    "indicatorKey": "attitude",
+    "indicatorNameVi": "Số Thái Độ",
+    "numberValue": "9",
+    "title": "Phản Xạ Ban Đầu Của Chỉ Số Thái Độ Tiếp Cận 9",
+    "sourceSnippet": "Khi bước vào một môi trường mới hoặc đứng trước cơ hội mới, phản xạ tự nhiên của người mang Chỉ số Thái độ Tiếp cận 9 là phong thái ung dung tự tại, đàng hoàng, cởi mở và giàu lòng vị tha. Bạn sẵn sàng dang tay giúp đỡ mọi người, không ngần ngại chia sẻ tài nguyên và luôn hướng các cuộc trò chuyện về những giá trị nhân văn, tiến bộ xã hội.",
+    "core": {
+      "ACT": { "score": 1, "evidenceQuote": "sẵn sàng dang tay giúp đỡ mọi người, không ngần ngại chia sẻ tài nguyên", "rationale": "Hành động hào hiệp, sẵn sàng chia sẻ và trợ giúp cộng đồng." },
+      "EMO": { "score": 2, "evidenceQuote": "phong thái ung dung tự tại, đàng hoàng, cởi mở và giàu lòng vị tha, bao dung tha thứ", "rationale": "Tâm hồn bao dung, phóng khoáng và tràn đầy tình thương đại đồng." },
+      "STR": { "score": 1, "evidenceQuote": "kiểm chứng thông tin thực tế, đặt ra các ranh giới rõ ràng", "rationale": "Rèn luyện kiểm chứng thực tế và thiết lập ranh giới trách nhiệm." },
+      "RSK": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "INT": { "score": 2, "evidenceQuote": "hướng các cuộc trò chuyện về những giá trị nhân văn, tiến bộ xã hội, tin rằng vạn sự tùy duyên", "rationale": "Trực giác nhân văn cao thượng và sự giác ngộ lẽ tùy duyên." }
+    },
+    "shadow": {
+      "ACT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." },
+      "EMO": { "score": -1, "evidenceQuote": "dễ bị kẻ xấu lợi dụng lòng tốt hào phóng", "rationale": "Ngây thơ tin người, dễ bị lợi dụng lòng tốt dẫn đến hụt hẫng." },
+      "STR": { "score": -1, "evidenceQuote": "quá lý tưởng hóa, xa rời thực tế", "rationale": "Thiếu tính thực tế, xa rời kế hoạch hành động cụ thể." },
+      "RSK": { "score": -1, "evidenceQuote": "xa rời thực tế hoặc dễ bị kẻ xấu lợi dụng", "rationale": "Mạo hiểm nguồn lực cá nhân vì tin tưởng mù quáng." },
+      "INT": { "score": 0, "evidenceQuote": "", "rationale": "Không có căn cứ trực tiếp trong tài liệu nguồn." }
+    },
+    "overallConfidence": 0.95
+  }
+]

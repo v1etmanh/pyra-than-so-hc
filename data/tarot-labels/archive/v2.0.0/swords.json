@@ -1,0 +1,4063 @@
+[
+  {
+    "cardId": "swords-01",
+    "cardNameVi": "Át Kiếm",
+    "cardNameEn": "Ace of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 1,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: đột phá, sự thật, sáng rõ. Ý nghĩa: Át Kiếm xuôi nhấn mạnh đột phá, sự thật, sáng rõ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": [
+      "no-usable-axis"
+    ]
+  },
+  {
+    "cardId": "swords-01",
+    "cardNameVi": "Át Kiếm",
+    "cardNameEn": "Ace of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 1,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: nhầm lẫn, lời sắc, thiếu rõ ràng. Ý nghĩa: Át Kiếm ngược gợi ý nhầm lẫn, lời sắc, thiếu rõ ràng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "lời sắc",
+        "evidenceQuotes": [
+          {
+            "quote": "lời sắc",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“lời sắc” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-02",
+    "cardNameVi": "2 Kiếm",
+    "cardNameEn": "2 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 2,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: bế tắc, cân nhắc, quyết định khó. Ý nghĩa: 2 Kiếm xuôi nhấn mạnh bế tắc, cân nhắc, quyết định khó; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "bế tắc",
+        "evidenceQuotes": [
+          {
+            "quote": "bế tắc",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“bế tắc” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "bế tắc",
+        "evidenceQuotes": [
+          {
+            "quote": "bế tắc",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“bế tắc” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-02",
+    "cardNameVi": "2 Kiếm",
+    "cardNameEn": "2 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 2,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: né quyết định, thiếu tin, quá tải. Ý nghĩa: 2 Kiếm ngược gợi ý né quyết định, thiếu tin, quá tải; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "né quyết định",
+        "evidenceQuotes": [
+          {
+            "quote": "né quyết định",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 13
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“né quyết định” hỗ trợ Chủ động & Hành động ở mức -1: Do dự, trì hoãn, thiếu động lực hoặc tiến trình chủ thể trì trệ. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -1,
+        "evidenceQuote": "né quyết định",
+        "evidenceQuotes": [
+          {
+            "quote": "né quyết định",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 13
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“né quyết định” hỗ trợ Chủ động & Hành động ở mức -1: Do dự, trì hoãn, thiếu động lực hoặc tiến trình chủ thể trì trệ. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-03",
+    "cardNameVi": "3 Kiếm",
+    "cardNameEn": "3 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 3,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: đau lòng, chia ly, sự thật đau. Ý nghĩa: 3 Kiếm xuôi nhấn mạnh đau lòng, chia ly, sự thật đau; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "chia ly",
+        "evidenceQuotes": [
+          {
+            "quote": "chia ly",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“chia ly” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "chia ly",
+        "evidenceQuotes": [
+          {
+            "quote": "chia ly",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“chia ly” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-03",
+    "cardNameVi": "3 Kiếm",
+    "cardNameEn": "3 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 3,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: chữa lành, tha thứ, hồi phục. Ý nghĩa: 3 Kiếm ngược gợi ý chữa lành, tha thứ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tha thứ",
+        "evidenceQuotes": [
+          {
+            "quote": "tha thứ",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“tha thứ” hỗ trợ Cảm xúc & Gắn kết ở mức +1: Mở lòng, tương hỗ, hòa giải hoặc kết nối. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-04",
+    "cardNameVi": "4 Kiếm",
+    "cardNameEn": "4 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 4,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: nghỉ ngơi, hồi phục, tĩnh tâm. Ý nghĩa: 4 Kiếm xuôi nhấn mạnh nghỉ ngơi, hồi phục, tĩnh tâm; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "nghỉ ngơi",
+        "evidenceQuotes": [
+          {
+            "quote": "nghỉ ngơi",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“nghỉ ngơi” mô tả nghỉ/tạm dừng có chủ đích; không đồng nhất với tê liệt hành động. Gán 0 theo neo ACT.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "tĩnh tâm",
+        "evidenceQuotes": [
+          {
+            "quote": "tĩnh tâm",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“tĩnh tâm” hỗ trợ Trực giác & Tự nhận thức ở mức +1: Chiêm nghiệm, nhận thức hoặc góc nhìn mới. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-04",
+    "cardNameVi": "4 Kiếm",
+    "cardNameEn": "4 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 4,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: bồn chồn, kiệt sức, áp lực. Ý nghĩa: 4 Kiếm ngược gợi ý bồn chồn, kiệt sức, áp lực; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": [
+      "no-usable-axis"
+    ]
+  },
+  {
+    "cardId": "swords-05",
+    "cardNameVi": "5 Kiếm",
+    "cardNameEn": "5 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 5,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: xung đột, thắng bằng mọi giá, tổn thất. Ý nghĩa: 5 Kiếm xuôi nhấn mạnh xung đột, thắng bằng mọi giá, tổn thất; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "xung đột",
+        "evidenceQuotes": [
+          {
+            "quote": "xung đột",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“xung đột” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "thắng bằng mọi giá",
+        "evidenceQuotes": [
+          {
+            "quote": "thắng bằng mọi giá",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 18
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“thắng bằng mọi giá” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức +2: Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "xung đột",
+        "evidenceQuotes": [
+          {
+            "quote": "xung đột",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“xung đột” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "thắng bằng mọi giá",
+        "evidenceQuotes": [
+          {
+            "quote": "thắng bằng mọi giá",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 18
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“thắng bằng mọi giá” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức +2: Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.4,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-05",
+    "cardNameVi": "5 Kiếm",
+    "cardNameEn": "5 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 5,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: hối tiếc, hòa giải, sửa chữa. Ý nghĩa: 5 Kiếm ngược gợi ý hối tiếc, hòa giải, sửa chữa; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "hòa giải",
+        "evidenceQuotes": [
+          {
+            "quote": "hòa giải",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“hòa giải” hỗ trợ Cảm xúc & Gắn kết ở mức +1: Mở lòng, tương hỗ, hòa giải hoặc kết nối. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-06",
+    "cardNameVi": "6 Kiếm",
+    "cardNameEn": "6 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 6,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chuyển tiếp, rời khó khăn, chữa lành. Ý nghĩa: 6 Kiếm xuôi nhấn mạnh chuyển tiếp, rời khó khăn, chữa lành; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "rời khó khăn",
+        "evidenceQuotes": [
+          {
+            "quote": "rời khó khăn",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 12
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“rời khó khăn” hỗ trợ Chủ động & Hành động ở mức +1: Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-06",
+    "cardNameVi": "6 Kiếm",
+    "cardNameEn": "6 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 6,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: kẹt lại, hành lý cũ, chống chuyển đổi. Ý nghĩa: 6 Kiếm ngược gợi ý kẹt lại, hành lý cũ, chống chuyển đổi; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "kẹt lại",
+        "evidenceQuotes": [
+          {
+            "quote": "kẹt lại",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“kẹt lại” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "chống chuyển đổi",
+        "evidenceQuotes": [
+          {
+            "quote": "chống chuyển đổi",
+            "sourceField": "keywords.reversed.2.vi",
+            "start": 0,
+            "end": 16
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“chống chuyển đổi” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "kẹt lại",
+        "evidenceQuotes": [
+          {
+            "quote": "kẹt lại",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“kẹt lại” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "chống chuyển đổi",
+        "evidenceQuotes": [
+          {
+            "quote": "chống chuyển đổi",
+            "sourceField": "keywords.reversed.2.vi",
+            "start": 0,
+            "end": 16
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“chống chuyển đổi” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.4,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-07",
+    "cardNameVi": "7 Kiếm",
+    "cardNameEn": "7 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 7,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: chiến lược, bí mật, né tránh. Ý nghĩa: 7 Kiếm xuôi nhấn mạnh chiến lược, bí mật, né tránh; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "chiến lược",
+        "evidenceQuotes": [
+          {
+            "quote": "chiến lược",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 10
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“chiến lược” hỗ trợ Cấu trúc & Kỷ luật ở mức +1: Kế hoạch, ưu tiên, chiến lược, ranh giới hoặc trách nhiệm. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "né tránh",
+        "evidenceQuotes": [
+          {
+            "quote": "né tránh",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“né tránh” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "né tránh",
+        "evidenceQuotes": [
+          {
+            "quote": "né tránh",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“né tránh” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.3,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-07",
+    "cardNameVi": "7 Kiếm",
+    "cardNameEn": "7 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 7,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: thú nhận, bị lộ, sửa sai. Ý nghĩa: 7 Kiếm ngược gợi ý thú nhận, bị lộ, sửa sai; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "sửa sai",
+        "evidenceQuotes": [
+          {
+            "quote": "sửa sai",
+            "sourceField": "keywords.reversed.2.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“sửa sai” hỗ trợ Chủ động & Hành động ở mức +1: Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-08",
+    "cardNameVi": "8 Kiếm",
+    "cardNameEn": "8 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 8,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tự giới hạn, sợ hãi, mắc kẹt. Ý nghĩa: 8 Kiếm xuôi nhấn mạnh tự giới hạn, sợ hãi, mắc kẹt; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "mắc kẹt",
+        "evidenceQuotes": [
+          {
+            "quote": "mắc kẹt",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“mắc kẹt” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "sợ hãi",
+        "evidenceQuotes": [
+          {
+            "quote": "sợ hãi",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“sợ hãi” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": -2,
+        "evidenceQuote": "mắc kẹt",
+        "evidenceQuotes": [
+          {
+            "quote": "mắc kẹt",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“mắc kẹt” hỗ trợ Chủ động & Hành động ở mức -2: Mắc kẹt hoặc tê liệt hành động rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "sợ hãi",
+        "evidenceQuotes": [
+          {
+            "quote": "sợ hãi",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“sợ hãi” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.4,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-08",
+    "cardNameVi": "8 Kiếm",
+    "cardNameEn": "8 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 8,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: giải phóng, góc nhìn mới, tự do. Ý nghĩa: 8 Kiếm ngược gợi ý giải phóng, góc nhìn mới, tự do; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "giải phóng",
+        "evidenceQuotes": [
+          {
+            "quote": "giải phóng",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 10
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“giải phóng” hỗ trợ Chủ động & Hành động ở mức +1: Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 1,
+        "evidenceQuote": "góc nhìn mới",
+        "evidenceQuotes": [
+          {
+            "quote": "góc nhìn mới",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 12
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“góc nhìn mới” hỗ trợ Trực giác & Tự nhận thức ở mức +1: Chiêm nghiệm, nhận thức hoặc góc nhìn mới. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-09",
+    "cardNameVi": "9 Kiếm",
+    "cardNameEn": "9 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 9,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lo âu, ác mộng, suy diễn. Ý nghĩa: 9 Kiếm xuôi nhấn mạnh lo âu, ác mộng, suy diễn; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "suy diễn",
+        "evidenceQuotes": [
+          {
+            "quote": "suy diễn",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“suy diễn” hỗ trợ Trực giác & Tự nhận thức ở mức -1: Suy diễn, nhận thức bị bóp méo hoặc mất liên hệ với bản thân được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": -1,
+        "evidenceQuote": "suy diễn",
+        "evidenceQuotes": [
+          {
+            "quote": "suy diễn",
+            "sourceField": "keywords.upright.2.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“suy diễn” hỗ trợ Trực giác & Tự nhận thức ở mức -1: Suy diễn, nhận thức bị bóp méo hoặc mất liên hệ với bản thân được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-09",
+    "cardNameVi": "9 Kiếm",
+    "cardNameEn": "9 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 9,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: hy vọng, tìm hỗ trợ, hồi phục. Ý nghĩa: 9 Kiếm ngược gợi ý hy vọng, tìm hỗ trợ, hồi phục; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 1,
+        "evidenceQuote": "tìm hỗ trợ",
+        "evidenceQuotes": [
+          {
+            "quote": "tìm hỗ trợ",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 10
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“tìm hỗ trợ” hỗ trợ Cảm xúc & Gắn kết ở mức +1: Mở lòng, tương hỗ, hòa giải hoặc kết nối. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-10",
+    "cardNameVi": "10 Kiếm",
+    "cardNameEn": "10 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 10,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: kết thúc đau, thất bại, chạm đáy. Ý nghĩa: 10 Kiếm xuôi nhấn mạnh kết thúc đau, thất bại, chạm đáy; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": [
+      "no-usable-axis"
+    ]
+  },
+  {
+    "cardId": "swords-10",
+    "cardNameVi": "10 Kiếm",
+    "cardNameEn": "10 of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 10,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: sống lại, qua cơn, bắt đầu phục hồi. Ý nghĩa: 10 Kiếm ngược gợi ý sống lại, qua cơn, bắt đầu phục hồi; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": [
+      "no-usable-axis"
+    ]
+  },
+  {
+    "cardId": "swords-11",
+    "cardNameVi": "Tiểu Đồng Kiếm",
+    "cardNameEn": "Page of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 11,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: tò mò, cảnh giác, học hỏi. Ý nghĩa: Tiểu Đồng Kiếm xuôi nhấn mạnh tò mò, cảnh giác, học hỏi; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": -1,
+        "evidenceQuote": "cảnh giác",
+        "evidenceQuotes": [
+          {
+            "quote": "cảnh giác",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“cảnh giác” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức -1: Cảnh giác, ưu tiên an toàn, sợ mất hoặc né tránh rủi ro được nêu. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-11",
+    "cardNameVi": "Tiểu Đồng Kiếm",
+    "cardNameEn": "Page of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 11,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lời đồn, hấp tấp, thiếu chín chắn. Ý nghĩa: Tiểu Đồng Kiếm ngược gợi ý lời đồn, hấp tấp, thiếu chín chắn; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "hấp tấp",
+        "evidenceQuotes": [
+          {
+            "quote": "hấp tấp",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“hấp tấp” hỗ trợ Chủ động & Hành động ở mức +1: Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 1,
+        "evidenceQuote": "hấp tấp",
+        "evidenceQuotes": [
+          {
+            "quote": "hấp tấp",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“hấp tấp” hỗ trợ Chủ động & Hành động ở mức +1: Khởi động, bước tiếp, chăm chỉ hoặc hành động có chủ đích. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-12",
+    "cardNameVi": "Kỵ Sĩ Kiếm",
+    "cardNameEn": "Knight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 12,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: quyết liệt, tham vọng, tốc độ. Ý nghĩa: Kỵ Sĩ Kiếm xuôi nhấn mạnh quyết liệt, tham vọng, tốc độ; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 2,
+        "evidenceQuote": "quyết liệt",
+        "evidenceQuotes": [
+          {
+            "quote": "quyết liệt",
+            "sourceField": "keywords.upright.0.vi",
+            "start": 0,
+            "end": 10
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“quyết liệt” hỗ trợ Chủ động & Hành động ở mức +2: Quyết liệt, quyết đoán hoặc thực thi với tốc độ cao. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-12",
+    "cardNameVi": "Kỵ Sĩ Kiếm",
+    "cardNameEn": "Knight of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 12,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: liều lĩnh, công kích, mất hướng. Ý nghĩa: Kỵ Sĩ Kiếm ngược gợi ý liều lĩnh, công kích, mất hướng; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "công kích",
+        "evidenceQuotes": [
+          {
+            "quote": "công kích",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“công kích” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "mất hướng",
+        "evidenceQuotes": [
+          {
+            "quote": "mất hướng",
+            "sourceField": "keywords.reversed.2.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“mất hướng” hỗ trợ Cấu trúc & Kỷ luật ở mức -1: Phân tán, thiếu chuẩn bị, mất hướng, xao nhãng hoặc thiếu ranh giới. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "liều lĩnh",
+        "evidenceQuotes": [
+          {
+            "quote": "liều lĩnh",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“liều lĩnh” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức +2: Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -1,
+        "evidenceQuote": "công kích",
+        "evidenceQuotes": [
+          {
+            "quote": "công kích",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“công kích” hỗ trợ Cảm xúc & Gắn kết ở mức -1: Xa cách, bất hòa, ghen tuông, phụ thuộc hoặc cảm xúc thất thường. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": -1,
+        "evidenceQuote": "mất hướng",
+        "evidenceQuotes": [
+          {
+            "quote": "mất hướng",
+            "sourceField": "keywords.reversed.2.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“mất hướng” hỗ trợ Cấu trúc & Kỷ luật ở mức -1: Phân tán, thiếu chuẩn bị, mất hướng, xao nhãng hoặc thiếu ranh giới. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 2,
+        "evidenceQuote": "liều lĩnh",
+        "evidenceQuotes": [
+          {
+            "quote": "liều lĩnh",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“liều lĩnh” hỗ trợ Khẩu vị Rủi ro & Dấn thân ở mức +2: Liều lĩnh/bốc đồng rõ rệt ở shadow; mức dấn thân cực cao phải có nguồn trực tiếp. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.6,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-13",
+    "cardNameVi": "Nữ Hoàng Kiếm",
+    "cardNameEn": "Queen of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 13,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: độc lập, ranh giới, thành thật. Ý nghĩa: Nữ Hoàng Kiếm xuôi nhấn mạnh độc lập, ranh giới, thành thật; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "ranh giới",
+        "evidenceQuotes": [
+          {
+            "quote": "ranh giới",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“ranh giới” hỗ trợ Cấu trúc & Kỷ luật ở mức +1: Kế hoạch, ưu tiên, chiến lược, ranh giới hoặc trách nhiệm. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-13",
+    "cardNameVi": "Nữ Hoàng Kiếm",
+    "cardNameEn": "Queen of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 13,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: lạnh lùng, cay nghiệt, oán giận. Ý nghĩa: Nữ Hoàng Kiếm ngược gợi ý lạnh lùng, cay nghiệt, oán giận; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "lạnh lùng",
+        "evidenceQuotes": [
+          {
+            "quote": "lạnh lùng",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“lạnh lùng” hỗ trợ Cảm xúc & Gắn kết ở mức -2: Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "lạnh lùng",
+        "evidenceQuotes": [
+          {
+            "quote": "lạnh lùng",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 9
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“lạnh lùng” hỗ trợ Cảm xúc & Gắn kết ở mức -2: Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.2,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-14",
+    "cardNameVi": "Nhà Vua Kiếm",
+    "cardNameEn": "King of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 14,
+    "state": "upright",
+    "sourceSnippet": "Từ khóa: lý trí, quyền uy, công bằng. Ý nghĩa: Nhà Vua Kiếm xuôi nhấn mạnh lý trí, quyền uy, công bằng; hãy liên hệ năng lượng này với vị trí của lá trong trải bài.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 1,
+        "evidenceQuote": "quyền uy",
+        "evidenceQuotes": [
+          {
+            "quote": "quyền uy",
+            "sourceField": "keywords.upright.1.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“quyền uy” hỗ trợ Cấu trúc & Kỷ luật ở mức +1: Kế hoạch, ưu tiên, chiến lược, ranh giới hoặc trách nhiệm. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.1,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  },
+  {
+    "cardId": "swords-14",
+    "cardNameVi": "Nhà Vua Kiếm",
+    "cardNameEn": "King of Swords",
+    "type": "minor",
+    "suit": "swords",
+    "number": 14,
+    "state": "reversed",
+    "sourceSnippet": "Từ khóa: độc đoán, tàn nhẫn, lạm quyền. Ý nghĩa: Nhà Vua Kiếm ngược gợi ý độc đoán, tàn nhẫn, lạm quyền; đây là điểm cần nhìn lại thay vì một kết luận cố định.",
+    "core": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "tàn nhẫn",
+        "evidenceQuotes": [
+          {
+            "quote": "tàn nhẫn",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“tàn nhẫn” hỗ trợ Cảm xúc & Gắn kết ở mức -2: Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "độc đoán",
+        "evidenceQuotes": [
+          {
+            "quote": "độc đoán",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“độc đoán” hỗ trợ Cấu trúc & Kỷ luật ở mức +2: Cấu trúc/kỷ luật bền vững hoặc kiểm soát cứng nhắc quá mức. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "shadow": {
+      "ACT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "EMO": {
+        "score": -2,
+        "evidenceQuote": "tàn nhẫn",
+        "evidenceQuotes": [
+          {
+            "quote": "tàn nhẫn",
+            "sourceField": "keywords.reversed.1.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“tàn nhẫn” hỗ trợ Cảm xúc & Gắn kết ở mức -2: Cô lập, lạnh nhạt, cảm xúc nghẽn hoặc thao túng quan hệ rõ rệt. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "STR": {
+        "score": 2,
+        "evidenceQuote": "độc đoán",
+        "evidenceQuotes": [
+          {
+            "quote": "độc đoán",
+            "sourceField": "keywords.reversed.0.vi",
+            "start": 0,
+            "end": 8
+          }
+        ],
+        "evidenceStatus": "supported",
+        "rationale": "“độc đoán” hỗ trợ Cấu trúc & Kỷ luật ở mức +2: Cấu trúc/kỷ luật bền vững hoặc kiểm soát cứng nhắc quá mức. Chỉ mã hóa nội dung của nguồn; dấu điểm biểu thị hướng đặc tính, không phải tốt/xấu.",
+        "confidence": null,
+        "eligibleForRelations": true,
+        "alternatives": []
+      },
+      "RSK": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      },
+      "INT": {
+        "score": 0,
+        "evidenceQuote": "",
+        "evidenceQuotes": [],
+        "evidenceStatus": "insufficient",
+        "rationale": "Nguồn của trạng thái này không đủ bằng chứng để xác định hướng và mức độ trên trục; 0 là giá trị bỏ qua, không phải xác nhận trung tính.",
+        "confidence": null,
+        "eligibleForRelations": false,
+        "alternatives": []
+      }
+    },
+    "overallConfidence": null,
+    "confidenceMethod": "uncalibrated",
+    "evidenceCoverage": 0.4,
+    "annotationVersion": "2.0.0",
+    "rubricVersion": "2.0.0",
+    "sourceSha256": "e77787c6e66ba7a2d7b2e766e9aa0e0a9a82b6037c26eea93e74025cf58c744d",
+    "rubricSha256": "356238551f5800ed0313326926137fea32aa7576e8709d7d47ef7b4be2139a53",
+    "provenance": {
+      "runId": "source-reannotation-2026-10-01-v2",
+      "annotatorType": "ai",
+      "method": "explicit-source-reannotation",
+      "modelId": null,
+      "decisionSha256": "f4552b3ca9f83641ed2799bd346870c80c72b1307ced0794e1467a42bbe3d3c9",
+      "independentRuns": 1,
+      "humanReviewed": false
+    },
+    "reviewStatus": "silver-unvalidated",
+    "reviewFlags": []
+  }
+]

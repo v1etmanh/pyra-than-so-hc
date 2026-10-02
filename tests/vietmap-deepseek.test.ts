@@ -99,6 +99,9 @@ test('DeepSeek plans and ranks only factual VietMap candidates', async () => {
     assert.equal(vietMapUrls[0]?.searchParams.get('apikey'), 'test-vietmap-key');
 
     assert.equal(deepSeekBodies.length, 2);
+    for (const payload of deepSeekBodies) {
+      assert.match(JSON.stringify(payload), /NGỮ CẢNH THỜI GIAN HIỆN TẠI/);
+    }
     assert.equal(String(deepSeekBodies[0]?.model), 'test-deepseek-model');
     assert.deepEqual(deepSeekBodies[0]?.response_format, { type: 'json_object' });
     const deepSeekPayloads = JSON.stringify(deepSeekBodies);
@@ -164,6 +167,57 @@ test('invalid DeepSeek ranking keeps only verified VietMap candidates with neutr
     const reply = formatPlaceReply(result);
     assert.match(reply, /Công viên A: Được DeepSeek xếp hạng từ các kết quả đã xác thực của VietMap/);
     assert.doesNotMatch(reply, /Địa điểm không có thật/);
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const name of envNames) {
+      const value = originalEnv.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test('an open where-to-go question searches distinct place types instead of only cafes', async () => {
+  const envNames = ['DEEPSEEK_API_KEY', 'DEEPSEEK_API_BASE_URL', 'DEEPSEEK_MODEL', 'VIETMAP_API_KEY'];
+  const originalEnv = new Map(envNames.map((name) => [name, process.env[name]]));
+  const originalFetch = globalThis.fetch;
+  const searched: string[] = [];
+  let deepSeekCall = 0;
+
+  try {
+    process.env.DEEPSEEK_API_KEY = 'test-deepseek-key';
+    process.env.VIETMAP_API_KEY = 'test-vietmap-key';
+    process.env.DEEPSEEK_API_BASE_URL = 'https://deepseek.test';
+    globalThis.fetch = async (input) => {
+      const url = new URL(String(input));
+      if (url.hostname === 'deepseek.test') {
+        deepSeekCall++;
+        const content = deepSeekCall === 1
+          ? JSON.stringify({ searchQueries: ['quán cà phê yên tĩnh', 'cafe gần đây', 'coffee shop'] })
+          : JSON.stringify({ selectedIndexes: [0, 1, 2], placeReasons: [], summary: 'Có ba hướng đi gần bạn.', nextStep: 'Kiểm tra giờ mở cửa trước khi đi.' });
+        return new Response(JSON.stringify({ choices: [{ message: { content } }] }));
+      }
+      if (url.hostname === 'maps.vietmap.vn') {
+        const query = url.searchParams.get('text') || '';
+        searched.push(query);
+        return new Response(JSON.stringify([{
+          ref_id: `poi:${query}`, name: `Nơi ${query}`, address: 'Địa chỉ đã xác thực', distance: 0.5,
+          categories: [query],
+        }]));
+      }
+      throw new Error(`Unexpected request: ${url}`);
+    };
+
+    const result = await findVietMapPlaces({
+      message: 'nên đi đâu giờ này nhỉ',
+      context: { latitude: 10.7, longitude: 106.6, maxDistanceKm: 5, budget: 'medium', companion: 'solo', openNow: true },
+    });
+
+    assert.equal(searched.length, 3);
+    assert.equal(searched.filter((query) => /cà phê|cafe|coffee/i.test(query)).length, 1);
+    assert.ok(searched.some((query) => /công viên/i.test(query)));
+    assert.ok(searched.some((query) => /nhà sách/i.test(query)));
+    assert.equal(result.places.length, 3);
   } finally {
     globalThis.fetch = originalFetch;
     for (const name of envNames) {
