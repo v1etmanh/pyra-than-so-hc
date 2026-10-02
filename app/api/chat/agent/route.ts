@@ -201,7 +201,7 @@ export async function OPTIONS() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { message, decision, profiles, indicators, tarotCards, placeContext } = body;
+    const { message, decision, profiles, indicators, tarotCards, placeContext, colorGuidance } = body;
     const timeContext = createCurrentTimeContext(body.timeZone);
 
     // 0. BỘ LỌC TỐC HÀNH: Phát hiện câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (0 token LLM, phản hồi < 0.1ms)
@@ -310,7 +310,8 @@ export async function POST(request: NextRequest) {
       profiles,
       indicators1: suppliedP1Indicators,
       indicators2: suppliedP2Indicators,
-      drawnCards: cards
+      drawnCards: cards,
+      ...(decision?.intent === 'color_guidance' && colorGuidance ? { colorGuidance } : {})
     };
 
     // DeepSeek builds the query and ranks results; VietMap remains the sole
@@ -522,6 +523,7 @@ export async function POST(request: NextRequest) {
         baziSummary,
         baziScore,
         placeRecommendations,
+        colorGuidance: decision?.intent === 'color_guidance' && colorGuidance ? colorGuidance : undefined,
       });
 
       const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens), {

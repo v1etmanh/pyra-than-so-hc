@@ -32,6 +32,15 @@ export interface BuildUserPromptOptions {
   placeRecommendations?: {
     places: Array<{ name: string }>;
   } | null;
+  colorGuidance?: {
+    lunarYear: number;
+    element: string;
+    palette: Array<{ id: string; name: string; hex: string }>;
+    selectedColorIds: [string, string];
+    tarotElement: string;
+    cardId: string;
+    isReversed: boolean;
+  };
 }
 
 /**
@@ -77,6 +86,13 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
     return `QUY TẮC CHUYÊN BIỆT: PHÂN TÍCH TOÀN CẢNH (CELTIC CROSS):
 - Tổng hợp các cụm năng lượng chính (tình trạng hiện tại, trở ngại cốt lõi, tiềm thức, hy vọng/nỗi sợ, kết quả xu hướng).
 - Không giải thích máy móc rời rạc từng lá một mà xâu chuỗi thành bức tranh toàn cảnh, giúp người hỏi tìm ra điểm nghẽn và tháo gỡ bế tắc.`;
+  }
+
+  if (intent === 'color_guidance') {
+    return `QUY TẮC CHUYÊN BIỆT: MÀU HỢP MỆNH + TAROT:
+- Chỉ đề xuất đúng HAI màu đã đánh dấu trong khối MÀU HỢP MỆNH được cung cấp. Không đổi, thêm, thay thế hoặc gọi tên một màu khác là màu ưu tiên.
+- Giải thích ngắn cách năng lượng lá Tarot giúp ưu tiên hai màu đó trong palette mệnh; đây là gợi ý tự soi chiếu và phối màu, không phải bảo đảm may rủi.
+- Đưa ra một cách ứng dụng thực tế cho trang phục, phụ kiện hoặc vật dụng; không khẳng định rằng người hỏi phải mua hay tránh một màu.`;
   }
 
   // 6. Thuần Thần số học bản mệnh (không có Tarot)
@@ -178,6 +194,7 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
     baziSummary,
     baziScore,
     placeRecommendations,
+    colorGuidance,
   } = options;
 
   const sections: string[] = [];
@@ -238,6 +255,13 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
   if (placeRecommendations?.places?.length) {
     const placeList = placeRecommendations.places.map((place) => `• ${place.name}`).join('\n');
     sections.push(`DỮ LIỆU ĐỊA ĐIỂM ĐÃ XÁC THỰC TỪ VIETMAP (chỉ dùng đúng các tên này):\n${placeList}`);
+  }
+
+  if (colorGuidance) {
+    const selectedNames = colorGuidance.selectedColorIds.map((id) =>
+      colorGuidance.palette.find((color) => color.id === id)?.name || id
+    );
+    sections.push(`MÀU HỢP MỆNH ĐÃ TÍNH SẴN (dữ liệu cố định, không được tự thay đổi):\n- Năm âm: ${colorGuidance.lunarYear}; mệnh: ${colorGuidance.element}.\n- Palette: ${colorGuidance.palette.map((color) => color.name).join(', ')}.\n- HAI MÀU LÁ BÀI ƯU TIÊN: ${selectedNames.join(' và ')}.\n- Năng lượng Tarot: ${colorGuidance.tarotElement}; lá ${colorGuidance.cardId} ${colorGuidance.isReversed ? 'ngược' : 'xuôi'}.`);
   }
 
   return sections.join('\n\n');

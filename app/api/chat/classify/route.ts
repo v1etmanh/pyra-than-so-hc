@@ -13,6 +13,7 @@ const intentSpreadDefaults: Record<string, string | null> = {
   holistic_analysis: 'celtic-cross',
   core_personality: null,
   daily_guidance: 'single',
+  color_guidance: 'single',
   where_to_go: 'single',
   general: 'single',
   trash: null,
@@ -49,6 +50,7 @@ function normalizeDecision(value: Record<string, any>): AgentDecision {
 
 function classifyFallback(message: string) {
   const hasAny = (...terms: string[]) => terms.some((term) => message.includes(term));
+  if (hasAny('màu', 'phối màu', 'mặc màu', 'sơn màu')) return 'color_guidance';
   const hasChoice = hasAny(' hay ', 'hay ', ' hay?', ' hoặc ', 'hoặc ', ' vs ', 'versus', 'giữa ', 'phân vân', 'lựa chọn a', 'lựa chọn b');
   if (hasChoice) return 'two_choices';
   if (hasAny('đi đâu', 'chỗ nào', 'nơi nào', 'quán nào', 'cà phê nào', 'cafe nào', 'địa điểm', 'đi chơi', 'hẹn hò ở đâu', 'dạo ở đâu', 'tham quan')) return 'where_to_go';
@@ -62,7 +64,7 @@ function classifyFallback(message: string) {
 
 export interface AgentDecision {
   mode: 'single' | 'compatibility';
-  intent: 'two_choices' | 'timing_trajectory' | 'relationship' | 'holistic_analysis' | 'core_personality' | 'daily_guidance' | 'where_to_go' | 'love_match' | 'trash' | 'general';
+  intent: 'two_choices' | 'timing_trajectory' | 'relationship' | 'holistic_analysis' | 'core_personality' | 'daily_guidance' | 'color_guidance' | 'where_to_go' | 'love_match' | 'trash' | 'general';
   needsTarot: boolean;
   spreadId: 'single' | 'three-card' | 'two-options' | 'relationship' | 'timeline' | 'celtic-cross' | null;
   cardCount: number;
@@ -157,8 +159,9 @@ DANH MỤC Ý ĐỊNH (intent):
 5. "core_personality": Hỏi tính cách cốt lõi, sứ mệnh, điểm mạnh yếu -> không Tarot.
 6. "where_to_go": Tìm địa điểm thực tế -> spreadId "single"; Tarot chỉ chọn vibe sau các điều kiện thực tế.
 7. "daily_guidance": Lời khuyên tức thời trong ngày -> spreadId "single".
-8. "trash": Câu hỏi vô nghĩa/spam -> không Tarot.
-9. "general": Chủ đề đơn, rõ ràng không khớp nhóm khác -> spreadId "single".
+8. "color_guidance": Hỏi màu hợp mệnh, màu may mắn, màu nên mặc/dùng hoặc phối màu -> spreadId "single", đúng 1 lá và targetIndicators là mảng rỗng [].
+9. "trash": Câu hỏi vô nghĩa/spam -> không Tarot.
+10. "general": Chủ đề đơn, rõ ràng không khớp nhóm khác -> spreadId "single".
 
 DANH MỤC SPREAD VÀ SỐ VỊ TRÍ CHUẨN (giữ nguyên mô tả/vị trí trong Tarot):
 ${tarotSpreads.map((spread) => `- ${spread.id}: ${spread.positions.length} lá`).join('\n')}
@@ -177,7 +180,7 @@ QUY TẮC BẮT BUỘC VỀ targetIndicators:
 Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown format, không có bất kỳ văn bản nào ngoài JSON) theo mẫu sau:
 {
   "mode": "single",
-  "intent": "two_choices" | "timing_trajectory" | "relationship" | "holistic_analysis" | "core_personality" | "daily_guidance" | "where_to_go" | "trash" | "general",
+  "intent": "two_choices" | "timing_trajectory" | "relationship" | "holistic_analysis" | "core_personality" | "daily_guidance" | "color_guidance" | "where_to_go" | "trash" | "general",
   "needsTarot": true | false,
   "spreadId": "single" | "three-card" | "two-options" | "relationship" | "timeline" | "celtic-cross" | null,
   "cardCount": ${tarotSpreads.map((spread) => spread.positions.length).filter((value, index, all) => all.indexOf(value) === index).sort((a, b) => a - b).join(' | ')},
@@ -256,6 +259,13 @@ Chỉ trả về DUY NHẤT 1 chuỗi JSON hợp lệ (không kèm markdown form
     if (classifyFallback(messageForFallback) === 'where_to_go') {
       parsedDecision.intent = 'where_to_go';
       parsedDecision.targetIndicators = personalityIndicatorFallbacks.where_to_go;
+    }
+    // Color questions are a deterministic mobile ritual. Keep the selected
+    // one-card spread and avoid allowing an uncertain classifier response to
+    // turn it into a generic multi-card reading.
+    if (classifyFallback(messageForFallback) === 'color_guidance') {
+      parsedDecision.intent = 'color_guidance';
+      parsedDecision.targetIndicators = [];
     }
     const normalized = normalizeDecision(parsedDecision);
     if (normalized.intent === 'trash') normalized.replyText = TRASH_PROMPT_GUIDANCE;
