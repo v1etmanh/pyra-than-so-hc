@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:unit": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:astro": "node --experimental-strip-types --test lib/astro/fortune-service.test.ts",
     "test:resonance": "node --experimental-strip-types --test tests/resonance/*.test.ts",
     "test:resonance:random": "node --experimental-strip-types scripts/test-resonance-random.ts",
     "labels:tarot:validate": "node --experimental-strip-types scripts/tarot-labeling/validate.mjs",

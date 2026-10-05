@@ -8,9 +8,11 @@ export interface AstroFortuneInput {
     tensionScore?: number;
     harmonyScore?: number;
     conjunctionScore?: number;
+    dominantSignal?: 'tension' | 'harmony' | 'conjunction' | 'balanced';
     dominantElements?: string[];
     highlights?: string[];
   };
+  recentAdvice?: string[];
   userContext?: string;
 }
 
@@ -37,10 +39,12 @@ export const astroFortuneRequestSchema = z.object({
       tensionScore: z.number().min(0).max(1).optional(),
       harmonyScore: z.number().min(0).max(1).optional(),
       conjunctionScore: z.number().min(0).max(1).optional(),
+      dominantSignal: z.enum(['tension', 'harmony', 'conjunction', 'balanced']).optional(),
       dominantElements: z.array(z.string()).optional(),
       highlights: z.array(z.string()).optional(),
     })
     .optional(),
+  recentAdvice: z.array(z.string().min(1).max(500)).max(7).optional(),
   userContext: z.string().max(500).optional(),
 });
 
@@ -91,12 +95,14 @@ Sáng tác "Lá Thăm Chiêm Tinh Dân Gian" gồm đúng 3 tầng nội dung th
    - TUYỆT ĐỐI CẤM: Chép lại bài mẫu; cấm các từ ngữ Hán Việt nặng nề; cấm ngôn từ "chữa lành" mạng xã hội (như "vũ trụ gửi tín hiệu", "tần số rung động", "bản giao hưởng", "ngọn hải đăng", "năng lượng tích cực"...).
 
 3. "mirror" (Tầng 2: Gương soi tâm trí - Đúng 1 câu duy nhất):
-   - Đọc vị thẳng thắn, sắc sảo trạng thái nội tâm từ các góc chiếu chiêm tinh (Căng thẳng vs Hòa hợp, Hỏa tinh xung động nôn nóng, Thổ tinh đè nén cản trở, v.v.).
+   - Đọc vị thẳng thắn, sắc sảo trạng thái nội tâm từ tương quan Căng thẳng, Hòa hợp, Hội tụ hoặc Cân bằng của các góc chiếu.
    - Đóng vai người bạn tri kỷ chỉ điểm trúng phóc cái gai hoặc nỗi băn khoăn đang cấn trong lòng người xem lúc này. Không đạo lý, không phán xét số phận.
 
 4. "advice" (Tầng 3: Kế sách bỏ túi - Đúng 1 câu duy nhất):
    - Dặn dò hành động cụ thể, thực tế, có thể làm ngay trong sinh hoạt đời thường hôm nay (ăn uống, chi tiêu, lời ăn tiếng nói, cách giữ mình).
-   - Tuyệt đối không khuyên chung chung ("hãy bình tĩnh", "hãy tự tin"). Cần dặn dò việc làm thiết thực đời thường.
+   - Không dùng lời khuyên khuôn mẫu chỉ yêu cầu người xem chậm lại, trấn tĩnh hoặc tự tin; phải thay bằng một việc làm có đối tượng và thời điểm rõ ràng.
+   - Nếu tín hiệu chủ đạo là Hòa hợp: ưu tiên nắm cơ hội hoặc chủ động kết nối. Căng thẳng: giảm một rủi ro cụ thể. Hội tụ: chọn một trọng tâm. Cân bằng: duy trì một nhịp sinh hoạt hữu ích.
+   - Không lặp động từ chính hoặc chủ đề hành động của các kế sách gần đây được cung cấp.
 
 BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
 {
@@ -120,6 +126,12 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
   const highlightsText = input.metadata?.highlights?.length
     ? `Các góc chiếu tâm điểm:\n- ${input.metadata.highlights.join('\n- ')}`
     : '';
+  const dominantSignalText = input.metadata?.dominantSignal
+    ? `Tín hiệu chủ đạo đã tính toán: ${input.metadata.dominantSignal}`
+    : '';
+  const recentAdviceText = input.recentAdvice?.length
+    ? `Các kế sách gần đây — bắt buộc đổi cả động từ chính lẫn chủ đề:\n- ${input.recentAdvice.slice(0, 7).join('\n- ')}`
+    : '';
 
   const userPrompt = [
     '[BÀI CA DAO MẪU ĐỂ LẤY KHUÔN NHỊP ĐIỆU (KHÔNG ĐƯỢC CHÉP LẠI CÂU CHỮ)]:',
@@ -131,7 +143,9 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
     '[TÌNH THẾ CHIÊM TINH HÔM NAY (HÃY DÙNG LÀM Ý ĐỂ SÁNG TÁC 4 CÂU THƠ MỚI)]:',
     input.astroSummary ? ('Tóm tắt thế sự: ' + input.astroSummary) : '',
     [tensionText, harmonyText, elementsText].filter(Boolean).join(' | '),
+    dominantSignalText,
     highlightsText,
+    recentAdviceText,
     input.userContext ? ('Lời nhắn thêm từ người bốc: ' + input.userContext) : '',
     '',
     'Hãy sáng tác 4 câu thơ mới hoàn toàn theo nhịp bài mẫu và xuất ra Lá Thăm Chiêm Tinh Dân Gian bằng JSON chuẩn (title, verse, mirror, advice).'
