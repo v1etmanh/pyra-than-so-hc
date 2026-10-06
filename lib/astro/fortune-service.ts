@@ -11,6 +11,17 @@ export interface AstroFortuneInput {
     dominantSignal?: 'tension' | 'harmony' | 'conjunction' | 'balanced';
     dominantElements?: string[];
     highlights?: string[];
+    birthDataPrecision?: 'dateOnly' | 'timeWithoutLocation' | 'complete';
+    houseSystem?: 'porphyry';
+    ascendantSign?: string;
+    midheavenSign?: string;
+    planetHouses?: Record<string, number>;
+    activatedHouses?: Array<{
+      house: number;
+      score: number;
+      topicVi: string;
+    }>;
+    angleHighlights?: string[];
   };
   recentAdvice?: string[];
   userContext?: string;
@@ -42,6 +53,17 @@ export const astroFortuneRequestSchema = z.object({
       dominantSignal: z.enum(['tension', 'harmony', 'conjunction', 'balanced']).optional(),
       dominantElements: z.array(z.string()).optional(),
       highlights: z.array(z.string()).optional(),
+      birthDataPrecision: z.enum(['dateOnly', 'timeWithoutLocation', 'complete']).optional(),
+      houseSystem: z.literal('porphyry').optional(),
+      ascendantSign: z.string().min(1).max(40).optional(),
+      midheavenSign: z.string().min(1).max(40).optional(),
+      planetHouses: z.record(z.string().max(40), z.number().int().min(1).max(12)).optional(),
+      activatedHouses: z.array(z.object({
+        house: z.number().int().min(1).max(12),
+        score: z.number().min(0).max(1),
+        topicVi: z.string().min(1).max(100),
+      })).max(3).optional(),
+      angleHighlights: z.array(z.string().min(1).max(160)).max(3).optional(),
     })
     .optional(),
   recentAdvice: z.array(z.string().min(1).max(500)).max(7).optional(),
@@ -129,6 +151,30 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
   const dominantSignalText = input.metadata?.dominantSignal
     ? `Tín hiệu chủ đạo đã tính toán: ${input.metadata.dominantSignal}`
     : '';
+  const birthPrecisionText = input.metadata?.birthDataPrecision
+    ? `Độ đầy đủ dữ liệu sinh: ${input.metadata.birthDataPrecision}`
+    : '';
+  const anglesText = input.metadata?.birthDataPrecision === 'complete'
+    ? [
+        input.metadata.ascendantSign ? `Cung Mọc (ASC): ${input.metadata.ascendantSign}` : '',
+        input.metadata.midheavenSign ? `Thiên Đỉnh (MC): ${input.metadata.midheavenSign}` : '',
+        input.metadata.houseSystem ? 'Hệ nhà: Porphyry' : '',
+      ].filter(Boolean).join(' | ')
+    : '';
+  const planetHousesText = input.metadata?.birthDataPrecision === 'complete'
+    && input.metadata.planetHouses
+    ? `Vị trí hành tinh theo nhà bản mệnh:\n- ${Object.entries(input.metadata.planetHouses)
+        .map(([planet, house]) => `${planet}: Nhà ${house}`)
+        .join('\n- ')}`
+    : '';
+  const activatedHousesText = input.metadata?.activatedHouses?.length
+    ? `Các nhà nổi bật hôm nay:\n- ${input.metadata.activatedHouses
+        .map((item) => `Nhà ${item.house} – ${item.topicVi} (${Math.round(item.score * 100)}%)`)
+        .join('\n- ')}`
+    : '';
+  const angleHighlightsText = input.metadata?.angleHighlights?.length
+    ? `Góc chiếu tới ASC/MC:\n- ${input.metadata.angleHighlights.join('\n- ')}`
+    : '';
   const recentAdviceText = input.recentAdvice?.length
     ? `Các kế sách gần đây — bắt buộc đổi cả động từ chính lẫn chủ đề:\n- ${input.recentAdvice.slice(0, 7).join('\n- ')}`
     : '';
@@ -145,6 +191,11 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
     [tensionText, harmonyText, elementsText].filter(Boolean).join(' | '),
     dominantSignalText,
     highlightsText,
+    birthPrecisionText,
+    anglesText,
+    planetHousesText,
+    activatedHousesText,
+    angleHighlightsText,
     recentAdviceText,
     input.userContext ? ('Lời nhắn thêm từ người bốc: ' + input.userContext) : '',
     '',

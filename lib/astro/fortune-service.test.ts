@@ -56,3 +56,48 @@ test('request schema caps anti-repetition history at seven items', () => {
   });
   assert.equal(parsed.success, false);
 });
+
+test('request schema preserves derived house data without raw birth coordinates', () => {
+  const parsed = astroFortuneRequestSchema.safeParse({
+    ...baseInput,
+    metadata: {
+      ...baseInput.metadata,
+      birthDataPrecision: 'complete',
+      houseSystem: 'porphyry',
+      ascendantSign: 'Libra',
+      midheavenSign: 'Cancer',
+      planetHouses: { Sun: 10, Moon: 4 },
+      activatedHouses: [{ house: 10, score: 1, topicVi: 'Sự nghiệp và vị thế' }],
+      angleHighlights: ['Mars vuông ASC, orb 1.2°'],
+    },
+  });
+
+  assert.equal(parsed.success, true);
+  if (!parsed.success) return;
+  assert.equal(parsed.data.metadata?.ascendantSign, 'Libra');
+  assert.deepEqual(parsed.data.metadata?.planetHouses, { Sun: 10, Moon: 4 });
+  assert.equal('latitude' in (parsed.data.metadata ?? {}), false);
+  assert.equal('longitude' in (parsed.data.metadata ?? {}), false);
+});
+
+test('prompt includes ASC, MC and activated houses only for complete birth data', () => {
+  const { userPrompt } = buildAstroFortunePrompt({
+    ...baseInput,
+    metadata: {
+      ...baseInput.metadata,
+      birthDataPrecision: 'complete',
+      houseSystem: 'porphyry',
+      ascendantSign: 'Libra',
+      midheavenSign: 'Cancer',
+      planetHouses: { Sun: 10, Moon: 4 },
+      activatedHouses: [{ house: 10, score: 1, topicVi: 'Sự nghiệp và vị thế' }],
+      angleHighlights: ['Mars vuông ASC, orb 1.2°'],
+    },
+  });
+
+  assert.match(userPrompt, /Cung Mọc \(ASC\): Libra/);
+  assert.match(userPrompt, /Thiên Đỉnh \(MC\): Cancer/);
+  assert.match(userPrompt, /Sun: Nhà 10/);
+  assert.match(userPrompt, /Nhà 10 – Sự nghiệp và vị thế \(100%\)/);
+  assert.match(userPrompt, /Mars vuông ASC, orb 1\.2°/);
+});
