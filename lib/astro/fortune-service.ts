@@ -70,34 +70,20 @@ export const astroFortuneRequestSchema = z.object({
   userContext: z.string().max(500).optional(),
 });
 
-function getGeminiApiKeys(): string[] {
-  const keys: string[] = [];
-  if (process.env.GEMINI_API_KEY?.trim()) keys.push(process.env.GEMINI_API_KEY.trim());
-  for (let i = 1; i <= 10; i++) {
-    const k = process.env[`GEMINI_API_KEY_${i}`]?.trim();
-    if (k && !keys.includes(k)) keys.push(k);
-  }
-  return keys;
+function getGeminiMainApiKey(): string {
+  return (
+    process.env.GEMINI_API_KEY_MAIN?.trim() ||
+    process.env.GEMINI_API_KEY?.trim() ||
+    ''
+  );
 }
 
 function getGeminiModel(): string {
   return (
     process.env.GEMINI_ASTRO_MODEL?.trim() ||
     process.env.GEMINI_CHAT_MODELS?.split(',')[0]?.trim() ||
-    'gemini-3.6-flash'
+    'gemini-2.5-flash'
   );
-}
-
-function getDeepSeekApiKey(): string {
-  return process.env.DEEPSEEK_API_KEY?.trim() || '';
-}
-
-function getDeepSeekBaseUrl(): string {
-  return (process.env.DEEPSEEK_API_BASE_URL?.trim() || 'https://api.deepseek.com').replace(/\/+$/, '');
-}
-
-function getDeepSeekModel(): string {
-  return process.env.DEEPSEEK_ASTRO_MODEL?.trim() || 'deepseek-chat';
 }
 
 export function buildAstroFortunePrompt(input: AstroFortuneInput): { systemPrompt: string; userPrompt: string } {
@@ -112,19 +98,26 @@ Sáng tác "Lá Thăm Chiêm Tinh Dân Gian" gồm đúng 3 tầng nội dung th
 2. "verse" (Tầng 1: Đồng dao thế sự - BẮT BUỘC SÁNG TÁC 4 CÂU THƠ MỚI):
    - ĐẶC BIỆT LƯU Ý: Bài ca dao mẫu bên dưới CHỈ ĐỂ BẠN HỌC THỂ THƠ VÀ CÁCH GIEO VẦN/NGẮT NHỊP (như lục bát 6/8, vè 4 chữ, song thất...). TUYỆT ĐỐI KHÔNG ĐƯỢC CHÉP LẠI CÂU CHỮ CỦA BÀI MẪU!
    - BẠN PHẢI TỰ SÁNG TÁC 4 CÂU THƠ MỚI HOÀN TOÀN để họa lại tình thế chiêm tinh / tâm trạng lúc này.
-   - Sử dụng chất liệu hình ảnh dân dã làng quê Việt Nam (bếp lửa, ngọn cỏ, dòng sông, con trâu, hạt thóc, cái cày, mưa dầm, nắng gắt, cá lội, chim bay, vung nồi...) làm ẩn dụ.
+   - KÍCH THÍCH LIÊN TƯỞNG ẨN DỤ ĐỜI SỐNG (Metaphorical Association): Hãy liên tưởng tự do đến những lát cắt rất sống động và bình dị: con mèo lười sưởi nắng bên hiên, nồi cá kho liu riu, ấm trà nguội, chiếc lá đa rụng bờ ao, con đò neo đợi con nước, khói bếp lam chiều, tiếng chổi quét sân... Dùng những hình tượng này để đọc vị tâm trạng thay vì dùng lý lẽ đao to búa lớn.
    - Thơ phải chuẩn vần điệu dân gian, dí dỏm, châm biếm nhẹ hoặc ý nhị sâu cay.
    - TUYỆT ĐỐI CẤM: Chép lại bài mẫu; cấm các từ ngữ Hán Việt nặng nề; cấm ngôn từ "chữa lành" mạng xã hội (như "vũ trụ gửi tín hiệu", "tần số rung động", "bản giao hưởng", "ngọn hải đăng", "năng lượng tích cực"...).
 
 3. "mirror" (Tầng 2: Gương soi tâm trí - Đúng 1 câu duy nhất):
-   - Đọc vị thẳng thắn, sắc sảo trạng thái nội tâm từ tương quan Căng thẳng, Hòa hợp, Hội tụ hoặc Cân bằng của các góc chiếu.
-   - Đóng vai người bạn tri kỷ chỉ điểm trúng phóc cái gai hoặc nỗi băn khoăn đang cấn trong lòng người xem lúc này. Không đạo lý, không phán xét số phận.
+   - MỞ RỘNG BIÊN ĐỘ CẢM XÚC (BẢNG MÀU TÂM TRẠNG - Không phải ngày nào cũng là ngày ra trận):
+     + Ngày thảnh thơi / buông xả: Cho phép lười biếng một cách thông thái, "nằm thở cũng là một dạng tu dưỡng", ngắm mây, uống trà.
+     + Ngày trào phúng / tự trào: Nhìn sự đời nhẹ tênh, tự cười những toan tính vụn vặt của chính mình ("lo bò trắng răng", "chuyện cỏn con mà tưởng cháy nhà").
+     + Ngày đời thường / ấm cúng: Chăm chút một bữa ăn ngon, ngủ một giấc sâu, tưới cái cây thay vì mơ chuyện đại sự.
+     + Ngày quan sát: Chỉ đứng nhìn dòng đời trôi, như người câu cá ngồi ngắm phao nhấp nháy, không việc gì phải vội.
+   - Đọc vị tự nhiên, hóm hỉnh hoặc dung dị từ tương quan các góc chiếu. Không mặc định người xem đang lo sợ hay muốn bứt phá làm giàu. Không đạo lý, không phán xét số phận.
 
 4. "advice" (Tầng 3: Kế sách bỏ túi - Đúng 1 câu duy nhất):
-   - Dặn dò hành động cụ thể, thực tế, có thể làm ngay trong sinh hoạt đời thường hôm nay (ăn uống, chi tiêu, lời ăn tiếng nói, cách giữ mình).
+   - Dặn dò hành động cụ thể, dung dị, có thể làm ngay trong sinh hoạt đời thường hôm nay (ăn uống, chi tiêu, lời ăn tiếng nói, cách giữ mình, nghỉ ngơi, chăm sóc bản thân).
    - Không dùng lời khuyên khuôn mẫu chỉ yêu cầu người xem chậm lại, trấn tĩnh hoặc tự tin; phải thay bằng một việc làm có đối tượng và thời điểm rõ ràng.
-   - Nếu tín hiệu chủ đạo là Hòa hợp: ưu tiên nắm cơ hội hoặc chủ động kết nối. Căng thẳng: giảm một rủi ro cụ thể. Hội tụ: chọn một trọng tâm. Cân bằng: duy trì một nhịp sinh hoạt hữu ích.
+   - Tùy theo tâm thế ngày mà đưa kế sách phù hợp: Ngày thuận lợi (Hòa hợp) có thể thong thả tận hưởng hoặc kết nối ấm áp; ngày căng thẳng thì giảm bớt ôm đồm, tránh hơn thua; ngày tĩnh lặng thì cho phép mình nghỉ ngơi trọn vẹn; không ép buộc ngày nào cũng phải "nỗ lực bứt phá".
    - Không lặp động từ chính hoặc chủ đề hành động của các kế sách gần đây được cung cấp.
+
+LUẬT CẤM KỴ BẮT BUỘC (ANTI-REPETITION RULE):
+- TUYỆT ĐỐI CẤM: Không ngày nào cũng rao giảng về "khát vọng", "vươn lên", "bứt phá", "nỗ lực thành công" hay "chứng tỏ bản thân". Mỗi ngày là một tâm thế độc bản: có ngày tiến, có ngày lùi, có ngày chỉ nên đứng yên ngắm cảnh.
 
 BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
 {
@@ -206,112 +199,52 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
 }
 
 /**
- * Gọi Google Gemini Native API (Ưu tiên số 1)
+ * Gọi Google Gemini Native API bằng duy nhất 1 key _MAIN
  */
 async function generateWithGemini(
   systemPrompt: string,
   userPrompt: string
-): Promise<AstroFortuneOutput | null> {
-  const keys = getGeminiApiKeys();
-  if (keys.length === 0) return null;
+): Promise<AstroFortuneOutput> {
+  const apiKey = getGeminiMainApiKey();
+  if (!apiKey) {
+    throw new Error('Gemini API key (_MAIN) is not configured in environment variables.');
+  }
 
   const model = getGeminiModel();
-
-  for (const apiKey of keys) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(new Error('Gemini request timed out after 25s')), 25_000);
-
-    try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: systemPrompt }] },
-          contents: [{ parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            responseMimeType: 'application/json',
-            temperature: 0.7,
-          },
-        }),
-        signal: controller.signal,
-      });
-
-      if (!response.ok) {
-        console.warn(`[Gemini ${model}] Key ...${apiKey.slice(-6)} failed with status ${response.status}`);
-        continue; // Try next key
-      }
-
-      const data = await response.json();
-      const content = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!content) continue;
-
-      const parsed = JSON.parse(content);
-      const validated = astroFortuneResponseSchema.safeParse(parsed);
-      if (validated.success) {
-        return validated.data;
-      }
-    } catch (err) {
-      console.warn(`[Gemini ${model}] Error: ${err instanceof Error ? err.message : String(err)}`);
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  return null;
-}
-
-/**
- * Gọi DeepSeek API (Phương án Fallback dự phòng)
- */
-async function generateWithDeepSeek(
-  systemPrompt: string,
-  userPrompt: string
-): Promise<AstroFortuneOutput> {
-  const apiKey = getDeepSeekApiKey();
-  if (!apiKey) {
-    throw new Error('Both Gemini and DeepSeek are unavailable. Please configure API keys.');
-  }
-
-  const url = `${getDeepSeekBaseUrl()}/chat/completions`;
-  const model = getDeepSeekModel();
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(new Error('DeepSeek request timed out after 30s')), 30_000);
+  const timeout = setTimeout(() => controller.abort(new Error('Gemini request timed out after 25s')), 25_000);
 
   try {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
     const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        response_format: { type: 'json_object' },
-        temperature: 0.8,
-        max_tokens: 1000,
-        stream: false,
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        contents: [{ parts: [{ text: userPrompt }] }],
+        generationConfig: {
+          responseMimeType: 'application/json',
+          temperature: 0.7,
+        },
       }),
       signal: controller.signal,
     });
 
     if (!response.ok) {
       const errText = await response.text().catch(() => '');
-      throw new Error(`DeepSeek API failed (${response.status}): ${errText.slice(0, 200)}`);
+      throw new Error(`Gemini API error (${response.status}): ${errText.slice(0, 300)}`);
     }
 
-    const payload = await response.json();
-    const content = payload.choices?.[0]?.message?.content;
-    if (!content) throw new Error('DeepSeek returned an empty completion.');
+    const data = await response.json();
+    const content = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!content) {
+      throw new Error('Gemini returned an empty completion.');
+    }
 
     const parsed = JSON.parse(content);
     const validated = astroFortuneResponseSchema.safeParse(parsed);
     if (!validated.success) {
-      throw new Error(`DeepSeek validation failed: ${validated.error.issues.map((i) => i.message).join(', ')}`);
+      throw new Error(`Gemini fortune validation failed: ${validated.error.issues.map((i) => i.message).join(', ')}`);
     }
 
     return validated.data;
@@ -322,19 +255,9 @@ async function generateWithDeepSeek(
 
 /**
  * Hàm chính tạo Lá Thăm Chiêm Tinh Dân Gian
- * Ưu tiên: Gemini 3.6/3.8 Flash (Văn thơ cực mượt) -> Tự động Fallback sang DeepSeek nếu lỗi
+ * Xử lý duy nhất bằng Google Gemini với 1 key _MAIN duy nhất (không fallback DeepSeek để giữ trọn vần điệu dân tộc).
  */
 export async function generateAstroFortune(input: AstroFortuneInput): Promise<AstroFortuneOutput> {
   const { systemPrompt, userPrompt } = buildAstroFortunePrompt(input);
-
-  // 1. Thử gọi Gemini trước (chất thơ đỉnh nhất)
-  const geminiResult = await generateWithGemini(systemPrompt, userPrompt);
-  if (geminiResult) {
-    return geminiResult;
-  }
-
-  console.warn('[Astro Fortune] Gemini is unavailable or rate-limited. Falling back to DeepSeek...');
-
-  // 2. Fallback sang DeepSeek nếu Gemini gặp sự cố
-  return await generateWithDeepSeek(systemPrompt, userPrompt);
+  return await generateWithGemini(systemPrompt, userPrompt);
 }

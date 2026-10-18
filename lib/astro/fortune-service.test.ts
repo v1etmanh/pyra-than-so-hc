@@ -43,7 +43,9 @@ test('prompt uses dominant signal and recent advice without the old impatience p
   });
 
   assert.doesNotMatch(systemPrompt, /nóng vội|hãy bình tĩnh/i);
-  assert.match(systemPrompt, /Hòa hợp: ưu tiên nắm cơ hội/i);
+  assert.match(systemPrompt, /MỞ RỘNG BIÊN ĐỘ CẢM XÚC/i);
+  assert.match(systemPrompt, /con mèo lười sưởi nắng/i);
+  assert.match(systemPrompt, /TUYỆT ĐỐI CẤM: Không ngày nào cũng rao giảng về "khát vọng", "vươn lên"/i);
   assert.match(userPrompt, /Tín hiệu chủ đạo đã tính toán: harmony/i);
   assert.match(userPrompt, /Gọi một cuộc điện thoại quan trọng/i);
   assert.match(userPrompt, /đổi cả động từ chính lẫn chủ đề/i);

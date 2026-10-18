@@ -4,7 +4,7 @@ import { mkdir, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { evaluateBaziCompatibility } from '@/lib/bazi-love/engine';
 import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
-import { createStreamingResponse } from '@/lib/ai/response-generator';
+import { createStreamingResponse, type UserProviderConfig } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
@@ -126,6 +126,22 @@ function summarizePlaceContext(value: unknown) {
   };
 }
 
+function getDeepSeekAgentProviderConfig(): UserProviderConfig {
+  const apiKey = process.env.DEEPSEEK_API_KEY?.trim();
+  if (!apiKey) {
+    throw new Error('DEEPSEEK_API_KEY is not configured for Chat Agent.');
+  }
+  const baseUrl = (process.env.DEEPSEEK_API_BASE_URL?.trim() || 'https://api.deepseek.com').replace(/\/+$/, '');
+  const model = process.env.DEEPSEEK_CHAT_AGENT_MODEL?.trim() || process.env.DEEPSEEK_MODEL?.trim() || 'deepseek-chat';
+
+  return {
+    type: 'DeepSeek',
+    baseUrl,
+    model,
+    apiKeys: [apiKey],
+  };
+}
+
 async function generateLlmText(
   systemPrompt: string,
   userPrompt: string,
@@ -150,7 +166,7 @@ async function generateLlmText(
   const stream = createStreamingResponse(
     systemPrompt,
     [{ role: 'user', content: userPrompt }],
-    undefined,
+    getDeepSeekAgentProviderConfig(),
     generationOptions
   );
   const reader = stream.getReader();

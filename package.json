@@ -18,6 +18,7 @@
     "test:tarot-labels": "node --experimental-strip-types --test tests/tarot-label-quality.test.ts",
     "test:maps-grounding": "node --env-file=.env --experimental-strip-types scripts/test-gemini-maps-grounding.ts",
     "test:vietmap-deepseek": "node --env-file=.env --experimental-strip-types scripts/test-vietmap-deepseek.ts",
+    "test:chat-deepseek": "node --env-file=.env --experimental-strip-types scripts/test-chat-agent-deepseek.ts",
     "bench:llm": "node --env-file-if-exists=.env --experimental-strip-types scripts/benchmark-llm.ts",
     "bench:llm:report": "node --experimental-strip-types scripts/benchmark-llm-report.ts",
     "bench:llm:e2e": "node --experimental-strip-types scripts/benchmark-llm-e2e.ts",
