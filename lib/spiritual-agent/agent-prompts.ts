@@ -24,7 +24,6 @@ export interface BuildUserPromptOptions {
     isReversed?: boolean;
   }>;
   numerologyKnowledgeContext?: string;
-  resonanceContext?: string;
   selectedIndicators?: Array<{ name: string; key: string; value: string | number }>;
   retrievedKnowledgeKeys?: Set<string>;
   resolvedP2?: ResolvedIndicator[];
@@ -62,7 +61,9 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
   // 2. Hai lựa chọn (A vs B)
   if (intent === 'two_choices') {
     return `QUY TẮC CHUYÊN BIỆT: HAI LỰA CHỌN (A vs B):
-- Bạn phân tích dựa trên trải bài Hai Lựa Chọn (5 lá): Đối chiếu tiến trình, tiềm năng và thách thức của Hướng A so với Hướng B.
+- Khối "Các lá bài Tarot đã rút" là nguồn Tarot đầy đủ và chính thức. BẮT BUỘC sử dụng đủ 5 vai trò: Tình huống hiện tại, Tiến trình A, Kết quả A, Tiến trình B và Kết quả B; không được bỏ qua lá nền tảng hoặc kết quả của bất kỳ hướng nào.
+- Tổng hợp theo từng hướng thay vì liệt kê máy móc từng lá: đọc Tiến trình A cùng Kết quả A, đọc Tiến trình B cùng Kết quả B, rồi đối chiếu hai hướng trên cùng tiêu chí về tiến trình, tiềm năng và thách thức.
+- Không đưa ra kết luận nghiêng về A hoặc B nếu phần lập luận chưa xét đủ kết quả của cả hai hướng.
 - Nêu rõ hướng mà các lá bài nghiêng về hoặc tạo cảm giác bền vững hơn nếu tín hiệu bài rõ ràng; khách quan nêu điểm đánh đổi của mỗi bên.
 - TUYỆT ĐỐI KHÔNG TỰ BỊA RA TỶ LỆ PHẦN TRĂM HOẶC XÁC SUẤT (ví dụ: không nói 'phương án A đạt 70%').`;
   }
@@ -154,8 +155,7 @@ CÁCH ĐỌC THẦN SỐ HỌC — BẮT BUỘC:
 
 QUY TẮC CHUNG VỀ TỔNG HỢP:
 1. Với câu hỏi một người: Tarot là lớp diễn giải trực giác chính khi có Tarot. Thần số học là lớp chân dung cá nhân hóa; chỉ dùng nội dung có trong tài liệu được cung cấp để tạo chân dung này, nếu không có tài liệu cho chỉ số thì không tự suy luận từ giá trị số.
-2. Với trải bài nhiều lá: tổng hợp tín hiệu theo tên và vai trò vị trí; không chỉ dựa vào lá đầu tiên, không cần diễn giải máy móc từng lá.
-3. Nếu có BẢN ĐỒ TƯƠNG TÁC 5 TRỤC, chỉ dùng những lá, chỉ số, quan hệ và trích dẫn xuất hiện trong khối đó. Không tự tạo thêm cặp tương tác, không trình bày điểm số như quan hệ nhân quả hay dự báo chắc chắn.
+2. Khối "Các lá bài Tarot đã rút" là nguồn Tarot đầy đủ và chính thức. Với trải bài nhiều lá, tổng hợp tín hiệu theo tên và vai trò vị trí; không chỉ dựa vào lá đầu tiên, không cần diễn giải máy móc từng lá.
 
 QUY TẮC SỬ DỤNG THỜI GIAN HIỆN TẠI:
 - Dùng khối NGỮ CẢNH THỜI GIAN HIỆN TẠI để hiểu “bây giờ”, “hôm nay”, “tối nay” và chọn hành động phù hợp thời điểm, nhất là câu hỏi đời sống thường ngày.
@@ -201,7 +201,6 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
     spreadContext,
     cards = [],
     numerologyKnowledgeContext,
-    resonanceContext,
     selectedIndicators = [],
     retrievedKnowledgeKeys = new Set(),
     resolvedP2 = [],
@@ -250,10 +249,6 @@ export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {
       return `• ${indicator.name} (${indicator.key}): ${indicator.value}${note}`;
     }).join('\n');
     sections.push(`CÁC LÁT CẮT ĐÃ CHỌN CHO CHÂN DUNG CÁ NHÂN (dữ liệu nguồn, không dùng làm nhãn nhân cách trong câu trả lời):\n${indicatorLines}`);
-  }
-
-  if (!isCouple && resonanceContext?.trim()) {
-    sections.push(`BẢN ĐỒ TƯƠNG TÁC TAROT × THẦN SỐ HỌC ĐÃ TÍNH:\n${resonanceContext.trim()}`);
   }
 
   if (resolvedP2.length > 0) {

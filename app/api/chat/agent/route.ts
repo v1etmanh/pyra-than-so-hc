@@ -10,12 +10,12 @@ import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritu
 import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
 import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
+import { getChatIndicatorConciseRecord } from '@/lib/spiritual-agent/chat-numerology-context';
 import { getTarotSpread } from '@/lib/tarot/spreads';
 import { buildAgentSystemPrompt, buildAgentUserPrompt } from '@/lib/spiritual-agent/agent-prompts';
 import { filterPersonalityIndicatorKeys } from '@/lib/spiritual-agent/personality-indicators';
 import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
-import { generateResonanceContext, selectRequestedIndicators } from '@/lib/resonance';
-import type { TarotSelection } from '@/lib/resonance/types';
+import { selectRequestedIndicators } from '@/lib/resonance';
 
 export const runtime = 'nodejs';
 
@@ -276,10 +276,19 @@ export async function POST(request: NextRequest) {
         missingKeys: selectedKeys.filter((key) => !selectedIndicators.some((indicator) => indicator.key === key))
       });
     }
-    const knowledgeDocs = await Promise.all(selectedIndicators.map(async (indicator) => ({
-      indicator,
-      record: await getKnowledgeByIndicator(indicator.key, indicator.value)
-    })));
+    const knowledgeDocs = await Promise.all(selectedIndicators.map(async (indicator) => {
+      const conciseRecord = getChatIndicatorConciseRecord(indicator.key, indicator.value, indicator.name);
+      if (conciseRecord) {
+        return {
+          indicator,
+          record: conciseRecord
+        };
+      }
+      return {
+        indicator,
+        record: await getKnowledgeByIndicator(indicator.key, indicator.value)
+      };
+    }));
     const retrievedKnowledge = knowledgeDocs.filter(({ record }) => Boolean(record?.content?.trim()));
     const numerologyKnowledgeContext = isCouple
       ? ''
@@ -288,24 +297,6 @@ export async function POST(request: NextRequest) {
         `[TƯ LIỆU THẦN SỐ HỌC: ${indicator.name} (${indicator.key} = ${indicator.value}) | ${record!.title}]\n${record!.content}`
       ).join('\n\n')
       : 'Không tìm thấy tài liệu gốc khớp với các chỉ số đã chọn. Không tự diễn giải Thần số học chỉ từ tên hoặc giá trị số; hãy tập trung vào Tarot và các dữ liệu khác được cung cấp.';
-
-    const resonance = !isCouple && decision?.needsTarot && cards.length > 0 && selectedIndicators.length > 0
-      ? generateResonanceContext(cards as TarotSelection[], selectedIndicators)
-      : null;
-    const resonanceContext = resonance?.matchedTarotCount && resonance.matchedNumerologyCount
-      ? resonance.formattedAiPromptForm
-      : '';
-    if (resonance?.diagnostics.length) {
-      const diagnosticCounts = resonance.diagnostics.reduce<Record<string, number>>((counts, item) => {
-        counts[item.reason] = (counts[item.reason] ?? 0) + 1;
-        return counts;
-      }, {});
-      console.warn('[Chat Agent Route] Resonance label lookup diagnostics:', {
-        tarotMatches: resonance.matchedTarotCount,
-        numerologyMatches: resonance.matchedNumerologyCount,
-        diagnosticCounts
-      });
-    }
 
     let replyText = '';
     let baziScore = 85;
@@ -532,7 +523,6 @@ export async function POST(request: NextRequest) {
         spreadContext,
         cards,
         numerologyKnowledgeContext,
-        resonanceContext,
         selectedIndicators,
         retrievedKnowledgeKeys,
         resolvedP2,
