@@ -22,10 +22,10 @@ export const CHAT_RESPONSE_BUDGETS: Record<ChatResponseComplexity, ChatResponseB
   standard: {
     complexity: 'standard',
     maxTokens: 800,
-    maxWords: 220,
-    maxChars: 1800,
+    maxWords: 240,
+    maxChars: 1950,
     sectionLimits: {
-      conclusion: { maxWords: 50, maxChars: 360 },
+      conclusion: { maxWords: 70, maxChars: 500 },
       reasoning: { maxWords: 140, maxChars: 1050 },
       actions: { maxWords: 60, maxChars: 480 },
     },
@@ -33,10 +33,10 @@ export const CHAT_RESPONSE_BUDGETS: Record<ChatResponseComplexity, ChatResponseB
   complex: {
     complexity: 'complex',
     maxTokens: 1200,
-    maxWords: 280,
-    maxChars: 2200,
+    maxWords: 300,
+    maxChars: 2350,
     sectionLimits: {
-      conclusion: { maxWords: 60, maxChars: 420 },
+      conclusion: { maxWords: 80, maxChars: 600 },
       reasoning: { maxWords: 180, maxChars: 1320 },
       actions: { maxWords: 70, maxChars: 520 },
     },
@@ -138,7 +138,7 @@ function normalizeBullets(value: string, minimum: number, maximum: number): stri
 function normalizeStructure(sections: ParsedSections, complexity: ChatResponseComplexity): ParsedSections | null {
   const conclusionLines = sections.conclusion.split('\n').filter(Boolean);
   const conclusion = conclusionLines.join(' ').trim();
-  if (!conclusion || !isCompleteSentence(conclusion) || sentenceCount(conclusion) > 2) return null;
+  if (!conclusion || !isCompleteSentence(conclusion) || sentenceCount(conclusion) > 3) return null;
 
   const reasoning = normalizeBullets(sections.reasoning, 1, complexity === 'complex' ? 5 : 4);
   const actions = normalizeBullets(sections.actions, 1, 2);

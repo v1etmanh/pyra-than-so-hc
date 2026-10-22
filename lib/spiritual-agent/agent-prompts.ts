@@ -114,6 +114,7 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
   if (intent === 'daily_guidance') {
     return `INTENT CONTRACT — DAILY GUIDANCE:
 - Câu đầu chọn đúng một ưu tiên cho ngày được hỏi.
+- Câu thứ hai giải thích ưu tiên đó có nghĩa là tập trung vào việc gì và tạm gác điều gì; không chỉ đổi cách nói của câu đầu.
 - VÌ SAO có đúng hai ý: vì sao ưu tiên này phù hợp; điều cần tránh vì nó trực tiếp phá ưu tiên.
 - NÊN LÀM GÌ có một hành động ngoài đời có thể bắt đầu ngay. Không biến câu trả lời thành kế hoạch KPI hoặc quản lý cả ngày.`;
   }
@@ -161,7 +162,7 @@ THỜI GIAN VÀ AN TOÀN:
 Dùng đúng ba tiêu đề sau, theo đúng thứ tự, không thêm mở bài hoặc kết luận lặp lại:
 
 ✦ KẾT LUẬN NHANH:
-[1–2 câu. Câu đầu thực hiện đúng INTENT CONTRACT và trả lời trực tiếp câu hỏi.]
+[2–3 câu, khoảng 30–70 từ; riêng TIMING/TRAJECTORY dùng đúng hai câu theo contract. Câu đầu trả lời trực tiếp câu hỏi. Câu tiếp theo làm rõ kết luận có nghĩa gì trong hoàn cảnh này và nêu giới hạn hoặc điều kiện quan trọng; không lặp lại câu đầu bằng từ khác.]
 
 ✦ VÌ SAO:
 [2–4 ý ngắn tùy INTENT CONTRACT. Mỗi ý bắt buộc bắt đầu bằng ký tự •, có nhiệm vụ riêng, kết thúc bằng dấu câu và dựa trên một tín hiệu cụ thể. Không dùng hai ý để lặp lại cùng một luận điểm.]

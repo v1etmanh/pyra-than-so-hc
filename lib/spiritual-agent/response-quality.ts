@@ -41,6 +41,11 @@ function extractSection(reply: string, start: string, end?: string): string {
   return reply.slice(contentStart, endIndex < 0 ? undefined : endIndex).trim();
 }
 
+function wordCount(value: string): number {
+  const trimmed = value.trim();
+  return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
 export function validateChatReplyQuality(
   reply: string,
   input: ChatReplyQualityInput
@@ -79,6 +84,10 @@ export function validateChatReplyQuality(
     }
   }
 
+  if (wordCount(conclusion) < 25) {
+    return { valid: false, reason: 'conclusion_too_thin' };
+  }
+
   return { valid: true };
 }
 
@@ -94,6 +103,7 @@ export function buildChatReplyRepairInstruction(reason: string | undefined): str
     incomplete_sentence_or_invalid_bullets: 'Bullet hoặc câu chưa hoàn chỉnh. Mỗi ý phải bắt đầu bằng • và kết thúc bằng dấu câu.',
     missing_or_unordered_sections: 'Thiếu hoặc sai thứ tự ba tiêu đề bắt buộc. Hãy dùng đúng KẾT LUẬN NHANH, VÌ SAO, NÊN LÀM GÌ.',
     empty_or_too_short: 'Phản hồi trước bị trống hoặc quá ngắn. Hãy trả lời đầy đủ theo hợp đồng.',
+    conclusion_too_thin: 'Phần KẾT LUẬN NHANH quá cụt. Hãy viết 2–3 câu: chốt trực tiếp, làm rõ ý nghĩa trong hoàn cảnh này, rồi nêu giới hạn hoặc điều kiện quan trọng mà không lặp ý.',
   };
 
   return `YÊU CẦU TỰ SỬA TRƯỚC KHI TRẢ LỜI: ${detail[reason || ''] || 'Phản hồi trước chưa đạt hợp đồng. Hãy kiểm tra lại lập trường, cấu trúc và dữ liệu.'} Không nhắc đến lần sửa này trong câu trả lời.`;

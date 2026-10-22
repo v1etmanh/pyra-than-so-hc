@@ -6,7 +6,7 @@ import { validateChatReplyQuality } from './response-quality.ts';
 const reply = (conclusion: string, actions = '• Đóng máy và bắt đầu nghỉ ngay.') => `✦ KẾT LUẬN NHANH:\n${conclusion}\n\n✦ VÌ SAO:\n• Một tín hiệu cụ thể bảo vệ kết luận.\n• Một tín hiệu khác nêu đúng rủi ro.\n\n✦ NÊN LÀM GÌ:\n${actions}`;
 
 test('two choices must start by choosing one option', () => {
-  assert.equal(validateChatReplyQuality(reply('Chọn đi ngủ sớm.'), {
+  assert.equal(validateChatReplyQuality(reply('Chọn đi ngủ sớm. Tối nay mục tiêu không phải cố thêm vài trang mà là lấy lại độ tỉnh để buổi học sau thực sự có chất lượng.'), {
     intent: 'two_choices',
     userMessage: 'Nên học tiếp hay đi ngủ?',
   }).valid, true);
@@ -34,15 +34,32 @@ test('timing replies separate current state and conditional trend', () => {
 });
 
 test('generic writing actions are rejected unless explicitly requested', () => {
-  const generic = validateChatReplyQuality(reply('Hôm nay hãy hoàn thành một việc.', '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
+  const detailedConclusion = 'Hôm nay hãy hoàn thành một việc đang dang dở trước khi nhận thêm việc mới. Ưu tiên này giúp bạn giữ sự tập trung thay vì đổi hướng liên tục.';
+  const generic = validateChatReplyQuality(reply(detailedConclusion, '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
     intent: 'daily_guidance',
     userMessage: 'Hôm nay nên tập trung gì?',
   });
   assert.equal(generic.reason, 'generic_writing_action');
 
-  const explicit = validateChatReplyQuality(reply('Hôm nay hãy hoàn thành một việc.', '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
+  const explicit = validateChatReplyQuality(reply(detailedConclusion, '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
     intent: 'daily_guidance',
     userMessage: 'Tôi nên ghi chép và lập kế hoạch hôm nay thế nào?',
   });
   assert.equal(explicit.valid, true);
+});
+
+test('rejects a conclusion that is decisive but too thin to explain itself', () => {
+  const result = validateChatReplyQuality([
+    '✦ KẾT LUẬN NHANH:',
+    'Hôm nay hãy xử lý một việc đang né.',
+    '',
+    '✦ VÌ SAO:',
+    '• Lá bài gợi một điểm cần được làm rõ.',
+    '• Trì hoãn sẽ khiến việc này tiếp tục chiếm sự chú ý.',
+    '',
+    '✦ NÊN LÀM GÌ:',
+    '• Thực hiện bước xử lý trực tiếp đầu tiên ngay hôm nay.',
+  ].join('\n'), { intent: 'daily_guidance', userMessage: 'Hôm nay nên tập trung gì?' });
+
+  assert.deepEqual(result, { valid: false, reason: 'conclusion_too_thin' });
 });
