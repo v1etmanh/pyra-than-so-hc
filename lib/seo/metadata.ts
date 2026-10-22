@@ -15,6 +15,9 @@ export type PublicPagePath =
   | '/pricing'
   | '/privacy-policy'
   | '/terms-of-service'
+  | '/privacy'
+  | '/terms'
+  | '/data-deletion'
   | '/life-path-number-calculator'
   | '/expression-number-calculator'
   | '/soul-urge-number-calculator'
@@ -63,6 +66,18 @@ const pageMetadata: Record<SupportedLocale, Record<PublicPagePath, PageCopy>> = 
     '/terms-of-service': {
       title: 'Điều khoản sử dụng | NUMELYRA',
       description: 'Đọc các điều khoản áp dụng khi sử dụng dịch vụ NUMELYRA.',
+    },
+    '/privacy': {
+      title: 'Chính sách quyền riêng tư | NUMELYRA',
+      description: 'Tìm hiểu cách NUMELYRA thu thập, sử dụng và bảo vệ dữ liệu của bạn.',
+    },
+    '/terms': {
+      title: 'Điều khoản sử dụng | NUMELYRA',
+      description: 'Đọc các điều khoản áp dụng khi sử dụng dịch vụ NUMELYRA.',
+    },
+    '/data-deletion': {
+      title: 'Hướng dẫn xóa dữ liệu người dùng | NUMELYRA',
+      description: 'Hướng dẫn chi tiết các bước xóa tài khoản và dữ liệu cá nhân trên NUMELYRA.',
     },
     '/life-path-number-calculator': {
       title: 'Công cụ tính Số Đường Đời miễn phí | NUMELYRA',
@@ -129,6 +144,18 @@ const pageMetadata: Record<SupportedLocale, Record<PublicPagePath, PageCopy>> = 
     '/terms-of-service': {
       title: 'Terms of Service | NUMELYRA',
       description: 'Read the terms that apply when you use NUMELYRA services.',
+    },
+    '/privacy': {
+      title: 'Privacy Policy | NUMELYRA',
+      description: 'Learn how NUMELYRA collects, uses, and protects your information.',
+    },
+    '/terms': {
+      title: 'Terms of Service | NUMELYRA',
+      description: 'Read the terms that apply when you use NUMELYRA services.',
+    },
+    '/data-deletion': {
+      title: 'User Data Deletion Instructions | NUMELYRA',
+      description: 'Step-by-step instructions for requesting deletion of your personal data and account on NUMELYRA.',
     },
     '/life-path-number-calculator': {
       title: 'Free Life Path Number Calculator | NUMELYRA',

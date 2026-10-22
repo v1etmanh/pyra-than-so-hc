@@ -16,6 +16,9 @@ const routes = [
   { path: '/lucky-wallpaper', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/assessment', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/pricing', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/terms', changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/data-deletion', changeFrequency: 'yearly', priority: 0.3 },
   { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.3 },
   { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.3 },
 ] as const;

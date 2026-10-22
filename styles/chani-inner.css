@@ -8228,6 +8228,40 @@
   font: 14px/1.7 var(--chani-mono);
 }
 
+.legal-page p {
+  margin-bottom: 12px;
+}
+
+.legal-page ul,
+.legal-page ol {
+  max-width: 720px;
+  margin: 12px 0 20px 24px;
+  font: 14px/1.7 var(--chani-mono);
+}
+
+.legal-page li {
+  margin-bottom: 8px;
+}
+
+.legal-page a {
+  color: #2a2a2b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-page a:hover {
+  opacity: 0.8;
+}
+
+.legal-page strong {
+  font-weight: 600;
+  color: #111;
+}
+
+.legal-page section {
+  margin-bottom: 28px;
+}
+
 .legal-updated {
   color: #777;
   font-size: 11px !important;
