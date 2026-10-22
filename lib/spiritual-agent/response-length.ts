@@ -21,24 +21,24 @@ export type ChatResponseBudget = {
 export const CHAT_RESPONSE_BUDGETS: Record<ChatResponseComplexity, ChatResponseBudget> = {
   standard: {
     complexity: 'standard',
-    maxTokens: 1200,
-    maxWords: 500,
-    maxChars: 3200,
+    maxTokens: 800,
+    maxWords: 220,
+    maxChars: 1800,
     sectionLimits: {
-      conclusion: { maxWords: 100, maxChars: 600 },
-      reasoning: { maxWords: 350, maxChars: 2200 },
-      actions: { maxWords: 100, maxChars: 600 },
+      conclusion: { maxWords: 50, maxChars: 360 },
+      reasoning: { maxWords: 140, maxChars: 1050 },
+      actions: { maxWords: 60, maxChars: 480 },
     },
   },
   complex: {
     complexity: 'complex',
-    maxTokens: 1800,
-    maxWords: 750,
-    maxChars: 4800,
+    maxTokens: 1200,
+    maxWords: 280,
+    maxChars: 2200,
     sectionLimits: {
-      conclusion: { maxWords: 140, maxChars: 800 },
-      reasoning: { maxWords: 520, maxChars: 3200 },
-      actions: { maxWords: 140, maxChars: 800 },
+      conclusion: { maxWords: 60, maxChars: 420 },
+      reasoning: { maxWords: 180, maxChars: 1320 },
+      actions: { maxWords: 70, maxChars: 520 },
     },
   },
 };
@@ -71,14 +71,14 @@ type ParsedSections = Record<SectionName, string>;
 
 const DEFAULT_FALLBACKS: Record<ChatResponseComplexity, ParsedSections> = {
   standard: {
-    conclusion: 'Hãy ưu tiên một bước rõ ràng và vừa sức trước mắt.',
-    reasoning: '• Bạn đã có đủ dữ kiện để bắt đầu, chỉ cần tránh ôm quá nhiều việc.\n• Một nhịp đi chậm mà đều sẽ giúp bạn tự tin hơn.',
-    actions: '• Chọn một việc quan trọng nhất cho hôm nay.\n• Hoàn thành việc đó trước khi nhận thêm cam kết.',
+    conclusion: 'Mình chưa thể hoàn tất lượt đọc này đủ rõ để đưa ra lời khuyên đáng tin.',
+    reasoning: '• Phản hồi vừa nhận bị thiếu cấu trúc hoặc không bám đủ dữ liệu được cung cấp.\n• Mình sẽ không lấp chỗ trống bằng một lời khuyên chung chung.',
+    actions: '• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.',
   },
   complex: {
-    conclusion: 'Hướng đi này có triển vọng khi bạn giữ sự rõ ràng và nhất quán.',
-    reasoning: '• Các dấu hiệu hiện tại cho thấy cơ hội và thử thách cùng xuất hiện.\n• Sự chủ động có chuẩn bị sẽ giúp bạn tận dụng lợi thế tốt hơn.\n• Trao đổi thẳng thắn sẽ hạn chế hiểu lầm không cần thiết.',
-    actions: '• Chốt một bước nhỏ có thể thực hiện ngay hôm nay.\n• Kiểm tra lại kết quả sau một tuần để điều chỉnh.',
+    conclusion: 'Mình chưa thể hoàn tất lượt đọc này đủ rõ để chốt một hướng đáng tin.',
+    reasoning: '• Phản hồi vừa nhận chưa đáp ứng đủ cấu trúc hoặc lập trường mà câu hỏi cần.\n• Mình sẽ không ghép các tín hiệu trái chiều thành một câu trả lời ba phải.',
+    actions: '• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.',
   },
 };
 

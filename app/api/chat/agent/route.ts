@@ -7,7 +7,8 @@ import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
 import { createStreamingResponse, type UserProviderConfig } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
-import { getChatResponseBudget, normalizeChatReply } from '@/lib/spiritual-agent/response-length';
+import { getChatResponseBudget, normalizeChatReply, normalizeChatReplyWithDiagnostics } from '@/lib/spiritual-agent/response-length';
+import { buildChatReplyRepairInstruction, validateChatReplyQuality } from '@/lib/spiritual-agent/response-quality';
 import { findVietMapPlaces, formatPlaceReply, type VietMapSearchContext } from '@/lib/places/vietmap-deepseek';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { getChatIndicatorConciseRecord } from '@/lib/spiritual-agent/chat-numerology-context';
@@ -154,10 +155,10 @@ async function generateLlmText(
   }
 ): Promise<string> {
   const generationOptions = {
-    // Leave room for a complete, longer structured reply.  Keeping provider
-    // reasoning off prevents it from consuming the completion budget.
-    maxTokens: Math.max(2400, maxTokens * 2),
-    temperature: 0.7,
+    // The production prompt targets a short three-section answer. Lower
+    // variance keeps the verdict stable across identical readings.
+    maxTokens: Math.max(1200, maxTokens),
+    temperature: 0.3,
     reasoningEffort: 'low' as const,
     includeReasoning: false,
   };
@@ -413,9 +414,9 @@ export async function POST(request: NextRequest) {
     // 2. Hai lựa chọn (A vs B)
     else if (decision?.intent === 'two_choices') {
       replyText = [
-        `✦ KẾT LUẬN NHANH:\nHãy đối chiếu hai lựa chọn với các lá bài ở từng vị trí và ưu tiên thực tế của bạn trước khi quyết định.`,
-        `\n✦ VÌ SAO:\n• Trải bài Hai lựa chọn chỉ ra tiến trình và thách thức riêng của mỗi hướng.\n• Các lá bài gợi xu hướng để cân nhắc, không phải xác suất hay bảo đảm kết quả.`,
-        `\n✦ NÊN LÀM GÌ:\n• Ghi lại lợi ích và chi phí thực tế của từng phương án.\n• Chọn một bước thử nhỏ để kiểm chứng hướng phù hợp hơn.`
+        `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để chọn thay bạn một hướng đáng tin.`,
+        `\n✦ VÌ SAO:\n• Phản hồi vừa nhận chưa so sánh đủ tiến trình và kết quả của cả hai phương án.\n• Mình sẽ không lấp chỗ trống bằng một kết luận chung chung hoặc nước đôi.`,
+        `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.`
       ].join('\n');
     }
     // 3. Địa điểm thực tế: VietMap is the factual source; DeepSeek only plans and ranks.
@@ -469,15 +470,15 @@ export async function POST(request: NextRequest) {
 
       if (isFood) {
         replyText = [
-          `✦ KẾT LUẬN NHANH:\nHôm nay hợp với một bữa nhẹ, tươi và dễ tiêu như phở, bún hoặc salad.`,
-          `\n✦ VÌ SAO:\n${cardSignals || `• Lá ${c1?.card?.nameVi || 'Tarot'} là một gợi ý để suy ngẫm.`}\n• Hãy đối chiếu thông điệp với hoàn cảnh thực tế của bạn.`,
-          `\n✦ NÊN LÀM GÌ:\n• Chọn món có rau và đạm vừa phải.\n• Ăn chậm, uống đủ nước.`
+          `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để gợi ý một món phù hợp với bạn.`,
+          `\n✦ VÌ SAO:\n${cardSignals || `• Lượt đọc có lá ${c1?.card?.nameVi || 'Tarot'} nhưng chưa tạo được câu trả lời hoàn chỉnh.`}\n• Mình sẽ không tự đoán khẩu vị, sức khỏe hoặc hoàn cảnh ăn uống của bạn.`,
+          `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi kèm món bạn đang cân nhắc hoặc điều kiện ăn uống quan trọng.`
         ].join('\n');
       } else {
         replyText = [
-          `✦ KẾT LUẬN NHANH:\nThông điệp hiện tại là giữ vững hướng đi và đừng vội phản ứng theo cảm xúc.`,
-          `\n✦ VÌ SAO:\n${cardSignals || `• Lá ${c1?.card?.nameVi || 'Tarot'} gợi một điểm cần chú ý.`}\n• Cần đọc từng lá theo đúng vai trò vị trí trong trải bài.`,
-          `\n✦ NÊN LÀM GÌ:\n• Chọn một việc quan trọng nhất hôm nay.\n• Hoàn thành nó trước khi nhận thêm cam kết.`
+          `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để đưa ra lời khuyên đáng tin.`,
+          `\n✦ VÌ SAO:\n${cardSignals || `• Lượt đọc có lá ${c1?.card?.nameVi || 'Tarot'} nhưng chưa tạo được câu trả lời hoàn chỉnh.`}\n• Mình sẽ không biến dữ liệu còn thiếu thành một lời khuyên chung chung.`,
+          `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.`
         ].join('\n');
       }
     }
@@ -532,17 +533,45 @@ export async function POST(request: NextRequest) {
         colorGuidance: decision?.intent === 'color_guidance' && colorGuidance ? colorGuidance : undefined,
       });
 
-      const aiText = await generateLlmText(systemPrompt, userPrompt, Math.max(800, responseBudget.maxTokens), {
+      const indicatorSelection = {
         requestedKeys,
         suppliedKeys: suppliedP1Indicators.map((indicator) => indicator.key),
         selectedKeys: selectedIndicators.map((indicator) => indicator.key),
         knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key)
+      };
+
+      let aiText = await generateLlmText(
+        systemPrompt,
+        userPrompt,
+        Math.max(800, responseBudget.maxTokens),
+        indicatorSelection
+      );
+      let normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
+      let quality = normalized.usedAI
+        ? validateChatReplyQuality(normalized.replyText, { intent: decision?.intent, userMessage: message })
+        : { valid: false, reason: normalized.rejectionReason };
+
+      // One targeted retry is cheaper and more reliable than showing an
+      // answer that is well-formed but fence-sitting, generic or unsafe.
+      if (!normalized.usedAI || !quality.valid) {
+        const repairInstruction = buildChatReplyRepairInstruction(quality.reason);
+        aiText = await generateLlmText(
+          `${systemPrompt}\n\n${repairInstruction}`,
+          userPrompt,
+          Math.max(800, responseBudget.maxTokens),
+          indicatorSelection
+        );
+        normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
+        quality = normalized.usedAI
+          ? validateChatReplyQuality(normalized.replyText, { intent: decision?.intent, userMessage: message })
+          : { valid: false, reason: normalized.rejectionReason };
+      }
+
+      replyText = normalized.usedAI && quality.valid ? normalized.replyText : fallbackReply;
+      console.log('[Chat Agent Route] Generated reply quality:', {
+        usedAI: normalized.usedAI && quality.valid,
+        rejectionReason: quality.valid ? undefined : quality.reason,
       });
-      // Do not gate a useful answer behind a rigid display format. The client
-      // may receive any complete text the model produces; fallback stays for
-      // empty output and request/provider failures only.
-      replyText = aiText.trim() || fallbackReply;
-      console.log('[Chat Agent Route] Generated reply successfully, using AI text:', Boolean(aiText.trim()));
     } catch (llmError) {
       console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
       replyText = fallbackReply;

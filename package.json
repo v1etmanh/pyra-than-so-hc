@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:unit": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:chat-agent": "node --experimental-strip-types --test lib/spiritual-agent/agent-prompts.test.ts lib/spiritual-agent/intent-classifier.test.ts lib/spiritual-agent/response-quality.test.ts",
     "test:astro": "node --experimental-strip-types --test lib/astro/fortune-service.test.ts",
     "test:resonance": "node --experimental-strip-types --test tests/resonance/*.test.ts",
     "test:resonance:random": "node --experimental-strip-types scripts/test-resonance-random.ts",
