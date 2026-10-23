@@ -17,6 +17,7 @@ import { buildAgentSystemPrompt, buildAgentUserPrompt } from '@/lib/spiritual-ag
 import { filterPersonalityIndicatorKeys } from '@/lib/spiritual-agent/personality-indicators';
 import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
 import { selectRequestedIndicators } from '@/lib/resonance';
+import { getRequestAuth } from '@/lib/supabase/request-auth';
 
 export const runtime = 'nodejs';
 
@@ -41,6 +42,124 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
+
+type PersistedInitialReading = {
+  sessionId: string;
+  userMessageId: string;
+  assistantMessageId: string;
+};
+
+function buildInitialReadingContext(body: any, replyText: string) {
+  const primary = Array.isArray(body.profiles) ? body.profiles[0] : undefined;
+  const partner = Array.isArray(body.profiles) ? body.profiles[1] : undefined;
+  const cards = Array.isArray(body.tarotCards) ? body.tarotCards : [];
+  const suppliedIndicators = Array.isArray(body.indicators?.profile1) ? body.indicators.profile1 : [];
+  return {
+    intent: typeof body.decision?.intent === 'string' ? body.decision.intent : 'general',
+    profileName: typeof primary?.fullName === 'string' ? primary.fullName : '',
+    birthDate: typeof primary?.birthDate === 'string' ? primary.birthDate : '',
+    gender: typeof primary?.gender === 'string' ? primary.gender : undefined,
+    isCouple: Boolean(partner),
+    partnerProfile: partner ? {
+      fullName: typeof partner.fullName === 'string' ? partner.fullName : '',
+      birthDate: typeof partner.birthDate === 'string' ? partner.birthDate : '',
+      gender: typeof partner.gender === 'string' ? partner.gender : undefined,
+    } : undefined,
+    drawnCards: cards.slice(0, 10).map((item: any) => ({
+      nameVi: typeof item?.card?.nameVi === 'string' ? item.card.nameVi : '',
+      positionTitle: typeof item?.position?.nameVi === 'string' ? item.position.nameVi : undefined,
+      isReversed: Boolean(item?.isReversed),
+    })),
+    selectedIndicators: suppliedIndicators.slice(0, 12).map((item: any) => ({
+      name: typeof item?.nameVi === 'string' ? item.nameVi : (typeof item?.name === 'string' ? item.name : item?.key),
+      value: typeof item?.value === 'number' || typeof item?.value === 'string' ? item.value : '',
+    })),
+    initialQuestion: typeof body.message === 'string' ? body.message.slice(0, 2_000) : '',
+    initialReadingSummary: replyText.slice(0, 8_000),
+  };
+}
+
+async function persistInitialReading(
+  request: NextRequest,
+  body: any,
+  replyText: string,
+  cardPayload: unknown
+): Promise<PersistedInitialReading | null> {
+  try {
+    const { supabase, user } = await getRequestAuth(request);
+    if (!user) return null;
+
+    const sessionId = randomUUID();
+    const userMessageId = randomUUID();
+    const assistantMessageId = randomUUID();
+    const now = new Date().toISOString();
+    const message = typeof body.message === 'string' ? body.message.trim() : '';
+    const contextData = buildInitialReadingContext(body, replyText);
+    const { error: sessionError } = await supabase.from('chat_sessions').insert({
+      id: sessionId,
+      user_id: user.id,
+      title: message.slice(0, 80) || 'Phiên chiêm nghiệm',
+      intent: typeof body.decision?.intent === 'string' ? body.decision.intent : 'general',
+      mode: body.decision?.mode === 'compatibility' ? 'compatibility' : 'single',
+      context_data: contextData,
+      question_count: 0,
+      max_questions: 10,
+      status: 'active',
+      created_at: now,
+      updated_at: now,
+    });
+    if (sessionError) throw sessionError;
+
+    const { error: messagesError } = await supabase.from('chat_messages').insert([
+      {
+        id: userMessageId,
+        session_id: sessionId,
+        turn_index: 0,
+        sender: 'user',
+        text: message,
+        card_payload: null,
+        created_at: now,
+      },
+      {
+        id: assistantMessageId,
+        session_id: sessionId,
+        turn_index: 0,
+        sender: 'mascot',
+        text: replyText,
+        card_payload: cardPayload,
+        created_at: new Date(Date.now() + 1).toISOString(),
+      },
+    ]);
+    if (messagesError) {
+      await supabase.from('chat_sessions').delete().eq('id', sessionId).eq('user_id', user.id);
+      throw messagesError;
+    }
+    return { sessionId, userMessageId, assistantMessageId };
+  } catch (error) {
+    console.warn('[Chat Agent Route] Could not persist continuation session:', error);
+    return null;
+  }
+}
+
+async function agentSuccessResponse(
+  request: NextRequest,
+  body: any,
+  replyText: string,
+  cardPayload: unknown
+) {
+  const persisted = await persistInitialReading(request, body, replyText, cardPayload);
+  return NextResponse.json({
+    ok: true,
+    data: {
+      sessionId: persisted?.sessionId ?? null,
+      questionCount: 0,
+      maxQuestions: 10,
+      canContinue: Boolean(persisted),
+      replyText,
+      cardPayload,
+    },
+  }, { headers: corsHeaders });
+}
 
 async function saveChatPromptSnapshot(
   systemPrompt: string,
@@ -227,6 +346,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         ok: true,
         data: {
+          sessionId: null,
+          questionCount: 0,
+          maxQuestions: 10,
+          canContinue: false,
           replyText: TRASH_PROMPT_GUIDANCE,
           cardPayload: {
             type: 'agent_synthesis',
@@ -493,10 +616,7 @@ export async function POST(request: NextRequest) {
     // Place replies always stay deterministic. Names and addresses come only
     // from VietMap, never from the normal chat model output.
     if (decision?.intent === 'where_to_go') {
-      return NextResponse.json({
-        ok: true,
-        data: { replyText, cardPayload }
-      }, { headers: corsHeaders });
+      return agentSuccessResponse(request, body, replyText, cardPayload);
     }
 
     // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA NGẮN GỌN
@@ -577,13 +697,7 @@ export async function POST(request: NextRequest) {
       replyText = fallbackReply;
     }
 
-    return NextResponse.json({
-      ok: true,
-      data: {
-        replyText,
-        cardPayload
-      }
-    }, { headers: corsHeaders });
+    return agentSuccessResponse(request, body, replyText, cardPayload);
   } catch (error: any) {
     console.error('[API /api/chat/agent] Error:', error);
     return NextResponse.json({ ok: false, error: error.message }, { status: 500, headers: corsHeaders });
