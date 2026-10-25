@@ -15,4 +15,6 @@ test('does not mistake habitual “hay” statements for choices', () => {
 test('keeps non-choice intent precedence', () => {
   assert.equal(classifyFallbackIntent('Hôm nay tôi nên mặc màu gì?'), 'color_guidance');
   assert.equal(classifyFallbackIntent('Ba tháng tới công việc ra sao?'), 'timing_trajectory');
+  assert.equal(classifyFallbackIntent('Người cũ vừa thả tim, tôi có nên nhắn lại không?'), 'relationship');
+  assert.equal(classifyFallbackIntent('Công việc và tình cảm đều bế tắc, cho tôi góc nhìn toàn cảnh.'), 'holistic_analysis');
 });

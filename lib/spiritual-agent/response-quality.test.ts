@@ -63,3 +63,41 @@ test('rejects a conclusion that is decisive but too thin to explain itself', () 
 
   assert.deepEqual(result, { valid: false, reason: 'conclusion_too_thin' });
 });
+
+test('love match requires both names and rejects ambiguous second-person labels', () => {
+  const namedReply = reply(
+    'Minh Anh và Gia Huy có động lực tương đối nâng đỡ, nhưng khác biệt trong nhịp giao tiếp cần được nói rõ trước khi trở thành một điểm ma sát lặp lại.',
+    '• Minh Anh và Gia Huy thống nhất một cách báo trước khi cần thêm không gian.',
+  );
+  assert.equal(validateChatReplyQuality(namedReply, {
+    intent: 'love_match',
+    userMessage: 'Hai người có hợp nhau không?',
+    coupleProfileNames: ['Minh Anh', 'Gia Huy'],
+  }).valid, true);
+
+  const ambiguousReply = namedReply.replaceAll('Minh Anh và Gia Huy', 'hai bạn');
+  assert.equal(validateChatReplyQuality(ambiguousReply, {
+    intent: 'love_match',
+    userMessage: 'Hai người có hợp nhau không?',
+    coupleProfileNames: ['Minh Anh', 'Gia Huy'],
+  }).reason, 'love_match_ambiguous_address');
+});
+
+test('love match must choose a viewpoint instead of refusing to infer', () => {
+  const reply = [
+    '✦ KẾT LUẬN NHANH:',
+    'Mình không thể biết chắc Việt Nam nghĩ gì về Mỹ Duyên.',
+    '',
+    '✦ VÌ SAO:',
+    '• Việt Nam và Mỹ Duyên có tín hiệu bổ trợ.',
+    '',
+    '✦ NÊN LÀM GÌ:',
+    '• Mỹ Duyên hãy quan sát Việt Nam thêm.',
+  ].join('\n');
+
+  assert.equal(validateChatReplyQuality(reply, {
+    intent: 'love_match',
+    userMessage: 'Bạn nam nghĩ gì về bạn nữ?',
+    coupleProfileNames: ['Mỹ Duyên', 'Việt Nam'],
+  }).reason, 'love_match_missing_viewpoint');
+});

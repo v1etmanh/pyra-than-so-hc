@@ -4,7 +4,7 @@ import { mkdir, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { evaluateBaziCompatibility } from '@/lib/bazi-love/engine';
 import type { BaziLovePersonInput } from '@/lib/bazi-love/types';
-import { createStreamingResponse, type UserProviderConfig } from '@/lib/ai/response-generator';
+import { generateTextResponse, type UserProviderConfig } from '@/lib/ai/response-generator';
 import { resolveTargetIndicators, formatIndicatorsForPrompt } from '@/lib/numerology/indicator-resolver';
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 import { getChatResponseBudget, normalizeChatReply, normalizeChatReplyWithDiagnostics } from '@/lib/spiritual-agent/response-length';
@@ -14,6 +14,11 @@ import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { getChatIndicatorConciseRecord } from '@/lib/spiritual-agent/chat-numerology-context';
 import { getTarotSpread } from '@/lib/tarot/spreads';
 import { buildAgentSystemPrompt, buildAgentUserPrompt } from '@/lib/spiritual-agent/agent-prompts';
+import {
+  buildCompactLoveRetrySystemPrompt,
+  buildCompactLoveRetryUserPrompt,
+  buildDirectionalLoveFallback,
+} from '@/lib/prompts/love-match';
 import { filterPersonalityIndicatorKeys } from '@/lib/spiritual-agent/personality-indicators';
 import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
 import { selectRequestedIndicators } from '@/lib/resonance';
@@ -262,69 +267,40 @@ function getDeepSeekAgentProviderConfig(): UserProviderConfig {
   };
 }
 
+type IndicatorSelection = {
+  requestedKeys: string[];
+  suppliedKeys: string[];
+  selectedKeys: string[];
+  knowledgeMatchedKeys: string[];
+};
+
+function isLengthError(value: string | undefined): boolean {
+  return Boolean(value && /finish_reason\s*=\s*length|maximum context|max(?:imum)? tokens?/i.test(value));
+}
+
 async function generateLlmText(
   systemPrompt: string,
   userPrompt: string,
   maxTokens: number,
-  indicatorSelection: {
-    requestedKeys: string[];
-    suppliedKeys: string[];
-    selectedKeys: string[];
-    knowledgeMatchedKeys: string[];
-  }
+  indicatorSelection: IndicatorSelection,
 ): Promise<string> {
   const generationOptions = {
-    // The production prompt targets a short three-section answer. Lower
-    // variance keeps the verdict stable across identical readings.
-    maxTokens: Math.max(1200, maxTokens),
+    maxTokens,
     temperature: 0.3,
     reasoningEffort: 'low' as const,
     includeReasoning: false,
   };
   await saveChatPromptSnapshot(systemPrompt, userPrompt, generationOptions, indicatorSelection);
-
-  const stream = createStreamingResponse(
+  const result = await generateTextResponse(
     systemPrompt,
     [{ role: 'user', content: userPrompt }],
     getDeepSeekAgentProviderConfig(),
-    generationOptions
+    generationOptions,
   );
-  const reader = stream.getReader();
-  const decoder = new TextDecoder();
-  let fullText = '';
-  let buffer = '';
-  let completed = false;
-  let streamError: string | undefined;
-
-  const consumeLine = (line: string) => {
-    if (!line.startsWith('data: ')) return;
-    const data = line.slice(6).trim();
-    if (!data || data === '[DONE]') return;
-    const event = JSON.parse(data) as { content?: unknown; done?: unknown; error?: unknown };
-    if (typeof event.error === 'string') streamError = event.error;
-    if (event.done === true) completed = true;
-    if (typeof event.content === 'string' && !streamError) fullText += event.content;
-  };
-
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-      buffer = lines.pop() ?? '';
-      for (const line of lines) {
-        consumeLine(line);
-      }
-    }
-    buffer += decoder.decode();
-    if (buffer.trim()) consumeLine(buffer);
-  } finally {
-    reader.releaseLock();
+  if (result.finishReason && result.finishReason !== 'stop') {
+    throw new Error(`LLM completion ended with finish_reason=${result.finishReason}`);
   }
-  if (streamError) throw new Error(streamError);
-  if (!completed) throw new Error('LLM stream ended without completion event');
-  return fullText.trim();
+  return result.text.trim();
 }
 
 export async function OPTIONS() {
@@ -528,11 +504,7 @@ export async function POST(request: NextRequest) {
       cardPayload.compatibilityScore = baziScore;
       cardPayload.drawnCards = []; // KHÔNG DÙNG BÀI TAROT
 
-      replyText = [
-        `✦ KẾT LUẬN NHANH:\n${p1.fullName} và ${p2.fullName} đạt khoảng ${baziScore}% tương hợp. Điểm quan trọng là giữ giao tiếp rõ ràng khi hai người khác nhịp sống.`,
-        `\n✦ VÌ SAO:\n• Cung Phu Thê và ngũ hành cho thấy hai bạn có cả điểm bổ trợ lẫn bài học cân bằng.\n• Kết quả này là gợi ý để hiểu nhau, không thay cho lựa chọn thực tế của hai người.`,
-        `\n✦ NÊN LÀM GÌ:\n• Nói rõ mong đợi và ranh giới ngay từ đầu.\n• Chọn một mục tiêu chung nhỏ để cùng thực hiện trong tháng này.`
-      ].join('\n');
+      replyText = buildDirectionalLoveFallback(message || '', p1, p2, baziScore);
     }
     // 2. Hai lựa chọn (A vs B)
     else if (decision?.intent === 'two_choices') {
@@ -619,81 +591,115 @@ export async function POST(request: NextRequest) {
       return agentSuccessResponse(request, body, replyText, cardPayload);
     }
 
-    // 5. KÍCH HOẠT AI LLM THẬT (Google Gemini / Groq / OpenRouter) ĐỂ SINH LỜI THOẠI CÁ NHÂN HÓA NGẮN GỌN
+    // 5. Generate the complete answer before returning JSON so the mobile love
+    // loading sequence can finish. A length/quality failure retries once.
+    const spread = getTarotSpread(decision?.spreadId);
+    const spreadContext = spread
+      ? `Trải bài được chọn: ${spread.name.vi} (${spread.id}), ${spread.positions.length} lá.\n${spread.positions.map((position, index) => `${index + 1}. ${position.name.vi}: ${position.description.vi}`).join('\n')}`
+      : 'Không có trải bài Tarot trong chế độ này.';
+    const retrievedKnowledgeKeys = new Set(retrievedKnowledge.map(({ indicator: found }) => found.key));
+    const systemPrompt = buildAgentSystemPrompt({
+      intent: decision?.intent,
+      isCouple,
+      complexity: responseBudget.complexity,
+      needsTarot: decision?.needsTarot,
+    });
+    const userPrompt = buildAgentUserPrompt({
+      timeContext,
+      message,
+      p1,
+      p2,
+      isCouple,
+      spreadContext,
+      cards,
+      numerologyKnowledgeContext,
+      selectedIndicators,
+      retrievedKnowledgeKeys,
+      resolvedP2,
+      baziSummary,
+      baziScore,
+      placeRecommendations,
+      colorGuidance: decision?.intent === 'color_guidance' && colorGuidance ? colorGuidance : undefined,
+    });
+    const indicatorSelection = {
+      requestedKeys,
+      suppliedKeys: suppliedP1Indicators.map((indicator) => indicator.key),
+      selectedKeys: selectedIndicators.map((indicator) => indicator.key),
+      knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key),
+    };
+    const isLoveMatch = decision?.intent === 'love_match' || isCouple;
+    const maxTokens = isLoveMatch ? 2_000 : Math.max(1_200, responseBudget.maxTokens);
+    const retryMaxTokens = isLoveMatch ? 1_600 : Math.max(1_200, responseBudget.maxTokens);
+
     try {
-      const spread = getTarotSpread(decision?.spreadId);
-      const spreadContext = spread
-        ? `Trải bài được chọn: ${spread.name.vi} (${spread.id}), ${spread.positions.length} lá.\n${spread.positions.map((position, index) => `${index + 1}. ${position.name.vi}: ${position.description.vi}`).join('\n')}`
-        : 'Không có trải bài Tarot trong chế độ này.';
+      let aiText = '';
+      let firstError: string | undefined;
+      try {
+        aiText = await generateLlmText(systemPrompt, userPrompt, maxTokens, indicatorSelection);
+      } catch (error) {
+        firstError = error instanceof Error ? error.message : String(error);
+      }
 
-      const retrievedKnowledgeKeys = new Set(retrievedKnowledge.map(({ indicator: found }) => found.key));
-
-      const systemPrompt = buildAgentSystemPrompt({
-        intent: decision?.intent,
-        isCouple,
-        complexity: responseBudget.complexity,
-        needsTarot: decision?.needsTarot,
-      });
-
-      const userPrompt = buildAgentUserPrompt({
-        timeContext,
-        message,
-        p1,
-        p2,
-        isCouple,
-        spreadContext,
-        cards,
-        numerologyKnowledgeContext,
-        selectedIndicators,
-        retrievedKnowledgeKeys,
-        resolvedP2,
-        baziSummary,
-        baziScore,
-        placeRecommendations,
-        colorGuidance: decision?.intent === 'color_guidance' && colorGuidance ? colorGuidance : undefined,
-      });
-
-      const indicatorSelection = {
-        requestedKeys,
-        suppliedKeys: suppliedP1Indicators.map((indicator) => indicator.key),
-        selectedKeys: selectedIndicators.map((indicator) => indicator.key),
-        knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key)
-      };
-
-      let aiText = await generateLlmText(
-        systemPrompt,
-        userPrompt,
-        Math.max(800, responseBudget.maxTokens),
-        indicatorSelection
+      let normalized = normalizeChatReplyWithDiagnostics(
+        firstError ? '' : aiText,
+        fallbackReply,
+        responseBudget.complexity,
       );
-      let normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
       let quality = normalized.usedAI
-        ? validateChatReplyQuality(normalized.replyText, { intent: decision?.intent, userMessage: message })
-        : { valid: false, reason: normalized.rejectionReason };
+        ? validateChatReplyQuality(normalized.replyText, {
+            intent: decision?.intent,
+            userMessage: message,
+            coupleProfileNames: isCouple && p2 ? [p1.fullName, p2.fullName] : undefined,
+          })
+        : { valid: false, reason: firstError || normalized.rejectionReason };
 
-      // One targeted retry is cheaper and more reliable than showing an
-      // answer that is well-formed but fence-sitting, generic or unsafe.
-      if (!normalized.usedAI || !quality.valid) {
-        const repairInstruction = buildChatReplyRepairInstruction(quality.reason);
+      // Retry at most once. A length stop gets the compact love prompt; other
+      // quality failures get a targeted repair instruction.
+      if (firstError || !normalized.usedAI || !quality.valid) {
+        const retryForLength = isLengthError(firstError);
+        const repairInstruction = retryForLength
+          ? 'Lượt trước bị cắt vì quá dài. Viết ngắn hơn, hoàn tất đủ ba phần trong giới hạn.'
+          : buildChatReplyRepairInstruction(quality.reason);
+        const retrySystemPrompt = retryForLength && isLoveMatch && p2
+          ? `${buildCompactLoveRetrySystemPrompt(p1.fullName, p2.fullName)}\n${repairInstruction}`
+          : `${systemPrompt}\n\n${repairInstruction}`;
+        const retryUserPrompt = retryForLength && isLoveMatch && p2
+          ? buildCompactLoveRetryUserPrompt({
+              message,
+              first: p1,
+              second: p2,
+              baziScore,
+              baziSummary,
+            })
+          : userPrompt;
+
+        console.warn('[Chat Agent Route] Retrying non-stream answer:', {
+          reason: firstError || quality.reason,
+          compactPrompt: retryForLength && isLoveMatch,
+        });
         aiText = await generateLlmText(
-          `${systemPrompt}\n\n${repairInstruction}`,
-          userPrompt,
-          Math.max(800, responseBudget.maxTokens),
-          indicatorSelection
+          retrySystemPrompt,
+          retryUserPrompt,
+          retryMaxTokens,
+          indicatorSelection,
         );
         normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
         quality = normalized.usedAI
-          ? validateChatReplyQuality(normalized.replyText, { intent: decision?.intent, userMessage: message })
+          ? validateChatReplyQuality(normalized.replyText, {
+              intent: decision?.intent,
+              userMessage: message,
+              coupleProfileNames: isCouple && p2 ? [p1.fullName, p2.fullName] : undefined,
+            })
           : { valid: false, reason: normalized.rejectionReason };
       }
 
       replyText = normalized.usedAI && quality.valid ? normalized.replyText : fallbackReply;
-      console.log('[Chat Agent Route] Generated reply quality:', {
+      console.log('[Chat Agent Route] Generated non-stream reply quality:', {
         usedAI: normalized.usedAI && quality.valid,
         rejectionReason: quality.valid ? undefined : quality.reason,
       });
     } catch (llmError) {
-      console.warn('[Chat Agent Route] LLM fallback to template:', llmError);
+      console.warn('[Chat Agent Route] LLM fallback to directional template:', llmError);
       replyText = fallbackReply;
     }
 

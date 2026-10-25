@@ -23,6 +23,14 @@ export interface StreamingGenerationOptions {
   includeReasoning?: boolean;
 }
 
+export interface TextGenerationResult {
+  text: string;
+  provider: string;
+  model: string;
+  actualModel?: string;
+  finishReason?: string;
+}
+
 function buildMessages(
   systemPrompt: string,
   history: Array<{ role: string; content: string }>,
@@ -74,6 +82,150 @@ function readWithTimeout<T>(
       }
     );
   });
+}
+
+function readTextWithTimeout(response: Response, timeoutMs: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(
+      () => reject(new Error('LLM response body timed out')),
+      timeoutMs
+    );
+    response.text().then(
+      (value) => {
+        clearTimeout(timeout);
+        resolve(value);
+      },
+      (error) => {
+        clearTimeout(timeout);
+        reject(error);
+      }
+    );
+  });
+}
+
+function extractCompletionContent(payload: unknown): { text: string; actualModel?: string; finishReason?: string } {
+  if (!payload || typeof payload !== 'object') return { text: '' };
+  const record = payload as Record<string, unknown>;
+  const choices = Array.isArray(record.choices) ? record.choices : [];
+  const first = choices[0];
+  if (!first || typeof first !== 'object') return { text: '' };
+  const message = (first as Record<string, unknown>).message;
+  if (!message || typeof message !== 'object') return { text: '' };
+  const content = (message as Record<string, unknown>).content;
+  const text = typeof content === 'string'
+    ? content
+    : Array.isArray(content)
+      ? content.map((part) => {
+          if (typeof part === 'string') return part;
+          if (part && typeof part === 'object' && typeof (part as Record<string, unknown>).text === 'string') {
+            return (part as Record<string, unknown>).text as string;
+          }
+          return '';
+        }).join('')
+      : '';
+  return {
+    text: text.trim(),
+    actualModel: typeof record.model === 'string' ? record.model : undefined,
+    finishReason: typeof (first as Record<string, unknown>).finish_reason === 'string'
+      ? (first as Record<string, unknown>).finish_reason as string
+      : undefined,
+  };
+}
+
+/**
+ * Executes a complete, non-streaming chat completion through the same provider
+ * cascade used by streaming routes. Intended for small structured outputs such
+ * as intent classification where the caller cannot display partial tokens.
+ */
+export async function generateTextResponse(
+  systemPrompt: string,
+  history: Array<{ role: string; content: string }>,
+  userProviderConfig?: UserProviderConfig,
+  generationOptions?: StreamingGenerationOptions
+): Promise<TextGenerationResult> {
+  const providers = getProviderCascade(userProviderConfig);
+  const deadline = Date.now() + Number(process.env.LLM_CASCADE_TIMEOUT_MS || 120_000);
+  const maxModelsPerProvider = Math.max(1, Number(process.env.LLM_MAX_MODELS_PER_PROVIDER || 2));
+  const configuredMaxKeys = Number(process.env.LLM_MAX_KEYS_PER_PROVIDER);
+  const maxKeysPerProvider = Number.isFinite(configuredMaxKeys) && configuredMaxKeys > 0
+    ? Math.floor(configuredMaxKeys)
+    : undefined;
+  const candidates = getOrderedModelCandidates(providers, {
+    maxModelsPerProvider,
+    maxKeysPerProvider: userProviderConfig ? 1 : maxKeysPerProvider,
+    rotate: !userProviderConfig,
+  });
+  const failedProvidersInRequest = new Set<CascadeProvider>();
+  let lastError = 'No LLM provider is configured.';
+
+  for (const candidate of candidates) {
+    const { provider, model, apiKey } = candidate;
+    if (failedProvidersInRequest.has(provider) || Date.now() >= deadline) continue;
+    const remainingMs = deadline - Date.now();
+    if (remainingMs <= 0) break;
+
+    try {
+      const response = await requestChatCompletion(
+        provider,
+        model,
+        buildMessages(systemPrompt, history, model),
+        apiKey,
+        {
+          stream: false,
+          maxTokens: generationOptions?.maxTokens,
+          temperature: generationOptions?.temperature,
+          reasoningEffort: generationOptions?.reasoningEffort,
+          responseFormat: generationOptions?.responseFormat,
+          includeReasoning: generationOptions?.includeReasoning,
+          timeoutMs: Math.min(
+            Number(process.env.LLM_RESPONSE_HEADER_TIMEOUT_MS || 15_000),
+            remainingMs
+          ),
+        }
+      );
+
+      const body = await readTextWithTimeout(response, Math.min(30_000, remainingMs));
+      if (!response.ok) {
+        lastError = `${providerLabel(provider, model)} failed (${response.status}): ${body.slice(0, 500) || 'empty response body'}`;
+        if (!userProviderConfig) {
+          const failureScope = classifyProviderError(response.status, body);
+          if (failureScope === 'credential') markCredentialFailure(candidate);
+          else if (failureScope === 'model') markModelFailure(candidate);
+          else if (failureScope === 'provider') {
+            markProviderFailure(candidate);
+            failedProvidersInRequest.add(provider);
+          } else {
+            break;
+          }
+        }
+        continue;
+      }
+
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(body);
+      } catch {
+        throw new Error(`${providerLabel(provider, model)} returned invalid completion JSON`);
+      }
+      const completion = extractCompletionContent(parsed);
+      if (!completion.text) throw new Error(`${providerLabel(provider, model)} returned empty completion content`);
+      return {
+        text: completion.text,
+        provider: provider.name,
+        model,
+        actualModel: completion.actualModel,
+        finishReason: completion.finishReason,
+      };
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+      if (!userProviderConfig) {
+        markProviderFailure(candidate);
+        failedProvidersInRequest.add(provider);
+      }
+    }
+  }
+
+  throw new Error(lastError);
 }
 
 /**

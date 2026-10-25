@@ -1,6 +1,7 @@
 export type ChatReplyQualityInput = {
   intent?: string | null;
   userMessage: string;
+  coupleProfileNames?: [string, string];
 };
 
 export type ChatReplyQualityResult = {
@@ -31,6 +32,9 @@ const RELATIONSHIP_MIND_READING_PATTERNS = [
   /(?:họ|người ấy|đối phương).{0,24}(?:còn yêu|thật sự muốn|muốn quay lại|đang thử lòng|đang nghĩ|sẽ quay lại|chắc chắn)/i,
   /(?:còn tình cảm|có tình cảm).{0,20}(?:với bạn|dành cho bạn)/i,
 ];
+
+const AMBIGUOUS_COUPLE_ADDRESS_PATTERN = /(?:^|[\s.,:;!?()])(?:bạn|người ấy|hai bạn|các bạn|người a|người b)(?=$|[\s.,:;!?()])/i;
+const LOVE_MATCH_HEDGING_PATTERN = /(?:không thể biết chắc|không thể biết|chưa thể kết luận|chưa đủ căn cứ|không đủ căn cứ|không thể khẳng định)/i;
 
 function extractSection(reply: string, start: string, end?: string): string {
   const startIndex = reply.toLocaleUpperCase('vi').indexOf(start.toLocaleUpperCase('vi'));
@@ -78,6 +82,20 @@ export function validateChatReplyQuality(
     }
   }
 
+  if (input.intent === 'love_match' && input.coupleProfileNames) {
+    const [firstName, secondName] = input.coupleProfileNames;
+    if (
+      AMBIGUOUS_COUPLE_ADDRESS_PATTERN.test(reply)
+      || !reply.includes(firstName)
+      || !reply.includes(secondName)
+    ) {
+      return { valid: false, reason: 'love_match_ambiguous_address' };
+    }
+    if (LOVE_MATCH_HEDGING_PATTERN.test(conclusion)) {
+      return { valid: false, reason: 'love_match_missing_viewpoint' };
+    }
+  }
+
   if (input.intent === 'timing_trajectory') {
     if (!/^hiện tại\s*:/i.test(conclusion) || !/xu hướng (?:thời gian tới|[^:\n]{1,40})\s*:/i.test(conclusion)) {
       return { valid: false, reason: 'timing_missing_current_and_trend' };
@@ -98,6 +116,8 @@ export function buildChatReplyRepairInstruction(reason: string | undefined): str
     generic_writing_action: 'Hành động đang rơi vào mẫu ghi chép/danh sách. Hãy thay bằng một hành vi ngoài đời có thể quan sát được.',
     two_choices_missing_choice: 'Câu hỏi có hai lựa chọn nhưng câu đầu chưa bắt đầu bằng “Chọn …”. Hãy gọi đúng tên một phương án.',
     relationship_mind_reading: 'Câu trả lời đang suy đoán tâm trí người thứ ba. Chỉ được đánh giá hành vi quan sát được.',
+    love_match_ambiguous_address: 'Câu trả lời ghép đôi đang dùng đại từ mơ hồ hoặc thiếu tên. Hãy gọi cả hai người bằng đúng tên trong context ở mọi nhận định; không dùng “bạn”, “người ấy”, “hai bạn” hay “Người A/B”.',
+    love_match_missing_viewpoint: 'Câu trả lời ghép đôi đang né kết luận. Hãy chọn một góc nhìn tình cảm nổi trội từ dữ liệu Tử Vi/Bát Tự và nói thẳng theo đúng chiều chủ thể → đối tượng; không dùng “không thể biết chắc” hoặc liệt kê nhiều khả năng ngang nhau.',
     timing_missing_current_and_trend: 'Kết luận timing chưa tách “Hiện tại:” và “Xu hướng thời gian tới:”. Hãy viết đúng hai lớp này.',
     response_budget_exceeded: 'Câu trả lời quá dài. Hãy rút gọn nhưng giữ đủ ba phần.',
     incomplete_sentence_or_invalid_bullets: 'Bullet hoặc câu chưa hoàn chỉnh. Mỗi ý phải bắt đầu bằng • và kết thúc bằng dấu câu.',
