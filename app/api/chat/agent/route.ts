@@ -84,6 +84,43 @@ function buildInitialReadingContext(body: any, replyText: string) {
   };
 }
 
+const TRANSIENT_NETWORK_ERROR = /fetch failed|ECONNRESET|ETIMEDOUT|ECONNREFUSED|EPIPE|socket hang up|UND_ERR|network/i;
+
+function isTransientNetworkError(error: unknown): boolean {
+  if (!error) return false;
+  const record = error as { message?: unknown; details?: unknown; cause?: unknown };
+  const text = [record.message, record.details, (record.cause as { code?: unknown } | undefined)?.code]
+    .filter((part) => typeof part === 'string')
+    .join(' ');
+  return TRANSIENT_NETWORK_ERROR.test(text || String(error));
+}
+
+/**
+ * Runs an idempotent Supabase insert, retrying when the TLS socket is reset.
+ * A unique-violation (23505) on a retry means the earlier attempt was stored
+ * before the connection dropped, so it counts as success.
+ */
+async function insertWithRetry(
+  run: () => PromiseLike<{ error: { code?: string; message?: string } | null }>,
+  attempts = 3,
+): Promise<void> {
+  let lastError: unknown;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      const { error } = await run();
+      if (!error) return;
+      if (attempt > 0 && error.code === '23505') return;
+      lastError = error;
+      if (!isTransientNetworkError(error)) break;
+    } catch (error) {
+      lastError = error;
+      if (!isTransientNetworkError(error)) break;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 300 * 2 ** attempt));
+  }
+  throw lastError;
+}
+
 async function persistInitialReading(
   request: NextRequest,
   body: any,
@@ -100,7 +137,7 @@ async function persistInitialReading(
     const now = new Date().toISOString();
     const message = typeof body.message === 'string' ? body.message.trim() : '';
     const contextData = buildInitialReadingContext(body, replyText);
-    const { error: sessionError } = await supabase.from('chat_sessions').insert({
+    await insertWithRetry(() => supabase.from('chat_sessions').insert({
       id: sessionId,
       user_id: user.id,
       title: message.slice(0, 80) || 'Phiên chiêm nghiệm',
@@ -112,10 +149,11 @@ async function persistInitialReading(
       status: 'active',
       created_at: now,
       updated_at: now,
-    });
-    if (sessionError) throw sessionError;
+    }));
 
-    const { error: messagesError } = await supabase.from('chat_messages').insert([
+    const assistantCreatedAt = new Date(Date.now() + 1).toISOString();
+    try {
+      await insertWithRetry(() => supabase.from('chat_messages').insert([
       {
         id: userMessageId,
         session_id: sessionId,
@@ -132,10 +170,10 @@ async function persistInitialReading(
         sender: 'mascot',
         text: replyText,
         card_payload: cardPayload,
-        created_at: new Date(Date.now() + 1).toISOString(),
+        created_at: assistantCreatedAt,
       },
-    ]);
-    if (messagesError) {
+      ]));
+    } catch (messagesError) {
       await supabase.from('chat_sessions').delete().eq('id', sessionId).eq('user_id', user.id);
       throw messagesError;
     }
@@ -511,7 +549,7 @@ export async function POST(request: NextRequest) {
       replyText = [
         `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để chọn thay bạn một hướng đáng tin.`,
         `\n✦ VÌ SAO:\n• Phản hồi vừa nhận chưa so sánh đủ tiến trình và kết quả của cả hai phương án.\n• Mình sẽ không lấp chỗ trống bằng một kết luận chung chung hoặc nước đôi.`,
-        `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.`
+        `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Bạn có thể gửi lại câu hỏi khi muốn bắt đầu một lượt đọc mới; sự rõ ràng đáng tin luôn quan trọng hơn một câu trả lời được ghép vội.`
       ].join('\n');
     }
     // 3. Địa điểm thực tế: VietMap is the factual source; DeepSeek only plans and ranks.
@@ -531,7 +569,7 @@ export async function POST(request: NextRequest) {
         replyText = [
           `✦ KẾT LUẬN NHANH:\nTiểu Linh Miêu chưa có đủ kết quả VietMap đáng tin cậy để gợi ý một địa điểm cụ thể.`,
           `\n✦ VÌ SAO:\n• ${placeSearchUnavailable ? 'VietMap hoặc DeepSeek chưa trả về đủ dữ liệu địa điểm.' : 'Bạn cần cấp vị trí hiện tại trước khi tìm.'}\n• Vì không có nguồn xác thực, Tiểu Linh Miêu sẽ không đoán tên quán, giờ mở cửa hay đánh giá.`,
-          `\n✦ NÊN LÀM GÌ:\n• Bật quyền vị trí và thử lại.\n• Giữ khoảng cách tìm kiếm rộng hơn nếu khu vực có ít địa điểm.`
+          `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Nếu vẫn muốn tìm một nơi phù hợp, bạn có thể cho phép truy cập vị trí rồi mở rộng phạm vi tìm kiếm; đôi khi lựa chọn hợp lòng nằm xa hơn một vòng tròn quen thuộc.`
         ].join('\n');
       }
     }
@@ -546,7 +584,7 @@ export async function POST(request: NextRequest) {
       replyText = [
         `✦ KẾT LUẬN NHANH:\n${documentedIndicators.length ? `Các tư liệu Thần số học đã tra cứu cho ${p1.fullName} có thể giúp bạn soi chiếu câu hỏi.` : 'Hiện chưa có đủ tư liệu Thần số học để luận giải câu hỏi này.'}`,
         `\n✦ VÌ SAO:\n${indicatorSummary}`,
-        `\n✦ NÊN LÀM GÌ:\n• Kiểm tra tên và giá trị các chỉ số trong hồ sơ.\n• Đặt lại câu hỏi sau khi có tư liệu tương ứng.`
+        `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Bạn có thể nhìn lại tên và giá trị các chỉ số trong hồ sơ trước khi hỏi lại; một nền dữ liệu sáng rõ sẽ giúp lời luận không phải lấp đầy khoảng trống bằng suy đoán.`
       ].join('\n');
     }
     // 5. Mặc định / 1 lá / 3 lá
@@ -567,13 +605,13 @@ export async function POST(request: NextRequest) {
         replyText = [
           `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để gợi ý một món phù hợp với bạn.`,
           `\n✦ VÌ SAO:\n${cardSignals || `• Lượt đọc có lá ${c1?.card?.nameVi || 'Tarot'} nhưng chưa tạo được câu trả lời hoàn chỉnh.`}\n• Mình sẽ không tự đoán khẩu vị, sức khỏe hoặc hoàn cảnh ăn uống của bạn.`,
-          `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi kèm món bạn đang cân nhắc hoặc điều kiện ăn uống quan trọng.`
+          `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Bạn có thể hỏi lại cùng món đang cân nhắc hoặc điều kiện ăn uống quan trọng; càng gọi đúng điều mình cần, lựa chọn càng bớt mơ hồ.`
         ].join('\n');
       } else {
         replyText = [
           `✦ KẾT LUẬN NHANH:\nMình chưa thể hoàn tất lượt đọc này đủ rõ để đưa ra lời khuyên đáng tin.`,
           `\n✦ VÌ SAO:\n${cardSignals || `• Lượt đọc có lá ${c1?.card?.nameVi || 'Tarot'} nhưng chưa tạo được câu trả lời hoàn chỉnh.`}\n• Mình sẽ không biến dữ liệu còn thiếu thành một lời khuyên chung chung.`,
-          `\n✦ NÊN LÀM GÌ:\n• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.`
+          `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Bạn có thể gửi lại câu hỏi khi muốn bắt đầu một lượt đọc mới; không cần giữ lấy một câu trả lời khi nó chưa đủ sáng rõ để đồng hành cùng mình.`
         ].join('\n');
       }
     }

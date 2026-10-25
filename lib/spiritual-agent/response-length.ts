@@ -63,7 +63,7 @@ export function getChatResponseBudget(input: BudgetInput = {}): ChatResponseBudg
 const SECTION_HEADINGS = {
   conclusion: '✦ KẾT LUẬN NHANH:',
   reasoning: '✦ VÌ SAO:',
-  actions: '✦ NÊN LÀM GÌ:',
+  actions: '✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:',
 } as const;
 
 type SectionName = keyof typeof SECTION_HEADINGS;
@@ -73,19 +73,19 @@ const DEFAULT_FALLBACKS: Record<ChatResponseComplexity, ParsedSections> = {
   standard: {
     conclusion: 'Mình chưa thể hoàn tất lượt đọc này đủ rõ để đưa ra lời khuyên đáng tin.',
     reasoning: '• Phản hồi vừa nhận bị thiếu cấu trúc hoặc không bám đủ dữ liệu được cung cấp.\n• Mình sẽ không lấp chỗ trống bằng một lời khuyên chung chung.',
-    actions: '• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.',
+    actions: '• Bạn có thể gửi lại câu hỏi khi muốn bắt đầu một lượt đọc mới; đôi khi một lần dừng ngắn cũng giúp câu hỏi tìm được đúng trọng tâm.',
   },
   complex: {
     conclusion: 'Mình chưa thể hoàn tất lượt đọc này đủ rõ để chốt một hướng đáng tin.',
     reasoning: '• Phản hồi vừa nhận chưa đáp ứng đủ cấu trúc hoặc lập trường mà câu hỏi cần.\n• Mình sẽ không ghép các tín hiệu trái chiều thành một câu trả lời ba phải.',
-    actions: '• Thử gửi lại câu hỏi để hệ thống thực hiện một lượt đọc mới.',
+    actions: '• Bạn có thể gửi lại câu hỏi khi muốn bắt đầu một lượt đọc mới; sự rõ ràng đáng tin luôn quan trọng hơn một câu trả lời được ghép vội.',
   },
 };
 
 const headingPatterns: Record<SectionName, RegExp> = {
   conclusion: /(?:^|\n)\s*(?:✦\s*)?KẾT LUẬN(?:\s+NHANH)?\s*:/i,
   reasoning: /(?:^|\n)\s*(?:✦\s*)?VÌ SAO(?:\s*\([^\n]*\))?\s*:/i,
-  actions: /(?:^|\n)\s*(?:✦\s*)?NÊN LÀM GÌ(?:\s*\([^\n]*\))?\s*:/i,
+  actions: /(?:^|\n)\s*(?:✦\s*)?(?:ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM|NÊN LÀM GÌ)(?:\s*\([^\n]*\))?\s*:/i,
 };
 
 function wordCount(value: string): number {
@@ -119,7 +119,10 @@ function normalizeBullets(value: string, minimum: number, maximum: number): stri
     } else if (lines.length > 0) {
       lines[lines.length - 1] += ` ${line}`;
     } else {
-      return null;
+      // The model sometimes writes a section as one prose paragraph without a
+      // bullet marker. Treat it as a single implicit bullet; completeness and
+      // bullet-count limits below still apply.
+      lines.push(`• ${line}`);
     }
   }
   if (lines.length < minimum || lines.length > maximum) return null;
@@ -153,7 +156,7 @@ function parseSections(raw: string): ParsedSections | null {
   const source = raw.replace(/\r\n?/g, '\n')
     .replace(/\*\*([^\n]+?)\*\*/g, '$1')
     .replace(/__([^\n]+?)__/g, '$1')
-    .replace(/^(?:#{1,6})\s+(?=(?:✦\s*)?(?:KẾT LUẬN|VÌ SAO|NÊN LÀM GÌ))/gim, '')
+    .replace(/^(?:#{1,6})\s+(?=(?:✦\s*)?(?:KẾT LUẬN|VÌ SAO|ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM|NÊN LÀM GÌ))/gim, '')
     .trim();
   if (!source) return null;
 

@@ -359,7 +359,7 @@ export function formatPlaceReply(result: VietMapSearchResult): string {
   return [
     `✦ KẾT LUẬN NHANH:\n${result.summary || 'DeepSeek đã chọn các địa điểm phù hợp từ những POI gần bạn do VietMap xác thực.'}`,
     `\n✦ VÌ SAO:\n${reasonLines}`,
-    `\n✦ NÊN LÀM GÌ:\n• ${result.nextStep || 'Xem địa chỉ và khoảng cách của từng nơi trước khi xuất phát.'}`,
+    `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• ${result.nextStep || 'Bạn có thể xem địa chỉ và khoảng cách của từng nơi trước khi chọn; một điểm đến phù hợp cũng là nơi khiến hành trình đến đó thấy vừa sức.'}`,
   ].join('\n');
 }
 

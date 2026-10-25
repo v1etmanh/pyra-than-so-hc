@@ -3,7 +3,7 @@ import test from 'node:test';
 
 import { validateChatReplyQuality } from './response-quality.ts';
 
-const reply = (conclusion: string, actions = '• Đóng máy và bắt đầu nghỉ ngay.') => `✦ KẾT LUẬN NHANH:\n${conclusion}\n\n✦ VÌ SAO:\n• Một tín hiệu cụ thể bảo vệ kết luận.\n• Một tín hiệu khác nêu đúng rủi ro.\n\n✦ NÊN LÀM GÌ:\n${actions}`;
+const reply = (conclusion: string, guidance = '• Điều đáng giữ lại lúc này là khoảng lặng giúp bạn trở về với nhịp của chính mình.') => `✦ KẾT LUẬN NHANH:\n${conclusion}\n\n✦ VÌ SAO:\n• Một tín hiệu cụ thể bảo vệ kết luận.\n• Một tín hiệu khác nêu đúng rủi ro.\n\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n${guidance}`;
 
 test('two choices must start by choosing one option', () => {
   assert.equal(validateChatReplyQuality(reply('Chọn đi ngủ sớm. Tối nay mục tiêu không phải cố thêm vài trang mà là lấy lại độ tỉnh để buổi học sau thực sự có chất lượng.'), {
@@ -57,7 +57,7 @@ test('rejects a conclusion that is decisive but too thin to explain itself', () 
     '• Lá bài gợi một điểm cần được làm rõ.',
     '• Trì hoãn sẽ khiến việc này tiếp tục chiếm sự chú ý.',
     '',
-    '✦ NÊN LÀM GÌ:',
+    '✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:',
     '• Thực hiện bước xử lý trực tiếp đầu tiên ngay hôm nay.',
   ].join('\n'), { intent: 'daily_guidance', userMessage: 'Hôm nay nên tập trung gì?' });
 
@@ -91,7 +91,7 @@ test('love match must choose a viewpoint instead of refusing to infer', () => {
     '✦ VÌ SAO:',
     '• Việt Nam và Mỹ Duyên có tín hiệu bổ trợ.',
     '',
-    '✦ NÊN LÀM GÌ:',
+    '✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:',
     '• Mỹ Duyên hãy quan sát Việt Nam thêm.',
   ].join('\n');
 
