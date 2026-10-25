@@ -18,6 +18,11 @@ test('chat agent speaks as a grounded friend without mandatory roast', () => {
   assert.doesNotMatch(prompt, /mỏ hỗn có học/i);
   assert.match(prompt, /mỗi ý bắt buộc bắt đầu bằng ký tự •/i);
   assert.match(prompt, /Không mặc định đề xuất viết, ghi, note/i);
+  assert.match(prompt, /Ưu tiên câu trả lời dứt khoát/i);
+  assert.match(prompt, /Dẫn dắt các lá như một câu chuyện liên tục/i);
+  assert.match(prompt, /✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:/i);
+  assert.match(prompt, /không biến kết luận thành checklist/i);
+  assert.doesNotMatch(prompt, /✦ NÊN LÀM GÌ:/i);
 });
 
 test('intent contracts define distinct decisive answer shapes', () => {

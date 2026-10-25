@@ -33,8 +33,28 @@ const RELATIONSHIP_MIND_READING_PATTERNS = [
   /(?:còn tình cảm|có tình cảm).{0,20}(?:với bạn|dành cho bạn)/i,
 ];
 
-const AMBIGUOUS_COUPLE_ADDRESS_PATTERN = /(?:^|[\s.,:;!?()])(?:bạn|người ấy|hai bạn|các bạn|người a|người b)(?=$|[\s.,:;!?()])/i;
+const AMBIGUOUS_COUPLE_ADDRESS_PATTERN = /(?:^|[\s.,:;!?()])(?:người ấy|hai bạn|các bạn|người a|người b)(?=$|[\s.,:;!?()])/i;
 const LOVE_MATCH_HEDGING_PATTERN = /(?:không thể biết chắc|không thể biết|chưa thể kết luận|chưa đủ căn cứ|không đủ căn cứ|không thể khẳng định)/i;
+
+function stripAccents(str: string): string {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+}
+
+function containsPersonName(text: string, fullName: string): boolean {
+  if (!fullName?.trim()) return true;
+  const normText = stripAccents(text);
+  const normFull = stripAccents(fullName.trim());
+  if (normText.includes(normFull)) return true;
+  const parts = normFull.split(/\s+/).filter(Boolean);
+  if (parts.length > 0) {
+    const givenName = parts[parts.length - 1];
+    if (givenName.length >= 2) {
+      const boundary = new RegExp(`(?:^|[\\s.,:;!?()])${givenName}(?:$|[\\s.,:;!?()])`, 'i');
+      if (boundary.test(normText)) return true;
+    }
+  }
+  return false;
+}
 
 function extractSection(reply: string, start: string, end?: string): string {
   const startIndex = reply.toLocaleUpperCase('vi').indexOf(start.toLocaleUpperCase('vi'));
@@ -55,7 +75,7 @@ export function validateChatReplyQuality(
   input: ChatReplyQualityInput
 ): ChatReplyQualityResult {
   const conclusion = extractSection(reply, '✦ KẾT LUẬN NHANH:', '✦ VÌ SAO:');
-  const actions = extractSection(reply, '✦ NÊN LÀM GÌ:');
+  const guidance = extractSection(reply, '✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:');
 
   if (FENCE_SITTING_PATTERNS.some((pattern) => pattern.test(conclusion))) {
     return { valid: false, reason: 'fence_sitting_conclusion' };
@@ -67,7 +87,7 @@ export function validateChatReplyQuality(
 
   if (
     !EXPLICIT_WRITING_REQUEST_PATTERN.test(input.userMessage)
-    && WRITING_ACTION_PATTERN.test(actions)
+    && WRITING_ACTION_PATTERN.test(guidance)
   ) {
     return { valid: false, reason: 'generic_writing_action' };
   }
@@ -86,8 +106,8 @@ export function validateChatReplyQuality(
     const [firstName, secondName] = input.coupleProfileNames;
     if (
       AMBIGUOUS_COUPLE_ADDRESS_PATTERN.test(reply)
-      || !reply.includes(firstName)
-      || !reply.includes(secondName)
+      || !containsPersonName(reply, firstName)
+      || !containsPersonName(reply, secondName)
     ) {
       return { valid: false, reason: 'love_match_ambiguous_address' };
     }
@@ -111,9 +131,9 @@ export function validateChatReplyQuality(
 
 export function buildChatReplyRepairInstruction(reason: string | undefined): string {
   const detail: Record<string, string> = {
-    fence_sitting_conclusion: 'Câu kết luận đang nước đôi. Hãy chốt đúng một nhận định hoặc hành vi trong câu đầu.',
+    fence_sitting_conclusion: 'Câu kết luận đang nước đôi. Hãy chốt đúng một nhận định hoặc hướng ứng xử trong câu đầu.',
     instruction_leak: 'Câu trả lời đang nhắc lại quy tắc nội bộ. Hãy tuân thủ chúng âm thầm và chỉ nói nội dung hữu ích cho người dùng.',
-    generic_writing_action: 'Hành động đang rơi vào mẫu ghi chép/danh sách. Hãy thay bằng một hành vi ngoài đời có thể quan sát được.',
+    generic_writing_action: 'Phần định hướng đang rơi vào mẫu ghi chép/danh sách. Hãy trở lại điều người hỏi nên cân nhắc, buông bớt, gìn giữ hoặc nhìn nhận lại.',
     two_choices_missing_choice: 'Câu hỏi có hai lựa chọn nhưng câu đầu chưa bắt đầu bằng “Chọn …”. Hãy gọi đúng tên một phương án.',
     relationship_mind_reading: 'Câu trả lời đang suy đoán tâm trí người thứ ba. Chỉ được đánh giá hành vi quan sát được.',
     love_match_ambiguous_address: 'Câu trả lời ghép đôi đang dùng đại từ mơ hồ hoặc thiếu tên. Hãy gọi cả hai người bằng đúng tên trong context ở mọi nhận định; không dùng “bạn”, “người ấy”, “hai bạn” hay “Người A/B”.',
@@ -121,7 +141,7 @@ export function buildChatReplyRepairInstruction(reason: string | undefined): str
     timing_missing_current_and_trend: 'Kết luận timing chưa tách “Hiện tại:” và “Xu hướng thời gian tới:”. Hãy viết đúng hai lớp này.',
     response_budget_exceeded: 'Câu trả lời quá dài. Hãy rút gọn nhưng giữ đủ ba phần.',
     incomplete_sentence_or_invalid_bullets: 'Bullet hoặc câu chưa hoàn chỉnh. Mỗi ý phải bắt đầu bằng • và kết thúc bằng dấu câu.',
-    missing_or_unordered_sections: 'Thiếu hoặc sai thứ tự ba tiêu đề bắt buộc. Hãy dùng đúng KẾT LUẬN NHANH, VÌ SAO, NÊN LÀM GÌ.',
+    missing_or_unordered_sections: 'Thiếu hoặc sai thứ tự ba tiêu đề bắt buộc. Hãy dùng đúng KẾT LUẬN NHANH, VÌ SAO, ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM.',
     empty_or_too_short: 'Phản hồi trước bị trống hoặc quá ngắn. Hãy trả lời đầy đủ theo hợp đồng.',
     conclusion_too_thin: 'Phần KẾT LUẬN NHANH quá cụt. Hãy viết 2–3 câu: chốt trực tiếp, làm rõ ý nghĩa trong hoàn cảnh này, rồi nêu giới hạn hoặc điều kiện quan trọng mà không lặp ý.',
   };

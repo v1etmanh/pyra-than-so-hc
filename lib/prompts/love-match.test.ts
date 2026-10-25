@@ -15,7 +15,8 @@ test('directional fallback maps “bạn nam” to the male profile and chooses 
 
   assert.match(reply, /Việt Nam có để tâm đến Mỹ Duyên/i);
   assert.match(reply, /Mức tương hợp 83%/i);
-  assert.match(reply, /Việt Nam nên tạo một lời mời cụ thể/i);
+  assert.match(reply, /sự rõ ràng qua một lời mời chân thành/i);
+  assert.match(reply, /✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:/i);
   assert.doesNotMatch(reply, /không thể biết|chưa đủ căn cứ/i);
   assert.doesNotMatch(reply, /hai bạn|người ấy|Người A|Người B/i);
 });

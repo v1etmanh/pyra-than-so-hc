@@ -14,9 +14,8 @@ Mình chưa đủ chủ đề để đưa ra gợi ý hữu ích.
 • Câu hỏi hiện chưa nêu điều bạn muốn biết hoặc đang phân vân.
 • Một chủ đề rõ ràng sẽ giúp phần luận giải sát hơn.
 
-✦ NÊN LÀM GÌ:
-• Hỏi theo một chủ đề như tình cảm, công việc hoặc một quyết định cụ thể.
-• Ví dụ: “Tôi nên tập trung điều gì trong công việc tuần này?”.`;
+✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:
+• Bạn có thể bắt đầu từ một điều đang thật sự khiến mình băn khoăn — tình cảm, công việc hoặc một lựa chọn cụ thể; một câu hỏi có trọng tâm sẽ mở ra một lời đọc có chiều sâu hơn.`;
 
 // Bảng nguyên âm tiếng Việt và tiếng Anh để nhận diện từ có nghĩa
 const VOWEL_REGEX = /[aeiouyàáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]/i;

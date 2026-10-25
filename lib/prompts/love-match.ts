@@ -25,8 +25,8 @@ Dùng đúng ba phần, không mở bài, tối đa 220 từ:
 [2–3 câu trả lời trực tiếp]
 ✦ VÌ SAO:
 • [2–3 ý ngắn, có dữ kiện]
-✦ NÊN LÀM GÌ:
-• [1–2 hành động cụ thể]`;
+✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:
+• [1 ý liền mạch về điều nên cân nhắc, gìn giữ hoặc nhìn lại; không viết thành checklist hay mệnh lệnh]`;
 }
 
 export function buildCompactLoveRetryUserPrompt(input: {
@@ -70,13 +70,13 @@ export function buildDirectionalLoveFallback(
     return [
       `✦ KẾT LUẬN NHANH:\n${viewpoint} Mức tương hợp ${baziScore}% nghiêng về một kết nối có sức hút và khả năng phát triển nếu ${subject.fullName} chủ động rõ hơn.`,
       `\n✦ VÌ SAO:\n• Tương tác Tử Vi/Bát Tự cho thấy ${subject.fullName} dễ nhìn thấy ở ${target.fullName} sự ổn định và nét cuốn hút phù hợp để xây dựng kết nối.\n• Nhịp giữa ${subject.fullName} và ${target.fullName} vẫn có điểm cần điều chỉnh, nên ${subject.fullName} có xu hướng vừa quan tâm vừa quan sát phản ứng của ${target.fullName}.`,
-      `\n✦ NÊN LÀM GÌ:\n• ${subject.fullName} nên tạo một lời mời cụ thể để ${target.fullName} có cơ hội phản hồi rõ ràng, thay vì tiếp tục giữ sự quan tâm ở mức dò ý.`,
+      `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Điều đáng cân nhắc không phải là đoán thêm về cảm xúc, mà là để ${subject.fullName} và ${target.fullName} có cơ hội nhìn thấy sự rõ ràng qua một lời mời chân thành; phần còn lại vẫn thuộc về lựa chọn của cả hai.`,
     ].join('\n');
   }
 
   return [
     `✦ KẾT LUẬN NHANH:\n${first.fullName} và ${second.fullName} đạt khoảng ${baziScore}% tương hợp. Đây là nền tảng tham khảo để ${first.fullName} và ${second.fullName} hiểu nhịp tương tác, không phải kết luận về tình cảm hay tương lai.`,
     `\n✦ VÌ SAO:\n• Cung Phu Thê và ngũ hành của ${first.fullName} với ${second.fullName} có cả điểm bổ trợ lẫn điểm cần điều chỉnh.\n• Điểm số không thay thế hành vi thực tế và lựa chọn của ${first.fullName} hoặc ${second.fullName}.`,
-    `\n✦ NÊN LÀM GÌ:\n• ${first.fullName} và ${second.fullName} nói rõ mong đợi và một ranh giới quan trọng trước khi tiến thêm.`,
+    `\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n• Điều ${first.fullName} và ${second.fullName} đáng gìn giữ là sự thành thật về mong đợi và ranh giới; một mối quan hệ chỉ đi xa khi cả hai vẫn nhận ra tiếng nói của chính mình trong đó.`,
   ].join('\n');
 }
