@@ -43,8 +43,21 @@ export function classifyFallbackIntent(rawMessage: string): ChatAgentIntent {
   if (hasAny('màu', 'phối màu', 'mặc màu', 'sơn màu')) return 'color_guidance';
   if (isTwoChoiceQuestion(message)) return 'two_choices';
   if (hasAny('đi đâu', 'chỗ nào', 'nơi nào', 'quán nào', 'cà phê nào', 'cafe nào', 'địa điểm', 'đi chơi', 'hẹn hò ở đâu', 'dạo ở đâu', 'tham quan')) return 'where_to_go';
-  if (hasAny('crush', 'người yêu', 'tình cảm', 'tình duyên', 'mối quan hệ', 'yêu đương', 'thích một người')) return 'relationship';
+  // Multi-domain distress must win over individual topic keywords such as
+  // "tình cảm"; otherwise a correct holistic model decision gets narrowed.
   if (hasAny('toàn cảnh', 'mọi khía cạnh', 'bế tắc', 'khủng hoảng', 'không lối thoát', 'phân tích tổng thể')) return 'holistic_analysis';
+  if (hasAny(
+    'crush',
+    'người cũ',
+    'người yêu',
+    'tình cảm',
+    'tình duyên',
+    'mối quan hệ',
+    'yêu đương',
+    'thích một người',
+    'partner',
+    'relationship'
+  )) return 'relationship';
   if (hasAny('gốc rễ', 'nguyên nhân sâu', 'hành động nào', 'diễn biến', 'tiến trình', 'thời gian tới', 'tương lai', 'tháng tới', 'năm nay', 'vận hạn')) return 'timing_trajectory';
   if (hasAny('tính cách', 'sứ mệnh', 'điểm mạnh', 'điểm yếu', 'bản thân tôi')) return 'core_personality';
   if (hasAny('hôm nay', 'ngày mai', 'mặc gì', 'ăn gì')) return 'daily_guidance';

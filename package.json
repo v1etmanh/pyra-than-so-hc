@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:unit": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:chat-agent": "node --experimental-strip-types --test lib/spiritual-agent/agent-prompts.test.ts lib/spiritual-agent/intent-classifier.test.ts lib/spiritual-agent/response-quality.test.ts",
+    "test:chat-agent": "node --experimental-strip-types --test lib/chat/follow-up-prompt.test.ts lib/prompts/love-match.test.ts lib/spiritual-agent/agent-prompts.test.ts lib/spiritual-agent/intent-classifier.test.ts lib/spiritual-agent/response-quality.test.ts",
+    "test:classification-benchmark": "node --experimental-strip-types --test benchmarks/classification/evaluator.test.ts",
     "test:astro": "node --experimental-strip-types --test lib/astro/fortune-service.test.ts",
     "test:resonance": "node --experimental-strip-types --test tests/resonance/*.test.ts",
     "test:resonance:random": "node --experimental-strip-types scripts/test-resonance-random.ts",
@@ -23,6 +24,8 @@
     "bench:llm": "node --env-file-if-exists=.env --experimental-strip-types scripts/benchmark-llm.ts",
     "bench:llm:report": "node --experimental-strip-types scripts/benchmark-llm-report.ts",
     "bench:llm:e2e": "node --experimental-strip-types scripts/benchmark-llm-e2e.ts",
+    "bench:classification": "node --env-file-if-exists=.env --experimental-strip-types scripts/benchmark-classification.ts --tier full --concurrency 1 --delay-ms 15000 --max-tokens 500",
+    "bench:classification:smoke": "node --env-file-if-exists=.env --experimental-strip-types scripts/benchmark-classification.ts --tier smoke --runs 1 --concurrency 1 --delay-ms 15000 --max-tokens 500",
     "postinstall": "husky install"
   },
   "dependencies": {

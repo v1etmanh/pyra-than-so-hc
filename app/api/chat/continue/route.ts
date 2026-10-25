@@ -346,8 +346,9 @@ export async function POST(request: NextRequest) {
     [...history, { role: 'user', content: message }],
     deepSeekProvider,
     {
-      maxTokens: expectedTurn === maxQuestions ? 960 : 720,
-      temperature: 0.35,
+      maxTokens: expectedTurn === maxQuestions ? 650 : 520,
+      temperature: 0.55,
+      reasoningEffort: 'low',
       includeReasoning: false,
     }
   );
