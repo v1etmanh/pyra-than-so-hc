@@ -29,6 +29,11 @@ export interface TextGenerationResult {
   model: string;
   actualModel?: string;
   finishReason?: string;
+  usage?: {
+    inputTokens?: number;
+    outputTokens?: number;
+    totalTokens?: number;
+  };
 }
 
 function buildMessages(
@@ -103,7 +108,7 @@ function readTextWithTimeout(response: Response, timeoutMs: number): Promise<str
   });
 }
 
-function extractCompletionContent(payload: unknown): { text: string; actualModel?: string; finishReason?: string } {
+function extractCompletionContent(payload: unknown): { text: string; actualModel?: string; finishReason?: string; usage?: TextGenerationResult['usage'] } {
   if (!payload || typeof payload !== 'object') return { text: '' };
   const record = payload as Record<string, unknown>;
   const choices = Array.isArray(record.choices) ? record.choices : [];
@@ -112,6 +117,9 @@ function extractCompletionContent(payload: unknown): { text: string; actualModel
   const message = (first as Record<string, unknown>).message;
   if (!message || typeof message !== 'object') return { text: '' };
   const content = (message as Record<string, unknown>).content;
+  const usageRecord = record.usage && typeof record.usage === 'object'
+    ? record.usage as Record<string, unknown>
+    : null;
   const text = typeof content === 'string'
     ? content
     : Array.isArray(content)
@@ -129,6 +137,11 @@ function extractCompletionContent(payload: unknown): { text: string; actualModel
     finishReason: typeof (first as Record<string, unknown>).finish_reason === 'string'
       ? (first as Record<string, unknown>).finish_reason as string
       : undefined,
+    usage: usageRecord ? {
+      inputTokens: Number(usageRecord.prompt_tokens ?? usageRecord.input_tokens) || undefined,
+      outputTokens: Number(usageRecord.completion_tokens ?? usageRecord.output_tokens) || undefined,
+      totalTokens: Number(usageRecord.total_tokens) || undefined,
+    } : undefined,
   };
 }
 
@@ -215,6 +228,7 @@ export async function generateTextResponse(
         model,
         actualModel: completion.actualModel,
         finishReason: completion.finishReason,
+        usage: completion.usage,
       };
     } catch (error) {
       lastError = error instanceof Error ? error.message : String(error);
@@ -335,6 +349,8 @@ export function createStreamingResponse(
             let buffer = '';
             let providerSentDone = false;
             let finishReason: string | undefined;
+            let actualModel: string | undefined;
+            let usage: TextGenerationResult['usage'];
             const firstContentDeadline = Date.now() + firstContentTimeoutMs;
 
             try {
@@ -368,6 +384,14 @@ export function createStreamingResponse(
 
                   try {
                     const parsed = JSON.parse(data);
+                    if (typeof parsed.model === 'string') actualModel = parsed.model;
+                    if (parsed.usage && typeof parsed.usage === 'object') {
+                      usage = {
+                        inputTokens: Number(parsed.usage.prompt_tokens ?? parsed.usage.input_tokens) || undefined,
+                        outputTokens: Number(parsed.usage.completion_tokens ?? parsed.usage.output_tokens) || undefined,
+                        totalTokens: Number(parsed.usage.total_tokens) || undefined,
+                      };
+                    }
                     const reportedFinishReason = parsed.choices?.[0]?.finish_reason;
                     if (typeof reportedFinishReason === 'string') finishReason = reportedFinishReason;
                     const content = parsed.choices?.[0]?.delta?.content;
@@ -398,7 +422,12 @@ export function createStreamingResponse(
             }
 
             controller.enqueue(
-              encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
+              encoder.encode(`data: ${JSON.stringify({
+                done: true,
+                provider: provider.name,
+                model: actualModel || model,
+                usage,
+              })}\n\n`)
             );
             controller.close();
             return;
@@ -408,21 +437,7 @@ export function createStreamingResponse(
 
             // Once output has reached the client, switching candidates would
             // produce a malformed answer by concatenating two responses.
-            if (emittedContent) {
-              controller.enqueue(
-                encoder.encode(
-                  `data: ${JSON.stringify({
-                    content: `\n\n⚠️ Luồng AI bị gián đoạn: ${lastError}`,
-                    error: lastError
-                  })}\n\n`
-                )
-              );
-              controller.enqueue(
-                encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
-              );
-              controller.close();
-              return;
-            }
+            if (emittedContent) throw error;
 
             if (!userProviderConfig) {
               markProviderFailure(candidate);
@@ -431,18 +446,7 @@ export function createStreamingResponse(
           }
         }
 
-        controller.enqueue(
-          encoder.encode(
-            `data: ${JSON.stringify({
-              content: `\n\n⚠️ Không thể kết nối các nhà cung cấp AI. ${lastError}`,
-              error: lastError
-            })}\n\n`
-          )
-        );
-        controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`)
-        );
-        controller.close();
+        controller.error(new Error(lastError));
       } catch (error) {
         controller.error(error);
       }

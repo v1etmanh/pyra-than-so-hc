@@ -423,6 +423,7 @@ export async function requestChatCompletion(
         model,
         messages,
         stream: options?.stream ?? false,
+        ...(options?.stream ? { stream_options: { include_usage: true } } : {}),
         ...(options?.maxTokens ? { max_tokens: options.maxTokens } : {}),
         ...(typeof options?.temperature === 'number'
           ? { temperature: options.temperature }

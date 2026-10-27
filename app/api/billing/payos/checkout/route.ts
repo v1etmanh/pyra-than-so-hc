@@ -19,8 +19,8 @@ export async function POST(request: NextRequest) {
     const { data: current } = await supabase.from('numina_subscriptions')
       .select('plan,provider,status,current_period_end')
       .eq('user_id', user.id).maybeSingle();
-    if (hasActiveEntitlement(current) && current?.provider === 'paypal') {
-      return NextResponse.json({ error: 'Your PayPal subscription is still active.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
+    if (hasActiveEntitlement(current)) {
+      return NextResponse.json({ error: 'An active NUMELYRA Pro entitlement already exists.', code: 'ACTIVE_BILLING_EXISTS' }, { status: 409 });
     }
 
     const admin = createAdminClient();

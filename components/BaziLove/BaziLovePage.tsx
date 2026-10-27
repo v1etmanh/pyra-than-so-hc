@@ -223,12 +223,12 @@ export function BaziLovePage() {
             <div className={styles.asideProCard}>
               <div className={styles.asideProHeader}>
                 <span className={styles.asideProBadge}>✦ NUMELYRA PRO</span>
-                <span className={styles.asideProPrice}>79K/30D</span>
+                <span className={styles.asideProPrice}>249K/30D</span>
               </div>
               <p className={styles.asideProDesc}>
                 {isVi
-                  ? 'Mở khóa phân tích đại vận sâu, không giới hạn câu hỏi tiếp theo và lời khuyên dung hòa chuyên biệt.'
-                  : 'Unlock deep luck cycle insights, unlimited follow-ups, and specialized harmony guidance.'}
+                  ? 'Mở khóa phân tích đại vận sâu trong hạn mức 200 lượt AI mỗi kỳ và lời khuyên dung hòa chuyên biệt.'
+                  : 'Unlock deep luck-cycle insights within 200 AI responses per billing period and specialized harmony guidance.'}
               </p>
               <button type="button" className={styles.asideProBtn}>
                 {isVi ? 'NÂNG CẤP NGAY' : 'UPGRADE NOW'}

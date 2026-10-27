@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import { getRequestAccess } from '@/lib/billing/access';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { finalizeQuotaStream } from '@/lib/usage/quota-stream';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const access = await getRequestAccess(req, 'text');
+    const access = await getRequestAccess(req, 'text', body.requestId);
     if (access instanceof Response) return access;
 
     // 1. Fetch relevant arrow knowledge from Supabase
@@ -118,14 +118,11 @@ LƯU Ý QUAN TRỌNG:
       }
     ];
 
-    const stream = createStreamingResponse(systemPrompt, messages, providerConfig);
-    recordAiUsage({
-      identity: access.identity,
-      plan: access.plan,
-      feature: 'text',
-      route: '/api/numerology/analyze-birthchart',
-      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
-    });
+    const stream = finalizeQuotaStream(
+      createStreamingResponse(systemPrompt, messages, providerConfig),
+      access,
+      { route: '/api/numerology/analyze-birthchart' },
+    );
 
     return new Response(stream, {
       headers: {

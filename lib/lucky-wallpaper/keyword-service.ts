@@ -21,6 +21,7 @@ export interface WallpaperKeywordBatch {
   round: 1 | 2;
   aiProvider: string;
   aiModel: string;
+  usage?: { inputTokens?: number; outputTokens?: number };
 }
 
 const MAX_QUERIES = 6;
@@ -231,6 +232,10 @@ export async function generateWallpaperKeywordBatch(
         round,
         aiProvider: provider.name,
         aiModel: model,
+        usage: data?.usage && typeof data.usage === 'object' ? {
+          inputTokens: Number(data.usage.prompt_tokens ?? data.usage.input_tokens) || undefined,
+          outputTokens: Number(data.usage.completion_tokens ?? data.usage.output_tokens) || undefined,
+        } : undefined,
       };
     } catch {
       markProviderFailure(candidate);

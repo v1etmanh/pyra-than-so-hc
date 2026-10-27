@@ -35,7 +35,7 @@ export function LegalPage({ locale, kind }: LegalPageProps) {
         <p className="batch-kicker">{getKicker()}</p>
         <h1>{getTitle()}</h1>
         <p className="legal-updated">
-          {vi ? 'Cập nhật lần cuối: 22/10/2026 — Áp dụng cho numelyra.online' : 'Last updated: October 22, 2026 — Applicable to numelyra.online'}
+          {vi ? 'Cập nhật lần cuối: 25/10/2026 — Áp dụng cho numelyra.online' : 'Last updated: October 25, 2026 — Applicable to numelyra.online'}
         </p>
 
         {isPrivacy && (
@@ -158,8 +158,8 @@ export function LegalPage({ locale, kind }: LegalPageProps) {
                 <li>
                   <strong>{vi ? 'Cách 3: Gửi yêu cầu xóa dữ liệu qua Email: ' : 'Method 3: Submit a deletion request via Email: '}</strong>
                   {vi
-                    ? 'Gửi email trực tiếp đến địa chỉ mqnyle@gmail.com với tiêu đề "[NUMELYRA] Yêu cầu xóa dữ liệu người dùng" kèm theo địa chỉ email tài khoản của bạn. Đội ngũ kỹ thuật sẽ xác nhận và hoàn tất xóa dữ liệu trong vòng 24 - 48 giờ làm việc.'
-                    : 'Send an email to mqnyle@gmail.com with subject "[NUMELYRA] User Data Deletion Request" specifying your registered account email. Our technical team will process and confirm permanent deletion within 24 to 48 business hours.'}
+                    ? 'Gửi email trực tiếp đến địa chỉ mqnyle231@gmail.com với tiêu đề "[NUMELYRA] Yêu cầu xóa dữ liệu người dùng" kèm theo địa chỉ email tài khoản của bạn. Đội ngũ kỹ thuật sẽ xác nhận và hoàn tất xóa dữ liệu trong vòng 24 - 48 giờ làm việc.'
+                    : 'Send an email to mqnyle231@gmail.com with subject "[NUMELYRA] User Data Deletion Request" specifying your registered account email. Our technical team will process and confirm permanent deletion within 24 to 48 business hours.'}
                 </li>
               </ol>
             </section>
@@ -174,7 +174,7 @@ export function LegalPage({ locale, kind }: LegalPageProps) {
               <ul>
                 <li><strong>{vi ? 'Tên dịch vụ: ' : 'Service Name: '}</strong>NUMELYRA</li>
                 <li><strong>{vi ? 'Tên miền chính thức: ' : 'Official Website: '}</strong><a href="https://numelyra.online">https://numelyra.online</a></li>
-                <li><strong>{vi ? 'Email hỗ trợ & Bảo mật: ' : 'Support & Privacy Email: '}</strong><a href="mailto:mqnyle@gmail.com">mqnyle@gmail.com</a></li>
+                <li><strong>{vi ? 'Email hỗ trợ & Bảo mật: ' : 'Support & Privacy Email: '}</strong><a href="mailto:mqnyle231@gmail.com">mqnyle231@gmail.com</a></li>
               </ul>
             </section>
           </>
@@ -183,57 +183,220 @@ export function LegalPage({ locale, kind }: LegalPageProps) {
         {isTerms && (
           <>
             <section>
-              <h2>{vi ? '1. Bản chất dịch vụ' : '1. Service Nature'}</h2>
+              <h2>{vi ? '1. Giới thiệu và chấp nhận điều khoản' : '1. Introduction and Acceptance of Terms'}</h2>
               <p>
                 {vi
-                  ? 'NUMELYRA là nền tảng khám phá bản thân, chiêm nghiệm và giải trí dựa trên hệ thống Thần số học Pythagoras và biểu tượng Tarot. Các nội dung, chỉ số và phân tích do hệ thống cung cấp mang tính chất định hướng, tham khảo và tự phản chiếu cá nhân; không phải chẩn đoán tâm lý, y tế, pháp lý, tài chính hay lời tiên đoán chắc chắn cho tương lai.'
-                  : 'NUMELYRA is a self-reflection, mindfulness, and entertainment platform based on Pythagorean numerology and Tarot symbolism. All interpretations and calculated indicators are provided for personal insight, contemplation, and self-discovery; they do not constitute medical, psychological, legal, or financial advice, nor guaranteed future predictions.'}
+                  ? 'Chào mừng bạn đến với NUMELYRA (bao gồm ứng dụng trò chuyện AI numelyra_chat, vận hành tại https://numelyra.online). Các Điều khoản dịch vụ này ("Điều khoản") cấu thành thỏa thuận pháp lý ràng buộc giữa bạn ("Người dùng") và NUMELYRA ("chúng tôi"). Bằng việc truy cập trang web, tạo tài khoản hoặc đăng nhập thông qua Email hay Facebook, bạn xác nhận đã đọc, hiểu và đồng ý tuân thủ toàn bộ các Điều khoản này cùng Chính sách quyền riêng tư của chúng tôi. Nếu bạn không đồng ý với bất kỳ phần nào, vui lòng ngưng sử dụng dịch vụ ngay lập tức.'
+                  : 'Welcome to NUMELYRA (including the numelyra_chat conversational AI companion, accessible at https://numelyra.online). These Terms of Service ("Terms") constitute a legally binding agreement between you ("User" or "you") and NUMELYRA ("we", "us", or "our"). By accessing or using our website, creating an account, or logging in via Email or Facebook, you acknowledge that you have read, understood, and agreed to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please discontinue use immediately.'}
               </p>
             </section>
 
             <section>
-              <h2>{vi ? '2. Tài khoản và sử dụng hợp lý' : '2. Accounts and Fair Use'}</h2>
+              <h2>{vi ? '2. Mô tả dịch vụ' : '2. Description of Service'}</h2>
               <p>
                 {vi
-                  ? 'Bạn có trách nhiệm bảo vệ thông tin đăng nhập tài khoản của mình. Người dùng không được phép lạm dụng API, phát tán mã độc, sử dụng công cụ tự động hóa trái phép gây quá tải hệ thống, hoặc gửi nội dung vi phạm pháp luật.'
-                  : 'You are responsible for safeguarding your login credentials. Users must not abuse APIs, distribute malicious scripts, utilize automated scrapers causing system overload, or submit unlawful content.'}
+                  ? 'NUMELYRA cung cấp nền tảng trải nghiệm tâm thức và khám phá bản thân hiện đại, nổi bật với tính năng numelyra_chat — bạn đồng hành đàm thoại trí tuệ nhân tạo (AI Companion), công cụ tính toán 24 chỉ số Thần số học Pythagoras, trải bài Tarot AI và biểu đồ năng lượng cá nhân hóa. Dịch vụ được phát triển nhằm mục đích chiêm nghiệm, giải trí, tìm kiếm cảm hứng sống và tự phản chiếu nội tâm.'
+                  : 'NUMELYRA provides an intelligent spiritual discovery and personal reflection platform, centered around numelyra_chat — an AI companion for interactive conversations, classical Pythagorean numerology chart generation, AI-guided Tarot readings, and personalized mindfulness insights. The service is crafted solely for entertainment, self-reflection, mindfulness, and personal growth.'}
               </p>
             </section>
 
             <section>
-              <h2>{vi ? '3. Gói dịch vụ Miễn phí & Pro' : '3. Free and Pro Plans'}</h2>
+              <h2>{vi ? '3. Tài khoản người dùng' : '3. User Accounts and Eligibility'}</h2>
               <p>
                 {vi
-                  ? 'NUMELYRA cung cấp các tính năng miễn phí với giới hạn lượt tra cứu mỗi ngày. Gói Pro cung cấp quyền truy cập mở rộng, phân tích chuyên sâu và không giới hạn tra cứu. Quyền lợi Pro được kích hoạt sau khi giao dịch thanh toán được xác nhận hợp lệ.'
-                  : 'NUMELYRA offers core features free of charge subject to reasonable usage quotas. Pro subscriptions grant higher limits, in-depth reports, and advanced features. Pro privileges activate upon verified payment confirmation.'}
+                  ? 'Để sử dụng các tính năng nâng cao và lưu trữ hồ sơ, bạn cần đáp ứng các điều kiện sau:'
+                  : 'To access enhanced features and save persistent profiles, you must satisfy the following conditions:'}
+              </p>
+              <ul>
+                <li>
+                  <strong>{vi ? 'Độ tuổi tối thiểu: ' : 'Minimum Age: '}</strong>
+                  {vi
+                    ? 'Bạn phải từ đủ 13 tuổi trở lên (hoặc từ đủ 16 tuổi nếu bạn cư trú tại Liên minh Châu Âu theo quy định GDPR) để đăng ký tài khoản hoặc sử dụng dịch vụ.'
+                    : 'You must be at least 13 years old (or at least 16 years old if you reside in the European Union under GDPR requirements) to create an account or use NUMELYRA.'}
+                </li>
+                <li>
+                  <strong>{vi ? 'Đăng nhập qua Facebook & Email: ' : 'Facebook Login & Email: '}</strong>
+                  {vi
+                    ? 'Bạn có thể đăng ký bằng Email hoặc thông qua Facebook Login. Khi đăng nhập bằng Facebook, bạn ủy quyền cho chúng tôi tiếp nhận các thông tin công khai (Tên, Email, Ảnh đại diện, User ID) tuân thủ đúng Điều khoản nền tảng của Meta.'
+                    : 'You may authenticate via Email or third-party Facebook Login. By logging in via Facebook, you authorize us to receive permitted public profile data (Display Name, Email, Avatar, User ID) in strict accordance with Meta Platform Terms.'}
+                </li>
+                <li>
+                  <strong>{vi ? 'Bảo mật tài khoản: ' : 'Account Security: '}</strong>
+                  {vi
+                    ? 'Bạn có trách nhiệm bảo mật thông tin đăng nhập của mình và chịu mọi trách nhiệm cho các hoạt động diễn ra dưới tài khoản của bạn. Nếu phát hiện hành vi xâm nhập trái phép, vui lòng thông báo ngay cho chúng tôi qua mqnyle231@gmail.com.'
+                    : 'You are responsible for safeguarding your credentials and for all activities conducted under your account. Notify us immediately at mqnyle231@gmail.com if you suspect unauthorized access.'}
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>{vi ? '4. Quy tắc sử dụng và hành vi bị cấm' : '4. Acceptable Use and Prohibited Conduct'}</h2>
+              <p>
+                {vi
+                  ? 'Khi sử dụng NUMELYRA và hệ thống numelyra_chat, bạn cam kết KHÔNG thực hiện các hành vi sau:'
+                  : 'When utilizing NUMELYRA and the numelyra_chat companion, you agree NOT to engage in any of the following:'}
+              </p>
+              <ul>
+                <li>
+                  {vi
+                    ? 'Gửi, truyền tải hoặc tạo các nội dung bất hợp pháp, xúc phạm danh dự, quấy rối, đe dọa, thù hận, khiêu dâm, bạo lực hoặc khuyến khích hành vi tự hại.'
+                    : 'Transmit, post, or prompt content that is illegal, defamatory, harassing, abusive, threatening, hateful, sexually explicit, violent, or encouraging self-harm.'}
+                </li>
+                <li>
+                  {vi
+                    ? 'Lợi dụng lỗ hổng, đảo ngược mã nguồn, dịch ngược (reverse-engineer), tấn công từ chối dịch vụ (DoS/DDoS) hoặc cố tình phá hoại hạ tầng kỹ thuật và API.'
+                    : 'Exploit security vulnerabilities, reverse-engineer, decompile, launch denial-of-service attacks, or tamper with system infrastructure and APIs.'}
+                </li>
+                <li>
+                  {vi
+                    ? 'Sử dụng bot, script tự động hoặc công cụ cào dữ liệu (scraper) trái phép làm quá tải hệ thống hoặc vượt qua giới hạn hạn ngạch (rate limits).'
+                    : 'Deploy unauthorized bots, scrapers, or automated tools that degrade performance or circumvent platform rate limits.'}
+                </li>
+                <li>
+                  {vi
+                    ? 'Mạo danh cá nhân, tổ chức khác hoặc cung cấp thông tin lừa đảo, gây nhầm lẫn.'
+                    : 'Impersonate another individual or entity, or provide deceptive or fraudulent information.'}
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>{vi ? '5. Miễn trừ trách nhiệm về nội dung do AI tạo ra' : '5. AI-Generated Content Disclaimer'}</h2>
+              <p>
+                {vi
+                  ? 'Các phản hồi từ bạn đồng hành numelyra_chat và kết quả bốc bài Tarot được tạo tự động bởi các mô hình Trí tuệ Nhân tạo (AI). Xin lưu ý kỹ:'
+                  : 'Responses generated by numelyra_chat and Tarot interpretations are created by automated Artificial Intelligence (AI) models. Please be advised:'}
+              </p>
+              <ul>
+                <li>
+                  <strong>{vi ? 'Tính chính xác: ' : 'Accuracy: '}</strong>
+                  {vi
+                    ? 'Nội dung AI có thể đôi khi không chính xác, thiếu sót hoặc có góc nhìn chủ quan. Bạn nên tiếp nhận với tinh thần tham khảo và chiêm nghiệm cá nhân.'
+                    : 'AI-generated content may occasionally be inaccurate, incomplete, or biased. It should always be received as subjective creative interpretation.'}
+                </li>
+                <li>
+                  <strong>{vi ? 'KHÔNG PHẢI LỜI KHUYÊN CHUYÊN GIA: ' : 'NOT PROFESSIONAL ADVICE: '}</strong>
+                  {vi
+                    ? 'Nội dung trên NUMELYRA KHÔNG PHẢI là chẩn đoán hoặc lời khuyên y tế, tâm thần, tâm lý, pháp lý, thuế hay đầu tư tài chính. Ứng dụng KHÔNG THỂ thay thế bác sĩ, chuyên gia tâm lý hay luật sư có bằng cấp chuyên môn.'
+                    : 'Content provided by NUMELYRA DOES NOT constitute medical, psychiatric, psychological, legal, tax, or financial investment advice. It is NEVER a substitute for licensed healthcare or professional counsel.'}
+                </li>
+                <li>
+                  <strong>{vi ? 'Không dùng cho tình huống khẩn cấp: ' : 'Emergency Situations: '}</strong>
+                  {vi
+                    ? 'Nếu bạn hoặc người thân đang trong tình trạng khủng hoảng tâm lý hoặc khẩn cấp về y tế, hãy liên hệ ngay với đường dây nóng y tế/cứu trợ địa phương hoặc bệnh viện gần nhất.'
+                    : 'If you are experiencing emotional crisis or medical emergencies, please immediately contact your local emergency services, crisis hotline, or hospital.'}
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>{vi ? '6. Nội dung người dùng gửi lên và quyền sở hữu' : '6. User Content and Intellectual Property'}</h2>
+              <p>
+                {vi
+                  ? 'Bạn giữ toàn quyền sở hữu đối với các câu hỏi, phản hồi và dữ liệu ngày sinh mà bạn nhập vào hệ thống. Bằng việc gửi nội dung, bạn cấp quyền cho NUMELYRA quyền sử dụng phi độc quyền, miễn phí bản quyền để xử lý và hiển thị dữ liệu phục vụ mục đích duy nhất là tạo phản hồi và lưu hồ sơ theo yêu cầu của bạn.'
+                  : 'You retain ownership rights in the prompts, questions, and personal data you submit. By submitting inputs, you grant NUMELYRA a non-exclusive, royalty-free license to process and transmit such data solely as necessary to generate readings, deliver services, and maintain your account.'}
+              </p>
+              <p>
+                {vi
+                  ? 'Toàn bộ giao diện, thiết kế, thương hiệu, logo, mã nguồn, thuật toán và tài sản trí tuệ của NUMELYRA thuộc quyền sở hữu độc quyền của chúng tôi và được bảo hộ theo luật sở hữu trí tuệ.'
+                  : 'All visual designs, user interfaces, branding, logos, proprietary code, algorithms, and content of NUMELYRA remain the exclusive intellectual property of NUMELYRA and its licensors.'}
               </p>
             </section>
 
             <section>
-              <h2>{vi ? '4. Thanh toán & Hoàn tiền' : '4. Payments & Refunds'}</h2>
+              <h2>{vi ? '7. Quyền riêng tư và bảo vệ dữ liệu' : '7. Privacy and Data Protection'}</h2>
               <p>
                 {vi
-                  ? 'Thanh toán được xử lý bảo mật qua các cổng thanh toán đối tác được tích hợp. Chi tiết giá, chu kỳ thanh toán và chính sách hoàn tiền được công bố minh bạch tại trang thanh toán trước khi bạn xác nhận giao dịch.'
-                  : 'Payments are securely processed through integrated payment gateways. Pricing details, billing cycles, and refund terms are clearly displayed at checkout prior to order confirmation.'}
+                  ? 'Việc chúng tôi thu thập, sử dụng và bảo vệ dữ liệu cá nhân của bạn (bao gồm dữ liệu từ Facebook Login) được quy định chi tiết tại '
+                  : 'Our collection, handling, and security of your personal data (including Facebook Login data) is governed by our '}
+                <Link href={privacyHref}>
+                  {vi ? 'Chính sách quyền riêng tư' : 'Privacy Policy'}
+                </Link>
+                {vi ? '. Bạn có thể tham khảo ' : '. You can also review our '}
+                <Link href={deletionHref}>
+                  {vi ? 'Hướng dẫn xóa dữ liệu người dùng' : 'User Data Deletion Instructions'}
+                </Link>
+                {vi
+                  ? ' để biết các bước cụ thể gỡ quyền ứng dụng trên Facebook hoặc yêu cầu xóa dữ liệu hoàn toàn khỏi máy chủ.'
+                  : ' for step-by-step guidance on revoking Facebook permissions or requesting permanent data deletion.'}
               </p>
             </section>
 
             <section>
-              <h2>{vi ? '5. Điều chỉnh điều khoản' : '5. Amendments to Terms'}</h2>
+              <h2>{vi ? '8. Thanh toán và gói dịch vụ' : '8. Subscriptions and Payments'}</h2>
               <p>
                 {vi
-                  ? 'Chúng tôi có quyền cập nhật các điều khoản này theo thời gian nhằm đáp ứng yêu cầu kỹ thuật, vận hành hoặc pháp lý. Mọi thay đổi lớn sẽ được thông báo trên website https://numelyra.online.'
-                  : 'We reserve the right to amend these Terms from time to time to reflect operational, legal, or technical changes. Substantial updates will be posted on https://numelyra.online.'}
+                  ? 'NUMELYRA cung cấp các phép tính cục bộ không giới hạn và hạn mức AI miễn phí theo tháng. Người dùng có thể nâng cấp lên NUMELYRA Pro để nhận hạn mức tháng cao hơn; phiên bản hiện tại không bán xu hoặc lượt bổ sung.'
+                  : 'NUMELYRA provides unlimited local calculations and a monthly free AI allowance. Users may upgrade to NUMELYRA Pro for higher monthly limits; the current version does not sell coins or quota add-ons.'}
+              </p>
+              <ul>
+                <li>
+                  {vi
+                    ? 'Mọi giao dịch thanh toán được xử lý an toàn qua các đối tác cổng thanh toán được chứng nhận.'
+                    : 'All transactions are securely processed through certified third-party payment gateways.'}
+                </li>
+                <li>
+                  {vi
+                    ? 'Giá niêm yết, chu kỳ thanh toán và điều kiện hủy gói được công khai minh bạch tại trang thanh toán trước khi bạn xác nhận giao dịch.'
+                    : 'Pricing, renewal terms, and cancellation options are clearly displayed prior to final order confirmation.'}
+                </li>
+                <li>
+                  {vi
+                    ? 'Các khoản thanh toán cho dịch vụ kỹ thuật số đã kích hoạt sử dụng sẽ không được hoàn lại, trừ trường hợp pháp luật có quy định bắt buộc khác.'
+                    : 'Digital service purchases are generally non-refundable once digital access has been granted, except as required by mandatory consumer protection laws.'}
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>{vi ? '9. Tạm ngưng hoặc chấm dứt tài khoản' : '9. Termination and Suspension'}</h2>
+              <p>
+                {vi
+                  ? 'Bạn có thể tự do ngừng sử dụng dịch vụ và xóa tài khoản của mình bất kỳ lúc nào trong trang Cài đặt tài khoản hoặc bằng cách gửi yêu cầu cho chúng tôi.'
+                  : 'You may cease using NUMELYRA and delete your account at any time via Account settings or by contacting our team.'}
+              </p>
+              <p>
+                {vi
+                  ? 'NUMELYRA có quyền tạm ngưng hoặc chấm dứt quyền truy cập của bạn ngay lập tức mà không cần báo trước nếu bạn vi phạm nghiêm trọng các Điều khoản này, thực hiện hành vi gian lận, phá hoại hoặc gây ảnh hưởng tiêu cực tới cộng đồng người dùng khác.'
+                  : 'We reserve the right to suspend or terminate your access immediately, without prior notice, if you violate these Terms, engage in fraudulent activity, or jeopardize system security or other users.'}
               </p>
             </section>
 
             <section>
-              <h2>{vi ? '6. Thông tin liên hệ' : '6. Contact Us'}</h2>
+              <h2>{vi ? '10. Miễn trừ trách nhiệm và giới hạn trách nhiệm' : '10. Disclaimer of Warranties and Limitation of Liability'}</h2>
               <p>
                 {vi
-                  ? 'Mọi câu hỏi về Điều khoản sử dụng vui lòng gửi về email: mqnyle@gmail.com.'
-                  : 'Questions regarding these Terms of Service may be addressed to: mqnyle@gmail.com.'}
+                  ? 'Dịch vụ được cung cấp trên nguyên tắc "NGUYÊN TRẠNG" (AS IS) và "SẴN CÓ" (AS AVAILABLE), không kèm theo bất kỳ tuyên bố bảo đảm ngầm định hay rõ ràng nào về tính chính xác tuyệt đối hoặc khả năng hoạt động không gián đoạn.'
+                  : 'The service is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, or uninterrupted availability.'}
               </p>
+              <p>
+                {vi
+                  ? 'Trong phạm vi tối đa được pháp luật cho phép, NUMELYRA và đội ngũ vận hành sẽ không chịu trách nhiệm đối với bất kỳ thiệt hại gián tiếp, ngẫu nhiên, hệ quả hoặc mất mát dữ liệu nào phát sinh từ việc bạn sử dụng hoặc không thể sử dụng dịch vụ.'
+                  : 'To the fullest extent permitted by law, NUMELYRA and its team shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service.'}
+              </p>
+            </section>
+
+            <section>
+              <h2>{vi ? '11. Thay đổi điều khoản' : '11. Changes to Terms'}</h2>
+              <p>
+                {vi
+                  ? 'Chúng tôi có thể cập nhật các Điều khoản này theo thời gian để phản ánh những thay đổi trong sản phẩm hoặc yêu cầu pháp lý. Mọi thay đổi sẽ có hiệu lực ngay khi được đăng tải trên https://numelyra.online cùng ngày "Cập nhật lần cuối". Việc bạn tiếp tục sử dụng dịch vụ sau khi Điều khoản mới có hiệu lực đồng nghĩa với việc bạn đồng ý với các thay đổi đó.'
+                  : 'We reserve the right to amend these Terms from time to time to accommodate product developments or legal updates. Revisions take effect immediately upon posting to https://numelyra.online with an updated "Last updated" date. Continued use of NUMELYRA constitutes your acceptance of the updated Terms.'}
+              </p>
+            </section>
+
+            <section>
+              <h2>{vi ? '12. Thông tin liên hệ' : '12. Contact Information'}</h2>
+              <p>
+                {vi
+                  ? 'Nếu bạn có bất kỳ thắc mắc, phản hồi hoặc cần hỗ trợ về Điều khoản dịch vụ này, vui lòng liên hệ với chúng tôi qua:'
+                  : 'If you have any questions, inquiries, or feedback regarding these Terms of Service, please contact us at:'}
+              </p>
+              <ul>
+                <li><strong>{vi ? 'Tên dịch vụ: ' : 'Service Name: '}</strong>NUMELYRA (numelyra_chat)</li>
+                <li><strong>{vi ? 'Website chính thức: ' : 'Official Website: '}</strong><a href="https://numelyra.online">https://numelyra.online</a></li>
+                <li><strong>{vi ? 'Email tiếp nhận & Hỗ trợ: ' : 'Support & Legal Email: '}</strong><a href="mailto:mqnyle231@gmail.com">mqnyle231@gmail.com</a></li>
+              </ul>
             </section>
           </>
         )}
@@ -303,7 +466,7 @@ export function LegalPage({ locale, kind }: LegalPageProps) {
                       ? 'Bạn có thể gửi yêu cầu trực tiếp đến Ban quản trị NUMELYRA:'
                       : 'You can submit a formal deletion request directly to NUMELYRA administration:'}
                     <br />
-                    {vi ? '• Email tiếp nhận: ' : '• Email address: '}<strong><a href="mailto:mqnyle@gmail.com">mqnyle@gmail.com</a></strong>
+                    {vi ? '• Email tiếp nhận: ' : '• Email address: '}<strong><a href="mailto:mqnyle231@gmail.com">mqnyle231@gmail.com</a></strong>
                     <br />
                     {vi ? '• Tiêu đề thư: ' : '• Subject line: '}<code>[NUMELYRA] Yêu cầu xóa dữ liệu người dùng / Data Deletion Request</code>
                     <br />

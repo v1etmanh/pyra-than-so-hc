@@ -127,6 +127,13 @@ export interface AstroFortuneOutput {
   advice: string;
 }
 
+export interface AstroFortuneGeneration {
+  fortune: AstroFortuneOutput;
+  provider: 'Gemini';
+  model: string;
+  usage?: { inputTokens?: number; outputTokens?: number };
+}
+
 export const astroFortuneResponseSchema = z.object({
   title: z.string().optional(),
   verse: z.string().min(1, 'Verse cannot be empty'),
@@ -320,7 +327,7 @@ BẮT BUỘC TRẢ VỀ DUY NHẤT MỘT JSON OBJECT HỢP LỆ:
 async function generateWithGemini(
   systemPrompt: string,
   userPrompt: string
-): Promise<AstroFortuneOutput> {
+): Promise<AstroFortuneGeneration> {
   const apiKey = getGeminiMainApiKey();
   if (!apiKey) {
     throw new Error('Gemini API key (_MAIN) is not configured in environment variables.');
@@ -363,7 +370,13 @@ async function generateWithGemini(
       throw new Error(`Gemini fortune validation failed: ${validated.error.issues.map((i) => i.message).join(', ')}`);
     }
 
-    return validated.data;
+    const usage = data.usageMetadata && typeof data.usageMetadata === 'object'
+      ? {
+          inputTokens: Number(data.usageMetadata.promptTokenCount) || undefined,
+          outputTokens: Number(data.usageMetadata.candidatesTokenCount) || undefined,
+        }
+      : undefined;
+    return { fortune: validated.data, provider: 'Gemini', model, usage };
   } finally {
     clearTimeout(timeout);
   }
@@ -374,6 +387,10 @@ async function generateWithGemini(
  * Xử lý duy nhất bằng Google Gemini với 1 key _MAIN duy nhất (không fallback DeepSeek để giữ trọn vần điệu dân tộc).
  */
 export async function generateAstroFortune(input: AstroFortuneInput): Promise<AstroFortuneOutput> {
+  return (await generateAstroFortuneDetailed(input)).fortune;
+}
+
+export async function generateAstroFortuneDetailed(input: AstroFortuneInput): Promise<AstroFortuneGeneration> {
   const { systemPrompt, userPrompt } = buildAstroFortunePrompt(input);
   return await generateWithGemini(systemPrompt, userPrompt);
 }

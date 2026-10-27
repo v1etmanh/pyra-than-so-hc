@@ -4,14 +4,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useAnalytics } from '@/hooks/useAnalytics';
-import type { BillingProvider } from '@/lib/billing/types';
+type WebCheckoutProvider = 'payos' | 'paypal';
 
 export function PricingPage({ locale }: { locale: string }) {
   const vi = locale === 'vi';
   const { user, openAuthModal } = useAuth();
   const { trackEvent } = useAnalytics();
-  const [method, setMethod] = useState<BillingProvider>(vi ? 'payos' : 'paypal');
-  const [loading, setLoading] = useState<BillingProvider | null>(null);
+  const [method, setMethod] = useState<WebCheckoutProvider>(vi ? 'payos' : 'paypal');
+  const [loading, setLoading] = useState<WebCheckoutProvider | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function PricingPage({ locale }: { locale: string }) {
     setMethod(vi || timezone === 'Asia/Ho_Chi_Minh' ? 'payos' : 'paypal');
   }, [trackEvent, vi]);
 
-  const startCheckout = async (provider: BillingProvider) => {
+  const startCheckout = async (provider: WebCheckoutProvider) => {
     if (!user) { openAuthModal('signin'); return; }
     setLoading(provider); setError(''); trackEvent('checkout_started', { plan: 'pro', provider });
     try {
@@ -48,17 +48,17 @@ export function PricingPage({ locale }: { locale: string }) {
         <article className="pricing-card">
           <p className="batch-kicker">FREE</p><h2>{vi ? 'Khởi đầu' : 'Beginning'}</h2>
           <strong>{vi ? '0đ' : '$0'} <small>/ {vi ? 'mãi mãi' : 'forever'}</small></strong>
-          <ul><li>{vi ? '15 lượt luận giải AI/ngày' : '15 AI readings/day'}</li><li>{vi ? '2 hình nền/ngày' : '2 wallpapers/day'}</li><li>{vi ? 'Lưu hồ sơ trên thiết bị' : 'Local profile storage'}</li><li>{vi ? 'Kho kiến thức fallback' : 'Knowledge fallback'}</li></ul>
+          <ul><li>{vi ? '10 lượt AI/tháng' : '10 AI responses/month'}</li><li>{vi ? '7 ca dao và 10 mặt sau Daily Insight/tháng' : '7 daily verses and 10 Daily Insight backs/month'}</li><li>{vi ? '2 hình nền/tháng' : '2 wallpapers/month'}</li><li>{vi ? 'Tính toán cục bộ không giới hạn' : 'Unlimited local calculations'}</li></ul>
         </article>
         <article className="pricing-card pricing-card-featured">
           <p className="batch-kicker">PRO</p><h2>{vi ? 'Đồng hành' : 'Companion'}</h2>
-          <ul><li>{vi ? '100 lượt luận giải/ngày' : '100 AI readings/day'}</li><li>{vi ? '20 hình nền/ngày' : '20 wallpapers/day'}</li><li>{vi ? 'Ưu tiên tính năng premium' : 'Premium feature access'}</li><li>{vi ? 'Lịch sử thanh toán và đồng bộ cloud' : 'Cloud sync and payment history'}</li></ul>
+          <ul><li>{vi ? '200 lượt AI/tháng' : '200 AI responses/month'}</li><li>{vi ? '31 ca dao và 31 mặt sau Daily Insight/kỳ' : '31 daily verses and 31 Daily Insight backs/period'}</li><li>{vi ? '30 hình nền/tháng' : '30 wallpapers/month'}</li><li>{vi ? 'Đồng bộ và lịch sử cloud đầy đủ' : 'Full cloud sync and history'}</li></ul>
           <div className="payment-methods" role="tablist" aria-label={vi ? 'Phương thức thanh toán' : 'Payment method'}>
             <button type="button" className={method === 'payos' ? 'is-selected' : ''} onClick={() => setMethod('payos')}>
-              <span>VIETQR</span><strong>79.000đ</strong><small>{vi ? '30 ngày · thanh toán một lần' : '30 days · one-time'}</small>
+              <span>VIETQR</span><strong>249.000đ</strong><small>{vi ? '30 ngày · thanh toán một lần' : '30 days · one-time'}</small>
             </button>
             <button type="button" className={method === 'paypal' ? 'is-selected' : ''} onClick={() => setMethod('paypal')}>
-              <span>PAYPAL</span><strong>$3.99</strong><small>{vi ? 'mỗi tháng · tự gia hạn' : 'monthly · auto-renew'}</small>
+              <span>PAYPAL</span><strong>$9.99</strong><small>{vi ? 'mỗi tháng · tự gia hạn' : 'monthly · auto-renew'}</small>
             </button>
           </div>
           <button className="pricing-checkout-button" type="button" onClick={() => startCheckout(method)} disabled={Boolean(loading)}>

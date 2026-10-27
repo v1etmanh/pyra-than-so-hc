@@ -43,7 +43,7 @@ export function InnerFooter() {
   const isVietnamese = locale === "vi";
   const localize = (path: string) => isVietnamese ? path : `/en${path}`;
   return <footer className="chani-footer batch-footer">
-    <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
+    <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href={localize("/data-deletion")}>{isVietnamese ? "Xóa dữ liệu" : "Data Deletion"}</a><a href="mailto:mqnyle231@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle231@gmail.com">Email: mqnyle231@gmail.com</a></div></div>
     <div className="newsletter"><strong>{isVietnamese ? "ĐĂNG KÝ NHẬN BẢN TIN" : "SUBSCRIBE TO OUR NEWSLETTER"}</strong><div><input placeholder="yourname@email.com" /><button>{isVietnamese ? "ĐĂNG KÝ" : "SIGN UP"}</button></div></div>
     <p className="copyright">© NUMELYRA 2026</p>
   </footer>;
@@ -996,7 +996,7 @@ export function EditorsPicksPage() {
   const router = useRouter();
   const isVietnamese = useLocale() === "vi";
   const { profiles, isLoaded } = useProfiles();
-  const { isPro, openUpgradeModal } = useBilling();
+  const { isPro, openUpgradeModal, quota, refreshSubscription } = useBilling();
 
   // Deduplicate profiles
   const uniqueProfiles = useMemo(() => {
@@ -1046,14 +1046,8 @@ export function EditorsPicksPage() {
   const [remainingQuota, setRemainingQuota] = useState<number | null>(null);
 
   useEffect(() => {
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      const saved = localStorage.getItem(`numina_wallpaper_remaining_${today}`);
-      if (saved !== null) {
-        setRemainingQuota(Number(saved));
-      }
-    } catch {}
-  }, []);
+    setRemainingQuota(quota?.wallpaper.remaining ?? null);
+  }, [quota?.wallpaper.remaining]);
 
   const [generatedData, setGeneratedData] = useState<{
     imageUrl: string;
@@ -1077,7 +1071,7 @@ export function EditorsPicksPage() {
     }
     if (!isPro && remainingQuota === 0) {
       openUpgradeModal({ feature: "wallpaper" });
-      setGenerationError(isVietnamese ? "Bạn đã dùng hết 2 lượt tạo hình nền miễn phí hôm nay. Hãy nâng cấp Pro để mở khóa 20 lượt/ngày." : "You have reached the free limit of 2 wallpapers for today. Upgrade to Pro for 20/day.");
+      setGenerationError(isVietnamese ? "Bạn đã dùng hết lượt tạo hình nền trong kỳ này. Pro có 30 lượt mỗi kỳ." : "You have reached the wallpaper limit for this period. Pro includes 30 per billing period.");
       return;
     }
     setIsGenerating(true);
@@ -1106,6 +1100,7 @@ export function EditorsPicksPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          requestId: crypto.randomUUID(),
           fullName: activeProfile.name,
           birthDate: activeProfile.birthDate,
           lifePathNumber: Number(lifePath) || 7,
@@ -1123,12 +1118,8 @@ export function EditorsPicksPage() {
 
       const data = await response.json();
       if (!response.ok || !data.success) {
-        if (response.status === 429 || data.code === "LIMIT_EXCEEDED" || data.code === "DAILY_LIMIT_REACHED" || data.error?.toLowerCase().includes("giới hạn") || data.error?.toLowerCase().includes("limit")) {
+        if (data.code === "MONTHLY_LIMIT_REACHED" || data.error?.toLowerCase().includes("giới hạn") || data.error?.toLowerCase().includes("limit")) {
           setRemainingQuota(0);
-          try {
-            const today = new Date().toISOString().slice(0, 10);
-            localStorage.setItem(`numina_wallpaper_remaining_${today}`, "0");
-          } catch {}
           openUpgradeModal({ feature: "wallpaper" });
         }
         throw new Error(data.error || "Không thể tạo hình nền.");
@@ -1136,10 +1127,7 @@ export function EditorsPicksPage() {
 
       if (typeof data.remaining === "number") {
         setRemainingQuota(data.remaining);
-        try {
-          const today = new Date().toISOString().slice(0, 10);
-          localStorage.setItem(`numina_wallpaper_remaining_${today}`, String(data.remaining));
-        } catch {}
+        void refreshSubscription();
       }
 
       setGeneratedData({
@@ -1276,19 +1264,19 @@ export function EditorsPicksPage() {
             <div className="wallpaper-quota-info">
               <span className="wallpaper-quota-tag">
                 {isPro
-                  ? (isVietnamese ? "✦ GÓI PRO · 20 LƯỢT/NGÀY" : "✦ PRO PLAN · 20/DAY")
+                  ? (isVietnamese ? `✦ GÓI PRO · CÒN ${remainingQuota ?? 30}/30 LƯỢT/KỲ` : `✦ PRO PLAN · ${remainingQuota ?? 30}/30 LEFT THIS PERIOD`)
                   : remainingQuota === 0
-                    ? (isVietnamese ? "✦ GÓI MIỄN PHÍ · HẾT LƯỢT HÔM NAY (0/2)" : "✦ FREE PLAN · LIMIT REACHED (0/2)")
+                    ? (isVietnamese ? "✦ GÓI MIỄN PHÍ · HẾT LƯỢT KỲ NÀY (0/2)" : "✦ FREE PLAN · PERIOD LIMIT REACHED (0/2)")
                     : remainingQuota !== null
-                      ? (isVietnamese ? `✦ GÓI MIỄN PHÍ · CÒN ${remainingQuota}/2 LƯỢT HÔM NAY` : `✦ FREE PLAN · ${remainingQuota}/2 REMAINING TODAY`)
-                      : (isVietnamese ? "✦ GÓI MIỄN PHÍ · 2 LƯỢT/NGÀY" : "✦ FREE PLAN · 2/DAY")}
+                      ? (isVietnamese ? `✦ GÓI MIỄN PHÍ · CÒN ${remainingQuota}/2 LƯỢT/KỲ` : `✦ FREE PLAN · ${remainingQuota}/2 LEFT THIS PERIOD`)
+                      : (isVietnamese ? "✦ GÓI MIỄN PHÍ · 2 LƯỢT/KỲ" : "✦ FREE PLAN · 2/PERIOD")}
               </span>
               <span className="wallpaper-quota-hint">
                 {isPro
                   ? (isVietnamese ? "Mở khóa tải 4K Ultra HD & 100% phong cách cao cấp" : "4K Ultra HD downloads & all premium styles unlocked")
                   : remainingQuota === 0
-                    ? (isVietnamese ? "Bạn đã dùng hết 2 lượt tạo hôm nay. Nâng cấp Pro để mở khóa 20 lượt tạo/ngày & tải 4K" : "You used your 2 daily free wallpapers. Upgrade to Pro for 20/day & 4K download")
-                    : (isVietnamese ? "Nâng cấp Pro để mở khóa 20 lượt tạo/ngày & tải 4K" : "Upgrade to Pro for 20 daily wallpapers & 4K download")}
+                    ? (isVietnamese ? "Bạn đã dùng hết lượt tạo trong kỳ này. Pro có 30 lượt tạo hình nền mỗi kỳ." : "You used all wallpaper generations for this period. Pro includes 30 per billing period.")
+                    : (isVietnamese ? "Nâng cấp Pro để có 30 lượt tạo hình nền mỗi kỳ & tải 4K" : "Upgrade to Pro for 30 wallpaper generations per period & 4K download")}
               </span>
             </div>
             {!isPro && (
@@ -1297,7 +1285,7 @@ export function EditorsPicksPage() {
                 className="wallpaper-pro-upgrade-btn"
                 onClick={() => openUpgradeModal({ feature: 'wallpaper' })}
               >
-                {isVietnamese ? "NÂNG CẤP 79K ↗" : "UPGRADE $3.99 ↗"}
+                {isVietnamese ? "NÂNG CẤP 249K ↗" : "UPGRADE $9.99 ↗"}
               </button>
             )}
           </div>
@@ -1420,7 +1408,7 @@ export function EditorsPicksPage() {
                     className="wallpaper-error-upgrade-btn"
                     onClick={() => openUpgradeModal({ feature: 'wallpaper' })}
                   >
-                    ✦ {isVietnamese ? "Nâng cấp NUMELYRA Pro (20 lượt/ngày)" : "Upgrade to NUMELYRA Pro (20/day)"}
+                    ✦ {isVietnamese ? "Nâng cấp NUMELYRA Pro (30 lượt/kỳ)" : "Upgrade to NUMELYRA Pro (30/period)"}
                   </button>
                 )}
               </div>
@@ -2021,8 +2009,8 @@ export function OurTeamPage() {
       setAnalysis(cachedReading.analysis);
       setQuotaNotice(cachedReading.fallbackReason === "quota"
         ? (isVietnamese
-          ? "Bạn đã hết lượt phân tích chuyên sâu hôm nay. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
-          : "You have used all deep-analysis credits for today. The reference knowledge reading is still available.")
+          ? "Bạn đã hết lượt phân tích chuyên sâu trong kỳ này. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
+          : "You have used all deep-analysis credits for this period. The reference knowledge reading is still available.")
         : "");
       setAnalysisStage("complete");
       setIsLoading(false);
@@ -2063,6 +2051,7 @@ export function OurTeamPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          requestId: crypto.randomUUID(),
           fullName,
           birthDay: birthDate,
           indicatorKey: indicator.key,
@@ -2086,8 +2075,8 @@ export function OurTeamPage() {
       const fallbackReason = response.headers.get("X-Numina-Fallback-Reason") as CachedIndicatorReading["fallbackReason"] | null;
       if (fallbackReason === "quota") {
         setQuotaNotice(isVietnamese
-          ? "Bạn đã hết lượt phân tích chuyên sâu hôm nay. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
-          : "You have used all deep-analysis credits for today. The reference knowledge reading is still available.");
+          ? "Bạn đã hết lượt phân tích chuyên sâu trong kỳ này. Bản kiến thức cơ bản vẫn được hiển thị cho bạn."
+          : "You have used all deep-analysis credits for this period. The reference knowledge reading is still available.");
       }
       const reader = response.body.getReader();
       const decoder = new TextDecoder();

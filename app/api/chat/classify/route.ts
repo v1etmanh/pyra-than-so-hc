@@ -17,14 +17,12 @@ import {
   normalizeClassificationDecision,
   spreadCardCount,
 } from '@/lib/spiritual-agent/classification-contract';
+import { getRequestAccess, releaseRequestAccess, type RequestAccess } from '@/lib/billing/access';
+import { apiCorsHeaders } from '@/lib/security/cors';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
 
 export const runtime = 'nodejs';
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-};
 
 /**
  * Classification is deliberately pinned to the model evaluated for this task.
@@ -42,18 +40,19 @@ function classificationProvider(): UserProviderConfig | undefined {
   };
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(request: NextRequest) {
   return new NextResponse(null, {
     status: 200,
-    headers: corsHeaders,
+    headers: apiCorsHeaders(request),
   });
 }
 
 export async function POST(request: NextRequest) {
   let messageForFallback = '';
+  let usageAccess: RequestAccess | null = null;
   try {
     const body = await request.json();
-    const { message, profiles } = body;
+    const { message, profiles, requestId } = body;
     messageForFallback = typeof message === 'string' ? message.toLowerCase() : '';
 
     const isCouple = profiles?.length >= 2;
@@ -73,8 +72,15 @@ export async function POST(request: NextRequest) {
         thoughtProcess: `Phát hiện câu hỏi không có chủ đề hoặc mục đích rõ ràng (${trashCheck.reason}). Cần hướng dẫn người dùng đặt câu hỏi cụ thể.`,
         replyText: TRASH_PROMPT_GUIDANCE
       };
-      return NextResponse.json({ ok: true, data: trashDecision }, { headers: corsHeaders });
+      return NextResponse.json({ ok: true, data: trashDecision }, { headers: apiCorsHeaders(request) });
     }
+
+    const access = await getRequestAccess(request, 'ai_response', requestId);
+    if (access instanceof Response) {
+      for (const [key, value] of Object.entries(apiCorsHeaders(request))) access.headers.set(key, value);
+      return access;
+    }
+    usageAccess = access;
 
     // 1. Trường hợp 2 hồ sơ: TỰ ĐỘNG KÍCH HOẠT THUẦN TỬ VI ĐẨU SỐ & BÁT TỰ TỨ TRỤ (KHÔNG CẦN TAROT)
     if (isCouple && p2) {
@@ -88,7 +94,7 @@ export async function POST(request: NextRequest) {
         thoughtProcess: `Tiểu Linh Miêu kết nối lá số Tử Vi Đẩu Số & Bát Tự Tứ Trụ của ${p1} & ${p2}: Luận giải chuyên sâu Thiên Can, Địa Chi, Cung Phu Thê, Ngũ Hành Nạp Âm và Quái Mệnh Bát Trạch (Thuần Tử Vi Bát Tự toàn diện, không cần rút bài Tarot).`
       };
 
-      return NextResponse.json({ ok: true, data: coupleDecision }, { headers: corsHeaders });
+      return NextResponse.json({ ok: true, data: coupleDecision, requestId }, { headers: apiCorsHeaders(request) });
     }
 
     // 2. Trường hợp 1 hồ sơ: DÙNG AI LLM TỰ ĐỘNG PHÂN TÍCH VÀ PHÂN LOẠI
@@ -112,18 +118,37 @@ export async function POST(request: NextRequest) {
         includeReasoning: false
       }
     );
+    await recordActualAiUsage({
+      reservation: usageAccess,
+      route: '/api/chat/classify',
+      provider: completion.provider,
+      model: completion.actualModel || completion.model,
+      inputTokens: completion.usage?.inputTokens,
+      outputTokens: completion.usage?.outputTokens,
+      costUsd: calculateAiCostUsd({
+        provider: completion.provider,
+        model: completion.actualModel || completion.model,
+        inputTokens: completion.usage?.inputTokens,
+        outputTokens: completion.usage?.outputTokens,
+      }),
+    });
     const parsedDecision = extractClassificationJson(completion.text);
 
     // LLM vẫn có thể nhận ra một câu không có chủ đề. Chuẩn hoá quyết định đó
     // để mobile có thể trả lời ngay, không tính chỉ số hay rút bài.
     const correctedDecision = applyClassificationRouteOverrides(parsedDecision, messageForFallback);
     const normalized = normalizeClassificationDecision(correctedDecision);
-    if (normalized.intent === 'trash') normalized.replyText = TRASH_PROMPT_GUIDANCE;
+    if (normalized.intent === 'trash') {
+      normalized.replyText = TRASH_PROMPT_GUIDANCE;
+      await releaseRequestAccess(usageAccess, 'classified_as_trash');
+      usageAccess = null;
+    }
 
     return NextResponse.json({
       ok: true,
-      data: normalized
-    }, { headers: corsHeaders });
+      data: normalized,
+      requestId,
+    }, { headers: apiCorsHeaders(request) });
 
   } catch (error: any) {
     console.warn('[API /api/chat/classify] Fallback activated:', error.message);
@@ -149,6 +174,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       ok: true,
       data: fallbackDecision
-    }, { headers: corsHeaders });
+    }, { headers: apiCorsHeaders(request) });
   }
 }

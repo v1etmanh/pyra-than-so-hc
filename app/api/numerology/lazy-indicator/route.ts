@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import { getRequestAccess } from '@/lib/billing/access';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { finalizeQuotaStream } from '@/lib/usage/quota-stream';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
       knowledgeRecord
     });
 
-    const access = await getRequestAccess(req, 'text');
+    const access = await getRequestAccess(req, 'text', body.requestId);
     if (access instanceof Response) {
       // A knowledge reading does not consume AI tokens. Keep the experience
       // useful when quota/rate controls reject the AI request, but still keep
@@ -148,14 +148,10 @@ LƯU Ý QUAN TRỌNG:
         }
       });
     }
-    const stream = createIndicatorFallbackStream(aiStream, fallbackContent);
-    recordAiUsage({
-      identity: access.identity,
-      plan: access.plan,
-      feature: 'text',
-      route: '/api/numerology/lazy-indicator',
-      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
-    });
+    const stream = createIndicatorFallbackStream(
+      finalizeQuotaStream(aiStream, access, { route: '/api/numerology/lazy-indicator' }),
+      fallbackContent,
+    );
 
     return new Response(stream, {
       headers: {

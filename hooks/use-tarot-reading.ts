@@ -186,17 +186,17 @@ export function useTarotReading(locale: TarotLocale): UseTarotReadingReturn {
       const response = await fetch('/api/tarot/reading', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify({ ...body, requestId: crypto.randomUUID() }),
         signal: controller.signal
       });
       if (!response.ok) {
         let message = locale === 'vi' ? 'NUMELYRA chưa thể bắt đầu trải bài.' : 'NUMELYRA could not begin the reading.';
         try {
           const payload = await response.json() as { error?: string; code?: string };
-          if (payload.code === 'DAILY_LIMIT_REACHED') {
+          if (payload.code === 'MONTHLY_LIMIT_REACHED') {
             message = locale === 'vi'
-              ? 'Bạn đã dùng hết lượt luận giải hôm nay. Hãy quay lại ngày mai hoặc nâng cấp Pro.'
-              : 'You have used all readings for today. Return tomorrow or upgrade to Pro.';
+              ? 'Bạn đã dùng hết lượt luận giải trong kỳ này. Hãy nâng cấp Pro hoặc chờ kỳ hạn mức tiếp theo.'
+              : 'You have used all readings for this period. Upgrade to Pro or wait for the next quota period.';
           } else if (payload.code === 'RATE_LIMITED') {
             message = locale === 'vi' ? 'Bạn đang gửi yêu cầu quá nhanh. Vui lòng thử lại sau.' : 'You are sending requests too quickly. Please try again later.';
           } else if (payload.error) {

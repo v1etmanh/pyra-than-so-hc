@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useBilling } from '@/hooks/useBilling';
 import { useAnalytics } from '@/hooks/useAnalytics';
-import type { BillingProvider } from '@/lib/billing/types';
+type WebCheckoutProvider = 'payos' | 'paypal';
 
 export function SacredProModal() {
   const pathname = usePathname();
@@ -14,8 +14,8 @@ export function SacredProModal() {
   const { isUpgradeModalOpen, closeUpgradeModal, modalContext, isPro } = useBilling();
   const { trackEvent } = useAnalytics();
 
-  const [method, setMethod] = useState<BillingProvider>(isVietnamese ? 'payos' : 'paypal');
-  const [loading, setLoading] = useState<BillingProvider | null>(null);
+  const [method, setMethod] = useState<WebCheckoutProvider>(isVietnamese ? 'payos' : 'paypal');
+  const [loading, setLoading] = useState<WebCheckoutProvider | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function SacredProModal() {
 
   if (!isUpgradeModalOpen) return null;
 
-  const startCheckout = async (provider: BillingProvider) => {
+  const startCheckout = async (provider: WebCheckoutProvider) => {
     if (!user) {
       closeUpgradeModal();
       openAuthModal('signin');
@@ -76,29 +76,29 @@ export function SacredProModal() {
       kicker: isVietnamese ? 'NUMELYRA PRO / CHIÊM NGHIỆM' : 'NUMELYRA PRO / TAROT',
       title: isVietnamese ? 'Mở khóa Chiêm nghiệm Tarot Không Giới Hạn' : 'Unlock Unlimited Tarot Wisdom',
       desc: isVietnamese
-        ? 'Nâng cấp lên 100 lượt luận giải mỗi ngày, mở khóa toàn bộ trải bài Celtic Cross 10 lá và hỏi sâu không giới hạn.'
-        : 'Upgrade to 100 readings daily, unlock the 10-card Celtic Cross spread, and enjoy limitless follow-up guidance.',
+        ? 'Nâng cấp lên 200 lượt AI mỗi tháng, bao gồm Tarot AI và các câu hỏi tiếp nối.'
+        : 'Upgrade to 200 AI responses each month, including AI Tarot and follow-up questions.',
     },
     wallpaper: {
       kicker: isVietnamese ? 'NUMELYRA PRO / HÌNH NỀN' : 'NUMELYRA PRO / WALLPAPER',
       title: isVietnamese ? 'Mở khóa Studio Hình Nền Năng Lượng' : 'Unlock Lucky Wallpaper Studio',
       desc: isVietnamese
-        ? 'Tạo tới 20 hình nền năng lượng mỗi ngày, mở khóa các phong cách 3D ánh vàng độc quyền và tải ảnh 4K Ultra sắc nét.'
-        : 'Generate up to 20 lucky wallpapers daily, access exclusive luxury 3D styles, and download pristine 4K resolutions.',
+        ? 'Tạo tới 30 hình nền năng lượng mỗi tháng và tải ảnh sắc nét.'
+        : 'Generate up to 30 lucky wallpapers each month and download high-quality images.',
     },
     indicators: {
       kicker: isVietnamese ? 'NUMELYRA PRO / THẦN SỐ HỌC' : 'NUMELYRA PRO / NUMEROLOGY',
       title: isVietnamese ? 'Mở khóa Toàn diện Bản đồ Thần số học' : 'Unlock Deep Numerology Insights',
       desc: isVietnamese
-        ? '100 lượt phân tích AI chuyên sâu không ngắt quãng, khám phá chu kỳ năng lượng 12 tháng và bản đồ cá nhân trọn vẹn.'
-        : '100 uninterrupted in-depth AI analyses, personal 12-month energy forecasts, and complete destiny maps.',
+        ? '200 lượt AI mỗi tháng; các phép tính Thần số học cục bộ vẫn luôn không giới hạn.'
+        : '200 AI responses each month; local numerology calculations always remain unlimited.',
     },
     general: {
       kicker: isVietnamese ? 'NUMELYRA PRO / ĐỒNG HÀNH' : 'NUMELYRA PRO / SANCTUARY',
       title: modalContext?.title || (isVietnamese ? 'Một Không Gian Sâu Hơn Cho Bạn' : 'A Deeper Space For Your Journey'),
       desc: modalContext?.description || (isVietnamese
-        ? 'Đồng hành trọn vẹn cùng NUMELYRA với 100 lượt luận giải AI, 20 hình nền mỗi ngày và đặc quyền tính năng cao cấp.'
-        : 'Experience NUMELYRA with 100 daily AI readings, 20 wallpapers, and early access to upcoming premium features.'),
+        ? 'Đồng hành cùng NUMELYRA với 200 lượt AI, 31 lượt ca dao, 31 mặt sau Daily Insight và 30 hình nền mỗi kỳ.'
+        : 'Experience NUMELYRA with 200 AI responses, 31 Ca Dao unlocks, 31 Daily Insight backs, and 30 wallpapers per period.'),
     },
   }[feature];
 
@@ -128,14 +128,14 @@ export function SacredProModal() {
           <div className="sacred-benefit-card">
             <span className="benefit-icon">✦</span>
             <div className="benefit-text">
-              <strong>{isVietnamese ? '100 lượt AI / ngày' : '100 AI readings / day'}</strong>
-              <small>{isVietnamese ? 'Gấp gần 7 lần gói Free (15 lượt)' : '7x more than Free tier (15/day)'}</small>
+              <strong>{isVietnamese ? '200 lượt AI / tháng' : '200 AI responses / month'}</strong>
+              <small>{isVietnamese ? 'Dùng chung cho chat, follow-up và luận giải AI' : 'Shared by chat, follow-ups, and AI readings'}</small>
             </div>
           </div>
           <div className="sacred-benefit-card">
             <span className="benefit-icon">🖼️</span>
             <div className="benefit-text">
-              <strong>{isVietnamese ? '20 hình nền / ngày' : '20 wallpapers / day'}</strong>
+              <strong>{isVietnamese ? '30 hình nền / tháng' : '30 wallpapers / month'}</strong>
               <small>{isVietnamese ? 'Tải ảnh 4K Ultra sắc nét & phong cách Pro' : '4K Ultra downloads & luxury styles'}</small>
             </div>
           </div>
@@ -176,7 +176,7 @@ export function SacredProModal() {
                   <span>VIETQR / PAYOS</span>
                   <span className="method-badge">{isVietnamese ? 'Phổ biến' : 'Popular'}</span>
                 </div>
-                <strong>79.000đ</strong>
+                <strong>249.000đ</strong>
                 <small>{isVietnamese ? '30 ngày · Quét mã mọi ngân hàng' : '30 days · All VN bank apps'}</small>
               </button>
 
@@ -189,7 +189,7 @@ export function SacredProModal() {
                   <span>PAYPAL</span>
                   <span className="method-badge">Global</span>
                 </div>
-                <strong>$3.99</strong>
+                <strong>$9.99</strong>
                 <small>{isVietnamese ? 'mỗi tháng · Thẻ quốc tế' : 'monthly · Auto-renew'}</small>
               </button>
             </div>
@@ -206,8 +206,8 @@ export function SacredProModal() {
                 : !user
                   ? isVietnamese ? 'Đăng nhập để nâng cấp Pro' : 'Sign in to upgrade'
                   : method === 'payos'
-                    ? isVietnamese ? 'Thanh toán 79.000đ qua VietQR ↗' : 'Pay 79,000đ with VietQR ↗'
-                    : isVietnamese ? 'Đăng ký $3.99/tháng qua PayPal ↗' : 'Subscribe $3.99/mo via PayPal ↗'}
+                    ? isVietnamese ? 'Thanh toán 249.000đ qua VietQR ↗' : 'Pay 249,000đ with VietQR ↗'
+                    : isVietnamese ? 'Đăng ký $9.99/tháng qua PayPal ↗' : 'Subscribe $9.99/mo via PayPal ↗'}
             </button>
 
             {error && <p className="sacred-pro-error" role="alert">{error}</p>}

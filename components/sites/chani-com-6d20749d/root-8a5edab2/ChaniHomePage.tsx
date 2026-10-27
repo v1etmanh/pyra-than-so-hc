@@ -553,8 +553,8 @@ export default function ChaniHomePage() {
             </h2>
             <p className="home-pro-desc">
               {isVietnamese
-                ? "Trải nghiệm không giới hạn 100 lượt vấn an AI/ngày, 20 hình nền năng lượng 4K, trọn bộ 78 lá Tarot và ưu tiên xử lý độc quyền."
-                : "Experience 100 daily AI inquiries, 20 high-res 4K wallpapers, full 78-card Tarot sanctuary, and dedicated priority compute."}
+                ? "Nhận 200 lượt luận giải AI, 31 lượt ca dao, 31 mặt sau Daily Insight và 30 lượt tạo hình nền trong mỗi kỳ."
+                : "Get 200 AI readings, 31 Ca Dao unlocks, 31 Daily Insight backs, and 30 wallpaper generations each billing period."}
             </p>
           </div>
           <button
@@ -562,14 +562,14 @@ export default function ChaniHomePage() {
             className="home-pro-btn"
             onClick={() => openUpgradeModal({ feature: 'general' })}
           >
-            {isVietnamese ? "NÂNG CẤP PRO · 79.000Đ ↗" : "JOIN PRO · $3.99/MO ↗"}
+            {isVietnamese ? "NÂNG CẤP PRO · 249.000Đ ↗" : "JOIN PRO · $9.99/MO ↗"}
           </button>
         </section>
       )}
 
 
       <footer className="chani-footer">
-        <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy-policy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms-of-service")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href="mailto:mqnyle@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle@gmail.com">Email: mqnyle@gmail.com</a></div></div>
+        <div className="footer-columns"><div><strong>{isVietnamese ? "CÔNG TY" : "COMPANY"}</strong><a href={localize("/about/about-chani")}>{isVietnamese ? "Về NUMELYRA" : "About NUMELYRA"}</a><a href={localize("/about/careers")}>{isVietnamese ? "Tuyển dụng" : "Careers"}</a><a href={localize("/about/press")}>{isVietnamese ? "Báo chí" : "Press"}</a></div><div><strong>{isVietnamese ? "HỖ TRỢ" : "SUPPORT"}</strong><a href={localize("/privacy")}>{isVietnamese ? "Chính sách riêng tư" : "Privacy Policy"}</a><a href={localize("/terms")}>{isVietnamese ? "Điều khoản sử dụng" : "Terms of Service"}</a><a href={localize("/data-deletion")}>{isVietnamese ? "Xóa dữ liệu" : "Data Deletion"}</a><a href="mailto:mqnyle231@gmail.com">{isVietnamese ? "Liên hệ hỗ trợ" : "Contact Support"}</a></div><div><strong>{isVietnamese ? "KẾT NỐI" : "CONNECT"}</strong><a href="https://www.instagram.com/elhnam72/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="mailto:mqnyle231@gmail.com">Email: mqnyle231@gmail.com</a></div></div>
         <div className="newsletter"><strong>{isVietnamese ? "ĐĂNG KÝ NHẬN BẢN TIN" : "SUBSCRIBE TO OUR NEWSLETTER"}</strong><div><input placeholder="yourname@email.com" /><button>{isVietnamese ? "ĐĂNG KÝ" : "SIGN UP"}</button></div></div>
         <p className="copyright">© NUMELYRA 2026</p>
       </footer>

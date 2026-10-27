@@ -2,6 +2,7 @@ export default [
   {
     ignores: [
       '.next/**',
+      'mobile_app/.expo/**',
       'node_modules/**',
       'public/**',
       'new-design/**',

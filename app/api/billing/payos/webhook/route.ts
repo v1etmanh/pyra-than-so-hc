@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     }
     const admin = createAdminClient();
     const { data: order, error: orderError } = await admin.from('numina_payment_orders')
-      .select('amount,currency')
+      .select('user_id,amount,currency')
       .eq('provider', 'payos')
       .eq('order_code', orderCode)
       .maybeSingle();

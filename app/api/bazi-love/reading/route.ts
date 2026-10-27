@@ -1,8 +1,7 @@
 import { NextRequest } from 'next/server';
 import { ZodError } from 'zod';
-import { getRequestAccess } from '@/lib/billing/access';
+import { commitRequestAccess, getRequestAccess, releaseRequestAccess } from '@/lib/billing/access';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { evaluateBaziCompatibility } from '@/lib/bazi-love/engine';
 import {
@@ -16,6 +15,8 @@ import {
   type BaziLoveReadingRequestPayload
 } from '@/lib/bazi-love/schemas';
 import type { BaziLoveSSEEvent } from '@/lib/bazi-love/types';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
 
 export const maxDuration = 180;
 export const dynamic = 'force-dynamic';
@@ -28,11 +29,12 @@ function jsonError(message: string, status: number, code = 'INVALID_REQUEST'): R
 async function consumeNormalizedLlmStream(
   stream: ReadableStream<Uint8Array>,
   onContent: (content: string) => boolean
-): Promise<string> {
+): Promise<{ text: string; provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } }> {
   const reader = stream.getReader();
   const decoder = new TextDecoder();
   let buffer = '';
   let fullText = '';
+  let telemetry: { provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } } = {};
   try {
     while (true) {
       const { done, value } = await reader.read();
@@ -45,13 +47,14 @@ async function consumeNormalizedLlmStream(
         const data = line.slice(6).trim();
         if (!data || data === '[DONE]') continue;
         try {
-          const event = JSON.parse(data) as { content?: unknown };
+          const event = JSON.parse(data) as typeof telemetry & { content?: unknown; done?: boolean };
+          if (event.done) telemetry = event;
           if (typeof event.content === 'string') {
             fullText += event.content;
             const ok = onContent(event.content);
             if (!ok) {
               await reader.cancel('client disconnected');
-              return fullText;
+              return { text: fullText, ...telemetry };
             }
           }
         } catch {
@@ -62,7 +65,7 @@ async function consumeNormalizedLlmStream(
   } finally {
     reader.releaseLock();
   }
-  return fullText;
+  return { text: fullText, ...telemetry };
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
@@ -81,13 +84,14 @@ export async function POST(request: NextRequest): Promise<Response> {
   }
 
   // Quota & access check (reuse existing billing/text feature limit)
-  const access = await getRequestAccess(request, 'text');
+  const access = await getRequestAccess(request, 'text', body.requestId);
   if (access instanceof Response) return access;
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       let closed = false;
+      let quotaSettled = false;
       const send = (event: BaziLoveSSEEvent): boolean => {
         if (closed) return false;
         try {
@@ -128,15 +132,6 @@ export async function POST(request: NextRequest): Promise<Response> {
         const personA = body.people[0];
         const personB = body.people[1];
         const compatibility = evaluateBaziCompatibility(personA, personB);
-
-        // Invalid calendar input must fail before a quota use is recorded.
-        recordAiUsage({
-          identity: access.identity,
-          plan: access.plan,
-          feature: 'text',
-          route: '/api/bazi-love/reading',
-          estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
-        });
 
         // 2. Transmit structured compatibility data to client
         if (!send({ type: 'compatibility', result: compatibility })) {
@@ -185,9 +180,20 @@ export async function POST(request: NextRequest): Promise<Response> {
             reasoningEffort: 'medium'
           }
         );
-        await consumeNormalizedLlmStream(llmStream, (content) => send({ type: 'content', content }));
-
-        send({ type: 'done' });
+        const result = await consumeNormalizedLlmStream(llmStream, (content) => send({ type: 'content', content }));
+        if (result.text.trim() && send({ type: 'done' })) {
+          await commitRequestAccess(access, { route: '/api/bazi-love/reading', mode: body.mode });
+          await recordActualAiUsage({
+            reservation: access,
+            route: '/api/bazi-love/reading',
+            provider: result.provider,
+            model: result.model,
+            inputTokens: result.usage?.inputTokens,
+            outputTokens: result.usage?.outputTokens,
+            costUsd: calculateAiCostUsd({ provider: result.provider, model: result.model, inputTokens: result.usage?.inputTokens, outputTokens: result.usage?.outputTokens }),
+          });
+          quotaSettled = true;
+        }
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Calculation error occurred';
         send({
@@ -196,6 +202,7 @@ export async function POST(request: NextRequest): Promise<Response> {
           message
         });
       } finally {
+        if (!quotaSettled) await releaseRequestAccess(access, 'bazi_stream_incomplete');
         close();
       }
     }

@@ -23,6 +23,10 @@ import { filterPersonalityIndicatorKeys } from '@/lib/spiritual-agent/personalit
 import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
 import { selectRequestedIndicators } from '@/lib/resonance';
 import { getRequestAuth } from '@/lib/supabase/request-auth';
+import { commitRequestAccess, getRequestAccess, releaseRequestAccess, type RequestAccess } from '@/lib/billing/access';
+import { apiCorsHeaders } from '@/lib/security/cors';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
 
 export const runtime = 'nodejs';
 
@@ -40,12 +44,6 @@ type PlaceRecommendations = {
     categories: string[];
     whySelected: string;
   }>;
-};
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
 };
 
 type PersistedInitialReading = {
@@ -201,7 +199,7 @@ async function agentSuccessResponse(
       replyText,
       cardPayload,
     },
-  }, { headers: corsHeaders });
+  }, { headers: apiCorsHeaders(request) });
 }
 
 async function saveChatPromptSnapshot(
@@ -295,7 +293,7 @@ function getDeepSeekAgentProviderConfig(): UserProviderConfig {
     throw new Error('DEEPSEEK_API_KEY is not configured for Chat Agent.');
   }
   const baseUrl = (process.env.DEEPSEEK_API_BASE_URL?.trim() || 'https://api.deepseek.com').replace(/\/+$/, '');
-  const model = process.env.DEEPSEEK_CHAT_AGENT_MODEL?.trim() || process.env.DEEPSEEK_MODEL?.trim() || 'deepseek-chat';
+  const model = process.env.DEEPSEEK_MODEL?.trim() || process.env.DEEPSEEK_CHAT_AGENT_MODEL?.trim() || 'deepseek-flash';
 
   return {
     type: 'DeepSeek',
@@ -321,7 +319,7 @@ async function generateLlmText(
   userPrompt: string,
   maxTokens: number,
   indicatorSelection: IndicatorSelection,
-): Promise<string> {
+) {
   const generationOptions = {
     maxTokens,
     temperature: 0.3,
@@ -338,17 +336,18 @@ async function generateLlmText(
   if (result.finishReason && result.finishReason !== 'stop') {
     throw new Error(`LLM completion ended with finish_reason=${result.finishReason}`);
   }
-  return result.text.trim();
+  return { ...result, text: result.text.trim() };
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(request: NextRequest) {
   return new NextResponse(null, {
     status: 200,
-    headers: corsHeaders,
+    headers: apiCorsHeaders(request),
   });
 }
 
 export async function POST(request: NextRequest) {
+  let usageAccess: RequestAccess | null = null;
   try {
     const body = await request.json();
     const { message, decision, profiles, indicators, tarotCards, placeContext, colorGuidance } = body;
@@ -383,8 +382,15 @@ export async function POST(request: NextRequest) {
             isTrashPrompt: true
           }
         }
-      }, { headers: corsHeaders });
+      }, { headers: apiCorsHeaders(request) });
     }
+
+    const access = await getRequestAccess(request, 'ai_response', body.requestId);
+    if (access instanceof Response) {
+      for (const [key, value] of Object.entries(apiCorsHeaders(request))) access.headers.set(key, value);
+      return access;
+    }
+    usageAccess = access;
 
     const p1 = profiles?.[0] || { fullName: 'Người A', birthDate: '2000-01-01', gender: 'female' };
     const p2 = profiles?.[1];
@@ -440,6 +446,7 @@ export async function POST(request: NextRequest) {
     let baziScore = 85;
     let baziSummary = '';
     let placeRecommendations: PlaceRecommendations | null = null;
+    let placeAiUsage: { provider: string; model: string; inputTokens: number; outputTokens: number; retryCount: number } | null = null;
     let placeSearchUnavailable = false;
     let cardPayload: any = {
       type: 'agent_synthesis',
@@ -458,6 +465,9 @@ export async function POST(request: NextRequest) {
       drawnCards: cards,
       ...(decision?.intent === 'color_guidance' && colorGuidance ? { colorGuidance } : {})
     };
+    let chargeableAiResponse = false;
+    let generationUsage: { provider?: string; model?: string; inputTokens?: number; outputTokens?: number } = {};
+    let retryCount = 0;
 
     // DeepSeek builds the query and ranks results; VietMap remains the sole
     // factual source for place names and addresses.
@@ -488,6 +498,7 @@ export async function POST(request: NextRequest) {
               })),
             },
           });
+          placeAiUsage = vietMapResult.aiUsage;
           if (vietMapResult.places.length === 0) throw new Error('VietMap returned no matching places.');
           placeRecommendations = {
             areaLabel: 'Vị trí hiện tại',
@@ -626,6 +637,21 @@ export async function POST(request: NextRequest) {
     // Place replies always stay deterministic. Names and addresses come only
     // from VietMap, never from the normal chat model output.
     if (decision?.intent === 'where_to_go') {
+      chargeableAiResponse = Boolean(placeRecommendations);
+      if (chargeableAiResponse) {
+        await commitRequestAccess(usageAccess, { route: '/api/chat/agent', intent: decision?.intent });
+        if (placeAiUsage) {
+          await recordActualAiUsage({
+            reservation: usageAccess,
+            route: '/api/chat/agent/place',
+            ...placeAiUsage,
+            costUsd: calculateAiCostUsd(placeAiUsage),
+          });
+        }
+      } else {
+        await releaseRequestAccess(usageAccess, 'incomplete_place_response');
+      }
+      usageAccess = null;
       return agentSuccessResponse(request, body, replyText, cardPayload);
     }
 
@@ -666,14 +692,29 @@ export async function POST(request: NextRequest) {
       knowledgeMatchedKeys: retrievedKnowledge.map(({ indicator }) => indicator.key),
     };
     const isLoveMatch = decision?.intent === 'love_match' || isCouple;
-    const maxTokens = isLoveMatch ? 2_000 : Math.max(1_200, responseBudget.maxTokens);
-    const retryMaxTokens = isLoveMatch ? 1_600 : Math.max(1_200, responseBudget.maxTokens);
+    // DeepSeek Flash may spend part of the completion budget before emitting
+    // the final answer. Keep the visible reply limits in response-length.ts,
+    // but give generation enough headroom to finish instead of stopping at
+    // finish_reason=length.
+    const maxTokens = isLoveMatch
+      ? 4_096
+      : Math.max(2_400, responseBudget.maxTokens * 2);
+    const retryMaxTokens = isLoveMatch
+      ? 4_096
+      : Math.max(3_200, responseBudget.maxTokens * 2);
 
     try {
       let aiText = '';
       let firstError: string | undefined;
       try {
-        aiText = await generateLlmText(systemPrompt, userPrompt, maxTokens, indicatorSelection);
+        const generated = await generateLlmText(systemPrompt, userPrompt, maxTokens, indicatorSelection);
+        aiText = generated.text;
+        generationUsage = {
+          provider: generated.provider,
+          model: generated.actualModel || generated.model,
+          inputTokens: generated.usage?.inputTokens,
+          outputTokens: generated.usage?.outputTokens,
+        };
       } catch (error) {
         firstError = error instanceof Error ? error.message : String(error);
       }
@@ -694,6 +735,7 @@ export async function POST(request: NextRequest) {
       // Retry at most once. A length stop gets the compact love prompt; other
       // quality failures get a targeted repair instruction.
       if (firstError || !normalized.usedAI || !quality.valid) {
+        retryCount = 1;
         const retryForLength = isLengthError(firstError);
         const repairInstruction = retryForLength
           ? 'Lượt trước bị cắt vì quá dài. Viết ngắn hơn, hoàn tất đủ ba phần trong giới hạn.'
@@ -715,12 +757,19 @@ export async function POST(request: NextRequest) {
           reason: firstError || quality.reason,
           compactPrompt: retryForLength && isLoveMatch,
         });
-        aiText = await generateLlmText(
+        const generated = await generateLlmText(
           retrySystemPrompt,
           retryUserPrompt,
           retryMaxTokens,
           indicatorSelection,
         );
+        aiText = generated.text;
+        generationUsage = {
+          provider: generated.provider,
+          model: generated.actualModel || generated.model,
+          inputTokens: generated.usage?.inputTokens,
+          outputTokens: generated.usage?.outputTokens,
+        };
         normalized = normalizeChatReplyWithDiagnostics(aiText, fallbackReply, responseBudget.complexity);
         quality = normalized.usedAI
           ? validateChatReplyQuality(normalized.replyText, {
@@ -732,6 +781,7 @@ export async function POST(request: NextRequest) {
       }
 
       replyText = normalized.usedAI && quality.valid ? normalized.replyText : fallbackReply;
+      chargeableAiResponse = normalized.usedAI && quality.valid;
       console.log('[Chat Agent Route] Generated non-stream reply quality:', {
         usedAI: normalized.usedAI && quality.valid,
         rejectionReason: quality.valid ? undefined : quality.reason,
@@ -741,9 +791,26 @@ export async function POST(request: NextRequest) {
       replyText = fallbackReply;
     }
 
+    if (chargeableAiResponse) {
+      await commitRequestAccess(usageAccess, { route: '/api/chat/agent', intent: decision?.intent, retryCount });
+      await recordActualAiUsage({
+        reservation: usageAccess,
+        route: '/api/chat/agent',
+        provider: generationUsage.provider,
+        model: generationUsage.model,
+        inputTokens: generationUsage.inputTokens,
+        outputTokens: generationUsage.outputTokens,
+        costUsd: calculateAiCostUsd(generationUsage),
+        retryCount,
+      });
+    } else {
+      await releaseRequestAccess(usageAccess, 'provider_or_quality_failure');
+    }
+    usageAccess = null;
     return agentSuccessResponse(request, body, replyText, cardPayload);
   } catch (error: any) {
+    if (usageAccess) await releaseRequestAccess(usageAccess, 'route_error');
     console.error('[API /api/chat/agent] Error:', error);
-    return NextResponse.json({ ok: false, error: error.message }, { status: 500, headers: corsHeaders });
+    return NextResponse.json({ ok: false, error: error.message }, { status: 500, headers: apiCorsHeaders(request) });
   }
 }

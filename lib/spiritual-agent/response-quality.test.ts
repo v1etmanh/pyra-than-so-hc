@@ -5,16 +5,16 @@ import { validateChatReplyQuality } from './response-quality.ts';
 
 const reply = (conclusion: string, guidance = '• Điều đáng giữ lại lúc này là khoảng lặng giúp bạn trở về với nhịp của chính mình.') => `✦ KẾT LUẬN NHANH:\n${conclusion}\n\n✦ VÌ SAO:\n• Một tín hiệu cụ thể bảo vệ kết luận.\n• Một tín hiệu khác nêu đúng rủi ro.\n\n✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM:\n${guidance}`;
 
-test('two choices must start by choosing one option', () => {
+test('two choices can use natural wording instead of a fixed opening', () => {
   assert.equal(validateChatReplyQuality(reply('Chọn đi ngủ sớm. Tối nay mục tiêu không phải cố thêm vài trang mà là lấy lại độ tỉnh để buổi học sau thực sự có chất lượng.'), {
     intent: 'two_choices',
     userMessage: 'Nên học tiếp hay đi ngủ?',
   }).valid, true);
 
-  assert.equal(validateChatReplyQuality(reply('Cả hai đều có ưu và nhược điểm.'), {
+  assert.equal(validateChatReplyQuality(reply('Cả hai đều có ưu và nhược điểm, nhưng đi ngủ sớm phù hợp hơn với trạng thái hiện tại.'), {
     intent: 'two_choices',
     userMessage: 'Nên học tiếp hay đi ngủ?',
-  }).reason, 'fence_sitting_conclusion');
+  }).valid, true);
 });
 
 test('relationship replies cannot infer private intent', () => {
@@ -25,21 +25,21 @@ test('relationship replies cannot infer private intent', () => {
   assert.equal(result.reason, 'relationship_mind_reading');
 });
 
-test('timing replies separate current state and conditional trend', () => {
-  const result = validateChatReplyQuality(reply('Hiện tại: Công việc đang chững lại. Xu hướng thời gian tới: Tình hình có thể cải thiện khi bạn chọn một hướng cụ thể.'), {
+test('timing replies do not require fixed labels', () => {
+  const result = validateChatReplyQuality(reply('Công việc đang chững lại, nhưng thời gian tới có thể cải thiện khi bạn chọn một hướng cụ thể.'), {
     intent: 'timing_trajectory',
     userMessage: 'Ba tháng tới công việc thế nào?',
   });
   assert.equal(result.valid, true);
 });
 
-test('generic writing actions are rejected unless explicitly requested', () => {
+test('practical writing guidance is not rejected by a keyword list', () => {
   const detailedConclusion = 'Hôm nay hãy hoàn thành một việc đang dang dở trước khi nhận thêm việc mới. Ưu tiên này giúp bạn giữ sự tập trung thay vì đổi hướng liên tục.';
   const generic = validateChatReplyQuality(reply(detailedConclusion, '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
     intent: 'daily_guidance',
     userMessage: 'Hôm nay nên tập trung gì?',
   });
-  assert.equal(generic.reason, 'generic_writing_action');
+  assert.equal(generic.valid, true);
 
   const explicit = validateChatReplyQuality(reply(detailedConclusion, '• Ghi ra giấy ba ưu tiên rồi chọn một việc.'), {
     intent: 'daily_guidance',
@@ -48,7 +48,7 @@ test('generic writing actions are rejected unless explicitly requested', () => {
   assert.equal(explicit.valid, true);
 });
 
-test('rejects a conclusion that is decisive but too thin to explain itself', () => {
+test('accepts a concise conclusion when the normalized reply is complete', () => {
   const result = validateChatReplyQuality([
     '✦ KẾT LUẬN NHANH:',
     'Hôm nay hãy xử lý một việc đang né.',
@@ -61,10 +61,10 @@ test('rejects a conclusion that is decisive but too thin to explain itself', () 
     '• Thực hiện bước xử lý trực tiếp đầu tiên ngay hôm nay.',
   ].join('\n'), { intent: 'daily_guidance', userMessage: 'Hôm nay nên tập trung gì?' });
 
-  assert.deepEqual(result, { valid: false, reason: 'conclusion_too_thin' });
+  assert.deepEqual(result, { valid: true });
 });
 
-test('love match requires both names and rejects ambiguous second-person labels', () => {
+test('love match does not require names in every formulation', () => {
   const namedReply = reply(
     'Minh Anh và Gia Huy có động lực tương đối nâng đỡ, nhưng khác biệt trong nhịp giao tiếp cần được nói rõ trước khi trở thành một điểm ma sát lặp lại.',
     '• Minh Anh và Gia Huy thống nhất một cách báo trước khi cần thêm không gian.',
@@ -80,10 +80,10 @@ test('love match requires both names and rejects ambiguous second-person labels'
     intent: 'love_match',
     userMessage: 'Hai người có hợp nhau không?',
     coupleProfileNames: ['Minh Anh', 'Gia Huy'],
-  }).reason, 'love_match_ambiguous_address');
+  }).valid, true);
 });
 
-test('love match must choose a viewpoint instead of refusing to infer', () => {
+test('love match may use cautious language', () => {
   const reply = [
     '✦ KẾT LUẬN NHANH:',
     'Mình không thể biết chắc Việt Nam nghĩ gì về Mỹ Duyên.',
@@ -99,5 +99,13 @@ test('love match must choose a viewpoint instead of refusing to infer', () => {
     intent: 'love_match',
     userMessage: 'Bạn nam nghĩ gì về bạn nữ?',
     coupleProfileNames: ['Mỹ Duyên', 'Việt Nam'],
-  }).reason, 'love_match_missing_viewpoint');
+  }).valid, true);
+});
+
+test('internal instruction leaks are still rejected', () => {
+  const result = validateChatReplyQuality(reply('Theo quy tắc được cung cấp, mình phải chọn một kết luận.'), {
+    intent: 'general',
+    userMessage: 'Tôi nên làm gì?',
+  });
+  assert.equal(result.reason, 'instruction_leak');
 });
