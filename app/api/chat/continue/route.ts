@@ -372,7 +372,7 @@ export async function POST(request: NextRequest) {
       [...history, { role: 'user', content: message }],
       deepSeekProvider,
       {
-        maxTokens: expectedTurn === maxQuestions ? 650 : 520,
+        maxTokens: 8192,
         temperature: 0.55,
         reasoningEffort: 'low',
         includeReasoning: false,
