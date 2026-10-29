@@ -18,6 +18,9 @@ import {
 import { isTrashOrMeaninglessPrompt, TRASH_PROMPT_GUIDANCE } from '@/lib/spiritual-agent/prompt-validator';
 import { createCurrentTimeContext } from '@/lib/spiritual-agent/time-context';
 import { getRequestAuth } from '@/lib/supabase/request-auth';
+import { commitRequestAccess, getRequestAccess, releaseRequestAccess } from '@/lib/billing/access';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -34,9 +37,9 @@ function getDeepSeekContinuationProviderConfig(): UserProviderConfig {
     baseUrl: (process.env.DEEPSEEK_API_BASE_URL?.trim() || 'https://api.deepseek.com').replace(/\/+$/, ''),
     model:
       process.env.DEEPSEEK_CHAT_CONTINUE_MODEL?.trim()
-      || process.env.DEEPSEEK_CHAT_AGENT_MODEL?.trim()
       || process.env.DEEPSEEK_MODEL?.trim()
-      || 'deepseek-chat',
+      || process.env.DEEPSEEK_CHAT_AGENT_MODEL?.trim()
+      || 'deepseek-flash',
     apiKeys: [apiKey],
   };
 }
@@ -92,7 +95,8 @@ function sseResponse(request: Request, events: Array<Record<string, unknown>>, s
 function enrichDoneEvent(
   source: ReadableStream<Uint8Array>,
   metadata: DoneMetadata,
-  onComplete: (fullText: string) => Promise<boolean>
+  onComplete: (fullText: string, telemetry: { provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } }) => Promise<boolean>,
+  onFailure: () => Promise<void>,
 ): ReadableStream<Uint8Array> {
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -101,13 +105,17 @@ function enrichDoneEvent(
       const encoder = new TextEncoder();
       let buffer = '';
       let fullText = '';
+      let telemetry: { provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } } = {};
 
       const forwardBlock = (block: string) => {
         const dataLine = block.split(/\r?\n/).find((line) => line.startsWith('data:'));
         if (!dataLine) return;
         try {
-          const parsed = JSON.parse(dataLine.slice(5).trim()) as { done?: boolean; content?: string };
-          if (parsed.done) return;
+          const parsed = JSON.parse(dataLine.slice(5).trim()) as typeof telemetry & { done?: boolean; content?: string };
+          if (parsed.done) {
+            telemetry = parsed;
+            return;
+          }
           if (typeof parsed.content === 'string') fullText += parsed.content;
         } catch {
           // createStreamingResponse already emits normalized SSE. Preserve an
@@ -127,10 +135,11 @@ function enrichDoneEvent(
         }
         buffer += decoder.decode();
         if (buffer.trim()) forwardBlock(buffer);
-        const persisted = await onComplete(fullText.trim());
+        const persisted = await onComplete(fullText.trim(), telemetry);
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, ...metadata, persisted })}\n\n`));
         controller.close();
       } catch (error) {
+        await onFailure();
         controller.error(error);
       } finally {
         reader.releaseLock();
@@ -266,6 +275,19 @@ export async function POST(request: NextRequest) {
     ], 503);
   }
 
+  const quotaAccess = await getRequestAccess(
+    request,
+    'ai_response',
+    typeof body.requestId === 'string' ? body.requestId : userMessageId,
+  );
+  if (quotaAccess instanceof Response) {
+    const quotaError = await quotaAccess.json().catch(() => ({ error: 'Monthly quota is unavailable.' }));
+    return sseResponse(request, [
+      quotaError,
+      { done: true, accepted: false, turnIndex: currentCount, remaining: Math.max(0, maxQuestions - currentCount), sessionCompleted: false },
+    ], quotaAccess.status);
+  }
+
   const nextStatus = expectedTurn >= maxQuestions ? 'completed' : 'active';
   const { data: reservedSession, error: reserveError } = await supabase
     .from('chat_sessions')
@@ -282,6 +304,7 @@ export async function POST(request: NextRequest) {
     .maybeSingle();
 
   if (reserveError || !reservedSession) {
+    await releaseRequestAccess(quotaAccess, 'session_turn_conflict');
     return sseResponse(request, [
       { error: 'Another request already advanced this session.', code: 'SESSION_TURN_CONFLICT' },
       {
@@ -316,6 +339,7 @@ export async function POST(request: NextRequest) {
       .eq('id', sessionId)
       .eq('user_id', user.id)
       .eq('question_count', expectedTurn);
+    await releaseRequestAccess(quotaAccess, 'user_message_persist_failed');
     return sseResponse(request, [
       { error: 'Could not persist the follow-up question.' },
       {
@@ -341,17 +365,32 @@ export async function POST(request: NextRequest) {
     expectedTurn,
     createCurrentTimeContext(body.timeZone)
   );
-  const source = createStreamingResponse(
-    systemPrompt,
-    [...history, { role: 'user', content: message }],
-    deepSeekProvider,
-    {
-      maxTokens: expectedTurn === maxQuestions ? 650 : 520,
-      temperature: 0.55,
-      reasoningEffort: 'low',
-      includeReasoning: false,
-    }
-  );
+  let source: ReadableStream<Uint8Array>;
+  try {
+    source = createStreamingResponse(
+      systemPrompt,
+      [...history, { role: 'user', content: message }],
+      deepSeekProvider,
+      {
+        maxTokens: expectedTurn === maxQuestions ? 650 : 520,
+        temperature: 0.55,
+        reasoningEffort: 'low',
+        includeReasoning: false,
+      }
+    );
+  } catch (error) {
+    await Promise.all([
+      releaseRequestAccess(quotaAccess, 'provider_start_failed'),
+      supabase.from('chat_sessions').update({ question_count: currentCount, status: 'active', updated_at: new Date().toISOString() })
+        .eq('id', sessionId).eq('user_id', user.id).eq('question_count', expectedTurn),
+      supabase.from('chat_messages').delete().eq('id', userMessageId).eq('session_id', sessionId),
+    ]);
+    console.error('[Chat Continue Route] Provider start failed:', error);
+    return sseResponse(request, [
+      { error: 'Could not start the AI response.' },
+      { done: true, accepted: false, turnIndex: currentCount, remaining: Math.max(0, maxQuestions - currentCount), sessionCompleted: false },
+    ], 503);
+  }
   const metadata: DoneMetadata = {
     turnIndex: expectedTurn,
     remaining: getRemainingSessionQuestions(expectedTurn),
@@ -361,8 +400,24 @@ export async function POST(request: NextRequest) {
     assistantMessageId,
   };
 
-  return new Response(enrichDoneEvent(source, metadata, async (fullText) => {
-    if (!fullText) return false;
+  let finalized = false;
+  const rollback = async () => {
+    if (finalized) return;
+    finalized = true;
+    await Promise.all([
+      releaseRequestAccess(quotaAccess, 'continuation_incomplete'),
+      supabase.from('chat_sessions').update({ question_count: currentCount, status: 'active', updated_at: new Date().toISOString() })
+        .eq('id', sessionId).eq('user_id', user.id).eq('question_count', expectedTurn),
+      supabase.from('chat_messages').delete().eq('id', userMessageId).eq('session_id', sessionId),
+      supabase.from('chat_messages').delete().eq('id', assistantMessageId).eq('session_id', sessionId),
+    ]);
+  };
+
+  return new Response(enrichDoneEvent(source, metadata, async (fullText, telemetry) => {
+    if (!fullText) {
+      await rollback();
+      return false;
+    }
     const { error } = await supabase.from('chat_messages').upsert({
       id: assistantMessageId,
       session_id: sessionId,
@@ -377,8 +432,28 @@ export async function POST(request: NextRequest) {
       },
       created_at: new Date().toISOString(),
     }, { onConflict: 'id' });
-    if (error) console.warn('[Chat Continue Route] Could not persist assistant message:', error);
-    return !error;
-  }), { headers: streamHeaders(request) });
+    if (error) {
+      console.warn('[Chat Continue Route] Could not persist assistant message:', error);
+      await rollback();
+      return false;
+    }
+    await commitRequestAccess(quotaAccess, { route: '/api/chat/continue', sessionId, turnIndex: expectedTurn });
+    await recordActualAiUsage({
+      reservation: quotaAccess,
+      route: '/api/chat/continue',
+      provider: telemetry.provider,
+      model: telemetry.model,
+      inputTokens: telemetry.usage?.inputTokens,
+      outputTokens: telemetry.usage?.outputTokens,
+      costUsd: calculateAiCostUsd({
+        provider: telemetry.provider,
+        model: telemetry.model,
+        inputTokens: telemetry.usage?.inputTokens,
+        outputTokens: telemetry.usage?.outputTokens,
+      }),
+    });
+    finalized = true;
+    return true;
+  }, rollback), { headers: streamHeaders(request) });
 }
 

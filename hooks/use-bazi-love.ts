@@ -131,7 +131,7 @@ export function useBaziLove(locale: BaziLoveLocale): UseBaziLoveReturn {
         const res = await fetch('/api/bazi-love/reading', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ ...payload, requestId: crypto.randomUUID() }),
           signal: controller.signal
         });
 

@@ -18,6 +18,12 @@ create table if not exists public.user_numerology_profiles (
     user_id uuid references public.profiles(id) on delete cascade not null,
     name text not null,
     birth_date text not null,
+    gender text check (gender is null or gender in ('male', 'female')),
+    is_primary boolean not null default false,
+    birth_time text,
+    birth_place text,
+    birth_location jsonb,
+    birth_time_accuracy text check (birth_time_accuracy is null or birth_time_accuracy in ('exact', 'unknown')),
     created_at timestamptz default now(),
     updated_at timestamptz default now()
 );

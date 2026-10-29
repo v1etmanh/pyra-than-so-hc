@@ -78,10 +78,20 @@ export async function POST(request: NextRequest) {
     const eventCreatedAt = event.create_time && Number.isFinite(new Date(event.create_time).getTime())
       ? event.create_time
       : new Date().toISOString();
-    const { error } = await admin.rpc('apply_numina_paypal_event', {
+    const billingInfo = details.billing_info as JsonRecord | undefined;
+    const lastPayment = billingInfo?.last_payment as JsonRecord | undefined;
+    const periodStartRaw = typeof lastPayment?.time === 'string'
+      ? lastPayment.time
+      : (typeof details.start_time === 'string' ? details.start_time : null);
+    const periodStart = periodStartRaw && Number.isFinite(new Date(periodStartRaw).getTime())
+      && (eventType === 'PAYMENT.SALE.COMPLETED' || eventType === 'BILLING.SUBSCRIPTION.ACTIVATED')
+      ? new Date(periodStartRaw).toISOString()
+      : null;
+    const { error } = await admin.rpc('apply_numina_paypal_event_v2', {
       p_user_id: userId,
       p_subscription_id: subscriptionId,
       p_status: status,
+      p_period_start: periodStart,
       p_period_end: periodEnd,
       p_cancel_at_period_end: cancelAtPeriodEnd,
       p_event_id: event.id,

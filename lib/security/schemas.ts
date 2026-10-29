@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 const boundedText = (max: number) => z.string().trim().max(max);
+const requestIdSchema = boundedText(200).min(8);
 
 export const providerConfigSchema = z.object({
   type: z.enum(['openai', 'openrouter', 'anthropic', 'google', 'groq', 'grok', 'ollama', 'custom']),
@@ -41,6 +42,7 @@ export const providerModelsRequestSchema = z.object({
 }).strict();
 
 export const lazyIndicatorRequestSchema = z.object({
+  requestId: requestIdSchema.optional(),
   fullName: boundedText(200).optional().default(''),
   birthDay: boundedText(32).optional().default(''),
   indicatorKey: boundedText(80).min(1),
@@ -52,6 +54,7 @@ export const lazyIndicatorRequestSchema = z.object({
 }).strict();
 
 export const initialAnalysisRequestSchema = z.object({
+  requestId: requestIdSchema.optional(),
   fullName: boundedText(200).optional().default(''),
   birthDay: boundedText(32).optional().default(''),
   coreIndicators: z.object({
@@ -65,6 +68,7 @@ export const initialAnalysisRequestSchema = z.object({
 }).strict();
 
 export const birthChartRequestSchema = z.object({
+  requestId: requestIdSchema.optional(),
   fullName: boundedText(200).optional(),
   birthDay: boundedText(32).min(1),
   birthChartData: z.object({
@@ -85,6 +89,7 @@ export const birthChartRequestSchema = z.object({
 }).strict();
 
 export const wallpaperRequestSchema = z.object({
+  requestId: requestIdSchema.optional(),
   lifePathNumber: z.union([boundedText(20), z.number().finite()]).optional(),
   destinyNumber: z.union([boundedText(20), z.number().finite()]).optional(),
   soulUrgeNumber: z.union([boundedText(20), z.number().finite()]).optional(),
@@ -141,6 +146,7 @@ const tarotRegenerateContextSchema = tarotReadingContextSchema.extend({
 });
 
 const tarotCommonSchema = z.object({
+  requestId: requestIdSchema.optional(),
   language: z.enum(['vi', 'en']),
   profile: profileContextSchema.optional(),
   providerConfig: providerConfigSchema.optional()

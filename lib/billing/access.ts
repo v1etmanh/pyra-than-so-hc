@@ -1,83 +1,29 @@
+import { randomUUID } from 'node:crypto';
 import type { NextRequest } from 'next/server';
-import { getRequestAuth } from '@/lib/supabase/request-auth';
-import { getClientIp } from '@/lib/security/request';
-import { consumeDurableAccess, type BillingPlan, type UsageFeature } from '@/lib/usage/usage-meter';
-import { effectiveBillingPlan } from '@/lib/billing/types';
+import { commitQuota, releaseQuota, reserveQuota, type QuotaReservation } from '@/lib/usage/quota-service';
+import type { QuotaFeature } from '@/lib/usage/plan-catalog';
 
-export type RequestAccess = {
-  userId?: string;
-  identity: string;
-  plan: BillingPlan;
-  feature: UsageFeature;
-  remaining: number;
-};
+export type RequestAccess = QuotaReservation & { identity: string };
 
 export async function getRequestAccess(
   request: NextRequest,
-  feature: UsageFeature
+  feature: QuotaFeature | 'text',
+  requestId?: string,
 ): Promise<RequestAccess | Response> {
-  let userId: string | undefined;
-  let plan: BillingPlan = 'free';
+  const quotaFeature: QuotaFeature = feature === 'text' ? 'ai_response' : feature;
+  const reservation = await reserveQuota(
+    request,
+    quotaFeature,
+    requestId || request.headers.get('x-request-id') || randomUUID(),
+  );
+  if (reservation instanceof Response) return reservation;
+  return { ...reservation, identity: `user:${reservation.userId}` };
+}
 
-  try {
-    const { supabase, user } = await getRequestAuth(request);
-    userId = user?.id;
+export async function commitRequestAccess(access: RequestAccess, metadata: Record<string, unknown> = {}) {
+  return commitQuota(access, metadata);
+}
 
-    if (userId) {
-      const { data: subscription } = await supabase
-        .from('numina_subscriptions')
-        .select('plan,status,current_period_end')
-        .eq('user_id', userId)
-        .maybeSingle();
-      plan = effectiveBillingPlan(subscription);
-    }
-  } catch (error) {
-    // Missing billing tables/config must fail closed to Free, never block the app.
-    console.warn('[BillingAccess] Could not resolve subscription:', error);
-  }
-
-  const identity = userId ? `user:${userId}` : `ip:${getClientIp(request)}`;
-  const usage = await consumeDurableAccess(request, identity, plan, feature);
-  if (usage.unavailable) {
-    return new Response(JSON.stringify({
-      error: 'Usage controls are temporarily unavailable. Please try again shortly.',
-      code: 'USAGE_CONTROL_UNAVAILABLE'
-    }), {
-      status: 503,
-      headers: { 'Content-Type': 'application/json', 'Retry-After': String(usage.retryAfterSeconds) }
-    });
-  }
-  if (usage.rateLimited) {
-    return new Response(JSON.stringify({
-      error: 'Too many AI requests. Please try again in a moment.',
-      code: 'RATE_LIMITED'
-    }), {
-      status: 429,
-      headers: {
-        'Content-Type': 'application/json',
-        'Retry-After': String(usage.retryAfterSeconds),
-        'X-RateLimit-Remaining': '0'
-      }
-    });
-  }
-  if (!usage.allowed) {
-    return new Response(JSON.stringify({
-      error: plan === 'pro'
-        ? 'Daily usage limit reached. Please try again tomorrow.'
-        : 'Bạn đã dùng hết lượt miễn phí hôm nay. Hãy nâng cấp Pro để tiếp tục.',
-      code: 'DAILY_LIMIT_REACHED',
-      plan,
-      limit: usage.limit,
-      remaining: 0
-    }), {
-      status: 429,
-      headers: {
-        'Content-Type': 'application/json',
-        'Retry-After': String(60 * 60 * 6),
-        'X-RateLimit-Remaining': '0'
-      }
-    });
-  }
-
-  return { userId, identity, plan, feature, remaining: usage.remaining };
+export async function releaseRequestAccess(access: RequestAccess, reason?: string) {
+  return releaseQuota(access, reason);
 }

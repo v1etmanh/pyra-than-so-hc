@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { providerConfigSchema } from '../security/schemas.ts';
 
 const boundedText = (max: number) => z.string().trim().max(max);
+const requestIdSchema = boundedText(200).min(8);
 
 function isValidCalendarDate(value: string): boolean {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
@@ -66,6 +67,7 @@ export const baziChatMessageSchema = z.object({
 export const baziLoveReadingRequestSchema = z.discriminatedUnion('mode', [
   z.object({
     mode: z.literal('initial'),
+    requestId: requestIdSchema.optional(),
     people: z.tuple([baziPersonInputSchema, baziPersonInputSchema]),
     language: z.enum(['vi', 'en']).default('vi'),
     question: boundedText(2_000).optional(),
@@ -73,6 +75,7 @@ export const baziLoveReadingRequestSchema = z.discriminatedUnion('mode', [
   }).strict(),
   z.object({
     mode: z.literal('follow-up'),
+    requestId: requestIdSchema.optional(),
     people: z.tuple([baziPersonInputSchema, baziPersonInputSchema]),
     language: z.enum(['vi', 'en']).default('vi'),
     question: boundedText(2_000).min(1, 'Question is required for follow-up'),
@@ -81,6 +84,7 @@ export const baziLoveReadingRequestSchema = z.discriminatedUnion('mode', [
   }).strict(),
   z.object({
     mode: z.literal('regenerate'),
+    requestId: requestIdSchema.optional(),
     people: z.tuple([baziPersonInputSchema, baziPersonInputSchema]),
     language: z.enum(['vi', 'en']).default('vi'),
     question: boundedText(2_000).optional(),

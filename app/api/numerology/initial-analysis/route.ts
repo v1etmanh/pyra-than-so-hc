@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import { getRequestAccess } from '@/lib/billing/access';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { finalizeQuotaStream } from '@/lib/usage/quota-stream';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { getKnowledgeByIndicator } from '@/lib/supabaseClient';
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Missing coreIndicators' }), { status: 400 });
     }
 
-    const access = await getRequestAccess(req, 'text');
+    const access = await getRequestAccess(req, 'text', body.requestId);
     if (access instanceof Response) return access;
 
     const { walksOfLife, mission, soul, personality, dateOfBirth } = coreIndicators;
@@ -102,14 +102,11 @@ QUY TẮC LUẬN GIẢI CHUYÊN NGHIỆP:
       }
     ];
 
-    const stream = createStreamingResponse(systemPrompt, messages, providerConfig);
-    recordAiUsage({
-      identity: access.identity,
-      plan: access.plan,
-      feature: 'text',
-      route: '/api/numerology/initial-analysis',
-      estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
-    });
+    const stream = finalizeQuotaStream(
+      createStreamingResponse(systemPrompt, messages, providerConfig),
+      access,
+      { route: '/api/numerology/initial-analysis' },
+    );
 
     return new Response(stream, {
       headers: {

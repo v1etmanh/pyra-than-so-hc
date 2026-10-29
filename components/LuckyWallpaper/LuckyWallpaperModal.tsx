@@ -152,6 +152,7 @@ export const LuckyWallpaperModal: React.FC<LuckyWallpaperModalProps> = ({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          requestId: crypto.randomUUID(),
           lifePathNumber,
           personalDay,
           personalYear,

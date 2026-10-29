@@ -2,28 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 import { buildLuckyWallpaperPrompt } from '@/lib/lucky-wallpaper/prompt-builder';
 import { findWallpaperWithAiKeywords } from '@/lib/lucky-wallpaper/wallpaper-workflow';
 import { NUMEROLOGY_AESTHETICS_MAP } from '@/lib/lucky-wallpaper/constants';
-import { getRequestAccess } from '@/lib/billing/access';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
+import { commitRequestAccess, getRequestAccess, releaseRequestAccess, type RequestAccess } from '@/lib/billing/access';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { wallpaperRequestSchema, type WallpaperRequest } from '@/lib/security/schemas';
+import { apiCorsHeaders } from '@/lib/security/cors';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
 
 export const maxDuration = 45;
 export const dynamic = 'force-dynamic';
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-};
-
 // Expo Web runs on a different origin while developing, so it sends a
 // preflight request before the JSON POST. Native clients do not need this,
 // but responding here keeps the shared endpoint usable on every app target.
-export function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers: corsHeaders });
+export function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, { status: 204, headers: apiCorsHeaders(request) });
 }
 
 export async function POST(req: NextRequest) {
+  let access: RequestAccess | null = null;
   try {
     const body = wallpaperRequestSchema.parse(await readJsonBody<WallpaperRequest>(req, 64 * 1024));
     const {
@@ -44,8 +41,9 @@ export async function POST(req: NextRequest) {
       count: requestedCount,
     } = body;
 
-    const access = await getRequestAccess(req, 'wallpaper');
-    if (access instanceof Response) return access;
+    const reservation = await getRequestAccess(req, 'wallpaper', body.requestId);
+    if (reservation instanceof Response) return reservation;
+    access = reservation;
 
     const targetCount = requestedCount !== undefined
       ? Math.max(1, Math.min(8, Number(requestedCount) || 4))
@@ -84,20 +82,25 @@ export async function POST(req: NextRequest) {
       : (workflow.image ? [workflow.image] : []);
     const primaryImage = images[0] || workflow.image;
 
-    recordAiUsage({
-      identity: access.identity,
-      plan: access.plan,
-      feature: 'wallpaper',
+    const committed = await commitRequestAccess(access, {
       route: '/api/lucky-wallpaper/generate',
-      provider: workflow.aiProvider
-        ? `${workflow.aiProvider} + ${primaryImage.provider}`
-        : `rules + ${primaryImage.provider}`,
-      estimatedCostUsd: Number(
-        process.env.NUMINA_ESTIMATED_WALLPAPER_COST_USD ||
-        process.env.NUMINA_ESTIMATED_IMAGE_COST_USD ||
-        0
-      )
+      provider: workflow.aiProvider ? `${workflow.aiProvider} + ${primaryImage.provider}` : `rules + ${primaryImage.provider}`,
+      imageCount: images.length,
     });
+    if (workflow.aiUsage.length) {
+      const inputTokens = workflow.aiUsage.reduce((total, event) => total + (event.inputTokens || 0), 0) || undefined;
+      const outputTokens = workflow.aiUsage.reduce((total, event) => total + (event.outputTokens || 0), 0) || undefined;
+      const costUsd = workflow.aiUsage.reduce((total, event) => total + (calculateAiCostUsd(event) || 0), 0) || undefined;
+      await recordActualAiUsage({
+        reservation: access,
+        route: '/api/lucky-wallpaper/generate',
+        provider: Array.from(new Set(workflow.aiUsage.map((event) => event.provider))).join('+'),
+        model: Array.from(new Set(workflow.aiUsage.map((event) => event.model))).join('+'),
+        inputTokens,
+        outputTokens,
+        costUsd,
+      });
+    }
 
     const aesthetics = NUMEROLOGY_AESTHETICS_MAP[plan.lifePathNumber] || NUMEROLOGY_AESTHETICS_MAP[1];
 
@@ -142,10 +145,11 @@ export async function POST(req: NextRequest) {
       sourceId: primaryImage.sourceId,
       attribution: primaryImage.attribution,
       plan: access.plan,
-      remaining: access.remaining,
-    });
+      remaining: committed.remaining,
+    }, { headers: apiCorsHeaders(req) });
 
   } catch (error: any) {
+    if (access) await releaseRequestAccess(access, 'wallpaper_generation_failed');
     const limited = requestLimitResponse(error);
     if (limited) return limited;
     if (error instanceof Error && error.name === 'ZodError') {
@@ -157,7 +161,7 @@ export async function POST(req: NextRequest) {
         success: false,
         error: error?.message || 'Failed to generate lucky wallpaper',
       },
-      { status: 500 }
+      { status: 500, headers: apiCorsHeaders(req) }
     );
   }
 }

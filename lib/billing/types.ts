@@ -1,20 +1,22 @@
-import type { BillingPlan } from '../usage/usage-meter.ts';
+import type { BillingPlan } from '../usage/plan-catalog.ts';
 
-export type BillingProvider = 'paypal' | 'payos';
+export type BillingProvider = 'paypal' | 'payos' | 'google_play';
 
 export type BillingSubscription = {
   plan?: BillingPlan | string | null;
   provider?: BillingProvider | null;
   provider_subscription_id?: string | null;
   status?: string | null;
+  current_period_start?: string | null;
   current_period_end?: string | null;
   cancel_at_period_end?: boolean | null;
   last_provider_event_at?: string | null;
 };
 
-export const PAYOS_PRO_PRICE_VND = 79_000;
-export const PAYPAL_PRO_PRICE_USD_CENTS = 399;
+export const PAYOS_PRO_PRICE_VND = 249_000;
+export const PAYPAL_PRO_PRICE_USD_CENTS = 999;
 export const PAYOS_ACCESS_DAYS = 30;
+export const GOOGLE_PLAY_PRODUCT_ID = 'numelyra_pro_monthly';
 
 export function effectiveBillingPlan(
   subscription: BillingSubscription | null | undefined,

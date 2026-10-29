@@ -23,6 +23,7 @@ export interface WallpaperWorkflowResult {
   keywordRound: 0 | 1 | 2;
   aiProvider?: string;
   aiModel?: string;
+  aiUsage: Array<{ provider: string; model: string; inputTokens?: number; outputTokens?: number }>;
 }
 
 export interface WallpaperWorkflowOptions {
@@ -70,6 +71,13 @@ export async function findWallpaperWithAiKeywords(
   const attemptedQueries: string[] = [];
   const failedProviders = new Set<WallpaperImageProvider>();
   let anySuccessfulStockResponse = false;
+  const keywordBatches: WallpaperKeywordBatch[] = [];
+  const aiUsage = () => keywordBatches.map((batch) => ({
+    provider: batch.aiProvider,
+    model: batch.aiModel,
+    inputTokens: batch.usage?.inputTokens,
+    outputTokens: batch.usage?.outputTokens,
+  }));
 
   const search = async (queries: string[]): Promise<ImageGenerationResult[]> => {
     if (queries.length === 0 || Date.now() >= deadlineAt) return [];
@@ -110,6 +118,7 @@ export async function findWallpaperWithAiKeywords(
           keywordRound: 0,
           aiProvider: 'Cloudflare Workers AI',
           aiModel: drawnImage.model,
+          aiUsage: aiUsage(),
         };
       }
     } catch (drawErr) {
@@ -122,7 +131,7 @@ export async function findWallpaperWithAiKeywords(
   if (!firstBatch) {
     const fallbackImages = await search(dependencies.fallbackQueries(options.input));
     if (fallbackImages.length > 0) {
-      return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0 };
+      return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0, aiUsage: aiUsage() };
     }
     const cfFallback = await tryCloudflareFallback();
     if (cfFallback) return cfFallback;
@@ -132,9 +141,10 @@ export async function findWallpaperWithAiKeywords(
     }
     throw new Error('Không tìm thấy ảnh phù hợp lúc này. Vui lòng thử lại với phong cách khác.');
   }
+  keywordBatches.push(firstBatch);
 
   const firstImages = await search(firstBatch.queries);
-  if (firstImages.length > 0) return resultFromAi(firstImages, firstBatch);
+  if (firstImages.length > 0) return resultFromAi(firstImages, firstBatch, aiUsage());
   if (!anySuccessfulStockResponse) {
     const cfFallback = await tryCloudflareFallback();
     if (cfFallback) return cfFallback;
@@ -149,14 +159,15 @@ export async function findWallpaperWithAiKeywords(
     deadlineAt
   );
   if (secondBatch) {
+    keywordBatches.push(secondBatch);
     const secondImages = await search(secondBatch.queries);
-    if (secondImages.length > 0) return resultFromAi(secondImages, secondBatch);
+    if (secondImages.length > 0) return resultFromAi(secondImages, secondBatch, aiUsage());
   }
 
   const fallback = unseenQueries(dependencies.fallbackQueries(options.input), attemptedQueries);
   const fallbackImages = await search(fallback);
   if (fallbackImages.length > 0) {
-    return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0 };
+    return { image: fallbackImages[0], images: fallbackImages, keywordSource: 'fallback', keywordRound: 0, aiUsage: aiUsage() };
   }
 
   const cfFallback = await tryCloudflareFallback();
@@ -170,7 +181,8 @@ export async function findWallpaperWithAiKeywords(
 
 function resultFromAi(
   images: ImageGenerationResult[],
-  batch: WallpaperKeywordBatch
+  batch: WallpaperKeywordBatch,
+  usage: WallpaperWorkflowResult['aiUsage'],
 ): WallpaperWorkflowResult {
   return {
     image: images[0],
@@ -179,5 +191,6 @@ function resultFromAi(
     keywordRound: batch.round,
     aiProvider: batch.aiProvider,
     aiModel: batch.aiModel,
+    aiUsage: usage,
   };
 }

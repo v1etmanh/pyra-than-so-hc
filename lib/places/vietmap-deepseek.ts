@@ -96,7 +96,18 @@ function deepSeekModel(): string {
   return process.env.DEEPSEEK_MODEL?.trim() || 'deepseek-flash';
 }
 
-async function deepSeekJson<T>(system: string, user: string, maxTokens: number): Promise<T> {
+type DeepSeekUsageAccumulator = {
+  inputTokens: number;
+  outputTokens: number;
+  retryCount: number;
+};
+
+async function deepSeekJson<T>(
+  system: string,
+  user: string,
+  maxTokens: number,
+  usage: DeepSeekUsageAccumulator,
+): Promise<T> {
   const apiKey = configuredDeepSeekKey();
   if (!apiKey) throw new Error('DeepSeek is not configured.');
 
@@ -129,6 +140,11 @@ async function deepSeekJson<T>(system: string, user: string, maxTokens: number):
         signal: controller.signal,
       });
       const payload: unknown = await response.json().catch(() => null);
+      if (attempt > 0) usage.retryCount += 1;
+      if (isRecord(payload) && isRecord(payload.usage)) {
+        usage.inputTokens += Number(payload.usage.prompt_tokens || 0);
+        usage.outputTokens += Number(payload.usage.completion_tokens || 0);
+      }
       if (!response.ok) {
         const message = isRecord(payload) && isRecord(payload.error)
           ? stringValue(payload.error.message).replace(/[\r\n]+/g, ' ').slice(0, 240)
@@ -205,7 +221,8 @@ async function createVietMapQueries(
   message: string,
   context: VietMapSearchContext,
   spiritualContext: SpiritualPlaceContext | undefined,
-  timeContext: string
+  timeContext: string,
+  usage: DeepSeekUsageAccumulator,
 ): Promise<string[]> {
   const broad = isOpenEndedPlaceRequest(message);
   const plan = await deepSeekJson<{ searchQuery?: unknown; searchQueries?: unknown }>(
@@ -225,7 +242,8 @@ async function createVietMapQueries(
       },
       spiritualContext: safeSpiritualContext(spiritualContext),
     }),
-    broad ? 180 : 100
+    broad ? 180 : 100,
+    usage,
   );
   const rawQueries = broad && Array.isArray(plan.searchQueries)
     ? plan.searchQueries
@@ -347,10 +365,11 @@ export interface VietMapSearchResult {
   placeReasons: Array<{ placeId: string; reason: string }>;
   summary: string;
   nextStep: string;
+  aiUsage: DeepSeekUsageAccumulator & { provider: 'DeepSeek'; model: string };
 }
 
 /** Builds the user-visible response from DeepSeek wording and verified POI names only. */
-export function formatPlaceReply(result: VietMapSearchResult): string {
+export function formatPlaceReply(result: Omit<VietMapSearchResult, 'aiUsage'>): string {
   const reasonsByPlaceId = new Map(result.placeReasons.map((item) => [item.placeId, item.reason]));
   const reasonLines = result.places.map((place) =>
     `• ${place.name}: ${reasonsByPlaceId.get(place.placeId) || 'Được DeepSeek xếp hạng từ các kết quả đã xác thực của VietMap.'}`
@@ -377,7 +396,8 @@ export async function findVietMapPlaces(input: {
   const context = normalizeContext(input.context);
   const spiritualContext = safeSpiritualContext(input.spiritualContext);
   const timeContext = formatCurrentTimeContext(input.timeContext ?? createCurrentTimeContext());
-  const searchQueries = await createVietMapQueries(input.message, context, spiritualContext, timeContext);
+  const usage: DeepSeekUsageAccumulator = { inputTokens: 0, outputTokens: 0, retryCount: 0 };
+  const searchQueries = await createVietMapQueries(input.message, context, spiritualContext, timeContext, usage);
   const searchQuery = searchQueries.join(' · ');
   const results = await Promise.allSettled(searchQueries.map((query) => searchVietMap(query, context)));
   const firstFailure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
@@ -396,7 +416,14 @@ export async function findVietMapPlaces(input: {
     }
   }
   if (candidates.length === 0) {
-    return { searchQuery, places: [], placeReasons: [], summary: '', nextStep: '' };
+    return {
+      searchQuery,
+      places: [],
+      placeReasons: [],
+      summary: '',
+      nextStep: '',
+      aiUsage: { provider: 'DeepSeek', model: deepSeekModel(), ...usage },
+    };
   }
 
   let ranking: {
@@ -422,7 +449,8 @@ export async function findVietMapPlaces(input: {
           categories: place.categories,
         })),
       }),
-      360
+      360,
+      usage,
     );
   } catch (error) {
     console.warn('[VietMap + DeepSeek] Ranking unavailable; returning verified VietMap candidates.', error instanceof Error ? error.message : 'unknown error');
@@ -473,5 +501,6 @@ export async function findVietMapPlaces(input: {
     placeReasons,
     summary: safeExplanation(ranking.summary, 360),
     nextStep: safeExplanation(ranking.nextStep, 220),
+    aiUsage: { provider: 'DeepSeek', model: deepSeekModel(), ...usage },
   };
 }

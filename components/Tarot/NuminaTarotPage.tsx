@@ -780,12 +780,12 @@ export function NuminaTarotPage() {
                   <div className="tarot-aside-pro-card">
                     <div className="aside-pro-header">
                       <span>✦ NUMELYRA PRO</span>
-                      <small>79K/30D</small>
+                      <small>249K/30D</small>
                     </div>
                     <p>
                       {isVietnamese
-                        ? '100 lượt vấn an AI chuyên sâu mỗi ngày, không giới hạn câu hỏi tiếp theo và mở khóa toàn bộ trải bài thần thánh.'
-                        : '100 deep AI readings daily, unlimited follow-ups, and all celestial spreads unlocked.'}
+                        ? '200 lượt luận giải AI mỗi kỳ, tối đa 10 câu tiếp theo trong mỗi phiên và mở khóa toàn bộ trải bài.'
+                        : '200 AI readings per billing period, up to 10 follow-ups per session, and all spreads unlocked.'}
                     </p>
                     <button
                       type="button"

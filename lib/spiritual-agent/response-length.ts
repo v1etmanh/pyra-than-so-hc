@@ -22,23 +22,23 @@ export const CHAT_RESPONSE_BUDGETS: Record<ChatResponseComplexity, ChatResponseB
   standard: {
     complexity: 'standard',
     maxTokens: 800,
-    maxWords: 240,
-    maxChars: 1950,
+    maxWords: 320,
+    maxChars: 2800,
     sectionLimits: {
-      conclusion: { maxWords: 70, maxChars: 500 },
-      reasoning: { maxWords: 140, maxChars: 1050 },
-      actions: { maxWords: 60, maxChars: 480 },
+      conclusion: { maxWords: 90, maxChars: 700 },
+      reasoning: { maxWords: 190, maxChars: 1500 },
+      actions: { maxWords: 80, maxChars: 650 },
     },
   },
   complex: {
     complexity: 'complex',
     maxTokens: 1200,
-    maxWords: 300,
-    maxChars: 2350,
+    maxWords: 420,
+    maxChars: 3800,
     sectionLimits: {
-      conclusion: { maxWords: 80, maxChars: 600 },
-      reasoning: { maxWords: 180, maxChars: 1320 },
-      actions: { maxWords: 70, maxChars: 520 },
+      conclusion: { maxWords: 110, maxChars: 850 },
+      reasoning: { maxWords: 260, maxChars: 2200 },
+      actions: { maxWords: 100, maxChars: 800 },
     },
   },
 };

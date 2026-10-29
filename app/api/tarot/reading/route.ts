@@ -1,9 +1,8 @@
 import { NextRequest } from 'next/server';
 import { ZodError } from 'zod';
-import { getRequestAccess } from '@/lib/billing/access';
+import { commitRequestAccess, getRequestAccess, releaseRequestAccess } from '@/lib/billing/access';
 import { readJsonBody, requestLimitResponse } from '@/lib/security/request';
 import { tarotReadingRequestSchema, type TarotReadingRequestPayload } from '@/lib/security/schemas';
-import { recordAiUsage } from '@/lib/usage/usage-meter';
 import { createStreamingResponse } from '@/lib/ai/response-generator';
 import { getTarotCard } from '@/lib/tarot/cards';
 import { drawCardsForSpread, drawSupplementaryCards } from '@/lib/tarot/draw';
@@ -22,6 +21,8 @@ import type {
   TarotSSEEvent,
   TarotSpread
 } from '@/lib/tarot/types';
+import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
+import { recordActualAiUsage } from '@/lib/usage/quota-service';
 
 export const maxDuration = 180;
 export const dynamic = 'force-dynamic';
@@ -66,11 +67,12 @@ function collectUsedCardIds(
 async function consumeNormalizedLlmStream(
   stream: ReadableStream<Uint8Array>,
   onContent?: (content: string) => void
-): Promise<string> {
+): Promise<{ text: string; provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } }> {
   const reader = stream.getReader();
   const decoder = new TextDecoder();
   let buffer = '';
   let fullText = '';
+  let telemetry: { provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } } = {};
   try {
     while (true) {
       const { done, value } = await reader.read();
@@ -83,7 +85,8 @@ async function consumeNormalizedLlmStream(
         const data = line.slice(6).trim();
         if (!data || data === '[DONE]') continue;
         try {
-          const event = JSON.parse(data) as { content?: unknown; done?: unknown };
+          const event = JSON.parse(data) as typeof telemetry & { content?: unknown; done?: boolean };
+          if (event.done) telemetry = event;
           if (typeof event.content === 'string') {
             fullText += event.content;
             onContent?.(event.content);
@@ -96,7 +99,7 @@ async function consumeNormalizedLlmStream(
   } finally {
     reader.releaseLock();
   }
-  return fullText;
+  return { text: fullText, ...telemetry };
 }
 
 function priorDialogue(reading: Extract<TarotReadingRequestPayload, { mode: 'follow-up' }>['reading']): string {
@@ -122,13 +125,15 @@ export async function POST(request: NextRequest): Promise<Response> {
     return jsonError('Unable to read tarot request', 400);
   }
 
-  const access = await getRequestAccess(request, 'text');
+  const access = await getRequestAccess(request, 'text', body.requestId);
   if (access instanceof Response) return access;
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       let closed = false;
+      let quotaSettled = false;
+      const telemetryEvents: Array<{ provider?: string; model?: string; usage?: { inputTokens?: number; outputTokens?: number } }> = [];
       const send = (event: TarotSSEEvent): boolean => {
         if (closed) return false;
         try {
@@ -146,14 +151,6 @@ export async function POST(request: NextRequest): Promise<Response> {
       };
 
       try {
-        recordAiUsage({
-          identity: access.identity,
-          plan: access.plan,
-          feature: 'text',
-          route: '/api/tarot/reading',
-          estimatedCostUsd: Number(process.env.NUMINA_ESTIMATED_TAROT_COST_USD || process.env.NUMINA_ESTIMATED_TEXT_COST_USD || 0)
-        });
-
         const systemPrompt = buildTarotSystemPrompt(body.language as TarotLocale);
         let spread: TarotSpread;
         let baseCards: DrawnTarotCard[];
@@ -204,7 +201,7 @@ export async function POST(request: NextRequest): Promise<Response> {
               message: body.language === 'vi' ? 'Đang xem có cần rút thêm lá…' : 'Considering whether more cards are needed…'
             });
             const previousInterpretation = priorDialogue(body.reading);
-            const decisionText = await consumeNormalizedLlmStream(
+            const decisionResult = await consumeNormalizedLlmStream(
               createStreamingResponse(
                 systemPrompt,
                 [{
@@ -220,7 +217,8 @@ export async function POST(request: NextRequest): Promise<Response> {
                 { maxTokens: 300, temperature: 0, reasoningEffort: 'low' }
               )
             );
-            const decision = parseFollowUpDecision(decisionText);
+            telemetryEvents.push(decisionResult);
+            const decision = parseFollowUpDecision(decisionResult.text);
             if (!send({ type: 'follow_up_decision', ...decision })) return;
 
             const usedIds = collectUsedCardIds(baseCards, body.reading.priorFollowUps);
@@ -264,16 +262,39 @@ export async function POST(request: NextRequest): Promise<Response> {
             reasoningEffort: 'medium'
           }
         );
-        await consumeNormalizedLlmStream(llmStream, (content) => {
+        const result = await consumeNormalizedLlmStream(llmStream, (content) => {
           send({ type: 'content', content });
         });
-        send({ type: 'done' });
+        telemetryEvents.push(result);
+        if (result.text.trim() && send({ type: 'done' })) {
+          await commitRequestAccess(access, { route: '/api/tarot/reading', mode: body.mode });
+          const inputTokens = telemetryEvents.reduce((total, event) => total + (event.usage?.inputTokens || 0), 0) || undefined;
+          const outputTokens = telemetryEvents.reduce((total, event) => total + (event.usage?.outputTokens || 0), 0) || undefined;
+          const costUsd = telemetryEvents.reduce((total, event) => total + (calculateAiCostUsd({
+            provider: event.provider,
+            model: event.model,
+            inputTokens: event.usage?.inputTokens,
+            outputTokens: event.usage?.outputTokens,
+          }) || 0), 0) || undefined;
+          await recordActualAiUsage({
+            reservation: access,
+            route: '/api/tarot/reading',
+            provider: Array.from(new Set(telemetryEvents.map((event) => event.provider).filter(Boolean))).join('+') || undefined,
+            model: Array.from(new Set(telemetryEvents.map((event) => event.model).filter(Boolean))).join('+') || undefined,
+            inputTokens,
+            outputTokens,
+            costUsd,
+          });
+          quotaSettled = true;
+        }
         close();
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Tarot reading failed';
         console.error('[Tarot API]', error);
         send({ type: 'error', code: 'TAROT_READING_FAILED', message });
         close();
+      } finally {
+        if (!quotaSettled) await releaseRequestAccess(access, 'tarot_stream_incomplete');
       }
     }
   });

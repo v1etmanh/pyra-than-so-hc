@@ -4,7 +4,8 @@ import React, { createContext, useContext, useEffect, useState, useCallback, use
 import { useAuth } from '@/hooks/useAuth';
 import type { BillingSubscription, BillingProvider as ProviderType } from '@/lib/billing/types';
 import { effectiveBillingPlan, hasActiveEntitlement } from '@/lib/billing/types';
-import { DAILY_LIMITS } from '@/lib/usage/usage-meter';
+import { PLAN_CATALOG, type QuotaFeature } from '@/lib/usage/plan-catalog';
+import type { QuotaSnapshot } from '@/lib/usage/quota-service';
 
 export type UpgradeModalFeature = 'tarot' | 'wallpaper' | 'indicators' | 'general';
 
@@ -19,7 +20,10 @@ interface BillingContextType {
   isPro: boolean;
   subscription: BillingSubscription | null;
   isLoading: boolean;
-  dailyLimits: { text: number; wallpaper: number };
+  monthlyLimits: Record<QuotaFeature, number>;
+  quota: QuotaSnapshot | null;
+  periodStart: string | null;
+  periodEnd: string | null;
   isUpgradeModalOpen: boolean;
   modalContext: UpgradeModalContext | null;
   openUpgradeModal: (context?: UpgradeModalContext) => void;
@@ -35,10 +39,14 @@ export function BillingProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState<boolean>(false);
   const [modalContext, setModalContext] = useState<UpgradeModalContext | null>(null);
+  const [quota, setQuota] = useState<QuotaSnapshot | null>(null);
+  const [periodStart, setPeriodStart] = useState<string | null>(null);
+  const [periodEnd, setPeriodEnd] = useState<string | null>(null);
 
   const fetchSubscription = useCallback(async () => {
     if (!user) {
       setSubscription(null);
+      setQuota(null);
       setIsLoading(false);
       return;
     }
@@ -47,6 +55,9 @@ export function BillingProvider({ children }: { children: React.ReactNode }) {
       if (res.ok) {
         const data = await res.json();
         setSubscription(data.subscription || null);
+        setQuota(data.quota || null);
+        setPeriodStart(data.periodStart || null);
+        setPeriodEnd(data.periodEnd || null);
       }
     } catch (err) {
       console.warn('[useBilling] Failed to load subscription:', err);
@@ -61,7 +72,7 @@ export function BillingProvider({ children }: { children: React.ReactNode }) {
 
   const plan = useMemo(() => effectiveBillingPlan(subscription), [subscription]);
   const isPro = useMemo(() => hasActiveEntitlement(subscription), [subscription]);
-  const dailyLimits = useMemo(() => DAILY_LIMITS[plan], [plan]);
+  const monthlyLimits = useMemo(() => PLAN_CATALOG[plan], [plan]);
 
   const openUpgradeModal = useCallback((context: UpgradeModalContext = { feature: 'general' }) => {
     setModalContext(context);
@@ -79,7 +90,10 @@ export function BillingProvider({ children }: { children: React.ReactNode }) {
       isPro,
       subscription,
       isLoading,
-      dailyLimits,
+      monthlyLimits,
+      quota,
+      periodStart,
+      periodEnd,
       isUpgradeModalOpen,
       modalContext,
       openUpgradeModal,
@@ -91,7 +105,10 @@ export function BillingProvider({ children }: { children: React.ReactNode }) {
       isPro,
       subscription,
       isLoading,
-      dailyLimits,
+      monthlyLimits,
+      quota,
+      periodStart,
+      periodEnd,
       isUpgradeModalOpen,
       modalContext,
       openUpgradeModal,
