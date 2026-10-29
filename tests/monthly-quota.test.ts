@@ -5,9 +5,9 @@ import { calculateAiCostUsd } from '../lib/usage/ai-cost.ts';
 import { PLAN_CATALOG } from '../lib/usage/plan-catalog.ts';
 import { getFreeQuotaPeriod, getQuotaPeriod } from '../lib/usage/quota-period.ts';
 
-test('published Free and Pro monthly limits remain exact', () => {
-  assert.deepEqual(PLAN_CATALOG.free, { ai_response: 10, daily_ca_dao: 7, daily_insight_back: 10, wallpaper: 2 });
-  assert.deepEqual(PLAN_CATALOG.pro, { ai_response: 200, daily_ca_dao: 31, daily_insight_back: 31, wallpaper: 30 });
+test('published Free and Pro monthly limits exclude profile-limited Daily Fortune', () => {
+  assert.deepEqual(PLAN_CATALOG.free, { ai_response: 10, daily_insight_back: 10, wallpaper: 2 });
+  assert.deepEqual(PLAN_CATALOG.pro, { ai_response: 200, daily_insight_back: 31, wallpaper: 30 });
 });
 
 test('Free quota resets at the start of the Vietnam calendar month', () => {

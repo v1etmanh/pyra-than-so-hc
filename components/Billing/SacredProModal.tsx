@@ -97,8 +97,8 @@ export function SacredProModal() {
       kicker: isVietnamese ? 'NUMELYRA PRO / ĐỒNG HÀNH' : 'NUMELYRA PRO / SANCTUARY',
       title: modalContext?.title || (isVietnamese ? 'Một Không Gian Sâu Hơn Cho Bạn' : 'A Deeper Space For Your Journey'),
       desc: modalContext?.description || (isVietnamese
-        ? 'Đồng hành cùng NUMELYRA với 200 lượt AI, 31 lượt ca dao, 31 mặt sau Daily Insight và 30 hình nền mỗi kỳ.'
-        : 'Experience NUMELYRA with 200 AI responses, 31 Ca Dao unlocks, 31 Daily Insight backs, and 30 wallpapers per period.'),
+        ? 'Đồng hành cùng NUMELYRA với 200 lượt AI, Daily Fortune cho tối đa 3 hồ sơ mỗi ngày, 31 mặt sau Daily Insight và 30 hình nền mỗi kỳ.'
+        : 'Experience NUMELYRA with 200 AI responses, Daily Fortune for up to 3 profiles each day, 31 Daily Insight backs, and 30 wallpapers per period.'),
     },
   }[feature];
 

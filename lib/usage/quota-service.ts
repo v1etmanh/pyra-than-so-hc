@@ -350,3 +350,42 @@ export async function recordActualAiUsage(input: {
     );
   }
 }
+
+/** Records provider cost for features governed outside the monthly quota ledger. */
+export async function recordUnmeteredAiUsage(input: {
+  userId: string;
+  feature: string;
+  route: string;
+  provider?: string;
+  model?: string;
+  inputTokens?: number;
+  outputTokens?: number;
+  costUsd?: number;
+  retryCount?: number;
+}) {
+  try {
+    if (!isDurableRequired()) {
+      console.info('[NUMELYRA Usage]', JSON.stringify(input));
+      return;
+    }
+    const admin = createAdminClient();
+    const { error } = await admin.from('numina_ai_usage_events').insert({
+      user_id: input.userId,
+      reservation_id: null,
+      feature: input.feature,
+      route: input.route,
+      provider: input.provider || null,
+      model: input.model || null,
+      input_tokens: input.inputTokens ?? null,
+      output_tokens: input.outputTokens ?? null,
+      cost_usd: input.costUsd ?? null,
+      retry_count: input.retryCount || 0,
+    });
+    if (error) console.warn('[Quota] Usage telemetry failed:', error.message);
+  } catch (error) {
+    console.warn(
+      '[Quota] Usage telemetry failed:',
+      error instanceof Error ? error.message : 'unknown error',
+    );
+  }
+}

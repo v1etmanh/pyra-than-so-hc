@@ -38,6 +38,9 @@ export async function POST(request: NextRequest) {
   if (await readDailyContent(admin, contentKey)) return NextResponse.json({ unlocked: true, cached: true }, { headers });
   const claim = await claimDailyContent(admin, contentKey, body.locale === 'en' ? 'en' : 'vi');
   if (claim.state === 'cached') return NextResponse.json({ unlocked: true, cached: true }, { headers });
+  if (claim.state === 'limit_reached') {
+    return NextResponse.json({ error: 'Daily profile limit reached.', code: 'DAILY_PROFILE_LIMIT_REACHED' }, { status: 429, headers });
+  }
   if (claim.state === 'pending') {
     if (await waitForDailyContent(admin, contentKey)) return NextResponse.json({ unlocked: true, cached: true }, { headers });
     return NextResponse.json({ error: 'Daily Insight is being unlocked.', code: 'CONTENT_PENDING' }, { status: 409, headers });

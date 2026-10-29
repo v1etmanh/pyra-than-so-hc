@@ -8,21 +8,21 @@ import {
 } from '@/lib/astro/fortune-service';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { getRequestAuth } from '@/lib/supabase/request-auth';
-import { getRequestAccess, releaseRequestAccess, type RequestAccess } from '@/lib/billing/access';
 import { apiCorsHeaders } from '@/lib/security/cors';
 import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
-import { recordActualAiUsage } from '@/lib/usage/quota-service';
+import { recordUnmeteredAiUsage } from '@/lib/usage/quota-service';
 import {
   claimDailyContent,
-  commitDailyContent,
+  completeDailyContent,
   readDailyContent,
   releaseDailyContentClaim,
-  waitForDailyContent,
+  waitForLocalizedDailyContent,
 } from '@/lib/usage/daily-content';
 
 export const maxDuration = 45;
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
+const DAILY_FORTUNE_PROFILE_LIMIT = 3;
 
 export function OPTIONS(request: NextRequest) {
   return new NextResponse(null, { status: 204, headers: apiCorsHeaders(request) });
@@ -43,7 +43,6 @@ function jsonError(request: Request, message: string, status = 400, code = 'INVA
 }
 
 export async function POST(req: NextRequest) {
-  let access: RequestAccess | null = null;
   let contentClaim: Awaited<ReturnType<typeof claimDailyContent>> | null = null;
   let admin: ReturnType<typeof createAdminClient> | null = null;
   try {
@@ -69,7 +68,7 @@ export async function POST(req: NextRequest) {
     if (!user) return jsonError(req, 'Bạn cần đăng nhập để mở ca dao hôm nay.', 401, 'AUTH_REQUIRED');
     admin = createAdminClient();
     const contentKey = { userId: user.id, profileKey, localDate, contentType: 'daily_ca_dao' as const };
-    const cached = await readDailyContent(admin, contentKey);
+    const cached = await readDailyContent(admin, contentKey, locale);
     if (cached) return jsonResponse(req, { ...cached, cached: true });
 
     let input: AstroFortuneInput;
@@ -82,21 +81,36 @@ export async function POST(req: NextRequest) {
       return jsonError(req, 'Request validation failed', 422);
     }
 
-    contentClaim = await claimDailyContent(admin, contentKey, locale);
+    contentClaim = await claimDailyContent(admin, contentKey, locale, DAILY_FORTUNE_PROFILE_LIMIT);
     if (contentClaim.state === 'cached') return jsonResponse(req, { ...contentClaim.content, cached: true });
+    if (contentClaim.state === 'limit_reached') {
+      return jsonResponse(req, {
+        error: locale === 'en'
+          ? 'You have already created Daily Fortune for 3 profiles today.'
+          : 'Bạn đã tạo Daily Fortune cho đủ 3 hồ sơ hôm nay.',
+        code: 'DAILY_PROFILE_LIMIT_REACHED',
+        limit: contentClaim.limit,
+        used: contentClaim.used,
+        remaining: 0,
+        localDate,
+      }, 429);
+    }
     if (contentClaim.state === 'pending') {
-      const completed = await waitForDailyContent(admin, contentKey);
+      const completed = await waitForLocalizedDailyContent(admin, contentKey, locale);
       if (completed) return jsonResponse(req, { ...completed, cached: true });
       return jsonError(req, 'Ca dao hôm nay đang được tạo. Vui lòng thử lại sau.', 409, 'CONTENT_PENDING');
     }
 
-    const reservation = await getRequestAccess(req, 'daily_ca_dao', requestId);
-    if (reservation instanceof Response) {
-      await releaseDailyContentClaim(admin, contentClaim);
-      for (const [key, value] of Object.entries(apiCorsHeaders(req))) reservation.headers.set(key, value);
-      return reservation;
+    // A localization is another rendering of the same profile/day record. It
+    // must reuse the original ca-dao anchor instead of accepting the newly
+    // selected client sample.
+    if (contentClaim.claimKind === 'localization' && contentClaim.anchor?.caDaoSample) {
+      input = {
+        ...input,
+        caDaoSample: contentClaim.anchor.caDaoSample,
+        caDaoCategory: contentClaim.anchor.caDaoCategory || undefined,
+      };
     }
-    access = reservation;
 
     const generation = await generateAstroFortuneDetailed(input);
     const fortune = generation.fortune;
@@ -108,9 +122,10 @@ export async function POST(req: NextRequest) {
         caDaoCategory: input.caDaoCategory || null,
       },
     };
-    await commitDailyContent(admin, contentClaim, access, payload, { route: '/api/astro/fortune', profileKey, localDate });
-    await recordActualAiUsage({
-      reservation: access,
+    await completeDailyContent(admin, contentClaim, payload);
+    await recordUnmeteredAiUsage({
+      userId: user.id,
+      feature: 'daily_ca_dao',
       route: '/api/astro/fortune',
       provider: generation.provider,
       model: generation.model,
@@ -123,10 +138,8 @@ export async function POST(req: NextRequest) {
         outputTokens: generation.usage?.outputTokens,
       }),
     });
-    access = null;
-    return jsonResponse(req, payload);
+    return jsonResponse(req, { ...payload, cached: false });
   } catch (error) {
-    if (access) await releaseRequestAccess(access, 'astro_generation_failed');
     if (admin && contentClaim?.state === 'claimed') await releaseDailyContentClaim(admin, contentClaim);
     console.error('[Astro Fortune API Error]:', error);
     const message = error instanceof Error ? error.message : 'Internal Server Error';

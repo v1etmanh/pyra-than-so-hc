@@ -10,8 +10,20 @@ export type DailyContentKey = {
   contentType: DailyContentType;
 };
 
-type ContentRow = { id: string; content: Record<string, unknown>; updated_at: string };
-type Claim = { state: 'claimed'; rowId: string; claimId: string } | { state: 'cached'; content: Record<string, unknown> } | { state: 'pending' };
+type ContentRow = { id: string; locale: string; content: Record<string, unknown>; updated_at: string };
+type ClaimedContent = {
+  state: 'claimed';
+  rowId: string;
+  claimId: string;
+  claimKind?: 'base' | 'localization';
+  userId?: string;
+  locale?: 'vi' | 'en';
+  anchor?: { caDaoSample?: string; caDaoCategory?: string | null } | null;
+};
+type Claim = ClaimedContent
+  | { state: 'cached'; content: Record<string, unknown> }
+  | { state: 'pending' }
+  | { state: 'limit_reached'; used: number; limit: number };
 
 function isPlaceholder(content: Record<string, unknown> | null | undefined): boolean {
   return content?._state === 'generating';
@@ -24,7 +36,7 @@ function publicContent(content: Record<string, unknown>): Record<string, unknown
 
 async function readRow(admin: SupabaseClient, key: DailyContentKey): Promise<ContentRow | null> {
   const { data, error } = await admin.from('numina_daily_content')
-    .select('id,content,updated_at')
+    .select('id,locale,content,updated_at')
     .eq('user_id', key.userId)
     .eq('profile_key', key.profileKey)
     .eq('local_date', key.localDate)
@@ -34,9 +46,25 @@ async function readRow(admin: SupabaseClient, key: DailyContentKey): Promise<Con
   return data as ContentRow | null;
 }
 
-export async function readDailyContent(admin: SupabaseClient, key: DailyContentKey) {
+export async function readDailyContent(
+  admin: SupabaseClient,
+  key: DailyContentKey,
+  locale?: 'vi' | 'en',
+) {
   const row = await readRow(admin, key);
-  return row && !isPlaceholder(row.content) ? publicContent(row.content) : null;
+  if (!row || isPlaceholder(row.content)) return null;
+  if (locale) {
+    const localizations = row.content.localizations;
+    if (localizations && typeof localizations === 'object') {
+      const localized = (localizations as Record<string, unknown>)[locale];
+      if (localized && typeof localized === 'object') {
+        return publicContent(localized as Record<string, unknown>);
+      }
+      return null;
+    }
+    if (row.locale !== locale) return null;
+  }
+  return publicContent(row.content);
 }
 
 /** Claims a unique user/profile/day/type slot before quota or provider work. */
@@ -44,8 +72,45 @@ export async function claimDailyContent(
   admin: SupabaseClient,
   key: DailyContentKey,
   locale: 'vi' | 'en',
+  dailyProfileLimit?: number,
 ): Promise<Claim> {
   const claimId = randomUUID();
+
+  if (key.contentType === 'daily_ca_dao' && dailyProfileLimit) {
+    const { data, error } = await admin.rpc('claim_numina_daily_content', {
+      p_user_id: key.userId,
+      p_profile_key: key.profileKey,
+      p_local_date: key.localDate,
+      p_content_type: key.contentType,
+      p_locale: locale,
+      p_claim_id: claimId,
+      p_daily_profile_limit: dailyProfileLimit,
+    });
+    if (error || !data) throw error || new Error('Daily content claim failed');
+    const result = data as Record<string, unknown>;
+    if (result.state === 'cached' && result.content && typeof result.content === 'object') {
+      return { state: 'cached', content: publicContent(result.content as Record<string, unknown>) };
+    }
+    if (result.state === 'limit_reached') {
+      return { state: 'limit_reached', used: Number(result.used || dailyProfileLimit), limit: Number(result.limit || dailyProfileLimit) };
+    }
+    if (result.state === 'claimed') {
+      const anchor = result.anchor && typeof result.anchor === 'object'
+        ? result.anchor as ClaimedContent['anchor']
+        : null;
+      return {
+        state: 'claimed',
+        rowId: String(result.row_id),
+        claimId: String(result.claim_id || claimId),
+        claimKind: result.claim_kind === 'localization' ? 'localization' : 'base',
+        userId: key.userId,
+        locale,
+        anchor,
+      };
+    }
+    return { state: 'pending' };
+  }
+
   const now = new Date();
   const placeholder = { _state: 'generating', _claimId: claimId };
   const { data, error } = await admin.from('numina_daily_content').insert({
@@ -88,11 +153,37 @@ export async function waitForDailyContent(admin: SupabaseClient, key: DailyConte
   return null;
 }
 
+export async function waitForLocalizedDailyContent(
+  admin: SupabaseClient,
+  key: DailyContentKey,
+  locale: 'vi' | 'en',
+) {
+  for (let attempt = 0; attempt < 100; attempt += 1) {
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    const content = await readDailyContent(admin, key, locale);
+    if (content) return content;
+  }
+  return null;
+}
+
 export async function completeDailyContent(
   admin: SupabaseClient,
-  claim: Extract<Claim, { state: 'claimed' }>,
+  claim: ClaimedContent,
   content: Record<string, unknown>,
 ): Promise<void> {
+  if (claim.claimKind && claim.userId && claim.locale) {
+    const { data, error } = await admin.rpc('complete_numina_daily_content', {
+      p_user_id: claim.userId,
+      p_content_row_id: claim.rowId,
+      p_claim_id: claim.claimId,
+      p_claim_kind: claim.claimKind,
+      p_locale: claim.locale,
+      p_content: content,
+    });
+    if (error) throw error;
+    if (!data) throw new Error('Daily content claim was lost before completion');
+    return;
+  }
   const { data, error } = await admin.from('numina_daily_content')
     .update({ content: { ...content, _claimId: claim.claimId }, updated_at: new Date().toISOString() })
     .eq('id', claim.rowId)
@@ -106,7 +197,7 @@ export async function completeDailyContent(
 /** Saves the claimed content and commits its quota reservation in one DB transaction. */
 export async function commitDailyContent(
   admin: SupabaseClient,
-  claim: Extract<Claim, { state: 'claimed' }>,
+  claim: ClaimedContent,
   reservation: QuotaReservation,
   content: Record<string, unknown>,
   metadata: Record<string, unknown>,
@@ -133,8 +224,18 @@ export async function commitDailyContent(
 
 export async function releaseDailyContentClaim(
   admin: SupabaseClient,
-  claim: Extract<Claim, { state: 'claimed' }>,
+  claim: ClaimedContent,
 ): Promise<void> {
+  if (claim.claimKind && claim.userId && claim.locale) {
+    await admin.rpc('release_numina_daily_content_claim', {
+      p_user_id: claim.userId,
+      p_content_row_id: claim.rowId,
+      p_claim_id: claim.claimId,
+      p_claim_kind: claim.claimKind,
+      p_locale: claim.locale,
+    });
+    return;
+  }
   await admin.from('numina_daily_content')
     .delete()
     .eq('id', claim.rowId)

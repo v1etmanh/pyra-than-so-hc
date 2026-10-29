@@ -1,10 +1,10 @@
 # NUMELYRA Pro release runbook
 
-This release removes coins and daily allowances. Paid features require an authenticated user and use the versioned monthly quota catalog in `lib/usage/plan-catalog.ts`.
+Paid features require an authenticated user and use the versioned monthly quota catalog in `lib/usage/plan-catalog.ts`. Daily Fortune is the exception: every authenticated account may create it for at most three distinct profiles per local day, independent of plan; reopening a profile or adding another locale reuses the same record and does not consume another slot.
 
 ## 1. Database
 
-Apply `supabase/migrations/20261025000100_monthly_quota_and_google_play.sql` before deploying application code. Confirm that authenticated users can only select their own quota/content rows and that only `service_role` can execute reservation, commit, release, and Google Play event RPCs.
+Apply `supabase/migrations/20261025000100_monthly_quota_and_google_play.sql`, then `supabase/migrations/20261029000100_daily_fortune_profile_limit.sql`, before deploying application code. Confirm that authenticated users can only select their own quota/content rows and that only `service_role` can execute quota, Daily Fortune claim/completion, and Google Play event RPCs.
 
 Set `NUMINA_REQUIRE_DURABLE_LIMITS=true` in every production environment. A production instance must fail closed if the quota database is unavailable.
 
@@ -37,7 +37,7 @@ Do not widen rollout while any alert remains active. Validate DeepSeek Flash qua
 
 ## 5. Rollout order
 
-1. Apply migration and verify actual token telemetry.
+1. Apply both migrations in order and verify actual token telemetry plus the three-profile Daily Fortune limit.
 2. Enable durable quota and cached/lazy daily content.
 3. Configure Play Billing, backend verification, acknowledgement, and RTDN.
 4. Verify monthly prices and quota copy on web and Android.

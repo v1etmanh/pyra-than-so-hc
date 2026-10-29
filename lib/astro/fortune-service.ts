@@ -93,6 +93,7 @@ export const astrologyRuleContextSchema = z.object({
 export type AstrologyRuleContext = z.infer<typeof astrologyRuleContextSchema>;
 
 export interface AstroFortuneInput {
+  locale?: 'vi' | 'en';
   caDaoSample: string;
   caDaoCategory?: string;
   astroSummary?: string;
@@ -142,6 +143,7 @@ export const astroFortuneResponseSchema = z.object({
 });
 
 export const astroFortuneRequestSchema = z.object({
+  locale: z.enum(['vi', 'en']).default('vi'),
   caDaoSample: z.string().min(5, 'Ca dao sample must be at least 5 characters'),
   caDaoCategory: z.string().optional(),
   astroSummary: z.string().optional(),
@@ -201,7 +203,12 @@ function getGeminiModel(): string {
 }
 
 export function buildAstroFortunePrompt(input: AstroFortuneInput): { systemPrompt: string; userPrompt: string } {
+  const languageInstruction = input.locale === 'en'
+    ? 'OUTPUT LANGUAGE: Write title, verse, mirror, and advice in natural English. Preserve the meaning and folk rhythm inspired by the fixed Vietnamese anchor; do not replace or quote a different folk verse.'
+    : 'NGÔN NGỮ ĐẦU RA: Viết title, verse, mirror và advice bằng tiếng Việt tự nhiên.';
   const systemPrompt = `Bạn là một "Thầy bói Chiêm tinh Dân gian Việt Nam" — am hiểu sâu sắc chiêm tinh học phương Tây (các góc chiếu, hành tinh, độ căng thẳng/hòa hợp giữa Transit và Natal) nhưng lại truyền tải thông điệp bằng linh hồn ca dao, tục ngữ, đồng dao thôn quê Việt Nam mộc mạc, hóm hỉnh và sắc sảo.
+
+${languageInstruction}
 
 NHIỆM VỤ:
 Sáng tác "Lá Thăm Chiêm Tinh Dân Gian" gồm đúng 3 tầng nội dung theo cấu trúc sau:

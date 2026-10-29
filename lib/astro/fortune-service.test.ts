@@ -180,3 +180,14 @@ test('prompt includes ASC, MC and activated houses only for complete birth data'
   assert.match(userPrompt, /Nhà 10 – Sự nghiệp và vị thế \(100%\)/);
   assert.match(userPrompt, /Mars vuông ASC, orb 1\.2°/);
 });
+
+test('English localization keeps the fixed Vietnamese anchor but requests English output', () => {
+  const { systemPrompt, userPrompt } = buildAstroFortunePrompt({
+    ...baseInput,
+    locale: 'en',
+  });
+
+  assert.match(systemPrompt, /OUTPUT LANGUAGE: Write title, verse, mirror, and advice in natural English/);
+  assert.match(systemPrompt, /do not replace or quote a different folk verse/);
+  assert.match(userPrompt, /Có công mài sắt, có ngày nên kim/);
+});
