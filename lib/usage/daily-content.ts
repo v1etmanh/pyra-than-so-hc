@@ -10,6 +10,13 @@ export type DailyContentKey = {
   contentType: DailyContentType;
 };
 
+export type DailyProfileQuotaSnapshot = {
+  limit: number;
+  used: number;
+  remaining: number;
+  localDate: string;
+};
+
 type ContentRow = { id: string; locale: string; content: Record<string, unknown>; updated_at: string };
 type ClaimedContent = {
   state: 'claimed';
@@ -32,6 +39,35 @@ function isPlaceholder(content: Record<string, unknown> | null | undefined): boo
 function publicContent(content: Record<string, unknown>): Record<string, unknown> {
   const { _claimId: _privateClaimId, _state: _privateState, ...safe } = content;
   return safe;
+}
+
+/** Reads the same allocated profile rows used by claimDailyContent's atomic cap. */
+export async function getDailyProfileQuotaSnapshot(
+  admin: SupabaseClient,
+  input: {
+    userId: string;
+    localDate: string;
+    contentType: DailyContentType;
+    limit: number;
+  },
+): Promise<DailyProfileQuotaSnapshot> {
+  if (!Number.isInteger(input.limit) || input.limit < 1) {
+    throw new Error('Invalid daily profile limit');
+  }
+  const { count, error } = await admin
+    .from('numina_daily_content')
+    .select('profile_key', { count: 'exact', head: true })
+    .eq('user_id', input.userId)
+    .eq('local_date', input.localDate)
+    .eq('content_type', input.contentType);
+  if (error) throw error;
+  const used = Math.max(0, Number(count || 0));
+  return {
+    limit: input.limit,
+    used,
+    remaining: Math.max(0, input.limit - used),
+    localDate: input.localDate,
+  };
 }
 
 async function readRow(admin: SupabaseClient, key: DailyContentKey): Promise<ContentRow | null> {

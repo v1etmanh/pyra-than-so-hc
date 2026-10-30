@@ -14,6 +14,7 @@ import { recordUnmeteredAiUsage } from '@/lib/usage/quota-service';
 import {
   claimDailyContent,
   completeDailyContent,
+  getDailyProfileQuotaSnapshot,
   readDailyContent,
   releaseDailyContentClaim,
   waitForLocalizedDailyContent,
@@ -28,6 +29,15 @@ export function OPTIONS(request: NextRequest) {
   return new NextResponse(null, { status: 204, headers: apiCorsHeaders(request) });
 }
 
+function readFortuneQuota(admin: ReturnType<typeof createAdminClient>, userId: string, localDate: string) {
+  return getDailyProfileQuotaSnapshot(admin, {
+    userId,
+    localDate,
+    contentType: 'daily_ca_dao',
+    limit: DAILY_FORTUNE_PROFILE_LIMIT,
+  });
+}
+
 function jsonResponse(request: Request, data: unknown, status = 200) {
   return NextResponse.json(data, {
     status,
@@ -40,6 +50,22 @@ function jsonResponse(request: Request, data: unknown, status = 200) {
 
 function jsonError(request: Request, message: string, status = 400, code = 'INVALID_REQUEST') {
   return jsonResponse(request, { error: message, code }, status);
+}
+
+export async function GET(req: NextRequest) {
+  try {
+    const localDate = req.nextUrl.searchParams.get('localDate')?.trim() || '';
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(localDate)) {
+      return jsonError(req, 'localDate is required.', 422);
+    }
+    const { user } = await getRequestAuth(req);
+    if (!user) return jsonError(req, 'Authentication is required.', 401, 'AUTH_REQUIRED');
+    const quota = await readFortuneQuota(createAdminClient(), user.id, localDate);
+    return jsonResponse(req, { quota });
+  } catch (error) {
+    console.error('[Astro Fortune Quota API Error]:', error);
+    return jsonError(req, 'Could not load Daily Fortune quota.', 500, 'QUOTA_UNAVAILABLE');
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -69,7 +95,10 @@ export async function POST(req: NextRequest) {
     admin = createAdminClient();
     const contentKey = { userId: user.id, profileKey, localDate, contentType: 'daily_ca_dao' as const };
     const cached = await readDailyContent(admin, contentKey, locale);
-    if (cached) return jsonResponse(req, { ...cached, cached: true });
+    if (cached) {
+      const quota = await readFortuneQuota(admin, user.id, localDate);
+      return jsonResponse(req, { ...cached, cached: true, quota });
+    }
 
     let input: AstroFortuneInput;
     try {
@@ -82,8 +111,17 @@ export async function POST(req: NextRequest) {
     }
 
     contentClaim = await claimDailyContent(admin, contentKey, locale, DAILY_FORTUNE_PROFILE_LIMIT);
-    if (contentClaim.state === 'cached') return jsonResponse(req, { ...contentClaim.content, cached: true });
+    if (contentClaim.state === 'cached') {
+      const quota = await readFortuneQuota(admin, user.id, localDate);
+      return jsonResponse(req, { ...contentClaim.content, cached: true, quota });
+    }
     if (contentClaim.state === 'limit_reached') {
+      const quota = {
+        limit: contentClaim.limit,
+        used: contentClaim.used,
+        remaining: 0,
+        localDate,
+      };
       return jsonResponse(req, {
         error: locale === 'en'
           ? 'You have already created Daily Fortune for 3 profiles today.'
@@ -93,11 +131,15 @@ export async function POST(req: NextRequest) {
         used: contentClaim.used,
         remaining: 0,
         localDate,
+        quota,
       }, 429);
     }
     if (contentClaim.state === 'pending') {
       const completed = await waitForLocalizedDailyContent(admin, contentKey, locale);
-      if (completed) return jsonResponse(req, { ...completed, cached: true });
+      if (completed) {
+        const quota = await readFortuneQuota(admin, user.id, localDate);
+        return jsonResponse(req, { ...completed, cached: true, quota });
+      }
       return jsonError(req, 'Ca dao hôm nay đang được tạo. Vui lòng thử lại sau.', 409, 'CONTENT_PENDING');
     }
 
@@ -138,7 +180,8 @@ export async function POST(req: NextRequest) {
         outputTokens: generation.usage?.outputTokens,
       }),
     });
-    return jsonResponse(req, { ...payload, cached: false });
+    const quota = await readFortuneQuota(admin, user.id, localDate);
+    return jsonResponse(req, { ...payload, cached: false, quota });
   } catch (error) {
     if (admin && contentClaim?.state === 'claimed') await releaseDailyContentClaim(admin, contentClaim);
     console.error('[Astro Fortune API Error]:', error);
