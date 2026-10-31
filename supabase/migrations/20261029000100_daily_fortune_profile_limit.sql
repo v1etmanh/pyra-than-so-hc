@@ -1,6 +1,6 @@
--- Daily Fortune is limited by distinct profile/day, not by a monthly verse
--- bucket.  The claim RPC serializes all new profiles for one account/day so
--- two devices cannot both pass the "three profiles" check.
+-- Serializes Daily Fortune profile/day claims and localized variants. The
+-- optional daily cap remains available for older callers; current application
+-- code passes null and enforces the 10/90 period limit through the quota ledger.
 
 create or replace function public.claim_numina_daily_content(
   p_user_id uuid,

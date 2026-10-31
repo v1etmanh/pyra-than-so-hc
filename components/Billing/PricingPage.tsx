@@ -48,11 +48,11 @@ export function PricingPage({ locale }: { locale: string }) {
         <article className="pricing-card">
           <p className="batch-kicker">FREE</p><h2>{vi ? 'Khởi đầu' : 'Beginning'}</h2>
           <strong>{vi ? '0đ' : '$0'} <small>/ {vi ? 'mãi mãi' : 'forever'}</small></strong>
-          <ul><li>{vi ? '10 lượt AI/tháng' : '10 AI responses/month'}</li><li>{vi ? 'Daily Fortune cho tối đa 3 hồ sơ/ngày và 10 mặt sau Daily Insight/tháng' : 'Daily Fortune for up to 3 profiles/day and 10 Daily Insight backs/month'}</li><li>{vi ? '2 hình nền/tháng' : '2 wallpapers/month'}</li><li>{vi ? 'Tính toán cục bộ không giới hạn' : 'Unlimited local calculations'}</li></ul>
+          <ul><li>{vi ? '10 lượt AI/tháng' : '10 AI responses/month'}</li><li>{vi ? '10 lượt Daily Fortune/tháng và 10 mặt sau Daily Insight/tháng' : '10 Daily Fortune readings/month and 10 Daily Insight backs/month'}</li><li>{vi ? '2 hình nền/tháng' : '2 wallpapers/month'}</li><li>{vi ? 'Tính toán cục bộ không giới hạn' : 'Unlimited local calculations'}</li></ul>
         </article>
         <article className="pricing-card pricing-card-featured">
           <p className="batch-kicker">PRO</p><h2>{vi ? 'Đồng hành' : 'Companion'}</h2>
-          <ul><li>{vi ? '200 lượt AI/tháng' : '200 AI responses/month'}</li><li>{vi ? 'Daily Fortune cho tối đa 3 hồ sơ/ngày và 31 mặt sau Daily Insight/kỳ' : 'Daily Fortune for up to 3 profiles/day and 31 Daily Insight backs/period'}</li><li>{vi ? '30 hình nền/tháng' : '30 wallpapers/month'}</li><li>{vi ? 'Đồng bộ và lịch sử cloud đầy đủ' : 'Full cloud sync and history'}</li></ul>
+          <ul><li>{vi ? '200 lượt AI/tháng' : '200 AI responses/month'}</li><li>{vi ? '90 lượt Daily Fortune và 31 mặt sau Daily Insight mỗi kỳ' : '90 Daily Fortune readings and 31 Daily Insight backs per period'}</li><li>{vi ? '30 hình nền/tháng' : '30 wallpapers/month'}</li><li>{vi ? 'Đồng bộ và lịch sử cloud đầy đủ' : 'Full cloud sync and history'}</li></ul>
           <div className="payment-methods" role="tablist" aria-label={vi ? 'Phương thức thanh toán' : 'Payment method'}>
             <button type="button" className={method === 'payos' ? 'is-selected' : ''} onClick={() => setMethod('payos')}>
               <span>VIETQR</span><strong>249.000đ</strong><small>{vi ? '30 ngày · thanh toán một lần' : '30 days · one-time'}</small>

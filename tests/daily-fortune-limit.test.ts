@@ -3,14 +3,14 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
 const migrationUrl = new URL('../supabase/migrations/20261029000100_daily_fortune_profile_limit.sql', import.meta.url);
+const monthlyQuotaMigrationUrl = new URL('../supabase/migrations/20261031000100_monthly_daily_fortune_quota.sql', import.meta.url);
 const routeUrl = new URL('../app/api/astro/fortune/route.ts', import.meta.url);
 const dailyContentUrl = new URL('../lib/usage/daily-content.ts', import.meta.url);
+const planCatalogUrl = new URL('../lib/usage/plan-catalog.ts', import.meta.url);
 
-test('Daily Fortune profile allocation is serialized and capped atomically', async () => {
+test('Daily Fortune profile allocation remains serialized', async () => {
   const sql = await readFile(migrationUrl, 'utf8');
   assert.match(sql, /pg_advisory_xact_lock[\s\S]*p_user_id::text[\s\S]*p_local_date::text[\s\S]*p_content_type/i);
-  assert.match(sql, /count\(distinct profile_key\)[\s\S]*v_used >= p_daily_profile_limit/i);
-  assert.match(sql, /'state','limit_reached'/i);
 });
 
 test('locale claims reuse one base row and its fixed sample anchor', async () => {
@@ -27,13 +27,29 @@ test('daily content claim functions are service-role only', async () => {
 });
 
 test('Daily Fortune exposes an authenticated quota snapshot and returns it with generated content', async () => {
-  const [route, dailyContent] = await Promise.all([
-    readFile(routeUrl, 'utf8'),
-    readFile(dailyContentUrl, 'utf8'),
-  ]);
+  const route = await readFile(routeUrl, 'utf8');
   assert.match(route, /export async function GET[\s\S]*readFortuneQuota/i);
+  assert.match(route, /getQuotaSnapshot[\s\S]*snapshot\.daily_ca_dao/i);
   assert.match(route, /cached:\s*true,\s*quota/i);
   assert.match(route, /cached:\s*false,\s*quota/i);
-  assert.match(dailyContent, /select\('profile_key',\s*\{\s*count:\s*'exact',\s*head:\s*true\s*\}\)/i);
-  assert.match(dailyContent, /remaining:\s*Math\.max\(0,\s*input\.limit\s*-\s*used\)/i);
+});
+
+test('Daily Fortune grants 10 Free and 90 Pro readings per monthly period', async () => {
+  const [route, planCatalog] = await Promise.all([
+    readFile(routeUrl, 'utf8'),
+    readFile(planCatalogUrl, 'utf8'),
+  ]);
+  assert.match(planCatalog, /free:[\s\S]*daily_ca_dao:\s*10[\s\S]*pro:[\s\S]*daily_ca_dao:\s*90/i);
+  assert.match(route, /getRequestAccess\(req,\s*'daily_ca_dao',\s*requestId\)/i);
+  assert.match(route, /commitDailyContent\(admin,\s*contentClaim,\s*access/i);
+});
+
+test('Daily Fortune content and monthly quota commit atomically', async () => {
+  const [migration, dailyContent] = await Promise.all([
+    readFile(monthlyQuotaMigrationUrl, 'utf8'),
+    readFile(dailyContentUrl, 'utf8'),
+  ]);
+  assert.match(migration, /complete_numina_daily_content[\s\S]*commit_numina_quota/i);
+  assert.match(migration, /grant execute on function public\.commit_numina_localized_daily_content[\s\S]*service_role/i);
+  assert.match(dailyContent, /commit_numina_localized_daily_content/i);
 });

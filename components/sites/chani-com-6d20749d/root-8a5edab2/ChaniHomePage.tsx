@@ -553,8 +553,8 @@ export default function ChaniHomePage() {
             </h2>
             <p className="home-pro-desc">
               {isVietnamese
-                ? "Nhận 200 lượt luận giải AI, Daily Fortune cho tối đa 3 hồ sơ mỗi ngày, 31 mặt sau Daily Insight và 30 lượt tạo hình nền trong mỗi kỳ."
-                : "Get 200 AI readings, Daily Fortune for up to 3 profiles each day, 31 Daily Insight backs, and 30 wallpaper generations each billing period."}
+                ? "Nhận 200 lượt luận giải AI, 90 lượt Daily Fortune, 31 mặt sau Daily Insight và 30 lượt tạo hình nền trong mỗi kỳ."
+                : "Get 200 AI readings, 90 Daily Fortune readings, 31 Daily Insight backs, and 30 wallpaper generations each billing period."}
             </p>
           </div>
           <button

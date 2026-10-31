@@ -6,15 +6,20 @@ import {
   generateAstroFortuneDetailed,
   type AstroFortuneInput,
 } from '@/lib/astro/fortune-service';
+import { getRequestAccess, releaseRequestAccess, type RequestAccess } from '@/lib/billing/access';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { getRequestAuth } from '@/lib/supabase/request-auth';
 import { apiCorsHeaders } from '@/lib/security/cors';
 import { calculateAiCostUsd } from '@/lib/usage/ai-cost';
-import { recordUnmeteredAiUsage } from '@/lib/usage/quota-service';
+import {
+  getQuotaSnapshot,
+  recordActualAiUsage,
+  recordUnmeteredAiUsage,
+  resolveUserQuotaContext,
+} from '@/lib/usage/quota-service';
 import {
   claimDailyContent,
+  commitDailyContent,
   completeDailyContent,
-  getDailyProfileQuotaSnapshot,
   readDailyContent,
   releaseDailyContentClaim,
   waitForLocalizedDailyContent,
@@ -23,19 +28,22 @@ import {
 export const maxDuration = 45;
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
-const DAILY_FORTUNE_PROFILE_LIMIT = 3;
 
 export function OPTIONS(request: NextRequest) {
   return new NextResponse(null, { status: 204, headers: apiCorsHeaders(request) });
 }
 
-function readFortuneQuota(admin: ReturnType<typeof createAdminClient>, userId: string, localDate: string) {
-  return getDailyProfileQuotaSnapshot(admin, {
-    userId,
+async function readFortuneQuota(
+  context: NonNullable<Awaited<ReturnType<typeof resolveUserQuotaContext>>>,
+  localDate: string,
+) {
+  const snapshot = await getQuotaSnapshot(context.userId, context.plan, context.period);
+  return {
+    ...snapshot.daily_ca_dao,
     localDate,
-    contentType: 'daily_ca_dao',
-    limit: DAILY_FORTUNE_PROFILE_LIMIT,
-  });
+    periodStart: context.period.start.toISOString(),
+    periodEnd: context.period.end.toISOString(),
+  };
 }
 
 function jsonResponse(request: Request, data: unknown, status = 200) {
@@ -58,9 +66,9 @@ export async function GET(req: NextRequest) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(localDate)) {
       return jsonError(req, 'localDate is required.', 422);
     }
-    const { user } = await getRequestAuth(req);
-    if (!user) return jsonError(req, 'Authentication is required.', 401, 'AUTH_REQUIRED');
-    const quota = await readFortuneQuota(createAdminClient(), user.id, localDate);
+    const context = await resolveUserQuotaContext(req);
+    if (!context) return jsonError(req, 'Authentication is required.', 401, 'AUTH_REQUIRED');
+    const quota = await readFortuneQuota(context, localDate);
     return jsonResponse(req, { quota });
   } catch (error) {
     console.error('[Astro Fortune Quota API Error]:', error);
@@ -70,6 +78,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   let contentClaim: Awaited<ReturnType<typeof claimDailyContent>> | null = null;
+  let access: RequestAccess | null = null;
   let admin: ReturnType<typeof createAdminClient> | null = null;
   try {
     let rawBody: unknown;
@@ -90,13 +99,13 @@ export async function POST(req: NextRequest) {
       return jsonError(req, 'profileKey, localDate and requestId are required.', 422);
     }
 
-    const { user } = await getRequestAuth(req);
-    if (!user) return jsonError(req, 'Bạn cần đăng nhập để mở ca dao hôm nay.', 401, 'AUTH_REQUIRED');
+    const context = await resolveUserQuotaContext(req);
+    if (!context) return jsonError(req, 'Bạn cần đăng nhập để mở ca dao hôm nay.', 401, 'AUTH_REQUIRED');
     admin = createAdminClient();
-    const contentKey = { userId: user.id, profileKey, localDate, contentType: 'daily_ca_dao' as const };
+    const contentKey = { userId: context.userId, profileKey, localDate, contentType: 'daily_ca_dao' as const };
     const cached = await readDailyContent(admin, contentKey, locale);
     if (cached) {
-      const quota = await readFortuneQuota(admin, user.id, localDate);
+      const quota = await readFortuneQuota(context, localDate);
       return jsonResponse(req, { ...cached, cached: true, quota });
     }
 
@@ -110,34 +119,21 @@ export async function POST(req: NextRequest) {
       return jsonError(req, 'Request validation failed', 422);
     }
 
-    contentClaim = await claimDailyContent(admin, contentKey, locale, DAILY_FORTUNE_PROFILE_LIMIT);
+    contentClaim = await claimDailyContent(admin, contentKey, locale);
     if (contentClaim.state === 'cached') {
-      const quota = await readFortuneQuota(admin, user.id, localDate);
+      const quota = await readFortuneQuota(context, localDate);
       return jsonResponse(req, { ...contentClaim.content, cached: true, quota });
     }
     if (contentClaim.state === 'limit_reached') {
-      const quota = {
-        limit: contentClaim.limit,
-        used: contentClaim.used,
-        remaining: 0,
-        localDate,
-      };
       return jsonResponse(req, {
-        error: locale === 'en'
-          ? 'You have already created Daily Fortune for 3 profiles today.'
-          : 'Bạn đã tạo Daily Fortune cho đủ 3 hồ sơ hôm nay.',
-        code: 'DAILY_PROFILE_LIMIT_REACHED',
-        limit: contentClaim.limit,
-        used: contentClaim.used,
-        remaining: 0,
-        localDate,
-        quota,
+        error: locale === 'en' ? 'Daily Fortune quota reached.' : 'Bạn đã dùng hết lượt Daily Fortune trong kỳ này.',
+        code: 'MONTHLY_LIMIT_REACHED',
       }, 429);
     }
     if (contentClaim.state === 'pending') {
       const completed = await waitForLocalizedDailyContent(admin, contentKey, locale);
       if (completed) {
-        const quota = await readFortuneQuota(admin, user.id, localDate);
+        const quota = await readFortuneQuota(context, localDate);
         return jsonResponse(req, { ...completed, cached: true, quota });
       }
       return jsonError(req, 'Ca dao hôm nay đang được tạo. Vui lòng thử lại sau.', 409, 'CONTENT_PENDING');
@@ -154,6 +150,19 @@ export async function POST(req: NextRequest) {
       };
     }
 
+    // A second locale reuses the same profile/day allocation. Only a new base
+    // Daily Fortune consumes the monthly quota.
+    if (contentClaim.claimKind !== 'localization') {
+      const quotaAccess = await getRequestAccess(req, 'daily_ca_dao', requestId);
+      if (quotaAccess instanceof Response) {
+        await releaseDailyContentClaim(admin, contentClaim);
+        contentClaim = null;
+        for (const [key, value] of Object.entries(apiCorsHeaders(req))) quotaAccess.headers.set(key, value);
+        return quotaAccess;
+      }
+      access = quotaAccess;
+    }
+
     const generation = await generateAstroFortuneDetailed(input);
     const fortune = generation.fortune;
     const payload = {
@@ -164,10 +173,7 @@ export async function POST(req: NextRequest) {
         caDaoCategory: input.caDaoCategory || null,
       },
     };
-    await completeDailyContent(admin, contentClaim, payload);
-    await recordUnmeteredAiUsage({
-      userId: user.id,
-      feature: 'daily_ca_dao',
+    const usage = {
       route: '/api/astro/fortune',
       provider: generation.provider,
       model: generation.model,
@@ -179,10 +185,18 @@ export async function POST(req: NextRequest) {
         inputTokens: generation.usage?.inputTokens,
         outputTokens: generation.usage?.outputTokens,
       }),
-    });
-    const quota = await readFortuneQuota(admin, user.id, localDate);
+    };
+    if (access) {
+      await commitDailyContent(admin, contentClaim, access, payload, { route: usage.route, profileKey, localDate });
+      await recordActualAiUsage({ reservation: access, ...usage });
+    } else {
+      await completeDailyContent(admin, contentClaim, payload);
+      await recordUnmeteredAiUsage({ userId: context.userId, feature: 'daily_ca_dao_localization', ...usage });
+    }
+    const quota = await readFortuneQuota(context, localDate);
     return jsonResponse(req, { ...payload, cached: false, quota });
   } catch (error) {
+    if (access) await releaseRequestAccess(access, 'daily_fortune_generation_failed');
     if (admin && contentClaim?.state === 'claimed') await releaseDailyContentClaim(admin, contentClaim);
     console.error('[Astro Fortune API Error]:', error);
     const message = error instanceof Error ? error.message : 'Internal Server Error';

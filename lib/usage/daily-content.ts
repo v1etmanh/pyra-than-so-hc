@@ -112,7 +112,7 @@ export async function claimDailyContent(
 ): Promise<Claim> {
   const claimId = randomUUID();
 
-  if (key.contentType === 'daily_ca_dao' && dailyProfileLimit) {
+  if (key.contentType === 'daily_ca_dao') {
     const { data, error } = await admin.rpc('claim_numina_daily_content', {
       p_user_id: key.userId,
       p_profile_key: key.profileKey,
@@ -120,7 +120,7 @@ export async function claimDailyContent(
       p_content_type: key.contentType,
       p_locale: locale,
       p_claim_id: claimId,
-      p_daily_profile_limit: dailyProfileLimit,
+      p_daily_profile_limit: dailyProfileLimit ?? null,
     });
     if (error || !data) throw error || new Error('Daily content claim failed');
     const result = data as Record<string, unknown>;
@@ -242,6 +242,23 @@ export async function commitDailyContent(
   if (!durable) {
     await completeDailyContent(admin, claim, content);
     return commitQuota(reservation, metadata);
+  }
+  if (claim.claimKind && claim.userId && claim.locale) {
+    const { data, error } = await admin.rpc('commit_numina_localized_daily_content', {
+      p_user_id: reservation.userId,
+      p_reservation_id: reservation.reservationId,
+      p_content_row_id: claim.rowId,
+      p_claim_id: claim.claimId,
+      p_claim_kind: claim.claimKind,
+      p_locale: claim.locale,
+      p_content: content,
+      p_metadata: metadata,
+    });
+    if (error || !data || !(data as Record<string, unknown>).committed) {
+      throw error || new Error('Localized daily content quota transaction failed');
+    }
+    const result = data as Record<string, unknown>;
+    return { used: Number(result.used || 0), remaining: Number(result.remaining || 0) };
   }
   const { data, error } = await admin.rpc('commit_numina_daily_content', {
     p_user_id: reservation.userId,
