@@ -8,6 +8,7 @@ export interface BuildSystemPromptOptions {
   isCouple: boolean;
   complexity: 'simple' | 'standard' | 'complex';
   needsTarot?: boolean;
+  locale?: 'vi' | 'en';
 }
 
 export interface BuildUserPromptOptions {
@@ -132,6 +133,12 @@ function getIntentSpecificRules(options: BuildSystemPromptOptions): string {
 export function buildAgentSystemPrompt(options: BuildSystemPromptOptions): string {
   const budget = CHAT_RESPONSE_BUDGETS[options.complexity === 'complex' ? 'complex' : 'standard'];
   const specificRules = getIntentSpecificRules(options);
+  const englishOutputInstruction = options.locale === 'en'
+    ? `
+
+OUTPUT LANGUAGE OVERRIDE:
+Respond entirely in English. Translate all Vietnamese instructions, context, and source material naturally into English. Preserve only the exact required section headings verbatim so the response format remains valid. Do not mention translation.`
+    : '';
   const addressRule = options.isCouple
     ? 'Xưng “mình”. Không xác định ai trong hai hồ sơ là người đang cầm máy; gọi từng người bằng đúng tên xuất hiện trong <context>.'
     : 'Xưng “mình”, gọi người dùng là “bạn”.';
@@ -192,7 +199,7 @@ GIỚI HẠN:
 - KẾT LUẬN NHANH không vượt quá ${budget.sectionLimits.conclusion.maxWords} từ.
 - VÌ SAO không vượt quá ${budget.sectionLimits.reasoning.maxWords} từ.
 - ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM không vượt quá ${budget.sectionLimits.actions.maxWords} từ.
-- Bắt đầu ngay bằng “✦ KẾT LUẬN NHANH:” và kết thúc sau phần “✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM”.`;
+- Bắt đầu ngay bằng “✦ KẾT LUẬN NHANH:” và kết thúc sau phần “✦ ĐỊNH HƯỚNG VÀ CHIÊM NGHIỆM”.${englishOutputInstruction}`;
 }
 
 export function buildAgentUserPrompt(options: BuildUserPromptOptions): string {

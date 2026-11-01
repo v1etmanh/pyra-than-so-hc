@@ -165,6 +165,7 @@ export async function POST(request: NextRequest) {
 
   const sessionId = typeof body.sessionId === 'string' ? body.sessionId.trim() : '';
   const message = typeof body.message === 'string' ? body.message.trim() : '';
+  const locale = body.locale === 'en' ? 'en' : 'vi';
   const requestedTurn = typeof body.turnIndex === 'number' ? body.turnIndex : Number.NaN;
   const userMessageId = typeof body.userMessageId === 'string' && UUID_PATTERN.test(body.userMessageId)
     ? body.userMessageId
@@ -363,7 +364,8 @@ export async function POST(request: NextRequest) {
   const systemPrompt = buildFollowUpSystemPrompt(
     context,
     expectedTurn,
-    createCurrentTimeContext(body.timeZone)
+    createCurrentTimeContext(body.timeZone),
+    locale
   );
   let source: ReadableStream<Uint8Array>;
   try {

@@ -25,6 +25,29 @@ test('chat agent speaks as a grounded friend without mandatory roast', () => {
   assert.doesNotMatch(prompt, /✦ NÊN LÀM GÌ:/i);
 });
 
+test('chat agent appends an English-only output override for the English locale', () => {
+  const englishPrompt = buildAgentSystemPrompt({
+    intent: 'daily_guidance',
+    isCouple: false,
+    complexity: 'standard',
+    needsTarot: true,
+    locale: 'en',
+  });
+  const vietnamesePrompt = buildAgentSystemPrompt({
+    intent: 'daily_guidance',
+    isCouple: false,
+    complexity: 'standard',
+    needsTarot: true,
+    locale: 'vi',
+  });
+
+  assert.match(englishPrompt, /OUTPUT LANGUAGE OVERRIDE:/);
+  assert.match(englishPrompt, /Respond entirely in English/);
+  assert.match(englishPrompt, /Preserve only the exact required section headings verbatim/);
+  assert.ok(englishPrompt.lastIndexOf('OUTPUT LANGUAGE OVERRIDE:') > englishPrompt.lastIndexOf('Chỉ trả lời bằng tiếng Việt'));
+  assert.doesNotMatch(vietnamesePrompt, /OUTPUT LANGUAGE OVERRIDE:/);
+});
+
 test('intent contracts define distinct decisive answer shapes', () => {
   const relationship = buildAgentSystemPrompt({
     intent: 'relationship',

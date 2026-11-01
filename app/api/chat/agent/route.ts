@@ -351,6 +351,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { message, decision, profiles, indicators, tarotCards, placeContext, colorGuidance } = body;
+    const locale = body.locale === 'en' ? 'en' : 'vi';
     const timeContext = createCurrentTimeContext(body.timeZone);
 
     // 0. BỘ LỌC TỐC HÀNH: Phát hiện câu hỏi rác / vô nghĩa / gõ phím ngẫu nhiên (0 token LLM, phản hồi < 0.1ms)
@@ -667,6 +668,7 @@ export async function POST(request: NextRequest) {
       isCouple,
       complexity: responseBudget.complexity,
       needsTarot: decision?.needsTarot,
+      locale,
     });
     const userPrompt = buildAgentUserPrompt({
       timeContext,
