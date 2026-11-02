@@ -53,11 +53,11 @@ export async function POST(req: NextRequest) {
 
     // 1. Direct Knowledge Retrieval from Supabase PostgreSQL for 5 Core Indicators
     const [docLife, docMission, docSoul, docPersonality, docDay] = await Promise.all([
-      getKnowledgeByIndicator('walksOfLife', walksOfLife),
-      getKnowledgeByIndicator('mission', mission),
-      getKnowledgeByIndicator('soul', soul),
-      getKnowledgeByIndicator('personality', personality),
-      getKnowledgeByIndicator('dateOfBirth', dateOfBirth)
+      getKnowledgeByIndicator('walksOfLife', walksOfLife, 'vi'),
+      getKnowledgeByIndicator('mission', mission, 'vi'),
+      getKnowledgeByIndicator('soul', soul, 'vi'),
+      getKnowledgeByIndicator('personality', personality, 'vi'),
+      getKnowledgeByIndicator('dateOfBirth', dateOfBirth, 'vi')
     ]);
 
     const retrievedList = [docLife, docMission, docSoul, docPersonality, docDay].filter(Boolean);

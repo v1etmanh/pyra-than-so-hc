@@ -28,8 +28,9 @@ export async function POST(req: NextRequest) {
     // 1. Fetch relevant arrow knowledge from Supabase
     const activeArrows = birthChartData.arrows || [];
     const arrowKnowledgePromises = activeArrows.map((a) => {
-      const numKey = a.numbers.join('-');
-      return getKnowledgeByIndicator('arrows', numKey);
+      const state = a.type === 'strength' ? 'strong' : 'empty';
+      const numKey = `${a.numbers.join('-')}:${state}`;
+      return getKnowledgeByIndicator('arrows', numKey, 'vi');
     });
 
     const arrowDocs = (await Promise.all(arrowKnowledgePromises)).filter(Boolean);

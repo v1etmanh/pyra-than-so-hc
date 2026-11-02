@@ -10,19 +10,19 @@ export interface NumerologyKnowledgeRecord {
   id: string;
   indicator_key: string;
   number_value: string;
+  locale: KnowledgeLocale;
   indicator_name: string;
   title: string;
   category: string;
   content: string;
-  keywords?: string[];
+  keywords: string[];
 }
+
+export type KnowledgeLocale = 'vi' | 'en';
 
 function getSupabaseConfig() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-  const key =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-    process.env.SUPABASE_ANON_KEY;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   return { url: url?.replace(/\/$/, ''), key };
 }
 
@@ -31,7 +31,8 @@ function getSupabaseConfig() {
  */
 function getLocalKnowledgeFallback(
   indicatorKey: string,
-  numberValue: string | number
+  numberValue: string | number,
+  locale: KnowledgeLocale
 ): NumerologyKnowledgeRecord | null {
   try {
     const knowledgeDir = path.resolve(process.cwd(), 'knowledge');
@@ -59,12 +60,14 @@ function getLocalKnowledgeFallback(
 
       if (
         meta.indicator_key === indicatorKey &&
-        meta.number_value?.replaceAll('_', '/') === targetVal
+        meta.number_value?.replaceAll('_', '/') === targetVal &&
+        (meta.locale === locale || (!meta.locale && locale === 'vi'))
       ) {
         return {
           id: meta.id || filename.replace('.md', ''),
           indicator_key: meta.indicator_key,
           number_value: meta.number_value,
+          locale,
           indicator_name: meta.indicator_name || meta.title || '',
           title: meta.title || filename.replace('.md', ''),
           category: meta.category || 'general',
@@ -85,16 +88,22 @@ function getLocalKnowledgeFallback(
  */
 export async function getKnowledgeByIndicator(
   indicatorKey: string,
-  numberValue: string | number
+  numberValue: string | number,
+  locale: KnowledgeLocale = 'vi'
 ): Promise<NumerologyKnowledgeRecord | null> {
   const { url, key } = getSupabaseConfig();
   const valStr = String(numberValue).trim();
 
   if (url && key) {
     try {
-      const encodedIndicator = encodeURIComponent(indicatorKey);
-      const encodedVal = encodeURIComponent(valStr);
-      const endpoint = `${url}/rest/v1/numerology_knowledge?indicator_key=eq.${encodedIndicator}&number_value=eq.${encodedVal}&select=*`;
+      const query = new URLSearchParams({
+        indicator_key: `eq.${indicatorKey}`,
+        number_value: `eq.${valStr}`,
+        locale: `eq.${locale}`,
+        select: '*',
+        limit: '1'
+      });
+      const endpoint = `${url}/rest/v1/numerology_knowledge?${query}`;
 
       const response = await fetch(endpoint, {
         method: 'GET',
@@ -120,5 +129,5 @@ export async function getKnowledgeByIndicator(
   }
 
   // Fallback to local files if Supabase misses or fails
-  return getLocalKnowledgeFallback(indicatorKey, numberValue);
+  return getLocalKnowledgeFallback(indicatorKey, numberValue, locale);
 }

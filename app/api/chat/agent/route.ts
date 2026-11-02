@@ -431,7 +431,7 @@ export async function POST(request: NextRequest) {
       }
       return {
         indicator,
-        record: await getKnowledgeByIndicator(indicator.key, indicator.value)
+        record: await getKnowledgeByIndicator(indicator.key, indicator.value, locale)
       };
     }));
     const retrievedKnowledge = knowledgeDocs.filter(({ record }) => Boolean(record?.content?.trim()));

@@ -29,6 +29,7 @@ next-env.d.ts
 # Local database artifacts
 *.sqlite
 *.sqlite3
+/data/cadao.db
 
 # Python caches and local environments
 __pycache__/

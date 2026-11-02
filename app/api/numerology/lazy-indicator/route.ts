@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
 
     // 1. Direct Knowledge Retrieval from Supabase PostgreSQL (O(1) search < 50ms)
     console.log(`[Direct Lookup] Fetching Supabase knowledge for ${indicatorKey}=${indicatorValue}...`);
-    const knowledgeRecord = await getKnowledgeByIndicator(indicatorKey, indicatorValue);
+    const knowledgeLocale = language === 'English' ? 'en' : 'vi';
+    const knowledgeRecord = await getKnowledgeByIndicator(indicatorKey, indicatorValue, knowledgeLocale);
 
     const fallbackContent = buildIndicatorKnowledgeFallback({
       fullName,
